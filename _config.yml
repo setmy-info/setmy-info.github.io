@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+title: The title
+description: A short description
+show_downloads: true
