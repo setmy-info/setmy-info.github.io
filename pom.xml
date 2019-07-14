@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>info.setmy</groupId>
+        <artifactId>multi-projects</artifactId>
+        <version>1.2.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>info.setmy</groupId>
+    <artifactId>documentation</artifactId>
+    <version>1.2.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>documentation</name>
+    <description>Documentation</description>
+    <url>https://bitbucket.org/imreit/setmy.info</url>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <developers>
+        <developer>
+            <id>imreit</id>
+            <email>imre.tabur@eesti.ee</email>
+            <name>Imre Tabur</name>
+            <organization>Hear And See Systems LLC</organization>
+            <roles>
+                <role>Architect</role>
+                <role>Developer</role>
+                <role>Reviewer</role>
+            </roles>
+            <timezone>+2</timezone>
+            <!--properties>
+                <picUrl>http://tinyurl.com/xxxxxxxxx</picUrl>
+            </properties-->
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:hg:https://bitbucket.org/imreit/springboot-start-project</connection>
+        <developerConnection>scm:hg:ssh://hg@bitbucket.org/imreit/springboot-start-project</developerConnection>
+        <url>https://bitbucket.org/imreit/springboot-start-project</url>
+        <tag>v1.0.7</tag>
+    </scm>
+
+    <issueManagement>
+        <system>Bitbucket</system>
+        <url>https://bitbucket.org/imreit/springboot-start-project/issues</url>
+    </issueManagement>
+
+    <ciManagement />
+    <contributors />
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>https://bitbucket.org/imreit/setmy.info/downloads/MIT.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+</project>

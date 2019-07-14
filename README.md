@@ -1,1 +1,1 @@
-# setmy-info.github.io
+# setmy-info-documentation
