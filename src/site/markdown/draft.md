@@ -2,9 +2,9 @@
 
 http://www.doclo.be/lieven/articles/personalsitewithmaven.html
 
-mvn archetype:create   
-   -DgroupId=mygroup   
-   -DartifactId=mywebsite  
+mvn archetype:create
+   -DgroupId=mygroup
+   -DartifactId=mywebsite
    -DarchetypeArtifactId=maven-archetype-site-simple
 
 https://dzone.com/articles/how-publish-maven-site-docs
@@ -42,6 +42,7 @@ cd documentation && mvn site:site && cd ..
     docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
         
 2. Or
+
     firefox --new-tab http://localhost:4000
     firefox --new-tab http://localhost:8010/rest/hello
     firefox --new-tab http://localhost:8020/rest/hello
@@ -55,6 +56,7 @@ cd documentation && mvn site:site && cd ..
     firefox --new-tab http://localhost/node-start-project/
 
 3. Ports
+
     Service and debug ports
 
 4. Golang Microservice
@@ -63,6 +65,7 @@ cd documentation && mvn site:site && cd ..
     docker run -p 8040:8080 -d  setmyinfo/go-start-project
 
 5. Karma
+
     Fro project:
         npm install karma karma-jasmine karma-chrome-launcher karma-firefox-launcher jasmine-core jasmine karma-html-reporter --save-dev
     Globaly:
@@ -70,6 +73,16 @@ cd documentation && mvn site:site && cd ..
         karma init karma.conf.js
 
 6. Node main development tools set
+
     npm install -g bower grunt gulp karma-cli sass less typescript express-generator yarn jshint protractor karma-cli @hapi/joi @hapi/topo @hapi/hoek
     npm install -g @vue/cli
     npm install karma karma-coverage karma-junit-reporter --save-dev
+
+7. Hexo.io
+
+    hexo init hexo-test-blog
+    cd hexo-test-blog
+    npm install
+    hexo server
+    firefox --new-tab http://localhost:4000
+    hexo generate
