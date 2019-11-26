@@ -19,6 +19,24 @@ possibilites - component locations in folder structure, module/component folder 
 
 ## Decisions
 
+### Standard environments list
+
+    * dev - developers and teams playground
+    * atest - Automatic tests playground
+    * test - (user and) acceptance test playground with fake data
+    * prelive - (user and) acceptance test playground with real data
+    * live - endusers playground and production
+
+### Standard profiles
+
+    Profiles for Maven, Spring, Micronaut etc profiles are per environment one to one. Name it as mentioned in Standard environments list.
+
+### Versioning
+
+    Currently used: Semantic Versioning 2.0.0
+
+    https://semver.org/
+
 ### Decided tools, components and libraries
 
 1. OS

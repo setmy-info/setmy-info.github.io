@@ -86,3 +86,14 @@ cd documentation && mvn site:site && cd ..
     hexo server
     firefox --new-tab http://localhost:4000
     hexo generate
+
+8. Process
+
+    Steps
+    Artifacts
+    Roles
+
+    Planning (ideas, refinement, PoC/Spike, architecture)
+    Implementation
+    Testing
+    Releasing
