@@ -37,6 +37,38 @@ possibilites - component locations in folder structure, module/component folder 
 
     https://semver.org/
 
+    Use at development and testing time suffix: -SNAPSHOT
+
+### Branching
+
+    * git flow (Vincent Driessen aka [nvie], https://nvie.com/posts/a-successful-git-branching-model/)
+        master, default, feature, release branches
+    * flexible but compex internal branching schema:
+        N number of branches per release items - release branches
+        Releasing at any time, any order
+        Handling releases or hotfixes same way.
+
+### Microservices and API-s
+
+    All external or third party API-s by default should be behind internal API.
+        - actually can be more fault tolerant
+        - more freedom (caching, DB, replace, re-desing external API or design, replace [later throw external out]).
+        - 2 types, that can be in one but clearly understandable, what can be used
+            - direct, that is 1:1 transfering and translating 3dp or external API
+            - complex or translated (strongly preferred), that is probably translating and doing many complext requests to 3dp/ex API 
+
+### Translations
+
+    Should be:
+    - used as one or in many formats (JSON, XML, JS, Java properties, YAML, ...), that can be requested for example with GET method
+    - added at compile time
+    - added, loaded or used at runtime (REST or other API), and probavly cached for runtime
+    - in DB
+    - versioned (versions can be 1:1 withh software version os independent)
+    - by application, module or API
+    - use camel case JS format as key ("someApplicationView.tooltip")
+    - with user UI
+
 ### Decided tools, components and libraries
 
 1. OS
