@@ -39,6 +39,13 @@ possibilites - component locations in folder structure, module/component folder 
 
     Use at development and testing time suffix: -SNAPSHOT
 
+    Currently only numbers are used. No alphabetic prefixes or suffixes.
+
+    Examples:
+    
+        At development time: 1.2.3-SNAPSHOT and after release: 1.2.3
+        At development time, with build number: 1.2.3-54321-SNAPSHOT and after release: 1.2.3
+
 ### Branching
 
     * git flow (Vincent Driessen aka [nvie], https://nvie.com/posts/a-successful-git-branching-model/)
