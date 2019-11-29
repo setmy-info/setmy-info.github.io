@@ -27,6 +27,9 @@ possibilites - component locations in folder structure, module/component folder 
     * prelive - (user and) acceptance test playground with real data
     * live - endusers playground and production
 
+    Environments should be separated and not used in moxed and crossed way (one environemnt komponent is usind another environment komponent).
+    Peopel should not talk in mashine names, just with environmnet names.
+
 ### Standard profiles
 
     Profiles for Maven, Spring, Micronaut etc profiles are per environment one to one. Name it as mentioned in Standard environments list.
@@ -76,6 +79,23 @@ possibilites - component locations in folder structure, module/component folder 
     - use camel case JS format as key ("someApplicationView.tooltip")
     - with user UI
 
+### Developers
+
+    Preferred OS should be choosen for production machines and developers should use that OS as development machine.
+        - learning and collecting knowhow
+
+### Docker
+
+    Images should based on developers maschines.
+        - transferrign knowhow into Dockerfile. No differences and different thinking from developer machines.
+
+    Organization should have its own Docker image hierarchy, consolitating security and knowhow in different hierarchy nodes by needs.
+
+### Linux
+
+    Follow FHS: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
+    Follow LSB: https://refspecs.linuxfoundation.org/lsb.shtml
+
 ### Decided tools, components and libraries
 
 1. OS
@@ -110,6 +130,7 @@ possibilites - component locations in folder structure, module/component folder 
 7.4.2 Prefer two way datapinging over event dispatch-catch.
 8. Java
 8.1. Prefer in solutions write code withoud interfaces. Iterfaces are for framweorks or plugins, where N number of third parties should implement something.
+8.2. Java fail length up to 512 lines and line length 110.
 9. Source Controll
 9.1. Prefer Mercurial over GIT
 10. Hibernate
