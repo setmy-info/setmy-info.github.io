@@ -97,3 +97,7 @@ cd documentation && mvn site:site && cd ..
     Implementation
     Testing
     Releasing
+
+9. Logging
+
+    https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#data-to-exclude
