@@ -101,3 +101,11 @@ cd documentation && mvn site:site && cd ..
 9. Logging
 
     https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#data-to-exclude
+
+10. Teamwork
+
+    All or nothing.
+    One team, not many separated with separated poards for one task.
+    Shortest bath.
+    No more, no less.
+    Describing somewhere else, then testing somewhere else - not in the end of the sprint.
