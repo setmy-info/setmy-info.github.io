@@ -109,3 +109,21 @@ cd documentation && mvn site:site && cd ..
     Shortest bath.
     No more, no less.
     Describing somewhere else, then testing somewhere else - not in the end of the sprint.
+
+## Test Task
+
+### Questions for VueJS architects
+
+    1.1 What other frameworks you know? What else have you used as frontend framework?
+    1.2 Do you have experience with Angular 1.x? Yes: do you know controllers, services, values, resources? Describe what for they are?
+    1.3 Yes: Do you know angular-classy? What you think about similarities and differencies VueJS and (angular + angular-classy)
+    2. Describe your project, where you used VueJS. Hardest problem you solved there?
+    3. Are you familiar with: Webpack, JasmineJS, Karma, Protractor?
+    4. Which testing frameworks you use in VueJS projects?
+    5. How you usually organize your VueJS project? What is where?
+    6. What is for you VueJs component? Is it always visual (visible or hiddable) element?
+    7. Your preferred process to apply UX design? Who, what, when and how should do?
+    8. If you have free will to apply requirements for UX desing, whate are these? What are your requirements for that?
+    9. If you have requirement, that we have 3 layers (controller, service, resource): how you implement service layer in VueJS project?
+    10. REST is returning following item object: "{isVisible: "No", firstName: "Imre", "Tabur"}". You should shouw that item data depending of isVisible.
+        What you write into template, how it wol look like?

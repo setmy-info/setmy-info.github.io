@@ -93,16 +93,61 @@ possibilites - component locations in folder structure, module/component folder 
 
 ### Linux
 
+    In priority order (higher to lower): CentOS, Fedora linux, Debian
     Follow FHS: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
     Follow LSB: https://refspecs.linuxfoundation.org/lsb.shtml
+
+### Other OS
+
+    In priority order (higher to lower): FreeBSD and OpenIndiana.
+
+### Containers
+
+    In priority order (higher to lower): Docker, Jail and Zone.
+    Tools: Docker registry, Kubernetes for Docker. Probably should change, becase of RedHat new tools. Need to analyze these.
+        (RancherOS, Helm ?)
+
+### Front end
+
+    LESS
+    Single-Page application
+    Responsive web design
+    Cross-browser
+        IE11 (minimum IE)
+    Jasmine FW
+    Karma
+    3 Layer (Controller/controlling, Service, Resource/API)
+        Service layer independent from Frameworks (VueJS, Angular, React etc), depndent from Axios.
+
+### Back end
+
+    Java, Groovy, NodeJS, Python, (Not decided: Go, C/C++)
+    SpringBoot, Spring, Micronaut
+    JSR-330
+    3 Layer (Controller/REST/SOAP/etc, Service, DAO/API/DataSource)
+    JPA (Hibernate)
+
+### Testing
+
+    JUnit 5
+    Java + Selenium (hub and nodes)
+    Cucumber
+
+### DB
+
+    PostgreSQL
+        Tools: Liquibase
+    MongoDB
+    DGraph/Neo4J
+    Lucene
 
 ### Decided tools, components and libraries
 
 1. OS
-1.1 Linux: in priority order (higher to lower) CentOS, Fedora linux, Debian, FreeBSD and OpenIndiana.
+1.1 MOVED
 2. Containers
-2.1 Docker, Jail and Zone.
-2.2 Kubernetes for Docker. Probably should change, becase of RedHat new tools. Need to analyze these.
+2.1 MOVED
+2.2 MOVED
 3 Shell
 3.1 Bourne shell and use #!/bin/sh not #!/bin/bash. First one is in base installation of CentOS, Fedora, *BSD, Solaris, Debian (*buntu), OpenIndiana etc.
 3.2 Therefore shell script should be not be written in "bashism" (bash way), but as much as possible in POSIX shell way.
@@ -135,7 +180,7 @@ possibilites - component locations in folder structure, module/component folder 
 9.1. Prefer Mercurial over GIT
 10. Hibernate
 11. DB: PostgreSQL, MongoDB, DGraph (?)
-12. MQ: RabbitMQ, Mosquitto
+12. MQ: RabbitMQ (should be used, when they hide problems? Replace it with Redis?), Mosquitto
 13. Spring, Spring boot andMicronaut, but using as much as possible standard way (javax.*).
 14. Semantic versioning: https://semver.org/
 4. Solution levels
@@ -145,4 +190,4 @@ possibilites - component locations in folder structure, module/component folder 
     3. DB JWT check with symmetric and assymetric keys. DB based session cancellation and expiration (JWT revoke). Multi node solutions. App backend as GW. No central cache solutions for apps.
     4. Central Cache and session storage. JWT and session revoke in cache systems. Multi node solutions. Multi HW servers only.
     5. Central Cache and session storage. JWT and session revoke in identiti management systems. Multi node systesm. Health checks. API GW (rate limiting, security, identity management etc). Multiple hardware (servers, network nodes, powwersuplies, UPS etc) nodes. Storage systems.
-
+ 
