@@ -127,3 +127,50 @@ cd documentation && mvn site:site && cd ..
     9. If you have requirement, that we have 3 layers (controller, service, resource): how you implement service layer in VueJS project?
     10. REST is returning following item object: "{isVisible: "No", firstName: "Imre", "Tabur"}". You should shouw that item data depending of isVisible.
         What you write into template, how it wol look like?
+
+## Wiki documentation hierarchy
+
+    Business
+        Projects (timely)
+            Commons
+                Analysis
+            ABC
+                Analysis
+    IT
+        People (roles, locations, vacations, etc)
+        Process
+            Scrum (Per team, optional)
+                Team
+                Planning
+                Refinements (optional)
+                Sprints
+                Retrospectives
+            Kanban (Optional)
+            Other meetings (meeting notes, etc)
+            Testing (optional, plans, specs)
+        Architecture
+            Decisions
+                PoC & Spikes
+            Enterprise architecture
+                Environments
+            Components/Modules/Projects (Module or component or app or library as Project)
+                Commons and overview
+                    Architecture
+                    Requirements
+                    Development notes
+                    QA: test guides and specifications
+                    Release notes
+                    Deployment notes
+                    Maintenance
+                XYZ
+                    Architecture
+                    Requirements
+                    Development notes
+                    QA: test guides and specifications
+                    Release notes
+                    Deployment notes
+                    Maintenance
+                ...
+        Knowledge
+            Tool xyz
+        
