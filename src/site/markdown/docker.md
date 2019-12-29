@@ -38,7 +38,7 @@
 ## Portainer
 
     docker volume create portainer_data
-    docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+    docker run --name portainer -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
     firefox --new-tab http://localhost:9000/#/init/admin
     For example: User: admin, Password: adminadmin
 

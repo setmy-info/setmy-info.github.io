@@ -36,6 +36,11 @@ cd documentation && mvn site:site && cd ..
     docker run -p 4000:3000 -d setmyinfo/node-start-project
         npm run docker-run
 
+1. 1. Micronaut microservice
+
+    docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT .
+    docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
+        
 2. Or
     firefox --new-tab http://localhost:4000
     firefox --new-tab http://localhost:8010/rest/hello
