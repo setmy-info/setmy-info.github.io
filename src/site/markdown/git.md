@@ -22,15 +22,17 @@
 
         git config --global core.autocrlf false
 
+        git config --global core.autocrlf input
+
         git checkout master
 
-        git checkout -b newbranhc
+        git checkout -b NEWBRANCHNAME
 
-        git checkout -b newbranhc fromcommithash
+        git checkout -b NEWBRANCHNAME COMMITHASH
 
-        git branch -m oldbranchname newbranchname
+        git branch -m OLDBRANCHNAME NEWBRANCHNAME
 
-        git branch -d branchname && git push origin --delete branchname
+        git branch -d BRANCHNAME && git push origin --delete BRANCHNAME
 
         git fetch
 
@@ -38,11 +40,11 @@
 
         git push
 
-        git push -f origin feature/xyz
+        git push -f origin feature/FEATURE
 
         git remote prune origin
 
-        git cherry-pick hashstring
+        git cherry-pick COMMITHASH
 
         git rebase master
 
@@ -70,14 +72,17 @@
 
         git reset --hard HEAD~1
 
+        git reset --hard origin/feature/FEATURE
+
         git tag -a v1.2.3 -m "v1.2.3"
 
-        git tag -a v1.2.3 -m "v1.2.3" hashstring
+        git tag -a v1.2.3 -m "v1.2.3" COMMITHASH
 
      Uncommit:
 
         git reset --soft HEAD~1
-       
+
+        git stash save "save name"
 
 ## See also
 
