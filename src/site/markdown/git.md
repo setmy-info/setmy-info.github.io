@@ -24,6 +24,8 @@
 
         git config --global core.autocrlf input
 
+        git config --get remote.origin.url
+
         git checkout master
 
         git checkout -b NEWBRANCHNAME
@@ -78,11 +80,35 @@
 
         git tag -a v1.2.3 -m "v1.2.3" COMMITHASH
 
-     Uncommit:
+    Uncommit:
 
         git reset --soft HEAD~1
 
         git stash save "save name"
+
+    Move one repo (repo1) to another (repo2)
+
+        git clone repo1
+
+        cd repo1
+
+        git config --get remote.origin.url
+
+        cd ..
+
+        git clone repo2
+
+        cd repo2
+
+        git checkout master
+
+        git remote add importrepo REPO1-URL
+
+        git fetch importrepo
+
+        git merge importrepo/master --allow-unrelated-histories
+
+        git remote rm importrepo
 
 ## See also
 
