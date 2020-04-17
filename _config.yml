@@ -2,6 +2,6 @@ theme: jekyll-theme-cayman
 title: setmy.info
 description: Software components
 show_downloads: true
-github:
-  zip_url: http://example.com/download.zip
-  another_url: another value
+#github:
+#  zip_url: http://example.com/download.zip
+#  another_url: another value

@@ -1,1 +1,1 @@
-# setmy-info-documentation
+# setmy.info documentation
