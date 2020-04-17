@@ -56,7 +56,7 @@ git commit --amend -m 'New Message'
 
 Change last commit author:
 
-git commit --amend --author="Imre Tabur <imre.tabur@eesti.ee>"
+git commit --amend --author=\"Imre Tabur <imre.tabur@eesti.ee>\"
 
 git diff Bonebranch..anotherbranch
 
@@ -110,7 +110,9 @@ git merge importrepo/master
 
 git remote rm importrepo
 
-git submodule add REPOURL
+git submodule add REPOURL ./submodules/SUBMODULE_NAME
+
+git clone \-\-recurse-submodules MAIN_REPO_URL
 
 ## See also
 
