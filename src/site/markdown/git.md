@@ -110,6 +110,8 @@ git merge importrepo/master
 
 git remote rm importrepo
 
+git submodule add REPOURL
+
 ## See also
 
 [xxxx](http://yyyyy)
