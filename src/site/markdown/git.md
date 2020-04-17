@@ -106,7 +106,7 @@
 
         git fetch importrepo
 
-        git merge importrepo/master --allow-unrelated-histories
+        git merge importrepo/master
 
         git remote rm importrepo
 
