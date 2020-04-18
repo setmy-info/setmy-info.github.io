@@ -6,23 +6,23 @@
 
 ## Usage, tips and tricks
 
-git config --global user.name "Imre Tabur"
+git config \-\-global user.name \"Imre Tabur\"
 
-git config --global user.email imre.tabur@eesti.ee
+git config \-\-global user.email imre.tabur@eesti.ee
 
-git config --global core.editor "c:\Program Files\Notepad++\notepad++.exe"
+git config \-\-global core.editor \"c:\Program Files\Notepad++\notepad++.exe\"
 
-git config --global core.editor nano
+git config \-\-global core.editor nano
 
-git config --global core.commentchar "$"
+git config \-\-global core.commentchar \"$\"
 
-git config --global core.autocrlf true
+git config \-\-global core.autocrlf true
 
-git config --global core.autocrlf false
+git config \-\-global core.autocrlf false
 
-git config --global core.autocrlf input
+git config \-\-global core.autocrlf input
 
-git config --get remote.origin.url
+git config \-\-get remote.origin.url
 
 git checkout master
 
@@ -32,7 +32,7 @@ git checkout -b NEWBRANCHNAME COMMITHASH
 
 git branch -m OLDBRANCHNAME NEWBRANCHNAME
 
-git branch -d BRANCHNAME && git push origin --delete BRANCHNAME
+git branch -d BRANCHNAME && git push origin \-\-delete BRANCHNAME
 
 git fetch
 
@@ -48,43 +48,43 @@ git cherry-pick COMMITHASH
 
 git rebase master
 
-git commit --amend
+git commit \-\-amend
 
 git commit -m 'Commit mesage'
 
-git commit --amend -m 'New Message'
+git commit \-\-amend -m 'New Message'
 
 Change last commit author:
 
-git commit --amend --author=\"Imre Tabur <imre.tabur@eesti.ee>\"
+git commit \-\-amend \-\-author=\"Imre Tabur <imre.tabur@eesti.ee>\"
 
 git diff Bonebranch..anotherbranch
 
 git rebase -i HEAD~3
 
-git rebase HEAD~1 --onto master
+git rebase HEAD~1 \-\-onto master
 
 git log -n 4
 
-git log --graph --decorate --pretty=oneline --abbrev-commit
+git log \-\-graph \-\-decorate \-\-pretty=oneline \-\-abbrev-commit
 
 git reset filename(s)
 
 Remove last commit
 
-git reset --hard HEAD~1
+git reset \-\-hard HEAD~1
 
-git reset --hard origin/feature/FEATURE
+git reset \-\-hard origin/feature/FEATURE
 
-git tag -a v1.2.3 -m "v1.2.3"
+git tag -a v1.2.3 -m \"v1.2.3\"
 
-git tag -a v1.2.3 -m "v1.2.3" COMMITHASH
+git tag -a v1.2.3 -m \"v1.2.3\" COMMITHASH
 
 Uncommit:
 
-git reset --soft HEAD~1
+git reset \-\-soft HEAD~1
 
-git stash save "save name"
+git stash save \"save name\"
 
 Move one repo (repo1) to another (repo2)
 
@@ -92,7 +92,7 @@ git clone repo1
 
 cd repo1
 
-git config --get remote.origin.url
+git config \-\-get remote.origin.url
 
 cd ..
 
