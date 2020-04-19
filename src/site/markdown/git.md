@@ -116,6 +116,10 @@ git remote rm importrepo
 
 git submodule add REPOURL ./submodules/SUBMODULE_NAME
 
+git submodule init
+
+git submodule update
+
 git clone --recurse-submodules MAIN_REPO_URL
 
 ```
