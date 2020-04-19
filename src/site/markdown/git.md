@@ -82,6 +82,8 @@ git tag -a v1.2.3 -m \"v1.2.3\"
 
 git tag -a v1.2.3 -m \"v1.2.3\" COMMITHASH
 
+git push --tags
+
 Uncommit:
 
 git reset \-\-soft HEAD~1
