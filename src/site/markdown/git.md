@@ -6,7 +6,9 @@
 
 ## Usage, tips and tricks
 
-git config \-\-global user.name \"Imre Tabur\"
+```bash
+
+git config \-\-global user.name "Imre Tabur"
 
 git config \-\-global user.email imre.tabur@eesti.ee
 
@@ -113,6 +115,8 @@ git remote rm importrepo
 git submodule add REPOURL ./submodules/SUBMODULE_NAME
 
 git clone \-\-recurse-submodules MAIN_REPO_URL
+
+```
 
 ## See also
 
