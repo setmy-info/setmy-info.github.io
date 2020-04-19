@@ -18,7 +18,7 @@
     <packaging>jar</packaging>
     <name>documentation</name>
     <description>Documentation</description>
-    <url>https://bitbucket.org/imreit/setmy.info</url>
+    <url>https://setmy-info.github.io</url>
 
     <dependencies>
     </dependencies>
@@ -62,15 +62,15 @@
     </developers>
 
     <scm>
-        <connection>scm:hg:https://bitbucket.org/imreit/springboot-start-project</connection>
-        <developerConnection>scm:hg:ssh://hg@bitbucket.org/imreit/springboot-start-project</developerConnection>
-        <url>https://bitbucket.org/imreit/springboot-start-project</url>
+        <connection>scm:git:git@github.com:setmy-info/setmy.info.git</connection>
+        <developerConnection>scm:git:git@github.com:setmy-info/setmy.info.git</developerConnection>
+        <url>https://setmy-info.github.io</url>
         <tag>v1.0.7</tag>
     </scm>
 
     <issueManagement>
-        <system>Bitbucket</system>
-        <url>https://bitbucket.org/imreit/springboot-start-project/issues</url>
+        <system>GitHub</system>
+        <url>https://github.com/setmy-info/setmy.info/issues</url>
     </issueManagement>
 
     <ciManagement />
@@ -90,7 +90,7 @@
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
-            <url>https://bitbucket.org/imreit/setmy.info/downloads/MIT.txt</url>
+            <url>https://raw.githubusercontent.com/setmy-info/setmy.info/develop/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
