@@ -15,9 +15,27 @@
             <item name="APT Format" href="http://maven.apache.org/doxia/references/apt-format.html"/>
         </links>
         <menu name="Documentation">
-            <item name="Index" href="index.html"/>
-            <item name="Git" href="git.html"/>
-            <item name="Template" href="template.html"/>
+            <item name="Index" href="index.html">
+                <item name="Business">
+                    <item name="Commons">
+                    </item>
+                    <item name="ABC">
+                    </item>                
+                </item>
+                <item name="IT">
+                    <item name="Process">
+                        <item name="Scrum" href="scrum.html">
+                        </item>
+                    </item>
+                    <item name="Architecture">
+                    </item>
+                    <item name="Knowledge">
+                        <item name="git" href="git.html"/>
+                        <item name="ssh" href="ssh.html"/>
+                        <item name="template" href="template.html"/>
+                    </item>
+                </item>
+            </item>
         </menu>
     </body>
     <skin>
