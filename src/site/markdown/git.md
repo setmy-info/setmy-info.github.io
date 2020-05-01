@@ -117,5 +117,4 @@ git submodule init
 git submodule update
 
 git clone --recurse-submodules MAIN_REPO_URL
-
 ```

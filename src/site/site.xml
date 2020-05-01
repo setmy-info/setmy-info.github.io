@@ -16,9 +16,8 @@
         </links>
         <menu name="Documentation">
             <item name="Index" href="index.html"/>
-            <item name="Index" href="architecture.html"/>
-            <item name="Index" href="springboot-start-project.html"/>
-            <item name="Index" href="tomcat-start-project.md.html"/>
+            <item name="Git" href="git.html"/>
+            <item name="Template" href="template.html"/>
         </menu>
     </body>
     <skin>
