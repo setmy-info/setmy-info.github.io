@@ -6,14 +6,13 @@ On server side:
 
 ```sh
 mkdir ~/.ssh && chmod 700 ~/.ssh
-
 ```
 
 On client side:
 
 ```sh
 mkdir ~/bin
-nano ~/bin/autologin.sh
+nano ~/bin/key.gen.sh
 ```
 
 Content:
