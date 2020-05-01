@@ -1,9 +1,5 @@
 # GIT
 
-## Information
-
-## Installation
-
 ## Usage, tips and tricks
 
 ```bash
@@ -123,7 +119,3 @@ git submodule update
 git clone --recurse-submodules MAIN_REPO_URL
 
 ```
-
-## See also
-
-[xxxx](http://yyyyy)
