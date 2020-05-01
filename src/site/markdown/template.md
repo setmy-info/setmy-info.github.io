@@ -89,6 +89,7 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 
+Here should be a text. In Github ia a problem with directly adding code after table.
 
 ```
 Inside code blocks
