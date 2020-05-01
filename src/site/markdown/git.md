@@ -3,7 +3,6 @@
 ## Usage, tips and tricks
 
 ```bash
-
 git config --global user.name "Imre Tabur"
 
 git config --global user.email imre.tabur@eesti.ee
