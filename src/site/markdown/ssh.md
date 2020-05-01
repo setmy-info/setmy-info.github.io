@@ -22,6 +22,7 @@ Content:
 #!/bin/sh
 
 SSH_DIR=~/.ssh
+ARCHIVE_DIR=${SSH_DIR}/archive
 TYPE=dsa
 TYPE=rsa
 TYPE=ed25519
@@ -36,18 +37,20 @@ COPY_TO_REMOTE=yes
 COPY_TO_REMOTE=no
 
 genKey() {
-    ssh-keygen -t ${TYPE} -b ${BITS} -C "${EMAIL}" -f ${SSH_DIR}/id_${TYPE}.${SYSTEM}
-    cp ${SSH_DIR}/id_${TYPE}.${SYSTEM} ${SSH_DIR}/id_${TYPE}
-    cp ${SSH_DIR}/id_${TYPE}.${SYSTEM}.pub ${SSH_DIR}/id_${TYPE}.pub
+    mkdir -p ${ARCHIVE_DIR}
+    chmod 700 ${SSH_DIR}
+    ssh-keygen -t ${TYPE} -b ${BITS} -C "${EMAIL}" -f ${ARCHIVE_DIR}/id_${TYPE}.${SYSTEM}
+    cp ${ARCHIVE_DIR}/id_${TYPE}.${SYSTEM} ${SSH_DIR}/id_${TYPE}
+    cp ${ARCHIVE_DIR}/id_${TYPE}.${SYSTEM}.pub ${SSH_DIR}/id_${TYPE}.pub
 }
 
 makeAuth() {
-    cat ${SSH_DIR}/id_${TYPE}.${SYSTEM}.pub >> ${SSH_DIR}/authorized_keys
+    cat ${ARCHIVE_DIR}/id_${TYPE}.${SYSTEM}.pub >> ${SSH_DIR}/authorized_keys
 }
 
 echoKey() {
     echo "Copy that key to another system:"
-    cat ${SSH_DIR}/id_${TYPE}.${SYSTEM}.pub
+    cat ${ARCHIVE_DIR}/id_${TYPE}.${SYSTEM}.pub
 }
 
 copyKey() {
