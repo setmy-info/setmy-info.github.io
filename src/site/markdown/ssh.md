@@ -45,6 +45,7 @@ genKey() {
 
 makeAuth() {
     cat ${ARCHIVE_DIR}/id_${TYPE}.${SYSTEM}.pub >> ${SSH_DIR}/authorized_keys
+    chmod 600 ${SSH_DIR}/authorized_keys
 }
 
 echoKey() {
