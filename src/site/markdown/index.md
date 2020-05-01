@@ -1,3 +1,6 @@
 # Index
 
-## Information
+[Git](git.html)
+
+[Template](template.html)
+
