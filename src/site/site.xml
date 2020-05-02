@@ -69,6 +69,8 @@
                         <item name="git" href="git.html"/>
                         <item name="ssh" href="ssh.html"/>
                         <item name="openssl" href="openssl.html"/>
+                        <item name="webpack" href="webpack.html"/>
+                        <item name="material design icons" href="materialdicons.html"/>
                         <item name="template" href="template.html"/>
                     </item>
                     <item name="Misc" href="empty.html">
