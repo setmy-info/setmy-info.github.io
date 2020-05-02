@@ -1,48 +1,51 @@
 # Index
 
-* Business
-    * Projects (timely)
-        * Commons
-            * Analysis
-        * ABC
-            * Analysis
-* IT
-    * People (roles, locations, vacations, etc)
-    * Process
+* [Business](empty.html)
+    * [Projects](empty.html) (timely)
+        * [Commons](empty.html)
+            * [Analysis](empty.html)
+        * [ABC](empty.html)
+            * [Analysis](empty.html)
+* [IT](empty.html)
+    * [People](empty.html) (roles, locations, vacations, etc)
+    * [Process](empty.html)
         * [Scrum](scrum.html) (Per team, optional)
-            * Team
-            * Planning
-            * Refinements (optional)
-            * Backlog
-            * Sprints
-            * Retrospectives
-        * Kanban (Optional)
-        * Other meetings (meeting notes, etc)
-        * Testing (optional, plans, specs)
-    * Architecture
-        * Decisions
-            * PoC & Spikes
-        * Enterprise architecture
-            * Environments and top level buildingblocks/components/software
-        * Components/Modules/Projects (Module or component or app or library as Project)
-            * Commons and overview
-                * Architecture
-                * Requirements
-                * Development notes
-                * QA: test guides and specifications
-                * Release notes
-                * Deployment notes
-                * Maintenance
-            * XYZ
-                * Architecture
-                * Requirements
-                * Development notes
-                * QA: test guides and specifications
-                * Release notes
-                * Deployment notes
-                * Maintenance
+            * [Team](empty.html)
+            * [Planning](empty.html)
+            * [Refinements](empty.html) (optional)
+            * [Backlog](empty.html)
+            * [Sprints](empty.html)
+            * [Retrospectives](empty.html)
+        * [Kanban](empty.html) (Optional)
+        * [Other meetings](empty.html) (meeting notes, etc)
+        * [Testing](empty.html) (optional, plans, specs)
+    * [Architecture](architecture.html)
+        * [Decisions](empty.html)
+            * [PoC & Spikes](empty.html)
+        * [Enterprise architecture](empty.html)
+            * [Environments and top level buildingblocks/components/software](empty.html)
+        * [Components/Modules/Projects, Module or component or app or library as Project](empty.html)
+            * [Commons and overview](empty.html)
+                * [Architecture](empty.html)
+                * [Requirements](empty.html)
+                * [Development notes](empty.html)
+                * [QA: test guides and specifications](empty.html)
+                * [Release notes](empty.html)
+                * [Deployment notes](empty.html)
+                * [Maintenance](empty.html)
+            * [XYZ](empty.html)
+                * [Architecture](empty.html)
+                * [Requirements](empty.html)
+                * [Development notes](empty.html)
+                * [QA: test guides and specifications](empty.html)
+                * [Release notes](empty.html)
+                * [Deployment notes](empty.html)
+                * [Maintenance](empty.html)
             * ...
     * Knowledge
         * [git](git.html)
         * [ssh](ssh.html)
+        * [openssl](openssl.html)
         * [template](template.html)
+    * [Misc](empty.html)
+        * [Draft](draft.html)

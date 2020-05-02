@@ -2,7 +2,9 @@
 
 ## Documentation wiki structure hierarchy standard
 
-This documentation is in *Draft* status!
+This documentation is in *Draft* status for version: 1.0.0
+
+Implementation is at [index page](index.html) and in maven site.
 
 Shortly perhaps one of these: _**DWS**_ or ~~**DWSH**~~ or ~~**DWSHS**~~
 
@@ -58,3 +60,5 @@ Prefer longer pages under hierarch section. Use different headings, prefer 3 lev
             * ...
     * Knowledge
         * Tool xyz
+    * Misc
+        * Draft

@@ -23,16 +23,55 @@
                     </item>                
                 </item>
                 <item name="IT">
+                    <item name="People" href="empty.html"/>
                     <item name="Process">
                         <item name="Scrum" href="scrum.html">
+                            <item name="Team" href="empty.html"/>
+                            <item name="Planning" href="empty.html"/>
+                            <item name="Refinements" href="empty.html"/>
+                            <item name="Backlog" href="empty.html"/>
+                            <item name="Sprints" href="empty.html"/>
+                            <item name="Retrospectives" href="empty.html"/>
                         </item>
+                        <item name="Other meetings" href="empty.html"/>
+                        <item name="Kanban" href="empty.html"/>
+                        <item name="Testing" href="empty.html"/>
                     </item>
-                    <item name="Architecture">
+                    <item name="Architecture" href="architecture.html">
+                        <item name="Decisions" href="empty.html">
+                            <item name="PoC &amp; Spikes" href="empty.html"/>
+                        </item>
+                        <item name="Enterprise architecture" href="empty.html">
+                            <item name="EA" href="empty.html"/>
+                        </item>
+                        <item name="Components" href="empty.html">
+                            <item name="Commons and overview" href="empty.html">
+                                <item name="Architecture" href="empty.html"/>
+                                <item name="Requirements" href="empty.html"/>
+                                <item name="Development notes" href="empty.html"/>
+                                <item name="V&amp;V, test and audit guides and specifications" href="empty.html"/>
+                                <item name="Release notes" href="empty.html"/>
+                                <item name="Deployment notes" href="empty.html"/>
+                                <item name="Maintenance" href="empty.html"/>
+                            </item>
+                            <item name="Xyz" href="empty.html">
+                                <item name="Architecture" href="empty.html"/>
+                                <item name="Requirements" href="empty.html"/>
+                                <item name="Development notes" href="empty.html"/>
+                                <item name="V&amp;V, test and audit guides and specifications" href="empty.html"/>
+                                <item name="Release notes" href="empty.html"/>
+                                <item name="Deployment notes" href="empty.html"/>
+                                <item name="Maintenance" href="empty.html"/>
+                            </item>
+                        </item>
                     </item>
                     <item name="Knowledge">
                         <item name="git" href="git.html"/>
                         <item name="ssh" href="ssh.html"/>
                         <item name="template" href="template.html"/>
+                    </item>
+                    <item name="Misc" href="empty.html">
+                        <item name="Draft" href="draft.html"/>
                     </item>
                 </item>
             </item>
