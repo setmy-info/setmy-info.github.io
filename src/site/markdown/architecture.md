@@ -3,8 +3,8 @@
 Why predefined architecture?
 
 1. Most of the important is that, decision are made (you like it or not), that means some kind of plan are made.
-    - More time - no need to spend time to argue, where oposide sides should prove something, prepare for proving,
-    search information for proving, reading and listening eachother, misunderstanding,  etc etc
+- More time - no need to spend time to argue, where oposide sides should prove something, prepare for proving,
+search information for proving, reading and listening eachother, misunderstanding,  etc etc
 
 2. Bad plan is a better than no plan.
 
@@ -21,51 +21,51 @@ possibilites - component locations in folder structure, module/component folder 
 
 ### Standard environments list
 
-    * dev - developers and teams playground
-    * atest - Automatic tests playground
-    * test - (user and) acceptance test playground with fake data
-    * prelive - (user and) acceptance test playground with real data
-    * live - endusers playground and production
+* dev - developers and teams playground
+* atest - Automatic tests playground
+* test - (user and) acceptance test playground with fake data
+* prelive - (user and) acceptance test playground with real data
+* live - endusers playground and production
 
-    Environments should be separated and not used in moxed and crossed way (one environemnt komponent is usind another environment komponent).
-    Peopel should not talk in mashine names, just with environmnet names.
+Environments should be separated and not used in moxed and crossed way (one environemnt komponent is usind another environment komponent).
+Peopel should not talk in mashine names, just with environmnet names.
 
 ### Standard profiles
 
-    Profiles for Maven, Spring, Micronaut etc profiles are per environment one to one. Name it as mentioned in Standard environments list.
+Profiles for Maven, Spring, Micronaut etc profiles are per environment one to one. Name it as mentioned in Standard environments list.
 
 ### Versioning
 
-    Currently used: Semantic Versioning 2.0.0
+Currently used: Semantic Versioning 2.0.0
 
-    https://semver.org/
+[Sematic versioning page](https://semver.org/)
 
-    Use at development and testing time suffix: -SNAPSHOT
+Use at development and testing time suffix: -SNAPSHOT
 
-    Currently only numbers are used. No alphabetic prefixes or suffixes.
+Currently only numbers are used. No alphabetic prefixes or suffixes.
 
-    Examples:
-    
-        At development time: 1.2.3-SNAPSHOT and after release: 1.2.3
-        At development time, with build number: 1.2.3-54321-SNAPSHOT and after release: 1.2.3
+Examples:
+
+* At development time: 1.2.3-SNAPSHOT and after release: 1.2.3
+* At development time, with build number: 1.2.3-54321-SNAPSHOT and after release: 1.2.3
 
 ### Branching
 
-    * git flow (Vincent Driessen aka [nvie], https://nvie.com/posts/a-successful-git-branching-model/)
-        master, default, feature, release branches
-    * flexible but compex internal branching schema:
-        N number of branches per release items - release branches
-        Releasing at any time, any order
-        Handling releases or hotfixes same way.
+* git flow (Vincent Driessen aka [nvie], https://nvie.com/posts/a-successful-git-branching-model/)
+master, default, feature, release branches
+* flexible but compex internal branching schema:
+N number of branches per release items - release branches
+Releasing at any time, any order
+Handling releases or hotfixes same way.
 
 ### Microservices and API-s
 
-    All external or third party API-s by default should be behind internal API.
-        - actually can be more fault tolerant
-        - more freedom (caching, DB, replace, re-desing external API or design, replace [later throw external out]).
-        - 2 types, that can be in one but clearly understandable, what can be used
-            - direct, that is 1:1 transfering and translating 3dp or external API
-            - complex or translated (strongly preferred), that is probably translating and doing many complext requests to 3dp/ex API 
+All external or third party API-s by default should be behind internal API.
+* actually can be more fault tolerant
+* more freedom (caching, DB, replace, re-desing external API or design, replace [later throw external out]).
+* 2 types, that can be in one but clearly understandable, what can be used
+** direct, that is 1:1 transfering and translating 3dp or external API
+** complex or translated (strongly preferred), that is probably translating and doing many complext requests to 3dp/ex API 
 
 ### Translations
 

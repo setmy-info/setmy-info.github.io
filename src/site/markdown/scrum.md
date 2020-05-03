@@ -4,7 +4,9 @@
 
 [Scrum Guide](https://www.scrumguides.org/scrum-guide.html)
 
-### Sugestions
+## Suggestions
+
+### Issue management
 
     * Epic: top or root level product backlog item (PBI). Written by product owner. Can contain N number of Stories.
         * Story: written by product owner together with development team, usually at refinement meeting or at sprint planning. Can contain N number of sub-tasks.
@@ -26,7 +28,7 @@ Other:
 3. Use WIP limit: maximum number of stories under development.
 4. User story format. Team defines sub-tasks what should be done to implement whole task.
 
-Sprint planning
+### Sprint planning
 
 * 4h for 2 week sprint: split it to refinement (preplanning) meeting.
 * Sprint goal
@@ -34,22 +36,25 @@ Sprint planning
 * Scrum master
 * Product owner
 * Dev. team
-: What can be delivered in the Increment resulting8 from the upcoming Sprint?
-: How will the work needed to deliver the Increment be achieved?
 
+1. What can be delivered in the Increment resulting8 from the upcoming Sprint?
+2. How will the work needed to deliver the Increment be achieved?
 
-Daily Scrum strict part
+### Daily Scrum
+
+Strictly:
 
 * 15min max, 
 * Scrum master
 * Dev. team
-:What did you do to acomp. sprint goal?
-:What do yo do to acomp. sprint goal?
-:Impediments?
-- After daily freeform speach
 
+1. What did you do to acomp. sprint goal?
+2. What do yo do to acomp. sprint goal?
+3. Impediments?
 
-Sprint review
+After daily freeform speach between persons who need to discuss deeper
+
+### Sprint review
 
 * 2h for 2 weeks max
 * Dev. team
@@ -58,22 +63,20 @@ Sprint review
 * Collaborators discuss about next things
 * Potentially shippable product
 
-
-Sprint retrospective
+### Sprint retrospective
 
 * 2,5% of sprint length max (2h 2 week sprint)
 * Scrum master
 * Dev. team
-: What went and is done well?
-: What didint go well and need to change?
-: Action points + person
+1. What went and is done well?
+2. What didint go well and need to change?
+3. Action points + person
 
-
-Check list
+## Checklist
 
 * Are team stable?
 * Is team same in the sprint?
-* Are actionpoints used or some substitute is used?
+* Are actionpoints or some substitute used?
 * Clearly understandable tasks?
 * Independent
 * Negotiable - no specific contract fir features
@@ -82,12 +85,10 @@ Check list
 * Small
 * Testable - verifable
 * SMART principle
+* integrate by one team only
 
+## Scrum implementations elements
 
-Integrate by one team only.
-Working code every day.
-
-SCRUMMI RAKENDUSI
 * Spike / AP
 * Epic (with uncertain estimation), US/Issue (bug/defect, technical + AC; certain estimation), task - per layer, component, 
 * Done Done Done Done
@@ -95,15 +96,16 @@ SCRUMMI RAKENDUSI
 * WIP
 * Team velocity and v.graph
 * Temporary pair programming
-* Burn down: sprint and release
+* Burn down chart: sprint and release
+* Burn up chart
+* DoR
 * DoD
 * User Story lead vs sprint planning subtasking ang GANT graph.
 * One team one board
-* sprint planning and refinement
-* pipeline: flow is restricted
+* All PBI-s for all dev. team
+* Sprint planning and refinement
 * x (smoke acceptance) testing
-* strictly pull
+* Strictly pull
 * Impediments, standup and scrum master
-* timebox
+* Timebox
 * After standup meeting
-

@@ -7,6 +7,10 @@ git config --global user.name "Imre Tabur"
 
 git config --global user.email imre.tabur@eesti.ee
 
+git config --global user.email
+
+git config --global user.name
+
 git config --global core.editor "c:\Program Files\Notepad++\notepad++.exe"
 
 git config --global core.editor nano
@@ -20,6 +24,8 @@ git config --global core.autocrlf false
 git config --global core.autocrlf input
 
 git config --get remote.origin.url
+
+git config --global color.ui auto
 
 git checkout master
 
@@ -73,11 +79,15 @@ git reset --hard HEAD~1
 
 git reset --hard origin/feature/FEATURE
 
-git tag -a v1.2.3 -m "v1.2.3"
+git tag -a 1.2.3 -m "1.2.3"
 
-git tag -a v1.2.3 -m "v1.2.3" COMMITHASH
+git tag -a 1.2.3 -m "1.2.3" COMMITHASH
+
+git push origin 1.2.3
 
 git push --tags
+
+git push --delete origin 1.2.3
 
 Uncommit:
 
@@ -116,4 +126,6 @@ git submodule init
 git submodule update
 
 git clone --recurse-submodules MAIN_REPO_URL
+
+git daemon --enable=receive-pack --reuseaddr --verbose  --base-path=. --export-all ./setmy-info.github.io
 ```
