@@ -18,24 +18,26 @@
             <item name="Index" href="index.html">
                 <item name="Business">
                     <item name="Commons">
+                        <item name="Analysis" href="business/projects/commons/analysis.html"/>
                     </item>
                     <item name="ABC">
-                    </item>                
+                        <item name="Analysis" href="business/projects/ABC/analysis.html"/>
+                    </item>
                 </item>
                 <item name="IT">
                     <item name="People" href="empty.html"/>
                     <item name="Process">
-                        <item name="Scrum" href="scrum.html">
-                            <item name="Team" href="empty.html"/>
-                            <item name="Planning" href="empty.html"/>
-                            <item name="Refinements" href="empty.html"/>
-                            <item name="Backlog" href="empty.html"/>
-                            <item name="Sprints" href="empty.html"/>
-                            <item name="Retrospectives" href="empty.html"/>
+                        <item name="Scrum" href="it/process/scrum/index.html">
+                            <item name="Team" href="it/process/scrum/team.html"/>
+                            <item name="Planning" href="it/process/scrum/planning.html"/>
+                            <item name="Refinements" href="it/process/scrum/refinements.html"/>
+                            <item name="Backlog" href="it/process/scrum/backlog.html"/>
+                            <item name="Sprints" href="it/process/scrum/sprints.html"/>
+                            <item name="Retrospectives" href="it/process/scrum/retrospectives.html"/>
                         </item>
-                        <item name="Other meetings" href="empty.html"/>
-                        <item name="Kanban" href="empty.html"/>
-                        <item name="Testing" href="empty.html"/>
+                        <item name="Other meetings" href="it/process/othermeetings.html"/>
+                        <item name="Kanban" href="it/process/kanban/index.html"/>
+                        <item name="Testing" href="it/process/testing.html"/>
                     </item>
                     <item name="Architecture" href="architecture.html">
                         <item name="Decisions" href="empty.html">
