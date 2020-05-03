@@ -68,6 +68,7 @@ After daily freeform speach between persons who need to discuss deeper
 * 2,5% of sprint length max (2h 2 week sprint)
 * Scrum master
 * Dev. team
+
 1. What went and is done well?
 2. What didint go well and need to change?
 3. Action points + person
