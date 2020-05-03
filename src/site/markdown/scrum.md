@@ -8,9 +8,9 @@
 
 ### Issue management
 
-    * Epic: top or root level product backlog item (PBI). Written by product owner. Can contain N number of Stories.
-        * Story: written by product owner together with development team, usually at refinement meeting or at sprint planning. Can contain N number of sub-tasks.
-            * (Sup-)task: tasks to be done to implement story. Written by develpoment team.
+* Epic: top or root level product backlog item (PBI). Written by product owner. Can contain N number of Stories.
+** Story: written by product owner together with development team, usually at refinement meeting or at sprint planning. Can contain N number of sub-tasks.
+*** (Sup-)task: tasks to be done to implement story. Written by develpoment team.
 
 Refinement meeting (or longer sprint planning): meeting with whole Scrum team (PO, SM and dev. team).
 
