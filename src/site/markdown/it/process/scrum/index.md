@@ -110,3 +110,15 @@ After daily freeform speach between persons who need to discuss deeper
 * Impediments, standup and scrum master
 * Timebox
 * After standup meeting
+
+## Videos
+
+* https://www.youtube.com/watch?v=1RmCahV3Tbw
+* https://www.youtube.com/watch?v=2Jhf7PcYrzY
+* https://www.youtube.com/watch?v=lXOhfKV6jLQ
+* https://www.youtube.com/watch?v=iwkb56GQg9Q
+* https://www.youtube.com/watch?v=eIyaCPcUuyQ
+* https://www.youtube.com/watch?v=HV76WzqpSI0
+* https://www.youtube.com/watch?v=XkhJDbaW0j0
+* https://www.youtube.com/watch?v=MFLvQXMNrO8
+* https://www.youtube.com/watch?v=1yZ3J8C4MK0
