@@ -4,6 +4,10 @@
 
 ## Usage, tips and tricks
 
+### Command line Runner
+
+To inject dependencies.
+
 ```Java
 package info.setmy.spring.boot;
 
