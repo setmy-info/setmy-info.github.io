@@ -33,6 +33,25 @@ public class MergerApplication implements CommandLineRunner {
 }
 ```
 
+### Debugging
+
+```sh
+mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
+```
+
+Or in pom.xml
+
+```xml
+<plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring.boot.verions}</version>
+        <configuration>
+                >jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000</jvmArguments>
+        </configuration>
+</plugin>
+```
+
 ## See also
 
 [Spring Boot Starter](https://start.spring.io/)
