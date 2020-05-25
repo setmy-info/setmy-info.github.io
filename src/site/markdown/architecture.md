@@ -21,9 +21,10 @@ possibilites - component locations in folder structure, module/component folder 
 
 ### Standard environments list
 
+* local - developer local machine
 * dev - developers and teams playground
-* atest - Automatic tests playground
-* test - (user and) acceptance test playground with fake data
+* ci (also atest) - Automatic tests playground
+* testing - (user and) acceptance test playground with fake data. Keyword 'test' is Spring Boot test profile. Not to mix with them.
 * prelive - (user and) acceptance test playground with real data
 * live - endusers playground and production
 
