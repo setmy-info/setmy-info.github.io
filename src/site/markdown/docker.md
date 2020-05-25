@@ -6,6 +6,7 @@
 
 ### CentOS
 
+```sh
     sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
     sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -14,6 +15,13 @@
     sudo systemctl enable docker
     sudo usermod -a -G docker USERNAME
     docker run hello-world
+```
+
+### Build image
+
+```sh
+docker build .
+```
 
 #### kubectl
 
