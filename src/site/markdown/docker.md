@@ -31,6 +31,7 @@ docker build .
 
 ## Docker compose
 
+```
     [Docker compose](https://docs.docker.com/compose)
     sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
@@ -42,25 +43,33 @@ docker build .
         Option --file can be used.
     To scale:
         docker-compose up --scale microservice-xyz=3
+```
 
 ## Portainer
 
+```
     docker volume create portainer_data
     docker run --name portainer -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
     firefox --new-tab http://localhost:9000/#/init/admin
     For example: User: admin, Password: adminadmin
+```
 
 ## Docker Registry
 
+```
     docker run -d -p 5000:5000 --restart=always --name registry registry:2
     docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry:/var/lib/registry registry:2
+```
 
 ## Dockerize Postgresql
 
+```
     [Dockerize Postgresql](https://docs.docker.com/v17.09/engine/examples/postgresql_service/)
+```
 
 ## Usage, tips and tricks
 
+```
     docker pull centos
     docker image list
     docker image rm 41e53a126a5d
@@ -91,6 +100,50 @@ docker build .
            }
         }
     }
+```
+
+## Saved previous examples
+
+```
+FROM setmyinfo/setmy-info-centos-java:latest
+
+MAINTAINER Imre Tabur "imre.tabur@eesti.ee"
+
+LABEL org.label-schema.name="Docker HUB CentOS Spring boot micro service base" \
+      org.label-schema.version="1.2.0-SNAPSHOT" \
+      org.label-schema.description="setmy.info Docker HUB Centos Spring boot micro service base" \
+      org.label-schema.vendor="Hear And See Systems LLC" \
+      org.label-schema.url="https://www.hearandseesystems.com" \
+      org.label-schema.license="MIT" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.build-date=$BUILD_DATE
+
+#ENV http_proxy http://cache.example.com:8080
+#ENV https_proxy http://cache.example.com:8080
+
+# docker run -p 8080:8080 setmyinfo/setmy-info-java-microservice:v1.0.0
+# docker run -e "SPRING_PROFILES_ACTIVE=dev" setmyinfo/setmy-info-java-microservice:v1.0.0
+
+# TODO : move that into base images with user creation etc
+COPY target/springboot-start-project-1.0.0-SNAPSHOT.jar /opt/has/lib/app.jar
+#RUN chown -R root:root                  /opt/has/lib/app.jar
+RUN chown -R microservice:microservice                  /opt/has/lib/app.jar
+RUN ls -la /opt/has/lib/app.jar
+RUN java -version
+RUN ls /dev/urandom
+
+# Can add -Djavax.net.ssl.trustStore=/opt/has/lib/store.jks -Djavax.net.ssl.keyStorePassword=secretpass
+ENV JAVA_OPTS="-Djava.security.egd=file:/dev/urandom"
+
+WORKDIR /var/opt/has/microservice
+
+EXPOSE 8080/tcp
+EXPOSE 8443/tcp
+
+#CMD ["/bin/sh"]
+CMD java ${JAVA_OPTS} -jar /opt/has/lib/app.jar
+```
+
 
 ## See also
 
