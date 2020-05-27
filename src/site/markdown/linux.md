@@ -45,11 +45,17 @@
     X-KDE-Username=
 
 ## key gen
-    
+
     ssh-keygen -t ed25519 -a 1000
     ssh-keygen -t rsa -b 4096 -a 1000
 
 ## Usage, tips and tricks
+
+### zip
+
+```sh
+zip -r filename.zip ./somefolder
+```
 
 ## See also
 

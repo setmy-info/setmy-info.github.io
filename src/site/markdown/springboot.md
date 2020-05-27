@@ -52,6 +52,13 @@ Or in pom.xml
 </plugin>
 ```
 
+### Getting profiles in code
+
+```Java
+    @Autowired
+    Environment environment;
+```
+
 ## See also
 
 [Spring Boot Starter](https://start.spring.io/)

@@ -89,6 +89,8 @@ git push --tags
 
 git push --delete origin 1.2.3
 
+git tag --delete 1.2.3
+
 Uncommit:
 
 git reset --soft HEAD~1
