@@ -10,4 +10,4 @@ npx create-react-app react-app
 
 ## See also
 
-[xxxx](http://yyyyy)
+[React](https://reactjs.org/)
