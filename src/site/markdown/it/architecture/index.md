@@ -24,8 +24,8 @@ possibilites - component locations in folder structure, module/component folder 
 * local - developer local machine
 * dev - developers and teams playground
 * ci (also atest) - Automatic tests playground
-* testing - (user and) acceptance test playground with fake data. Keyword 'test' is Spring Boot test profile. Not to mix with them.
-* prelive - (user and) acceptance test playground with real data
+* testing - user and acceptance test playground with fake data. Keyword 'test' is Spring Boot test profile. Not to mix with them.
+* prelive - user and acceptance test playground with real data
 * live - endusers playground and production
 
 Environments should be separated and not used in moxed and crossed way (one environemnt komponent is usind another environment komponent).
@@ -82,8 +82,24 @@ All external or third party API-s by default should be behind internal API.
 
 ### Developers
 
-    Preferred OS should be choosen for production machines and developers should use that OS as development machine.
-        - learning and collecting knowhow
+Preferred OS should be choosen for production machines and developers should use that OS as development machine.
+
+- learning and collecting knowhow
+
+IDE - same IDE without configuration changes for all developers
+
+That means:
+
+- install
+- start working
+
+Instead:
+
+- install
+- remember to find documentation
+- read documentation
+- configure by documentation
+- start working
 
 ### Docker
 
@@ -94,9 +110,21 @@ All external or third party API-s by default should be behind internal API.
 
 ### Linux
 
-    In priority order (higher to lower): CentOS, Fedora linux, Debian
-    Follow FHS: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
-    Follow LSB: https://refspecs.linuxfoundation.org/lsb.shtml
+In priority order (higher to lower): CentOS, Fedora linux, Debian
+
+Follow FHS: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
+
+Follow LSB: https://refspecs.linuxfoundation.org/lsb.shtml
+
+By setmy.info standards all packages should be unpacked (if possible) directly under /opt folder.
+
+Examples:
+
+- /opt/cmake-3.17.1-Linux-x86_64
+- /opt/jdk-14.0.1
+- /opt/firefox
+- /opt/node-v12.18.1-linux-x64
+- /opt/apache-maven-3.6.3
 
 ### Other OS
 
@@ -162,10 +190,10 @@ All external or third party API-s by default should be behind internal API.
 ### Decided tools, components and libraries
 
 1. OS
-1.1 MOVED
+1.1 DOCUMENTATION MOVED
 2. Containers
-2.1 MOVED
-2.2 MOVED
+2.1 DOCUMENTATION MOVED
+2.2 DOCUMENTATION MOVED
 3 Shell
 3.1 Bourne shell and use #!/bin/sh not #!/bin/bash. First one is in base installation of CentOS, Fedora, *BSD, Solaris, Debian (*buntu), OpenIndiana etc.
 3.2 Therefore shell script should be not be written in "bashism" (bash way), but as much as possible in POSIX shell way.

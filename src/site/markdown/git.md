@@ -127,6 +127,8 @@ git submodule init
 
 git submodule update
 
+git submodule update --init
+
 git clone --recurse-submodules MAIN_REPO_URL
 
 git daemon --enable=receive-pack --reuseaddr --verbose  --base-path=. --export-all ./setmy-info.github.io

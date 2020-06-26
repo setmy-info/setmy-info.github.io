@@ -25,8 +25,8 @@
                     </item>
                 </item>
                 <item name="IT">
-                    <item name="People" href="empty.html"/>
-                    <item name="Process">
+                    <item name="People" href="it/people.html"/>
+                    <item name="Process" href="it/process/index.html">
                         <item name="Scrum" href="it/process/scrum/index.html">
                             <item name="Team" href="it/process/scrum/team.html"/>
                             <item name="Planning" href="it/process/scrum/planning.html"/>
@@ -39,14 +39,14 @@
                         <item name="Kanban" href="it/process/kanban/index.html"/>
                         <item name="Testing" href="it/process/testing.html"/>
                     </item>
-                    <item name="Architecture" href="architecture.html">
-                        <item name="Decisions" href="empty.html">
-                            <item name="PoC &amp; Spikes" href="empty.html"/>
+                    <item name="Architecture" href="it/architecture/index.html">
+                        <item name="Decisions" href="it/architecture/decisions/index.html">
+                            <item name="PoC &amp; Spikes" href="it/architecture/decisions/poc.spikes.html"/>
                         </item>
-                        <item name="Enterprise architecture" href="empty.html">
-                            <item name="EA" href="empty.html"/>
+                        <item name="Enterprise architecture" href="it/architecture/enterprise-architecture/index.html">
+                            <item name="EA" href="it/architecture/enterprise-architecture/buildingblocks.html"/>
                         </item>
-                        <item name="Components" href="empty.html">
+                        <item name="Components" href="it/architecture/components/index.html">
                             <item name="Commons and overview" href="empty.html">
                                 <item name="Architecture" href="empty.html"/>
                                 <item name="Requirements" href="empty.html"/>
@@ -56,6 +56,9 @@
                                 <item name="Deployment notes" href="empty.html"/>
                                 <item name="Maintenance" href="empty.html"/>
                             </item>
+                            <item name="setmy-info.github.io" href="it/architecture/components/setmy-info.github.io.html" />
+                            <item name="setmy-info.github.io" href="it/architecture/components/setmy.info.html" />
+                            <item name="setmy-info-scripts" href="it/architecture/components/setmy-info-scripts.html" />
                             <item name="Xyz" href="empty.html">
                                 <item name="Architecture" href="empty.html"/>
                                 <item name="Requirements" href="empty.html"/>
