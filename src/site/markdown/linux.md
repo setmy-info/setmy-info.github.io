@@ -57,6 +57,20 @@
 zip -r filename.zip ./somefolder
 ```
 
+### rsync
+
+sync directories from source to destination folder:
+
+```sh
+rsync -av --exclude 'exclude.file.txt' ./source/ ./destination/
+```
+
+Mirroring and delete files in destination folder, when thery are not in source folder:
+
+```sh
+rsync -av --delete --exclude 'exclude.file.txt' ./source/ ./destination/
+```
+
 ## See also
 
     [xxxx](http://yyyyy)
