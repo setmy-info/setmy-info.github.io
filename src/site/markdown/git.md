@@ -23,6 +23,10 @@ git config --global core.autocrlf false
 
 git config --global core.autocrlf input
 
+git config --global merge.tool meld
+
+git config --global mergetool.meld.path "c:\Program Files (x86)\Meld\Meld.exe"
+
 git config --get remote.origin.url
 
 git config --global color.ui auto
