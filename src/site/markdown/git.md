@@ -11,7 +11,7 @@ git config --global user.email
 
 git config --global user.name
 
-git config --global core.editor "c:\Program Files\Notepad++\notepad++.exe"
+git config --global core.editor "'c:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 
 git config --global core.editor nano
 
