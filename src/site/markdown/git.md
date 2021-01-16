@@ -67,6 +67,14 @@ git commit --amend --author="Imre Tabur <imre.tabur@eesti.ee>"
 
 git diff Bonebranch..anotherbranch
 
+git diff > diff.patch
+
+git apply --stat diff.patch
+
+git apply --check diff.patch
+
+git am --signoff < diff.patch 
+
 git rebase -i HEAD~3
 
 git rebase HEAD~1 --onto master
