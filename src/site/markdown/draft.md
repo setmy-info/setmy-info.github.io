@@ -28,7 +28,7 @@ cd groovy-services && mvn org.pitest:pitest-maven:mutationCoverage site:site && 
 cd java-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
 cd jwt-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
 cd springboot-start-project && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd ..&&
-cd documentation && mvn site:site && cd ..
+cd submodules/setmy-info.github.io && mvn site:site && cd ..
 
 1.
     docker build -t setmyinfo/node-start-project .
@@ -40,7 +40,7 @@ cd documentation && mvn site:site && cd ..
 
     docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT .
     docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
-        
+
 2. Or
 
     firefox --new-tab http://localhost:4000
@@ -127,4 +127,3 @@ cd documentation && mvn site:site && cd ..
     9. If you have requirement, that we have 3 layers (controller, service, resource): how you implement service layer in VueJS project?
     10. REST is returning following item object: "{isVisible: "No", firstName: "Imre", "Tabur"}". You should shouw that item data depending of isVisible.
         What you write into template, how it wol look like?
-        
