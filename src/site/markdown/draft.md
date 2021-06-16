@@ -41,19 +41,27 @@ cd submodules/setmy-info.github.io && mvn site:site && cd ..
     docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT .
     docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
 
+1.2. Spring boot microservice
+    docker build -t setmyinfo/springboot-start-project:1.0.0-SNAPSHOT .
+    docker run -p 8020:8080 -d setmyinfo/springboot-start-project:1.0.0-SNAPSHOT
+
+1.3. Tomcat web app
+    docker build -t setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT .
+    docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
+
 2. Or
 
-    firefox --new-tab http://localhost:4000
-    firefox --new-tab http://localhost:8010/rest/hello
-    firefox --new-tab http://localhost:8020/rest/hello
-    firefox --new-tab http://localhost:8020/api/example
-    firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/
-    firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/rest/hello
-    firefox --new-tab http://localhost/tomcat-start-project/
-    firefox --new-tab http://localhost/springboot-start-project/api/example
-    firefox --new-tab http://localhost/springboot-start-project/rest/hello
-    firefox --new-tab http://localhost/micronaut-start-project/rest/hello
-    firefox --new-tab http://localhost/node-start-project/
+    /opt/firefox/firefox --new-tab http://localhost:4000
+    /opt/firefox/firefox --new-tab http://localhost:8010/rest/hello
+    /opt/firefox/firefox --new-tab http://localhost:8020/rest/hello
+    /opt/firefox/firefox --new-tab http://localhost:8020/api/example
+    /opt/firefox/firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/
+    /opt/firefox/firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/rest/hello
+    /opt/firefox/firefox --new-tab http://localhost/tomcat-start-project/
+    /opt/firefox/firefox --new-tab http://localhost/springboot-start-project/api/example
+    /opt/firefox/firefox --new-tab http://localhost/springboot-start-project/rest/hello
+    /opt/firefox/firefox --new-tab http://localhost/micronaut-start-project/rest/hello
+    /opt/firefox/firefox --new-tab http://localhost/node-start-project/
 
 3. Ports
 
