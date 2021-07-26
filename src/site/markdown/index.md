@@ -50,6 +50,7 @@
         * [ssh](ssh.html)
         * [openssl](openssl.html)
         * [webpack](webpack.html)
+        * [Xfce](xfce.html)
         * [template](template.html)
     * [Misc](empty.html)
         * [Draft](draft.html)
