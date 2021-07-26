@@ -239,3 +239,4 @@ Examples:
     5. Central Cache and session storage. JWT and session revoke in identiti management systems. Multi node systesm. Health checks. API GW (rate limiting, security, identity management etc). Multiple hardware (servers, network nodes, powwersuplies, UPS etc) nodes. Storage systems.
  
 15. Prefer standard or well defined or stable tools over self making tools.
+16. Xfce is class desktop environment.
