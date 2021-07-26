@@ -151,10 +151,11 @@ Examples:
 ### Back end
 
     Java, Groovy, NodeJS, Python, (Not decided: Go, C/C++)
-    SpringBoot, Spring, Micronaut
+    SpringBoot, Spring
     JSR-330
     3 Layer (Controller/REST/SOAP/etc, Service, DAO/API/DataSource)
     JPA (Hibernate)
+3 modules (Application, implementation (services), models (also interfaces, exceptions, VO, DTO-s))
 
 ### Testing
 
@@ -237,3 +238,4 @@ Examples:
     4. Central Cache and session storage. JWT and session revoke in cache systems. Multi node solutions. Multi HW servers only.
     5. Central Cache and session storage. JWT and session revoke in identiti management systems. Multi node systesm. Health checks. API GW (rate limiting, security, identity management etc). Multiple hardware (servers, network nodes, powwersuplies, UPS etc) nodes. Storage systems.
  
+15. Prefer standard or well defined or stable tools over self making tools.

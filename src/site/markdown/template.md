@@ -4,7 +4,7 @@
 
 ## Installation
 
-### CentOS
+### CentOS, Rocky Linux
 
 ### Fedora
 
