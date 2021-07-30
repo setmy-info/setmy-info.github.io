@@ -109,3 +109,10 @@ copyKey
 
 exit 0
 ```
+
+Change key file password
+
+```sh
+ssh-keygen -p -f ~/.ssh/id_rsa
+ssh-keygen -p -f ~/.ssh/id_ed25519
+```
