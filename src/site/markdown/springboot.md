@@ -59,6 +59,14 @@ Or in pom.xml
     Environment environment;
 ```
 
+### Make console silent
+
+```yml
+spring:
+    main:
+        banner-mode: "off"
+```
+
 ## See also
 
 [Spring Boot Starter](https://start.spring.io/)
