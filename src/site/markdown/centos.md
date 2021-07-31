@@ -10,7 +10,7 @@
 
 ### Development machine preparation
 
-    dnf -y install mc ansible nano make yum-utils rpmdevtools rpm-build git mercurial
+    dnf -y install mc ansible nano make yum-utils rpmdevtools rpm-build git mercurial meld
     dnf -y install java-1.8.0-openjdk
     Install postgres tools from Postgre guide.
     Install docker by docker guide.
