@@ -67,3 +67,8 @@ Most finished or just main libraries are:
 ## Deployment notes
 
 ## Maintenance
+
+## Lessons learned
+
+ 1. Tomcat project should start with mvn jetty:run without warnings about dupplicate classes. Should follow top libraries (hibernate core, spring core) deps. Tomcat project didnt start, because some method access errors. Dozer, esapi, logback, jaxb introduced duplicates hell.
+ 
