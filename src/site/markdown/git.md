@@ -2,6 +2,8 @@
 
 ## Usage, tips and tricks
 
+Set and check name and email for git.
+
 ```bash
 git config --global user.name "Imre Tabur"
 
@@ -10,7 +12,9 @@ git config --global user.email imre.tabur@eesti.ee
 git config --global user.email
 
 git config --global user.name
+```
 
+```bash
 git config --global core.editor "'c:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 
 git config --global core.editor nano
@@ -27,6 +31,7 @@ git config --global merge.tool meld
 
 git config --global mergetool.meld.path "c:\Program Files (x86)\Meld\Meld.exe"
 
+# Show remote origin repo url
 git config --get remote.origin.url
 
 git config --global color.ui auto
@@ -49,6 +54,7 @@ git push
 
 git push -f origin feature/FEATURE
 
+# Remove tracking for non existing remote branches.
 git remote prune origin
 
 git cherry-pick COMMITHASH
@@ -61,8 +67,7 @@ git commit -m 'Commit mesage'
 
 git commit --amend -m 'New Message'
 
-Change last commit author:
-
+# Change last commit author:
 git commit --amend --author="Imre Tabur <imre.tabur@eesti.ee>"
 
 git diff Bonebranch..anotherbranch
@@ -85,8 +90,7 @@ git log --graph --decorate --pretty=oneline --abbrev-commit
 
 git reset filename(s)
 
-Remove last commit
-
+# Remove last commit
 git reset --hard HEAD~1
 
 git reset --hard origin/feature/FEATURE
@@ -103,14 +107,15 @@ git push --delete origin 1.2.3
 
 git tag --delete 1.2.3
 
-Uncommit:
-
+# Uncommit last one commit
 git reset --soft HEAD~1
 
 git stash save "save name"
+```
 
 Move one repo (repo1) to another (repo2)
 
+```bash
 git clone repo1
 
 cd repo1
@@ -132,7 +137,11 @@ git fetch importrepo
 git merge importrepo/master
 
 git remote rm importrepo
+```
 
+Working with submodules
+
+```bash
 git submodule add REPOURL ./submodules/SUBMODULE_NAME
 
 git submodule init
@@ -144,6 +153,10 @@ git submodule update --init
 git submodule update --init --recursive
 
 git clone --recurse-submodules MAIN_REPO_URL
+```
 
+Starting as server
+
+```bash
 git daemon --enable=receive-pack --reuseaddr --verbose  --base-path=. --export-all ./setmy-info.github.io
 ```
