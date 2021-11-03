@@ -93,7 +93,7 @@ echo "rpcbind_enable=NO" >> ${BASE_JAIL_DIR}/etc/rc.conf
 
 cp /etc/resolv.conf ${BASE_JAIL_DIR}/etc/resolv.conf
 
-cd /var/jails && tar cvzf base.tar.gz -C base .
+cd ${JAILS_DIR} && tar cvzf base.tar.gz -C base .
 ```
 
 Creating new jail from prepared base package
@@ -127,6 +127,8 @@ newjail {
 Start new jail
 
 ```bash
+sysrc jail_enable=\"YES\"
+sysrc jail_list=\"newjail\"
 service jail start newjail
 ```
 
