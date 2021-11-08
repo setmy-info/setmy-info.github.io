@@ -132,6 +132,19 @@ sysrc jail_list=\"newjail\"
 service jail start newjail
 ```
 
+## NTPD leap seconds out of date
+
+```sh
+sysrc daily_ntpd_leapfile_enable=YES         # Fetch NTP leapfile
+sysrc daily_ntpd_avoid_congestion=NO         # Avoid congesting leapfile sources
+```
+
+Alos fetch new:
+
+```sh
+service ntpd onefetch
+```
+
 ## See also
 
     [xxxx](http://yyyyy)
