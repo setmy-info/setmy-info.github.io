@@ -145,6 +145,12 @@ SELECT current_database();
 \connect ANOTHERDB;
 ```
 
+Roles
+
+```sh
+SELECT rolname FROM pg_roles;
+```
+
 Backup
 
 ```sh
