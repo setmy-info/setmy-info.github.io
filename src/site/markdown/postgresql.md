@@ -71,6 +71,8 @@ create user testing;
 create user testingliquibase;
 create user ci;
 create user ciliquibase;
+create user prelive;
+create user preliveliquibase;
 create user live;
 create user liveliquibase;
 
@@ -80,10 +82,12 @@ alter user dev with password 'xxx';
 alter user testing with password 'xxx';
 alter user ci with password 'xxx';
 alter user live with password 'xxx';
+alter user prelive with password 'xxx';
 alter user devliquibase with password 'xxx';
 alter user testingliquibase with password 'xxx';
 alter user ciliquibase with password 'xxx';
 alter user liveliquibase with password 'xxx';
+alter user preliveliquibase with password 'xxx';
 
 CREATE DATABASE dev WITH TEMPLATE = template0 ENCODING = 'UTF8';
 CREATE DATABASE testing WITH TEMPLATE = template0 ENCODING = 'UTF8';
@@ -93,6 +97,7 @@ CREATE DATABASE live WITH TEMPLATE = template0 ENCODING = 'UTF8';
 ALTER DATABASE dev OWNER TO devliquibase;
 ALTER DATABASE testing OWNER TO testingliquibase;
 ALTER DATABASE ci OWNER TO ciliquibase;
+ALTER DATABASE prelive OWNER TO liveliquibase;
 ALTER DATABASE live OWNER TO liveliquibase;
 
 # TODO : correct rights and correct user
