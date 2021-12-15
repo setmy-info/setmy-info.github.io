@@ -92,18 +92,20 @@ alter user preliveliquibase with password 'xxx';
 CREATE DATABASE dev WITH TEMPLATE = template0 ENCODING = 'UTF8';
 CREATE DATABASE testing WITH TEMPLATE = template0 ENCODING = 'UTF8';
 CREATE DATABASE ci WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE prelive WITH TEMPLATE = template0 ENCODING = 'UTF8';
 CREATE DATABASE live WITH TEMPLATE = template0 ENCODING = 'UTF8';
 
 ALTER DATABASE dev OWNER TO devliquibase;
 ALTER DATABASE testing OWNER TO testingliquibase;
 ALTER DATABASE ci OWNER TO ciliquibase;
-ALTER DATABASE prelive OWNER TO liveliquibase;
+ALTER DATABASE prelive OWNER TO preliveliquibase;
 ALTER DATABASE live OWNER TO liveliquibase;
 
 # TODO : correct rights and correct user
 grant all privileges on database dev to devliquibase;
 grant all privileges on database testing to testingliquibase;
 grant all privileges on database ci to ciliquibase;
+grant all privileges on database prelive to preliveliquibase;
 grant all privileges on database live to liveliquibase;
 
 \ds
