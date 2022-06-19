@@ -4,15 +4,24 @@
 
 ### CentOS
 
-    yum install -y python3 (?)
+```shell
+yum install -y python3 (?)
+```
 
 ### Fedora
 
+```shell
+dnf install python3
+```
+
 ### FreeBSD
 
-    pkg install -y python3
+```shell
+pkg install -y python3
+```
 
 ## Frameworks
+
     Django
     Flask (http://flask.pocoo.org/)
     Falcon
