@@ -52,8 +52,8 @@ conda create -y -n ${PROJECT_NAME}                      # create conda environme
 conda env list                                            # to get list ov environments
 conda install -y -n ${PROJECT_NAME} python pip
 conda install -y -n ${PROJECT_NAME} imageio
-conda install -y -n ${PROJECT_NAME} jupyter notebook
-conda install -y -n ${PROJECT_NAME} tensorflow
+conda install -y -n ${PROJECT_NAME} jupyter jupyterlab notebook voila
+conda install -y -n ${PROJECT_NAME} tensorflow tensorflow-transform tfds-nightly matplotlib
 conda activate ${PROJECT_NAME}
 conda list -n ${PROJECT_NAME}
 conda deactivate
