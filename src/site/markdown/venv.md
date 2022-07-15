@@ -2,7 +2,7 @@
 
 ## Information
 
-Python builtin virtual environment tool.
+Python own virtual environment tool module.
 
 ## Usage, tips and tricks
 
