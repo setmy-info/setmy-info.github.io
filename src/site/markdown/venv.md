@@ -51,8 +51,8 @@ continue:
 pip install --upgrade pip
 pip --version
 pip install imageio
-pip install jupyter notebook
-pip install tensorflow
+pip install jupyterlab notebook voila
+pip install tensorflow tensorflow-transform tfds-nightly matplotlib
 pip freeze > requirements.txt
 # to install frozen packages
 pip install -r requirements.txt
