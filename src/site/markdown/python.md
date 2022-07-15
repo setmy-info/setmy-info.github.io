@@ -24,6 +24,8 @@ pkg install -y python3
 
 Go to [download](https://www.python.org/downloads/)
 
+Set it to the PATH.
+
 ## Usage, tips and tricks
 
 ### Virtual environments
