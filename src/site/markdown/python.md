@@ -2,7 +2,7 @@
 
 ## Installation
 
-### CentOS
+### CentOS, Rocky Linux
 
 ```shell
 yum install -y python3 (?)
@@ -11,7 +11,7 @@ yum install -y python3 (?)
 ### Fedora
 
 ```shell
-dnf install python3
+dnf install -y python3
 ```
 
 ### FreeBSD
@@ -19,6 +19,87 @@ dnf install python3
 ```shell
 pkg install -y python3
 ```
+
+### Windows
+
+Go to [download](https://www.python.org/downloads/)
+
+## Usage, tips and tricks
+
+### Virtual environments
+
+**Virtual environment is separated "sandbox" (isolated location) where is collected set of software (components,
+modules, libraries) with their versions together as software state.** On single machine (developer machine, production
+machines, etc.) can be prepared many separated and different sets/states of software. Perhaps module or project specific
+sets. One of these sets contains even Python with specific version.
+
+Python internal module [venv](venv.html) can be used as virtual environment tools. Also [conda](conda.html) can be used
+for virtual environment handling.
+
+**Windows**
+
+```commandline
+py --version
+```
+
+***nixes**
+
+```shell
+python --version
+# or
+python3 --version
+```
+
+### Python packages
+
+Python packages web page: [PyPI](https://pypi.org/)
+
+When **pip** is not installed:
+
+**Windows**
+
+```commandline
+py -m ensurepip --default-pip
+pip --version
+```
+
+***nixes**
+
+```shell
+python3 -m ensurepip --default-pip
+pip --version
+```
+
+#### Installing packages
+
+```shell
+python -m pip install SomePackage
+python -m pip install SomePackage==1.0.4    # with specific version
+python -m pip install "SomePackage>=1.0.4"  # with minimum version
+python -m pip install --upgrade SomePackage # upgrade existing already installed software
+```
+
+#### Freezing
+
+**Get state of software and their versions.**
+
+To get installed packages (inside venv) into **requirements.txt**
+
+```shell
+pip freeze > requirements.txt
+```
+
+To install frozen (**requirements.txt**) packages
+
+```shell
+pip install -r requirements.txt
+```
+
+Guide to make your own Python packages: [Python Packaging User Guide](https://packaging.python.org/en/latest/)
+
+## Python Enhancement Proposals (PEPs)
+
+[PEPs](https://peps.python.org/)
 
 ## Frameworks
 
@@ -39,9 +120,11 @@ pkg install -y python3
     pip --version
 
 ## Eclipse
+
         http://www.pydev.org/updates
 
 ## Project setup
+
     pyvenv-3.4 env
     source env/bin/activate
     (pip install --upgrade pip)
