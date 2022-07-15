@@ -50,7 +50,6 @@ mkdir ${PROJECT_NAME}
 cd ${PROJECT_NAME}
 conda create -y -n ${PROJECT_NAME}                      # create conda environment
 conda env list                                            # to get list ov environments
-conda install -y -n ${PROJECT_NAME} python
 conda install -y -n ${PROJECT_NAME} python pip
 conda install -y -n ${PROJECT_NAME} imageio
 conda install -y -n ${PROJECT_NAME} jupyter notebook

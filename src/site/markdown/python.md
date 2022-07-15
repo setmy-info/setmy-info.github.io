@@ -99,6 +99,22 @@ pip install -r requirements.txt
 
 Guide to make your own Python packages: [Python Packaging User Guide](https://packaging.python.org/en/latest/)
 
+### Execute project application
+
+```shell
+conda activate ${PROJECT_NAME}  # or venv
+python -m module.name
+conda deactivate
+```
+
+### Execute project tests
+
+Execute tests:
+
+```shell
+python -m unittest discover -s ./ -p *Test.py
+```
+
 ## Python Enhancement Proposals (PEPs)
 
 [PEPs](https://peps.python.org/)
