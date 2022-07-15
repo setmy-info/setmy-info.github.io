@@ -31,17 +31,29 @@ Install conda with PATH option.
 
 ## Usage, tips and tricks
 
+*Windows**
+
 ```shell
-mkdir conda-experiments
-cd conda-experiments
-conda create -y -n conda-experiments                      # create conda environment
+set PROJECT_NAME=conda-experiments
+```
+
+***nixes**
+
+```shell
+PROJECT_NAME=conda-experiments
+```
+
+```shell
+mkdir ${PROJECT_NAME}
+cd ${PROJECT_NAME}
+conda create -y -n ${PROJECT_NAME}                      # create conda environment
 conda env list                                            # to get list ov environments
-conda install -y -n conda-experiments python=3.9
-conda install -y -n conda-experiments python pip
-conda install -y -n conda-experiments imageio
-conda install -y -n conda-experiments jupyter notebook
-conda install -y -n conda-experiments tensorflow
-conda activate conda-experiments
+conda install -y -n ${PROJECT_NAME} python=3.9
+conda install -y -n ${PROJECT_NAME} python pip
+conda install -y -n ${PROJECT_NAME} imageio
+conda install -y -n ${PROJECT_NAME} jupyter notebook
+conda install -y -n ${PROJECT_NAME} tensorflow
+conda activate ${PROJECT_NAME}
 conda list
 conda deactivate
 ```
@@ -49,20 +61,20 @@ conda deactivate
 Create an environment YAML file:
 
 ```shell
-conda env export -n conda-experiments > conda-experiments.yaml
+conda env export -n ${PROJECT_NAME} > ${PROJECT_NAME}.yaml
 ```
 
 Create an environment from environment YAML file:
 
 ```shell
-conda env create -f conda-experiments.yaml
+conda env create -f ${PROJECT_NAME}.yaml
 conda env list
 ```
 
 Deleting/Removing an environment:
 
 ```shell
-conda remove -y -n conda-experiments --all
+conda remove -y -n ${PROJECT_NAME} --all
 conda info --envs
 ```
 
