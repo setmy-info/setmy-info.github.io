@@ -233,6 +233,8 @@ def number_to_string(val: str):
             return "something"
 ```
 
+Possible solution for that.
+
 ```python
 import types
 
