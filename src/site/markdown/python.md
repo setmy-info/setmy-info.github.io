@@ -215,7 +215,7 @@ case _: can be case default?
 
 ##### B
 
-How that? case ABC is wrong.
+That's not working!
 
 ```python
 ABC = "abc"
@@ -231,6 +231,26 @@ def number_to_string(val: str):
             return "two"
         case _:
             return "something"
+```
+
+```python
+import types
+
+constants = types.SimpleNamespace()
+constants.ABC = "abc"
+constants.DEF = "def"
+constants.GHI = "ghi"
+
+val: str = "abc"
+match val:
+    case constants.ABC:
+        print("This is: abc")
+    case constants.DEF:
+        print("This is: def")
+    case constants.GHI:
+        print("This is: ghi")
+    case _:
+        print("Unknown")
 ```
 
 ## Python Enhancement Proposals (PEPs)
