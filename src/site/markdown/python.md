@@ -224,13 +224,13 @@ ABC = "abc"
 def number_to_string(val: str):
     match val:
         case ABC:
-            return "zero"
+            print("zero")
         case "def":
-            return "one"
+            print("one")
         case "ghi":
-            return "two"
+            print("two")
         case _:
-            return "something"
+            print("Unknown")
 ```
 
 Possible solution for that.
@@ -246,11 +246,11 @@ constants.GHI = "ghi"
 val: str = "abc"
 match val:
     case constants.ABC:
-        print("This is: abc")
+        print("zero")
     case constants.DEF:
-        print("This is: def")
+        print("one")
     case constants.GHI:
-        print("This is: ghi")
+        print("two")
     case _:
         print("Unknown")
 ```
