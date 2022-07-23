@@ -233,6 +233,40 @@ fig.colorbar(pc, ax=axs[1, 1], extend='both')
 axs[1, 1].set_title('scatter()')
 ```
 
+```python
+plt.style.use('_mpl-gallery')
+
+# make data:
+np.random.seed(10)
+D = np.random.normal((3, 5, 4), (1.25, 1.00, 1.25), (100, 3))
+
+# plot
+fig, ax = plt.subplots()
+VP = ax.boxplot(D, positions=[2, 4, 6], widths=1.5, patch_artist=True,
+                showmeans=False, showfliers=False,
+                medianprops={"color": "white", "linewidth": 0.5},
+                boxprops={"facecolor": "C0", "edgecolor": "white",
+                          "linewidth": 0.5},
+                whiskerprops={"color": "C0", "linewidth": 1.5},
+                capprops={"color": "C0", "linewidth": 1.5})
+
+ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+       ylim=(0, 8), yticks=np.arange(1, 8))
+```
+
+```python
+x = np.outer(np.linspace(-2, 2, 30), np.ones(30))
+y = x.copy().T # transpose
+z = np.cos(x  2 + y  2)
+
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+
+ax.plot_surface(x, y, z,cmap='viridis', edgecolor='none')
+ax.set_title('Surface plot')
+plt.show()
+```
+
 ## Links
 
 https://matplotlib.org/stable/gallery/index
@@ -241,7 +275,7 @@ https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png
 
 https://matplotlib.org/cheatsheets/_images/cheatsheets-2.png
 
-##
+## Return multiple
 
 ```python
 def return_multiple():
