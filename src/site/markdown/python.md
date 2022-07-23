@@ -261,6 +261,10 @@ match val:
         print("Unknown")
 ```
 
+#### Testing mocking
+
+[mocking](https://docs.python.org/3/library/unittest.mock.html)
+
 ## Python Enhancement Proposals (PEPs)
 
 [PEPs](https://peps.python.org/)
