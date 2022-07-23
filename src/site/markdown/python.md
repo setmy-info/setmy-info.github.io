@@ -102,6 +102,12 @@ Guide to make your own Python packages: [Python Packaging User Guide](https://pa
 ### Execute project application
 
 ```shell
+conda activate %PROJECT_NAME%  # or venv
+python -m module.name
+conda deactivate
+```
+
+```shell
 conda activate ${PROJECT_NAME}  # or venv
 python -m module.name
 conda deactivate
