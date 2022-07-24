@@ -267,6 +267,49 @@ match val:
 
 ##### cucumber behave
 
+```sh
+pip install behave
+```
+
+./features/steps/tutorial.py
+
+```python
+from behave import *
+
+
+@given('we have behave installed')
+def step_impl(context):
+    pass
+
+
+@when('we implement a test')
+def step_impl(context):
+    assert True is not False
+
+
+@then('behave will test it for us!')
+def step_impl(context):
+    assert context.failed is False
+
+```
+
+./features/tutorial.feature
+
+```feature
+Feature: showing off behave
+
+    Scenario: run a simple test
+        Given we have behave installed
+        When we implement a test
+        Then behave will test it for us!
+```
+
+To execute tests
+
+```sh
+behave
+```
+
 [Site](https://behave.readthedocs.io/en/stable/)
 
 ## Python Enhancement Proposals (PEPs)
