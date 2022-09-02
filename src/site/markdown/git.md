@@ -34,6 +34,8 @@ git config --global mergetool.meld.path "c:\Program Files (x86)\Meld\Meld.exe"
 # Show remote origin repo url
 git config --get remote.origin.url
 
+git remote rename OLDNAME NEWNAME
+
 git config --global color.ui auto
 
 git checkout master
