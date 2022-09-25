@@ -108,6 +108,8 @@ grant all privileges on database ci to ciliquibase;
 grant all privileges on database prelive to preliveliquibase;
 grant all privileges on database live to liveliquibase;
 
+COPY "tablename" (col1, col2) FROM STDIN WITH (FORMAT CSV, DELIMITER ',', HEADER true)
+
 \ds
 \du
 ```
