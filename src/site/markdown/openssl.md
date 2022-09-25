@@ -127,3 +127,17 @@ MIID1TCCAr0CFHc9NenQAeSBLYFsYBJ9ddTeRUDKMA0GCSqGSIb3DQEBCwUAMIGm
 RaoghItDqV64Y9FGSpI1upI0BoBzo+svDg==
 -----END CERTIFICATE-----
 ```
+
+## Arguments
+
+```
+-subj "/C=ET/ST=Harjumaa/L=Tallinn/O=Example Tallinn Company/CN=exampletln.com"
+-subj "/C=ET/ST=Tartumaa/L=Tartu/O=Example Tartu Inc/CN=example.com/emailAddress=admin@example.com/OU=Some Org Unit"
+/C  - countryName
+/ST - stateOrProvinceName
+/L  - localityName
+/O  - organizationName
+/CN - commonName
+/OU - organizationalUnitName
+/emailAddress - emailAddress
+```
