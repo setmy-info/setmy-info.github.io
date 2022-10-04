@@ -144,6 +144,18 @@ EXPOSE 8443/tcp
 CMD java ${JAVA_OPTS} -jar /opt/has/lib/app.jar
 ```
 
+## Docker connection problem
+
+```sh
+[has@robot ~]$ docker run hello-world
+docker: Cannot connect to the Docker daemon at tcp://localhost:2375. Is the docker daemon running?.
+See 'docker run --help'.
+[has@robot ~]$ unset DOCKER_HOST
+[has@robot ~]$ docker run hello-world
+
+Hello from Docker!
+...
+```
 
 ## See also
 
