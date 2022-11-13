@@ -30,7 +30,7 @@ mvn clojure:run
 ; integer
 42
 
-; floating point
+; floating point (double)
 -1.5
 
 ; ratio
@@ -67,6 +67,26 @@ false
 
 ; keyword with namespace
 :release/alpha
+
+; clojure.lang.BigInt
+(type 123N)
+(type (bigint 123))
+
+; java.math.BigInteger
+(type (biginteger 123))
+
+; vector
+[1 2 3]
+
+; list. At the case execute function 1 with params 2 and 3
+(1 2 3)
+
+; hash-map
+{}
+
+; set
+#{}
+
 ```
 
 ![](https://clojure.org/images/content/guides/learn/syntax/structure-and-semantics.png)
@@ -81,6 +101,7 @@ Clojure functions calls are lists.
 ;; To initiate list with values use ' character
 ;; clojure.lang.PersistentList
 (type '(1 2 3))
+(type (list 1 2 3))
 
 (println (str '(1 2 3)))
 ```
@@ -199,6 +220,60 @@ Link: [Set](https://clojure.org/guides/weird_characters#_set)
 
 ;; Calling that
 (#(+ 6 %) 1)
+```
+
+### Let
+
+```clojure
+; 1
+(let [x 1] 
+         x)
+
+; 3
+(let [a 1 b 2] 
+         (+ a b))
+
+; 8
+(let [c (+ 1 2)
+             [d e] [5 6]] 
+         (-> (+ d e) (- c)))
+
+; "1 2 3 4"
+(let [aList (list 1 2 3 4)
+	[a b c d] aList]
+	(str a " " b " " c " " d))
+```
+
+### misc
+
+```clojure
+(-> "Look "
+	(str "I'm ")
+	(str "writing ")
+	(str "clojure."))
+
+(def makeList 
+	(->> (range 1 10)
+		(map println)))
+
+(def makeList
+ (->> (range)
+	(map inc)
+	(take 5)))
+makeList
+
+(->> (range 1 10)
+	(map (fn [x] (println x) x))
+	(take 4))
+
+; "2022-11-13T19:29:40.944111600Z"
+(str (java.time.Instant/now))
+
+; "2022-11-13T21:30:41.775844700"
+(str (java.time.LocalDateTime/now))
+
+; #inst "2022-11-13T19:29:52.015-00:00"
+(java.util.Date.)
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
