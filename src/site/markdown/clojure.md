@@ -278,8 +278,11 @@ makeList
 ; "2022-11-13T21:30:41.775844700"
 (str (java.time.LocalDateTime/now))
 
+(str (bean (java.time.LocalDateTime/now)))
+
 ; #inst "2022-11-13T19:29:52.015-00:00"
 (java.util.Date.)
+
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
