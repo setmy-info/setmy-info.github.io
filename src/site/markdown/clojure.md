@@ -54,6 +54,12 @@ map
 ; namespaced symbol
 clojure.core/+
 
+; clojure.lang.Symbol
+(type 'xyz)
+
+; clojure.lang.Keyword
+(type ':xyz)
+
 ; null value
 nil
 
