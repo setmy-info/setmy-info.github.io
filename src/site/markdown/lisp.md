@@ -39,27 +39,84 @@ Executing Steel bank common lisp
 sbcl --script src\lisp\main\main.lisp
 ```
 
+### Quicklisp
+
+#### Create new system (project)
+
+```shell
+cd ~/common-lisp
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
+gpg --verify quicklisp.lisp.asc quicklisp.lisp
+sbcl --load quicklisp.lisp
+#sbcl --load C:\pub\quicklisp\quicklisp.lisp
+```
+
+REPL is started
+
+```clojure
+(quicklisp-quickstart:install)
+
+(ql:quickload "cl-project")
+
+; Sceleton creation
+(cl-project:make-project #p"~/common-lisp/first-app" :author "imret" :license "MIT" :depends-on '(:alexandria))
+```
+
 ### ASDF
 
-```
+```shell
 ~/common-lisp
 ~/.local/share/common-lisp/source/
 ~/.config/common-lisp/source-registry.conf.d/
 ~/common-lisp/asdf/
+# C:\Users\USERNAME\quicklisp
+# C:\Users\USERNAME\common-lisp
 ```
+
+**Example system 1**
 
 ```clojure
 ;; Usual Lisp comments are allowed here
 
 (defsystem "hello-lisp"
-  :description "hello-lisp: a sample Lisp system."
-  :version "0.0.1"
-  :author "Imre Tabur <imre.tabur@mail.ee>"
-  :licence "MIT"
-  :depends-on ("optima.ppcre" "command-line-arguments")
-  :components ((:file "packages")
-               (:file "macros" :depends-on ("packages"))
-               (:file "hello" :depends-on ("macros"))))
+           :description "hello-lisp: a sample Lisp system."
+           :version     "0.0.1"
+           :author      "Imre Tabur <imre.tabur@mail.ee>"
+           :licence     "MIT"
+           :depends-on  ("optima.ppcre" "command-line-arguments")
+           :components
+                        ((:file "packages")
+                            (:file "macros" :depends-on ("packages"))
+                            (:file "hello" :depends-on ("macros"))))
+```
+
+**Example system 2**
+
+Created with quicklisp
+
+```clojure
+(defsystem "first-app"
+  :version "0.1.0"
+  :author "Imre Tabur <info@setmy.info>"
+  :license "MIT"
+  :depends-on ("alexandria")
+  :components ((:module "src"
+                :components
+                ((:file "main"))))
+  :description "A sample Lisp system(project)."
+  :in-order-to ((test-op (test-op "first-app/tests"))))
+
+(defsystem "first-app/tests"
+  :author "imret"
+  :license "MIT"
+  :depends-on ("first-app"
+               "rove")
+  :components ((:module "tests"
+                :components
+                ((:file "main"))))
+  :description "Test system for first-app"
+  :perform (test-op (op c) (symbol-call :rove :run c)))
 ```
 
 ## See also
@@ -73,6 +130,8 @@ sbcl --script src\lisp\main\main.lisp
 1. [Steel Bank Common Lisp](http://www.sbcl.org/)
 
     1. [SBCL Guide](http://www.sbcl.org/manual/index.html)
+
+1. [quicklisp](https://www.quicklisp.org)
 
 1. [Lispstick](http://www.iqool.de/lispstick.html)
 
@@ -98,4 +157,10 @@ sbcl --script src\lisp\main\main.lisp
 
 1. [CL Wiki](https://www.cliki.net)
 
-	1. [ASDF](https://www.cliki.net/asdf)
+    1. [ASDF](https://www.cliki.net/asdf)
+
+1. [Clojure to Common Lisp 1](https://pvik.github.io/blog/clojure-to-common-lisp-part-1-getting-started/)
+
+1. [Clojure to Common Lisp 2](https://pvik.github.io/blog/clojure-to-common-lisp-part-2-projects/)
+
+1. [Clojure to Common Lisp 3](https://pvik.github.io/blog/clojure-to-common-lisp-part-3-sample-crud-app/)
