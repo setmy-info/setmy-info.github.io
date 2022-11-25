@@ -82,6 +82,30 @@ REPL is started
 (cl-project:make-project #p"~/common-lisp/first-app" :author "Imre Tabur <info@setmy.info>" :license "MIT" :depends-on '(:alexandria))
 ```
 
+When quicklisp is already installed, then need to load it.
+
+```clojure
+(load
+ (merge-pathnames "quicklisp/setup.lisp"
+                  (user-homedir-pathname)))
+
+(asdf:already-loaded-systems)
+```
+
+```clojure
+(pushnew (truename "/projects/app/") ql:*local-project-directories*)
+
+(ql:register-local-projects)
+
+(ql:quickload :app)
+```
+
+To make it automatic (**~/.sbclrc**):
+
+```clojure
+(ql:add-to-init-file)
+```
+
 #### Run system (project/app)
 
 TODO : how to download dependencies, so application can be executed, locally, by developer with all its dependencies (
