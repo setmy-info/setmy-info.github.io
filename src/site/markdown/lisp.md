@@ -30,7 +30,24 @@ dnf install -y clisp
 
 ## Usage, tips and tricks
 
+Some random code
+
 ```clojure
+(require
+ "asdf")
+
+(asdf:already-loaded-systems)
+
+(load "quicklisp.lisp")
+
+(asdf:load-asd
+ (merge-pathnames "first-app" "C:/sources/setmy.info/incubation/lisp"))
+
+;;(asdf:load-asd (merge-pathnames "first-app" (uiop:getcwd)))
+
+(asdf:already-loaded-systems)
+
+(asdf:load-system "first-app")
 ```
 
 Executing Steel bank common lisp
@@ -41,6 +58,8 @@ sbcl --script src\lisp\main\main.lisp
 
 ### Quicklisp
 
+Package manager for common lisp (almost like mavan, pip, ...).
+
 #### Create new system (project)
 
 ```shell
@@ -49,7 +68,7 @@ curl -O https://beta.quicklisp.org/quicklisp.lisp
 curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
 gpg --verify quicklisp.lisp.asc quicklisp.lisp
 sbcl --load quicklisp.lisp
-#sbcl --load C:\pub\quicklisp\quicklisp.lisp
+#sbcl --load C:/pub/quicklisp/quicklisp.lisp
 ```
 
 REPL is started
@@ -60,8 +79,17 @@ REPL is started
 (ql:quickload "cl-project")
 
 ; Sceleton creation
-(cl-project:make-project #p"~/common-lisp/first-app" :author "imret" :license "MIT" :depends-on '(:alexandria))
+(cl-project:make-project #p"~/common-lisp/first-app" :author "Imre Tabur <info@setmy.info>" :license "MIT" :depends-on '(:alexandria))
 ```
+
+#### Run system (project/app)
+
+TODO : how to download dependencies, so application can be executed, locally, by developer with all its dependencies (
+for example with alexandria)?
+
+#### Packagind system (project/app)
+
+TODO : how to package it with all its dependencies, so it can be executed in docker for example.
 
 ### ASDF
 
@@ -70,8 +98,9 @@ REPL is started
 ~/.local/share/common-lisp/source/
 ~/.config/common-lisp/source-registry.conf.d/
 ~/common-lisp/asdf/
-# C:\Users\USERNAME\quicklisp
-# C:\Users\USERNAME\common-lisp
+# C:/Users/USERNAME/quicklisp
+# C:/Users/USERNAME/common-lisp
+~/.config/common-lisp/source-registry.conf
 ```
 
 **Example system 1**
@@ -97,26 +126,29 @@ Created with quicklisp
 
 ```clojure
 (defsystem "first-app"
-  :version "0.1.0"
-  :author "Imre Tabur <info@setmy.info>"
-  :license "MIT"
-  :depends-on ("alexandria")
-  :components ((:module "src"
-                :components
-                ((:file "main"))))
-  :description "A sample Lisp system(project)."
-  :in-order-to ((test-op (test-op "first-app/tests"))))
+           :version     "0.1.0"
+           :author      "Imre Tabur <info@setmy.info>"
+           :license     "MIT"
+           :depends-on  ("alexandria")
+           :components
+                        ((:module "src"
+                             :components
+                                  ((:file "main"))))
+           :description "A sample Lisp system(project)."
+           :in-order-to ((test-op (test-op "first-app/tests"))))
 
 (defsystem "first-app/tests"
-  :author "imret"
-  :license "MIT"
-  :depends-on ("first-app"
-               "rove")
-  :components ((:module "tests"
-                :components
-                ((:file "main"))))
-  :description "Test system for first-app"
-  :perform (test-op (op c) (symbol-call :rove :run c)))
+           :author      "imret"
+           :license     "MIT"
+           :depends-on
+                        ("first-app"
+                            "rove")
+           :components
+                        ((:module "tests"
+                             :components
+                                  ((:file "main"))))
+           :description "Test system for first-app"
+           :perform     (test-op (op c) (symbol-call :rove :run c)))
 ```
 
 ## See also
