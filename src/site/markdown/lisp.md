@@ -30,6 +30,16 @@ dnf install -y clisp
 
 ## Usage, tips and tricks
 
+### IDE
+
+Curently setmy.info standard IDE for Common LISP is VSCode.
+
+With plugins:
+
+[CL VSCode plugin](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)
+
+[Markdown VSCode plugin](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
 Some random code
 
 ```clojure
