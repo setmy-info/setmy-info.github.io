@@ -289,5 +289,5 @@ Link: [Functions](https://clojure.org/guides/learn/functions)
 
 ## See also
 
-[Pedastal]{http://pedestal.io/}
+[Pedastal](http://pedestal.io/)
 [Clojure diary](https://clojure-diary.gitlab.io/)
