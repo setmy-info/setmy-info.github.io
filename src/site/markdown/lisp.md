@@ -48,6 +48,9 @@ Some random code
 (asdf:already-loaded-systems)
 
 (asdf:load-system "first-app")
+
+; Like package/system/library search
+(ql:system-apropos "alexandria")
 ```
 
 Executing Steel bank common lisp
@@ -58,7 +61,7 @@ sbcl --script src\lisp\main\main.lisp
 
 ### Quicklisp
 
-Package manager for common lisp (almost like mavan, pip, ...).
+Package manager for common lisp (almost like maven, pip, ...).
 
 #### Create new system (project)
 
@@ -93,7 +96,11 @@ When quicklisp is already installed, then need to load it.
 ```
 
 ```clojure
+; Examples of registering new code/system/project location
 (pushnew (truename "/projects/app/") ql:*local-project-directories*)
+
+; or
+(pushnew "~/asdf/" asdf:*central-registry* :test #'equal)
 
 (ql:register-local-projects)
 
@@ -175,6 +182,14 @@ Created with quicklisp
            :perform     (test-op (op c) (symbol-call :rove :run c)))
 ```
 
+### Some libraries
+
+1. Loads of utilities (**alexandria** - (ql:quickload :alexandria))
+2. Regular expressions (**cl-ppcre** - (ql:quickload :cl-ppcre))
+3. Clojure-like arrow macros (**cl-arrows** - (ql:quickload :cl-arrows))
+4. String manipulation (**cl-strings** - (ql:quickload :cl-strings))
+5. https://quickdocs.org/ningle
+
 ## See also
 
 1. [LISP Lang](https://lisp-lang.org/)
@@ -195,28 +210,64 @@ Created with quicklisp
 
     1. [Manual](https://asdf.common-lisp.dev/asdf.html)
 
+    1. [Alexandria](https://alexandria.common-lisp.dev/)
+
 1. [Style guide 1](https://lisp-lang.org/style-guide/)
 
 1. [Google LISP Style Guide](https://google.github.io/styleguide/lispguide.xml)
 
 1. [Ariel Style guide](http://labs.ariel-networks.com/cl-style-guide.html)
 
-1. [Style guide PS](norvig.com/luv-slides.ps)
+1. [Style guide in PS](http://norvig.com/luv-slides.ps)
+
+1. [Format](https://en.wikipedia.org/wiki/Format_(Common_Lisp))
+
+1. [CL Wiki](https://www.cliki.net)
+
+    1. [ASDF](https://www.cliki.net/asdf)
+
+    1. [Naming convention](https://www.cliki.net/naming%20conventions)
 
 1. [Boot build tool](https://boot-clj.github.io/)
 
 1. [LISP Cookbook](https://lispcookbook.github.io/cl-cookbook)
 
-1. [Format](https://en.wikipedia.org/wiki/Format_(Common_Lisp))
-
 1. [Stackoverflow 1](https://stackoverflow.com/questions/23586404/asdf-building-and-common-lisp)
-
-1. [CL Wiki](https://www.cliki.net)
-
-    1. [ASDF](https://www.cliki.net/asdf)
 
 1. [Clojure to Common Lisp 1](https://pvik.github.io/blog/clojure-to-common-lisp-part-1-getting-started/)
 
 1. [Clojure to Common Lisp 2](https://pvik.github.io/blog/clojure-to-common-lisp-part-2-projects/)
 
 1. [Clojure to Common Lisp 3](https://pvik.github.io/blog/clojure-to-common-lisp-part-3-sample-crud-app/)
+
+1. [Libraries search in quickdocs](https://quickdocs.org/)
+
+1. [LISP Specification](http://www.lispworks.com/documentation/HyperSpec/Front/Contents.htm)
+
+1. [Some LISP site](http://articulate-lisp.com/)
+
+    1. [Creating new project](http://articulate-lisp.com/project/new-project.html)
+
+1. [Book - Practical Common Lisp](https://www.barnesandnoble.com/w/practical-common-lisp-peter-seibel/1100626056?ean=9781590592397)
+
+1. [Book - Common LISP: A Gentle Introduction to Symbolic Computation](https://www.barnesandnoble.com/w/common-lisp-david-s-touretzky/1112217374?ean=9780486498201)
+
+1. [Lisp related site](https://lispmethods.com/)
+
+    1. [Libraries](https://lispmethods.com/libraries.html)
+
+1. [Another site for LISP libs](https://common-lisp-libraries.readthedocs.io/)
+
+    1. [Quicklisp](https://common-lisp-libraries.readthedocs.io/quicklisp/)
+
+1. [aaa](bbb)
+
+1. [aaa](bbb)
+
+1. [aaa](bbb)
+
+1. [aaa](bbb)
+
+1. [aaa](bbb)
+
+1. [aaa](bbb)
