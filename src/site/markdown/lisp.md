@@ -42,6 +42,32 @@ With plugins:
 
 [Markdown VSCode plugin](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
+```clojure
+; Load main system
+(asdf:already-loaded-systems)
+
+(pushnew (truename "./") ql:*local-project-directories*)
+
+;(require "cl-start-project")
+(ql:quickload :cl-start-project)
+
+(asdf:already-loaded-systems)
+
+; Load tests system
+(ql:quickload :rove)
+
+;(require "cl-start-project/tests")
+(ql:quickload :cl-start-project/tests)
+
+(asdf:already-loaded-systems)
+
+; Run tests
+(rove:run :cl-start-project/tests)
+
+; Make executable
+(asdf:make :cl-start-project)
+```
+
 Some random code
 
 ```clojure
@@ -300,3 +326,5 @@ Created with quicklisp
 1. [LISP Work](https://lispjobs.wordpress.com/)
 
 1. [Some list of libraries](http://articulate-lisp.com/project/abcs.html)
+
+1. [rove usage](https://quickdocs.org/rove)
