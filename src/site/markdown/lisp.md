@@ -68,6 +68,8 @@ Some random code
 
 ; Make bin file?
 (asdf:make :cl-start-project)
+
+(prove:run #P"myapp/tests/my-test.lisp")
 ```
 
 Executing Steel bank common lisp
@@ -209,6 +211,15 @@ Created with quicklisp
 6. https://edicl.github.io/hunchentoot/
 7. https://edicl.github.io/cl-who/
 8. https://github.com/fukamachi/clack
+9. https://github.com/m2ym/cl-annot
+10. https://github.com/fukamachi/caveman
+11. https://github.com/arielnetworks/cl-markup
+12. https://github.com/fukamachi/prove
+13. https://github.com/fukamachi/rove
+14. https://github.com/arielnetworks/cl-pattern
+15. https://github.com/fukamachi/cl-project
+16. postmodern
+17. local-time
 
 ## See also
 
@@ -281,3 +292,9 @@ Created with quicklisp
     1. [Quicklisp](https://common-lisp-libraries.readthedocs.io/quicklisp/)
 
 1. [Blog about web dev](https://lisp-journey.gitlab.io/blog/web-development-in-common-lisp/#with-docker)
+
+1. [Clack and Lack](https://fukamachi.hashnode.dev/how-to-build-a-web-app-with-clack-and-lack-1)
+
+1. [LISP Work](https://lispjobs.wordpress.com/)
+
+1. [Some list of libraries](http://articulate-lisp.com/project/abcs.html)
