@@ -259,15 +259,3 @@ Created with quicklisp
 1. [Another site for LISP libs](https://common-lisp-libraries.readthedocs.io/)
 
     1. [Quicklisp](https://common-lisp-libraries.readthedocs.io/quicklisp/)
-
-1. [aaa](bbb)
-
-1. [aaa](bbb)
-
-1. [aaa](bbb)
-
-1. [aaa](bbb)
-
-1. [aaa](bbb)
-
-1. [aaa](bbb)
