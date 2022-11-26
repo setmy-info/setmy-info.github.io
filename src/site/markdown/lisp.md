@@ -46,21 +46,28 @@ Some random code
 (require
  "asdf")
 
+; When quicklisp is loaded?
+(require
+    "cl-start-project")
+
 (asdf:already-loaded-systems)
 
 (load "quicklisp.lisp")
 
 (asdf:load-asd
- (merge-pathnames "first-app" "C:/sources/setmy.info/incubation/lisp"))
+ (merge-pathnames "cl-start-project" "C:/sources/setmy.info/incubation/lisp"))
 
-;;(asdf:load-asd (merge-pathnames "first-app" (uiop:getcwd)))
+;;(asdf:load-asd (merge-pathnames "cl-start-project" (uiop:getcwd)))
 
 (asdf:already-loaded-systems)
 
-(asdf:load-system "first-app")
+(asdf:load-system "cl-start-project")
 
 ; Like package/system/library search
 (ql:system-apropos "alexandria")
+
+; Make bin file?
+(asdf:make :cl-start-project)
 ```
 
 Executing Steel bank common lisp
