@@ -232,45 +232,47 @@ Link: [Set](https://clojure.org/guides/weird_characters#_set)
 
 ```clojure
 ; 1
-(let [x 1] 
-         x)
+(let [x 1]
+    x)
 
 ; 3
-(let [a 1 b 2] 
-         (+ a b))
+(let [a 1
+      b 2]
+    (+ a b))
 
 ; 8
-(let [c (+ 1 2)
-             [d e] [5 6]] 
-         (-> (+ d e) (- c)))
+(let [c     (+ 1 2)
+      [d e] [5 6]]
+    (-> (+ d e) (- c)))
 
 ; "1 2 3 4"
-(let [aList (list 1 2 3 4)
-	[a b c d] aList]
-	(str a " " b " " c " " d))
+(let [aList     (list 1 2 3 4)
+      [a b c d] aList]
+    (str a " " b " " c " " d))
 ```
 
 ### misc
 
 ```clojure
 (-> "Look "
-	(str "I'm ")
-	(str "writing ")
-	(str "clojure."))
-
-(def makeList 
-	(->> (range 1 10)
-		(map println)))
+    (str "I'm ")
+    (str "writing ")
+    (str "clojure."))
 
 (def makeList
- (->> (range)
-	(map inc)
-	(take 5)))
+    (->> (range 1 10)
+         (map println)))
+
+(def makeList
+    (->> (range)
+         (map inc)
+         (take 5)))
+
 makeList
 
 (->> (range 1 10)
-	(map (fn [x] (println x) x))
-	(take 4))
+     (map (fn [x] (println x) x))
+     (take 4))
 
 ; "2022-11-13T19:29:40.944111600Z"
 (str (java.time.Instant/now))
@@ -290,4 +292,5 @@ Link: [Functions](https://clojure.org/guides/learn/functions)
 ## See also
 
 [Pedastal](http://pedestal.io/)
+
 [Clojure diary](https://clojure-diary.gitlab.io/)
