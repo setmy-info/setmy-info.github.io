@@ -1,5 +1,7 @@
 # Clojure
 
+![CLOJURE](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Clojure_logo.svg/240px-Clojure_logo.svg.png)
+
 ## Information
 
 ## Installation
