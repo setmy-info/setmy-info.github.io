@@ -12,6 +12,12 @@ git config --global user.email imre.tabur@eesti.ee
 git config --global user.email
 
 git config --global user.name
+
+git config --global --add --bool push.autoSetupRemote true
+
+git config --global url."https://github.com/".insteadOf "git@github.com:"
+
+git config --global --list
 ```
 
 ```bash
@@ -155,6 +161,8 @@ git submodule update --init
 git submodule update --init --recursive
 
 git clone --recurse-submodules MAIN_REPO_URL
+
+git diff --cached --submodule
 ```
 
 Starting as server
