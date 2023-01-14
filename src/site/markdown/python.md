@@ -40,8 +40,22 @@ for virtual environment handling.
 
 **Windows**
 
+With python launcher
+
 ```commandline
 py --version
+```
+
+Get installed python versions:
+
+```commandline
+py -0
+```
+
+Get python launcher help
+
+```commandline
+py --help
 ```
 
 ***nixes**
@@ -62,7 +76,9 @@ When **pip** is not installed:
 
 ```commandline
 py -m ensurepip --default-pip
-pip --version
+py -m pip --version
+# Or
+py -3 -m pip --version
 ```
 
 ***nixes**
@@ -118,8 +134,12 @@ conda deactivate
 Execute tests:
 
 ```shell
-python -m unittest discover -s ./ -p *Test.py
+python -m unittest discover -s ./ -p *_test.py
 ```
+
+### Exit REPL
+
+Ctr+Z and then Enter
 
 ### Code examples
 
@@ -415,9 +435,19 @@ PYTHONPATH is for searching modules, like PATH for commands.
 
 [Packaging vol 2](https://packaging.python.org/)
 
+[PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+
+[Python Code conventions Google](https://google.github.io/styleguide/pyguide.html)
+
+[Code formatter yapf](https://github.com/google/yapf/)
+
+[Pylint Python code checker](https://pylint.org/)
+
 [xxxx](https://fossbytes.com/python-fastest-growing-programming-language/)
 
 [xxxx](https://stackoverflow.blog/2017/09/14/python-growing-quickly/)
+
+[Google Python class](https://developers.google.com/edu/python/)
 
 https://www.patricksoftwareblog.com/structuring-a-flask-project/
 
