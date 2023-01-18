@@ -17,6 +17,8 @@ git config --global --add --bool push.autoSetupRemote true
 
 git config --global url."https://github.com/".insteadOf "git@github.com:"
 
+git config --global --unset url.https://github.com/.insteadof
+
 git config --global --list
 ```
 
@@ -86,7 +88,7 @@ git apply --stat diff.patch
 
 git apply --check diff.patch
 
-git am --signoff < diff.patch 
+git am --signoff < diff.patch
 
 git rebase -i HEAD~3
 
