@@ -8,7 +8,7 @@ egrep --color 'vmx|svm' /proc/cpuinfo
 
 ## Installation
 
-#### kubectl installation
+### kubectl CLI installation
 
 ```sh
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -23,7 +23,7 @@ EOF
 yum install -y kubectl
 ```
 
-#### minikube installation
+### minikube installation
 
 ```sh
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
@@ -49,6 +49,8 @@ yum install -y minikube-rpm
 
 minikube start --vm-driver=none
 ```
+
+Install
 
 ## Usage, tips and tricks
 
@@ -81,6 +83,25 @@ kubectl delete secrets xyz-secrets
 kubectl delete configmap xyz-configmap
 kubectl delete service xyz-service
 kubectl delete deployment xyz-deployment
+
+kubectl exec --stdin --tty some-pod-596744778-dcgtz -- /bin/bash
+
+# Kubernetes config update
+aws sso login
+# Or
+AWS_DEFAULT_PROFILE=profilex
+aws sso login
+aws eks update-kubeconfig --region REGION --name OURSUPERCLUSTER
+# Like: aws eks update-kubeconfig --region eu-central-1 --name xyzcluster
+
+kubectl get pods --all-namespaces
+kubectl get namespaces
+# kubectl get ns
+kubectl config view --minify
+    # kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+kubectl config set-context --current --namespace=NAMESPACE
+
+
 ```
 
 ## See also

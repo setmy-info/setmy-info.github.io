@@ -1,10 +1,18 @@
 # GIT
 
+## Installation
+
 ## Usage, tips and tricks
+
+```shell
+mkdir my-project.git
+cd my-project.git
+git init --bare my-project.git
+```
 
 Set and check name and email for git.
 
-```bash
+```shell
 git config --global user.name "Imre Tabur"
 
 git config --global user.email imre.tabur@eesti.ee
@@ -15,14 +23,18 @@ git config --global user.name
 
 git config --global --add --bool push.autoSetupRemote true
 
+git config --global init.defaultBranch main
+
 git config --global url."https://github.com/".insteadOf "git@github.com:"
 
 git config --global --unset url.https://github.com/.insteadof
+#[url "https://github.com/"]
+#    insteadOf = git@github.com:
 
 git config --global --list
 ```
 
-```bash
+```shell
 git config --global core.editor "'c:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 
 git config --global core.editor nano
@@ -31,9 +43,13 @@ git config --global core.commentchar "$"
 
 git config --global core.autocrlf true
 
+# Should be on Windows
 git config --global core.autocrlf false
 
 git config --global core.autocrlf input
+
+# Also that on Windows
+git config --global core.safecrlf false
 
 git config --global merge.tool meld
 
@@ -80,6 +96,7 @@ git commit --amend -m 'New Message'
 # Change last commit author:
 git commit --amend --author="Imre Tabur <imre.tabur@eesti.ee>"
 
+# Or hashes
 git diff Bonebranch..anotherbranch
 
 git diff > diff.patch
@@ -125,7 +142,7 @@ git stash save "save name"
 
 Move one repo (repo1) to another (repo2)
 
-```bash
+```shell
 git clone repo1
 
 cd repo1
@@ -151,7 +168,7 @@ git remote rm importrepo
 
 Working with submodules
 
-```bash
+```shell
 git submodule add REPOURL ./submodules/SUBMODULE_NAME
 
 git submodule init
@@ -169,6 +186,36 @@ git diff --cached --submodule
 
 Starting as server
 
-```bash
+**nano .git/config** and add:
+
+```
+[alias]
+serve = !git daemon --enable=receive-pack --reuseaddr --verbose --base-path=. --export-all ./flow-example.git
+```
+
+or
+
+```shell
 git daemon --enable=receive-pack --reuseaddr --verbose  --base-path=. --export-all ./setmy-info.github.io
 ```
+
+## Older notes
+
+### Meld tricks
+
+**nano ~/bin/git-meld** and add:
+
+```shell
+#!/bin/sh
+meld $2 $5
+exit ${?}
+```
+
+**chmod goa+x ~/bin/git-meld** and **nano ~/.gitconfig**
+
+```
+[diff]
+external = git-meld
+```
+
+### ..
