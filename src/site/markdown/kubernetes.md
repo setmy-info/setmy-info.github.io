@@ -12,47 +12,29 @@ egrep --color 'vmx|svm' /proc/cpuinfo
 
 ```sh
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+# cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
 enabled=1
 gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
-yum install -y kubectl
+sudo yum install -y kubectl
 ```
 
-### minikube installation
+Or:
 
-```sh
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
-sudo cp minikube /usr/local/bin && rm minikube
+```shell
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
-
-OR
-
-```sh
-cat <<EOF > /etc/yum.repos.d/antonpatsev-minikube-rpm-epel-7.repo
-[antonpatsev-minikube-rpm]
-name=Copr repo for minikube-rpm owned by antonpatsev
-baseurl=https://copr-be.cloud.fedoraproject.org/results/antonpatsev/minikube-rpm/epel-7-$basearch/
-type=rpm-md
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/antonpatsev/minikube-rpm/pubkey.gpg
-repo_gpgcheck=0
-enabled=1
-enabled_metadata=1
-EOF
-yum install -y minikube-rpm
-
-minikube start --vm-driver=none
-```
-
-Install
 
 ## Usage, tips and tricks
+
+User config file: **~/.kube/config**
 
 ```sh
 kubectl config set-credentials USERNAME --token=USERTOKEN
@@ -62,10 +44,14 @@ kubectl --context=CONTEXTNAME cluster-info
 
 kubectl config use-context context-xyz
 
+# -n NAMESPACE can be appended
 kubectl apply -f xyz-secrets.yml
 kubectl apply -f xyz-configmap.yml
 kubectl apply -f xyz-service.yml
 kubectl apply -f xyz-deployment.yml
+
+kubectl describe configmaps xyz-configmap
+kubectl describe secret xyz-secrets
 
 kubectl edit xyz-deployment
 kubectl get pods
@@ -97,8 +83,9 @@ aws eks update-kubeconfig --region REGION --name OURSUPERCLUSTER
 kubectl get pods --all-namespaces
 kubectl get namespaces
 # kubectl get ns
+kubectl get namespace
 kubectl config view --minify
-    # kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+# kubectl config view --minify --output 'jsonpath={..namespace}'; echo
 kubectl config set-context --current --namespace=NAMESPACE
 
 
@@ -108,6 +95,22 @@ kubectl config set-context --current --namespace=NAMESPACE
 
 [Kubernetes](https://kubernetes.io)
 
-[kubectl installation](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+[kubectl installation](https://kubernetes.io/docs/tasks/tools/#kubectl)
 
 [minikube](https://kubernetes.io/docs/setup/minikube/)
+
+[kubectl cli usage](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+
+[Deployment](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
+
+[Service](https://kubernetes.io/docs/concepts/services-networking/service/)
+
+[Config maps](ttps://kubernetes.io/docs/concepts/configuration/configmap/)
+
+[Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+
+[xxxx](cccc)
+
+[xxxx](cccc)
+
+[xxxx](cccc)

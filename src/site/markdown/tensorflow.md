@@ -28,12 +28,12 @@ pip install tensorflow tensorflow-transform tfds-nightly matplotlib
 
 [xxxx](https://www.tensorflow.org/tfx/transform/install)
 
-[xxxx](https://www.tensorflow.org/api_docs/python/tf/data/Dataset)
+[Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset)
 
-[xxxx](xxxxxxx)
+[Datasets](https://www.tensorflow.org/datasets/overview#load_a_dataset)
 
-[xxxx](xxxxxxx)
+[xxxx](https://www.tensorflow.org/hub)
 
-[xxxx](xxxxxxx)
+[xxxx](https://www.tensorflow.org/tutorials/)
 
-[xxxx](xxxxxxx)
+[xxxx](https://www.tensorflow.org/datasets/overview#load_a_dataset)
