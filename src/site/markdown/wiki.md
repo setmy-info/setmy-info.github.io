@@ -9,7 +9,7 @@ Implementation is at [index page](index.html) and in maven site.
 Shortly perhaps one of these: _**DWS**_ or ~~**DWSH**~~ or ~~**DWSHS**~~
 
 Wiki structure in software development point of view.
-Also a little bit in busines stakeholders point of view. 
+Also a little bit in busines stakeholders point of view.
 
 Business and IT can be in wiki under separate starting root pages. That holds wiki structure a in flat sstructure.
 This way most of the structure stays 3 level, only some parts have deeper hierarchy.

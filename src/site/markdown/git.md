@@ -115,6 +115,14 @@ git log -n 4
 
 git log --graph --decorate --pretty=oneline --abbrev-commit
 
+git log --oneline development ^master
+
+git rev-list --count development ^master
+
+git log --count master..development
+
+git rev-list --count master..development
+
 git reset filename(s)
 
 # Remove last commit
@@ -218,4 +226,9 @@ exit ${?}
 external = git-meld
 ```
 
-### ..
+### See also
+
+[Git flow branching](https://nvie.com/posts/a-successful-git-branching-model/)
+[GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
+[GitLab flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+[Trunk based development](https://trunkbaseddevelopment.com/)

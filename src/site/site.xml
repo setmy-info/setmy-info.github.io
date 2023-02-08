@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/DECORATION/1.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
          name="Documentation">
 
@@ -56,9 +56,10 @@
                                 <item name="Deployment notes" href="empty.html"/>
                                 <item name="Maintenance" href="empty.html"/>
                             </item>
-                            <item name="setmy-info.github.io" href="it/architecture/components/setmy-info.github.io.html" />
-                            <item name="setmy-info.github.io" href="it/architecture/components/setmy.info.html" />
-                            <item name="setmy-info-scripts" href="it/architecture/components/setmy-info-scripts.html" />
+                            <item name="setmy-info.github.io"
+                                  href="it/architecture/components/setmy-info.github.io.html"/>
+                            <item name="setmy-info.github.io" href="it/architecture/components/setmy.info.html"/>
+                            <item name="setmy-info-scripts" href="it/architecture/components/setmy-info-scripts.html"/>
                             <item name="Xyz" href="empty.html">
                                 <item name="Architecture" href="empty.html"/>
                                 <item name="Requirements" href="empty.html"/>
@@ -89,6 +90,6 @@
     <skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-fluido-skin</artifactId>
-        <version>1.9</version>
+        <version>1.11.1</version>
     </skin>
 </project>

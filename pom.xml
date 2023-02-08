@@ -6,17 +6,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>info.setmy</groupId>
-        <artifactId>multi-projects</artifactId>
-        <version>1.2.0-SNAPSHOT</version>
-    </parent>
-
     <groupId>info.setmy</groupId>
     <artifactId>documentation</artifactId>
     <version>1.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>documentation</name>
+    <name>setmy.info documentation</name>
     <description>Documentation</description>
     <url>https://setmy-info.github.io</url>
 
@@ -28,7 +22,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.0</version>
+                <version>3.11.0</version>
             </plugin>
         </plugins>
     </build>
@@ -38,7 +32,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.4.2</version>
             </plugin>
         </plugins>
     </reporting>
@@ -73,8 +67,8 @@
         <url>https://github.com/setmy-info/setmy.info/issues</url>
     </issueManagement>
 
-    <ciManagement />
-    <contributors />
+    <ciManagement/>
+    <contributors/>
 
     <distributionManagement>
         <snapshotRepository>

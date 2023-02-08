@@ -60,15 +60,17 @@ openssl rsa -in /usr/local/share/certs/CA.priv.key -pubout -out /usr/local/share
 ```
 
 Creates **certificate request** (.csr) for CA to sign certificate
-(Fill questions: EE, Harju, Tallinn, Private Company LLC, CA departement, Peeter Meeter, peeter.meeter@trump.com, 1234, Private Company LLC).
+(Fill questions: EE, Harju, Tallinn, Private Company LLC, CA departement, Peeter Meeter, peeter.meeter@trump.com, 1234,
+Private Company LLC).
 
 ```
 openssl req -new -key /usr/local/share/certs/CA.priv.key -out /usr/local/share/certs/CA.csr
 ```
 
-Create **signed certificate** signed by third-party (parent CA) or by CA departement as self signed (currently self signing):
+Create **signed certificate** signed by third-party (parent CA) or by CA departement as self signed (currently self
+signing):
 
-```sh    
+```sh
 openssl x509 -req -days 2048 -in /usr/local/share/certs/CA.csr -signkey /usr/local/share/certs/CA.priv.key -out /usr/local/share/certs/CA.crt
 ```
 
@@ -90,7 +92,8 @@ Sub-departement creates **public key**
 openssl rsa -in /usr/local/share/certs/RQ.priv.key -pubout -out /usr/local/share/certs/RQ.pub.key
 ```
 
-Sub-departement creates **certification request** (Fill questions: EE, Harju, Tallinn, Private Company LLC, RQ departement, Donald Trump, donald.trump@trump.com, 1234, Private Company LLC):
+Sub-departement creates **certification request** (Fill questions: EE, Harju, Tallinn, Private Company LLC, RQ
+departement, Donald Trump, donald.trump@trump.com, 1234, Private Company LLC):
 
 ```sh
 openssl req -new -key /usr/local/share/certs/RQ.priv.key -out /usr/local/share/certs/RQ.csr
@@ -121,7 +124,7 @@ DER and pkcs12 are binary formats.
 PEM format are text formats:
 
 ```
------BEGIN CERTIFICATE----- 
+-----BEGIN CERTIFICATE-----
 MIID1TCCAr0CFHc9NenQAeSBLYFsYBJ9ddTeRUDKMA0GCSqGSIb3DQEBCwUAMIGm
 ...
 RaoghItDqV64Y9FGSpI1upI0BoBzo+svDg==

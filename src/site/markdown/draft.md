@@ -1,14 +1,5 @@
 [Dynamic documentation](static.html)
 
-http://www.doclo.be/lieven/articles/personalsitewithmaven.html
-
-mvn archetype:create
-   -DgroupId=mygroup
-   -DartifactId=mywebsite
-   -DarchetypeArtifactId=maven-archetype-site-simple
-
-https://dzone.com/articles/how-publish-maven-site-docs
-
 firefox --new-tab `pwd`/src/site/resources/static.html
 firefox --new-tab `pwd`/target/site/index.html
 
@@ -31,84 +22,84 @@ cd springboot-start-project && mvn org.pitest:pitest-maven:mutationCoverage site
 cd submodules/setmy-info.github.io && mvn site:site && cd ..
 
 1.
-    docker build -t setmyinfo/node-start-project .
-        npm run docker-build
-    docker run -p 4000:3000 -d setmyinfo/node-start-project
-        npm run docker-run
 
-1. 1. Micronaut microservice
+docker build -t setmyinfo/node-start-project .
+npm run docker-build
+docker run -p 4000:3000 -d setmyinfo/node-start-project
+npm run docker-run
 
-    docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT .
-    docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
+1.
+    1. Micronaut microservice
+
+docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT .
+docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
 
 1.2. Spring boot microservice
-    docker build -t setmyinfo/springboot-start-project:1.0.0-SNAPSHOT .
-    docker run -p 8020:8080 -d setmyinfo/springboot-start-project:1.0.0-SNAPSHOT
+docker build -t setmyinfo/springboot-start-project:1.0.0-SNAPSHOT .
+docker run -p 8020:8080 -d setmyinfo/springboot-start-project:1.0.0-SNAPSHOT
 
 1.3. Tomcat web app
-    docker build -t setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT .
-    docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
+docker build -t setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT .
+docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 
 2. Or
 
-    /opt/firefox/firefox --new-tab http://localhost:4000
-    /opt/firefox/firefox --new-tab http://localhost:8010/rest/hello
-    /opt/firefox/firefox --new-tab http://localhost:8020/rest/hello
-    /opt/firefox/firefox --new-tab http://localhost:8020/api/example
-    /opt/firefox/firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/
-    /opt/firefox/firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/rest/hello
-    /opt/firefox/firefox --new-tab http://localhost/tomcat-start-project/
-    /opt/firefox/firefox --new-tab http://localhost/springboot-start-project/api/example
-    /opt/firefox/firefox --new-tab http://localhost/springboot-start-project/rest/hello
-    /opt/firefox/firefox --new-tab http://localhost/micronaut-start-project/rest/hello
-    /opt/firefox/firefox --new-tab http://localhost/node-start-project/
+   /opt/firefox/firefox --new-tab http://localhost:4000
+   /opt/firefox/firefox --new-tab http://localhost:8010/rest/hello
+   /opt/firefox/firefox --new-tab http://localhost:8020/rest/hello
+   /opt/firefox/firefox --new-tab http://localhost:8020/api/example
+   /opt/firefox/firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/
+   /opt/firefox/firefox --new-tab http://localhost:8030/tomcat-start-project-1.2.0-SNAPSHOT/rest/hello
+   /opt/firefox/firefox --new-tab http://localhost/tomcat-start-project/
+   /opt/firefox/firefox --new-tab http://localhost/springboot-start-project/api/example
+   /opt/firefox/firefox --new-tab http://localhost/springboot-start-project/rest/hello
+   /opt/firefox/firefox --new-tab http://localhost/micronaut-start-project/rest/hello
+   /opt/firefox/firefox --new-tab http://localhost/node-start-project/
 
 3. Ports
 
-    Service and debug ports
+   Service and debug ports
 
 4. Golang Microservice
 
-    docker build -t setmyinfo/go-start-project .
-    docker run -p 8040:8080 -d  setmyinfo/go-start-project
+   docker build -t setmyinfo/go-start-project .
+   docker run -p 8040:8080 -d setmyinfo/go-start-project
 
 5. Karma
 
-    Fro project:
-        npm install karma karma-jasmine karma-chrome-launcher karma-firefox-launcher jasmine-core jasmine karma-html-reporter --save-dev
-    Globaly:
-        npm install -g karma-cli
-        karma init karma.conf.js
+   Fro project:
+   npm install karma karma-jasmine karma-chrome-launcher karma-firefox-launcher jasmine-core jasmine karma-html-reporter
+   --save-dev
+   Globaly:
+   npm install -g karma-cli
+   karma init karma.conf.js
 
 6. Node main development tools set
 
-    npm install -g bower grunt gulp karma-cli sass less typescript express-generator yarn jshint protractor karma-cli @hapi/joi @hapi/topo @hapi/hoek
-    npm install -g @vue/cli
-    npm install karma karma-coverage karma-junit-reporter --save-dev
+   npm install -g bower grunt gulp karma-cli sass less typescript express-generator yarn jshint protractor karma-cli
+   @hapi/joi @hapi/topo @hapi/hoek
+   npm install -g @vue/cli
+   npm install karma karma-coverage karma-junit-reporter --save-dev
 
 7. Hexo.io
 
-    hexo init hexo-test-blog
-    cd hexo-test-blog
-    npm install
-    hexo server
-    firefox --new-tab http://localhost:4000
-    hexo generate
+   hexo init hexo-test-blog
+   cd hexo-test-blog
+   npm install
+   hexo server
+   firefox --new-tab http://localhost:4000
+   hexo generate
 
 8. Process
 
-    Steps
-    Artifacts
-    Roles
-
-    Planning (ideas, refinement, PoC/Spike, architecture)
-    Implementation
-    Testing
-    Releasing
+   Planning (ideas, refinement, PoC/Spike, architecture)
+   Implementation
+   Testing
+   Releasing
 
 9. Logging
 
-    https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#data-to-exclude
+   https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#data-to-exclude
 
 10. Teamwork
 

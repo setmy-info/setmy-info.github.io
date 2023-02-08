@@ -39,7 +39,8 @@ setmy-info-scripts is project for Linux and FreeBSD set of scripts.
 
 ### Incubation
 
-Incubation, that contains different probes, poc's, spikes before architecture decisions to add to main root folder: ./incubation
+Incubation, that contains different probes, poc's, spikes before architecture decisions to add to main root folder:
+./incubation
 
 ### Modules in root folder
 
@@ -70,5 +71,6 @@ Most finished or just main libraries are:
 
 ## Lessons learned
 
- 1. Tomcat project should start with mvn jetty:run without warnings about dupplicate classes. Should follow top libraries (hibernate core, spring core) deps. Tomcat project didnt start, because some method access errors. Dozer, esapi, logback, jaxb introduced duplicates hell.
- 
+1. Tomcat project should start with mvn jetty:run without warnings about dupplicate classes. Should follow top
+   libraries (hibernate core, spring core) deps. Tomcat project didnt start, because some method access errors. Dozer,
+   esapi, logback, jaxb introduced duplicates hell.

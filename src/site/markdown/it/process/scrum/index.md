@@ -9,14 +9,16 @@
 ### Issue management
 
 * Epic: top or root level product backlog item (PBI). Written by product owner. Can contain N number of Stories.
-    * Story: written by product owner together with development team, usually at refinement meeting or at sprint planning. Can contain N number of sub-tasks.
+    * Story: written by product owner together with development team, usually at refinement meeting or at sprint
+      planning. Can contain N number of sub-tasks.
         * (Sup-)task: tasks to be done to implement story. Written by develpoment team.
 
 Refinement meeting (or longer sprint planning): meeting with whole Scrum team (PO, SM and dev. team).
 
 For fine Story and task granulization:
 
-1. PO: use UI to show what is existing, what should be after Story implementation: what, where and how. Acceptance criterias. What when appears etc.
+1. PO: use UI to show what is existing, what should be after Story implementation: what, where and how. Acceptance
+   criterias. What when appears etc.
 2. Un-implemented things in another increment/iteration.
 3. Task writing: by layers (UI, controller, service, DAO).
 4. Task writing: by artifacts main code and test code.
@@ -44,7 +46,7 @@ Other:
 
 Strictly:
 
-* 15min max, 
+* 15min max,
 * Scrum master
 * Dev. team
 
@@ -91,7 +93,8 @@ After daily freeform speach between persons who need to discuss deeper
 ## Scrum implementations elements
 
 * Spike / AP
-* Epic (with uncertain estimation), US/Issue (bug/defect, technical + AC; certain estimation), task - per layer, component, 
+* Epic (with uncertain estimation), US/Issue (bug/defect, technical + AC; certain estimation), task - per layer,
+  component,
 * Done Done Done Done
 * Goal
 * WIP

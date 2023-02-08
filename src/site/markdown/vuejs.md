@@ -5,6 +5,7 @@
 ```
 npm install -g @vue/cli
 ```
+
 ## Project creation
 
 ```
@@ -25,11 +26,14 @@ Vue CLI v4.3.1
 ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
 ? Save this as a preset for future projects? Yes
 ? Save preset as: vue-start-project-preset
+
 ```
 
 ## Usage, tips and tricks
 
 ```
+
 yarn serve
+
 ```
 

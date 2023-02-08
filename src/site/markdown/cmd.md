@@ -26,6 +26,12 @@ COMMAND_PARENT_DIR=C:\pub\smi
 CUR_DIR_PARENT=C:\data\software
 ```
 
+```
+call some-command ^
+    -p param ^
+    -a another
+```
+
 ## See also
 
 [xxxx](http://yyyyy)

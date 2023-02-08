@@ -88,9 +88,7 @@ docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry:/va
 
 ## Dockerize Postgresql
 
-```
-    [Dockerize Postgresql](https://docs.docker.com/v17.09/engine/examples/postgresql_service/)
-```
+[Dockerize Postgresql](https://docs.docker.com/v17.09/engine/examples/postgresql_service/)
 
 ## Usage, tips and tricks
 
@@ -104,10 +102,19 @@ docker container stop aa467bdcd223
 docker container rm aa467bdcd223
 
 docker system prune -a
+docker container prune
+docker volume prune
+docker network prune
+docker system prune
 docker images -f dangling=true
 
 docker container list --all
 docker image list --all
+docker image ls
+docker volume ls
+docker network ls
+docker info
+
 docker container stop minikube
 docker container rm minikube
 docker volume rm minikube
@@ -117,6 +124,8 @@ docker volume create pg-data
 # docker volume create pg-data:/var/lib/postgresql/data
 
 docker run --name postgis -p 5432:5432 --restart always -v pg-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=g6p8 -d postgis/postgis
+
+docker run --gpus all --name IMAGE_NAME -v "${DOCKER_HOST_DIR}":/var/opt/setmy.info/data --rm docker.hub/setmy.info/IMAGE:VERSION
 ```
 
 **sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf**
@@ -174,44 +183,6 @@ psql -h localhost -p 5432 -U postgres -d postgres -W
 # P: g6p8
 ```
 
-```
-FROM setmyinfo/setmy-info-centos-java:latest
-
-LABEL org.label-schema.name="Docker HUB CentOS Spring boot micro service base" \
-      org.label-schema.version="1.2.0-SNAPSHOT" \
-      org.label-schema.description="setmy.info Docker HUB Centos Spring boot micro service base" \
-      org.label-schema.vendor="Hear And See Systems LLC" \
-      org.label-schema.url="https://www.hearandseesystems.com" \
-      org.label-schema.license="MIT" \
-      org.label-schema.schema-version="1.0" \
-      org.label-schema.build-date=$BUILD_DATE
-
-#ENV http_proxy http://cache.example.com:8080
-#ENV https_proxy http://cache.example.com:8080
-
-# docker run -p 8080:8080 setmyinfo/setmy-info-java-microservice:v1.0.0
-# docker run -e "SPRING_PROFILES_ACTIVE=dev" setmyinfo/setmy-info-java-microservice:v1.0.0
-
-# TODO : move that into base images with user creation etc
-COPY target/springboot-start-project-1.0.0-SNAPSHOT.jar /opt/has/lib/app.jar
-#RUN chown -R root:root                  /opt/has/lib/app.jar
-RUN chown -R microservice:microservice                  /opt/has/lib/app.jar
-RUN ls -la /opt/has/lib/app.jar
-RUN java -version
-RUN ls /dev/urandom
-
-# Can add -Djavax.net.ssl.trustStore=/opt/has/lib/store.jks -Djavax.net.ssl.keyStorePassword=secretpass
-ENV JAVA_OPTS="-Djava.security.egd=file:/dev/urandom"
-
-WORKDIR /var/opt/has/microservice
-
-EXPOSE 8080/tcp
-EXPOSE 8443/tcp
-
-#CMD ["/bin/sh"]
-CMD java ${JAVA_OPTS} -jar /opt/has/lib/app.jar
-```
-
 ## Docker connection problem
 
 ```sh
@@ -227,4 +198,5 @@ Hello from Docker!
 
 ## See also
 
-    [User usage](https://docs.ansible.com/ansible/2.7/user_guide/become.html)
+[User usage](https://docs.ansible.com/ansible/2.7/user_guide/become.html)
+[docker run options](https://docs.docker.com/engine/reference/run/)
