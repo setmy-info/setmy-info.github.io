@@ -16,6 +16,20 @@
 
 ## Usage, tips and tricks
 
+https://ordi.eu/ordi-lauaarvutid-ordi-fuuga-12gen
+
+```
+    GeForce RTX3080
+                        RTX 3080 Ti             RTX 3080
+    NVIDIA CUDA Cores   10240                   8960 / 8704
+```
+
+https://ordi.eu/ordi-lauaarvutid-ordi-twister-r5-5gen
+
+```
+    The GeForce RTX 2060 features 1,920 CUDA cores, 240 Tensor Cores that can deliver 52 teraflops of deep learning horsepower,...
+```
+
 8GB MSI RTX3050 Ventus 2X OC
 
 ## See also
