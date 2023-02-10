@@ -19,6 +19,8 @@
 https://ordi.eu/ordi-lauaarvutid-ordi-fuuga-12gen
 
 ```
+    CUDA Capability for RTX 30 Series: 8.6
+
     GeForce RTX3080
                         RTX 3080 Ti             RTX 3080
     NVIDIA CUDA Cores   10240                   8960 / 8704
