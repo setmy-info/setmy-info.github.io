@@ -66,3 +66,5 @@ pip install <package_name> --upgrade
 [Virtual environments tutorial](https://docs.python.org/3/tutorial/venv.html)
 
 [venv](https://docs.python.org/3/library/venv.html)
+
+[pip installer](https://pip.pypa.io/en/stable/cli/pip_install/)
