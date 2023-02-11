@@ -20,16 +20,33 @@ mvn pdf:pdf
 ## Creating maven project
 
 ```sh
-mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+mvn -B archetype:generate \
+    -DgroupId=info.setmy.app \
+    -DartifactId=example-app \
+    -DarchetypeArtifactId=maven-archetype-quickstart \
+    -DarchetypeVersion=1.4
 ```
 
-Site project creation
+## Creating Maven site project
 
 ```sh
 mvn archetype:create \
-  -DgroupId=mygroup \
-  -DartifactId=mywebsite \
+  -DgroupId=info.setmy.site \
+  -DartifactId=documentation-example-site \
   -DarchetypeArtifactId=maven-archetype-site-simple
+```
+
+## Creating JavaFX project
+
+```sh
+mvn archetype:generate \
+        -DarchetypeGroupId=org.openjfx \
+        -DarchetypeArtifactId=javafx-archetype-simple \
+        -DarchetypeVersion=0.0.3 \
+        -DgroupId=info.setmy.application \
+        -DartifactId=javafx-sample \
+        -Dversion=1.0.0-SNAPSHOT \
+        -Djavafx-version=19
 ```
 
 ## Adding wrapper to project
