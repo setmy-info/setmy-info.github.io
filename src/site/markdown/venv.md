@@ -48,7 +48,7 @@ source ./.venv/bin/activate
 continue:
 
 ```shell
-pip install --upgrade pip
+python -m pip install --upgrade pip
 pip --version
 pip install imageio
 pip install jupyterlab notebook voila

@@ -10,6 +10,8 @@
 
 **idempotent** - Idempotentsus.
 
+**Entity** - Entiteet, olem.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html

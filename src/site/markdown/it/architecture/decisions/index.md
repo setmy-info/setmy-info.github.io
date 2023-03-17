@@ -6,6 +6,6 @@
 
 [No secrets in main VCS](noSecretsInMainVCS.md)
 
-[No separate administrator or devops teams](noSeparateTeam.md)
+[Maven](maven.md)
 
-[Coherently development](coherentDevelopment.md)
+[Cucmber tests principles](cucumberTestsPrinciples.md)

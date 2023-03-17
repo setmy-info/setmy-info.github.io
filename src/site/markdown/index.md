@@ -9,6 +9,7 @@
 * [IT](empty.html)
     * [People](it/people.html) (roles, locations, vacations, etc)
     * [Process](it/process/index.html)
+        * [Decisions](it/process/decisions/index.html)
         * [Scrum](it/process/scrum/index.html) (Per team, optional)
             * [Team](it/process/scrum/team.html)
             * [Planning](it/process/scrum/planning.html)
