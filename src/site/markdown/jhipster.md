@@ -157,3 +157,4 @@ target
 * [JHipster logoJDL-Studio](https://start.jhipster.tech/jdl-studio/)
 * [JDL samples](https://github.com/jhipster/jdl-samples)
 * [Efficiency in mapping](https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/)
+* [JHip security](https://www.jhipster.tech/security/)

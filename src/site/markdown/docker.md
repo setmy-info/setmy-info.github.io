@@ -49,6 +49,22 @@ https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-th
    machines : https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 2. https://docs.docker.com/desktop/windows/install/
 
+### Build example
+
+```
+set BUILDKIT_PROGRESS=plain
+set DOCKER_BUILDKIT=0
+set IMAGE_NAME=xyz-api
+set IMAGE_VERSION=1.0.0-SNAPSHOT
+cd C:\sources\xyz-api
+# Remove all, that is not under source controll
+git clean -fdx
+docker build -t "docker.hub.io/setmy-info/%IMAGE_NAME%:%IMAGE_VERSION%" -f ./Dockerfile .
+docker image tag "docker.hub.io/setmy-info/%IMAGE_NAME%:%IMAGE_VERSION%" docker.hub.io/setmy-info/%IMAGE_NAME%:latest
+docker container rm %IMAGE_NAME%
+docker run --name %IMAGE_NAME% --network="minikube"  -p 7080:8080 -d docker.hub.io/setmy-info/%IMAGE_NAME%:latest
+```
+
 ## Configuration
 
 ## Docker compose
@@ -68,6 +84,14 @@ To run docker compose:
     Option --file can be used.
 To scale:
     docker-compose up --scale microservice-xyz=3
+```
+
+## Docker Ignore
+
+.dockerignore
+
+```
+node_modules
 ```
 
 ## Portainer

@@ -85,10 +85,13 @@ minikube start
 ```shell
 minikube image rm gihub.io/ORGNAME/IMAGENAME:VERSION
 minikube image load gihub.io/ORGNAME/IMAGENAME:VERSION --overwrite
-# minikube cache add gihub.io/ORGNAME/IMAGENAME:VERSION (DEPRECATED)
+# DEPRECATED
+minikube cache add gihub.io/ORGNAME/IMAGENAME:VERSION
 # also in Argo: spec.templates.container.imagePullPolicy: Never
 minikube image ls
 minikube addons enable ingress
+
+minikube tunnel
 ```
 
 ## See also

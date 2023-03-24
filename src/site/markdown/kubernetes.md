@@ -45,19 +45,22 @@ kubectl --context=CONTEXTNAME cluster-info
 kubectl config use-context context-xyz
 
 # -n NAMESPACE can be appended
-kubectl apply -f xyz-secrets.yml
-kubectl apply -f xyz-configmap.yml
-kubectl apply -f xyz-service.yml
+kubectl apply -f xyz-namespace.yml
+kubectl apply -f xyz-config-map.yml
+kubectl apply -f xyz-secrets-map.yml
 kubectl apply -f xyz-deployment.yml
+kubectl apply -f xyz-service.yml
+kubectl apply -f xyz-ingress.yml
 
-kubectl describe configmaps xyz-configmap
-kubectl describe secret xyz-secrets
+kubectl describe configmaps xyz-config-map
+kubectl describe secret xyz-secrets-map
 
 kubectl edit xyz-deployment
 kubectl get pods
 kubectl logs -f xyz-deployment-596744778-dcgtz
 kubectl logs xyz-deployment-596744778-dcgtz -c containername --previous
 kubectl describe pod xyz-deployment-596744778-dcgtz
+# Restarts
 kubectl delete pod xyz-deployment-596744778-dcgtz
 kubectl proxy
 kubectl port-forward xyz-deployment-596744778-dcgtz LOCALPORT:REMOTEPORT
@@ -65,10 +68,11 @@ kubectl exec -it xyz-deployment-596744778-dcgtz -- /bin/sh
 kubectl get endpoints
 kubectl get service
 
-kubectl delete secrets xyz-secrets
-kubectl delete configmap xyz-configmap
 kubectl delete service xyz-service
 kubectl delete deployment xyz-deployment
+kubectl delete secrets xyz-secrets-map
+kubectl delete configmap xyz-config-map
+kubectl delete namespace xyz-namespace
 
 kubectl exec --stdin --tty some-pod-596744778-dcgtz -- /bin/bash
 
@@ -87,8 +91,95 @@ kubectl get namespace
 kubectl config view --minify
 # kubectl config view --minify --output 'jsonpath={..namespace}'; echo
 kubectl config set-context --current --namespace=NAMESPACE
+```
 
+### Config map
 
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: xyz-config-map
+data:
+    variable: "Value in quotations"
+immutable: true
+```
+
+### Secrets map
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: xyz-secrets-map
+data:
+    secret-variable: U2VjcmV0IHZhbHVl
+immutable: true
+```
+
+### Deployment
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: xyz-deployment
+    labels:
+        app: nginx
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: nginx
+    template:
+        metadata:
+            labels:
+                app: nginx
+        spec:
+            containers:
+                -   name: nginx
+                    image: nginx:1.14.2
+                    ports:
+                        -   containerPort: 80
+```
+
+### Service
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: xyz-service
+spec:
+    selector:
+        app.kubernetes.io/name: MyApp
+    ports:
+        -   protocol: TCP
+            port: 80
+            targetPort: 9376
+```
+
+### Ingress
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+name: minimal-ingress
+annotations:
+nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ingressClassName: nginx-example
+rules:
+    -   http:
+        paths:
+            -   path: /testpath
+                pathType: Prefix
+                backend:
+                service:
+                name: test
+                port:
+                number: 80
 ```
 
 ## See also
@@ -108,9 +199,3 @@ kubectl config set-context --current --namespace=NAMESPACE
 [Config maps](ttps://kubernetes.io/docs/concepts/configuration/configmap/)
 
 [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
-
-[xxxx](cccc)
-
-[xxxx](cccc)
-
-[xxxx](cccc)
