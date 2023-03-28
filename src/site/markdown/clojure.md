@@ -277,8 +277,7 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
          (map inc)
          (take 5)))
 
-makeList
-
+;makeList
 (->> (range 1 10)
      (map (fn [x] (println x) x))
      (take 4))
