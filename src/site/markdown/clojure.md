@@ -99,15 +99,19 @@ false
 
 ![](https://clojure.org/images/content/guides/learn/syntax/structure-and-semantics.png)
 
-### Lists
+### Collections
+
+#### Lists
 
 Linked list.
 
 Clojure functions calls are lists.
 
 ```clojure
-;; To initiate list with values use ' character
+;; To initiate list with values use ' character. Othervise it is executed (read an interpreted) as function 1 with args 2 and 3.
+;; ' is macro
 ;; clojure.lang.PersistentList
+(type (quote (1 2 3)))
 (type '(1 2 3))
 (type (list 1 2 3))
 
@@ -116,7 +120,7 @@ Clojure functions calls are lists.
 
 Link: [Lists](https://clojure.org/guides/weird_characters#lists)
 
-### Vectors
+#### Vectors
 
 Sequential, 0-base indexed.
 
@@ -129,7 +133,23 @@ Sequential, 0-base indexed.
 
 Link: [Vectors](https://clojure.org/guides/weird_characters#vectors)
 
-### Maps
+#### Sets
+
+Unordered collection with unique vales in it.
+
+```clojure
+;; clojure.lang.PersistentHashSet
+(type #{:a :b :c})
+(type (hash-set 1 2 3 4))
+
+(println (str #{:a :b :c}))
+(println (str (hash-set 1 2 3 4)))
+(println (str {"firstName" "Imre" "lastName" "Tabur"}))
+```
+
+Link: [Set](https://clojure.org/guides/weird_characters#_set)
+
+#### Maps
 
 ```clojure
 ;; clojure.lang.PersistentArrayMap
@@ -140,7 +160,7 @@ Link: [Vectors](https://clojure.org/guides/weird_characters#vectors)
 
 Link: [Maps](https://clojure.org/guides/weird_characters#maps)
 
-#### Namespaces
+### Namespaces
 
 ```clojure
 ;; clojure.lang.PersistentArrayMap
@@ -151,19 +171,6 @@ Link: [Maps](https://clojure.org/guides/weird_characters#maps)
 ```
 
 Link: [Maps](https://clojure.org/reference/reader#_maps)
-
-### Sets
-
-```clojure
-;; clojure.lang.PersistentHashSet
-(type #{:a :b :c})
-(type (hash-set 1 2 3 4))
-
-(println (str #{:a :b :c}))
-(println (str (hash-set 1 2 3 4)))
-```
-
-Link: [Set](https://clojure.org/guides/weird_characters#_set)
 
 ### Symbols
 
@@ -287,10 +294,13 @@ makeList
 ; #inst "2022-11-13T19:29:52.015-00:00"
 (java.util.Date.)
 
-; Func üpassing and executing
+; Func passing and executing
 (defn greet [value infunc] (str "Hello," (infunc value)))
 
 (greet 2 (fn [x] (+ x 1)))
+
+; 13.7
+(get ["a" 13.7 :foo] 1)
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
