@@ -287,13 +287,17 @@ makeList
 ; #inst "2022-11-13T19:29:52.015-00:00"
 (java.util.Date.)
 
+; Func üpassing and executing
 (defn greet [value infunc] (str "Hello," (infunc value)))
+
 (greet 2 (fn [x] (+ x 1)))
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
 
 ## See also
+
+[Web Noir](http://www.webnoir.org/)
 
 [Pedastal](http://pedestal.io/)
 

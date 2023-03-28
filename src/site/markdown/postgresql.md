@@ -110,6 +110,10 @@ grant all privileges on database live to liveliquibase;
 
 COPY "tablename" (col1, col2) FROM STDIN WITH (FORMAT CSV, DELIMITER ',', HEADER true)
 
+DROP TABLE IF EXISTS table1, table2 CASCADE;
+
+DROP SEQUENCE IF EXISTS sequence1, sequence2 CASCADE;
+
 \ds
 \du
 ```
@@ -179,7 +183,75 @@ psql --set ON_ERROR_STOP=on new_database < backup_file
 psql -U postgres -f all.backup
 ```
 
-### JSONB
+### JSONB and Geometry
+
+Activate extension for DB
+
+```sql
+create extension postgis;
+```
+
+```sql
+create table if not exists example (id serial primary key,	json_column jsonb not null, geo_data geometry not null);
+insert into example (json_column, geo_data) values ('{"firstName":"Imre","lastName":"Tabur"}', ST_GeomFromText('POINT(26.125488 59.531533)', 4326));
+insert into example (json_column, geo_data) values ('{"firstName":"John","lastName":"Doe"}', ST_GeomFromText('POINT(26.125488 59.531533)', 4326));
+select * from example;
+select * from example where json_column->>'firstName' = 'Imre';
+select * from example where json_column->>'firstName' = 'John';
+select * from example where json_column->>'firstName' like 'I%';
+select * from example where json_column->>'firstName' like '%m%';
+select * from example where json_column->>'firstName' like '%o%';
+select * from example where json_column->>'nonExisting' like '%o%';
+select * from example where json_column->>'nonExisting' is not null;
+```
+
+### PostGIS
+
+A postgres user for PostGIS DB
+
+```
+CREATE EXTENSION postgis;
+```
+
+With docker
+
+docker-compose.yml
+
+```yaml
+version: '0.0.1'
+services:
+    db:
+        image: postgis/postgis
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: 'g6p8'
+        volumes:
+            - pg-data:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+volumes:
+    pg-data:
+```
+
+Start portainer
+
+```sh
+docker compose start
+#Or
+docker-compose -f docker-compose.yml up
+```
+
+Connect with password **g6p8**:
+
+```sh
+psql -h localhost -p 5432 -U postgres -d postgres -W
+```
+
+Stop portainer
+
+```sh
+docker compose stop
+```
 
 ## Control questions
 

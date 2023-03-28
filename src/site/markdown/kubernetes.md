@@ -125,22 +125,43 @@ kind: Deployment
 metadata:
     name: xyz-deployment
     labels:
-        app: nginx
+        app: xyz-deployment
 spec:
     replicas: 3
     selector:
         matchLabels:
-            app: nginx
+            app: xyz-deployment
     template:
         metadata:
             labels:
-                app: nginx
+                app: xyz-deployment
         spec:
             containers:
-                -   name: nginx
-                    image: nginx:1.14.2
+                -   name: xyz
+                    image: xyz:latest
+                    # Remove for production, use it for development in Minikube
+                    # imagePullPolicy: Never
                     ports:
-                        -   containerPort: 80
+                        -   name: xyz-port
+                            containerPort: 8080
+                    env:
+                        # For Spring boot
+                        -   name: PROFILES_LIST
+                            value: "dev,api-docs"
+                        ## From config-map
+                        -   name: VARIABLE
+                            valueFrom:
+                                configMapKeyRef:
+                                    name: xyz-config-map
+                                    key: variable
+                                    optional: false
+                        ## From secrets
+                        -   name: SECRET_VARIABLE
+                            valueFrom:
+                                secretKeyRef:
+                                    name: xyz-secrets-map
+                                    key: secret-variable
+                                    optional: false
 ```
 
 ### Service
@@ -152,11 +173,11 @@ metadata:
     name: xyz-service
 spec:
     selector:
-        app.kubernetes.io/name: MyApp
+        app.kubernetes.io/name: xyz
     ports:
         -   protocol: TCP
             port: 80
-            targetPort: 9376
+            targetPort: xyz-port
 ```
 
 ### Ingress
