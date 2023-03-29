@@ -76,6 +76,9 @@ false
 ; keyword with namespace
 :release/alpha
 
+; clojure.lang.Keyword
+(type :a)
+
 ; clojure.lang.BigInt
 (type 123N)
 (type (bigint 123))
@@ -145,6 +148,13 @@ Unordered collection with unique vales in it.
 (println (str #{:a :b :c}))
 (println (str (hash-set 1 2 3 4)))
 (println (str {"firstName" "Imre" "lastName" "Tabur"}))
+
+;; #{2.0 1 true "abc" 3 2}
+(hash-set 1 2 3 "abc" true 2.0 "abc")
+
+;; Syntax error reading source at (REPL:1:30).
+;; Duplicate key: abc
+#{1 2 3 "abc" true 2.0 "abc"}
 ```
 
 Link: [Set](https://clojure.org/guides/weird_characters#_set)
@@ -181,6 +191,10 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
 (def plusFuncSymbol '+)
 
 (eval (list plusFuncSymbol 1 2 3))
+
+(def listFunc (list plusFuncSymbol 1 2 3))
+
+(eval listFunc)
 ```
 
 ### Equality
@@ -277,7 +291,9 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
          (map inc)
          (take 5)))
 
-;makeList
+; Exactly this way
+makeList
+
 (->> (range 1 10)
      (map (fn [x] (println x) x))
      (take 4))
@@ -300,14 +316,58 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
 
 ; 13.7
 (get ["a" 13.7 :foo] 1)
+
+; Filter, map, reduce
+(def aVector [1 2 3 4 5 6 7 8 9])
+
+(take 2 (map (fn [x] (* x 2)) (filter (fn [x] (= (rem x 2) 0)) aVector)))
+(take 2 (map (fn [x] (* x 2)) (filter (fn [x] (= (rem x 2) 0)) aVector)))
+
+(take-last 2 (map (fn [x] (* x 2)) (filter (fn [x] (= (rem x 2) 0)) aVector)))
+
+; filter in even numbers from vector,map by multiplying by 2 and collect last 2 and collect into vector and sum the vector
+(reduce +
+        (into []
+              (take-last 2 (map (fn [x] (* x 2)) (filter (fn [x] (= (rem x 2) 0)) aVector)))))
+
+; Filtering hash map items list
+(def person1 {:firstName "Joe" :lastName "Biden"})
+(def person2 {:firstName "Donald" :lastName "Trump"})
+(def person3 {:firstName "Barack" :lastName "Obama"})
+(def personList (list person1 person2 person3))
+
+(filter #(not= (:firstName %) "Joe") personList)
+
+(remove #(= (:firstName %) "Joe") personList)
+
+(filter #(not= "Joe" (get % :firstName)) personList)
+(filter (fn [person] (not= (person :firstName) "Joe")) personList)
+(filter (fn [person] (not= (get person :firstName) "Joe")) personList)
+(filter #(not= (% :firstName) "Joe") personList)
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
 
 ## See also
 
+Clojupyter
+
 [Web Noir](http://www.webnoir.org/)
 
 [Pedastal](http://pedestal.io/)
 
 [Clojure diary](https://clojure-diary.gitlab.io/)
+
+[reduce spec](https://clojuredocs.org/clojure.core/reduce)
+
+[Liberator](https://clojure-liberator.github.io/liberator/)
+
+[Compojure](https://github.com/weavejester/compojure)
+
+[Ring](https://github.com/ring-clojure/ring)
+
+[scicloj.ml](https://github.com/scicloj/scicloj.ml)
+
+[Cortex](https://github.com/originrose/cortex)
+
+[Gorilla REPL](http://gorilla-repl.org/)

@@ -12,6 +12,10 @@
 
 **Entity** - Entiteet, olem.
 
+**heterogeneous collection** - any type of data in collection.
+
+**homogeneous collection** - single type of data in collection.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html
