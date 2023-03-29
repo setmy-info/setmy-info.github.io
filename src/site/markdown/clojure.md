@@ -283,13 +283,13 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
     (str "clojure."))
 
 (def makeList
-    (->> (range 1 10)
-         (map println)))
+  (->> (range 1 10)
+       (map println)))
 
 (def makeList
-    (->> (range)
-         (map inc)
-         (take 5)))
+  (->> (range)
+       (map inc)
+       (take 5)))
 
 ; Exactly this way
 makeList
@@ -344,6 +344,11 @@ makeList
 (filter (fn [person] (not= (person :firstName) "Joe")) personList)
 (filter (fn [person] (not= (get person :firstName) "Joe")) personList)
 (filter #(not= (% :firstName) "Joe") personList)
+
+(def aVariable (conj #{} "Hello"))
+
+; #{"World" "Hello"}
+(conj aVariable "World")
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
