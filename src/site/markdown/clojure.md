@@ -283,13 +283,13 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
     (str "clojure."))
 
 (def makeList
-  (->> (range 1 10)
-       (map println)))
+    (->> (range 1 10)
+         (map println)))
 
 (def makeList
-  (->> (range)
-       (map inc)
-       (take 5)))
+    (->> (range)
+         (map inc)
+         (take 5)))
 
 ; Exactly this way
 makeList
@@ -353,9 +353,19 @@ makeList
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
 
+#### The thread-first macro (->)
+
+Linear flow of calls for readability.
+
+-> thing
+
 ## See also
 
-Clojupyter
+* Clojupyter
+* Neanderthal
+* ClojureCL
+* ClojureCUDA
+* Fluokitten
 
 [Web Noir](http://www.webnoir.org/)
 
@@ -376,3 +386,7 @@ Clojupyter
 [Cortex](https://github.com/originrose/cortex)
 
 [Gorilla REPL](http://gorilla-repl.org/)
+
+[Clojure Style Guide](https://guide.clojure.style/)
+
+[uncomplicate - CL libs for ML/AI](https://uncomplicate.org/)

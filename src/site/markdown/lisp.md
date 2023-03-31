@@ -249,6 +249,57 @@ Created with quicklisp
 16. postmodern
 17. local-time
 
+### Data types
+
+#### Collections
+
+##### List
+
+```clojure
+'(1 2.2 1/2 "Hello" nil)
+
+; same as previous
+; (1 2.2 1/2 "Hello" NIL)
+(list 1 2.2 1/2 "Hello" nil)
+```
+
+##### Vector
+
+Integer indexed collection.
+
+```clojure
+#(1 2 3)
+
+; same as previous
+(vector 1 2 3)
+
+```
+
+##### Set
+
+##### Hash Tables (Map?)
+
+```clojure
+(defparameter *h* (make-hash-table))
+
+(gethash 'foo *h*)
+
+(setf (gethash 'foo *h*) 'quux)
+(setf (gethash 'foo *h*) "Foo")
+
+(gethash 'foo *h*)
+```
+
+### Misc
+
+```clojure
+(reduce #'+ '(1 2 3 4))
+
+(mapcar #'sqrt '(1 2 3 4))
+
+(mapcan #'(lambda (x) (if (oddp x) (list x))) '(1 2 3 4 5))
+```
+
 ## See also
 
 1. [LISP Lang](https://lisp-lang.org/)
@@ -328,3 +379,11 @@ Created with quicklisp
 1. [Some list of libraries](http://articulate-lisp.com/project/abcs.html)
 
 1. [rove usage](https://quickdocs.org/rove)
+
+1. [Reduce](http://www.lispworks.com/documentation/HyperSpec/Body/f_reduce.htm)
+
+1. [Map](http://www.lispworks.com/documentation/HyperSpec/Body/f_map.htm)
+
+1. [Book](https://gigamonkeys.com/book/)
+
+1. [Book 2](https://www.amazon.com/Successful-Lisp-How-Understand-Common/dp/3937526005)

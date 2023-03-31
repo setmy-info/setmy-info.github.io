@@ -36,6 +36,12 @@ lein uberjar
 java -jar ".\target\default+uberjar\tutorial-0.1.0-SNAPSHOT-standalone.jar" fff
 ```
 
+### Run specific test
+
+```shell
+lein test :only info.setmy.testing/hello-test
+```
+
 ## See also
 
 [Leiningen](https://leiningen.org/)
