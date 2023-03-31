@@ -369,7 +369,7 @@ Linear flow of calls for readability.
 
 [Web Noir](http://www.webnoir.org/)
 
-[Pedastal](http://pedestal.io/)
+[Pedestal](http://pedestal.io/)
 
 [Clojure diary](https://clojure-diary.gitlab.io/)
 
