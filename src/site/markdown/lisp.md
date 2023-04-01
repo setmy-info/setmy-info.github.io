@@ -42,6 +42,14 @@ With plugins:
 
 [Markdown VSCode plugin](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
+```lisp
+(format t "Hello, World!~%")
+```
+
+```common-lisp
+(concatenate 'string "Hello, " "World!")
+```
+
 ```clojure
 ; Load main system
 (asdf:already-loaded-systems)
