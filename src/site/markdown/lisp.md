@@ -74,7 +74,7 @@ sbcl --load quicklisp.lisp
 
 Install quicklisp into lisp environment
 
-```clojure
+```lisp
 (require
  "asdf")
 
@@ -115,7 +115,7 @@ With plugins:
 (concatenate 'string "Hello, " "World!")
 ```
 
-```clojure
+```lisp
 ; Load main system
 (asdf:already-loaded-systems)
 
@@ -143,7 +143,7 @@ With plugins:
 
 Some random code
 
-```clojure
+```lisp
 (require
  "asdf")
 
@@ -187,7 +187,7 @@ Package manager for common lisp (almost like maven, pip, ...).
 
 REPL is started
 
-```clojure
+```lisp
 (quicklisp-quickstart:install)
 
 (ql:quickload "cl-project")
@@ -198,7 +198,7 @@ REPL is started
 
 When quicklisp is already installed, then need to load it.
 
-```clojure
+```lisp
 (load
  (merge-pathnames "quicklisp/setup.lisp"
                   (user-homedir-pathname)))
@@ -206,7 +206,7 @@ When quicklisp is already installed, then need to load it.
 (asdf:already-loaded-systems)
 ```
 
-```clojure
+```lisp
 ; Examples of registering new code/system/project location
 (pushnew (truename "/projects/app/") ql:*local-project-directories*)
 
@@ -220,7 +220,7 @@ When quicklisp is already installed, then need to load it.
 
 To make it automatic (**~/.sbclrc**):
 
-```clojure
+```lisp
 (ql:add-to-init-file)
 ```
 
@@ -247,7 +247,7 @@ TODO : how to package it with all its dependencies, so it can be executed in doc
 
 **Example system 1**
 
-```clojure
+```lisp
 ;; Usual Lisp comments are allowed here
 
 (defsystem "hello-lisp"
@@ -266,7 +266,7 @@ TODO : how to package it with all its dependencies, so it can be executed in doc
 
 Created with quicklisp
 
-```clojure
+```lisp
 (defsystem "first-app"
            :version     "0.1.0"
            :author      "Imre Tabur <info@setmy.info>"
@@ -319,7 +319,7 @@ Created with quicklisp
 
 ##### List
 
-```clojure
+```lisp
 '(1 2.2 1/2 "Hello" nil)
 
 ; same as previous
@@ -331,7 +331,7 @@ Created with quicklisp
 
 Integer indexed collection.
 
-```clojure
+```lisp
 #(1 2 3)
 
 ; same as previous
@@ -343,7 +343,7 @@ Integer indexed collection.
 
 ##### Hash Tables (Map?)
 
-```clojure
+```lisp
 (defparameter *h* (make-hash-table))
 
 (gethash 'foo *h*)
@@ -389,7 +389,7 @@ Integer indexed collection.
 
 #### Class
 
-```clojure
+```lisp
 (defclass person ()
     ((first-name
       :initarg  :first-name
