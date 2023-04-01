@@ -28,6 +28,71 @@ dnf install -y clisp
 
 ### OpenIndiana
 
+### Windows
+
+Download and install SBCL - Steel Bank Common Lisp.
+
+### Install Quicklisp
+
+Have to download, install and load quicklisp into SBCL.
+
+On Windows
+
+```commandline
+mkdir C:\pub
+mkdir C:\pub\quicklisp
+cd C:\pub\quicklisp
+```
+
+*nixes
+
+```shell
+cd ~
+mkdir common-lisp
+cd common-lisp
+```
+
+```shell
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
+gpg --verify quicklisp.lisp.asc quicklisp.lisp
+```
+
+Start SBCL loaded with quicklisp.
+
+Windows
+
+```sh
+sbcl --load C:/pub/quicklisp/quicklisp.lisp
+```
+
+*nixes
+
+```sh
+sbcl --load quicklisp.lisp
+```
+
+Install quicklisp into lisp environment
+
+```clojure
+(require
+ "asdf")
+
+; if sbcl without --load quicklisp.lisp
+; (load "quicklisp.lisp")
+; (load "quicklisp/setup.lisp")
+(asdf:already-loaded-systems)
+
+(quicklisp-quickstart:install)
+
+(asdf:already-loaded-systems)
+
+(ql:add-to-init-file)
+
+; Hit enter
+(quit)
+```
+
 ## Configuration
 
 ## Usage, tips and tricks
@@ -119,15 +184,6 @@ sbcl --script src\lisp\main\main.lisp
 Package manager for common lisp (almost like maven, pip, ...).
 
 #### Create new system (project)
-
-```shell
-cd ~/common-lisp
-curl -O https://beta.quicklisp.org/quicklisp.lisp
-curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
-gpg --verify quicklisp.lisp.asc quicklisp.lisp
-sbcl --load quicklisp.lisp
-#sbcl --load C:/pub/quicklisp/quicklisp.lisp
-```
 
 REPL is started
 
@@ -308,6 +364,48 @@ Integer indexed collection.
 (mapcan #'(lambda (x) (if (oddp x) (list x))) '(1 2 3 4 5))
 ```
 
+#### Importing section
+
+```lisp
+(in-package :cl-user)
+
+(defpackage cl-start-project/main
+    #|Avoid :use. Instead, do this:
+    (:use :cl)
+    (:import-from :cl-start-project/foo :hello-world)
+    (:import-from :cl-start-project/style :+golden-ratio+)
+    (:import-from :cl-start-project/lesson :show-math)
+    Use :import-from
+    |#
+    (:use :cl)
+    (:import-from :cl-start-project/foo :hello-world)
+    (:import-from :cl-start-project/style :+golden-ratio+)
+    (:import-from :cl-start-project/lesson :show-math)
+    ;(:export :show-math)
+    (:export :main))
+
+(in-package :cl-start-project/main)
+```
+
+#### Class
+
+```clojure
+(defclass person ()
+    ((first-name
+      :initarg  :first-name
+      :initform "")
+        (last-name
+         :initarg  :last-name
+         :initform "")))
+
+(defparameter *person* (make-instance 'person :first-name "John" :last-name "Doe"))
+
+;; See the ~a and ~s difference
+(format t "Person: first name ~a last name ~s ~%" (slot-value *person* 'first-name) (slot-value *person* 'last-name))
+;; Same thing to return string
+(format NIL "Person: first name ~a last name ~s ~%" (slot-value *person* 'first-name) (slot-value *person* 'last-name))
+```
+
 ## See also
 
 1. [LISP Lang](https://lisp-lang.org/)
@@ -395,3 +493,7 @@ Integer indexed collection.
 1. [Book](https://gigamonkeys.com/book/)
 
 1. [Book 2](https://www.amazon.com/Successful-Lisp-How-Understand-Common/dp/3937526005)
+
+1. [Dandelion - Eclipse plugin](https://github.com/Ragnaroek/dandelion)
+
+1. [CL Jupyter](https://github.com/yitzchak/common-lisp-jupyter)
