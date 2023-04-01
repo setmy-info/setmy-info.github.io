@@ -356,7 +356,7 @@ Integer indexed collection.
 
 ### Misc
 
-```clojure
+```lisp
 (reduce #'+ '(1 2 3 4))
 
 (mapcar #'sqrt '(1 2 3 4))
