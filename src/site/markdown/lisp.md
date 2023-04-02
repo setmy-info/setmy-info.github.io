@@ -1,12 +1,22 @@
 # Common LISP
 
+## Information
+
 ![LISP](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Lisp_logo.svg/240px-Lisp_logo.svg.png)
 
 ANSI INCITS 226-1994 (S20018)[1] (formerly X3.226-1994 (R1999)). ANSI common LISP.
 
 Created 1968.
 
-## Information
+### Hello World
+
+```common-lisp
+(format t "Hello, World!~%")
+```
+
+```common-lisp
+(concatenate 'string "Hello, " "World!")
+```
 
 ## Installation
 
@@ -22,101 +32,20 @@ dnf install -y sbcl
 dnf install -y clisp
 ```
 
-### Fedora
-
-### FreeBSD
-
-### OpenIndiana
-
 ### Windows
 
 Download and install SBCL - Steel Bank Common Lisp.
 
-### Install Quicklisp
+### Post install
 
-Have to download, install and load quicklisp into SBCL.
-
-On Windows
-
-```commandline
-mkdir C:\pub
-mkdir C:\pub\quicklisp
-cd C:\pub\quicklisp
-```
-
-*nixes
-
-```shell
-cd ~
-mkdir common-lisp
-cd common-lisp
-```
-
-```shell
-curl -O https://beta.quicklisp.org/quicklisp.lisp
-curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
-gpg --verify quicklisp.lisp.asc quicklisp.lisp
-```
-
-Start SBCL loaded with quicklisp.
-
-Windows
-
-```sh
-sbcl --load C:/pub/quicklisp/quicklisp.lisp
-```
-
-*nixes
-
-```sh
-sbcl --load quicklisp.lisp
-```
-
-Install quicklisp into lisp environment
-
-```lisp
-(require
- "asdf")
-
-; if sbcl without --load quicklisp.lisp
-; (load "quicklisp.lisp")
-; (load "quicklisp/setup.lisp")
-(asdf:already-loaded-systems)
-
-(quicklisp-quickstart:install)
-
-(asdf:already-loaded-systems)
-
-(ql:add-to-init-file)
-
-; Hit enter
-(quit)
-```
-
-## Configuration
+Install [Quicklisp](quicklisp.md).
 
 ## Usage, tips and tricks
 
-### IDE
-
-Curently setmy.info standard IDE for Common LISP is VSCode.
-
-With plugins:
-
-[CL VSCode plugin](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)
-
-[Markdown VSCode plugin](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-
-```lisp
-(format t "Hello, World!~%")
-```
+### Working with System (Project)
 
 ```common-lisp
-(concatenate 'string "Hello, " "World!")
-```
-
-```lisp
-; Load main system
+;; Load main system
 (asdf:already-loaded-systems)
 
 (pushnew (truename "./") ql:*local-project-directories*)
@@ -126,7 +55,7 @@ With plugins:
 
 (asdf:already-loaded-systems)
 
-; Load tests system
+;; Load tests system
 (ql:quickload :rove)
 
 ;(require "cl-start-project/tests")
@@ -134,94 +63,11 @@ With plugins:
 
 (asdf:already-loaded-systems)
 
-; Run tests
+;; Run tests
 (rove:run :cl-start-project/tests)
 
-; Make executable
+;; Make executable
 (asdf:make :cl-start-project)
-```
-
-Some random code
-
-```lisp
-(require
- "asdf")
-
-; When quicklisp is loaded?
-(require
- "cl-start-project")
-
-(asdf:already-loaded-systems)
-
-(load "quicklisp.lisp")
-
-(asdf:load-asd
- (merge-pathnames "cl-start-project" "C:/sources/setmy.info/incubation/lisp"))
-
-;;(asdf:load-asd (merge-pathnames "cl-start-project" (uiop:getcwd)))
-
-(asdf:already-loaded-systems)
-
-(asdf:load-system "cl-start-project")
-
-; Like package/system/library search
-(ql:system-apropos "alexandria")
-
-; Make bin file?
-(asdf:make :cl-start-project)
-
-(prove:run #P"myapp/tests/my-test.lisp")
-```
-
-Executing Steel bank common lisp
-
-```shell
-sbcl --script src\lisp\main\main.lisp
-```
-
-### Quicklisp
-
-Package manager for common lisp (almost like maven, pip, ...).
-
-#### Create new system (project)
-
-REPL is started
-
-```lisp
-(quicklisp-quickstart:install)
-
-(ql:quickload "cl-project")
-
-; Sceleton creation
-(cl-project:make-project #p"~/common-lisp/first-app" :author "Imre Tabur <info@setmy.info>" :license "MIT" :depends-on '(:alexandria))
-```
-
-When quicklisp is already installed, then need to load it.
-
-```lisp
-(load
- (merge-pathnames "quicklisp/setup.lisp"
-                  (user-homedir-pathname)))
-
-(asdf:already-loaded-systems)
-```
-
-```lisp
-; Examples of registering new code/system/project location
-(pushnew (truename "/projects/app/") ql:*local-project-directories*)
-
-; or
-(pushnew "~/asdf/" asdf:*central-registry* :test #'equal)
-
-(ql:register-local-projects)
-
-(ql:quickload :app)
-```
-
-To make it automatic (**~/.sbclrc**):
-
-```lisp
-(ql:add-to-init-file)
 ```
 
 #### Run system (project/app)
@@ -229,7 +75,7 @@ To make it automatic (**~/.sbclrc**):
 TODO : how to download dependencies, so application can be executed, locally, by developer with all its dependencies (
 for example with alexandria)?
 
-#### Packagind system (project/app)
+#### Packaging system (project/app)
 
 TODO : how to package it with all its dependencies, so it can be executed in docker for example.
 
@@ -245,9 +91,11 @@ TODO : how to package it with all its dependencies, so it can be executed in doc
 ~/.config/common-lisp/source-registry.conf
 ```
 
-**Example system 1**
+### System files
 
-```lisp
+Usual example file:
+
+```common-lisp
 ;; Usual Lisp comments are allowed here
 
 (defsystem "hello-lisp"
@@ -262,11 +110,9 @@ TODO : how to package it with all its dependencies, so it can be executed in doc
                             (:file "hello" :depends-on ("macros"))))
 ```
 
-**Example system 2**
-
 Created with quicklisp
 
-```lisp
+```common-lisp
 (defsystem "first-app"
            :version     "0.1.0"
            :author      "Imre Tabur <info@setmy.info>"
@@ -291,6 +137,52 @@ Created with quicklisp
                                   ((:file "main"))))
            :description "Test system for first-app"
            :perform     (test-op (op c) (symbol-call :rove :run c)))
+```
+
+### IDE
+
+Currently, setmy.info standard IDE for Common LISP is VSCode.
+
+With plugins:
+
+[CL VSCode plugin](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)
+
+[Markdown VSCode plugin](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
+## Some misc code
+
+```common-lisp
+(require "asdf")
+
+;; When quicklisp is loaded?
+(require "cl-start-project")
+
+(asdf:already-loaded-systems)
+
+(load "quicklisp.lisp")
+
+(asdf:load-asd
+   (merge-pathnames "cl-start-project" "C:/sources/setmy.info/incubation/lisp"))
+
+;(asdf:load-asd (merge-pathnames "cl-start-project" (uiop:getcwd)))
+
+(asdf:already-loaded-systems)
+
+(asdf:load-system "cl-start-project")
+
+;; Like package/system/library search
+(ql:system-apropos "alexandria")
+
+;; Make bin file?
+(asdf:make :cl-start-project)
+
+(prove:run #P"myapp/tests/my-test.lisp")
+```
+
+Executing Steel bank common lisp
+
+```shell
+sbcl --script src\lisp\main\main.lisp
 ```
 
 ### Some libraries
@@ -319,11 +211,11 @@ Created with quicklisp
 
 ##### List
 
-```lisp
+```common-lisp
 '(1 2.2 1/2 "Hello" nil)
 
-; same as previous
-; (1 2.2 1/2 "Hello" NIL)
+;; same as previous
+;; (1 2.2 1/2 "Hello" NIL)
 (list 1 2.2 1/2 "Hello" nil)
 ```
 
@@ -331,10 +223,10 @@ Created with quicklisp
 
 Integer indexed collection.
 
-```lisp
+```common-lisp
 #(1 2 3)
 
-; same as previous
+;; same as previous
 (vector 1 2 3)
 
 ```
@@ -343,7 +235,7 @@ Integer indexed collection.
 
 ##### Hash Tables (Map?)
 
-```lisp
+```common-lisp
 (defparameter *h* (make-hash-table))
 
 (gethash 'foo *h*)
@@ -356,7 +248,7 @@ Integer indexed collection.
 
 ### Misc
 
-```lisp
+```common-lisp
 (reduce #'+ '(1 2 3 4))
 
 (mapcar #'sqrt '(1 2 3 4))
@@ -366,7 +258,7 @@ Integer indexed collection.
 
 #### Importing section
 
-```lisp
+```common-lisp
 (in-package :cl-user)
 
 (defpackage cl-start-project/main
@@ -389,7 +281,7 @@ Integer indexed collection.
 
 #### Class
 
-```lisp
+```common-lisp
 (defclass person ()
     ((first-name
       :initarg  :first-name
