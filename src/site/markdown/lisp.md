@@ -241,22 +241,12 @@ Integer indexed collection.
 (gethash 'foo *h*)
 
 (setf (gethash 'foo *h*) 'quux)
+(gethash 'foo *h*)
 (setf (gethash 'foo *h*) "Foo")
-
 (gethash 'foo *h*)
 ```
 
 ### Misc
-
-```common-lisp
-(reduce #'+ '(1 2 3 4))
-
-(mapcar #'sqrt '(1 2 3 4))
-
-(mapcan #'(lambda (x) (if (oddp x) (list x))) '(1 2 3 4 5))
-```
-
-#### Importing section
 
 ```common-lisp
 (in-package :cl-user)
@@ -277,11 +267,40 @@ Integer indexed collection.
     (:export :main))
 
 (in-package :cl-start-project/main)
-```
 
-#### Class
+;; Short comment.
+(defparameter *global-variable* "Global variable in earmuffs. All variables should be writen
+    complete words. You should use lower case. You must not use / or . instead of -")
 
-```common-lisp
+(defconstant +golden-ratio+ 575 "Global constants should be with plus sign.")
+(defconstant +mix32+ #x12b9b0a1 "pi, an arbitrary number")
+(defconstant +mix64+ #x2b992ddfa23249d6 "more digits of pi")
+
+(format t "~d ~%" +mix32+)
+(format t "~f ~%" +mix64+)
+(format t "~s ~%" "Hello World")
+
+(if (< 3 5)
+    (format t "~s ~%" "True")
+    (format t "~s ~%" "False"))
+
+; Like if-elseif-else switch-case
+;(defparameter *global-variable* 4)
+;(defparameter *global-variable* 5)
+(defparameter *global-variable* 6)
+(cond ((< *global-variable* 5) (format t "~s ~%" "First"))
+      ((< *global-variable* 6) (format t "~s ~%" "Second"))
+      (t (format t "~s ~%" "Third")))
+
+;; Short comment.
+(defun is-it-good-p (input-data)
+    "Function that returns T or NIL should end with -p (predicate). If the rest of the function
+    name is a single word, e.g: abstractp, bluep, evenp. If the rest of the function name is more
+    than one word, e.g largest-planet-p, request-throttled-p."
+    ;; Region 2. Two semicolons.
+    nil)
+
+;; Class example
 (defclass person ()
     ((first-name
       :initarg  :first-name
@@ -296,6 +315,19 @@ Integer indexed collection.
 (format t "Person: first name ~a last name ~s ~%" (slot-value *person* 'first-name) (slot-value *person* 'last-name))
 ;; Same thing to return string
 (format NIL "Person: first name ~a last name ~s ~%" (slot-value *person* 'first-name) (slot-value *person* 'last-name))
+
+;;--- TODO(info@setmy.info): Refactor to provide a better API.  Remove this code after release 1.7
+;; or before 2099-12-31.
+(defun foo-bar ()
+    (format t "Hello, world~1%"))
+```
+
+```common-lisp
+(reduce #'+ '(1 2 3 4))
+
+(mapcar #'sqrt '(1 2 3 4))
+
+(mapcan #'(lambda (x) (if (oddp x) (list x))) '(1 2 3 4 5))
 ```
 
 ## See also
