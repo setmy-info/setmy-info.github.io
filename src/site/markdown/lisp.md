@@ -10,9 +10,19 @@ Created 1968.
 
 ### Hello World
 
+Simple as that:
+
+```common-lisp
+"Hello, World!"
+```
+
+More complex:
+
 ```common-lisp
 (format t "Hello, World!~%")
 ```
+
+or:
 
 ```common-lisp
 (concatenate 'string "Hello, " "World!")
@@ -78,6 +88,16 @@ for example with alexandria)?
 #### Packaging system (project/app)
 
 TODO : how to package it with all its dependencies, so it can be executed in docker for example.
+
+#### Compiling
+
+To FASL (fast-load file) binary format.
+
+NB! Works with same version of sbcl that compiled the file. Version compatibility can also lead to hard debuggable bugs.
+
+```common-lisp
+(compile-file "tests/hello.lisp")
+```
 
 ### ASDF
 
@@ -187,10 +207,11 @@ sbcl --script src\lisp\main\main.lisp
 
 ### Some libraries
 
-1. Loads of utilities (**alexandria** - (ql:quickload :alexandria))
-2. Regular expressions (**cl-ppcre** - (ql:quickload :cl-ppcre))
-3. Clojure-like arrow macros (**cl-arrows** - (ql:quickload :cl-arrows))
-4. String manipulation (**cl-strings** - (ql:quickload :cl-strings))
+1. Loads of utilities (**alexandria** - (ql:quickload :
+   alexandria)) https://alexandria.common-lisp.dev/ https://gitlab.common-lisp.net/alexandria/alexandria
+2. Regular expressions (**cl-ppcre** - (ql:quickload :cl-ppcre)) https://github.com/edicl/cl-ppcre
+3. Clojure-like arrow macros (**cl-arrows** - (ql:quickload :cl-arrows)) https://github.com/nightfly19/cl-arrows
+4. String manipulation (**cl-strings** - (ql:quickload :cl-strings)) https://github.com/diogoalexandrefranco/cl-strings
 5. https://quickdocs.org/ningle
 6. https://edicl.github.io/hunchentoot/
 7. https://edicl.github.io/cl-who/
@@ -202,8 +223,31 @@ sbcl --script src\lisp\main\main.lisp
 13. https://github.com/fukamachi/rove
 14. https://github.com/arielnetworks/cl-pattern
 15. https://github.com/fukamachi/cl-project
-16. postmodern
-17. local-time
+16. https://github.com/lokedhs/cl-rabbit
+17. https://github.com/vseloved/cl-redis
+18. https://marijnhaverbeke.nl/postmodern/
+19. local-time
+20. https://quickdocs.org/birch
+21. https://quickdocs.org/maiden
+22. https://quickdocs.org/cl-irc
+23. https://github.com/fukamachi/cl-dbi
+24. https://github.com/fukamachi/mito
+25. https://quickref.common-lisp.net/cl-jpeg.html
+26. https://quickref.common-lisp.net/png.html
+27. https://github.com/eudoxia0/cl-yaml
+28. https://github.com/mabragor/cl-yaclyaml
+29. https://github.com/sharplispers/cl-jpeg
+30. https://github.com/3b/cl-opengl
+31. https://www.xach.com/lisp/zpng/
+32. https://github.com/mmontone/cl-rest-server
+33. https://github.com/hankhero/cl-json
+34. https://edicl.github.io/drakma/
+35. https://lisp-journey.gitlab.io/web-dev/
+36. https://awesome-cl.com/
+37. https://github.com/fukamachi/dexador
+38. https://github.com/joaotavora/snooze
+39. https://github.com/Shinmera/lquery
+40. https://github.com/Shinmera/plump
 
 ### Data types
 
@@ -211,12 +255,48 @@ sbcl --script src\lisp\main\main.lisp
 
 ##### List
 
+Plain list.
+
 ```common-lisp
 '(1 2.2 1/2 "Hello" nil)
 
 ;; same as previous
 ;; (1 2.2 1/2 "Hello" NIL)
 (list 1 2.2 1/2 "Hello" nil)
+```
+
+###### Association Lists
+
+```common-lisp
+(defparameter *example-asso-list* (list (cons :a 1) (cons :b 2) (cons :c 3) (cons :d 1.1) (cons :e "Hello, world") (cons :f T) (cons :g nil)))
+(cdr (first (member ':a *example-asso-list* :key 'car)))
+(cdr (first (member ':b *example-asso-list* :key 'car)))
+(cdr (first (member ':c *example-asso-list* :key 'car)))
+(cdr (first (member ':d *example-asso-list* :key 'car)))
+(cdr (first (member ':e *example-asso-list* :key 'car)))
+(cdr (first (member ':f *example-asso-list* :key 'car)))
+(cdr (first (member ':g *example-asso-list* :key 'car)))
+(assoc ':e *example-asso-list*)
+```
+
+###### Plist
+
+Collection of elements where any other element "describes" next element.
+
+```common-lisp
+(defparameter *exampleplist* (list :a 1 :b 2 :c 3 :d 1.1 :e "Hello, world" :f T :g nil))
+(getf *exampleplist* :a)
+(getf *exampleplist* :b)
+(getf *exampleplist* :c)
+(getf *exampleplist* :d)
+(getf *exampleplist* :e)
+(getf *exampleplist* :f)
+(getf *exampleplist* :g)
+```
+
+```common-lisp
+(defparameter *ages* (list 'Peter 34 'Meeter 23 'Tom 72))
+(getf *ages* 'Tom)
 ```
 
 ##### Vector
@@ -240,9 +320,9 @@ Integer indexed collection.
 
 (gethash 'foo *h*)
 
-(setf (gethash 'foo *h*) 'quux)
+(setf (gethash 'foo *h*) 'foo1)
 (gethash 'foo *h*)
-(setf (gethash 'foo *h*) "Foo")
+(setf (gethash 'foo *h*) "Foo2")
 (gethash 'foo *h*)
 ```
 
@@ -279,6 +359,22 @@ Integer indexed collection.
 (format t "~d ~%" +mix32+)
 (format t "~f ~%" +mix64+)
 (format t "~s ~%" "Hello World")
+
+;; Print out symbol.
+(format t "~s ~%" :this-is-symbol)
+
+(parse-integer "-64")
+(parse-integer "no integer string" :junk-allowed t)
+
+;; T
+(string= "foo" "foo")
+;; NIL
+(string= "foo" "Foo")
+;; T
+(string= "petronas pizza" "pizza" :start1 10 :end1 14 :start2 1)
+
+(ql:quickload "parse-float")
+(parse-float:parse-float "1.2e2")
 
 (if (< 3 5)
     (format t "~s ~%" "True")
@@ -421,3 +517,13 @@ Integer indexed collection.
 1. [Dandelion - Eclipse plugin](https://github.com/Ragnaroek/dandelion)
 
 1. [CL Jupyter](https://github.com/yitzchak/common-lisp-jupyter)
+
+1. [CL Library doc](https://quickref.common-lisp.net/index-per-library.html)
+
+1. [CLHS](https://www.cliki.net/CLHS)
+
+    1. [CLHS 1](http://clhs.lisp.se/)
+
+    1. [CLHS 1](http://www.lispworks.com/documentation/HyperSpec/Front/index.htm)
+
+1. [CL Quick ref](http://clqr.boundp.org/index.html)
