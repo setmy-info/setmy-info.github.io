@@ -719,3 +719,5 @@ Functions
     1. [CLHS 1](http://www.lispworks.com/documentation/HyperSpec/Front/index.htm)
 
 1. [CL Quick ref](http://clqr.boundp.org/index.html)
+
+1. [usocket](https://usocket.common-lisp.dev/)
