@@ -188,7 +188,7 @@ psql -U postgres -f all.backup
 Activate extension for DB
 
 ```sql
-create extension postgis;
+create extension postgis; -- as postgres user for particular DB
 ```
 
 ```sql
