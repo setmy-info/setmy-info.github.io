@@ -569,6 +569,23 @@ Functions
 (terpri)
 ```
 
+Function composition
+
+TODO : make it work
+```common-lisp
+(defun h (x) (* x 2))
+(defun g (x) (+ x 3))
+(defun f (x) (expt x 2))
+
+(defun composed-function (x)
+  (funcall (compose 'f 'g 'h) x))
+
+(composed-function 5)
+
+(defun compose (f g)
+  #'(lambda (x) (funcall f (funcall g x))))
+```
+
 ## Some libraries
 
 1. Loads of utilities (**alexandria** - (ql:quickload :
@@ -619,6 +636,24 @@ Functions
 40. https://github.com/Shinmera/plump
 
 ## See also
+
+Clim-IRC: https://github.com/sjl/clim-irc
+
+IBCL: https://github.com/drewc/ibcl
+
+lisp-irc-client: https://github.com/svetlyak40wt/lisp-irc-client
+
+lispbot: https://github.com/rkoeninger/lispbot
+
+ERC: https://www.emacswiki.org/emacs/ErC
+
+CL-IRC: https://github.com/alex-gutev/cl-irc
+
+LispIRC: https://github.com/shinmera/lispirc
+
+Lichat: https://github.com/harley/lisp-irc
+
+SICL IRC: https://github.com/robert-strandh/SICL-IRC
 
 1. [LISP Lang](https://lisp-lang.org/)
 

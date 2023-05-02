@@ -58,6 +58,17 @@ assert 'none' == noArgClosure()
 // fold - inject
 ```
 
+Function composition
+
+```
+def addOne = { num -> num + 1 }
+def double = { num -> num * 2 }
+def square = { num -> num ** 2 }
+
+def composedFunction = addOne << double << square
+assert composedFunction(2) == 9 // (2**2)*2+1 = 9
+```
+
 ## See also
 
 [xxxx](http://yyyyy)
