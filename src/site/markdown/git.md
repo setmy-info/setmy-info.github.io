@@ -15,7 +15,7 @@ Set and check name and email for git.
 ```shell
 git config --global user.name "Imre Tabur"
 
-git config --global user.email imre.tabur@eesti.ee
+git config --global user.email imre.tabur@mail.ee
 
 git config --global user.email
 
