@@ -18,6 +18,10 @@
 
 **homoiconic** - code as data. Code used as a data.
 
+**exception** - erand. (Et tagada Tõrketõrjed).
+
+**name-mangling** - nimemuserdus.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html
