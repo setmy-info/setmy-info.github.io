@@ -359,6 +359,18 @@ Linear flow of calls for readability.
 
 -> thing
 
+## Function composition
+
+Make it work:
+
+```clojure
+(defn double [x] (* 2 x))
+(defn add-one [x] (+ 1 x))
+(defn double-and-add-one (comp add-one double))
+
+(double-and-add-one 3)
+```
+
 ## See also
 
 * Clojupyter

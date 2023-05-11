@@ -69,6 +69,31 @@ void myCFunction(int arg1, int arg2);
 #endif
 ```
 
+## Function composition
+
+```
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+  std::vector<int> nums {1, 2, 3, 4, 5};
+
+  // Lambda funktsiooni loomine, mis võtab argumentina num ja tagastab num * 2
+  auto doubleNum = [](int num) { return num * 2; };
+
+  // Rakendame lambda funktsiooni igale elemendile vektoris
+  std::transform(nums.begin(), nums.end(), nums.begin(), doubleNum);
+
+  // Väljastame muudetud vektori
+  for (auto num : nums) {
+    std::cout << num << " ";
+  }
+
+  return 0;
+}
+```
+
 ## See also
 
 Google C++ Style Guide: https://google.github.io/styleguide/cppguide.html

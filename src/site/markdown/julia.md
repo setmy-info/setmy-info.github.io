@@ -56,6 +56,24 @@ In pluto:
 using Plots, CSV, DataFrames
 ```
 
+Examples
+
+Function composition
+
+```julia
+julia> f(x) = x * 2
+f (generic function with 1 method)
+
+julia> g(x) = "Number is $(x)"
+g (generic function with 1 method)
+
+julia> h = g ∘ f
+#13 (generic function with 1 method)
+
+julia> h(5)
+"Number is 10"
+```
+
 IDE
 
 Visual Studio Code
