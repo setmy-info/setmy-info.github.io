@@ -9,22 +9,27 @@ Include as:
 1. corresponding header file to current .cpp file (with "")
 2. current project header files (with "")
 3. third party header files (with <>)
-4. standard headers C headers (with <>)
-5. standard C++ headers (with <>)
-6. system headers (with <>)
+4. standard C header files (with <>)
+5. standard C++ header files (with <>)
+6. system header files (with <>)
 
 ## Rules
 
 * No mem allocation in constructor.
-* Strip bnaries.
+* Strip binaries for production/Release.
+* C++ .hpp, .cpp file extensions.
+* C .h, .c file extensions.
+* Separated Unit tests (test) ant integration test (verify). Option to run on valgrind.
 
 ## Example code blocks
 
-```cpp
-#ifndef SETMYINFO_A_H
-#define SETMYINFO_A_H
+A.hpp
 
-namespace SetmyInfo {
+```cpp
+#ifndef SET_MY_INFO_A_HPP
+#define SET_MY_INFO_A_HPP
+
+namespace SetMyInfo {
     class A {
     public:
         A();
@@ -35,13 +40,15 @@ namespace SetmyInfo {
     };
 }
 
-#endif // SETMYINFO_A_H
+#endif // SET_MY_INFO_A_HPP
 ````
+
+A.cpp
 
 ```cpp
 #include "A.h"
 
-using SetmyInfo::A;
+using SetMyInfo::A;
 
 A::A() {
     // Const impl
@@ -56,12 +63,13 @@ void A::doSomething() {
 }
 ````
 
+C functions in C++.
+
 ```cpp
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-// C keelne funktsiooni deklaratsioon
 void myCFunction(int arg1, int arg2);
 
 #ifdef __cplusplus
