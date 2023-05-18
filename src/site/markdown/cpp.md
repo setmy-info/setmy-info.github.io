@@ -17,17 +17,17 @@ Include as:
 
 * No mem allocation in constructor.
 * Strip binaries for production/Release.
-* C++ .hpp, .cpp file extensions.
+* C++ .h, .cpp file extensions.
 * C .h, .c file extensions.
 * Separated Unit tests (test) ant integration test (verify). Option to run on valgrind.
 
 ## Example code blocks
 
-A.hpp
+A.h
 
 ```cpp
-#ifndef SET_MY_INFO_A_HPP
-#define SET_MY_INFO_A_HPP
+#ifndef SET_MY_INFO_A_H
+#define SET_MY_INFO_A_H
 
 namespace SetMyInfo {
     class A {
@@ -40,7 +40,7 @@ namespace SetMyInfo {
     };
 }
 
-#endif // SET_MY_INFO_A_HPP
+#endif // SET_MY_INFO_A_H
 ````
 
 A.cpp
