@@ -1,4 +1,4 @@
-# Decisions
+# Decisions and principles
 
 [No addons, extensions, plugins into git](noGitAddons.md)
 

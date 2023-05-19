@@ -4,6 +4,8 @@ Main project (application, library, microservice, module, ...) VCS (Git, Mercuri
 contain secrets from administrators and DevOps. They should hold these somewhere else (other repo, secrets
 store/vault).
 
+**Main** - in case of, where secrets are hold somewhere else - non-main, secondary place.
+
 Examples:
 
 * No usernames, passwords and other secrets in VCS (in base64 or even in crypted form). CI should not start work for

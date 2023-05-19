@@ -32,10 +32,12 @@ Prefer longer pages under hierarch section. Use different headings, prefer 3 lev
             * Backlog
             * Sprints
             * Retrospectives
+                * Problems
         * Kanban (Optional)
         * Other meetings (meeting notes, etc)
         * Testing (optional, plans, specs)
     * Architecture
+        * Problems
         * Decisions
             * PoC & Spikes
         * Enterprise architecture
