@@ -97,10 +97,6 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 10. Teamwork
 
     All or nothing.
-    When (requirements) described somewhere else, then these are tested somewhere else - not pushed/forced to the end of
-    the sprint for testing ending sprint results. These are hidden requirements (sometimes not fully), applied
-    with force (and fails sprint), without going through backlog for implementation. Everything should go through
-    backlog - that's the goal of current requirement.
 
 ## Test Task
 
