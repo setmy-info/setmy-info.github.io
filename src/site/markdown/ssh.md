@@ -66,7 +66,7 @@ ARCHIVE_DIR=${SSH_DIR}/archive
 TYPE=dsa
 TYPE=rsa
 TYPE=ed25519
-EMAIL=imre.tabur@eesti.ee
+EMAIL=imre.tabur@mail.ee
 BITS=4096
 SYSTEM=github
 

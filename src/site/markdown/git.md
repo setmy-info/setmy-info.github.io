@@ -94,7 +94,7 @@ git commit -m 'Commit mesage'
 git commit --amend -m 'New Message'
 
 # Change last commit author:
-git commit --amend --author="Imre Tabur <imre.tabur@eesti.ee>"
+git commit --amend --author="Imre Tabur <imre.tabur@mail.ee>"
 
 # Or hashes
 git diff Bonebranch..anotherbranch

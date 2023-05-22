@@ -1,12 +1,10 @@
-# Team
+# Firefox
 
 ## Information
 
-Team members and contacts.
-
 ## Installation
 
-### CentOS
+### CentOS, Rocky Linux
 
 ### Fedora
 
@@ -17,6 +15,8 @@ Team members and contacts.
 ## Configuration
 
 ## Usage, tips and tricks
+
+### Coding tips and tricks
 
 ## See also
 

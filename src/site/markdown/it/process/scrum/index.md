@@ -32,7 +32,7 @@ Other:
 
 ### Sprint planning
 
-* 4h for 2 week sprint: split it to refinement (preplanning) meeting.
+* 4h for 2 week sprint: split it to refinement (pre-planning) meeting.
 * Sprint goal
 * Sprint backlog
 * Scrum master
@@ -41,6 +41,8 @@ Other:
 
 1. What can be delivered in the Increment resulting8 from the upcoming Sprint?
 2. How will the work needed to deliver the Increment be achieved?
+   * No more, no less (agreement or like contract).
+   * Shortest bath to implementation.
 
 ### Daily Scrum
 

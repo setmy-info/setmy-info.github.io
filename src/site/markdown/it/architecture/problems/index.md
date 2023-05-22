@@ -1,25 +1,10 @@
 # Problems
 
-List all problems. Then find solution and make decision.
-
 ## Information
 
-## Installation
+List all problems. Then find solution and make decision.
 
-### CentOS, Rocky Linux
+## Problems
 
-### Fedora
-
-### FreeBSD
-
-### OpenIndiana
-
-## Configuration
-
-## Usage, tips and tricks
-
-### Coding tips and tricks
-
-## See also
-
-[xxxx](http://yyyyy)
+1. As a developer, to try software correctness and debug, I have to let CI build image, wait deployment to execution
+   environment
