@@ -223,4 +223,9 @@ Hello from Docker!
 ## See also
 
 [User usage](https://docs.ansible.com/ansible/2.7/user_guide/become.html)
+
 [docker run options](https://docs.docker.com/engine/reference/run/)
+
+[Docker Registry](https://docs.docker.com/registry/)
+
+[Harbor](https://goharbor.io/)
