@@ -9,6 +9,9 @@
 * (Recursive) Dimension documentation (dimensions list) have to be created for tests. Dimensions multiplication and
   exclusion matrix have to be created.
 * Smoke, Sanity test dimension multiplication matrix (plan) should be created.
+* Prepare also constant/stable environment for testing (hardware setup, physical field for device testing, UI test
+  farm (e.g. selenium nodes), ...) and prepare/plan initialization, preparations and routine tasks and procedures
+  documentation. To collect test data and tests result data.
 
 ### Dimensions examples
 
@@ -17,7 +20,19 @@
 * Webcam dimension: Logitech (Logitech Brio 4K), EMEET 1080P Webcam
 * ...
 
-Multiplication: Browser x OS
+**Multiplication**: Browser x OS x Webcam's
+
+In multiplication some combinations sometimes can't be applied, these are **exclusions**.
+
+### Prepared field tests environment
+
+For example webcams perhaps needs following setup for real **field tests** and **test (+ result) data** gathering.
+
+* Constant light point(s). Light intensity measured and changed by needs.
+* White paper sheet on constant distance. Dot's and lines on white paper. Color examples.
+* Black paper sheet on constant distance.
+
+Procedures about measuring light intensity. Procedures about taking initial camera pictures.
 
 ## Usage, tips and tricks
 
