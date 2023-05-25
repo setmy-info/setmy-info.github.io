@@ -4,20 +4,14 @@
 
 Team members and contacts.
 
-## Installation
+## Team
 
-### CentOS
+### Developers
 
-### Fedora
+### Product Owner
 
-### FreeBSD
-
-### OpenIndiana
-
-## Configuration
-
-## Usage, tips and tricks
+### Scrum Master
 
 ## See also
 
-[xxxx](http://yyyyy)
+[Scrum team](https://scrumguides.org/scrum-guide.html#scrum-team)

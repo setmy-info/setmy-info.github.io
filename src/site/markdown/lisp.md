@@ -630,6 +630,7 @@ TODO : make it work
 34. https://edicl.github.io/drakma/
 35. https://lisp-journey.gitlab.io/web-dev/
 36. https://awesome-cl.com/
+37. https://github.com/CodyReichert/awesome-cl
 37. https://github.com/fukamachi/dexador
 38. https://github.com/joaotavora/snooze
 39. https://github.com/Shinmera/lquery

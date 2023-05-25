@@ -4,6 +4,14 @@
 
 Neural networks, Deep Learning, Machine learning.
 
+## Artificial neural network (ANN)
+
+* ANN
+    * Recurrent neural network (RNN)
+        * LSTM
+        * Fully recurrent neural network (FRNN)
+        * Independently recurrent neural network (IndRNN)
+
 ## Configuration
 
 ## Terms
@@ -43,6 +51,9 @@ Neural networks, Deep Learning, Machine learning.
 * LabelIMG, Labelbox, RectLabel, ImageTagger, LabelMe, Eagle, VGG Image Annotator, Supervise.ly, BeaverDam, Diffgram,
   Prodigy, Dataturks, Computer Vision Annotation Tool (CVAT), Visual Object Tagging Tools (VoTT), Make-Sense, Anno-Mage,
 * DAG
+* Classification, Object detection, Semantic segmentation
+* 3D CNN
+* 3D CRNN
 
 ### MATH
 
@@ -81,7 +92,7 @@ Neural networks, Deep Learning, Machine learning.
         4. https://www.youtube.com/watch?v=tIeHLnjs5U8
         5. [Another similar](https://www.youtube.com/watch?v=2utAfvGAbgg)
     * [Convolution](https://www.youtube.com/watch?v=KuXjwB4LzSA)
-* 2x linesd:
+* 2x lines:
     * https://www.youtube.com/watch?v=ILsA4nyG7I0
 * DL/ML zoo:
     * https://www.youtube.com/watch?v=oJNHXPs0XDk
@@ -137,4 +148,8 @@ Neural networks, Deep Learning, Machine learning.
 * [DNN](https://www.tutorialspoint.com/python_deep_learning/python_deep_learning_deep_neural_networks.htm)
 * [Apache OpenNLP](https://opennlp.apache.org/)
 * [Mahout](https://mahout.apache.org/)
+* [RNN](https://www.youtube.com/watch?app=desktop&v=y9PLF2GsD-c)
+* [RNN](https://www.youtube.com/watch?app=desktop&v=LHXXI4-IEns)
+* [RNN](https://www.youtube.com/watch?app=desktop&v=AsNTP8Kwu80)
+* [RNN](https://www.youtube.com/watch?app=desktop&v=_aCuOwF1ZjU)
 * [xxxx](http://yyyyy)

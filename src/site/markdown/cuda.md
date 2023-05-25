@@ -44,7 +44,7 @@ The GeForce RTX 2060 features 1,920 CUDA cores, 240 Tensor Cores that can delive
 
 [xxxx](https://www.msi.com/Graphics-Card/GeForce-RTX-3050-VENTUS-2X-8G-OC)
 
-[xxxx](http://yyyyy)
+[Linux Nvidia CUDA installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
 
 [xxxx](http://yyyyy)
 

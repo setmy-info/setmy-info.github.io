@@ -1,5 +1,9 @@
 # Backlog
 
+## Accepted Product Backlog Item
+
+* User story format
+
 ## Product backlog
 
 - Finish smi-stealer
