@@ -20,6 +20,10 @@ Start key (pair) generation
 gpg --full-generate-key
 ```
 
+```sh
+gpg --gen-key
+```
+
 List keys
 
 ```sh
@@ -50,6 +54,9 @@ Export keys
 mkdir -p ~/backup/gpg
 gpg --export-secret-keys -o ~/backup/gpg/secret-keys.asc
 gpg --export -a -o ~/backup/gpg/public-keys.asc
+#Or
+gpg --export-secret-keys -a 965A867818353A205699C5A1B7249A8A965A8678 > gpg.user.name@example.com.private.asc
+gpg --export -a 965A867818353A205699C5A1B7249A8A965A8678 > gpg.user.name@example.com.public.asc
 ```
 
 Import keys
@@ -86,6 +93,14 @@ Send keys to ()
 ```sh
 gpg --send-keys key-id
 ```
+
+```sh
+gpg --keyserver hkp://pool.sks-keyservers.net --send-keys 965A867818353A205699C5A1B7249A8A965A8678
+gpg --keyserver hkp://keys.gnupg.net --send-keys 965A867818353A205699C5A1B7249A8A965A8678
+gpg --keyserver hkp://pgp.mit.edu --send-keys 965A867818353A205699C5A1B7249A8A965A8678
+```
+
+Receive keys
 
 ```sh
 gpg --recv-keys key-id
