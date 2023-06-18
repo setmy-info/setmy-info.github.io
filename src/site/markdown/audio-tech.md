@@ -20,6 +20,6 @@
 
 [Progear](https://www.progear.ee)
 
-[xxx](xxx)
+[RODE Mic](https://www.progear.ee/rode-m2-rode-m2)
 
 [xxx](xxx)
