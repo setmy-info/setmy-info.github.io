@@ -7,4 +7,4 @@ test environment.
 
 Examples:
 
-* Often some projects are writen in latest C++ and can't be therefore ported for other Linuxes.
+* Often some projects are written in latest C++ and can't be therefore ported for other Linuxes.
