@@ -115,3 +115,87 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
     9. If you have requirement, that we have 3 layers (controller, service, resource): how you implement service layer in VueJS project?
     10. REST is returning following item object: "{isVisible: "No", firstName: "Imre", "Tabur"}". You should shouw that item data depending of isVisible.
         What you write into template, how it wol look like?
+
+### Questions for
+
+'''
+    What was the last biggest waste you detected and eliminated.
+    What happens singl developer waste, problems?
+    Work culture and team dynamics:
+        How would you describe the work culture in this company/project?
+        How is teamwork and communication fostered?
+        What are the mutual expectations and collaboration methods among team members?
+
+    Work process and methodology:
+        What project management methodology is followed here (e.g., waterfall, Agile, Scrum)?
+        How are projects planned and evaluated?
+        How are tasks assigned and workflow managed?
+        Is version control used, and are there code repositories?
+        What are the testing and quality assurance processes?
+
+    Development environment and tools:
+        What development environments and tools are used?
+        Are there any automation tools (e.g., CI/CD systems)?
+        How are code reviews conducted, and how is feedback provided to developers?
+
+    Career opportunities and growth:
+        What are the opportunities for professional growth and training?
+        Is support provided for attending internal or external events or certifications?
+        Are there possibilities for career advancement and promotion?
+
+    Flexibility and working conditions:
+        How is work flexibility and working conditions organized?
+        Is remote work or flexible scheduling possible?
+        What are the policies regarding working hours, leave, and sick leave?
+
+    For Architects:
+        What is the architecture approach or design philosophy followed in this project/company?
+        How are architectural decisions made, and how are they communicated to the development team?
+        What are the key considerations when designing scalable and maintainable systems in this project/company?
+        How do architects collaborate with developers to ensure the implementation aligns with the architectural vision?
+        Are there any specific architectural challenges or areas of focus in this project?
+
+    For Analysts:
+        How is the requirements gathering process organized in this project/company?
+        What techniques or tools are used for documenting and managing requirements?
+        How are user stories or use cases typically created and prioritized?
+        What role do analysts play in the development process and the interaction with developers?
+        How are changes to requirements handled during the development lifecycle?
+
+    For Product Owners:
+        How are product roadmaps and feature backlogs managed in this project/company?
+        What methodologies or frameworks are used for prioritizing and planning product features?
+        How do product owners collaborate with stakeholders to gather feedback and validate product requirements?
+        What is the decision-making process for accepting or rejecting feature requests or changes?
+        How do product owners track and measure the success of product features or releases?
+
+    For Architects:
+        How are developers involved in architectural decision-making, and how do architectural decisions impact the development process?
+        How do architects respond when developers propose suggestions or express concerns regarding architectural decisions or feasibility?
+        What are the channels and processes through which developers can communicate with architects to reject requirements or ask questions?
+
+    For Analysts:
+        Do developers have the opportunity to provide input on requirements and functionality before they are finalized and documented?
+        How is the collaboration between analysts and developers when developers identify inconsistencies or ambiguities in requirements?
+        How is ongoing communication and collaboration ensured between developers and analysts to prevent misunderstandings or unfeasible requirements?
+
+    For Product Owners:
+        How are developers involved in the decision-making process for functional requirements and product ownership decisions?
+        How do product owners respond when developers make suggestions or express concerns regarding the feasibility of product ownership decisions or requirements?
+        What communication channels and processes are in place to allow developers to directly engage with product owners to clarify requirements or raise issues?
+
+    For Architects:
+        How are architectural decisions reviewed and validated to ensure they align with the project's requirements and goals?
+        What measures are in place to identify and address architectural defects or shortcomings during the development process?
+        How do architects collaborate with other team members to proactively identify and mitigate potential architectural defects?
+
+    For Analysts:
+        What processes are followed to verify the accuracy and completeness of requirements gathered by analysts?
+        How are defects or inconsistencies in requirements identified and resolved during the analysis phase?
+        How do analysts collaborate with developers to clarify requirements and prevent defects from being introduced during implementation?
+
+    For Product Owners:
+        How do product owners validate and verify requirements to ensure they meet the needs of stakeholders and end-users?
+        How are defects or gaps in product requirements addressed and communicated to the development team?
+        What steps are taken to gather feedback from the development team and iterate on requirements to minimize defects?
+'''
