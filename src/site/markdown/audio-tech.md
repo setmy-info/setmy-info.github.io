@@ -10,6 +10,8 @@
 
 [K&M Mikrofon stand 210/2](https://pvxmusic.ee/ee/k-m-populaarseim-mikrofoni-statiiv-2102030055/)
 
+[K&M Mikrofon stand 210/2](https://www.progear.ee/k-m-210-2)
+
 [SENNHEISER E845S](https://pvxmusic.ee/ee/sennheiser-dunaamiline-mikrofon-e845s/)
 
 [ALESIS MULTIMIX 4USB FX 4-CHANNEL MIXER WITH DIGITAL OUTPUT](https://stanfordmusic.com/product/tooted/pa-kolarid/mikserpuldid-2/alesis-multimix-4usb-fx-4-channel-mixer-with-digital-output/)
