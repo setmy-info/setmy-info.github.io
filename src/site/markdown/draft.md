@@ -98,6 +98,18 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 
     All or nothing.
 
+11. Unsorted
+
+* Välised webi API-d, teenused - alati läbi cacheva proxy API.
+* Risk mitte maksta arveid võib tekitada riski, et andmed kustutatakse ära (Pilve puhul).
+* Püüelda IDE-e funktsionaalsuse ärakasutamise suunas.
+* Roles: Business analüütikud: should not write tables, SQL, Java class model in any form. Its implementing team members
+  responsibility.
+* Developer should have possibility to build current work on CI (push by push) to get feedback early. Without additional
+  steps (clicks, tool usage).
+* GIT should reflect reality and not fake result. Main/master/trunk should be releasable at eny moment without searching
+  release tags, numbers somewhere.
+
 ## Test Task
 
 ### Questions for VueJS architects
@@ -119,12 +131,12 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 ### Questions for
 
 '''
-    What was the last biggest waste you detected and eliminated.
-    What happens singl developer waste, problems?
-    Work culture and team dynamics:
-        How would you describe the work culture in this company/project?
-        How is teamwork and communication fostered?
-        What are the mutual expectations and collaboration methods among team members?
+What was the last biggest waste you detected and eliminated.
+What happens singl developer waste, problems?
+Work culture and team dynamics:
+How would you describe the work culture in this company/project?
+How is teamwork and communication fostered?
+What are the mutual expectations and collaboration methods among team members?
 
     Work process and methodology:
         What project management methodology is followed here (e.g., waterfall, Agile, Scrum)?
@@ -198,4 +210,5 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
         How do product owners validate and verify requirements to ensure they meet the needs of stakeholders and end-users?
         How are defects or gaps in product requirements addressed and communicated to the development team?
         What steps are taken to gather feedback from the development team and iterate on requirements to minimize defects?
+
 '''
