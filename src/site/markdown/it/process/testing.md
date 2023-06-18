@@ -24,6 +24,18 @@
 
 In multiplication some combinations sometimes can't be applied, these are **exclusions**.
 
+#### Dimensions
+
+Root dimensions:
+
+* Software
+    * Configuration
+        * from CLI params
+        * from config file
+        * from DB config
+        * defaults (in code, hardcoded config)
+* Hardware
+
 ### Prepared field tests environment
 
 For example webcams perhaps needs following setup for real **field tests** and **test (+ result) data** gathering.
