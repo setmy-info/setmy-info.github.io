@@ -150,6 +150,10 @@ docker volume create pg-data
 docker run --name postgis -p 5432:5432 --restart always -v pg-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=g6p8 -d postgis/postgis
 
 docker run --gpus all --name IMAGE_NAME -v "${DOCKER_HOST_DIR}":/var/opt/setmy.info/data --rm docker.hub/setmy.info/IMAGE:VERSION
+
+docker run -d --name jenkins -p 2376:8080 -v jenkins-data:/var/lib/jenkins setmyinfo/setmy-info-rocky-java-jenkins:latest
+docker exec -u root -it jenkins /bin/sh
+docker cp jenkins:/var/lib/jenkins.tar.gz ./jenkins.tar.gz
 ```
 
 **sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf**
