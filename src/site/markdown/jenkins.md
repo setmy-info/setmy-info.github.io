@@ -89,6 +89,65 @@ Modules polling:
 */5 * * * *
 ```
 
+## GitHub
+
+### Insert GitHub Blue Ocean pipeline
+
+1. Create GitHub token: GitHub profile picture -> Settings -> Developer settings 
+-> Personal access tokens -> Tokens (classic) -> Generate new token
+2. Add credentials to Jenkins: Manage Jenkins -> Credentials -> System (Global) -> Add Credentials:
+Kind: Username with password; Username: GITHUBUSERNAME; Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx; 
+ID: GitHubXxxxToken (Xxxx is Username); Description the same.
+3. In Jenkins: Open Blue Ocean -> GitHub -> Insert token
+4. Fix build settings: open build -> Configure -> Add GitHub credentials from dropdown
+
+Also some options for docker:
+
+-e GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+-e GITHUB_USERNAME=e@mail.com
+
+### Create SSH keys
+1. Start Jenkins docker:
+```
+docker run -d --name jenkins -p 2376:8080 -v jenkins-data:/var/lib/jenkins setmyinfo/setmy-info-rocky-java-jenkins:latest
+```
+2. Create SSH keys and get public key:
+```
+docker exec -it jenkins /bin/sh -c "ssh-keygen -t ed25519 -b 4096 -C 'e@mail.com' -N '' -f /var/lib/jenkins/.ssh/id_ed25519"
+docker exec -it jenkins /bin/sh -c "cat /var/lib/jenkins/.ssh/id_ed25519.pub"
+```
+3. Add public key to GitHub: GitHub profile picture -> Settings 
+-> SSH and GPG keys -> New SSH key. Set title: Docker Jenkins GitHub Token
+
+### Problems
+
+```
+Branch indexing
+Connecting to https://api.github.com with no credentials, anonymous access
+Jenkins-Imposed API Limiter: Current quota for Github API usage has 46 remaining (1 over budget). Next quota of 60 in 49 min. Sleeping for 4 min 30 sec.
+Jenkins is attempting to evenly distribute GitHub API requests. To configure a different rate limiting strategy, such as having Jenkins restrict GitHub API requests only when near or above the GitHub rate limit, go to "GitHub API usage" under "Configure System" in the Jenkins settings.
+Jenkins-Imposed API Limiter: Still sleeping, now only 1 min 28 sec remaining.
+Jenkins-Imposed API Limiter: Current quota for Github API usage has 42 remaining (2 over budget). Next quota of 60 in 45 min. Sleeping for 6 min 8 sec.
+Jenkins is attempting to evenly distribute GitHub API requests. To configure a different rate limiting strategy, such as having Jenkins restrict GitHub API requests only when near or above the GitHub rate limit, go to "GitHub API usage" under "Configure System" in the Jenkins settings.
+Jenkins-Imposed API Limiter: Still sleeping, now only 3 min 6 sec remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 5.1 sec remaining.
+...
+
+```
+
+Use Jenkins inside docker as **jenkins** user
+
+```
+docker exec -it jenkins /bin/sh
+```
+
+Use Jenkins inside docker as **root** user
+
+```
+docker exec -u root -it jenkins /bin/sh
+```
+
 ## See also
 
 [xxxx](http://yyyyy)

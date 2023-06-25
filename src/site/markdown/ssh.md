@@ -25,6 +25,8 @@ On **client side** on password request enter password or just press Enter to mak
 ```sh
 cd ~/.ssh
 ssh-keygen -t ed25519 -b 4096 -C "e@mail.domain"
+# Or without questions
+#ssh-keygen -t ed25519 -b 4096 -C "e@mail.domain" -N "" -f ~/.ssh/id_ed25519
 ```
 
 Change private key access:
