@@ -109,6 +109,8 @@ Also some options for docker:
 
 -e GITHUB_USERNAME=e@mail.com
 
+Don't forget set polling option inside config for pipeline.
+
 ### Create SSH keys
 1. Start Jenkins docker:
 ```
