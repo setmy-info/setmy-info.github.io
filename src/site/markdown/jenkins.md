@@ -97,9 +97,11 @@ Modules polling:
 -> Personal access tokens -> Tokens (classic) -> Generate new token
 2. Add credentials to Jenkins: Manage Jenkins -> Credentials -> System (Global) -> Add Credentials:
 Kind: Username with password; Username: GITHUBUSERNAME; Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx; 
-ID: GitHubXxxxToken (Xxxx is Username); Description the same.
+ID: github; Description Token information.
 3. In Jenkins: Open Blue Ocean -> GitHub -> Insert token
 4. Fix build settings: open build -> Configure -> Add GitHub credentials from dropdown
+
+NB! **github** is used by default for registering new pipelines.
 
 Also some options for docker:
 
