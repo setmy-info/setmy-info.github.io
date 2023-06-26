@@ -572,6 +572,7 @@ Functions
 Function composition
 
 TODO : make it work
+
 ```common-lisp
 (defun h (x) (* x 2))
 (defun g (x) (+ x 3))

@@ -93,11 +93,11 @@ Modules polling:
 
 ### Insert GitHub Blue Ocean pipeline
 
-1. Create GitHub token: GitHub profile picture -> Settings -> Developer settings 
--> Personal access tokens -> Tokens (classic) -> Generate new token
+1. Create GitHub token: GitHub profile picture -> Settings -> Developer settings
+   -> Personal access tokens -> Tokens (classic) -> Generate new token
 2. Add credentials to Jenkins: Manage Jenkins -> Credentials -> System (Global) -> Add Credentials:
-Kind: Username with password; Username: GITHUBUSERNAME; Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx; 
-ID: github; Description Token information.
+   Kind: Username with password; Username: GITHUBUSERNAME; Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
+   ID: github; Description Token information.
 3. In Jenkins: Open Blue Ocean -> GitHub -> Insert token
 4. Fix build settings: open build -> Configure -> Add GitHub credentials from dropdown
 
@@ -112,17 +112,22 @@ Also some options for docker:
 Don't forget set polling option inside config for pipeline.
 
 ### Create SSH keys
+
 1. Start Jenkins docker:
+
 ```
 docker run -d --name jenkins -p 2376:8080 -v jenkins-data:/var/lib/jenkins setmyinfo/setmy-info-rocky-java-jenkins:latest
 ```
+
 2. Create SSH keys and get public key:
+
 ```
 docker exec -it jenkins /bin/sh -c "ssh-keygen -t ed25519 -b 4096 -C 'e@mail.com' -N '' -f /var/lib/jenkins/.ssh/id_ed25519"
 docker exec -it jenkins /bin/sh -c "cat /var/lib/jenkins/.ssh/id_ed25519.pub"
 ```
-3. Add public key to GitHub: GitHub profile picture -> Settings 
--> SSH and GPG keys -> New SSH key. Set title: Docker Jenkins GitHub Token
+
+3. Add public key to GitHub: GitHub profile picture -> Settings
+   -> SSH and GPG keys -> New SSH key. Set title: Docker Jenkins GitHub Token
 
 ### Problems
 

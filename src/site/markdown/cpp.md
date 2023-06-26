@@ -109,7 +109,8 @@ Google C++ Style Guide: https://google.github.io/styleguide/cppguide.html
 LLVM Coding Standards: https://llvm.org/docs/CodingStandards.html
 
 C++ Core
-Guidelines: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines, https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
+Guidelines: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+, https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md
 
 Microsoft C++ Coding Standards: https://docs.microsoft.com/en-us/cpp/cpp/cpp-coding-standards
 
