@@ -224,6 +224,16 @@ Hello from Docker!
 ...
 ```
 
+Export to tar.gz and import from tar.gz
+
+```sh
+docker save -o image.tar image_name:tag
+gzip image.tar
+docker load -i image.tar.gz
+docker images
+docker tag <image_id> image_name:tag
+```
+
 ## See also
 
 [User usage](https://docs.ansible.com/ansible/2.7/user_guide/become.html)
