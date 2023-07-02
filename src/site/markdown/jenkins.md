@@ -157,6 +157,12 @@ Use Jenkins inside docker as **root** user
 docker exec -u root -it jenkins /bin/sh
 ```
 
+Use Jenkins image and start shell
+
+```
+docker run -it setmyinfo/setmy-info-rocky-java-jenkins:latest /bin/sh
+```
+
 ## See also
 
 [xxxx](http://yyyyy)

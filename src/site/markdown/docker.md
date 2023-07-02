@@ -240,6 +240,12 @@ See progress of stream
 docker push image_name:tag | pv -s file_size
 ```
 
+Start shell by image
+
+```sh
+docker run -it <image_name> /bin/sh
+```
+
 ## See also
 
 [User usage](https://docs.ansible.com/ansible/2.7/user_guide/become.html)
