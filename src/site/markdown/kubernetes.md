@@ -45,12 +45,12 @@ kubectl --context=CONTEXTNAME cluster-info
 kubectl config use-context context-xyz
 
 # -n NAMESPACE can be appended
-kubectl apply -f xyz-namespace.yml
-kubectl apply -f xyz-config-map.yml
-kubectl apply -f xyz-secrets-map.yml
-kubectl apply -f xyz-deployment.yml
-kubectl apply -f xyz-service.yml
-kubectl apply -f xyz-ingress.yml
+kubectl apply -f xyz-namespace.yaml
+kubectl apply -f xyz-config-map.yaml
+kubectl apply -f xyz-secrets-map.yaml
+kubectl apply -f xyz-deployment.yaml
+kubectl apply -f xyz-service.yaml
+kubectl apply -f xyz-ingress.yaml
 
 kubectl describe configmaps xyz-config-map
 kubectl describe secret xyz-secrets-map
@@ -93,13 +93,27 @@ kubectl config view --minify
 kubectl config set-context --current --namespace=NAMESPACE
 ```
 
+### Namespace
+
+**xyz-namespace.yaml**
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: xyz-dev
+```
+
 ### Config map
+
+xyz-config-map.yaml
 
 ```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
     name: xyz-config-map
+    namespace: xyz-dev
 data:
     variable: "Value in quotations"
 immutable: true
@@ -107,11 +121,14 @@ immutable: true
 
 ### Secrets map
 
+**xyz-secrets-map.yaml**
+
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
     name: xyz-secrets-map
+    namespace: xyz-dev
 data:
     secret-variable: U2VjcmV0IHZhbHVl
 immutable: true
@@ -119,11 +136,14 @@ immutable: true
 
 ### Deployment
 
+**xyz-deployment.yaml**
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: xyz-deployment
+    namespace: xyz-dev
     labels:
         app: xyz-deployment
 spec:
@@ -139,7 +159,7 @@ spec:
             containers:
                 -   name: xyz
                     image: xyz:latest
-                    # Remove for production, use it for development in Minikube
+                    # For example, not needed in Minikube
                     # imagePullPolicy: Never
                     ports:
                         -   name: xyz-port
@@ -166,11 +186,14 @@ spec:
 
 ### Service
 
+**xyz-service.yaml**
+
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
     name: xyz-service
+    namespace: xyz-dev
 spec:
     selector:
         app.kubernetes.io/name: xyz
@@ -182,11 +205,14 @@ spec:
 
 ### Ingress
 
+**xyz-ingress.yaml**
+
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
 name: minimal-ingress
+namespace: xyz-dev
 annotations:
 nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
