@@ -71,6 +71,9 @@ kubectl exec -it xyz-deployment-596744778-dcgtz -- /bin/sh
 kubectl get endpoints
 kubectl get service
 
+kubectl describe pv <persistent_volume_name>
+kubectl describe pvc <persistent_volume_claim_name>
+
 kubectl delete service xyz-service
 kubectl delete deployment xyz-deployment
 kubectl delete secrets xyz-secrets-map
@@ -94,6 +97,14 @@ kubectl get namespace
 kubectl config view --minify
 # kubectl config view --minify --output 'jsonpath={..namespace}'; echo
 kubectl config set-context --current --namespace=NAMESPACE
+
+# Persistent volumes
+kubectl get pv
+# Persistent volume claims
+kubectl get pvc
+
+# POD data as yaml
+kubectl get pod -o yaml
 ```
 
 ### Namespace
