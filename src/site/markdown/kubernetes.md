@@ -107,6 +107,43 @@ kubectl get pvc
 kubectl get pod -o yaml
 ```
 
+### Volumes
+
+**nfs-pv.yaml**
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: nfs.intra
+    path: /tank/nfs/peristent-volumes
+```
+
+**nfs-pvc.yaml**
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: ""
+  volumeName: nfs-pv
+```
+
 ### Namespace
 
 **xyz-namespace.yaml**
@@ -199,6 +236,13 @@ spec:
                                     name: xyz-secrets-map
                                     key: secret-variable
                                     optional: false
+          volumeMounts:
+            - name: nfs-volume
+              mountPath: /app/data
+      volumes:
+        - name: nfs-volume
+          persistentVolumeClaim:
+            claimName: nfs-pvc
 ```
 
 ### Service

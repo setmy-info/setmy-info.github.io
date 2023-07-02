@@ -75,6 +75,13 @@ Ports (minukube):
 ```shell
 minikube start
 # minikube start --vm-driver=none
+# For peristent volumes
+# minikube start --mount-string="/path/on/host:/path/on/minikube"
+# minikube start --mount-string="hostpath=/tank/peristent-volumes,nfs-server=YOUR_NFS_SERVER_IP,nfs-share=YOUR_NFS_SHARE"
+# Mounted to Kubernetes host
+# minikube start --mount-string="hostpath=/tank/peristent-volumes,nfs-server=nfs.intra,nfs-share=/tank/nfs/peristent-volumes"
+# Munted directly to virtual machine
+# minikube start --mount-string="type=nfs,source=nfs.intra:/tank/nfs/peristent-volumes,target=/tank/peristent-volume"
 # minikube docker-env # ?
 # Minikube klaster IP, use for services
 minikube ip
