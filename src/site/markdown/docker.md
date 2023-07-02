@@ -234,6 +234,12 @@ docker images
 docker tag <image_id> image_name:tag
 ```
 
+See progress of stream
+
+```sh
+docker push image_name:tag | pv -s file_size
+```
+
 ## See also
 
 [User usage](https://docs.ansible.com/ansible/2.7/user_guide/become.html)
