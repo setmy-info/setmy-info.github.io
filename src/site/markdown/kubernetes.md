@@ -128,6 +128,9 @@ kind: ConfigMap
 metadata:
     name: xyz-config-map
     namespace: xyz-dev
+    # <pod-name>.<service-name>.<namespace>.svc.cluster.local
+    # By default:                  .default.svc.cluster.local
+    pg-host: postgresql-1.postgresql-service.default.svc.cluster.local
 data:
     variable: "Value in quotations"
 immutable: true
