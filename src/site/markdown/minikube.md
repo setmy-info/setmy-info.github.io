@@ -76,6 +76,8 @@ Ports (minukube):
 minikube start
 # minikube start --vm-driver=none
 # minikube docker-env # ?
+# Minikube klaster IP, use for services
+minikube ip
 ```
 
 ## Usage, tips and tricks
