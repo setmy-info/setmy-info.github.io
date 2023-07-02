@@ -40,9 +40,12 @@ User config file: **~/.kube/config**
 kubectl config set-credentials USERNAME --token=USERTOKEN
 kubectl config set-cluster CLUSTERNAME --server=https://URL --insecure-skip-tls-verify=true
 kubectl config set-context CONTEXTNAME --cluster=CLUSTERNAME --user=USERNAME
+kubectl config set-context --current --namespace=xyz-dev
 kubectl --context=CONTEXTNAME cluster-info
 
 kubectl config use-context context-xyz
+
+# It's known, that the secret map doesn't exist, but since it is similar to a config map, we will use a similar syntax and terminology.
 
 # -n NAMESPACE can be appended
 kubectl apply -f xyz-namespace.yaml
