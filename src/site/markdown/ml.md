@@ -153,24 +153,24 @@ sharing with others.
 
 ## See also
 
-* 3Blue1Brown (https://www.youtube.com/@3blue1brown):
-    * https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi
-        1. https://www.youtube.com/watch?v=aircAruvnKk
-        2. https://www.youtube.com/watch?v=IHZwWFHWa-w
-        3. https://www.youtube.com/watch?v=Ilg3gGewQ5U
-        4. https://www.youtube.com/watch?v=tIeHLnjs5U8
+* 3Blue1Brown ([https://www.youtube.com/@3blue1brown]()):
+    * [https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]()
+        1. [https://www.youtube.com/watch?v=aircAruvnKk]()
+        2. [https://www.youtube.com/watch?v=IHZwWFHWa-w]()
+        3. [https://www.youtube.com/watch?v=Ilg3gGewQ5U]()
+        4. [https://www.youtube.com/watch?v=tIeHLnjs5U8]()
         5. [Another similar](https://www.youtube.com/watch?v=2utAfvGAbgg)
     * [Convolution](https://www.youtube.com/watch?v=KuXjwB4LzSA)
 * 2x lines:
-    * https://www.youtube.com/watch?v=ILsA4nyG7I0
+    * [https://www.youtube.com/watch?v=ILsA4nyG7I0]()
 * DL/ML zoo:
-    * https://www.youtube.com/watch?v=oJNHXPs0XDk
+    * [https://www.youtube.com/watch?v=oJNHXPs0XDk]()
 * Google:
-    * https://www.youtube.com/playlist?list=PLIivdWyY5sqJxnwJhe3etaK7utrBiPBQ2
-    * https://www.youtube.com/watch?v=HcqpanDadyQ
-    * https://www.youtube.com/watch?v=nKW8Ndu7Mjw
+    * [https://www.youtube.com/playlist?list=PLIivdWyY5sqJxnwJhe3etaK7utrBiPBQ2]()
+    * [https://www.youtube.com/watch?v=HcqpanDadyQ]()
+    * [https://www.youtube.com/watch?v=nKW8Ndu7Mjw]()
     * Estimators:
-        * https://www.youtube.com/watch?v=G7oolm0jU8I
+        * [https://www.youtube.com/watch?v=G7oolm0jU8I]()
 * [Machine Learning vs Deep Learning](https://www.youtube.com/watch?v=q6kJ71tEYqM)
 *
 * [Convolution - CNN](https://www.youtube.com/watch?v=YRhxdVk_sIs)
@@ -222,39 +222,46 @@ sharing with others.
 * [RNN](https://www.youtube.com/watch?app=desktop&v=AsNTP8Kwu80)
 * [RNN](https://www.youtube.com/watch?app=desktop&v=_aCuOwF1ZjU)
 * [QR Code AI](https://qrbtf.com/)
-* [xxx](https://www.youtube.com/@AAmini/videos)
-* [xxx](https://www.youtube.com/watch?v=QDX-1M5Nj7s)
-* [xxx](https://www.youtube.com/watch?v=ySEx_Bqxvvo)
-* [xxx](https://www.youtube.com/watch?v=NmLK_WQBxB4)
-* [xxx](https://www.youtube.com/watch?v=3G5hWM6jqPk)
-* [xxx](https://www.youtube.com/watch?v=kIiO4VSrivU)
-* [xxx](https://www.youtube.com/watch?v=AhyznRSDjw8)
+* [MIT AAmini](https://www.youtube.com/@AAmini/videos)
+* [MIT 1](https://www.youtube.com/watch?v=QDX-1M5Nj7s)
+* [MIT 2](https://www.youtube.com/watch?v=ySEx_Bqxvvo)
+* [MIT 3](https://www.youtube.com/watch?v=NmLK_WQBxB4)
+* [MIT 4](https://www.youtube.com/watch?v=3G5hWM6jqPk)
+* [MIT 5](https://www.youtube.com/watch?v=kIiO4VSrivU)
+* [MIT 6](https://www.youtube.com/watch?v=AhyznRSDjw8)
 * [Vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
-* [xxx](https://www.youtube.com/watch?v=YCzL96nL7j0)
-* [xxx](https://www.youtube.com/watch?v=viZrOnJclY0)
-* [xxx](https://www.youtube.com/watch?v=AsNTP8Kwu80&t=328s)
+* [LSTM](https://www.youtube.com/watch?v=YCzL96nL7j0)
+* [Word2Vec](https://www.youtube.com/watch?v=viZrOnJclY0)
+* [RNNs](https://www.youtube.com/watch?v=AsNTP8Kwu80&t=328s)
 * [Math and AI etc](https://www.youtube.com/@statquest)
 * [CUDA quick atart](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html)
 * [CUDA downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9)
 * [nvidia-container-runtime](https://developer.nvidia.com/nvidia-container-runtime)
 * [CML Continuous Machine Learning](https://cml.dev/)
-* [xxx](https://www.youtube.com/watch?v=tdtpa1e5fsU)
+* [machine learning zoo](https://www.youtube.com/watch?v=tdtpa1e5fsU)
 * [ML Math](https://www.youtube.com/watch?v=Ixl3nykKG9M)
 * [Backpropagation example](https://www.youtube.com/watch?v=khUVIZ3MON8)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
 
-https://www.deeplearning.ai/
-https://openai.com/
-https://arxiv.org/
-https://paperswithcode.com/
-https://distill.pub/
-https://www.technologyreview.com/
-https://towardsdatascience.com/
-https://ai.google/
-https://www.kaggle.com/
-https://aiweekly.co/
-https://cloud.google.com/vertex-ai
-https://deepai.org/
+[https://www.deeplearning.ai/]()
+
+[https://openai.com/]()
+
+[https://arxiv.org/]()
+
+[https://paperswithcode.com/]()
+
+[https://distill.pub/]()
+
+[https://www.technologyreview.com/]()
+
+[https://towardsdatascience.com/]()
+
+[https://ai.google/]()
+
+[https://www.kaggle.com/]()
+
+[https://aiweekly.co/]()
+
+[https://cloud.google.com/vertex-ai]()
+
+[https://deepai.org/]()
