@@ -78,6 +78,75 @@ Neural networks, Deep Learning, Machine learning.
 * Model deployment
 * Model feedback (And back to top)
 
+## ML input
+
+**Raw Data**: This directory could contain raw, unprocessed data files, such as CSV, JSON, XML, or files in other
+formats.
+
+**Preprocessed Data**: This directory could contain data files that have been preprocessed and are ready to be used with
+a machine learning model. Preprocessing may involve handling missing values, normalization, scaling, or other data
+preparation steps.
+
+**Train Data**: In this directory, you could store data files specifically intended for training, along with their
+corresponding labels or targets.
+
+**Test Data**: Similarly to the training data, you could store test data files in a separate directory for evaluating
+and testing the model's performance.
+
+**Validation Data**: If you are using separate validation data, you could store it in a separate directory.
+
+**External Data**: If you are using external datasets or sources, you could create a dedicated directory for those data.
+
+**Labels**: If you are working on a supervised learning problem, you could create a directory for storing the labels or
+targets.
+
+**Data Augmentation**: If you are using data augmentation techniques, you may create a directory to store the generated
+augmented versions of the data.
+
+**Data Splits**: If you are dividing your data into training, testing, and validation sets, you could create directories
+for each data split.
+
+**Data Exploration**: If you are conducting exploratory work or analysis related to the input data, you could create a
+directory specifically for data exploration.
+
+**Data Sources**: If the input data comes from different sources, you could create a directory with subdirectories for
+each data source.
+
+Test data and validation data are both part of evaluating the performance of a machine learning model, but they have
+different roles and purposes:
+
+Notea:
+
+Test data is a separate dataset used for evaluating the performance of a model after training and validation. Test data
+allows you to assess the model's generalization and its ability to work with new, unseen data. Test data should
+represent the real-world environment in which the model will eventually be deployed. Test data should not be used for
+training or adjusting model parameters but solely for evaluating the final performance of the model.
+
+Validation data is a subset of the dataset used during the model training process for assessing its performance and
+selecting parameters. During training, validation data is used for parameter tuning, such as hyperparameter selection,
+model complexity adjustment, or other decisions related to the training process. Validation data helps assess the
+model's performance during training and helps prevent overfitting or underfitting.
+
+## ML output
+
+**Parameters**: In this directory, you can store files that contain your model's hyperparameters and configurations.
+This may include a text file, a JSON file, or other formats that specify the values of the parameters used.
+
+**Models**: In this directory, you can store files of trained machine learning models. Depending on the storage format
+used by TensorFlow, it may include TensorFlow SavedModel files (.pb), SavedModel format files, or H5 format files (for
+Keras models).
+
+**Weights**: If you are training a deep learning network, you can save weight files in a separate directory. These files
+contain the learned weights and biases during training, which can be used later for model reproduction and usage.
+
+**Reports**: In this directory, you can store various reports, including performance analysis, visualizations, logs, and
+other result documents. This may include test reports, performance graphs, log files, and similar documents that provide
+insights into your model's behavior and performance.
+
+**Generated Data**: If you generate synthetic data or use data generation with your model, you can separate and store
+those data files in this directory. This may include synthesized data files that can be used for result reproduction or
+sharing with others.
+
 ## Usage, tips and tricks
 
 ### Coding tips and tricks
