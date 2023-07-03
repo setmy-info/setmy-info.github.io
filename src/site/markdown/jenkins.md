@@ -149,30 +149,28 @@ Commands (git, mvn, gradle, etc) can't be executed. Reason was that ant unpacked
 Caused by: java.io.IOException: Cannot run program "git" (in directory "/var/lib/jenkins/.jenkins/workspace/jenkinsfile-starter_develop"): error=13, Permission denied
 ```
 
-```
-
 Use Jenkins inside docker as **jenkins** user
 
 ```
-
 docker exec -it jenkins /bin/sh
-
 ```
 
 Use Jenkins inside docker as **root** user
 
 ```
-
 docker exec -u root -it jenkins /bin/sh
-
 ```
 
 Use Jenkins image and start shell
 
 ```
-
 docker run -it setmyinfo/setmy-info-rocky-java-jenkins:latest /bin/sh
+```
 
+```
+kubectl create sa jenkins
+kubectl create clusterrolebinding jenkins-cluster-admin --clusterrole=cluster-admin --serviceaccount=default:jenkins
+kubectl get secret
 ```
 
 ## See also

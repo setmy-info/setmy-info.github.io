@@ -49,6 +49,8 @@ kubectl create user USER_NAME
 kubectl create role ROLE_NAME --verb=RIGHTS --resource=RESOURCE
 kubectl create rolebinding BINDING_NAME --role=ROLE_NAME --user=USERNAME
 
+kubectl cluster-info
+
 # It's known, that the secret map doesn't exist, but since it is similar to a config map, we will use a similar syntax and terminology.
 
 # -n NAMESPACE can be appended
