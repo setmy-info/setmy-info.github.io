@@ -141,26 +141,38 @@ Jenkins-Imposed API Limiter: Current quota for Github API usage has 42 remaining
 Jenkins is attempting to evenly distribute GitHub API requests. To configure a different rate limiting strategy, such as having Jenkins restrict GitHub API requests only when near or above the GitHub rate limit, go to "GitHub API usage" under "Configure System" in the Jenkins settings.
 Jenkins-Imposed API Limiter: Still sleeping, now only 3 min 6 sec remaining.
 Jenkins-Imposed API Limiter: Still sleeping, now only 5.1 sec remaining.
-...
+```
+
+Commands (git, mvn, gradle, etc) can't be executed. Reason was that ant unpacked tar file wrongly.
+
+```
+Caused by: java.io.IOException: Cannot run program "git" (in directory "/var/lib/jenkins/.jenkins/workspace/jenkinsfile-starter_develop"): error=13, Permission denied
+```
 
 ```
 
 Use Jenkins inside docker as **jenkins** user
 
 ```
+
 docker exec -it jenkins /bin/sh
+
 ```
 
 Use Jenkins inside docker as **root** user
 
 ```
+
 docker exec -u root -it jenkins /bin/sh
+
 ```
 
 Use Jenkins image and start shell
 
 ```
+
 docker run -it setmyinfo/setmy-info-rocky-java-jenkins:latest /bin/sh
+
 ```
 
 ## See also

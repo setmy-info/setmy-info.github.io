@@ -212,3 +212,6 @@ What are the mutual expectations and collaboration methods among team members?
         What steps are taken to gather feedback from the development team and iterate on requirements to minimize defects?
 
 '''
+
+Argo workflow - no. It's not handled by bigger consortium, not a standard by that consortium, not handled by IDE, too
+young.

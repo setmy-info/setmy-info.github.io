@@ -45,6 +45,10 @@ kubectl --context=CONTEXTNAME cluster-info
 
 kubectl config use-context context-xyz
 
+kubectl create user USER_NAME
+kubectl create role ROLE_NAME --verb=RIGHTS --resource=RESOURCE
+kubectl create rolebinding BINDING_NAME --role=ROLE_NAME --user=USERNAME
+
 # It's known, that the secret map doesn't exist, but since it is similar to a config map, we will use a similar syntax and terminology.
 
 # -n NAMESPACE can be appended
@@ -115,16 +119,16 @@ kubectl get pod -o yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-pv
+    name: nfs-pv
 spec:
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  nfs:
-    server: nfs.intra
-    path: /tank/nfs/peristent-volumes
+    capacity:
+        storage: 10Gi
+    accessModes:
+        - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+        server: nfs.intra
+        path: /tank/nfs/peristent-volumes
 ```
 
 **nfs-pvc.yaml**
@@ -133,15 +137,15 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nfs-pvc
+    name: nfs-pvc
 spec:
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 5Gi
-  storageClassName: ""
-  volumeName: nfs-pv
+    accessModes:
+        - ReadWriteMany
+    resources:
+        requests:
+            storage: 5Gi
+    storageClassName: ""
+    volumeName: nfs-pv
 ```
 
 ### Namespace
@@ -236,13 +240,13 @@ spec:
                                     name: xyz-secrets-map
                                     key: secret-variable
                                     optional: false
-          volumeMounts:
-            - name: nfs-volume
-              mountPath: /app/data
-      volumes:
-        - name: nfs-volume
-          persistentVolumeClaim:
-            claimName: nfs-pvc
+            volumeMounts:
+                -   name: nfs-volume
+                    mountPath: /app/data
+        volumes:
+            -   name: nfs-volume
+                persistentVolumeClaim:
+                    claimName: nfs-pvc
 ```
 
 ### Service

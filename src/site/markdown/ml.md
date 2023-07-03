@@ -165,13 +165,27 @@ Neural networks, Deep Learning, Machine learning.
 * [xxx](https://www.youtube.com/watch?v=viZrOnJclY0)
 * [xxx](https://www.youtube.com/watch?v=AsNTP8Kwu80&t=328s)
 * [Math and AI etc](https://www.youtube.com/@statquest)
-* [xxx](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html)
-* [xxx](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9)
+* [CUDA quick atart](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html)
+* [CUDA downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9)
+* [nvidia-container-runtime](https://developer.nvidia.com/nvidia-container-runtime)
 * [CML Continuous Machine Learning](https://cml.dev/)
 * [xxx](https://www.youtube.com/watch?v=tdtpa1e5fsU)
+* [ML Math](https://www.youtube.com/watch?v=Ixl3nykKG9M)
+* [Backpropagation example](https://www.youtube.com/watch?v=khUVIZ3MON8)
 * [xxx](xxxx)
 * [xxx](xxxx)
 * [xxx](xxxx)
 * [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
+
+https://www.deeplearning.ai/
+https://openai.com/
+https://arxiv.org/
+https://paperswithcode.com/
+https://distill.pub/
+https://www.technologyreview.com/
+https://towardsdatascience.com/
+https://ai.google/
+https://www.kaggle.com/
+https://aiweekly.co/
+https://cloud.google.com/vertex-ai
+https://deepai.org/

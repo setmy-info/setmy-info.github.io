@@ -33,6 +33,14 @@ dvc add data/huge.file.txt
 
 git add data/huge.file.txt.dvc data/.gitignore
 
+dvc move data/huge.file.txt data/huge.file.2.txt
+
+git add data/huge.file.2.txt.dvc
+
+git add data/.gitignore
+
+git commit -m "Rename file using DVC"
+
 git commit -m "Add raw data"
 
 dvc remote add mylocalremote c:\\data\\tank\\dvc
