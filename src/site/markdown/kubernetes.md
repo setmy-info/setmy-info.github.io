@@ -297,6 +297,95 @@ spec:
 
 ```
 
+## Kind complete list
+
+```yaml
+kind: Pod
+---
+kind: Deployment
+---
+kind: Service
+---
+kind: Namespace
+---
+kind: ConfigMap
+---
+kind: Secret
+---
+kind: StatefulSet
+---
+kind: DaemonSet
+---
+kind: Ingress
+---
+kind: PersistentVolume
+---
+kind: PersistentVolumeClaim
+---
+kind: VolumeClaimTemplate
+---
+kind: Job
+---
+kind: CronJob
+---
+kind: HorizontalPodAutoscaler
+---
+kind: ServiceAccount
+---
+kind: Role
+---
+kind: RoleBinding
+---
+kind: PodDisruptionBudget
+---
+kind: Endpoint
+---
+kind: LimitRange
+---
+kind: NetworkPolicy
+---
+kind: StorageClass
+---
+kind: PodSecurityPolicy
+---
+kind: ReplicaSet
+---
+kind: PodTemplate
+---
+kind: ReplicationController
+---
+kind: ClusterRole
+---
+kind: ClusterRoleBinding
+---
+kind: ServiceMonitor
+---
+kind: VolumeSnapshot
+---
+kind: VolumeSnapshotClass
+---
+kind: VolumeSnapshotContent
+---
+kind: VolumeSnapshotDataSource
+---
+kind: VolumeAttachment
+---
+kind: StorageVersion
+---
+kind: TokenReview
+---
+kind: SelfSubjectAccessReview
+---
+kind: SelfSubjectRulesReview
+---
+kind: SubjectAccessReview
+---
+kind: PriorityClass
+---
+kind: PodSecurityPolicyReview
+---
+```
+
 ## See also
 
 [Kubernetes](https://kubernetes.io)
