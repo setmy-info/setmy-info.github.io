@@ -87,6 +87,9 @@ minikube start
 # Minikube klaster IP, use for services
 minikube ip
 minikube dashboard
+#minikube dashboard &
+# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+# pgrep -f "minikube dashboard" | xargs kill
 ```
 
 ## Usage, tips and tricks
