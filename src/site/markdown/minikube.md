@@ -43,6 +43,7 @@ docker container rm minikube
 docker volume rm minikube
 docker network rm minikube
 minikube start
+minikube dashboard
 ```
 
 ## Deinstall
@@ -85,6 +86,7 @@ minikube start
 # minikube docker-env # ?
 # Minikube klaster IP, use for services
 minikube ip
+minikube dashboard
 ```
 
 ## Usage, tips and tricks
