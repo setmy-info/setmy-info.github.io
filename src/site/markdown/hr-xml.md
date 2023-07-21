@@ -46,4 +46,4 @@ Need to verify by standards.
 
 ## See also
 
-[xxxx](http://yyyyy)
+[HR open standards](https://www.hropenstandards.org)
