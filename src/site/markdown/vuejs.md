@@ -127,8 +127,7 @@ yarn serve
         },
         methods: {
             init() {
-                console.log("Init");
-                dataService.inputFieldValue = dataService.inputFieldValue;
+                console.log("Init input field page");
             },
             textChanged(event) {
                 console.log("event: ", event, this.inputText);
