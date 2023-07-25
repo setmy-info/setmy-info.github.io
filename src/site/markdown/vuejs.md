@@ -136,7 +136,7 @@ yarn serve
         }
     };
 
-    const Page = {
+    const numbersPage = {
         props: ['pageNumber'],
         template: '<div><h2>Page number: {{ pageNumber }}</h2></div>'
     };
@@ -146,7 +146,7 @@ yarn serve
         routes: [
             {path: '/', component: homePage},
             {path: '/input-field', component: inputFieldPage},
-            {path: '/page/:pageNumber', component: Page, props: true}
+            {path: '/page/:pageNumber', component: numbersPage, props: true}
         ],
     });
 
