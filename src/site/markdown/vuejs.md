@@ -74,7 +74,7 @@ yarn serve
 </html>
 ```
 
-### Simple SPA WITH ROUTER
+### Simple SPA with router
 
 ```html
 <!DOCTYPE html>
