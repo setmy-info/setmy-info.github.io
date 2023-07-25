@@ -78,30 +78,99 @@ Neural networks, Deep Learning, Machine learning.
 * Model deployment
 * Model feedback (And back to top)
 
+## ML input
+
+**Raw Data**: This directory could contain raw, unprocessed data files, such as CSV, JSON, XML, or files in other
+formats.
+
+**Preprocessed Data**: This directory could contain data files that have been preprocessed and are ready to be used with
+a machine learning model. Preprocessing may involve handling missing values, normalization, scaling, or other data
+preparation steps.
+
+**Train Data**: In this directory, you could store data files specifically intended for training, along with their
+corresponding labels or targets.
+
+**Test Data**: Similarly to the training data, you could store test data files in a separate directory for evaluating
+and testing the model's performance.
+
+**Validation Data**: If you are using separate validation data, you could store it in a separate directory.
+
+**External Data**: If you are using external datasets or sources, you could create a dedicated directory for those data.
+
+**Labels**: If you are working on a supervised learning problem, you could create a directory for storing the labels or
+targets.
+
+**Data Augmentation**: If you are using data augmentation techniques, you may create a directory to store the generated
+augmented versions of the data.
+
+**Data Splits**: If you are dividing your data into training, testing, and validation sets, you could create directories
+for each data split.
+
+**Data Exploration**: If you are conducting exploratory work or analysis related to the input data, you could create a
+directory specifically for data exploration.
+
+**Data Sources**: If the input data comes from different sources, you could create a directory with subdirectories for
+each data source.
+
+Test data and validation data are both part of evaluating the performance of a machine learning model, but they have
+different roles and purposes:
+
+Notea:
+
+Test data is a separate dataset used for evaluating the performance of a model after training and validation. Test data
+allows you to assess the model's generalization and its ability to work with new, unseen data. Test data should
+represent the real-world environment in which the model will eventually be deployed. Test data should not be used for
+training or adjusting model parameters but solely for evaluating the final performance of the model.
+
+Validation data is a subset of the dataset used during the model training process for assessing its performance and
+selecting parameters. During training, validation data is used for parameter tuning, such as hyperparameter selection,
+model complexity adjustment, or other decisions related to the training process. Validation data helps assess the
+model's performance during training and helps prevent overfitting or underfitting.
+
+## ML output
+
+**Parameters**: In this directory, you can store files that contain your model's hyperparameters and configurations.
+This may include a text file, a JSON file, or other formats that specify the values of the parameters used.
+
+**Models**: In this directory, you can store files of trained machine learning models. Depending on the storage format
+used by TensorFlow, it may include TensorFlow SavedModel files (.pb), SavedModel format files, or H5 format files (for
+Keras models).
+
+**Weights**: If you are training a deep learning network, you can save weight files in a separate directory. These files
+contain the learned weights and biases during training, which can be used later for model reproduction and usage.
+
+**Reports**: In this directory, you can store various reports, including performance analysis, visualizations, logs, and
+other result documents. This may include test reports, performance graphs, log files, and similar documents that provide
+insights into your model's behavior and performance.
+
+**Generated Data**: If you generate synthetic data or use data generation with your model, you can separate and store
+those data files in this directory. This may include synthesized data files that can be used for result reproduction or
+sharing with others.
+
 ## Usage, tips and tricks
 
 ### Coding tips and tricks
 
 ## See also
 
-* 3Blue1Brown (https://www.youtube.com/@3blue1brown):
-    * https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi
-        1. https://www.youtube.com/watch?v=aircAruvnKk
-        2. https://www.youtube.com/watch?v=IHZwWFHWa-w
-        3. https://www.youtube.com/watch?v=Ilg3gGewQ5U
-        4. https://www.youtube.com/watch?v=tIeHLnjs5U8
+* 3Blue1Brown ([https://www.youtube.com/@3blue1brown]()):
+    * [https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]()
+        1. [https://www.youtube.com/watch?v=aircAruvnKk]()
+        2. [https://www.youtube.com/watch?v=IHZwWFHWa-w]()
+        3. [https://www.youtube.com/watch?v=Ilg3gGewQ5U]()
+        4. [https://www.youtube.com/watch?v=tIeHLnjs5U8]()
         5. [Another similar](https://www.youtube.com/watch?v=2utAfvGAbgg)
     * [Convolution](https://www.youtube.com/watch?v=KuXjwB4LzSA)
 * 2x lines:
-    * https://www.youtube.com/watch?v=ILsA4nyG7I0
+    * [https://www.youtube.com/watch?v=ILsA4nyG7I0]()
 * DL/ML zoo:
-    * https://www.youtube.com/watch?v=oJNHXPs0XDk
+    * [https://www.youtube.com/watch?v=oJNHXPs0XDk]()
 * Google:
-    * https://www.youtube.com/playlist?list=PLIivdWyY5sqJxnwJhe3etaK7utrBiPBQ2
-    * https://www.youtube.com/watch?v=HcqpanDadyQ
-    * https://www.youtube.com/watch?v=nKW8Ndu7Mjw
+    * [https://www.youtube.com/playlist?list=PLIivdWyY5sqJxnwJhe3etaK7utrBiPBQ2]()
+    * [https://www.youtube.com/watch?v=HcqpanDadyQ]()
+    * [https://www.youtube.com/watch?v=nKW8Ndu7Mjw]()
     * Estimators:
-        * https://www.youtube.com/watch?v=G7oolm0jU8I
+        * [https://www.youtube.com/watch?v=G7oolm0jU8I]()
 * [Machine Learning vs Deep Learning](https://www.youtube.com/watch?v=q6kJ71tEYqM)
 *
 * [Convolution - CNN](https://www.youtube.com/watch?v=YRhxdVk_sIs)
@@ -153,25 +222,46 @@ Neural networks, Deep Learning, Machine learning.
 * [RNN](https://www.youtube.com/watch?app=desktop&v=AsNTP8Kwu80)
 * [RNN](https://www.youtube.com/watch?app=desktop&v=_aCuOwF1ZjU)
 * [QR Code AI](https://qrbtf.com/)
-* [xxx](https://www.youtube.com/@AAmini/videos)
-* [xxx](https://www.youtube.com/watch?v=QDX-1M5Nj7s)
-* [xxx](https://www.youtube.com/watch?v=ySEx_Bqxvvo)
-* [xxx](https://www.youtube.com/watch?v=NmLK_WQBxB4)
-* [xxx](https://www.youtube.com/watch?v=3G5hWM6jqPk)
-* [xxx](https://www.youtube.com/watch?v=kIiO4VSrivU)
-* [xxx](https://www.youtube.com/watch?v=AhyznRSDjw8)
+* [MIT AAmini](https://www.youtube.com/@AAmini/videos)
+* [MIT 1](https://www.youtube.com/watch?v=QDX-1M5Nj7s)
+* [MIT 2](https://www.youtube.com/watch?v=ySEx_Bqxvvo)
+* [MIT 3](https://www.youtube.com/watch?v=NmLK_WQBxB4)
+* [MIT 4](https://www.youtube.com/watch?v=3G5hWM6jqPk)
+* [MIT 5](https://www.youtube.com/watch?v=kIiO4VSrivU)
+* [MIT 6](https://www.youtube.com/watch?v=AhyznRSDjw8)
 * [Vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
-* [xxx](https://www.youtube.com/watch?v=YCzL96nL7j0)
-* [xxx](https://www.youtube.com/watch?v=viZrOnJclY0)
-* [xxx](https://www.youtube.com/watch?v=AsNTP8Kwu80&t=328s)
+* [LSTM](https://www.youtube.com/watch?v=YCzL96nL7j0)
+* [Word2Vec](https://www.youtube.com/watch?v=viZrOnJclY0)
+* [RNNs](https://www.youtube.com/watch?v=AsNTP8Kwu80&t=328s)
 * [Math and AI etc](https://www.youtube.com/@statquest)
-* [xxx](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html)
-* [xxx](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
-* [xxx](xxxx)
+* [CUDA quick atart](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html)
+* [CUDA downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9)
+* [nvidia-container-runtime](https://developer.nvidia.com/nvidia-container-runtime)
+* [CML Continuous Machine Learning](https://cml.dev/)
+* [machine learning zoo](https://www.youtube.com/watch?v=tdtpa1e5fsU)
+* [ML Math](https://www.youtube.com/watch?v=Ixl3nykKG9M)
+* [Backpropagation example](https://www.youtube.com/watch?v=khUVIZ3MON8)
+
+[https://www.deeplearning.ai/]()
+
+[https://openai.com/]()
+
+[https://arxiv.org/]()
+
+[https://paperswithcode.com/]()
+
+[https://distill.pub/]()
+
+[https://www.technologyreview.com/]()
+
+[https://towardsdatascience.com/]()
+
+[https://ai.google/]()
+
+[https://www.kaggle.com/]()
+
+[https://aiweekly.co/]()
+
+[https://cloud.google.com/vertex-ai]()
+
+[https://deepai.org/]()

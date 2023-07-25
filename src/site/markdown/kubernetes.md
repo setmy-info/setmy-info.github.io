@@ -40,17 +40,26 @@ User config file: **~/.kube/config**
 kubectl config set-credentials USERNAME --token=USERTOKEN
 kubectl config set-cluster CLUSTERNAME --server=https://URL --insecure-skip-tls-verify=true
 kubectl config set-context CONTEXTNAME --cluster=CLUSTERNAME --user=USERNAME
+kubectl config set-context --current --namespace=xyz-dev
 kubectl --context=CONTEXTNAME cluster-info
 
 kubectl config use-context context-xyz
 
+kubectl create user USER_NAME
+kubectl create role ROLE_NAME --verb=RIGHTS --resource=RESOURCE
+kubectl create rolebinding BINDING_NAME --role=ROLE_NAME --user=USERNAME
+
+kubectl cluster-info
+
+# It's known, that the secret map doesn't exist, but since it is similar to a config map, we will use a similar syntax and terminology.
+
 # -n NAMESPACE can be appended
-kubectl apply -f xyz-namespace.yml
-kubectl apply -f xyz-config-map.yml
-kubectl apply -f xyz-secrets-map.yml
-kubectl apply -f xyz-deployment.yml
-kubectl apply -f xyz-service.yml
-kubectl apply -f xyz-ingress.yml
+kubectl apply -f xyz-namespace.yaml
+kubectl apply -f xyz-config-map.yaml
+kubectl apply -f xyz-secrets-map.yaml
+kubectl apply -f xyz-deployment.yaml
+kubectl apply -f xyz-service.yaml
+kubectl apply -f xyz-ingress.yaml
 
 kubectl describe configmaps xyz-config-map
 kubectl describe secret xyz-secrets-map
@@ -67,6 +76,9 @@ kubectl port-forward xyz-deployment-596744778-dcgtz LOCALPORT:REMOTEPORT
 kubectl exec -it xyz-deployment-596744778-dcgtz -- /bin/sh
 kubectl get endpoints
 kubectl get service
+
+kubectl describe pv <persistent_volume_name>
+kubectl describe pvc <persistent_volume_claim_name>
 
 kubectl delete service xyz-service
 kubectl delete deployment xyz-deployment
@@ -91,15 +103,77 @@ kubectl get namespace
 kubectl config view --minify
 # kubectl config view --minify --output 'jsonpath={..namespace}'; echo
 kubectl config set-context --current --namespace=NAMESPACE
+
+# Persistent volumes
+kubectl get pv
+# Persistent volume claims
+kubectl get pvc
+
+# POD data as yaml
+kubectl get pod -o yaml
+```
+
+### Volumes
+
+**nfs-pv.yaml**
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: nfs-pv
+spec:
+    capacity:
+        storage: 10Gi
+    accessModes:
+        - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+        server: nfs.intra
+        path: /tank/nfs/peristent-volumes
+```
+
+**nfs-pvc.yaml**
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: nfs-pvc
+spec:
+    accessModes:
+        - ReadWriteMany
+    resources:
+        requests:
+            storage: 5Gi
+    storageClassName: ""
+    volumeName: nfs-pv
+```
+
+### Namespace
+
+**xyz-namespace.yaml**
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: xyz-dev
 ```
 
 ### Config map
+
+xyz-config-map.yaml
 
 ```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
     name: xyz-config-map
+    namespace: xyz-dev
+    # <pod-name>.<service-name>.<namespace>.svc.cluster.local
+    # By default:                  .default.svc.cluster.local
+    pg-host: postgresql-1.postgresql-service.default.svc.cluster.local
 data:
     variable: "Value in quotations"
 immutable: true
@@ -107,11 +181,14 @@ immutable: true
 
 ### Secrets map
 
+**xyz-secrets-map.yaml**
+
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
     name: xyz-secrets-map
+    namespace: xyz-dev
 data:
     secret-variable: U2VjcmV0IHZhbHVl
 immutable: true
@@ -119,11 +196,14 @@ immutable: true
 
 ### Deployment
 
+**xyz-deployment.yaml**
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: xyz-deployment
+    namespace: xyz-dev
     labels:
         app: xyz-deployment
 spec:
@@ -139,7 +219,7 @@ spec:
             containers:
                 -   name: xyz
                     image: xyz:latest
-                    # Remove for production, use it for development in Minikube
+                    # For example, not needed in Minikube
                     # imagePullPolicy: Never
                     ports:
                         -   name: xyz-port
@@ -162,15 +242,25 @@ spec:
                                     name: xyz-secrets-map
                                     key: secret-variable
                                     optional: false
+            volumeMounts:
+                -   name: nfs-volume
+                    mountPath: /app/data
+        volumes:
+            -   name: nfs-volume
+                persistentVolumeClaim:
+                    claimName: nfs-pvc
 ```
 
 ### Service
+
+**xyz-service.yaml**
 
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
     name: xyz-service
+    namespace: xyz-dev
 spec:
     selector:
         app.kubernetes.io/name: xyz
@@ -182,25 +272,118 @@ spec:
 
 ### Ingress
 
+**xyz-ingress.yaml**
+
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-name: minimal-ingress
-annotations:
-nginx.ingress.kubernetes.io/rewrite-target: /
+    name: xyz-ingress
+    namespace: xyz-dev
+    annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-ingressClassName: nginx-example
-rules:
-    -   http:
-        paths:
-            -   path: /testpath
-                pathType: Prefix
-                backend:
-                service:
-                name: test
-                port:
-                number: 80
+    ingressClassName: nginx-example
+    rules:
+        -   http:
+                paths:
+                    -   path: /testpath
+                        pathType: Prefix
+                        backend:
+                            service:
+                                name: test
+                                port:
+                                    number: 80
+
+```
+
+## Kind complete list
+
+```yaml
+kind: Pod
+---
+kind: Deployment
+---
+kind: Service
+---
+kind: Namespace
+---
+kind: ConfigMap
+---
+kind: Secret
+---
+kind: StatefulSet
+---
+kind: DaemonSet
+---
+kind: Ingress
+---
+kind: PersistentVolume
+---
+kind: PersistentVolumeClaim
+---
+kind: VolumeClaimTemplate
+---
+kind: Job
+---
+kind: CronJob
+---
+kind: HorizontalPodAutoscaler
+---
+kind: ServiceAccount
+---
+kind: Role
+---
+kind: RoleBinding
+---
+kind: PodDisruptionBudget
+---
+kind: Endpoint
+---
+kind: LimitRange
+---
+kind: NetworkPolicy
+---
+kind: StorageClass
+---
+kind: PodSecurityPolicy
+---
+kind: ReplicaSet
+---
+kind: PodTemplate
+---
+kind: ReplicationController
+---
+kind: ClusterRole
+---
+kind: ClusterRoleBinding
+---
+kind: ServiceMonitor
+---
+kind: VolumeSnapshot
+---
+kind: VolumeSnapshotClass
+---
+kind: VolumeSnapshotContent
+---
+kind: VolumeSnapshotDataSource
+---
+kind: VolumeAttachment
+---
+kind: StorageVersion
+---
+kind: TokenReview
+---
+kind: SelfSubjectAccessReview
+---
+kind: SelfSubjectRulesReview
+---
+kind: SubjectAccessReview
+---
+kind: PriorityClass
+---
+kind: PodSecurityPolicyReview
+---
 ```
 
 ## See also

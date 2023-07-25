@@ -43,6 +43,7 @@ docker container rm minikube
 docker volume rm minikube
 docker network rm minikube
 minikube start
+minikube dashboard
 ```
 
 ## Deinstall
@@ -75,7 +76,20 @@ Ports (minukube):
 ```shell
 minikube start
 # minikube start --vm-driver=none
+# For peristent volumes
+# minikube start --mount-string="/path/on/host:/path/on/minikube"
+# minikube start --mount-string="hostpath=/tank/peristent-volumes,nfs-server=YOUR_NFS_SERVER_IP,nfs-share=YOUR_NFS_SHARE"
+# Mounted to Kubernetes host
+# minikube start --mount-string="hostpath=/tank/peristent-volumes,nfs-server=nfs.intra,nfs-share=/tank/nfs/peristent-volumes"
+# Munted directly to virtual machine
+# minikube start --mount-string="type=nfs,source=nfs.intra:/tank/nfs/peristent-volumes,target=/tank/peristent-volume"
 # minikube docker-env # ?
+# Minikube klaster IP, use for services
+minikube ip
+minikube dashboard
+#minikube dashboard &
+# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+# pgrep -f "minikube dashboard" | xargs kill
 ```
 
 ## Usage, tips and tricks
@@ -87,7 +101,7 @@ minikube image rm gihub.io/ORGNAME/IMAGENAME:VERSION
 minikube image load gihub.io/ORGNAME/IMAGENAME:VERSION --overwrite
 # DEPRECATED
 minikube cache add gihub.io/ORGNAME/IMAGENAME:VERSION
-# also in Argo: spec.templates.container.imagePullPolicy: Never
+# In kubernetes deployment config should be: spec.templates.container.imagePullPolicy: Never
 minikube image ls
 minikube addons enable ingress
 

@@ -68,9 +68,9 @@ kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/dow
 
 [Argo CLI](https://argoproj.github.io/argo-workflows/cli/argo/)
 
-[xxx](yyyy)
+[xxx](https://nifi.apache.org/)
 
-[xxx](yyyy)
+[xxx](https://oozie.apache.org/)
 
 [xxx](yyyy)
 

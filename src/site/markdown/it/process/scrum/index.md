@@ -41,8 +41,8 @@ Other:
 
 1. What can be delivered in the Increment resulting8 from the upcoming Sprint?
 2. How will the work needed to deliver the Increment be achieved?
-   * No more, no less (agreement or like contract).
-   * Shortest bath to implementation.
+    * No more, no less (agreement or like contract).
+    * Shortest bath to implementation.
 
 ### Daily Scrum
 

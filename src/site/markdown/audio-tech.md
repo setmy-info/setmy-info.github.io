@@ -8,6 +8,8 @@
 
 ## See also
 
+SENNHEISER E845S Foam Windscreen (Tuulekaitse)
+
 [K&M Mikrofon stand 210/2](https://pvxmusic.ee/ee/k-m-populaarseim-mikrofoni-statiiv-2102030055/)
 
 [K&M Mikrofon stand 210/2](https://www.progear.ee/k-m-210-2)
@@ -22,4 +24,12 @@
 
 [RODE Mic](https://www.progear.ee/rode-m2-rode-m2)
 
-[xxx](xxx)
+[Audio-Technica AT2031 condenser microphone](https://www.djservice.ee/article/audio-technica-at2031)
+
+[xxx](https://pvxmusic.ee/ee/rycote-foam-windshield-104405/)
+
+[xxx](yyyy)
+
+[xxx](yyyy)
+
+[xxx](yyyy)
