@@ -3,6 +3,7 @@
 Main module in [github](https://github.com/setmy-info/setmy.info)
 
 * [GIT](src/site/markdown/git.html)
+* [DVC](src/site/markdown/dvc.html)
 * [React](src/site/markdown/react.html)
 * [VueJS](src/site/markdown/vuejs.html)
 * [postgresql](src/site/markdown/postgresql.html)
