@@ -58,6 +58,8 @@ git config --global mergetool.meld.path "c:\Program Files (x86)\Meld\Meld.exe"
 # Show remote origin repo url
 git config --get remote.origin.url
 
+git remote -v
+
 git remote rename OLDNAME NEWNAME
 
 git config --global color.ui auto
@@ -74,11 +76,16 @@ git branch -d BRANCHNAME && git push origin --delete BRANCHNAME
 
 git fetch
 
+# Remove also local branches, those are deleted from remote
+git fetch --prune
+
 git pull
 
 git push
 
 git push -f origin feature/FEATURE
+
+git push origin --all
 
 # Remove tracking for non existing remote branches.
 git remote prune origin

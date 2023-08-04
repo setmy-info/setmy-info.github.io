@@ -234,6 +234,10 @@ docker images
 docker tag <image_id> image_name:tag
 ```
 
+```sh
+docker login --username USERNAME --password PERSONAL_TOKEN
+```
+
 See progress of stream
 
 ```sh
