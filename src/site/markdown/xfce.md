@@ -20,6 +20,20 @@
 
 ## Usage, tips and tricks
 
+### Shutdown command with prompt
+
+For example making shortcut for halting
+
+```sh
+xfce4-session-logout --prompt --halt
+```
+
+### Default Brouwser for Browser icon
+
+* Settings
+* Preferred Applications
+* Web Browser
+
 ## See also
 
 [xxxx](http://yyyyy)

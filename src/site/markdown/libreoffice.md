@@ -22,4 +22,13 @@ libreoffice -env:UserInstallation=file:///tmp/conversion_file_name_#{timestamp} 
             /temp/input/dir/with/import_conversion_file.doc
 ```
 
+```shell
+soffice --headless --convert-to pdf --outdir /tmp/ "$template_file"
+soffice --headless --norestore --nolockcheck --invisible --nodefault --view /tmp/"$template_file" &
+unoconv --server=localhost --port=2002 --format=pdf --output=/tmp/ "$input_data"
+soffice --headless --convert-to pdf --outdir /tmp/ /tmp/"$template_file"
+mv /tmp/"$template_file" "$output_file"
+rm /tmp/"$template_file"
+```
+
 ## See also

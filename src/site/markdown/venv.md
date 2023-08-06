@@ -56,6 +56,7 @@ pip install tensorflow tensorflow-transform tfds-nightly matplotlib pandas
 pip freeze > requirements.txt
 # to install frozen packages
 pip install -r requirements.txt
+pip install -r requirements.txt --upgrade
 pip install -r requirements.txt -r requirements-ai.txt
 # Upgrade some package
 pip install <package_name> --upgrade

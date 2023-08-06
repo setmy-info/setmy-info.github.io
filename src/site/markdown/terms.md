@@ -24,6 +24,14 @@
 
 **silos** - meeskondade eraldatus, team separations and bad communication.
 
+**escape character** - põgenemismärk, põgenemistähis
+
+**tethering mode** - lõastamisrežiimiks - ligipääsupunktide (access point) loomise režiim
+
+**TechEx** - Technological Exploration: Spike or PoC.
+
+**String** - sõne.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html

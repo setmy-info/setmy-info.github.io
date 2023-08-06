@@ -44,7 +44,7 @@ pip install tensorflow tensorflow-transform tfds-nightly matplotlib
 * [TF C++](https://www.tensorflow.org/api_docs/cc)
 * [Datasets](https://www.tensorflow.org/datasets)
 * [Datasets overview](https://www.tensorflow.org/datasets/overview)
-* [tfx install](https://www.tensorflow.org/tfx/transform/install)
+* [tfx install and version table](https://www.tensorflow.org/tfx/transform/install)
 * [Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset)
 * [Datasets](https://www.tensorflow.org/datasets/overview#load_a_dataset)
 * [TF Tutorials](https://www.tensorflow.org/tutorials/)
