@@ -3,10 +3,7 @@
 ## Install
 
 ```shell
-pip install jupyterlab  notebook voila \
-            numpy pandas matplotlib \
-            seaborn click colorama Flask itsdangerous Jinja2 MarkupSafe Markdown PyYAML Werkzeug \
-            tensorboard tensorflow tensorflow-datasets tensorflow-estimator tensorflow-io-gcs-filesystem tensorflow-metadata
+pip install jupyterlab  notebook voila
 ```
 
 ## Start Jupyter
@@ -19,10 +16,13 @@ jupyter-lab
 
 ### Preparations
 
-#### Installation
+#### Installation with additionals
 
 ```shell
-pip install numpy pandas matplotlib seaborn
+pip install jupyterlab  notebook voila \
+            numpy pandas matplotlib \
+            seaborn click colorama Flask itsdangerous Jinja2 MarkupSafe Markdown PyYAML Werkzeug \
+            tensorboard tensorflow tensorflow-datasets tensorflow-estimator tensorflow-io-gcs-filesystem tensorflow-metadata
 ```
 
 #### Script preparations
