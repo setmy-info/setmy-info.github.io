@@ -77,14 +77,6 @@ ax.set_ylabel('entry b');
 ```
 
 ```python
-fig, ax = plt.subplots(figsize=(5, 2.7))
-x = np.arange(len(data1))
-ax.plot(x, np.cumsum(data1), color='blue', linewidth=3, linestyle='--')
-l, = ax.plot(x, np.cumsum(data2), color='orange', linewidth=2)
-l.set_linestyle(':');
-```
-
-```python
 def my_plotter(ax, data1, data2, param_dict):
     """
     A helper function to make a graph.
@@ -98,6 +90,14 @@ data1, data2, data3, data4 = np.random.randn(4, 100)  # make 4 random data sets
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(5, 2.7))
 my_plotter(ax1, data1, data2, {'marker': 'x'})
 my_plotter(ax2, data3, data4, {'marker': 'o'});
+```
+
+```python
+fig, ax = plt.subplots(figsize=(5, 2.7))
+x = np.arange(len(data1))
+ax.plot(x, np.cumsum(data1), color='blue', linewidth=3, linestyle='--')
+l, = ax.plot(x, np.cumsum(data2), color='orange', linewidth=2)
+l.set_linestyle(':');
 ```
 
 ```python
@@ -265,7 +265,7 @@ ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
 ```python
 x = np.outer(np.linspace(-2, 2, 30), np.ones(30))
 y = x.copy().T # transpose
-z = np.cos(x  2 + y  2)
+z = np.cos(x)
 
 fig = plt.figure()
 ax = plt.axes(projection='3d')
