@@ -43,3 +43,4 @@
 * [Integral 3](https://www.mathsisfun.com/calculus/integral-approximation-calculator.html)
 * [Definite integral](https://www.mathsisfun.com/definitions/definite-integral.html)
 * [Indefinite integral](https://www.mathsisfun.com/definitions/indefinite-integral.html)
+* [Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function)
