@@ -43,6 +43,18 @@ cd jpoc
 julia --project=jpoc jpoc/src/main.jl
 ```
 
+Jupyter with Julia
+
+Execute Julia and install packages with:
+
+```
+using Pkg
+Pkg.add("IJulia")
+Pkg.add("DataFrames")
+Pkg.add("CSV")
+Pkg.add("Plots")
+```
+
 Pluto in Julia mode
 
 ```julia
