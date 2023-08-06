@@ -8,29 +8,35 @@
 
 **Multi-Tenant** - multitenancy, simply: single application for all users.
 
-**idempotent** - Idempotentsus.
+**Idempotent** - Idempotentsus.
 
 **Entity** - Entiteet, olem.
 
-**heterogeneous collection** - any type of data in collection.
+**Heterogeneous collection** - any type of data in collection.
 
-**homogeneous collection** - single type of data in collection.
+**Homogeneous collection** - single type of data in collection.
 
-**homoiconic** - code as data. Code used as a data.
+**Homoiconic** - code as data. Code used as a data.
 
-**exception** - erand. (Et tagada Tõrketõrjed).
+**Exception** - erand. (Et tagada Tõrketõrjed).
 
-**name-mangling** - nimemuserdus.
+**Name-mangling** - nimemuserdus.
 
-**silos** - meeskondade eraldatus, team separations and bad communication.
+**Silos** - meeskondade eraldatus, team separations and bad communication.
 
-**escape character** - põgenemismärk, põgenemistähis
+**Escape character** - põgenemismärk, põgenemistähis
 
-**tethering mode** - lõastamisrežiimiks - ligipääsupunktide (access point) loomise režiim
+**Tethering mode** - lõastamisrežiimiks - ligipääsupunktide (access point) loomise režiim
 
 **TechEx** - Technological Exploration: Spike or PoC.
 
 **String** - sõne.
+
+**Plugin** - pistik.
+
+**Thread** - lõim.
+
+**Thread safety** - lõimekindlus.
 
 https://www.dataprise.com/it-glossary
 
