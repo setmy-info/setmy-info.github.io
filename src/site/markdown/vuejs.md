@@ -106,6 +106,11 @@ yarn serve
 
 <script src="https://unpkg.com/vue@next"></script>
 <script src="https://unpkg.com/vue-router@next"></script>
+
+<template id="numbers-page-template">
+    <div><h2>Page number from template component: {{ pageNumber }}</h2></div>
+</template>
+
 <script>
     const dataService = {
         inputFieldValue: "Initial input field value"
@@ -138,7 +143,7 @@ yarn serve
 
     const numbersPage = {
         props: ['pageNumber'],
-        template: '<div><h2>Page number: {{ pageNumber }}</h2></div>'
+        template: '#numbers-page-template'
     };
 
     const router = VueRouter.createRouter({
