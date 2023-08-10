@@ -47,6 +47,10 @@ dvc remote add mylocalremote c:\\data\\tank\\dvc
 
 dvc remote add -d origin c:\\data\\tank\\dvc
 
+dvc remote default origin
+
+dvc remote modify origin url /NEW/URL
+
 dvc remote list
 
 dvc remote remove mylocalremote
