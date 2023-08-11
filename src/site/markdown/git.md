@@ -70,6 +70,8 @@ git checkout -b NEWBRANCHNAME
 
 git checkout -b NEWBRANCHNAME COMMITHASH
 
+git switch -c NEWBRANCHNAME FROMBRANCHNAME
+
 git branch -m OLDBRANCHNAME NEWBRANCHNAME
 
 git branch -d BRANCHNAME && git push origin --delete BRANCHNAME
