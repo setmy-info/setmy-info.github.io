@@ -409,6 +409,14 @@ Deactivate env.
 
 PYTHONPATH is for searching modules, like PATH for commands.
 
+## Build python
+
+```shell
+./configure --prefix=/opt/python93 --exec-prefix=/opt/python93
+make
+sudo make install
+```
+
 ## See also
 
 [xxxx](https://pythonspot.com/)
@@ -449,10 +457,12 @@ PYTHONPATH is for searching modules, like PATH for commands.
 
 [Google Python class](https://developers.google.com/edu/python/)
 
-https://www.patricksoftwareblog.com/structuring-a-flask-project/
+[Development, Build](https://devguide.python.org/getting-started/setup-building/index.html)
 
-https://realpython.com/scaffold-a-flask-project/
+[xxxxx](https://www.patricksoftwareblog.com/structuring-a-flask-project/)
 
-https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+[xxxxx](https://realpython.com/scaffold-a-flask-project/)
 
-http://flask.pocoo.org/snippets/131/
+[xxxxx](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+
+[xxxxx](http://flask.pocoo.org/snippets/131/)
