@@ -4,7 +4,7 @@
 
 ## Terms
 
-ülemhulk, 
+Ülemhulk,
 
 **Set, sets** - hulk, hulgad
 
@@ -14,7 +14,7 @@
 
 **Superset** - ülemhulk
 
-**Series** - 
+**Series** -
 
 ## See also
 
