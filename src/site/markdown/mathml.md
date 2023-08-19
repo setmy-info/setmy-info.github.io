@@ -58,6 +58,7 @@
 </p>
 
 <p>
+    It is an ill-posed task, as it leaves room for interpretation and is therefore not clearly expressed.<br>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
             <mfrac>
@@ -80,6 +81,7 @@
 </p>
 
 <p>
+    Another similar ill-posed task.<br>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
             <msrow>
@@ -196,20 +198,21 @@
 
 <p>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <munderover>
-            <mo>&Sum;</mo>
-            <mrow>
-                <mi>n</mi>
-                <mo>=</mo>
-                <mn>1</mn>
-            </mrow>
-            <mn>5</mn>
-        </munderover>
-        <mi>f</mi>
-        <mo>(</mo>
-        <mi>n</mi>
-        <mo>)</mo>
-        <mo rspace="0.22em">&NewLine;</mo>
+        <mstyle displaystyle="true">
+            <munderover>
+                <mo>&Sum;</mo>
+                <mrow>
+                    <mi>n</mi>
+                    <mo>=</mo>
+                    <mn>1</mn>
+                </mrow>
+                <mn>5</mn>
+            </munderover>
+            <mi>f</mi>
+            <mo>(</mo>
+            <mi>n</mi>
+            <mo>)</mo>
+        </mstyle>
     </math>
 </p>
 
