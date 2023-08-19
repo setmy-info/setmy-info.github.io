@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>MathML Examples</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -529,6 +531,7 @@
 
 ## See also
 
+* [MathMl collected examples](https://setmy-info.github.io/src/site/resources/math.html)
 * [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML)
 * [Letters](https://www.tutorialspoint.com/mathml/mathml_greek_letters.htm)
 * [Set symbols](https://www.tutorialspoint.com/mathml/mathml_set.htm)
