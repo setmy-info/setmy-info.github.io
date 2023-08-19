@@ -529,9 +529,9 @@
 
 ## See also
 
-[MathML](https://developer.mozilla.org/en-US/docs/Web/MathML)
-[Letters](https://www.tutorialspoint.com/mathml/mathml_greek_letters.htm)
-[Set symbols](https://www.tutorialspoint.com/mathml/mathml_set.htm)
-[Guide](https://www.math-it.org/Publikationen/MathML.html)
-[Named characters table](https://html.spec.whatwg.org/multipage/named-characters.html)
-[More symbols](https://danielscully.uk/projects/mathml-guide/entities.php)
+* [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML)
+* [Letters](https://www.tutorialspoint.com/mathml/mathml_greek_letters.htm)
+* [Set symbols](https://www.tutorialspoint.com/mathml/mathml_set.htm)
+* [Guide](https://www.math-it.org/Publikationen/MathML.html)
+* [Named characters table](https://html.spec.whatwg.org/multipage/named-characters.html)
+* [More symbols](https://danielscully.uk/projects/mathml-guide/entities.php)
