@@ -402,7 +402,7 @@
 <p>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
-            <mi>N</mi>
+            <mi>M</mi>
             <mo>=</mo>
             <mo>{</mo>
             <mi>x</mi>
@@ -411,6 +411,26 @@
             <mo>(</mo>
             <mi>x</mi>
             <mo>)</mo>
+            <mo>}</mo>
+        </mrow>
+    </math>
+</p>
+
+<p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi>&Nopf;</mi>
+            <mo>=</mo>
+            <mo>{</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>2</mn>
+            <mo>,</mo>
+            <mn>3</mn>
+            <mo>,</mo>
+            <mn>4</mn>
+            <mo>,</mo>
+            <mo>...</mo>
             <mo>}</mo>
         </mrow>
     </math>
