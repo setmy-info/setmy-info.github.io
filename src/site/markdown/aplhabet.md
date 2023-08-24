@@ -33,30 +33,30 @@
 
 ## Hebrew alphabet
 
-| Trükitähed | Nimi   | Heli                        | Lisainfo       | HTML Escape | MathML       |
-|------------|--------|-----------------------------|----------------|-------------|--------------|
-| א          | Alef   | Glotaalne häälik, vokaalne märk |              | &#1488;     | &aleph;      |
-| ב          | Beet   | B                           |              | &#1489;     | &bet;        |
-| ג          | Gimmel | G                           |              | &#1490;     | &gimel;      |
-| ד          | Dalet  | D                           |              | &#1491;     | &dalet;      |
-| ה          | He     | H                           |              | &#1492;     | &he;         |
-| ו          | Vav    | V, U, O                     |              | &#1493;     | &vav;        |
-| ז          | Zajin  | Z                           |              | &#1494;     | &zayin;      |
-| ח          | Het    | H                           |              | &#1495;     | &het;        |
-| ט          | Tet    | T                           |              | &#1496;     | &tet;        |
-| י          | Jod    | J, I, Y                     |              | &#1497;     | &yod;        |
-| כ          | Kaf    | K                           |              | &#1499;     | &kaf;        |
-| ל          | Lamed  | L                           |              | &#1500;     | &lamed;      |
-| מ          | Mem    | M                           |              | &#1502;     | &mem;        |
-| נ          | Nun    | N                           |              | &#1504;     | &nun;        |
-| ס          | Samehh | S                           |              | &#1505;     | &samekh;     |
-| ע          | Ajin   | Glotaalne häälik             |              | &#1506;     | &ayin;       |
-| פ          | Pe     | P                           |              | &#1508;     | &pe;         |
-| צ          | Tsade  | Ts                          |              | &#1509;     | &tsadi;      |
-| ק          | Kof    | K                           |              | &#1511;     | &kuf;        |
-| ר          | Reš    | R                           |              | &#1512;     | &resh;       |
-| ש          | Šin    | Š, S                        |              | &#1513;     | &shin;       |
-| ת          | Tav    | T                           |              | &#1514;     | &tav;        |
+| Trükitähed | Nimi   | Heli                                                        | Lisainfo       | HTML Escape | MathML       |
+|------------|--------|-------------------------------------------------------------|----------------|-------------|--------------|
+| א          | Alef   | Glotaalne häälik, vokaalne märk /Glottal stop, vowel marker |              | &#1488;     | &aleph;      |
+| ב          | Beet   | B                                                           |              | &#1489;     | &bet;        |
+| ג          | Gimmel | G                                                           |              | &#1490;     | &gimel;      |
+| ד          | Dalet  | D                                                           |              | &#1491;     | &dalet;      |
+| ה          | He     | H                                                           |              | &#1492;     | &he;         |
+| ו          | Vav    | V, U, O                                                     |              | &#1493;     | &vav;        |
+| ז          | Zajin  | Z                                                           |              | &#1494;     | &zayin;      |
+| ח          | Het    | H                                                           |              | &#1495;     | &het;        |
+| ט          | Tet    | T                                                           |              | &#1496;     | &tet;        |
+| י          | Jod    | J, I, Y                                                     |              | &#1497;     | &yod;        |
+| כ          | Kaf    | K                                                           |              | &#1499;     | &kaf;        |
+| ל          | Lamed  | L                                                           |              | &#1500;     | &lamed;      |
+| מ          | Mem    | M                                                           |              | &#1502;     | &mem;        |
+| נ          | Nun    | N                                                           |              | &#1504;     | &nun;        |
+| ס          | Samehh | S                                                           |              | &#1505;     | &samekh;     |
+| ע          | Ajin   | Glotaalne häälik / Glottal stop                             |              | &#1506;     | &ayin;       |
+| פ          | Pe     | P                                                           |              | &#1508;     | &pe;         |
+| צ          | Tsade  | Ts                                                          |              | &#1509;     | &tsadi;      |
+| ק          | Kof    | K                                                           |              | &#1511;     | &kuf;        |
+| ר          | Reš    | R                                                           |              | &#1512;     | &resh;       |
+| ש          | Šin    | Š, S                                                        |              | &#1513;     | &shin;       |
+| ת          | Tav    | T                                                           |              | &#1514;     | &tav;        |
 
 ## Usage, tips and tricks
 
