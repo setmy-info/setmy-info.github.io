@@ -45,7 +45,7 @@
 **Duck typing** - this principle states that "if it walks like a duck, swims like a duck, and quacks like a duck, then
 it's probably a duck." In other words, an object's type is determined based on its behavior rather than its class name.
 
-**Structural typing** - typing based on checking an object's properties and structure
+**Structural typing** - (Go, Elm, ..) typing based on checking an object's properties and structure
 to determine compatibility, regardless of class name matching.
 
 **Nominal typing** - (Mostly Java, C++) typing based on class names; two objects must be of the same class to be
