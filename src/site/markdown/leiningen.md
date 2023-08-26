@@ -18,7 +18,7 @@ chmod ugo+x /opt/leiningen/bin/lein
 cd /opt/leiningen/self-installs
 wget -c https://github.com/technomancy/leiningen/releases/download/2.9.10/leiningen-2.9.10-standalone.jar
 # Or
-lein --self-insstall
+lein self-insstall
 ```
 
 ## Configuration
