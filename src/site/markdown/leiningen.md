@@ -36,6 +36,16 @@ lein run
 lein test
 lein uberjar
 java -jar ".\target\default+uberjar\tutorial-0.1.0-SNAPSHOT-standalone.jar" fff
+# Deploy to clojars - need to have ~/.lein/profiles.clj
+lein deploy clojars
+```
+
+```clojure
+{:user
+ {:clojars-auth  :gpg
+  :sign-releases false
+  :username      "CLOJARS_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  :password      :gpg}}
 ```
 
 ### Run specific test
