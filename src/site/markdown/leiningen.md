@@ -44,7 +44,7 @@ lein deploy clojars
 {:user
  {:clojars-auth  :gpg
   :sign-releases false
-  :username      "CLOJARS_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  :username      "USER_NAME"
   :password      :gpg}}
 ```
 
