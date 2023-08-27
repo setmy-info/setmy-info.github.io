@@ -60,3 +60,4 @@ lein test :only info.setmy.testing/hello-test
 
 [Lein tutorial](https://codeberg.org/leiningen/leiningen/src/branch/stable/doc/TUTORIAL.md)
 
+[Clojars](https://clojars.org/)
