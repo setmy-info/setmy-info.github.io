@@ -33,7 +33,11 @@ cd leiningen
 lein new app tutorial
 cd tutorial
 lein run
+# Passing parameters
+lein run ./test/resources/root
 lein test
+# Build with profiles
+lein with-profile ci,OTHER_PROFILE test
 lein uberjar
 java -jar ".\target\default+uberjar\tutorial-0.1.0-SNAPSHOT-standalone.jar" fff
 # Deploy to clojars - need to have ~/.lein/profiles.clj
