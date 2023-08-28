@@ -215,3 +215,11 @@ What are the mutual expectations and collaboration methods among team members?
 
 Argo workflow - no. It's not handled by bigger consortium, not a standard by that consortium, not handled by IDE, too
 young.
+
+## Changelog
+
+[keepachangelog.com](http://keepachangelog.com/)
+
+## TODO Writing
+
+[great documentation](http://jacobian.org/writing/what-to-write/)
