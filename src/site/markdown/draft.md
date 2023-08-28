@@ -220,6 +220,6 @@ young.
 
 [keepachangelog.com](http://keepachangelog.com/)
 
-## TODO Writing
+## Documentation Writing
 
 [great documentation](http://jacobian.org/writing/what-to-write/)
