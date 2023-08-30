@@ -345,8 +345,9 @@ makeList
 (filter (fn [person] (not= (get person :firstName) "Joe")) personList)
 (filter #(not= (% :firstName) "Joe") personList)
 
-; Mapping vector through mapping lambda to clojure.lang.LazySeq.
 (def strings ["1" "2" "3"])
+
+; Mapping vector through mapping lambda to clojure.lang.LazySeq.
 (println (map #(Integer. %) strings))
 
 (def aVariable (conj #{} "Hello"))
