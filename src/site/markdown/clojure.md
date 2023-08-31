@@ -345,6 +345,11 @@ makeList
 (filter (fn [person] (not= (get person :firstName) "Joe")) personList)
 (filter #(not= (% :firstName) "Joe") personList)
 
+(def strings ["1" "2" "3"])
+
+; Mapping vector through mapping lambda to clojure.lang.LazySeq.
+(println (map #(Integer. %) strings))
+
 (def aVariable (conj #{} "Hello"))
 
 ; #{"World" "Hello"}
@@ -402,3 +407,5 @@ Make it work:
 [Clojure Style Guide](https://guide.clojure.style/)
 
 [uncomplicate - CL libs for ML/AI](https://uncomplicate.org/)
+
+[clj-commons](https://github.com/clj-commons)
