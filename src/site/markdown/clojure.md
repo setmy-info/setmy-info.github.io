@@ -409,3 +409,7 @@ Make it work:
 [uncomplicate - CL libs for ML/AI](https://uncomplicate.org/)
 
 [clj-commons](https://github.com/clj-commons)
+
+[Codox](https://cljdoc.org/d/codox/codox.leiningen)
+
+[Korma](https://github.com/korma/Korma)
