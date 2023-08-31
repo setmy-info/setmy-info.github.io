@@ -402,3 +402,7 @@ Make it work:
 [Clojure Style Guide](https://guide.clojure.style/)
 
 [uncomplicate - CL libs for ML/AI](https://uncomplicate.org/)
+
+[Codox](https://cljdoc.org/d/codox/codox.leiningen)
+
+[Korma](https://github.com/korma/Korma)
