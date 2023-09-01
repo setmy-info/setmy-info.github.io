@@ -6,11 +6,11 @@
 
 All external or third party API-s by default should be behind internal API.
 
-* actually can be more fault tolerant
+* actually can be more fault-tolerant
 * more freedom (caching, DB, replace, re-desing external API or design, replace [later throw external out]).
 * 2 types, that can be in one but clearly understandable, what can be used
-  ** direct, that is 1:1 transfering and translating 3dp or external API
-  ** complex or translated (strongly preferred), that is probably translating and doing many complext requests to 3dp/ex
+  ** direct, that is 1:1 transferring and translating 3dp or external API
+  ** complex or translated (strongly preferred), that is probably translating and doing many complex requests to 3dp/ex
   API
 
 ### Translations
@@ -27,7 +27,7 @@ All external or third party API-s by default should be behind internal API.
 
 ### Developers
 
-Preferred OS should be chosen for production machines and developers should use that OS as development machine.
+Preferred OS should be chosen for production machines, and developers should use that OS as a development machine.
 
 - learning and collecting know-how
 
@@ -61,7 +61,7 @@ Follow FHS: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
 
 Follow LSB: https://refspecs.linuxfoundation.org/lsb.shtml
 
-By setmy.info standards all packages should be unpacked (if possible) directly under /opt folder.
+By setmy.info standards, all packages should be unpacked (if possible) directly under /opt folder.
 
 Examples:
 
@@ -93,14 +93,15 @@ Examples:
 * Jasmine FW
 * Karma
 * 3 Layer (Controller/controlling, Service, Resource/API)
-    * Service layer independent from Frameworks (VueJS, Angular, React etc), depndent from Axios.
+    * Service layer independent of Frameworks (VueJS, Angular, React etc.), dependent on Axios (browsers' support
+      **fetch**).
 
 ### Back end
 
 * Java, Groovy, Python, C/C++
 * SpringBoot, Spring
 * JSR-330
-* 3 Layer (Controller/REST/SOAP/etc, Service, DAO/API/DataSource)
+* 3 Layer (Controller/REST/SOAP/etc., Service, DAO/API/DataSource)
 * JPA (Hibernate)
 * Log4j2
 
@@ -133,7 +134,7 @@ Examples:
 2. **App/Controller/Resource/Scheduler**
 
 * 2.1 Do security checks with calling security related service(s) before entering any (business) logic
-* 2.2 Data transformations for calling (business) logic services. For example DTOs to other class model data. Data
+* 2.2 Data transformations for calling (business) logic services. For example, DTOs to other class model data. Data
   mapper, transform or other services have to be called.
 * 2.2 Logic service calls.
 * 2.3 Ordinary exceptions to web exception transformation for error message transformations (1.2)
@@ -144,7 +145,7 @@ Examples:
 * 3.2 Data validation check services
 * 3.3 Data transformation services
 * 3.4 Logic services, data request and population services
-* 3.5 Have its own data models and therefore...
+* 3.5 Has its own data models and therefore...
 * 3.6 Is independent of point 2 layer
 
 4. **DAO/Repository/API**
@@ -162,46 +163,46 @@ Examples:
 2.1 DOCUMENTATION MOVED
 2.2 DOCUMENTATION MOVED
 3 Shell
-3.1 Bourne shell and use #!/bin/sh not #!/bin/bash. First one is in base installation of CentOS, Fedora, *BSD,
+3.1 Bourne shell and use #!/bin/sh not #!/bin/bash. The First one is in base installation of CentOS, Fedora, *BSD,
 Solaris, Debian (*buntu), OpenIndiana etc.
-3.2 Therefore shell script should be not be written in "bashism" (bash way), but as much as possible in POSIX shell
+3.2 Therefore a shell script should be not written in "bashism" (bash way), but as much as possible in POSIX shell
 way.
-3.3 Prefer shell first and if not possible or simplier then Python 3.x.
+3.3 Prefer shell first and if not possible or simpler, then Python 3.x.
 
 #### UI
 
 4.1 because HTML has no rich standard set of components, then we need write components by our selves.
-4.2 IE 11 is still in use, therefore that should be covered too.
+4.2 IE 11 is still in use, therefore, that should be covered too.
 4.3 Prefer CSS tool over JS tools to get UI results.
-4.4 Peacause of http2 push method we use old style resources (css, js) loading. Possible to make (if it is not
+4.4 because of http2 push method we use old style resources (css, js) loading. Possible to make (if it is not
 already done) tag library, that does push first for JSP or HTML loading.
 4.5 Therefore and because of webpack we should support in JavaScript node packaging and
 
 #### Logs
 
 5.1 Logging should go to tailable file.
-5.2 Logging should be wih size limit, that means logs should be splitted after reaching limit.
+5.2 Logging should be with size limit; that means logs should be split after reaching the limit.
 6 Build tools
 6.1 For Java maven
 6.2 Other build tools and helpers: cmake, ant, make (GNU?)
 6.3 Webpack build tool for frontend tools.
-6.4 Reporting building with maven using maven site, where site have integrated reports: JavaDoc (for main and test
+6.4 Reporting building with maven using maven site, where site has integrated reports: JavaDoc (for main and test
 code), pitest, OWASP dependencies check, JaCoCo unit test coverage, style check, version notes, todo notes, findbugs.
 
 #### JavaScript (JS)
 
 7.1 Prefer ECMAScript 6 - "Pure JS". Newer standards added a lot of other keywords and possibilities. Some of them
 make code reading harder!
-7.2 Prefer Pure JS over TypeScript.
-7.3 Prefer code without "prototype". Just create object and add properties.
+7.2 Prefer Pure JS to TypeScript.
+7.3 Prefer code without "prototype". Just create an object and add properties.
 7.4 Frontent JS
 7.4.1 Use layered architecture: resources at bottom for data access and data fixing and normalization, service layer
 top on that for ...
-7.4.2 Prefer two way datapinging over event dispatch-catch.
+7.4.2 Prefer two-way data binding over event dispatch-catch.
 
 #### Java
 
-8.1. Prefer in solutions write code withoud interfaces. Iterfaces are for framweorks or plugins, where N number of
+8.1. Prefer solutions to write code without interfaces. Interfaces are for frameworks or plugins, where N number of
 third parties should implement something.
 8.2. Java fail length up to 512 lines and line length 110.
 
@@ -218,19 +219,62 @@ third parties should implement something.
 
 1: Only JWT check with symmetric keys. No session cancellation (JWT revoke). Fully stateless solutions. No central
 solutions cache for apps. Single node solutions. App backend as GW.
-2: DB JWT check with symmetric keys. DB based session cancellation and expiration (JWT revoke). Single node
+2: DB JWT check with symmetric keys. DB-based session cancellation and expiration (JWT revoke). Single node
 solutions. App backend as GW. No central cache solutions for apps.
 
-3. DB JWT check with symmetric and assymetric keys. DB based session cancellation and expiration (JWT revoke). Multi
+3. DB JWT check with symmetric and asymmetric keys. DB-based session cancellation and expiration (JWT revoke). Multi
    node solutions. App backend as GW. No central cache solutions for apps.
 4. Central Cache and session storage. JWT and session revoke in cache systems. Multi node solutions. Multi HW
    servers only.
-5. Central Cache and session storage. JWT and session revoke in identiti management systems. Multi node systesm.
-   Health checks. API GW (rate limiting, security, identity management etc). Multiple hardware (servers, network
-   nodes, powwersuplies, UPS etc) nodes. Storage systems.
+5. Central Cache and session storage. JWT and session revoke in identity management systems. Multi node systems.
+   Health checks. API GW (rate limiting, security, identity management, etc.). Multiple hardware (servers, network
+   nodes, powwersuplies, UPS etc.) nodes. Storage systems.
 
 15. Prefer standard or well defined or stable tools over self making tools.
 16. Xfce is class desktop environment.
+
+## Application configuration
+
+Overload (overwritten from top to down) order
+
+| **Order**                                   |
+|---------------------------------------------|
+| Defaults in code                            |
+| File (**.yaml** overwrites **.properties**) |
+| Environment variables                       |
+| CLI                                         |
+
+Variable naming convention
+
+|                                           | **Prefix**                 |
+|-------------------------------------------|----------------------------|
+| File<br/>**properties**<br/>**yaml**<br/> | <br/>**smi.**<br/>**smi:** |
+| Environment variables                     | **SMI_**                   |
+| CLI                                       | **--smi-**                 |
+
+```properties
+smi.profiles=abc,def,ghi
+```
+
+```yaml
+smi:
+    profiles: abc,def,ghi
+```
+
+```shell
+SMI_PROFILES=abc,def,ghi
+```
+
+```shell
+abx --smi-profiles=abc,def,ghi
+```
+
+Names after prefix:
+
+| Configuration option | properties | yaml     | Environment variables | CLI options |
+|----------------------|------------|----------|-----------------------|-------------|
+| Profiles             | profiles   | profiles | PROFILES              | -profiles   |
+|                      |            |          |                       |             |
 
 ## Other
 
