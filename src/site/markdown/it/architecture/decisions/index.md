@@ -124,23 +124,32 @@ Examples:
 
 ### Layers responsibility
 
-1. Filters and exteption handlers
-   1.1 Should do security checks, if possible and meaninful to do these here
-   1.2 Error messages transformation to HTTP error codes and messages with data: tranlsation key (no error code),
-   additional data
-2. Controller/Resource/Scheduler
-   2.1 Do security checks with calling security related service(s) before entering any (business) logic
-   2.2 Data transformations for calling (business) logic services. For example DTOs to other class model data. Data
-   mapper, transform or other services have to be called.
-   2.2 Logic service calls.
-   2.3 Ordinary exceptions to web excepton transformation for error message transformations (1.2)
-3. Service
-   3.1 Security check services
-   3.2 Data validation check services
-   3.3 Data transformation services
-   3.4 Logic services, data request and population services
-4. DEO/Repository/API
-   4.1 Request objects from DB or from external API-s
+1. **Filters and exception handlers**
+
+* 1.1 Should do security checks, if possible and meaningful to do these here
+* 1.2 Error messages transformation to HTTP error codes and messages with data: translation key (no error code),
+  additional data
+
+2. **App/Controller/Resource/Scheduler**
+
+* 2.1 Do security checks with calling security related service(s) before entering any (business) logic
+* 2.2 Data transformations for calling (business) logic services. For example DTOs to other class model data. Data
+  mapper, transform or other services have to be called.
+* 2.2 Logic service calls.
+* 2.3 Ordinary exceptions to web exception transformation for error message transformations (1.2)
+
+3. **API/Service**
+
+* 3.1 Security check services
+* 3.2 Data validation check services
+* 3.3 Data transformation services
+* 3.4 Logic services, data request and population services
+* 3.5 Have its own data models and therefore...
+* 3.6 Is independent of point 2 layer
+
+4. **DAO/Repository/API**
+
+* 4.1 Request objects from DB or from external API-s
 
 ### Decided tools, components and libraries
 
