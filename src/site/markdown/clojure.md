@@ -386,7 +386,9 @@ Make it work:
 
 ## IDE
 
-* IntelliJ - Cursive
+* IntelliJ
+  * Cursive (Need to puy)
+  * Clojure-Kit
 * VSCode - Calva
 
 [Web Noir](http://www.webnoir.org/)
