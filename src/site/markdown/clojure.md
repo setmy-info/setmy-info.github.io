@@ -216,17 +216,17 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
 ### Functions
 
 ```clojure
-(defn greet  [name] (str "Hello, " name))
+(defn greet [name] (str "Hello, " name))
 
 ;;  This is equivalent as with anonymous function
 (def greet (fn [name] (str "Hello, " name)))
 
 (defn messenger
-    ([] (messenger "Hello world!"))
-    ([msg] (println msg)))
+      ([] (messenger "Hello world!"))
+      ([msg] (println msg)))
 
 (defn hello [greeting & who]
-    (println greeting who))
+      (println greeting who))
 
 (greet "Ernie")
 
@@ -256,22 +256,22 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
 ```clojure
 ; 1
 (let [x 1]
-    x)
+     x)
 
 ; 3
 (let [a 1
       b 2]
-    (+ a b))
+     (+ a b))
 
 ; 8
-(let [c     (+ 1 2)
+(let [c (+ 1 2)
       [d e] [5 6]]
-    (-> (+ d e) (- c)))
+     (-> (+ d e) (- c)))
 
 ; "1 2 3 4"
-(let [aList     (list 1 2 3 4)
+(let [aList (list 1 2 3 4)
       [a b c d] aList]
-    (str a " " b " " c " " d))
+     (str a " " b " " c " " d))
 ```
 
 ### misc
@@ -383,6 +383,11 @@ Make it work:
 * ClojureCL
 * ClojureCUDA
 * Fluokitten
+
+## IDE
+
+* IntelliJ - Cursive
+* VSCode - Calva
 
 [Web Noir](http://www.webnoir.org/)
 
