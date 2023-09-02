@@ -220,23 +220,23 @@ young.
 
 TODO : recheck value dimensions and correctness
 
-| Data type     | Java                      | Python              | Clojure                        | SBCL Common LISP        | H2 SQL                    | PostgreSQL                   |
-|---------------|---------------------------|---------------------|--------------------------------|-------------------------|---------------------------|------------------------------|
-| Integer       | `int` or `Integer`        | `int`               | `int`                          | `fixnum`                | `INT` or `INTEGER`        | `integer` or `int`           |
-| Short         | `short`                   | -                   | `short`                        | `fixnum`                | `SMALLINT`                | `smallint`                   |
-| Double        | `double`                  | `float`             | `double`                       | `double-float`          | `REAL` or `DOUBLE`        | `real` or `double precision` |
-| BigDecimal    | `BigDecimal`              | -                   | -                              | -                       | `NUMERIC` or `DECIMAL`    | `numeric` or `decimal`       |
-| BigInteger    | `BigInteger`              | -                   | -                              | -                       | -                         | -                            |
-| Float         | `float`                   | `float`             | `float`                        | `single-float`          | `REAL` or `FLOAT`         | `real` or `float`            |
-| Char          | `char` or `Character`     | -                   | `char`                         | `character`             | `CHAR` or `CHARACTER`     | `char` or `character`        |
-| String        | `String`                  | `str`               | `String`                       | `string`                | `VARCHAR` or `TEXT`       | `varchar` or `text`          |
-| List          | `java.util.List`          | `list`              | `vector`                       | -                       | -                         | -                            |
-| Set           | `java.util.Set`           | `set`               | `set`                          | -                       | -                         | -                            |
-| Timestamp     | `java.sql.Timestamp`      | `time.time()`       | `java.sql.Timestamp`           | `get-universal-time`    | `TIMESTAMP` or `DATETIME` | `timestamp`                  |
-| LocalDate     | `java.time.LocalDate`     | `datetime.date`     | `java.time.LocalDate`          | `decode-universal-time` | `DATE`                    | `date`                       |
-| LocalDateTime | `java.time.LocalDateTime` | `datetime.datetime` | `java.time.LocalDateTime`      | `decode-universal-time` | `TIMESTAMP` or `DATETIME` | `timestamp`                  |
-| FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue` | -                       | -                         | -                            |
-| FILO          | `java.util.Stack`         | `list`              | `clojure.lang.PersistentList`  | -                       | -                         | -                            |
+| Data type     | Java                      | Python              | Clojure                        | SBCL Common LISP        | H2 SQL                    | PostgreSQL                   | C++                           |
+|---------------|---------------------------|---------------------|--------------------------------|-------------------------|---------------------------|------------------------------|-------------------------------|
+| Integer       | `int` or `Integer`        | `int`               | `int`                          | `fixnum`                | `INT` or `INTEGER`        | `integer` or `int`           | `int` või `Integer`           |
+| Short         | `short`                   | -                   | `short`                        | `fixnum`                | `SMALLINT`                | `smallint`                   | `short`                       |
+| Double        | `double`                  | `float`             | `double`                       | `double-float`          | `REAL` or `DOUBLE`        | `real` or `double precision` | `double`                      |
+| BigDecimal    | `BigDecimal`              | -                   | -                              | -                       | `NUMERIC` or `DECIMAL`    | `numeric` or `decimal`       | `cpp_dec_float_50` GMP, Boost |
+| BigInteger    | `BigInteger`              | -                   | -                              | -                       | -                         | -                            | `mpz_class ` GMP, Boost       |
+| Float         | `float`                   | `float`             | `float`                        | `single-float`          | `REAL` or `FLOAT`         | `real` or `float`            | `float`                       |
+| Char          | `char` or `Character`     | -                   | `char`                         | `character`             | `CHAR` or `CHARACTER`     | `char` or `character`        | `char`                        |
+| String        | `String`                  | `str`               | `String`                       | `string`                | `VARCHAR` or `TEXT`       | `varchar` or `text`          | `std::string`                 |
+| List          | `java.util.List`          | `list`              | `vector`                       | -                       | -                         | -                            | `std::vector`                 |
+| Set           | `java.util.Set`           | `set`               | `set`                          | -                       | -                         | -                            | `std::set`                    |
+| Timestamp     | `java.sql.Timestamp`      | `time.time()`       | `java.sql.Timestamp`           | `get-universal-time`    | `TIMESTAMP` or `DATETIME` | `timestamp`                  | `std::chrono::time_point`     |
+| LocalDate     | `java.time.LocalDate`     | `datetime.date`     | `java.time.LocalDate`          | `decode-universal-time` | `DATE`                    | `date`                       | `std::tm`                     |
+| LocalDateTime | `java.time.LocalDateTime` | `datetime.datetime` | `java.time.LocalDateTime`      | `decode-universal-time` | `TIMESTAMP` or `DATETIME` | `timestamp`                  | `std::chrono::time_point`     |
+| FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue` | -                       | -                         | -                            | `std::queue`                  |
+| FILO          | `java.util.Stack`         | `list`              | `clojure.lang.PersistentList`  | -                       | -                         | -                            | `std::stack`                  |
 
 ## Changelog
 
