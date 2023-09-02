@@ -132,10 +132,10 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 
 '''
 What was the last biggest waste you detected and eliminated.
-What happens singl developer waste, problems?
+What happens single developer waste problems?
 Work culture and team dynamics:
 How would you describe the work culture in this company/project?
-How is teamwork and communication fostered?
+How are teamwork and communication fostered?
 What are the mutual expectations and collaboration methods among team members?
 
     Work process and methodology:
@@ -213,7 +213,7 @@ What are the mutual expectations and collaboration methods among team members?
 
 '''
 
-Argo workflow - no. It's not handled by bigger consortium, not a standard by that consortium, not handled by IDE, too
+Argo workflow—no. It's not handled by a bigger consortium, not a standard by that consortium, not handled by IDE, too
 young.
 
 ## Data types and structures
