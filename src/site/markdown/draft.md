@@ -238,6 +238,19 @@ TODO : recheck value dimensions and correctness
 | FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue` | -                       | -                         | -                            | `std::queue`                  |
 | FILO          | `java.util.Stack`         | `list`              | `clojure.lang.PersistentList`  | -                       | -                         | -                            | `std::stack`                  |
 
+| Data type | Size (in bytes) | Description                                      |
+|-----------|-----------------|--------------------------------------------------|
+| `char`    | 1               | Stores a single character.                       |
+| `short`   | 2               | Stores a short integer.                          |
+| `int`     | 4               | Stores an integer.                               |
+| `long`    | 4 or 8          | Stores a long integer.                           |
+| `float`   | 4               | Stores a floating-point number.                  |
+| `double`  | 8               | Stores a double-precision floating-point number. |
+| `bool`    | 1               | Stores a Boolean value.                          |
+| `void`    | 0               | Stores no value.                                 |
+| `wchar_t` | 2 or 4          | Stores a wide character.                         |
+| `string`  | Variable        | Stores a sequence of characters.                 |
+
 ## Changelog
 
 [keepachangelog.com](http://keepachangelog.com/)
