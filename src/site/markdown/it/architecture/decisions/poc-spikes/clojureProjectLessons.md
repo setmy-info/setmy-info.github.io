@@ -2,12 +2,14 @@
 
 Lessons learned from using Clojure with Leiningen and IntelliJ:
 
-* **Integration**: The integration with IntelliJ (VSCode was even worse) is not ideal. There's limited code completion,
-  especially for Java interoperability.
+* **Integration**: The integration (Clojure-kit) with IntelliJ (VSCode was even worse) is not ideal. There's limited
+  code completion, especially for Java interoperability. Cursive costs extra, even though we already paid for a fancy
+  IDE (IntelliJ) and still don't have ideal support with that IDE.
 * **Parentheses**: The parentheses can still be challenging for "parsing" with the eyes.
 * **Atoms**: Working with atoms requires writing too much code to update their values.
 * **Learning Curve**: Learning takes time because many things have various (short/long) variants that need to be
   understood.
+*
 
 On the bright side:
 
