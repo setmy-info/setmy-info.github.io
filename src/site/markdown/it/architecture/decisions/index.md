@@ -253,28 +253,28 @@ Variable naming convention
 | CLI                                       | **--smi-**                 |
 
 ```properties
-smi.profiles=abc,def,ghi
+smi.xyz=abc,def,ghi
 ```
 
 ```yaml
 smi:
-    profiles: abc,def,ghi
+    xyz: abc,def,ghi
 ```
 
 ```shell
-SMI_PROFILES=abc,def,ghi
+SMI_XYZ=abc,def,ghi
 ```
 
 ```shell
-abx --smi-profiles=abc,def,ghi
+abx --smi-xyz=abc,def,ghi
 ```
 
 Names after prefix:
 
-| Configuration option | properties | yaml     | Environment variables | CLI options |
-|----------------------|------------|----------|-----------------------|-------------|
-| Profiles             | profiles   | profiles | PROFILES              | -profiles   |
-|                      |            |          |                       |             |
+| Configuration option | properties | yaml | Environment variables | CLI options   | Notes |
+|----------------------|------------|------|-----------------------|---------------|-------|
+| Profiles             | -          | -    | PROFILES              | -profiles     |       |
+| Config paths         | -          | -    | CONFIG_PATHS          | -config-paths |       |
 
 ## Other
 

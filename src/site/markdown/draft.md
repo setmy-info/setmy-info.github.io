@@ -238,6 +238,8 @@ TODO : recheck value dimensions and correctness
 | FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue` | -                       | -                         | -                            | `std::queue`                  |
 | FILO          | `java.util.Stack`         | `list`              | `clojure.lang.PersistentList`  | -                       | -                         | -                            | `std::stack`                  |
 
+### C++ data types
+
 | Data type | Size (in bytes) | Description                                      |
 |-----------|-----------------|--------------------------------------------------|
 | `char`    | 1               | Stores a single character.                       |
