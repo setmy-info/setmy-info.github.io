@@ -354,6 +354,9 @@ makeList
 
 ; #{"World" "Hello"}
 (conj aVariable "World")
+
+; Better printout format
+(println "Some object:" (pr-str some-object))
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
