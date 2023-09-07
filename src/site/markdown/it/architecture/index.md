@@ -2,16 +2,16 @@
 
 Why predefined architecture?
 
-1. Most of the important is that, decision are made (you like it or not), that means some kind of plan are made.
+1. Most of the important is that decisions are made (you like it or not) that means some kind of plan are made.
 
 2. More time - no need to spend time to argue, where opposite sides should prove something, prepare for proving,
-   search information for proving, reading and listening each-other, misunderstanding, etc etc
+   search information for proving, reading and listening to each-other, misunderstanding, etc etc
 
 3. Bad plan is a better than no plan.
 
 ## Principles
 
-1. *Same version*. All components should have same version, simple to remember and add as dependency.
+1. *Same version*. All components should have a same version, simple to remember and add as dependency.
 
 2. *POM similarity*. java-model, java-service and springboot-start-project are made as base and other should follow
    these structures 1:1 as much as possible.
@@ -23,13 +23,13 @@ Why predefined architecture?
 
 ## Environments
 
-* local - developer local machine
-* dev - developers and teams playground
-* ci (also atest) - Automatic tests playground
-* test - user and acceptance test playground with fake data. Keyword 'test' is Spring Boot test profile. Not to mix
+* **local** - developer local machine
+* **dev** - developers and teams playground
+* **ci** (also atest) - Automatic tests playground
+* **test** - user and acceptance test playground with fake data. Keyword 'test' is Spring Boot test profile. Not to mix
   with them.
-* prelive - user and acceptance test playground with real data
-* live - endusers playground and production
+* **prelive** - user and acceptance test playground with real data
+* **live** - endusers playground and production
 
 ## Standard profiles
 

@@ -6,8 +6,6 @@ indent_size = 4
 indent_style = space
 end_of_line = lf
 insert_final_newline = true
-
-[*.{js,html,css,less,scss,sass,java,groovy,xml,json,apt,go,yml,yaml,ts,py}]
 trim_trailing_whitespace = true
 
 [Makefile]

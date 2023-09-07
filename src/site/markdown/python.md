@@ -281,6 +281,29 @@ match val:
         print("Unknown")
 ```
 
+#### Functional (map, filter, reduce)
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+filtered = list(filter(lambda x: x % 2 == 0, numbers))
+result = reduce(lambda x, y: x + y, numbers)
+```
+
+#### List comprehensions
+
+```python
+squared = [x**2 for x in numbers if x % 2 == 0]
+```
+
+#### Itertools
+
+```python
+import itertools
+numbers = [1, 2, 3, 4, 5]
+squared = itertools.starmap(lambda x, y: x**y, zip(numbers, itertools.repeat(2)))
+```
+
 #### Testing mocking
 
 [mocking](https://docs.python.org/3/library/unittest.mock.html)
@@ -399,6 +422,7 @@ Unit test and run Flask main
 
 ```shell
 python -m unittest discover
+# By pattern test. Default is test*.py
 python -m unittest discover -s ./ -p *Test.py
 export FLASK_ENV=development
 python main.py
@@ -416,6 +440,12 @@ PYTHONPATH is for searching modules, like PATH for commands.
 make
 sudo make install
 ```
+
+## PyCharm
+
+"File" -> "Settings" -> Python Integrated Tools -> Default test runner: Unittest
+
+Running tests have a problem: working directory has to be set for tests.
 
 ## See also
 

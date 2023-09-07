@@ -35,3 +35,5 @@ IrcBot: https://github.com/sorcix/ircbot
 Smack IRC: https://github.com/igniterealtime/Smack/tree/master/smack-irc
 Javacord: https://github.com/Javacord/Javacord/tree/master/javacord-irc
 TinyIRC: https://github.com/Claymore007/TinyIRC
+
+[Java, Groovy, Kotlin reactive FW](https://vertx.io/)
