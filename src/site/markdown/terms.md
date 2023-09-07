@@ -67,6 +67,15 @@ depending on the object's type or properties.
 **Concept-based typing** - objects are classified into types based on the concepts or properties they exhibit, allowing
 more flexibility in type control.
 
+**Vendor lock in** - müüjale lukustumine (sõltuvus müüjast, raskendatud migratsioon, lukustatud ökosüsteem, pikaajalised
+kulud).
+
+**PWA** - Progressive Web App. Offline + like a desktop application.
+
+**SPA** - Single-Page Application. Loaded single html with dynamic updates in it.
+
+**MPA** - Multi-Page Application. Traditional multiple pages loading.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html

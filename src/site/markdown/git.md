@@ -31,6 +31,8 @@ git config --global --unset url.https://github.com/.insteadof
 #[url "https://github.com/"]
 #    insteadOf = git@github.com:
 
+git remote set-url origin NEW_URL
+
 git config --global --list
 ```
 

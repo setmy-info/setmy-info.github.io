@@ -132,10 +132,10 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 
 '''
 What was the last biggest waste you detected and eliminated.
-What happens singl developer waste, problems?
+What happens single developer waste problems?
 Work culture and team dynamics:
 How would you describe the work culture in this company/project?
-How is teamwork and communication fostered?
+How are teamwork and communication fostered?
 What are the mutual expectations and collaboration methods among team members?
 
     Work process and methodology:
@@ -213,8 +213,45 @@ What are the mutual expectations and collaboration methods among team members?
 
 '''
 
-Argo workflow - no. It's not handled by bigger consortium, not a standard by that consortium, not handled by IDE, too
+Argo workflow—no. It's not handled by a bigger consortium, not a standard by that consortium, not handled by IDE, too
 young.
+
+## Data types and structures
+
+TODO : recheck value dimensions and correctness
+
+| Data type     | Java                      | Python              | Clojure                        | SBCL Common LISP        | H2 SQL                    | PostgreSQL                   | C++                           |
+|---------------|---------------------------|---------------------|--------------------------------|-------------------------|---------------------------|------------------------------|-------------------------------|
+| Integer       | `int` or `Integer`        | `int`               | `int`                          | `fixnum`                | `INT` or `INTEGER`        | `integer` or `int`           | `int` või `Integer`           |
+| Short         | `short`                   | -                   | `short`                        | `fixnum`                | `SMALLINT`                | `smallint`                   | `short`                       |
+| Double        | `double`                  | `float`             | `double`                       | `double-float`          | `REAL` or `DOUBLE`        | `real` or `double precision` | `double`                      |
+| BigDecimal    | `BigDecimal`              | -                   | -                              | -                       | `NUMERIC` or `DECIMAL`    | `numeric` or `decimal`       | `cpp_dec_float_50` GMP, Boost |
+| BigInteger    | `BigInteger`              | -                   | -                              | -                       | -                         | -                            | `mpz_class ` GMP, Boost       |
+| Float         | `float`                   | `float`             | `float`                        | `single-float`          | `REAL` or `FLOAT`         | `real` or `float`            | `float`                       |
+| Char          | `char` or `Character`     | -                   | `char`                         | `character`             | `CHAR` or `CHARACTER`     | `char` or `character`        | `char`                        |
+| String        | `String`                  | `str`               | `String`                       | `string`                | `VARCHAR` or `TEXT`       | `varchar` or `text`          | `std::string`                 |
+| List          | `java.util.List`          | `list`              | `vector`                       | -                       | -                         | -                            | `std::vector`                 |
+| Set           | `java.util.Set`           | `set`               | `set`                          | -                       | -                         | -                            | `std::set`                    |
+| Timestamp     | `java.sql.Timestamp`      | `time.time()`       | `java.sql.Timestamp`           | `get-universal-time`    | `TIMESTAMP` or `DATETIME` | `timestamp`                  | `std::chrono::time_point`     |
+| LocalDate     | `java.time.LocalDate`     | `datetime.date`     | `java.time.LocalDate`          | `decode-universal-time` | `DATE`                    | `date`                       | `std::tm`                     |
+| LocalDateTime | `java.time.LocalDateTime` | `datetime.datetime` | `java.time.LocalDateTime`      | `decode-universal-time` | `TIMESTAMP` or `DATETIME` | `timestamp`                  | `std::chrono::time_point`     |
+| FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue` | -                       | -                         | -                            | `std::queue`                  |
+| FILO          | `java.util.Stack`         | `list`              | `clojure.lang.PersistentList`  | -                       | -                         | -                            | `std::stack`                  |
+
+### C++ data types
+
+| Data type | Size (in bytes) | Description                                      |
+|-----------|-----------------|--------------------------------------------------|
+| `char`    | 1               | Stores a single character.                       |
+| `short`   | 2               | Stores a short integer.                          |
+| `int`     | 4               | Stores an integer.                               |
+| `long`    | 4 or 8          | Stores a long integer.                           |
+| `float`   | 4               | Stores a floating-point number.                  |
+| `double`  | 8               | Stores a double-precision floating-point number. |
+| `bool`    | 1               | Stores a Boolean value.                          |
+| `void`    | 0               | Stores no value.                                 |
+| `wchar_t` | 2 or 4          | Stores a wide character.                         |
+| `string`  | Variable        | Stores a sequence of characters.                 |
 
 ## Changelog
 
