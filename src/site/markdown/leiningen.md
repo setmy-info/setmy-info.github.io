@@ -41,14 +41,19 @@ lein with-profile ci,OTHER_PROFILE test
 lein uberjar
 java -jar ".\target\default+uberjar\tutorial-0.1.0-SNAPSHOT-standalone.jar" fff
 # Deploy to clojars - need to have ~/.lein/profiles.clj
+# username is like login username, password can be token, in form CLOJARS_xxxxxxxxxxxxxxxx
 lein deploy clojars
 ```
+
+In folder:
+
+    ~/.lein
 
 ```clojure
 {:user
  {:clojars-auth  :gpg
   :sign-releases false
-  :username      "USER_NAME"
+  :username      "USER_LOGIN_NAME"
   :password      :gpg}}
 ```
 

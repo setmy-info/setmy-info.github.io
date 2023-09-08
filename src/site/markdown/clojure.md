@@ -222,11 +222,11 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
 (def greet (fn [name] (str "Hello, " name)))
 
 (defn messenger
-      ([] (messenger "Hello world!"))
-      ([msg] (println msg)))
+    ([] (messenger "Hello world!"))
+    ([msg] (println msg)))
 
 (defn hello [greeting & who]
-      (println greeting who))
+    (println greeting who))
 
 (greet "Ernie")
 
@@ -256,22 +256,22 @@ Link: [Maps](https://clojure.org/reference/reader#_maps)
 ```clojure
 ; 1
 (let [x 1]
-     x)
+    x)
 
 ; 3
 (let [a 1
       b 2]
-     (+ a b))
+    (+ a b))
 
 ; 8
-(let [c (+ 1 2)
+(let [c     (+ 1 2)
       [d e] [5 6]]
-     (-> (+ d e) (- c)))
+    (-> (+ d e) (- c)))
 
 ; "1 2 3 4"
-(let [aList (list 1 2 3 4)
+(let [aList     (list 1 2 3 4)
       [a b c d] aList]
-     (str a " " b " " c " " d))
+    (str a " " b " " c " " d))
 ```
 
 ### misc
@@ -387,11 +387,20 @@ Make it work:
 * ClojureCUDA
 * Fluokitten
 
+* 1 - component and 2 - integrant (mount - NO)
+* aero
+* 1 - ring, 2 - pedestal bidi (reititi, compojure)
+* clj-http
+* 1 - clojure.spec, 2 - schema (malli - NO)
+* next.jdbc, HikariCP, HugSQL and HoneySQ
+* kondo cach, kondo memoise (claypool - NO)
+* cljfmt - formatter , clj-kondo (linter)
+
 ## IDE
 
 * IntelliJ
-  * Cursive (Need to puy)
-  * Clojure-Kit
+    * Cursive (Need to puy)
+    * Clojure-Kit
 * VSCode - Calva
 
 [Web Noir](http://www.webnoir.org/)
