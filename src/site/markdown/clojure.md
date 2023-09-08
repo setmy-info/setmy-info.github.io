@@ -360,7 +360,7 @@ makeList
 
 (ns my.lib.core
 	(:import [org.apache.logging.log4j LogManager]))
-(def log (LogManager/getLogger my.lib.core))
+(def log (LogManager/getLogger (str (ns-name *ns*))))
 (defn foor []
 	(.info log "Info message"))
 ```
