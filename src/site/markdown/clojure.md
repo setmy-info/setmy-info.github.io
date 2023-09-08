@@ -357,6 +357,12 @@ makeList
 
 ; Better printout format
 (println "Some object:" (pr-str some-object))
+
+(ns my.lib.core
+	(:import [org.apache.logging.log4j LogManager]))
+(def log (LogManager/getLogger my.lib.core))
+(defn foor []
+	(.info log "Info message"))
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
