@@ -24,7 +24,7 @@ sudo nano /etc/exports
 ```
 
 	# 192.168.1.0/24 - as mask
-	/var/opt/setmy.info/gintra 10.0.0.0/24(rw,sync,no_subtree_check)
+	/var/opt/setmy.info/gintra 127.0.0.0/24(rw,sync,no_subtree_check)
 
 | Option                | Explanation                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------------|
@@ -53,7 +53,7 @@ sudo systemctl restart nfs-server
 #### Client
 
 ```shell
-sudo mount -t nfs 10.0.0.1:/var/opt/setmy.info/gintra /mnt/gintra
+sudo mount -t nfs 127.0.0.1:/var/opt/setmy.info/gintra /mnt/gintra
 ```
 
 for automatic mount
@@ -62,7 +62,7 @@ for automatic mount
 sudo nano /etc/fstab
 ```
 
-	10.0.0.1:/var/opt/setmy.info/gintra /mnt/gintra nfs defaults 0 0
+	127.0.0.1:/var/opt/setmy.info/gintra /mnt/gintra nfs defaults 0 0
 
 ```shell
 sudo mount -a
