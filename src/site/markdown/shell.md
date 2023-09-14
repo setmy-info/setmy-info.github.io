@@ -22,6 +22,20 @@ PROJECT_NAME_BIN_DIR=${PROJECT_NAME_BIN_DIR%/*}
 PROJECT_NAME_LIB_DIR=${PROJECT_NAME_BIN_DIR%/*}/lib
 ```
 
+To avoid package suggestions for typos, edit nano ~/.bashrc and add the following line:
+
+	shopt -u cmdhist
+
+```shell
+source ~/.bashrc
+```
+
 ## See also
 
-[xxxx](http://yyyyy)
+* [jq](https://jqlang.github.io/jq/)
+* [yq](https://github.com/mikefarah/yq)
+* [xxx](xxxx)
+* [xxx](xxxx)
+* [xxx](xxxx)
+* [xxx](xxxx)
+
