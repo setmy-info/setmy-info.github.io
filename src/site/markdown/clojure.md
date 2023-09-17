@@ -438,3 +438,5 @@ Make it work:
 [Codox](https://cljdoc.org/d/codox/codox.leiningen)
 
 [Korma](https://github.com/korma/Korma)
+
+[Clojure docs](https://clojure-doc.org/)
