@@ -4,6 +4,12 @@
 
 ## Usage, tips and tricks
 
+### Generating
+
+```sh
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.4&packaging=jar&jvmVersion=21&groupId=ee.test.task&artifactId=event-application&name=event-application&description=Event%20Registration%20Application&packageName=ee.test.task.event-application&dependencies=lombok,devtools,web,thymeleaf,jdbc,data-jdbc,data-jpa,liquibase,h2,postgresql,validation
+```
+
 ### Command line Runner
 
 To inject dependencies.
