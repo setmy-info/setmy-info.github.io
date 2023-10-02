@@ -57,8 +57,8 @@ kubectl cluster-info
 kubectl apply -f xyz-namespace.yaml
 kubectl apply -f xyz-config-map.yaml
 kubectl apply -f xyz-secrets-map.yaml
-kubectl apply -f nfs-persistent-volume.yaml
-kubectl apply -f nfs-persistent-volume-claim.yaml
+kubectl apply -f xyz-nfs-persistent-volume.yaml
+kubectl apply -f xyz-nfs-persistent-volume-claim.yaml
 kubectl apply -f xyz-deployment.yaml
 kubectl apply -f xyz-service.yaml
 kubectl apply -f xyz-ingress.yaml
@@ -117,13 +117,13 @@ kubectl get pod -o yaml
 
 ### Volumes
 
-**nfs-persistent-volume.yaml**
+**xyz-nfs-persistent-volume.yaml**
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-    name: nfs-persistent-volume
+    name: xyz-nfs-persistent-volume
     namespace: xyz-dev
 spec:
     capacity:
@@ -136,13 +136,13 @@ spec:
         path: /var/opt/setmy.info/gintra
 ```
 
-**nfs-persistent-volume-claim.yaml**
+**xyz-nfs-persistent-volume-claim.yaml**
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: nfs-persistent-volume-claim
+    name: xyz-nfs-persistent-volume-claim
     namespace: xyz-dev
 spec:
     accessModes:
@@ -151,7 +151,7 @@ spec:
         requests:
             storage: 5Gi
     storageClassName: ""
-    volumeName: nfs-persistent-volume
+    volumeName: xyz-nfs-persistent-volume
 ```
 
 ### Namespace
@@ -252,7 +252,7 @@ spec:
         volumes:
             -   name: nfs-volume
                 persistentVolumeClaim:
-                    claimName: nfs-persistent-volume-claim
+                    claimName: xyz-nfs-persistent-volume-claim
 ```
 
 ### Service
