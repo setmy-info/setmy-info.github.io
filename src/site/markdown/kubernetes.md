@@ -142,7 +142,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: persistent-volume-claim
+    name: nfs-persistent-volume-claim
     namespace: xyz-dev
 spec:
     accessModes:
@@ -252,7 +252,7 @@ spec:
         volumes:
             -   name: nfs-volume
                 persistentVolumeClaim:
-                    claimName: persistent-volume-claim
+                    claimName: nfs-persistent-volume-claim
 ```
 
 ### Service
