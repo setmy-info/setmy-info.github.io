@@ -57,6 +57,8 @@ kubectl cluster-info
 kubectl apply -f xyz-namespace.yaml
 kubectl apply -f xyz-config-map.yaml
 kubectl apply -f xyz-secrets-map.yaml
+kubectl apply -f nfs-persistent-volume.yaml
+kubectl apply -f nfs-persistent-volume-claim.yaml
 kubectl apply -f xyz-deployment.yaml
 kubectl apply -f xyz-service.yaml
 kubectl apply -f xyz-ingress.yaml
