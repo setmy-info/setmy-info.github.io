@@ -115,13 +115,14 @@ kubectl get pod -o yaml
 
 ### Volumes
 
-**nfs-pv.yaml**
+**nfs-persistent-volume.yaml**
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-    name: nfs-pv
+    name: nfs-persistent-volume
+    namespace: xyz-dev
 spec:
     capacity:
         storage: 10Gi
@@ -129,17 +130,18 @@ spec:
         - ReadWriteMany
     persistentVolumeReclaimPolicy: Retain
     nfs:
-        server: nfs.intra
-        path: /tank/nfs/peristent-volumes
+        server: 127.0.0.1 # nfs.gintra
+        path: /var/opt/setmy.info/gintra
 ```
 
-**nfs-pvc.yaml**
+**nfs-persistent-volume-claim.yaml**
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: nfs-pvc
+    name: persistent-volume-claim
+    namespace: xyz-dev
 spec:
     accessModes:
         - ReadWriteMany
@@ -147,7 +149,7 @@ spec:
         requests:
             storage: 5Gi
     storageClassName: ""
-    volumeName: nfs-pv
+    volumeName: nfs-persistent-volume
 ```
 
 ### Namespace
@@ -244,11 +246,11 @@ spec:
                                     optional: false
             volumeMounts:
                 -   name: nfs-volume
-                    mountPath: /app/data
+                    mountPath: /mnt/gintra
         volumes:
             -   name: nfs-volume
                 persistentVolumeClaim:
-                    claimName: nfs-pvc
+                    claimName: persistent-volume-claim
 ```
 
 ### Service
