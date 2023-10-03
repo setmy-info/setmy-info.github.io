@@ -19,6 +19,7 @@ Sub structures:
     * pictures
     * videos
     * cdn
+    * dvc
     * software
         * packages
         * rpms
@@ -30,7 +31,6 @@ Sub structures:
             * intranet
     * ml
         * data
-            * dvc
             * input
                 * raw
                 * processed
