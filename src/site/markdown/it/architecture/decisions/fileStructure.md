@@ -20,6 +20,8 @@ Sub structures:
     * videos
     * cdn
     * software
+        * packages
+        * rpms
         * maven
         * opt
     * scm
