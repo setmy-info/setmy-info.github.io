@@ -8,6 +8,10 @@ Data storage locations prefixes:
 
 * **/var/opt/setmy.info/gintra** == **/mnt/gintra** (smi-gintra-mount-location)
 
+* **/var/opt/setmy.info/nfs-root** (root folder for diskless NFS)
+
+* **/var/opt/setmy.info/nfs-XYZ** (Other NFS folders for diskless NFS. XYZ = [boot|home|MACHINE_NAME])
+
 * **/tank**
 
 * **/gintra**
@@ -25,6 +29,7 @@ Sub structures:
         * rpms
         * maven
         * opt
+        * tftp
     * scm
         * git
             * www
