@@ -100,6 +100,7 @@ Modules polling:
    ID: github; Description Token information.
 3. In Jenkins: Open Blue Ocean -> GitHub -> Insert token
 4. Fix build settings: open build -> Configure -> Add GitHub credentials from dropdown
+5. Manage Jenkins -> In-process Script Approval -> Method Signatures -> hudson.plugins.git.GitChangeSet getPaths
 
 NB! **github** is used by default for registering new pipelines.
 
