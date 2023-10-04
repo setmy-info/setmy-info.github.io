@@ -173,6 +173,24 @@ kubectl create clusterrolebinding jenkins-cluster-admin --clusterrole=cluster-ad
 kubectl get secret
 ```
 
+## Jenkinsfile starter project
+
+Workflows for **master**, **release/x**, **develop**, **feature/y** branches
+
+Publication - package sending to file server/storage/package managment süstem etc.
+
+Deploy - deploy package to environment (**dev**, **testing**, **prelive**, **live**).
+
+Tagging - make tag for released (**tested/verified**, **published** and **deployed**) software into VCS.
+
+![Image](../resources/images/jenkinsfile-starter/master.png)
+
+![Image](../resources/images/jenkinsfile-starter/release_1.0.0.png)
+
+![Image](../resources/images/jenkinsfile-starter/develop.png)
+
+![Image](../resources/images/jenkinsfile-starter/feature_something.png)
+
 ## See also
 
 [xxxx](http://yyyyy)
