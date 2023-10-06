@@ -359,10 +359,12 @@ makeList
 (println "Some object:" (pr-str some-object))
 
 (ns my.lib.core
-	(:import [org.apache.logging.log4j LogManager]))
+    (:import [org.apache.logging.log4j LogManager]))
+
 (def log (LogManager/getLogger (str (ns-name *ns*))))
+
 (defn foor []
-	(.info log "Info message"))
+    (.info log "Info message"))
 ```
 
 Link: [Functions](https://clojure.org/guides/learn/functions)
@@ -401,6 +403,16 @@ Make it work:
 * next.jdbc, HikariCP, HugSQL and HoneySQ
 * kondo cach, kondo memoise (claypool - NO)
 * cljfmt - formatter , clj-kondo (linter)
+
+  Init deps :  mount (NO), 1 - component and 2 - integrant.
+  Config : configurati (NO), 1 - aero
+  server: Jetty + 1 - ring, 2 - pedestal, bidi, reitit, compojure
+  Http client: clj-http
+  Validation : 2 - schema, 1 - clojure.spec or malli (NO)
+  SQL: next.jdbc, HikariCP, HugSQL and HoneySQLclaybool (NO)
+  Libs : kodo cach, *-memoise, claybool.
+  Tools: cljfmt , clj-kondo (linter) and babashka
+  Clojure: Liberator, Yada
 
 ## IDE
 

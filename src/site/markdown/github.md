@@ -21,3 +21,7 @@
 ## See also
 
 [GitHub Markdown known languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
+
+[Radicle  - GitHub alternative](https://radicle.xyz/)
+
+[Codeberg](https://codeberg.org/)
