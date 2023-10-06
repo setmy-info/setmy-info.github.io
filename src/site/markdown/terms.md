@@ -44,6 +44,7 @@
 
 **Duck typing** - this principle states that "if it walks like a duck, swims like a duck, and quacks like a duck, then
 it's probably a duck." In other words, an object's type is determined based on its behavior rather than its class name.
+Object properties define an object type.
 
 **Structural typing** - (Go, Elm, ..) typing based on checking an object's properties and structure
 to determine compatibility, regardless of class name matching.
@@ -75,6 +76,8 @@ kulud).
 **SPA** - Single-Page Application. Loaded single html with dynamic updates in it.
 
 **MPA** - Multi-Page Application. Traditional multiple pages loading.
+
+**Responsive design*** - seadmetundlik disain.
 
 https://www.dataprise.com/it-glossary
 
