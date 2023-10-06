@@ -8,15 +8,15 @@ Data storage locations prefixes:
 
 * **/var/opt/setmy.info/gintra** == **/mnt/gintra** (smi-gintra-mount-location)
 
-* **/var/opt/setmy.info/nfs-root** (root folder for diskless NFS)
+* **/var/opt/setmy.info/nfs-root** (root folder for disk-less NFS)
 
-* **/var/opt/setmy.info/nfs-XYZ** (Other NFS folders for diskless NFS. XYZ = [boot|home|MACHINE_NAME])
+* **/var/opt/setmy.info/nfs-XYZ** (Other NFS folders for disk-less NFS. XYZ = [boot|home|MACHINE_NAME])
 
 * **/tank**
 
 * **/gintra**
 
-Sub structures:
+Sub structures (relations to LDAP):
 
 * **PREFIX/organizations/COUNTRY_CODE/ORG_SHORT_NAME/DEPARTMEND_NAME**
     * documents
@@ -26,14 +26,22 @@ Sub structures:
     * dvc
     * software
         * packages
-        * rpms
+        * rpms (For example: [https://rpms.has.gintra](https://rpms.has.gintra))
         * maven
+        * pypi
+        * clojars
+        * lisp
         * opt
         * tftp
+    * configuration
+        * pki
+            * ca
     * scm
         * git
             * www
             * intranet
+        * mercurial
+        * svn
     * ml
         * data
             * input

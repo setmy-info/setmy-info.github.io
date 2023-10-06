@@ -25,18 +25,22 @@ description: TBI description
 materials:
     - example.doc
     - https://example.com/document
-steps:
-    -   name: Data gathering
-        workloads: Description about what, how, where todo, information for implementation
-    -   name: Data preparation
-        workloads: Description about what, how, where todo, information for implementation
-    -   name: Training
-        workloads: Description about what, how, where todo, information for implementation
-        dvc: file:///example/dvc/pth
-    -   name: Result analysis
-        workloads: Description about what, how, where todo, information for implementation
-    -   name: Documentation
-        workloads: Description about what, how, where todo, information for implementation
+    - url/uri/path/to/bpmn/file.bpmn (don't repeat, if it is already mentioned in tbi_process_uri)
+external_processing_engine:
+    type: Camunda (can be missing, for passing directly to Jenkins)
+    process_id: MLSprint (can be missing, for passing directly to Jenkins)
+    config:
+        tbi_process_uri: url/uri/path/to/bpmn/file.bpmn (can be missing, for passing directly to Jenkins)
+        jenkins_pipeline:
+            tbi_vcs_url: https://example.com/tbi/git/repo/with/Jenkinsfile/pipeline.git  (can be missing, Jenkins already have pipeline execution configured)
+            tbi_dvc_path: path/to/dvc (ML software config can also be there, because config is also data)
+            tbi_code_vcs_path: path/to/dvc_code (ML software to build, or use tbi_training_command and tbi_testing_command)
+            tbi_training_command: command (to execute for training)
+            tbi_validating_command: command (to execute for validating)
+            tbi_testing_command: command (to execute for testing)
+            tbi_config_vcs_path: path/to/config (ML software config to use, can be unset)
+            # (default is false, based on whether parallel execution is desired, but mostly Jenkinsfile responsibility)
+            tbi_parallel_execution: true
 changelog:
     added:
         - Added example thing
@@ -44,6 +48,8 @@ changelog:
         - Removed example thing
     changed:
         - Changed example thing
+    fixed:
+        - Fixed example thing
 authors:
     - Imre Tabur <imre.tabur@mail.ee>
 ```

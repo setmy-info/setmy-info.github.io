@@ -42,6 +42,17 @@ setup(
 )
 ````
 
+### Additional pip repository registration
+
+```shell
+cp -r dist/* /some/nfs/share/with/www/pypi
+```
+
+File: **~/.config/pip/pip.conf**
+
+    [global]
+    index-url = http(s)://pip.gintra/pypi/
+
 ## See also
 
 [Web Page](https://pypi.org)
