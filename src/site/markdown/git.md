@@ -157,6 +157,9 @@ git push --delete origin 1.2.3
 
 git tag --delete 1.2.3
 
+# Remote tags
+git ls-remote --tags origin
+
 # Uncommit last one commit
 git reset --soft HEAD~1
 
