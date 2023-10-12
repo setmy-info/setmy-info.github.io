@@ -271,11 +271,12 @@ abx --smi-xyz=abc,def,ghi
 
 Names after prefix:
 
-| Configuration option              | properties | yaml | Environment variables | CLI options            | Notes |
-|-----------------------------------|------------|------|-----------------------|------------------------|-------|
-| Profiles                          | -          | -    | PROFILES              | -profiles              |       |
-| Config paths                      | -          | -    | CONFIG_PATHS          | -config-paths          |       |
-| Optional application config files | -          | -    | OPTIONAL_CONFIG_FILES | -optional-config-files |       |
+| Configuration option              | properties | yaml | Environment variables suffix | CLI options suffix     | Notes |
+|-----------------------------------|------------|------|------------------------------|------------------------|-------|
+| Profiles                          | -          | -    | PROFILES                     | -profiles              |       |
+| Config paths                      | -          | -    | CONFIG_PATHS                 | -config-paths          |       |
+| Optional application config files | -          | -    | OPTIONAL_CONFIG_FILES        | -optional-config-files |       |
+| Application name                  | -          | -    | NAME                         | -name                  |       |
 
 ## Other
 
