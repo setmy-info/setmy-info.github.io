@@ -24,6 +24,8 @@ Sub structures (relations to LDAP):
     * videos
     * cdn
     * dvc
+    * downloads
+        * torrent
     * software
         * packages
         * rpms (For example: [https://rpms.has.gintra](https://rpms.has.gintra))
@@ -40,6 +42,8 @@ Sub structures (relations to LDAP):
         * git
             * www
             * intranet
+            * tor
+            * dweb
         * mercurial
         * svn
     * ml
