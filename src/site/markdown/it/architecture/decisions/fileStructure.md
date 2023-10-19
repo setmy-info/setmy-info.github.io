@@ -29,7 +29,10 @@ Sub structures (relations to LDAP):
     * software
         * packages
         * rpms (For example: [https://rpms.has.gintra](https://rpms.has.gintra))
+        * srpm
         * maven
+            * repo
+            * site
         * pypi
         * clojars
         * lisp

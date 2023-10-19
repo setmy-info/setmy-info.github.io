@@ -7,11 +7,11 @@
 ### CentOS, Rocky Linux
 
 ```shell
-dnf install qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
+sudo dnf install qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
 lsmod | grep kvm
-systemctl enable libvirt
-systemctl start libvirt
-systemctl status libvirtd
+sudo systemctl enable libvirt
+sudo systemctl start libvirt
+sudo systemctl status libvirtd
 ```
 
 ### Fedora

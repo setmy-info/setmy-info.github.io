@@ -4,30 +4,36 @@
 
 ## Installation
 
-### CentOS
+### CentOS/Rocky Linux
 
     Probably needs EPEL
-    sudo yum -y install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
-    sudo yum -y install postgresql10 postgresql10-server pgadmin4-web pgadmin4-desktop-common
-    sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
-    sudo systemctl enable postgresql-10
-    sudo systemctl start postgresql-10
-    sudo su - postgres
+```shell
+sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo dnf -qy module disable postgresql
+sudo dnf install -y postgresql16-server
+sudo /usr/pgsql-16/bin/postgresql-16-setup initdb
+sudo systemctl enable postgresql-16
+sudo systemctl start postgresql-16
+sudo systemctl status postgresql-16
+
+sudo rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
+sudo dnf install pgadmin4
+
+sudo su - postgres
+```
+
         psql
         or
         psql -d template1 -U postgres
             \password
             or
             ALTER USER postgres WITH PASSWORD 'supersecretpassword';
-            CREATE USER test WITH PASSWORD 'testuser';
-            CREATE USER dev;
-            ALTER USER dev WITH PASSWORD 'xxxxxx';
-            CREATE DATABASE testdb encoding 'UTF8';
-            ALTER DATABASE testdb OWNER TO test;
-            GRANT ALL PRIVILEGES ON DATABASE testdb TO dev;
             \q
-    In: /var/lib/pgsql/10/data pg_hba.conf and postgresql.conf
-    systemctl restart postgresql-10
+
+In: /var/lib/pgsql/16/data pg_hba.conf and postgresql.conf
+
+    systemctl restart postgresql-16
+    systemctl reload postgresql-16
 
 ### Fedora
 
@@ -89,17 +95,17 @@ alter user ciliquibase with password 'xxx';
 alter user liveliquibase with password 'xxx';
 alter user preliveliquibase with password 'xxx';
 
-CREATE DATABASE dev WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE testing WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE ci WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE prelive WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE live WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz-dev WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz-test WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz-ci WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz-prelive WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz-live WITH TEMPLATE = template0 ENCODING = 'UTF8';
 
-ALTER DATABASE dev OWNER TO devliquibase;
-ALTER DATABASE testing OWNER TO testingliquibase;
-ALTER DATABASE ci OWNER TO ciliquibase;
-ALTER DATABASE prelive OWNER TO preliveliquibase;
-ALTER DATABASE live OWNER TO liveliquibase;
+ALTER DATABASE xyz-dev OWNER TO devliquibase;
+ALTER DATABASE xyz-test OWNER TO testingliquibase;
+ALTER DATABASE xyz-ci OWNER TO ciliquibase;
+ALTER DATABASE xyz-prelive OWNER TO preliveliquibase;
+ALTER DATABASE xyz-live OWNER TO liveliquibase;
 
 # TODO : correct rights and correct user
 grant all privileges on database dev to devliquibase;
