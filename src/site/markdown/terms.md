@@ -79,7 +79,7 @@ kulud).
 
 **Responsive design*** - seadmetundlik disain.
 
-**Ubiquitous language** - using a common, shared vocabulary and terms, those can be understood by technical and non-technical team members (developers, domain experts, and stakeholders).
+**Ubiquitous language** - (Üldkasutatav keel) using a common, shared vocabulary and terms, those can be understood by technical and non-technical team members (developers, domain experts, and stakeholders).
 
 https://www.dataprise.com/it-glossary
 
