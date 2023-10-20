@@ -23,7 +23,7 @@ Sub structures (relations to LDAP):
 * **PREFIX/organizations/COUNTRY_CODE/ORG_SHORT_NAME/DEPARTMEND_NAME**
     * backups
     * documents
-        * 
+        * Docs like in doc standard
     * pictures
     * videos
     * cdn
