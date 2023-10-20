@@ -14,6 +14,8 @@ Data storage locations prefixes:
 
 * **/tank**
 
+* **/tank/organizations/COUNTRY_CODE/ORG_SHORT_NAME/DEPARTMEND_NAME** == **/mnt/gintra** (smi-gintra-mount-location)
+
 * **/gintra**
 
 Sub structures (relations to LDAP):
@@ -21,6 +23,7 @@ Sub structures (relations to LDAP):
 * **PREFIX/organizations/COUNTRY_CODE/ORG_SHORT_NAME/DEPARTMEND_NAME**
     * backups
     * documents
+        * 
     * pictures
     * videos
     * cdn
