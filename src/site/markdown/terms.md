@@ -79,6 +79,8 @@ kulud).
 
 **Responsive design*** - seadmetundlik disain.
 
+**Ubiquitous language** - using a common, shared vocabulary and terms, those can be understood by technical and non-technical team members (developers, domain experts, and stakeholders).
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html
