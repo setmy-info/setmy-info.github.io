@@ -19,6 +19,7 @@ Data storage locations prefixes:
 Sub structures (relations to LDAP):
 
 * **PREFIX/organizations/COUNTRY_CODE/ORG_SHORT_NAME/DEPARTMEND_NAME**
+    * backups
     * documents
     * pictures
     * videos
