@@ -15,6 +15,8 @@ sudo firewall-cmd --zone=trusted --add-service=ssh --permanent
 sudo firewall-cmd --zone=trusted --add-service=dns --permanen
 nslookup intranet.<ZONE_NAME> 10.0.0.2
 dig @10.0.0.2 intranet.<ZONE_NAME>
+
+systemd-resolve --status
 ```
 
 **nano /etc/named.conf**
