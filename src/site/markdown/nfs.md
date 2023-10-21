@@ -10,6 +10,18 @@
 
 ```shell
 sudo dnf -y install nfs-utils
+sudo systemctl start nfs-server
+sudo systemctl enable nfs-server
+sudo nano /etc/exports
+exportfs -a
+sudo systemctl status nfs-server
+
+# Client
+sudo nano /etc/fstab
+127.0.0.1:/var/opt/setmy.info/gintra /mnt/gintra                  nfs     defaults        0 0
+10.0.0.10:/tank /mnt/tank                                         nfs     defaults        0 0
+sudo systemctl daemon-reload
+showmount -e 10.0.0.10
 ```
 
 For domain name usage
