@@ -23,7 +23,7 @@ CD_IMAGE_FILE_NAME=cd-${SUFFIX}.img
 CD_IMAGE_FILE_PATH=${OUT_DIR}/${CD_IMAGE_FILE_NAME}
 mkdir -p ${OUT_DIR}
 dd if=/dev/cdrom of=${CD_IMAGE_FILE_PATH}
-mkdir -p /mnt/cd-image
+sudo mkdir -p /mnt/cd-image
 sudo mount -o loop,ro ${PREFIX}/${CD_NAME}.img /mnt/cd-image
 sudo umount /mnt/cd-image
 ```
