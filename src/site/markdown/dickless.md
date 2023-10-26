@@ -30,6 +30,10 @@ sudo chmod 777 /var/opt/setmy.info/diskless/var
 sudo chroot /var/opt/setmy.info/diskless/chroot
 sudo chroot /var/opt/setmy.info/diskless/chroot /bin/sh
 exit
+
+sudo nano /var/opt/setmy.info/diskless/chroot/etc/exports
+#/home *(rw,fsid=0,async,no_subtree_check)
+
 sudo nano /etc/exports
 /var/opt/setmy.info/diskless/chroot *(ro,sync,no_root_squash)
 /var/opt/setmy.info/diskless/home
@@ -42,7 +46,7 @@ exportfs -v
 
 
 sudo dnf install -y tftp-server
- systemctl enable --now tftp
+sudo systemctl enable --now tftp
 sudo systemctl restart tftp
 sudo systemctl enable tftp
 sudo systemctl status tftp

@@ -21,7 +21,12 @@ sudo nano /etc/fstab
 127.0.0.1:/var/opt/setmy.info/gintra /mnt/gintra                  nfs     defaults        0 0
 10.0.0.10:/tank /mnt/tank                                         nfs     defaults        0 0
 sudo systemctl daemon-reload
-showmount -e 10.0.0.10
+# Show local shares
+exportfs -v
+# Remote shares
+showmount -e 10.0.0.2
+# Also
+nfsstat -m
 ```
 
 For domain name usage
