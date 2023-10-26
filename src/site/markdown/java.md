@@ -16,6 +16,15 @@
 
 ## Usage, tips and tricks
 
+```shell
+# Intranet CA
+JAVA_HOME=/opt/jdk
+GINTRA_LOCATION=/some/dir
+keytool -import -alias has_ee_gintra -keystore ${JAVA_HOME}/lib/security/cacerts -file ${GINTRA_LOCATION}/organizations/ee/has/development/configuration/pki/ca/has.ee.gintra.crt
+# CA signed certs
+keytool -import -alias intranet_has_ee_gintra -keystore ${JAVA_HOME}/lib/security/cacerts -file ${GINTRA_LOCATION}/organizations/ee/has/development/configuration/pki/intranet.has.ee.gintra.crt
+```
+
 ### Coding tips and tricks
 
 ## See also

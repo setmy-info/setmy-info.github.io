@@ -73,8 +73,8 @@ psql -d postgres -U postgres
 create user has SUPERUSER;
 create user dev;
 create user devliquibase;
-create user testing;
-create user testingliquibase;
+create user test;
+create user testliquibase;
 create user ci;
 create user ciliquibase;
 create user prelive;
@@ -85,31 +85,31 @@ create user liveliquibase;
 alter user postgres with password 'xxx';
 alter user has with password 'xxx';
 alter user dev with password 'xxx';
-alter user testing with password 'xxx';
+alter user test with password 'xxx';
 alter user ci with password 'xxx';
 alter user live with password 'xxx';
 alter user prelive with password 'xxx';
 alter user devliquibase with password 'xxx';
-alter user testingliquibase with password 'xxx';
+alter user testliquibase with password 'xxx';
 alter user ciliquibase with password 'xxx';
 alter user liveliquibase with password 'xxx';
 alter user preliveliquibase with password 'xxx';
 
-CREATE DATABASE xyz-dev WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE xyz-test WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE xyz-ci WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE xyz-prelive WITH TEMPLATE = template0 ENCODING = 'UTF8';
-CREATE DATABASE xyz-live WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz_dev WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz_test WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz_ci WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz_prelive WITH TEMPLATE = template0 ENCODING = 'UTF8';
+CREATE DATABASE xyz_live WITH TEMPLATE = template0 ENCODING = 'UTF8';
 
-ALTER DATABASE xyz-dev OWNER TO devliquibase;
-ALTER DATABASE xyz-test OWNER TO testingliquibase;
-ALTER DATABASE xyz-ci OWNER TO ciliquibase;
-ALTER DATABASE xyz-prelive OWNER TO preliveliquibase;
-ALTER DATABASE xyz-live OWNER TO liveliquibase;
+ALTER DATABASE xyz_dev OWNER TO devliquibase;
+ALTER DATABASE xyz_test OWNER TO testliquibase;
+ALTER DATABASE xyz_ci OWNER TO ciliquibase;
+ALTER DATABASE xyz_prelive OWNER TO preliveliquibase;
+ALTER DATABASE xyz_live OWNER TO liveliquibase;
 
 # TODO : correct rights and correct user
 grant all privileges on database dev to devliquibase;
-grant all privileges on database testing to testingliquibase;
+grant all privileges on database test to testliquibase;
 grant all privileges on database ci to ciliquibase;
 grant all privileges on database prelive to preliveliquibase;
 grant all privileges on database live to liveliquibase;
@@ -169,7 +169,7 @@ Backup
 sudo su - postgres
 pg_dump postgres > postgres.backup
 pg_dump -U dev dev > dev.backup
-pg_dump -U testing testing > test.backup
+pg_dump -U test test > test.backup
 pg_dump -U live live > live.backup
 pg_dumpall -U postgres > all.backup
 

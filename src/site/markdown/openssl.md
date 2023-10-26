@@ -144,3 +144,17 @@ RaoghItDqV64Y9FGSpI1upI0BoBzo+svDg==
 /OU - organizationalUnitName
 /emailAddress - emailAddress
 ```
+
+## Adding CA certs for linux tools
+
+wget, curl, ...
+
+```shell
+GINTRA_LOCATION=/some/dir
+sudo cp ${GINTRA_LOCATION}/organizations/ee/has/development/configuration/pki/ca/has.ee.gintra.crt /etc/pki/ca-trust/source/anchors/
+sudo update-ca-trust
+```
+
+## See also
+
+[Firefox cert extension changes](https://support.mozilla.org/en-US/questions/1379667)
