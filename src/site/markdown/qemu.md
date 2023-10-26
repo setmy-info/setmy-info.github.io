@@ -7,10 +7,12 @@
 ### CentOS, Rocky Linux
 
 ```shell
-sudo dnf install qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
+dnf group list --available
+sudo dnf groupinstall -y "Server with GUI" "Virtualization Host"
+sudo dnf install qemu-kvm qemu-img libvirtd libvirt virt-manager virt-install virt-viewer libvirt-client
 lsmod | grep kvm
-sudo systemctl enable libvirt
-sudo systemctl start libvirt
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
 sudo systemctl status libvirtd
 ```
 

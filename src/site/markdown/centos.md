@@ -10,6 +10,11 @@
 
 ### Development machine preparation
 
+    dnf group list --available
+
+    sudo dnf groupinstall "Server with GUI"
+    sudo systemctl set-default graphical.target
+
     dnf -y install mc ansible nano make yum-utils rpmdevtools rpm-build git mercurial meld
     dnf -y install java-1.8.0-openjdk
     Install postgres tools from Postgre guide.
@@ -56,6 +61,10 @@ systemctl enable --now cockpit.socket
 
     Get full locales list
         localectl list-locales
+
+### Disks
+
+    lsblk or sudo fdisk -l
 
 ## See also
 
