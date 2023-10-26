@@ -33,6 +33,7 @@ source ~/.bashrc
 ```shell
 # Recursive change folder reading
 sudo find /run/media/has/d9ed8f72-bf7f-4fee-a246-41d2f6a49b3d -type d -exec chmod ugo+rwx {} \;
+sudo find /run/media/has/d9ed8f72-bf7f-4fee-a246-41d2f6a49b3d -type f -exec chmod ugo+r {} \;
 ```
 
 ## See also
