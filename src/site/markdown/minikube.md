@@ -7,6 +7,12 @@
 ### CentOS, Rocky Linux
 
 ```shell
+sudo useradd minikube
+sudo passwd minikube
+sudo usermod -a -G docker minikube wheel
+```
+
+```shell
 mkdir ~/temp && cd ~/temp && curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
 sudo rpm -Uvh minikube-latest.x86_64.rpm
 ```
@@ -55,10 +61,17 @@ Minikube starting after reboot
 
 ```shell
 export VISUAL=nano
-sudo crontab -u someuser -e
+sudo crontab -u minikube -e
 ```
 
     @reboot /usr/bin/minikube start
+
+Remove
+
+```shell
+sudo crontab -r -u minikube
+sudo crontab -l -u minikube
+```
 
 ## Deinstall
 
