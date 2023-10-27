@@ -17,15 +17,21 @@
 ## Usage, tips and tricks
 
 ```shell
-SUFFIX=19.06.2005
-OUT_DIR=~/temp/cd-images
-CD_IMAGE_FILE_NAME=cd-${SUFFIX}.img
-CD_IMAGE_FILE_PATH=${OUT_DIR}/${CD_IMAGE_FILE_NAME}
-mkdir -p ${OUT_DIR}
-dd if=/dev/cdrom of=${CD_IMAGE_FILE_PATH}
-sudo mkdir -p /mnt/cd-image
-sudo mount -o loop,ro ${PREFIX}/${CD_NAME}.img /mnt/cd-image
-sudo umount /mnt/cd-image
+# Shows /dev/loop1
+sudo losetup -Pf --show /home/has/temp/cd-images/cd-01.07.2006.img
+ls /dev/loop*
+
+#sudo cryptsetup open --type luks /dev/loop1 decrypted_loop
+sudo cryptsetup open --type plain /dev/loop1 decrypted_loop
+#sudo cryptsetup open --type dm-crypt /dev/loop1 decrypted_loop
+
+sudo mount /dev/mapper/decrypted_loop /mnt/cd-image
+
+# crypto release
+sudo cryptsetup luksClose decrypted_loop
+
+# Release loop
+sudo losetup -d /dev/loop1
 ```
 
 ### Coding tips and tricks

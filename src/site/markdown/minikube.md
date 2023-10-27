@@ -51,6 +51,15 @@ minikube start
 minikube dashboard
 ```
 
+Minikube starting after reboot
+
+```shell
+export VISUAL=nano
+sudo crontab -u someuser -e
+```
+
+    @reboot /usr/bin/minikube start
+
 ## Deinstall
 
 ```shell
@@ -61,10 +70,6 @@ docker container rm minikube
 docker volume rm minikube
 docker network rm minikube
 ```
-
-### FreeBSD
-
-### OpenIndiana
 
 ## Configuration
 
