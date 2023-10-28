@@ -15,7 +15,7 @@ nano install-clojure.sh && chmod a+x install-clojure.sh
 
 curl -L -O https://github.com/clojure/brew-install/releases/latest/download/posix-install.sh
 chmod +x posix-install.sh
-sudo ./posix-install.sh
+sudo ./posix-install.sh --prefix /opt/clojure
 sudo dnf install rlwrap
 
 exit 0
