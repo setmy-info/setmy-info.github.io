@@ -36,7 +36,7 @@ nano hello.sh && chmod a+x hello.sh
 ```shell
 #!/bin/sh
 
-clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.11.1"}}}' -M -m clojure.main -i hello.clj
+clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.11.1"}}}' -M hello.clj
 
 exit 0
 ```
