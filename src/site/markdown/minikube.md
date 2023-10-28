@@ -44,6 +44,7 @@ enabled=1
 enabled_metadata=1
 EOF
 yum install -y minikube-rpm
+sudo usermod -a -G libvirt USERNAME
 ```
 
 #### Reinstall
