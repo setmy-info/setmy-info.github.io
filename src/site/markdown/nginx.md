@@ -20,7 +20,7 @@ If SELinux doesn't allow to "share" at that location files. Use SELin tools for 
 
 ```shell
 ls -Z /tank
-# Probably enough
+# Probably enough (or ZFS over fuze problem?)
 chcon -R -t httpd_sys_content_t /tank
 # If not enough try also
 setsebool -P httpd_read_user_content 1

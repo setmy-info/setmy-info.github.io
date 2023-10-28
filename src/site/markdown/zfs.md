@@ -1,4 +1,4 @@
-# ZFSe
+# ZFS
 
 ## Information
 

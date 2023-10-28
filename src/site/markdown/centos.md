@@ -66,6 +66,10 @@ systemctl enable --now cockpit.socket
 
     lsblk or sudo fdisk -l
 
+### Hostname
+
+    sudo hostnamectl set-hostname HOSTNAE
+
 ## See also
 
     [xxxx](http://yyyyy)
