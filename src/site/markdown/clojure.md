@@ -6,9 +6,55 @@
 
 ## Installation
 
+```shell
+nano install-clojure.sh && chmod a+x install-clojure.sh
+```
+
+```shell
+#!/bin/sh
+
+curl -L -O https://github.com/clojure/brew-install/releases/latest/download/posix-install.sh
+chmod +x posix-install.sh
+sudo ./posix-install.sh
+sudo dnf install rlwrap
+
+exit 0
+```
+
+```shell
+nano hello.clj
+```
+
+```clojure
+(println "Hello, World!")
+```
+
+```shell
+nano hello.sh && chmod a+x hello.sh
+```
+
+```shell
+#!/bin/sh
+
+clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.11.1"}}}' -M -m clojure.main -i hello.clj
+
+exit 0
+```
+
 ## Configuration
 
 ## Usage, tips and tricks
+
+### Prepare project
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
 
 ### Clojure Spring Boot Execution
 
