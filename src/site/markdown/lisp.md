@@ -1,5 +1,17 @@
 # Common LISP
 
+## Install
+
+```shell
+mkdir ~/temp
+cd ~/temp
+wget http://prdownloads.sourceforge.net/sbcl/sbcl-2.3.9-x86-64-linux-binary.tar.bz2
+tar xvjf sbcl-2.3.9-x86-64-linux-binary.tar.bz2
+cd sbcl-2.3.9-x86-64-linux/
+sudo ./install.sh --prefix=/opt/sbcl
+```
+
+
 ## Information
 
 ![LISP](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Lisp_logo.svg/240px-Lisp_logo.svg.png)
