@@ -498,3 +498,7 @@ Make it work:
 [Korma](https://github.com/korma/Korma)
 
 [Clojure docs](https://clojure-doc.org/)
+
+[Clojure the Devil](https://www.devcycle.co.uk/clojure-is-the-devil/)
+
+[Clojure isn’t for me](https://swlkr.com/posts/clojure-isnt-for-me/)
