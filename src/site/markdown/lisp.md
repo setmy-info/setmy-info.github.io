@@ -11,7 +11,6 @@ cd sbcl-2.3.9-x86-64-linux/
 sudo ./install.sh --prefix=/opt/sbcl
 ```
 
-
 ## Information
 
 ![LISP](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Lisp_logo.svg/240px-Lisp_logo.svg.png)
@@ -579,6 +578,13 @@ Functions
 
 ;; new line
 (terpri)
+
+;; Curring
+(defun add (x)
+  (lambda (y) (+ x y)))
+(defvar add-five (add 5))
+(defvar result (funcall add-five 3))
+
 ```
 
 Function composition
@@ -770,3 +776,5 @@ SICL IRC: https://github.com/robert-strandh/SICL-IRC
 1. [CL Quick ref](http://clqr.boundp.org/index.html)
 
 1. [usocket](https://usocket.common-lisp.dev/)
+
+1. [Fennel lang - LUA and LISP](https://fennel-lang.org/)
