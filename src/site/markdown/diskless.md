@@ -53,7 +53,6 @@ sudo nano /etc/exports
 /var/opt/setmy.info/diskless/chroot *(ro,sync,no_root_squash)
 /var/opt/setmy.info/diskless/home *(rw,sync,no_root_squash)
 /var/opt/setmy.info/diskless/var *(rw,sync,no_root_squash)
-/var/opt/setmy.info/diskless/tmp *(rw,sync,no_root_squash)
 
 sudo exportfs -r
 sudo exportfs -v

@@ -8,7 +8,9 @@ cd ~/temp
 wget http://prdownloads.sourceforge.net/sbcl/sbcl-2.3.9-x86-64-linux-binary.tar.bz2
 tar xvjf sbcl-2.3.9-x86-64-linux-binary.tar.bz2
 cd sbcl-2.3.9-x86-64-linux/
-sudo ./install.sh --prefix=/opt/sbcl
+sudo INSTALL_ROOT=/opt/sbcl sh install.sh
+
+export SBCL_HOME=/opt/sbcl/lib/sbcl
 ```
 
 ## Information
