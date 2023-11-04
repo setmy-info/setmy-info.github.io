@@ -22,9 +22,17 @@ PROJECT_NAME_BIN_DIR=${PROJECT_NAME_BIN_DIR%/*}
 PROJECT_NAME_LIB_DIR=${PROJECT_NAME_BIN_DIR%/*}/lib
 ```
 
-To avoid package suggestions for typos, edit nano ~/.bashrc and add the following line:
+To avoid package suggestions for typos, edit **nano ~/.bashrc** and add the following line:
 
-	shopt -u cmdhist
+```shell
+unset command_not_found_handle
+```
+
+Or remove [PackageKitCommandNotFound](https://fedoraproject.org/wiki/Features/PackageKitCommandNotFound)
+
+```shell
+sudo dnf remove PackageKit-command-not-found
+```
 
 ```shell
 source ~/.bashrc

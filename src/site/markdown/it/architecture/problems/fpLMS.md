@@ -1,4 +1,4 @@
-# FP LMS
+# Missing rules, design patterns for FP - FP LMS
 
 Topic arise from software development principles and patterns like on OOP **1.1** and **3** for FP.
 
