@@ -486,7 +486,7 @@ Functions
 
 (mapcar #'sqrt '(1 2 3 4))
 
-(mapcan #'(lambda (x) (if (oddp x) (list x))) '(1 2 3 4 5))
+(mapcan (lambda (x) (if (oddp x) (list x))) '(1 2 3 4 5))
 
 (defun do-fun (in-func)
     (funcall in-func 1 2))
@@ -502,13 +502,13 @@ Functions
 (defparameter *a-list* (list 1 2 3 4))
 
 ;; x is actually a list
-(maplist #'(lambda (x) x) *a-list*)
+(maplist (lambda (x) x) *a-list*)
 ;;((1 2 3 4) (2 3 4) (3 4) (4))
 
-(maplist #'(lambda (a-list) (+ (car a-list) 1)) *a-list*)
+(maplist (lambda (a-list) (+ (car a-list) 1)) *a-list*)
 ;; (2 3 4 5)
 
-(mapcar #'(lambda (a-list-item) (+ a-list-item 1)) *a-list*)
+(mapcar (lambda (a-list-item) (+ a-list-item 1)) *a-list*)
 ;; (2 3 4 5)
 
 ;; filters - named as Remove If Not
