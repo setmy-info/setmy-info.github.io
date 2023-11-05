@@ -605,6 +605,18 @@ Function composition
 (composed-function 5)
 ```
 
+```common-lisp
+#!/opt/sbcl/bin/sbcl --script
+
+(require :asdf)
+(load "~/.quicklisp/setup.lisp")
+(load "~/.sbclrc")
+
+(ql:quickload "vecto")
+
+(write-line "Hello World")
+```
+
 ## Some libraries
 
 1. Loads of utilities (**alexandria** - (ql:quickload :
