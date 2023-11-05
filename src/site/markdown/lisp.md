@@ -591,20 +591,18 @@ Functions
 
 Function composition
 
-TODO : make it work
-
 ```common-lisp
 (defun h (x) (* x 2))
 (defun g (x) (+ x 3))
 (defun f (x) (expt x 2))
 
+(defun compose (a b c)
+    (lambda (x) (funcall c (funcall b (funcall a x)))))
+
 (defun composed-function (x)
-  (funcall (compose 'f 'g 'h) x))
+  (funcall (compose #'f #'g #'h) x))
 
 (composed-function 5)
-
-(defun compose (f g)
-  #'(lambda (x) (funcall f (funcall g x))))
 ```
 
 ## Some libraries
