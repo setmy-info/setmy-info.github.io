@@ -79,7 +79,7 @@ void myCFunction(int arg1, int arg2);
 
 ## Function composition
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -87,18 +87,53 @@ void myCFunction(int arg1, int arg2);
 int main() {
   std::vector<int> nums {1, 2, 3, 4, 5};
 
-  // Lambda funktsiooni loomine, mis võtab argumentina num ja tagastab num * 2
+  // Lambda funktsiooni creation
   auto doubleNum = [](int num) { return num * 2; };
 
-  // Rakendame lambda funktsiooni igale elemendile vektoris
+  // Apply lambda funktsion to all elements in a vector
   std::transform(nums.begin(), nums.end(), nums.begin(), doubleNum);
 
-  // Väljastame muudetud vektori
+  // Output vector
   for (auto num : nums) {
     std::cout << num << " ";
   }
 
   return 0;
+}
+```
+
+# Returning
+
+1. Return class instances by value (return by value) and caller should use 'const' keyword for function return value
+   to avoid class copy. Compiler optimizes and uses caller stack instance.
+
+```cpp
+Example get_example_return_by_value() {
+    Example example(123);
+    // do work
+    return example;
+}
+
+void caller_function() {
+    const Example example = get_example_return_by_value();
+    // do work
+}
+```
+
+2. Or return pointer and put it immediately into smart pointer, to be released when exiting scope.
+   Use this form at low level services/components.
+
+```cpp
+Example *get_example_return_by_pointer() {
+    Example *example = new Example(123);
+    // do work
+    return example;
+}
+
+void five_two() {
+    // Or std::shared_ptr
+    std::unique_ptr<Example> example_smart_pointer(get_example_return_by_pointer());
+    // do work
 }
 ```
 
