@@ -257,3 +257,37 @@ TODO : recheck value dimensions and correctness
 ## Documentation Writing
 
 [great documentation](http://jacobian.org/writing/what-to-write/)
+
+## Refactoring
+
+More refactoring - a) in enhancement/fix task refactoring and b) in refactoring task. 2 backlogs - technical and product
+backlog. Actually technical backlog is wiki page(s) with things to do. When ready, then product backlog item is created
+from technical backlog wiki items.
+
+Do things the same way - Injectables, more injectables (Mappers, Validators, ...) no or less static
+functions - places where function can be moved around - better testability with fewer tools.
+
+Packages like a library - all its own. A a = foo(new B()) - A, B anf foo() are inside that library. Callers should use
+these. Library can't use solution classes.
+
+Layered (Application, Service, DAL/DAO/Resoucres). At least two separations: application (Web App [Controllers], CLI, JavaFX, ...) and
+service layer (service and below - DAO/DAL/Resources/APIs).
+
+Like POJO - avoid vendor lock-in inside code. Less code?
+
+Composition over inheritance. When no way, then max 2 - 3 level no more.
+
+Template/seed projects - parallel preparation for switching.
+
+Steps:
+
+1. Java packaging & splitting - moving code between java packages, classes.
+2. Separating into separate maven module (jar libraries).
+3. Separating jar lib into into sparate repository - separate life.
+
+1. Common packages - generic code. Depends almost on "edge" libraries, no enterprise frameworks (Spring Boot, Micronaut,
+   JEE).
+2. Functionality/technology area packages. Depends almost on "edge" libraries, no enterprise frameworks (Spring Boot,
+   Micronaut,
+   JEE). Depends on commons (commons is aslo edge library).
+3. Application package - final solution dependencies (Spring Boot, Micronaut, JEE)
