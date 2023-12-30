@@ -11,6 +11,10 @@ be checked somewhere (from self written docs or directly from changes in Gradle 
 is changed by other team members. Many project, different changes - a deviation from what might be called the standard.
 Can't be learned once. All that is **waste** (of time).
 
+Gradle is in Groovy or Kotlin - probably one more language into Java project. Developing gradle scripts. Soon versioning
+needed. Also publishing to rest of the organization those development enhancements. Gradle development adds more rules
+on real (business) software developers.
+
 Some cases Gradle projects (modules in development organization/unit) have been tried to make similar in Gradle. Usually
 ends with hiring a new small team, who makes that Gradle standard component for company. Without hiring that team, the
 Gradle "standard" management work is put on developers in that organization. To reach good level in that "standard
@@ -20,6 +24,9 @@ At the writing time Gradle (7.6) reached some kind of stability - long time have
 version constantly something was deprecated.
 
 Usually small Gradle projects have fast build time compared with maven. Bigger Gradle projects have no advantages.
+
+Gradle has some un-stability - most of the time (even with minor version changes) something goes deprecated. Not to
+mature software.
 
 With maven:
 

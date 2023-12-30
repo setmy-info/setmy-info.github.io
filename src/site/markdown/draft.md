@@ -270,7 +270,8 @@ functions - places where function can be moved around - better testability with 
 Packages like a library - all its own. A a = foo(new B()) - A, B anf foo() are inside that library. Callers should use
 these. Library can't use solution classes.
 
-Layered (Application, Service, DAL/DAO/Resoucres). At least two separations: application (Web App [Controllers], CLI, JavaFX, ...) and
+Layered (Application, Service, DAL/DAO/Resoucres). At least two separations: application (Web App [Controllers], CLI,
+JavaFX, ...) and
 service layer (service and below - DAO/DAL/Resources/APIs).
 
 Like POJO - avoid vendor lock-in inside code. Less code?
@@ -291,3 +292,27 @@ Steps:
    Micronaut,
    JEE). Depends on commons (commons is aslo edge library).
 3. Application package - final solution dependencies (Spring Boot, Micronaut, JEE)
+
+# Class Groups
+
+* Models
+    * DTO
+    * Class and data carrying models
+    * Domain models
+* Controllers, Services and other components (mostly injectables, singletons but not necessarily])
+
+## Packaging
+
+### Java
+
+* Application (web, cli, desktop), solution and business logic components (technological components, can depend on
+  commons)
+* Technological and generic logic components (can depend on commons)
+    * Other components by technology, functionality area (doesnt depend on )
+* Common components
+
+As:
+
+    PREFIX.APPLICATION_X
+    PREFIX.TECHNOLOGY_X
+    PREFIX.commons
