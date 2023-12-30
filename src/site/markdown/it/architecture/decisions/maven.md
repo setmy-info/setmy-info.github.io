@@ -21,12 +21,10 @@ Gradle "standard" management work is put on developers in that organization. To 
 Gradle config/reprogram/extension" takes a time (to analyze, how to do that all "correctly").
 
 At the writing time Gradle (7.6) reached some kind of stability - long time haven't changed something. Until that
-version constantly something was deprecated.
+version constantly something was deprecated. Gradle has some un-stability - most of the time (even with minor version
+changes) something goes deprecated. Not to mature software.
 
 Usually small Gradle projects have fast build time compared with maven. Bigger Gradle projects have no advantages.
-
-Gradle has some un-stability - most of the time (even with minor version changes) something goes deprecated. Not to
-mature software.
 
 With maven:
 
