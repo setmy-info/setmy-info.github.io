@@ -108,8 +108,8 @@ yarn serve
     <router-view></router-view>
 </div>
 
-<script src="https://unpkg.com/vue@next"></script>
-<script src="https://unpkg.com/vue-router@next"></script>
+<script src="https://unpkg.com/vue/dist/vue.global.prod.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.global.prod.js"></script>
 
 <template id="numbers-page-template">
     <div><h2>Page number from template component: {{ pageNumber }}</h2></div>
