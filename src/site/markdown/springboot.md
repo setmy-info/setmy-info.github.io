@@ -24,7 +24,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MergerApplication implements CommandLineRunner, ExitCodeGenerator {
+public class CLIApplication implements CommandLineRunner, ExitCodeGenerator {
 
     @Autowired
     SomeService someService;
