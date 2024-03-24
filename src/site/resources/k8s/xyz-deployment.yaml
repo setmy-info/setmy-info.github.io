@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: xyz-deployment
+    namespace: xyz-dev
+    labels:
+        app: xyz-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: xyz-deployment
+    template:
+        metadata:
+            labels:
+                app: xyz-deployment
+        spec:
+            containers:
+                -   name: xyz
+                    image: http://gcr.io/google-samples/node-hello:1.0
+                    # For example, not needed in Minikube
+                    # imagePullPolicy: Never
+                    ports:
+                        -   name: xyz-port
+                            containerPort: 8080
+                    env:
+                        # For Spring boot
+                        -   name: PROFILES_LIST
+                            value: "dev,api-docs"
+                        ## From config-map
+                        -   name: VARIABLE
+                            valueFrom:
+                                configMapKeyRef:
+                                    name: xyz-config-map
+                                    key: variable
+                                    optional: false
+                        ## From secrets
+                        -   name: SECRET_VARIABLE
+                            valueFrom:
+                                secretKeyRef:
+                                    name: xyz-secrets-map
+                                    key: secret-variable
+                                    optional: false
