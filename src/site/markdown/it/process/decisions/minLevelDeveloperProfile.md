@@ -10,6 +10,7 @@ Can prove, show proves, results, artifacts.
 4. Sets goals for himself.
 5. Have something to show.
 6. Even when is taken a part in Vali-IT. That is optional.
+7. Shows a 'polyglotic' interest in different languages and technologies.
 
 * Shows a person's interest.
 * Shows a person's skills, knowledge and mental model of how to handle algorithms ("algorithmic" thinking).

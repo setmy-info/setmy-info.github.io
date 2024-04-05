@@ -98,7 +98,7 @@ Examples:
 
 ### Back end
 
-* Java, Groovy, Python, C/C++
+* Java, Groovy, Clojure, Python, C/C++
 * SpringBoot, Spring
 * JSR-330
 * 3 Layer (Controller/REST/SOAP/etc., Service, DAO/API/DataSource)
@@ -114,6 +114,14 @@ Examples:
 * Mockito
 * Java + Selenium (hub and nodes)
 * Cucumber
+
+Test farm have to be built.
+
+Smart devices and PC:
+
+* iOS devices
+* Android devices
+* Windows devices
 
 ### DB
 
