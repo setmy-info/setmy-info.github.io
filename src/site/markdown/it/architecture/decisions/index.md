@@ -294,6 +294,20 @@ Names after prefix:
 | Optional application config files | -          | -    | OPTIONAL_CONFIG_FILES        | -optional-config-files |       |
 | Application name                  | -          | -    | NAME                         | -name                  |       |
 
+# CI, Jenkins
+
+Feature
+![feature](../../../../resources/images/jenkinsfile-starter/feature_something.png)
+
+Develop
+![develop](../../../../resources/images/jenkinsfile-starter/develop.png)
+
+Release
+![release](../../../../resources/images/jenkinsfile-starter/release_1.0.0.png)
+
+Master
+![master](../../../../resources/images/jenkinsfile-starter/master.png)
+
 ## Other
 
 1. [No addons, extensions, plugins into git](noGitAddons.md)
