@@ -1,6 +1,17 @@
 # setmy.info documentation
 
 Main module in [github](https://github.com/setmy-info/setmy.info)
+Current setmy-info.github.io [site](https://github.com/setmy-info/setmy-info.github.io)
+Scripts [project](https://github.com/setmy-info/setmy-info-scripts)
+Ducumentation [hierarchy](https://github.com/setmy-info/setmy-info.github.io/blob/master/src/site/markdown/index.md)
+CI [pipeline](https://github.com/setmy-info/jenkinsfile-starter)
+
+Decisions:
+
+* [1](https://github.com/setmy-info/setmy-info.github.io/blob/master/src/site/markdown/it/architecture/index.md)
+* [2](https://github.com/setmy-info/setmy-info.github.io/blob/master/src/site/markdown/it/architecture/decisions/index.md)
+
+Technology
 
 * [GIT](src/site/markdown/git.html)
 * [DVC](src/site/markdown/dvc.html)

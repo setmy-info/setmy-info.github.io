@@ -99,6 +99,11 @@ departement, Donald Trump, donald.trump@trump.com, 1234, Private Company LLC):
 openssl req -new -key /usr/local/share/certs/RQ.priv.key -out /usr/local/share/certs/RQ.csr
 ```
 
+Probably by case have to add following options:
+
+* **-addext "keyUsage=critical"**
+* **-addext "subjectAltName = DNS:${DOMAIN_NAME}"**
+
 ### CA departement
 
 Signs CSR

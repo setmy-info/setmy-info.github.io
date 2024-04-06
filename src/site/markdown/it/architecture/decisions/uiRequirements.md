@@ -10,3 +10,4 @@
     * ...
 * Handled like reusable software component
     * Tested before applying (coping and rewriting CSS in some applications) on N number of applications
+* HASS/SMI standard structure

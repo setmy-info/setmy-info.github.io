@@ -296,12 +296,24 @@ Names after prefix:
 
 ## Other
 
-[No addons, extensions, plugins into git](noGitAddons.md)
-
-[No release by VCS tag](noReleaseByVCSTag.md)
-
-[No secrets in main VCS](noSecretsInMainVCS.md)
-
-[Maven](maven.md)
-
-[Cucmber tests principles](cucumberTestsPrinciples.md)
+1. [No addons, extensions, plugins into git](noGitAddons.md)
+1. [No release by VCS tag](noReleaseByVCSTag.md)
+1. [No secrets in main VCS](noSecretsInMainVCS.md)
+1. [Maven](maven.md)
+1. [Cucmber tests principles](cucumberTestsPrinciples.md)
+1. [Branching](branching.md)
+1. [CI Jenkins](ciJenkinsOvergitGitHuLa.md)
+1. [Constant upgrades](constantUpgrade.md)
+1. [C++](cppDecisions.md)
+1. [Developer first](developerFirst.md)
+1. [File structure](fileStructure.md)
+1. [Login once](loginOnce.md)
+1. [No binaries in VCS](noBinariesInVCS.md)
+1. [No Node in back-end](noNodeJSBackend.md)
+1. [No rewrite branch](noRewriteBranch.md)
+1. [No VueJS In Big apps](noVueJSInbigApplications.md)
+1. [PWA first](pwaFirst.md)
+1. [Self managed repos](shouldHaveSelfManagedRepos.md)
+1. [Should have VCS hash](shouldHaveVCShash.md)
+1. [UI requirements](uiRequirements.md)
+1. [Versioning](versioning.md)
