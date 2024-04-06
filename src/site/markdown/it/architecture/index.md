@@ -42,6 +42,7 @@ list.
 
 | Tool                                                        | Level 1                          | Level 2<br/>Reserved | Level 3 | Level 4<br/>Reserved | Level 5                |
 |-------------------------------------------------------------|----------------------------------|----------------------|---------|----------------------|------------------------|
+| Standard prog. language set                                 | All                              |                      | ...     |                      | All+                   |
 | Jenkins CI                                                  | Yes, Single, In-house            |                      | ...     |                      | Yes, Multi, ?          |
 | Docker Registry/Harbor                                      | No (?), in CI                    |                      | ...     |                      | Yes                    |
 | SeleniumHQ cluster (Hub, Nodes)                             | Yes, Single                      |                      | ...     |                      | Yes. Multi             |

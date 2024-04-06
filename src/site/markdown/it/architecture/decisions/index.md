@@ -98,7 +98,8 @@ Examples:
 
 ### Back end
 
-* Java, Groovy, Clojure, Python, C/C++
+* Standard language set
+    * Java, Groovy, Clojure, Python, C/C++
 * SpringBoot, Spring
 * JSR-330
 * 3 Layer (Controller/REST/SOAP/etc., Service, DAO/API/DataSource)
@@ -121,6 +122,9 @@ Smart devices and PC:
 
 * iOS devices
 * Android devices
+    * Sony
+    * Samsung
+    * Nokia
 * Windows devices
 
 ### DB
@@ -213,6 +217,10 @@ top on that for ...
 8.1. Prefer solutions to write code without interfaces. Interfaces are for frameworks or plugins, where N number of
 third parties should implement something.
 8.2. Java fail length up to 512 lines and line length 110.
+
+#### Clojure
+
+* With Leiningen. To switch to .edn, prepare requirements by Leiningen setup and prepare .edn and verify.
 
 #### Source Controll
 
