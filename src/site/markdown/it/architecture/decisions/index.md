@@ -297,15 +297,19 @@ Names after prefix:
 # CI, Jenkins
 
 Feature
+
 ![feature](../../../../resources/images/jenkinsfile-starter/feature_something.png)
 
 Develop
+
 ![develop](../../../../resources/images/jenkinsfile-starter/develop.png)
 
 Release
+
 ![release](../../../../resources/images/jenkinsfile-starter/release_1.0.0.png)
 
 Master
+
 ![master](../../../../resources/images/jenkinsfile-starter/master.png)
 
 ## Other
