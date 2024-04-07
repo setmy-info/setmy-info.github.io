@@ -298,12 +298,20 @@ Names after prefix:
 
 Master should have stable and verified and re-releasable any moment code.
 
-| Branch  | Branch name          | Environment         | Artifacts published                    | Tag     |
-|---------|----------------------|---------------------|----------------------------------------|---------|
-| feature | feature/xxxxxxxxxxxx | -                   | -                                      | -       |
-| develop | develop              | dev, test           | snapshot software and snapshot reports | -       |
-| release | release/1.0.0        | dev, test, pre-live | -                                      | -       |
-| master  | master               | live                | release software and release reports   | created |
+Merging means also software installation to some environment. Work merged to master means going automatically to live.
+
+To **develop** merging is after successful code review by developer(s). **Branch have to be merged fast**, because most
+cases QA is bottleneck. If needed, release branch can be used for **code freeze** (for QA manual testing) - try to avoid
+and do in sprint/iteration testing and increase automatic testing.
+
+To **release** and **master** merging is organizational (QA, developers, board, etc.) decision.
+
+| Branch  | Environment         | Branch name          | Artifacts published                    | Tag                   | Notes                                     |
+|---------|---------------------|----------------------|----------------------------------------|-----------------------|-------------------------------------------|
+| feature | -                   | feature/xxxxxxxxxxxx | -                                      | -                     |                                           |
+| develop | dev, test           | develop              | snapshot software and snapshot reports | -                     | Can go only to dev env, skip test deploy. |
+| release | dev, test, pre-live | release/1.0.0        | -                                      | -                     | Can skip dev env. deploy.                 |
+| master  | live                | master               | release software and release reports   | automatically created |                                           |
 
 #### Stages
 
