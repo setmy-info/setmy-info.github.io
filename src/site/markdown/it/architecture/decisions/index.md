@@ -244,7 +244,7 @@ solutions. App backend as GW. No central cache solutions for apps.
    servers only.
 5. Central Cache and session storage. JWT and session revoke in identity management systems. Multi node systems.
    Health checks. API GW (rate limiting, security, identity management, etc.). Multiple hardware (servers, network
-   nodes, powwersuplies, UPS etc.) nodes. Storage systems.
+   nodes, power supplies, UPS etc.) nodes. Storage systems.
 
 15. Prefer standard or well defined or stable tools over self making tools.
 16. Xfce is class desktop environment.
@@ -294,21 +294,46 @@ Names after prefix:
 | Optional application config files | -          | -    | OPTIONAL_CONFIG_FILES        | -optional-config-files |       |
 | Application name                  | -          | -    | NAME                         | -name                  |       |
 
-# CI, Jenkins
+### CI, Jenkins
 
-Feature
+Master should have stable and verified and re-releasable any moment code.
+
+| Branch  | Branch name          | Environment         | Artifacts published                    | Tag     |
+|---------|----------------------|---------------------|----------------------------------------|---------|
+| feature | feature/xxxxxxxxxxxx | -                   | -                                      | -       |
+| develop | develop              | dev, test           | snapshot software and snapshot reports | -       |
+| release | release/1.0.0        | dev, test, pre-live | -                                      | -       |
+| master  | master               | live                | release software and release reports   | created |
+
+#### Stages
+
+1. **Inspection** verifies build environment requirements (OS, Java, node, npm versions, existence, ...).
+2. **Preparation** prepares (installs) build environment settings, tool, software, components.
+3. **Build** builds main software and verifies code - test coverages, code inspections...
+4. **Publish** uploads artifacts (to file servers, storage, artifactory, ...).
+5. **Deploy** installs (published) software on environment.
+
+NB! We consider artifact re-creation from source as low level or too small risk. We don't use same built artifacts for
+dev, test, pre-live and live. We put more effort into inspection and build verification stages, to lover risk, that
+packages are created differently in different branches. In most cases we are using specific Java Docker images with
+concrete version and maven is used by wrapper (also concrete version). Same JDK and maven should produce same results.
+Possibility that it's not so, is too small.
+
+QA **manual tests** are executed on **development** branch.
+
+#### Feature
 
 ![feature](../../../../resources/images/jenkinsfile-starter/feature_something.png)
 
-Develop
+#### Develop
 
 ![develop](../../../../resources/images/jenkinsfile-starter/develop.png)
 
-Release
+#### Release
 
 ![release](../../../../resources/images/jenkinsfile-starter/release_1.0.0.png)
 
-Master
+#### Master
 
 ![master](../../../../resources/images/jenkinsfile-starter/master.png)
 
