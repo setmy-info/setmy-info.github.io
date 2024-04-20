@@ -46,7 +46,7 @@ openssl x509 -inform der -in ./my.der -outform pem -out my.pem
 
 Become as CA probably inside company.
 
-CA departement (usally IT departement or IT sup departement)
+CA department (usually IT department or IT sup department)
 should generate **private key**:
 
 ```sh
@@ -60,14 +60,15 @@ openssl rsa -in /usr/local/share/certs/CA.priv.key -pubout -out /usr/local/share
 ```
 
 Creates **certificate request** (.csr) for CA to sign certificate
-(Fill questions: EE, Harju, Tallinn, Private Company LLC, CA departement, Peeter Meeter, peeter.meeter@trump.com, 1234,
+(Fill questions: EE, Harjumaa, Tallinn, Private Company LLC, CA department, Peeter Meeter, peeter.meeter@trump.com,
+1234,
 Private Company LLC).
 
 ```
 openssl req -new -key /usr/local/share/certs/CA.priv.key -out /usr/local/share/certs/CA.csr
 ```
 
-Create **signed certificate** signed by third-party (parent CA) or by CA departement as self signed (currently self
+Create **signed certificate** signed by third-party (parent CA) or by CA department as self-signed (currently self
 signing):
 
 ```sh
@@ -76,11 +77,11 @@ openssl x509 -req -days 2048 -in /usr/local/share/certs/CA.csr -signkey /usr/loc
 
 Now CA departement have root signed certificate.
 
-### Requestor
+### Requester
 
 To have certificates for organization other departements, IT infrastructure systems need to do following.
 
-Sub-departement creates **private key** for them selves (for some IT systems, services):
+Sub-department creates **private key** for themselves (for some IT systems, services):
 
 ```sh
 openssl genrsa -out /usr/local/share/certs/RQ.priv.key 2048
@@ -92,17 +93,13 @@ Sub-departement creates **public key**
 openssl rsa -in /usr/local/share/certs/RQ.priv.key -pubout -out /usr/local/share/certs/RQ.pub.key
 ```
 
-Sub-departement creates **certification request** (Fill questions: EE, Harju, Tallinn, Private Company LLC, RQ
-departement, Donald Trump, donald.trump@trump.com, 1234, Private Company LLC):
+Sub-department creates **certification request** (Fill questions: EE, Harju, Tallinn, Private Company LLC, RQ
+department, Donald Trump, donald.trump@trump.com, 1234, Private Company LLC):
 
 ```sh
-openssl req -new -key /usr/local/share/certs/RQ.priv.key -out /usr/local/share/certs/RQ.csr
+DOMAIN_NAME_SUFFIX=example.com
+openssl req -new -key /usr/local/share/certs/RQ.priv.key -addext "keyUsage=critical,digitalSignature,keyEncipherment" -addext "subjectAltName=DNS:*.${DOMAIN_NAME_SUFFIX},DNS:${DOMAIN_NAME_SUFFIX}" -out /usr/local/share/certs/RQ.csr
 ```
-
-Probably by case have to add following options:
-
-* **-addext "keyUsage=critical"**
-* **-addext "subjectAltName = DNS:${DOMAIN_NAME}"**
 
 ### CA departement
 

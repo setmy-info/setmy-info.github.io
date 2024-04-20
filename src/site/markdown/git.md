@@ -250,3 +250,4 @@ external = git-meld
 [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
 [GitLab flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 [Trunk based development](https://trunkbaseddevelopment.com/)
+https://m.youtube.com/watch?v=aolI_Rz0ZqY

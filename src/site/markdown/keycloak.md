@@ -21,3 +21,5 @@
 ## See also
 
 [Home page](https://www.keycloak.org/)
+https://wjw465150.gitbooks.io/keycloak-documentation/content/server_admin/topics/realms/themes.html
+https://www.baeldung.com/keycloak-custom-login-page
