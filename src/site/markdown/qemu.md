@@ -10,6 +10,7 @@
 dnf group list --available
 sudo dnf groupinstall -y "Server with GUI" "Virtualization Host"
 sudo dnf install qemu-kvm qemu-img libvirtd libvirt virt-manager virt-install virt-viewer libvirt-client
+sudo usermod -aG libvirt $(whoami)
 lsmod | grep kvm
 sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
