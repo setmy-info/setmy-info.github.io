@@ -57,7 +57,7 @@ Is reinventing the wheel smart process? Probably better is to take some existing
 something with or by similar meaning and start apply that. Getting back old good and mature (in time approved) quality.
 Not doing that looks stupid to me.
 
-## Topicless
+## Topic-less
 
 In OOP we have compile-time checks. But runtime we have also libs/frameworks for data
 validations. Summa summarum is null at that point, but FP loss at compile time types checking. FP you can pass in code
