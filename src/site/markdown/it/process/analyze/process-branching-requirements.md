@@ -2,7 +2,7 @@
 
 ## Developers
 
-1. Fewer branches to remember, and which is base branch (max 3 branches). Reason: Developer can produce many branches at
+1. Fewer branches to remember. And which is base branch (max 3 branches). Reason: Developer can produce many branches at
    development for refactor, adding tests, etc. And one change needed between different tasks. Branching-merging order
    hell.
 2. Fast merge - max 2 hours (because of point 1).
