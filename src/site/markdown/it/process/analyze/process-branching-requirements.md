@@ -15,4 +15,4 @@
 
 1. Should be possible to add new requirements and bug fixes constantly by wish and need. Enhancements adding should not
    stop.
-2. Enhancements should be added in any order.
+2. Enhancements should be released in any order.
