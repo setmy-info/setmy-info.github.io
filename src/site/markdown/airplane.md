@@ -26,6 +26,10 @@ Key points
 
 ## Terminology
 
+**Canopy** - varikatus
+**Canopy jettison lever** -
+**Yaw string** -
+
 ## See also
 
 * [Gliding World](https://gliding.world/)
