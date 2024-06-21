@@ -6,6 +6,8 @@
    development for refactor, adding tests, etc. And one change needed between different tasks. Branching-merging order
    hell.
 2. Fast merge - max 2 hours (because of point 1).
+3. Constant refactoring have to be made, unless Business point 1. That means, current point is relevant until hou have
+   possibility to stop enhancements adding **at least** for 1 month (what ever it takse to refactor - 6 months?).
 
 ## QA
 
@@ -16,3 +18,13 @@
 1. Should be possible to add new requirements and bug fixes constantly by wish and need. Enhancements adding should not
    stop.
 2. Enhancements should be released in any order.
+
+## Environment
+
+1. Should be auto deployed to dev, test automatically and pre-live, live by user interaction.
+2. Developer should get constant and full (all automatic tests are executed) feedback for task under development.
+
+## Process
+
+1. In issue management item should get correct status by process.
+2. Process have to be followed.

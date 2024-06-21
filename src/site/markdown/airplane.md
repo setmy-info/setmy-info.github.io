@@ -4,6 +4,26 @@
 
 ### Sailplane, Glider
 
+#### Parts
+
+* Nose
+* Cockpit
+* Canopy
+    * Control Stick
+    * Rudder pedals
+    * Instruments
+        * Airspeed indicator
+        * Yaw string
+* Wings (Left Wing, Right Wing)
+    * Left Aileron
+    * Right Aileron
+* Fuselage - Body
+* Tail
+    * Fin
+    * Rudder
+    * Tailplane
+        * Elevator
+
 #### Controls
 
 Key points
@@ -17,6 +37,14 @@ Key points
 |           | Right aileron Up       | Right aileron Down       |                                 |                                    |                   |
 | Nose      | Left (Push left pedal) | Right (Push right pedal) | Yaw / Teekonna(suuna) juhitavus | Rudder / Pöördetüür                | Vertical axis     |
 |           | Rudder left            | Rudder right             |                                 |                                    |                   |
+
+* Roll Glider - stick to left or right and center it, little back pressure, to hold nose up (?), same side pedals
+  pressure.
+    * Stick to one side, to get angle of bank
+    * Same side pedal, to get Yaw string right
+    * Centralize stick (?)
+    * Little back pressure to hold nose up, hold turning
+    * Back to another side with pedal to exit
 
 #### Safety assessment and safety tips
 
