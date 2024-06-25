@@ -70,7 +70,20 @@ Key points
     * Little back pressure to hold nose up, hold turning
     * Back to another side with pedal to exit
 
+#### Distance
+
+1NM = 1852m = 1,852km = 6076,115 feet = 1/60 degrees
+
+#### Speed
+
+1km/h = 1/1,852 = 0,54knots (nmph)
+2km/h           ≈ 1knot
+10km/h          = 5,4knot
+100km/h         = 54knot
+
 #### Safety assessment and safety tips
+
+* Low level speed
 
 #### Self assessment
 
@@ -88,3 +101,5 @@ Key points
 * [Lennuk](https://et.wikipedia.org/wiki/Lennuk)
 * [](https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/gliders-sailplanes/)
 * [](https://members.gliding.co.uk/wp-content/uploads/sites/3/2015/04/1430312139_marianne201b.pdf)
+* [](https://www.youtube.com/@PureGlide)
+* [](https://www.youtube.com/@IgorVolkov)
