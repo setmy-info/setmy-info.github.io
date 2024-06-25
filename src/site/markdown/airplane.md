@@ -7,22 +7,46 @@
 #### Parts
 
 * Nose
+    * Total pressure tube
 * Cockpit
+    * Yaw string
+    * Slip indicator
+    * Airspeed indicator
+    * Altimeter
+    * Pneumatic variometer
+    * Electric variometer
+    * Compass
+    * Turn & bank indicator
+    * Radio
+    * Transponder
+    * FLARM
+    * Rudder pedals
+    * Control stick
+    * Airbrakes lever
+    * Trim lever
+    * Canopy locking lever
+    * Canopy jettison lever
 * Canopy
     * Control Stick
     * Rudder pedals
     * Instruments
         * Airspeed indicator
         * Yaw string
-* Wings (Left Wing, Right Wing)
+* Wings (Left/Port Wing, Right/Starboard Wing)
+    * Flap
     * Left Aileron
     * Right Aileron
+    * Airbrake (spoler?)
+    * Winglet
 * Fuselage - Body
+    * Static pressure port
 * Tail
-    * Fin
-    * Rudder
-    * Tailplane
+    * Fin (Vertical fin | stabilizer)
+        * Rudder
+    * Tailplane (Horizontal tail | stabilizer)
         * Elevator
+    * Tail wheel
+    * Total energy pressure probe
 
 #### Controls
 
@@ -62,3 +86,5 @@ Key points
 
 * [Gliding World](https://gliding.world/)
 * [Lennuk](https://et.wikipedia.org/wiki/Lennuk)
+* [](https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/gliders-sailplanes/)
+* [](https://members.gliding.co.uk/wp-content/uploads/sites/3/2015/04/1430312139_marianne201b.pdf)

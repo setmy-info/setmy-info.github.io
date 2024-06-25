@@ -5,7 +5,8 @@
 1. Fewer branches to remember. And which is base branch (max 3 branches). Reason: Developer can produce many branches at
    development for refactor, adding tests, etc. And one change needed between different tasks. Branching-merging order
    hell.
-2. Fast merge - max 2 hours (because of point 1).
+2. Fast merge - max 2 hours (because of point 1). Problem: developers can produce 5-10 PR in a day, with proper refactor
+   habits, but developer can handle 2 PR at the same time.
 3. Constant refactoring have to be made, unless Business point 1. That means, current point is relevant until hou have
    possibility to stop enhancements adding **at least** for 1 month (what ever it takse to refactor - 6 months?).
 
