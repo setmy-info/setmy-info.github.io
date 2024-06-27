@@ -42,9 +42,9 @@
     * Nose-mounted towhook (for aerotow)
     * Skid or/and Fixed/Retractable main wheel
 * Tail
-    * Fin (Vertical fin | stabilizer)
+    * Fin (Vertical fin/stabilizer)
         * Rudder
-    * Tailplane (Horizontal tail | stabilizer)
+    * Tailplane (Horizontal tail/stabilizer)
         * Elevator
             * Trim tabs
     * Tail wheel
