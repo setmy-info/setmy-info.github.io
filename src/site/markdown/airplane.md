@@ -8,43 +8,45 @@
 
 * Nose
     * Total pressure tube
+    * Nose wheel
 * Cockpit
-    * Yaw string
-    * Slip indicator
-    * Airspeed indicator
-    * Altimeter
-    * Pneumatic variometer
-    * Electric variometer
-    * Compass
-    * Turn & bank indicator
-    * Radio
-    * Transponder
-    * FLARM
-    * Rudder pedals
-    * Control stick
-    * Airbrakes lever
-    * Trim lever
-    * Canopy locking lever
-    * Canopy jettison lever
-* Canopy
-    * Control Stick
-    * Rudder pedals
     * Instruments
+        * Slip indicator
         * Airspeed indicator
-        * Yaw string
+        * Altimeter
+        * Pneumatic and Electric variometer
+        * Compass
+        * Turn & bank indicator
+        * Radio
+        * Transponder
+        * FLARM
+        * Rudder pedals
+        * Control stick
+        * Airbrakes lever
+        * Trim lever
+        * Canopy locking lever
+        * Canopy jettison lever
+* Canopy
+    * Yaw string
 * Wings (Left/Port Wing, Right/Starboard Wing)
     * Flap
     * Left Aileron
     * Right Aileron
-    * Airbrake (spoler?)
+    * Airbrake / Dive brake (increase drag)
+    * Spoiler (spoil airflow over wing)
     * Winglet
+    * Wingtip skid or/and Wingtip wheel
 * Fuselage - Body
     * Static pressure port
+    * CG towhook (for ground launch)
+    * Nose-mounted towhook (for aerotow)
+    * Skid or/and Fixed/Retractable main wheel
 * Tail
     * Fin (Vertical fin | stabilizer)
         * Rudder
     * Tailplane (Horizontal tail | stabilizer)
         * Elevator
+            * Trim tabs
     * Tail wheel
     * Total energy pressure probe
 
@@ -72,18 +74,24 @@ Key points
 
 #### Distance
 
-1NM = 1852m = 1,852km = 6076,115 feet = 1/60 degrees
+* 1NM = 1852m = 1,852km = 6076,115 feet = 1/60 degrees
+* 1km = 0,54NM = 3281feet
+* 1 feet = 0,3048m=
+* 10 feet = 3,048m =
+* 100 feet = 30,48m =
+* 1000 feet = 304,8m = 0,165NM
+* 10000 feet= 4048m = 2,186NM
 
 #### Speed
 
-1km/h = 1/1,852 = 0,54knots (nmph)
-2km/h           ≈ 1knot
-10km/h          = 5,4knot
-100km/h         = 54knot
+* 1km/h = 1/1,852 = 0,54knots (nmph)
+* 2km/h ≈ 1knot
+* 10km/h = 5,4knot
+* 100km/h = 54knot
 
 #### Safety assessment and safety tips
 
-* Low level speed
+* Hold speed up at low level (80% fatalities at low level stall spin)
 
 #### Self assessment
 
@@ -99,7 +107,9 @@ Key points
 
 * [Gliding World](https://gliding.world/)
 * [Lennuk](https://et.wikipedia.org/wiki/Lennuk)
-* [](https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/gliders-sailplanes/)
-* [](https://members.gliding.co.uk/wp-content/uploads/sites/3/2015/04/1430312139_marianne201b.pdf)
-* [](https://www.youtube.com/@PureGlide)
-* [](https://www.youtube.com/@IgorVolkov)
+* [Gliders, Sailplanes](https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/gliders-sailplanes/)
+* [Marianne 201b](https://members.gliding.co.uk/wp-content/uploads/sites/3/2015/04/1430312139_marianne201b.pdf)
+* [@PureGlide](https://www.youtube.com/@PureGlide)
+* [@IgorVolkov](https://www.youtube.com/@IgorVolkov)
+* [Instruments video](https://www.youtube.com/watch?v=G5WHFwiPkxc)
+* [Glider Handbook](https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/glider_handbook)
