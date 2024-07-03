@@ -175,6 +175,11 @@ pg_dumpall -U postgres > all.backup
 
 # Remotelly
 pg_dump -U username -h remote_ip_address -p remote_port database_name > backup_file
+
+pg_dump -U postgres -h localhost -p 5432 -F c -d database_name -f database_name.pgdump
+-- create DB
+-- set DB credentials
+pg_restore -U postgres -h localhost -p 5432 -d database_name -1 database_name.pgdump
 ```
 
 Restore
