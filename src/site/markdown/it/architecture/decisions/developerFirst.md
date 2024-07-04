@@ -7,5 +7,7 @@ Examples:
 * NOT developer first: **mvn -Ddeveloper_should_set_value=true clean install**
 * Developer first: **mvn clean install**
 
-First one should be documented (additona work), then learned by newcomers. Different module can have different setup, therefore more writing and learning.
-Second one doesnt need documenting (it is docmented by others, externals, by maven develpers). Newcomers probably knows already maven. Less to remember.
+First one should be documented (additona work), then learned by newcomers. Different module can have different setup,
+therefore more writing and learning.
+Second one doesnt need documenting (it is docmented by others, externals, by maven develpers). Newcomers probably knows
+already maven. Less to remember.

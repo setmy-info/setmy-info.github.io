@@ -16,7 +16,8 @@
 
 ## Usage, tips and tricks
 
-If SELinux doesn't allow to "share" at that location files. Use SELin tools for probes, to [switch off](selinux.md) selinux etc.
+If SELinux doesn't allow to "share" at that location files. Use SELin tools for probes, to [switch off](selinux.md)
+selinux etc.
 
 ```shell
 ls -Z /tank

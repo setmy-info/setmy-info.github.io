@@ -46,7 +46,6 @@ sudo zpool status gintra
 
 Check disk to use
 
-
 ```
 lsblk
 ```

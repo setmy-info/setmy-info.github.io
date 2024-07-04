@@ -79,9 +79,11 @@ kulud).
 
 **Responsive design*** - seadmetundlik disain.
 
-**Ubiquitous language** - (Üldkasutatav keel) using a common, shared vocabulary and terms, those can be understood by technical and non-technical team members (developers, domain experts, and stakeholders).
+**Ubiquitous language** - (Üldkasutatav keel) using a common, shared vocabulary and terms, those can be understood by
+technical and non-technical team members (developers, domain experts, and stakeholders).
 
-**pure function** - no side effects (no mutation of local static variables, non-local variables, mutable reference arguments or input/output streams), idempotent, no mutable variables.
+**pure function** - no side effects (no mutation of local static variables, non-local variables, mutable reference
+arguments or input/output streams), idempotent, no mutable variables.
 
 https://www.dataprise.com/it-glossary
 

@@ -23,7 +23,6 @@
 
     rabbitmq-plugins enable rabbitmq_mqtt
 
-
 ### Fedora
 
 ### FreeBSD

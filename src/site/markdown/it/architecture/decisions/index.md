@@ -46,6 +46,13 @@ Instead:
 - configure by documentation
 - start working
 
+### IDE
+
+* IntelliJ (Java + others)
+* PyCharm (Python)
+* CLion (C/C++)
+* NetBeans (Java, C/C++)
+
 ### Docker
 
     Images should based on developers maschines.
@@ -55,7 +62,7 @@ Instead:
 
 ### Linux
 
-In priority order (higher to lower): CentOS, Fedora linux, Debian
+In priority order (higher to lower): Rocky, Fedora linux, CentOS, Debian
 
 Follow FHS: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
 
@@ -129,6 +136,7 @@ Smart devices and PC:
 
 ### DB
 
+* H2
 * PostgreSQL/Postgis
     * Tools: Liquibase
 * MongoDB
