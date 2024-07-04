@@ -13,7 +13,7 @@ Learning project ideas
 * antlr Java, Groovy, XML, JSON, (Ba)sh, Markdown PoC.
 * Documentation piece stealer (by doc piece address, URI) and new doc assempler. Java DTO model.
 * Handwriting HTML drawing canvas library. Plugin/handler extendable. Handlet.
-* Estonina XBLR building from XSD. Research PoC needed.
+* Estonian XBLR building from XSD. Research PoC needed.
 * Content server API. Needs stealer to be finished. Or maven archetype plugin to generate projects (spring boot
   template).
 * Maven archetype plygin project PoC. To generate new maven project. Templating engine decision must be made.
@@ -35,6 +35,7 @@ Learning project ideas
 * Mini inventory/storage accounting software
 * Mini crm software.
 * Mini HR software.
+* Quiz form.
 
 ## See also
 
