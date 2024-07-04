@@ -2,7 +2,7 @@
 
 ## List
 
-Learining project ideas
+Learning project ideas
 
 * Stealer Java library and CLI to finish. Git Java lib enhancements have to be made, to use Git Java library (JGit).
 * Lombok and maven plugin: JSON model to a) JPA ORM model generation. Templating engine decision. b) DAO/Repository
