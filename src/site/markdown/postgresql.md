@@ -120,6 +120,9 @@ DROP TABLE IF EXISTS table1, table2 CASCADE;
 
 DROP SEQUENCE IF EXISTS sequence1, sequence2 CASCADE;
 
+
+SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name   = 'table_name';
+
 \ds
 \du
 ```
