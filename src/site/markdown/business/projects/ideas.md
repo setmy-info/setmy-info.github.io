@@ -34,8 +34,10 @@ Learning project ideas
 * Mini accounting software.
 * Mini inventory/storage accounting software
 * Mini crm software.
-* Mini HR software.
+* Mini HR software. Like Bob. Vacations, ill, holidays, etc.
 * Quiz form.
+* Mini Scrum board.
+* HTML, Native JS and Angular Calendar Component.
 
 ## See also
 
