@@ -38,6 +38,9 @@ Learning project ideas
 * Quiz form.
 * Mini Scrum board.
 * HTML, Native JS and Angular Calendar Component.
+* PoC: WebRTC (?) - take USB/Webcam picture, mobile cam picture.
+* PoC: Video file (mpg4) get frame  by frame from stream for processing (save picture to jpg/png). Java, C/C++.
+* PoC: LAS/LAS parser and transformer into binary propertary format.
 
 ## See also
 
