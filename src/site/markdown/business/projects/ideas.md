@@ -25,6 +25,7 @@ Learning project ideas
 * Public web pages scraping modules. Text parsing to PostGis (text geometry on page).
 * SMI scripts upgrade, add Liquibase command (smi-liquibase) to change PosgreSQL and/or H2 file DB. Driver, script dir,
   entry, db, host, user, password.
+* smi-install-package etc to Windows
 * Person names (first, last, middle etc), email, username faker/tokenizer API.
 * GDPR ruleset API and web APP for web page and company data usage terms.
 * Web3 related modules. Research PoC needed.
@@ -41,6 +42,9 @@ Learning project ideas
 * PoC: WebRTC (?) - take USB/Webcam picture, mobile cam picture.
 * PoC: Video file (mpg4) get frame  by frame from stream for processing (save picture to jpg/png). Java, C/C++.
 * PoC: LAS/LAS parser and transformer into binary propertary format.
+* PoC: NSIS example. CMake ?
+* PoC: e-Bills
+* PoC: SMS payments
 
 ## See also
 
