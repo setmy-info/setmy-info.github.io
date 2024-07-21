@@ -18,6 +18,45 @@
 
 ### Coding tips and tricks
 
+sudo nano /etc/systemd/system/infinispan.service
+
+```
+[Unit]
+Description=Infinispan Server
+After=network.target
+
+[Service]
+ExecStart=/opt/infinispan/bin/server.sh
+User=infinispan
+Group=infinispan
+Restart=always
+Environment=JAVA_HOME=/opt/jdk
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo useradd infinispan --shell /sbin/nologin --no-create-home
+sudo chown infinispan:infinispan -R /opt/infinispan/
+sudo firewall-cmd --add-port=57800/tcp --permanent
+sudo firewall-cmd --add-port=11222/tcp --permanent
+sudo firewall-cmd --reload
+# cli.sh changes needet to force to use JAVA as /opt/jdk/bin/java
+sudo bin/cli.sh user create admin -p changeme -g admin
+sudo systemctl enable infinispan
+sudo systemctl start infinispan
+```
+
+```xml
+      <interfaces>
+         <interface name="public">
+            <!--inet-address value="${infinispan.bind.address:127.0.0.1}"/-->
+            <inet-address value="${infinispan.bind.address:0.0.0.0}"/>
+         </interface>
+      </interfaces>
+```
+
 ## See also
 
 [Home page](https://infinispan.org/)

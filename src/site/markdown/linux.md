@@ -71,6 +71,10 @@ Mirroring and delete files in destination folder, when thery are not in source f
 rsync -av --delete --exclude 'exclude.file.txt' ./source/ ./destination/
 ```
 
+```
+sudo useradd NEW_USER --shell /sbin/nologin --no-create-home
+```
+
 ## See also
 
-    [xxxx](http://yyyyy)
+[xxxx](http://yyyyy)
