@@ -20,6 +20,13 @@ sudo systemctl status postgresql-16
 sudo rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
 sudo dnf install pgadmin4
 
+sudo dnf -y install epel-release
+sudo dnf -y config-manager --set-enabled PowerTools
+sudo dnf config-manager --enable crb
+sudo crb enable
+sudo dnf -y install postgis34_16
+sudo systemctl restart postgresql-16
+
 sudo su - postgres
 ```
 
@@ -31,7 +38,15 @@ sudo su - postgres
             ALTER USER postgres WITH PASSWORD 'supersecretpassword';
             \q
 
-In: /var/lib/pgsql/16/data pg_hba.conf and postgresql.conf
+In: /var/lib/pgsql/16/data pg_hba.conf
+
+    host    all             all             10.0.0.0/8            scram-sha-256
+
+and postgresql.conf
+
+    listen_addresses = '*'			# what IP address(es) to listen on;
+
+And
 
     systemctl restart postgresql-16
     systemctl reload postgresql-16
@@ -55,13 +70,13 @@ sysrc postgresql_enable=YES
 
 ```sh
 cd /var/db/postgres
-nano ~/data14/pg_hba.conf
+nano ~/data16/pg_hba.conf
 #host    all         all         10.0.0.0/8      md5
 ```
 
 ```sh
 cd /var/db/postgres
-nano ~/data14/postgresql.conf
+nano ~/data16/postgresql.conf
 #listen_addresses = '*'
 ```
 

@@ -22,6 +22,15 @@
 		Drfault login (localhost only): guest:guest
 
     sudo rabbitmq-plugins enable rabbitmq_mqtt
+    sudo rabbitmqctl add_user admin parool
+    sudo rabbitmqctl set_user_tags admin administrator
+    sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+    sudo rabbitmqctl add_vhost dev
+    sudo rabbitmqctl add_vhost test
+    sudo rabbitmqctl add_vhost prelive
+    sudo rabbitmqctl add_vhost live
+    sudo rabbitmqctl list_feature_flags
+
 
 ### Fedora
 
