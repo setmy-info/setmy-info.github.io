@@ -21,7 +21,7 @@
 	sudo rabbitmq-plugins enable rabbitmq_management
 		Drfault login (localhost only): guest:guest
 
-    rabbitmq-plugins enable rabbitmq_mqtt
+    sudo rabbitmq-plugins enable rabbitmq_mqtt
 
 ### Fedora
 
