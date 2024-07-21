@@ -10,6 +10,7 @@
 sudo dnf install -y bind bind-utils
 sudo systemctl enable named
 sudo systemctl start named
+sudo systemctl status named
 sudo firewall-cmd --zone=trusted --add-source=10.0.0.0/8 --permanent
 sudo firewall-cmd --zone=trusted --add-service=ssh --permanent
 sudo firewall-cmd --zone=trusted --add-service=dns --permanen

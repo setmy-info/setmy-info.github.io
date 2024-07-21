@@ -8,6 +8,8 @@
 sudo dnf install dhcp-server -y
 sudo firewall-cmd --add-port=67/udp --permanent
 sudo firewall-cmd --reload
+sudo systemctl enable dhcpd
+sudo systemctl start dhcpd
 sudo systemctl status dhcp-server
 ```
 

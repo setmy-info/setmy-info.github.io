@@ -13,8 +13,6 @@ git init --bare my-project.git
 Set and check name and email for git.
 
 ```shell
-git config --global init.defaultBranch master
-
 git config --global user.name "Imre Tabur"
 
 git config --global user.email imre.tabur@mail.ee
@@ -25,7 +23,7 @@ git config --global user.name
 
 git config --global --add --bool push.autoSetupRemote true
 
-git config --global init.defaultBranch main
+git config --global init.defaultBranch master
 
 git config --global url."https://github.com/".insteadOf "git@github.com:"
 
