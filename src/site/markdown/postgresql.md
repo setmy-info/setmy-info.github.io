@@ -123,12 +123,11 @@ ALTER DATABASE xyz_ci OWNER TO ciliquibase;
 ALTER DATABASE xyz_prelive OWNER TO preliveliquibase;
 ALTER DATABASE xyz_live OWNER TO liveliquibase;
 
-# TODO : correct rights and correct user
-grant all privileges on database dev to devliquibase;
-grant all privileges on database test to testliquibase;
-grant all privileges on database ci to ciliquibase;
-grant all privileges on database prelive to preliveliquibase;
-grant all privileges on database live to liveliquibase;
+GRANT ALL PRIVILEGES ON DATABASE xyz_dev TO devliquibase;
+GRANT ALL PRIVILEGES ON DATABASE xyz_test TO testliquibase;
+GRANT ALL PRIVILEGES ON DATABASE xyz_ci TO ciliquibase;
+GRANT ALL PRIVILEGES ON DATABASE xyz_prelive TO preliveliquibase;
+GRANT ALL PRIVILEGES ON DATABASE xyz_live TO liveliquibase;
 
 COPY "tablename" (col1, col2) FROM STDIN WITH (FORMAT CSV, DELIMITER ',', HEADER true)
 
