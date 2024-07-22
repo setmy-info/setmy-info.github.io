@@ -20,8 +20,8 @@
     another task, in CLI tool development task. CLI tool is not current task goal.
 14. Good enough (unit tests) test coverage is 70%.
 15. Integration tests should prove, that library is working.
-16. First solution can have external command calling (Linux only). Existing scripts and other **multi-projects**
-    libraries should be used.
+16. First solution can have external command calling (Linux only). Existing scripts in **setmy-info-scripts** and other
+    **multi-projects** libraries should be used.
 
 ## Goal description
 
