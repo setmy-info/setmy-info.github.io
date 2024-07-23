@@ -62,7 +62,7 @@ needed in some projects and need to grab them. So need to have system, that can 
 subdirectory where to take these, and what changes should be applied. And after that software is built with these
 changed code parts into int. So, "steal" code parts from here ant here, and there, put together and ready to build or
 use. Good to have library module for that and also CLI tool or maven plugin, that executes at
-[generate-sources](https://setmy-info.github.io/src/site/markdown/it/process/scrum/backlog/stealer-backlog.html) phase.
+[generate-sources](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#default-lifecycle) phase.
 
 ## Ready
 
