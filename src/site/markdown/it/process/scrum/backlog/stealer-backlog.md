@@ -42,6 +42,7 @@
 19. In meta/allegorical language: [{ url, branch, subdirectory }, {...}]
 20. What is best order: clone, cleanup, subfolder prepare, patch or by request object - order and implementation
     developer decision.
+21. Latest **IntelliJ** default formatted.
 
 ## Goal description
 
@@ -62,7 +63,8 @@ needed in some projects and need to grab them. So need to have system, that can 
 subdirectory where to take these, and what changes should be applied. And after that software is built with these
 changed code parts into int. So, "steal" code parts from here ant here, and there, put together and ready to build or
 use. Good to have library module for that and also CLI tool or maven plugin, that executes at
-[generate-sources](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#default-lifecycle) phase.
+[generate-sources](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#default-lifecycle)
+phase.
 
 ## Ready
 
