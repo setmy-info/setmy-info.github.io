@@ -1,8 +1,6 @@
 # Stealer backlog
 
-## Offer
-
-### Skills
+## Skills
 
 1. Linux
 2. Java
@@ -12,12 +10,10 @@
 6. git, diff (optional), patch and sed commands
 7. Understanding singleton pattern, in pure Java
 
-### Software development services expected
+## Software development services expected
 
 1. Data class models and service implementation
 2. Demo: Unit and integration tests as proof
-
-####
 
 ## Detailed prerequisites and requirements
 
