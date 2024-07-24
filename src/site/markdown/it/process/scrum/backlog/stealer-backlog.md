@@ -43,6 +43,7 @@
 20. What is best order: clone, cleanup, subfolder prepare, patch or by request object - order and implementation
     developer decision.
 21. Latest **IntelliJ** default formatted.
+22. All rights to code goes to buyer. Software goes public under MIT license.
 
 ## Goal description
 
