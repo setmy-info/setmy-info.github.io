@@ -44,6 +44,7 @@
     developer decision.
 21. Latest **IntelliJ** default formatted.
 22. All rights to code goes to buyer. Software goes public under MIT license.
+23. The work is done under a contractor agreement, not an employment contract.
 
 ## Goal description
 
