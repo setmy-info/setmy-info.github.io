@@ -1,26 +1,21 @@
 # Stealer backlog
 
+## Skills
+
+1. Linux
+2. CMake
+3. Bourne shell
+
+## Software development services expected
+
+Development and production helpers shell scripts writing and building with CMake, make and rpmbuild.
+Different software domains have scripts under submodules/folders in single repo.
+
 ## Prerequisites and requirements
 
 1. Repository: **git@xxxx** in [GitHub](https://github.com/xxxxxxxx)
 2. Branch: **develop | master | epic**
-3. **Java 21** (OpenJDK) or **multi-projects** property **java.version**
-4. Modules to development: **java-vcs**, **java-staler**
-5. **Lombok**, **JUnit 5**, **Mockito**, **AssertJ** and modules dependencies only.
-6. Prepare(d), fix and change repo A: **git@github.com:setmy-info/stealer-test-a.git**
-7. Prepare(d), fix and change repo B: **git@github.com:setmy-info/stealer-test-b.git**
-8. Stealer folder: **.stealer**  in working directory
-9. Latest **Rocky** or **Fedora** Linux. Should run also on **Windows**.
-10. **Unit tests** end with suffix **Test.java** and testable unit (under test) is method (function), other depending on
-    units should be mocked out - if needed leave units as package level access. Should not depend on files and DB-s.
-11. **Integration tests** end with suffix **IT.java** / can depend on files, config etc.
-12. Try to hold as much as possible immutable classes.
-13. No config files. Config related data model classes are populated by tests. Config parsing and populating is in
-    another task, in CLI tool development task. CLI tool is not current task goal.
-14. Good enough (unit tests) test coverage is 70%.
-15. Integration tests should prove, that library is working.
-16. First solution can have external command calling (Linux only). Existing scripts in **setmy-info-scripts** and other
-    **multi-projects** libraries should be used.
+3. All rights to code goes to buyer. Software goes public under MIT license.
 
 ## Goal description
 
@@ -41,14 +36,20 @@
 
 ## Draft
 
-1. Config ...
-2. Cloning ...
-3. Subfolder selection ...
-4. Cleanup apply ...
-5. Patch files apply ...
-6. Sed apply ...
-7. ...
-8. ...
-9. ...
-10. ...
-11. ...
+1. ...
+2. ...
+3. ...
+4. ...
+5. ...
+6. ...
+
+1. Prepare folder structure (like modulith) in monorepo for different software component areas (submodules)
+2. Prepare CMake files as done for other similar submodules
+3. Fix the Bourne shell scripts where variable assignment using command output occurs
+4. Make build and build output rpm installation should install software correctly
+
+1. Submodules are: xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx,
+   xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx, xxxxx
+2. Example sub modules are: xxxxx, xxxxx, xxxxx
+2. All similar ETC_LOCATION=`smi-localhost-location` should be changed to ETC_LOCATION=$(smi-localhost-location)
+5. Only folder structure preparation, no existing file moves needed.
