@@ -12,10 +12,11 @@
 
 ## Software development services expected
 
+3 times code reviews and fixes round.
+
 ## Deadline
 
 Withing few months. Best price proposal wins.
-3 times code reviews and fixes round.
 
 ...
 

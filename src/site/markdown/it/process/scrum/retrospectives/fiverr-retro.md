@@ -12,6 +12,11 @@ already postponed many years or decades.
 2. Developers there doesn't read task description through.
 3. Like to get long conversation.
 4. Like to get fast proposal.
+5. Proposed simple Java task, for (by profile) high level professionals, got rejection because missing knowledge
+6. Proposed simple Java task got over estimations. Looks like we should buy an air. Developers didn't read task, didn't
+   concentrate. 100% of them.
+7. None of professionals asked additional questions to understand task background in details. 100% of them.
+8. Developers there are not ready to learn.
 
 ## Positive
 
@@ -24,4 +29,7 @@ already postponed many years or decades.
 4. Time-consuming and arguing partners are not good partners - need to figure out quickly, by speech style, questions
    and lengthy conversation.
 5. Also, not good partner, who doesn't read requirements through.
-6. One 1:1 call needed (Google meet, Slack, Zoom) in the beginning, before price proposal approval
+6. One 1:1 call needed (Google meet, Slack, Zoom) in the beginning, before price proposal approval.
+7. Reject and ban fast.
+8. Rejection, send immediately new proposal out.
+

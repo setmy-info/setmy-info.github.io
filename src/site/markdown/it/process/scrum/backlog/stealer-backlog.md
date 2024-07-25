@@ -2,10 +2,10 @@
 
 ## Skills
 
-1. Linux
+1. Linux (Development on any OS)
 2. Java
 3. Maven
-4. Lombok
+4. Lombok (Optional, can be plain Java)
 5. Unit & Integration Testing with JUnit 5, Mockito and AssertJ
 6. git, diff (optional), patch and sed commands
 7. Understanding singleton pattern, in pure Java
@@ -15,6 +15,7 @@
 1. Data class models and service implementation
 2. Demo: Unit and integration tests as proof
 3. 3 times code reviews and fixes round
+4. Constant communication in Slack
 
 ## Deadline
 
@@ -22,7 +23,8 @@ Withing few months. Best price proposal wins.
 
 ## Detailed prerequisites and requirements
 
-1. Repository: **git@github.com:setmy-info/setmy.info.git** in [GitHub](https://github.com/setmy-info/setmy.info) as
+1. Setup not needed, buildable project is ready. Only coding.
+2. Repository: **git@github.com:setmy-info/setmy.info.git** in [GitHub](https://github.com/setmy-info/setmy.info) as
    **multi-projects** monorepo
 2. Branch: **develop**
 3. **Java 21** (OpenJDK) or **multi-projects** property **java.version**
@@ -51,6 +53,7 @@ Withing few months. Best price proposal wins.
 22. All rights to code goes to buyer. Software goes public under MIT license.
 23. The work is done under a contractor agreement, not an employment contract.
 24. No documentation required.
+25. Code should not be squashed.
 
 ## Goal description
 
