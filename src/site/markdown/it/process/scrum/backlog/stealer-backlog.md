@@ -55,6 +55,7 @@ Withing few months. Best price proposal wins.
 24. No documentation required.
 25. Code should not be squashed.
 26. Show us your code style. Github, GitLab, Bitbucket, ... anything you have made in Java.
+27. User stories should be ready to take in.
 
 ## Goal description
 
