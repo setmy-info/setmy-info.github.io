@@ -14,6 +14,11 @@
 
 1. Data class models and service implementation
 2. Demo: Unit and integration tests as proof
+3. 3 times code reviews and fixes round
+
+## Deadline
+
+Withing few months. Best price proposal wins.
 
 ## Detailed prerequisites and requirements
 
@@ -45,6 +50,7 @@
 21. Latest **IntelliJ** default formatted.
 22. All rights to code goes to buyer. Software goes public under MIT license.
 23. The work is done under a contractor agreement, not an employment contract.
+24. No documentation required.
 
 ## Goal description
 

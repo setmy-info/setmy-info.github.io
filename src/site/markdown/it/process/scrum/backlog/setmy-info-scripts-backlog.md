@@ -8,8 +8,13 @@
 
 ## Software development services expected
 
-Development and production helpers shell scripts writing and building with CMake, make and rpmbuild.
-Different software domains have scripts under submodules/folders in single repo.
+1. Development and production helpers shell scripts writing and building with CMake, make and rpmbuild.
+2. Different software domains have scripts under submodules/folders in single repo.
+3. 3 times code reviews and fixes round.
+
+## Deadline
+
+Withing few months. Best price proposal wins.
 
 ## Prerequisites and requirements
 
@@ -17,6 +22,7 @@ Different software domains have scripts under submodules/folders in single repo.
 2. Branch: **develop | master | epic**
 3. All rights to code goes to buyer. Software goes public under MIT license.
 4. The work is done under a contractor agreement, not an employment contract.
+5. No documentation required.
 
 ## Goal description
 
