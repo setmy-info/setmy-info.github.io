@@ -54,6 +54,7 @@ Withing few months. Best price proposal wins.
 23. The work is done under a contractor agreement, not an employment contract.
 24. No documentation required.
 25. Code should not be squashed.
+26. As prerequisite, show us your code style. Github, GitLab, Bitbucket, ... anything you have made jn Java.
 
 ## Goal description
 
