@@ -28,7 +28,7 @@ Withing few months. Best price proposal wins.
    **multi-projects** monorepo
 2. Branch: **develop**
 3. **Java 21** (OpenJDK) or **multi-projects** property **java.version**
-4. Modules to development: **java-vcs**, **java-staler**
+4. Modules to development: **java-vcs** (if need to change, probably not), **java-staler**
 5. **Lombok**, **JUnit 5**, **Mockito**, **AssertJ** and modules dependencies only.
 6. Prepare(d), fix and change repo A: **git@github.com:setmy-info/stealer-test-a.git**
 7. Prepare(d), fix and change repo B: **git@github.com:setmy-info/stealer-test-b.git**
@@ -37,25 +37,36 @@ Withing few months. Best price proposal wins.
 10. **Unit tests** end with suffix **Test.java** and testable unit (under test) is method (function), other depending on
     units should be mocked out - if needed leave units as package level access. Should not depend on files and DB-s.
 11. **Integration tests** end with suffix **IT.java** / can depend on files, config etc.
-12. Try to hold as much as possible immutable classes.
-13. No config files. Config related data model classes are populated by tests. Config parsing and populating is in
-    another task, in CLI tool development task. CLI tool is not current task goal.
-14. Good enough (unit tests) test coverage is 70%.
-15. Integration tests should prove, that library is working.
-16. First solution can have external command calling (Linux only). Existing scripts in **setmy-info-scripts** and other
+12. Try to hold as much as possible immutable classes [Lombok](../../../../lombok.md).
+13. No config files. Config related data model classes are populated by tests. Config (JSON, YAML) parsing and
+    populating is in another task, in CLI tool development task. **CLI tool is not current task goal.**
+14. ~~Good enough (unit tests) test coverage is 70%.~~
+15. Integration tests should prove, that library is working. Enough tests to prove positive flow (main functionality,
+    not so much corner cases, not so much error cases)
+16. Can have external command calling (Linux only). Existing scripts in **setmy-info-scripts** and other
     **multi-projects** libraries should be used.
-17. Mutation tests (optional) coverage is 70%.
-18. Apply clean code rules.
-19. In meta/allegorical language: [{ url, branch, subdirectory }, {...}]
+17. ~~Mutation tests (optional) coverage is 70%.~~
+18. ~~Apply clean code rules.~~ Use the closest code style.
+19. In meta/allegorical language:
+
+```
+{workingDir, [{ url, branch, subdirectory }, {...}]}
+```
+
 20. What is best order: clone, cleanup, subfolder prepare, patch or by request object - order and implementation
     developer decision.
-21. Latest **IntelliJ** default formatted.
+21. ~~Latest **IntelliJ** default formatted.~~
 22. All rights to code goes to buyer. Software goes public under MIT license.
 23. The work is done under a contractor agreement, not an employment contract.
 24. No documentation required.
 25. Code should not be squashed.
-26. Show us your code style. Github, GitLab, Bitbucket, ... anything you have made in Java.
+26. Show us your code style. GitHub, GitLab, Bitbucket, ... anything you have made in Java.
 27. User stories should be ready to take in.
+
+## Existing
+
+1. java-vcs with git cloning, checkout functionality. Example code exists.
+2. Maven wrapper. Build should go smoothly.
 
 ## Goal description
 
