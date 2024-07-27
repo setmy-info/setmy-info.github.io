@@ -68,6 +68,7 @@ Withing few months. Best price proposal wins.
 1. java-vcs with git cloning, checkout functionality. Example code exists.
 2. Maven wrapper. Build should go smoothly.
 3. A and B repos with content prepared.
+4. Command execution code is ready: Executor
 
 ## Goal description
 
