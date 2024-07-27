@@ -69,6 +69,7 @@ Withing few months. Best price proposal wins.
 2. Maven wrapper. Build should go smoothly.
 3. A and B repos with content prepared.
 4. Command execution code is ready: Executor
+5. Request and cloning part is ready.
 
 ## Goal description
 
@@ -103,12 +104,12 @@ phase.
 
 ## Draft
 
-1. As a library user I want to fill an immutable request/command object with multiple Git URLs (mandatory), each
+1. ~~As a library user I want to fill an immutable request/command object with multiple Git URLs (mandatory), each
    accompanied by a branch (optional) and a subdirectory (optional), so that I can later pass it to the service for
-   processing.
-2. As a library user I want to pass the request/command object to a service that performs git clone operations and
+   processing.~~
+2. ~~As a library user I want to pass the request/command object to a service that performs git clone operations and
    branch checkouts into a designated stealer directory, ensuring the directory
-   structure remains immutable. For example ./.stealer/clones/stealer-test-a
+   structure remains immutable. For example ./.stealer/clones/stealer-test-a~~
 3. As a library user I want the service to perform cleanup operations as specified by cleanup commands included in the
    request/command object, so that the output is organized, for example into: ./.stealer/cleaned/stealer-test-a,
    directly with subdirectory content, if specified.
