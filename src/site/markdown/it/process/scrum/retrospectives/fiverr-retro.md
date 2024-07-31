@@ -17,6 +17,7 @@ already postponed many years or decades.
    concentrate. 100% of them.
 7. None of professionals asked additional questions to understand task background in details. 100% of them.
 8. Developers there are not ready to learn.
+9. Developers possibly are under pressure, because results should not have any open problems there.
 
 ## Positive
 
@@ -32,4 +33,5 @@ already postponed many years or decades.
 6. One 1:1 call needed (Google meet, Slack, Zoom) in the beginning, before price proposal approval.
 7. Reject and ban fast.
 8. Rejection, send immediately new proposal out.
-
+9. Being as freelancer software developer I should dig into tasks, see the code, do quick dive into it. Ask questions.
+10. Also, not charge for learning. Take time for learning. Say out platforms, tools, components I'm not familiar with.
