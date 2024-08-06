@@ -5,6 +5,8 @@
 Learning project ideas
 
 * Stealer Java library and CLI to finish. Git Java lib enhancements have to be made, to use Git Java library (JGit).
+* Ideal domain model example for JPA/Hibernate for later implementation (1:1, 1:N, N:1, N:N) for JPA ORM model
+  generation, for documentation, discussions.
 * Lombok and maven plugin: JSON model to a) JPA ORM model generation. Templating engine decision. b) DAO/Repository
   generator c) model to DTO generation. d) Controller generator e) Services generator. f) Change applier. FreeMarker is
   default option.
@@ -19,7 +21,7 @@ Learning project ideas
   template).
 * Content Server Web application.
 * Maven archetype plugin project PoC. To generate new maven project. Templating engine decision must be made (Probably
-  FreeMarker or Thymeleaf). FreeMarker is NetBeans class generator.
+  FreeMarker vs Velocity or Thymeleaf). FreeMarker is NetBeans class generator.
 * Java Geometry library and PoC: combine objects operations.
 * Python .venv folder can it be under ~/.smi-python (for example) per module project (~/.smi-python/module-abc-xyz)
   directory name.
@@ -50,6 +52,11 @@ Learning project ideas
 * PoC: WASM
 * PoC: WASM + Kubernetes
 * Mini static web page generator
+* Generic protocol library (like workflow/process engine) - defined steps and flow steps to steps. Steps reading,
+  writing, deciding, counter. Tgread runs protocol, protocol contains steps, steps do collect data to model(s), protocol
+  has context, context is passed to steps, steps are for reading, writing, counting, incrementing. Protocol (steps flow)
+  is defined by config. Library user should implement "connection" code for steps, where or to data is set or taken. Or
+  config tels a variable name (in context/data collector).
 
 ## See also
 
