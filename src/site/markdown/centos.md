@@ -28,6 +28,13 @@ Install and enable EPEL repository
 ```sh
 dnf install epel-release
 dnf --enablerepo=epel group
+
+dnf config-manager --set-enabled crb
+dnf config-manager --set-enabled plus
+dnf config-manager --set-enabled rt
+dnf update
+# Video codecs
+dnf install gstreamer1-libav
 ```
 
 Some more tips
