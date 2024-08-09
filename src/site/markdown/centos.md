@@ -77,6 +77,24 @@ systemctl enable --now cockpit.socket
 
     sudo hostnamectl set-hostname HOSTNAE
 
+### Misc
+
+```shell
+sudo dnf list
+sudo dnf list installed
+sudo dnf list installed package-name\*
+sudo dnf repoquery -l package-name
+sudo dnf repoquery --whatprovides '*nginx.conf*'
+sudo dnf repoquery -i package-name
+sudo dnf repoquery -s package-name
+
+# All isntalled packages
+sudo rpm -qa
+sudo rpm -qa --qf '(%{INSTALLTIME:date}): %{NAME}-%{VERSION}\n'
+sudo sudo rpm -qi package-name
+sudi rpm -ql setmy-info-scripts
+``
+
 ## See also
 
     [xxxx](http://yyyyy)
