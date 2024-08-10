@@ -35,7 +35,7 @@ modules, libraries) with their versions together as software state.** On single 
 machines, etc.) can be prepared many separated and different sets/states of software. Perhaps module or project specific
 sets. One of these sets contains even Python with specific version.
 
-Python internal module [venv](venv.html) can be used as virtual environment tools. Also [conda](conda.html) can be used
+Python internal module [venv](venv.md) can be used as virtual environment tools. Also [conda](conda.md) can be used
 for virtual environment handling.
 
 **Windows**
@@ -436,14 +436,28 @@ PYTHONPATH is for searching modules, like PATH for commands.
 ## Build python
 
 ```shell
-mkdir -p ~/temp/python
-cd ~/temp/python
-wget -c https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz
-tar xvzf Python-3.12.5.tgz
-cd Python-3.12.5
-./configure --prefix=/opt/python93 --exec-prefix=/opt/python93
+PYTHON_MAJOR=3
+PYTHON_MINOR=12
+PYTHON_PATCH=5
+PYTHON_VERSION=${PYTHON_MAJOR}.${PYTHON_MINOR}.${PYTHON_PATCH}
+TEMP_DIR=~/temp/python
+PYTHON_BUILD_DIR=Python-${PYTHON_VERSION}
+PYTHON_TEMP_BUILD_DIR=${TEMP_DIR}/${PYTHON_BUILD_DIR}
+PYTHON_TEST_BUILD_DIR=${TEMP_DIR}/test
+mkdir -p ${TEMP_DIR}
+cd ${TEMP_DIR}
+wget -c https://www.python.org/ftp/python/${PYTHON_VERSION}/${PYTHON_BUILD_DIR}.tgz
+tar xvzf ${PYTHON_BUILD_DIR}.tgz
+cd ${PYTHON_BUILD_DIR}
+./configure --prefix=/opt/python-${PYTHON_VERSION} --exec-prefix=/opt/python-${PYTHON_VERSION}
 make
 sudo make install
+mkdir -p ${PYTHON_TEST_BUILD_DIR}
+cd ${PYTHON_TEST_BUILD_DIR}
+/opt/python-${PYTHON_VERSION}/bin/python3.12 -m venv ./.venv
+source ./.venv/bin/activate
+pip --version
+exit
 ```
 
 ## PyCharm
