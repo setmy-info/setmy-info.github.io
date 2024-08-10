@@ -436,6 +436,11 @@ PYTHONPATH is for searching modules, like PATH for commands.
 ## Build python
 
 ```shell
+mkdir -p ~/temp/python
+cd ~/temp/python
+wget -c https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz
+tar xvzf Python-3.12.5.tgz
+cd Python-3.12.5
 ./configure --prefix=/opt/python93 --exec-prefix=/opt/python93
 make
 sudo make install
