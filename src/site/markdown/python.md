@@ -35,7 +35,7 @@ modules, libraries) with their versions together as software state.** On single 
 machines, etc.) can be prepared many separated and different sets/states of software. Perhaps module or project specific
 sets. One of these sets contains even Python with specific version.
 
-Python internal module [venv](venv.md) can be used as virtual environment tools. Also [conda](conda.md) can be used
+Python internal module [venv](venv.md) can be used as virtual environment tools. Also, [conda](conda.md) can be used
 for virtual environment handling.
 
 **Windows**
