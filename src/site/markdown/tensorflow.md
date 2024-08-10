@@ -32,6 +32,7 @@ pip install tensorflow tensorflow-transform tfds-nightly matplotlib
 * [JS tutorials](https://www.tensorflow.org/js/tutorials)
 * [JS models](https://www.tensorflow.org/js/models)
 * [JS Demos](https://www.tensorflow.org/js/demos)
+* [](https://www.tensorflow.org/install/source#tested_build_configurations)
 * [TF Lite](https://www.tensorflow.org/lite)
 * [TF Lite Guide](https://www.tensorflow.org/lite/guide)
 * [TF Lite Examples](https://www.tensorflow.org/lite/examples)
