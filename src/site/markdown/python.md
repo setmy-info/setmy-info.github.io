@@ -435,6 +435,11 @@ PYTHONPATH is for searching modules, like PATH for commands.
 
 ## Build python
 
+```sh
+# TO build python
+sudo dnf install -y openssl-devel sqlite sqlite-devel
+```
+
 ```shell
 PYTHON_MAJOR=3
 PYTHON_MINOR=12

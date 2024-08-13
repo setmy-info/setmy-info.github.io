@@ -14,8 +14,10 @@
 
     sudo dnf groupinstall "Server with GUI"
     sudo systemctl set-default graphical.target
+    sudo systemctl set-default multi-user.target
 
-    dnf -y install mc ansible nano make yum-utils rpmdevtools rpm-build git mercurial meld
+    dnf -y install mc ansible nano make yum-utils rpmdevtools rpm-build git mercurial meld openssl-devel \
+                    sqlite sqlite-devel cpp gcc g++ boost-test dos2unix rpmlint
     dnf -y install java-1.8.0-openjdk
     Install postgres tools from Postgre guide.
     Install docker by docker guide.
