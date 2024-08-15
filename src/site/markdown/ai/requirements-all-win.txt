@@ -151,4 +151,4 @@ Werkzeug==2.2.3
 wrapt==1.14.1
 y-py==0.5.5
 ypy-websocket==0.8.2
-zipp==3.13.0
+zipp==3.19.1
