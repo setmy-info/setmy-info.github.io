@@ -87,6 +87,43 @@ Get full locales list
 
     lspci | grep -i vga
 
+
+### CUDA install
+
+```
+# Nvidia Drivers
+sudo dnf groupinstall "Development Tools"
+sudo dnf install kernel-devel kernel-headers
+sudo dnf config-manager --add-repo=https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
+sudo dnf clean expire-cache
+sudo dnf install nvidia-driver nvidia-driver-libs nvidia-kmod
+sudo reboot
+
+# CUDA tools
+sudo dnf config-manager --add-repo=https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
+sudo dnf install cuda
+echo 'export PATH=/usr/local/cuda-12.0/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+tar -xzvf cudnn-linux-x86_64-8.x.x.x_cuda12-archive.tar.xz
+sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include
+sudo cp cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+nvidia-smi
+nvcc --version
+
+
+
+sudo dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/rhel9/x86_64/cuda-rhel9.repo
+sudo dnf clean all
+sudo dnf -y install cuda-toolkit-12-6
+
+# To install the open kernel module flavor:
+sudo dnf -y module install nvidia-driver:open-dkms
+# To install the legacy kernel module flavor:
+sudo dnf -y module install nvidia-driver:latest-dkms
+```
+
 ### Misc
 
 ```shell
@@ -107,4 +144,6 @@ sudi rpm -ql setmy-info-scripts
 
 ## See also
 
-    [xxxx](http://yyyyy)
+[xxxx](http://yyyyy)
+
+[cUDA](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9&target_type=rpm_network)
