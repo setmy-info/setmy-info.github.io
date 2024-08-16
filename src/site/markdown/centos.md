@@ -19,9 +19,12 @@
     dnf -y install mc ansible nano make yum-utils rpmdevtools rpm-build git mercurial meld openssl-devel \
                     sqlite sqlite-devel cpp gcc g++ boost-test dos2unix rpmlint
     dnf -y install java-1.8.0-openjdk
-    Install postgres tools from Postgre guide.
-    Install docker by docker guide.
-    Install nginx by Nginx guide.
+
+Install postgres tools from Postgre guide.
+
+Install docker by docker guide.
+
+Install nginx by Nginx guide.
 
 ### Rocky linux
 
@@ -68,8 +71,9 @@ systemctl enable --now cockpit.socket
 
 ## Usage, tips and tricks
 
-    Get full locales list
-        localectl list-locales
+Get full locales list
+    
+    localectl list-locales
 
 ### Disks
 
@@ -78,6 +82,10 @@ systemctl enable --now cockpit.socket
 ### Hostname
 
     sudo hostnamectl set-hostname HOSTNAE
+
+### Vide Card info
+
+    lspci | grep -i vga
 
 ### Misc
 
