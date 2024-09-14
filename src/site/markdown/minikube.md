@@ -121,12 +121,16 @@ minikube dashboard
 ### Load image into K8s
 
 ```shell
-minikube image rm gihub.io/ORGNAME/IMAGENAME:VERSION
-minikube image load gihub.io/ORGNAME/IMAGENAME:VERSION --overwrite
+minikube image rm gihub.io/ORGNAME/IMAGENAME:VERSION_OR_TAG
+minikube image load gihub.io/ORGNAME/IMAGENAME:VERSION_OR_TAG --overwrite
+# Local images can be like that (minikube image list can show these: docker.io/ORGNAME/IMAGENAME:VERSION_OR_TAG)
+minikube image load ORGNAME/IMAGENAME:VERSION_OR_TAG
 # DEPRECATED
 minikube cache add gihub.io/ORGNAME/IMAGENAME:VERSION
 # In kubernetes deployment config should be: spec.templates.container.imagePullPolicy: Never
 minikube image ls
+minikube image ls --format table
+minikube image rm aa11bb22cc334
 minikube addons enable ingress
 
 minikube tunnel

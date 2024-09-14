@@ -91,9 +91,11 @@ spring:
 ### Spring execution 1
 
 ```sh
+# SB 3.x : org.springframework.boot.loader.launch.PropertiesLauncher
 java ${JAVA_OPTIONS} -Dlogging.file.name=${LOG_DIR_NAME}/${LOG_FILE_NAME} -Dspring.profiles.active=${APPLICATION_PROFILES} -Dspring.config.additional-location=optional:${OPTIONAL_CONFIG_FILE_NAME} -Dloader.main=${APPLICATION_MAIN_CLASS_NAME} -cp ${APPLICATION_JAR_FILE_NAME} org.springframework.boot.loader.PropertiesLauncher ${*}
 ```
 
 ## See also
 
-[Spring Boot Starter](https://start.spring.io/)
+* [Spring Boot Starter](https://start.spring.io/)
+* [xxx](https://docs.spring.io/spring-boot/specification/executable-jar/property-launcher.html)

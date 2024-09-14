@@ -53,6 +53,7 @@ kubectl cluster-info
 # It's known, that the secret map doesn't exist, but since it is similar to a config map, we will use a similar syntax and terminology.
 
 # -n NAMESPACE can be appended
+kubectl create namespace xyz-namespace
 kubectl apply -f xyz-namespace.yaml
 kubectl apply -f xyz-config-map.yaml
 kubectl apply -f xyz-secrets-map.yaml
@@ -62,14 +63,13 @@ kubectl apply -f xyz-deployment.yaml
 kubectl apply -f xyz-service.yaml
 kubectl apply -f xyz-ingress.yaml
 
-kubectl describe configmaps xyz-config-map
-kubectl describe secret xyz-secrets-map
-
 kubectl edit xyz-deployment
 kubectl get pods
 kubectl logs -f xyz-deployment-596744778-dcgtz
 kubectl logs xyz-deployment-596744778-dcgtz -c containername --previous
-kubectl describe pod xyz-deployment-596744778-dcgtz
+kubectl logs -l app=xyz-deployment --all-containers=true --follow
+kubectl logs -n ingress-nginx ingress-nginx-controller-596744778-dcgtz -f
+
 # Restarts
 kubectl delete pod xyz-deployment-596744778-dcgtz
 kubectl proxy
@@ -78,6 +78,10 @@ kubectl exec -it xyz-deployment-596744778-dcgtz -- /bin/sh
 kubectl get endpoints
 kubectl get service
 
+kubectl describe configmaps xyz-config-map
+kubectl describe secret xyz-secrets-map
+kubectl describe pod xyz-deployment-596744778-dcgtz
+kubectl describe xyz-deployment
 kubectl describe pv <persistent_volume_name>
 kubectl describe pvc <persistent_volume_claim_name>
 
@@ -112,6 +116,10 @@ kubectl get pvc
 
 # POD data as yaml
 kubectl get pod -o yaml
+
+# Working with seales secrets
+kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.0/controller.yaml
+
 ```
 
 ### Volumes

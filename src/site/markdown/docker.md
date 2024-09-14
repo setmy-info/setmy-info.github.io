@@ -134,6 +134,8 @@ docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry:/va
 ```
 docker pull centos
 docker image list
+docker image list --no-trunc
+docker images --no-trunc
 docker image rm 41e53a126a5d
 
 docker container list -a

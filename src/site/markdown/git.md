@@ -145,6 +145,10 @@ git reset --hard HEAD~1
 
 git reset --hard origin/feature/FEATURE
 
+# Deleted files,folders to reset
+git reset HEAD file
+git checkout file
+
 git tag -a 1.2.3 -m "1.2.3"
 
 git tag -a 1.2.3 -m "1.2.3" COMMITHASH

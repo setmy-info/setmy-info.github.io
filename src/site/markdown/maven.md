@@ -3,13 +3,19 @@
 ```sh
 mvn test
 
+mvn test -Dtest=info.setmy.AbcTest
+
 mvn verify
+
+mvn verify -Dit.test=info.setmy.AbcIT
 
 mvn install -DskipTests
 
 mvn install -Dmaven.test.skip=true
 
 mvn install -DskipITs
+
+mvn org.pitest:pitest-maven:mutationCoverage
 
 mvn site:site
 
