@@ -14,6 +14,20 @@
 
 ## Configuration
 
+## Alternatives
+
+Possible alternatives:
+
+* [Git LFS](https://git-lfs.com/)
+* [MLflow](https://www.mlflow.org)
+* [Pachyderm](https://www.pachyderm.com/)
+* [LakeFS](https://lakefs.io/)
+* [Quilt](https://www.quiltdata.com/)
+* [Dagster](https://dagster.io/platform)
+
+Looks like there is no relevant tool, that is just CLI, that can use anu VCS system as versioning and push data to
+non-VCS repos (different locations).
+
 ## Usage, tips and tricks
 
 ```shell
