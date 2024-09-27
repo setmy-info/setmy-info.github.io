@@ -60,3 +60,15 @@ sudo systemctl start infinispan
 ## See also
 
 [Home page](https://infinispan.org/)
+
+https://docs.spring.io/spring-boot/reference/io/caching.html#io.caching.provider.infinispan
+
+https://docs.spring.io/spring-boot/reference/io/caching.html
+
+https://infinispan.org/docs/stable/titles/hibernate/hibernate.html
+
+https://infinispan.org/docs/stable/titles/embedding/embedding.html
+
+https://infinispan.org/docs/stable/titles/spring_boot/starter.html
+
+https://infinispan.org/docs/stable/titles/encoding/encoding.html

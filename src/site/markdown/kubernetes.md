@@ -399,18 +399,13 @@ kind: PodSecurityPolicyReview
 
 ## See also
 
-[Kubernetes](https://kubernetes.io)
-
-[kubectl installation](https://kubernetes.io/docs/tasks/tools/#kubectl)
-
-[minikube](https://kubernetes.io/docs/setup/minikube/)
-
-[kubectl cli usage](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
-
-[Deployment](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
-
-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)
-
-[Config maps](ttps://kubernetes.io/docs/concepts/configuration/configmap/)
-
-[Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+* [Kubernetes](https://kubernetes.io)
+* [kubectl installation](https://kubernetes.io/docs/tasks/tools/#kubectl)
+* [minikube](https://kubernetes.io/docs/setup/minikube/)
+* [kubectl cli usage](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+* [Deployment](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
+* [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
+* [Config maps](ttps://kubernetes.io/docs/concepts/configuration/configmap/)
+* [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+* [Sealed secrets](https://github.com/bitnami-labs/sealed-secrets/releases)
+* [PCI-DSS](https://raesene.github.io/blog/2022/10/01/PCI-Kubernetes-Section1-Authentication/)

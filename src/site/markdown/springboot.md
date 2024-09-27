@@ -98,4 +98,6 @@ java ${JAVA_OPTIONS} -Dlogging.file.name=${LOG_DIR_NAME}/${LOG_FILE_NAME} -Dspri
 ## See also
 
 * [Spring Boot Starter](https://start.spring.io/)
-* [xxx](https://docs.spring.io/spring-boot/specification/executable-jar/property-launcher.html)
+* [Property launcher](https://docs.spring.io/spring-boot/specification/executable-jar/property-launcher.html)
+* [Spring security](https://www.toptal.com/spring/spring-security-tutorial)
+* [JWT](https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html)
