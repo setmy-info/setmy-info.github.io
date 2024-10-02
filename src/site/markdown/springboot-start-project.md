@@ -49,6 +49,14 @@
 
 ## Usage
 
+## Errors
+
+Need to recheck application.yaml properties getting and @PostConstruct behaviour
+
+```
+Caused by: java.lang.NullPointerException: Cannot invoke "String.length()" because "id" is null
+```
+
 ## See also
 
     https://wiki.linuxfoundation.org/lsb/start
