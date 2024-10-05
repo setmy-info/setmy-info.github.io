@@ -167,7 +167,12 @@ git ls-remote --tags origin
 # Uncommit last one commit
 git reset --soft HEAD~1
 
+# Stash under stash name
+git stash push -m "save name"
+# Deprecated
 git stash save "save name"
+
+git stash pop stash@{n}
 ```
 
 Move one repo (repo1) to another (repo2)
