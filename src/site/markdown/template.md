@@ -20,7 +20,7 @@
 
 ## See also
 
-[xxxx](http://yyyyy)
+* [xxxx](http://yyyyy)
 
 # H1
 
