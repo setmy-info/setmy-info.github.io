@@ -135,8 +135,11 @@ DROP TABLE IF EXISTS table1, table2 CASCADE;
 
 DROP SEQUENCE IF EXISTS sequence1, sequence2 CASCADE;
 
+-- Columns for table
+SELECT column_name, data_type, ordinal_position, character_maximum_length, * FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'table_name';
 
-SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name   = 'table_name';
+-- Octed data size
+SELECT octet_length(bytea_data_column) AS size_in_bytes FROM files;
 
 \ds
 \du

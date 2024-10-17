@@ -209,6 +209,39 @@ already done) tag library, that does push first for JSP or HTML loading.
 6.4 Reporting building with maven using maven site, where site has integrated reports: JavaDoc (for main and test
 code), pitest, OWASP dependencies check, JaCoCo unit test coverage, style check, version notes, todo notes, findbugs.
 
+#### Tests
+
+Unit tests (UT), Integration tests (IT), e2e tests (ET).
+
+UT, IT, ET are top level suites.
+
+UT in memory. Unit is method/function under test.
+
+| Depend or can depend       | UT  | IT      | ET      |
+|----------------------------|-----|---------|---------|
+| Java (or other platform)   | YES | YES     | YES     |
+| JUnit                      | YES | YES     | YES     |
+| AssertJ                    | YES | YES     | YES     |
+| Mockito                    | YES | YES     | NO      |
+| Mutation testing           | YES | NO      | NO      |
+| WireMock                   | NO  | YES     | NO      |
+| Environment variables      | NO  | YES     | YES     |
+| (Data) Files               | NO  | YES     | YES     |
+| Config files               | NO  | YES     | YES     |
+| DB                         | NO  | YES     | YES     |
+| Network                    | NO  | YES     | YES     |
+| External system emulators  | NO  | NO (1)  | YES     |
+| Cucumber / Spec by example | NO  | NO      | YES     |
+| JUnit Suites               | NO  | NO      | YES (4) |
+| Gatling load testing       | NO  | NO      | YES     |
+| IDE config                 | NO  | NO      | YES (3) |
+| Encrypted secrets in code  | NO  | YES (2) | YES     |
+
+1. Prefer not to use, so mostly NO. Move them to ET. Manually, for development time.
+2. Mostly YES, but prefer not to use.
+3. If possible avoid, to hold principle "Checkout code and start working".
+4. If possible avoid. If complicated set of tests and helps, use.
+
 #### JavaScript (JS)
 
 7.1 Prefer ECMAScript 6 - "Pure JS". Newer standards added a lot of other keywords and possibilities. Some of them
