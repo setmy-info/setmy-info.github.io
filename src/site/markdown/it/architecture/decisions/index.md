@@ -181,31 +181,46 @@ Smart devices and PC:
 #### Containers
 
 2.1 DOCUMENTATION MOVED
+
 2.2 DOCUMENTATION MOVED
+
 3 Shell
+
 3.1 Bourne shell and use #!/bin/sh not #!/bin/bash. The First one is in base installation of CentOS, Fedora, *BSD,
 Solaris, Debian (*buntu), OpenIndiana etc.
+
 3.2 Therefore a shell script should be not written in "bashism" (bash way), but as much as possible in POSIX shell
 way.
+
 3.3 Prefer shell first and if not possible or simpler, then Python 3.x.
 
 #### UI
 
 4.1 because HTML has no rich standard set of components, then we need write components by our selves.
+
 4.2 IE 11 is still in use, therefore, that should be covered too.
+
 4.3 Prefer CSS tool over JS tools to get UI results.
+
 4.4 because of http2 push method we use old style resources (css, js) loading. Possible to make (if it is not
 already done) tag library, that does push first for JSP or HTML loading.
+
 4.5 Therefore and because of webpack we should support in JavaScript node packaging and
 
 #### Logs
 
 5.1 Logging should go to tailable file.
+
 5.2 Logging should be with size limit; that means logs should be split after reaching the limit.
+
 6 Build tools
+
 6.1 For Java maven
+
 6.2 Other build tools and helpers: cmake, ant, make (GNU?)
+
 6.3 Webpack build tool for frontend tools.
+
 6.4 Reporting building with maven using maven site, where site has integrated reports: JavaDoc (for main and test
 code), pitest, OWASP dependencies check, JaCoCo unit test coverage, style check, version notes, todo notes, findbugs.
 
@@ -246,17 +261,23 @@ UT in memory. Unit is method/function under test.
 
 7.1 Prefer ECMAScript 6 - "Pure JS". Newer standards added a lot of other keywords and possibilities. Some of them
 make code reading harder!
+
 7.2 Prefer Pure JS to TypeScript.
+
 7.3 Prefer code without "prototype". Just create an object and add properties.
+
 7.4 Frontent JS
+
 7.4.1 Use layered architecture: resources at bottom for data access and data fixing and normalization, service layer
 top on that for ...
+
 7.4.2 Prefer two-way data binding over event dispatch-catch.
 
 #### Java
 
 8.1. Prefer solutions to write code without interfaces. Interfaces are for frameworks or plugins, where N number of
 third parties should implement something.
+
 8.2. Java fail length up to 512 lines and line length 110.
 
 #### Clojure
@@ -267,28 +288,27 @@ third parties should implement something.
 
 9.1. GIT over Mercurial
 
-10. Hibernate
-11. DB: PostgreSQL, MongoDB, DGraph (?)
-12. MQ: RabbitMQ (should be used, when they hide problems? Replace it with Redis?), Mosquitto
-13. Spring, Spring boot andMicronaut, but using as much as possible standard way (javax.*).
-14. Semantic versioning: https://semver.org/
-4. Solution levels
+#### Misc
 
-1: Only JWT check with symmetric keys. No session cancellation (JWT revoke). Fully stateless solutions. No central
-solutions cache for apps. Single node solutions. App backend as GW.
-2: DB JWT check with symmetric keys. DB-based session cancellation and expiration (JWT revoke). Single node
-solutions. App backend as GW. No central cache solutions for apps.
-
-3. DB JWT check with symmetric and asymmetric keys. DB-based session cancellation and expiration (JWT revoke). Multi
+1. Hibernate
+1. DB: PostgreSQL, MongoDB, DGraph (?)
+1. MQ: RabbitMQ (should be used, when they hide problems? Replace it with Redis?), Mosquitto
+1. Spring, Spring boot andMicronaut, but using as much as possible standard way (javax.*).
+1. Semantic versioning: https://semver.org/
+1. Solution levels
+1. Only JWT check with symmetric keys. No session cancellation (JWT revoke). Fully stateless solutions. No central
+   solutions cache for apps. Single node solutions. App backend as GW.
+1. DB JWT check with symmetric keys. DB-based session cancellation and expiration (JWT revoke). Single node
+   solutions. App backend as GW. No central cache solutions for apps.
+1. DB JWT check with symmetric and asymmetric keys. DB-based session cancellation and expiration (JWT revoke). Multi
    node solutions. App backend as GW. No central cache solutions for apps.
-4. Central Cache and session storage. JWT and session revoke in cache systems. Multi node solutions. Multi HW
+1. Central Cache and session storage. JWT and session revoke in cache systems. Multi node solutions. Multi HW
    servers only.
-5. Central Cache and session storage. JWT and session revoke in identity management systems. Multi node systems.
+1. Central Cache and session storage. JWT and session revoke in identity management systems. Multi node systems.
    Health checks. API GW (rate limiting, security, identity management, etc.). Multiple hardware (servers, network
    nodes, power supplies, UPS etc.) nodes. Storage systems.
-
-15. Prefer standard or well defined or stable tools over self making tools.
-16. Xfce is class desktop environment.
+1. Prefer standard or well defined or stable tools over self making tools.
+1. Xfce is class desktop environment.
 
 ## Application configuration
 
@@ -409,3 +429,5 @@ QA **manual tests** are executed on **development** branch.
 1. [Should have VCS hash](shouldHaveVCShash.md)
 1. [UI requirements](uiRequirements.md)
 1. [Versioning](versioning.md)
+1. [Arch as code](architectureAsACode.md)
+1. [JPA entities](jpaEntitiesAndDTOs.md)
