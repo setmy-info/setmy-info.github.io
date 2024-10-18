@@ -9,7 +9,7 @@ Lessons learned from using Clojure with Leiningen and IntelliJ:
 * **Atoms**: Working with atoms requires writing too much code to update their values.
 * **Learning Curve**: Learning takes time because many things have various (short/long) variants that need to be
   understood.
-*
+* **Tools**: Additional expense, for good tools. Some problems with tools (Exceptions, IDEA behaviour changes, ...)
 
 On the bright side:
 
