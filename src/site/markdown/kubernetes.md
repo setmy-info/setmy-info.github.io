@@ -77,14 +77,21 @@ kubectl port-forward xyz-deployment-596744778-dcgtz LOCALPORT:REMOTEPORT
 kubectl exec -it xyz-deployment-596744778-dcgtz -- /bin/sh
 kubectl get endpoints
 kubectl get service
+kubectl get pv
+kubectl get pvc
+kubectl get ingress
+kubectl get endpoints xyz-service -n xyz-local
 
 kubectl describe configmaps xyz-config-map
 kubectl describe secret xyz-secrets-map
 kubectl describe pod xyz-deployment-596744778-dcgtz
-kubectl describe xyz-deployment
-kubectl describe pv <persistent_volume_name>
-kubectl describe pvc <persistent_volume_claim_name>
+kubectl describe deployment xyz-deployment
+kubectl describe service xyz-service
+kubectl describe pv xyz-nfs-persistent-volume
+kubectl describe pvc xyz-nfs-persistent-volume-claim
+kubectl describe ingress xyz-ingress
 
+kubectl delete ingress xyz-ingress
 kubectl delete service xyz-service
 kubectl delete deployment xyz-deployment
 kubectl delete secrets xyz-secrets-map
