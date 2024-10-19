@@ -295,7 +295,7 @@ spec:
         -   protocol: TCP
             # Port where Ingress forwards to
             port: 80
-            # Deployment or POD port
+            # Deployment or POD port in container port
             #targetPort: 8080
             targetPort: ms-port
 ```
