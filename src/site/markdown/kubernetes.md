@@ -122,6 +122,50 @@ kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/downloa
 
 ```
 
+### Namespace
+
+**xyz-namespace.yaml**
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: xyz-dev
+```
+
+### Config map
+
+xyz-config-map.yaml
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: xyz-config-map
+    namespace: xyz-dev
+    # <service-name>.<namespace>.svc.cluster.local
+    # <pod-name>.<service-name>.<namespace>.svc.cluster.local
+    # postgresql-1.postgres-service.microservice-local.svc.cluster.local
+data:
+    variable: "Value in quotations"
+immutable: true
+```
+
+### Secrets map
+
+**xyz-secrets-map.yaml**
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: xyz-secrets-map
+    namespace: xyz-dev
+data:
+    secret-variable: U2VjcmV0IHZhbHVl
+immutable: true
+```
+
 ### Volumes
 
 **xyz-nfs-persistent-volume.yaml**
@@ -161,50 +205,6 @@ spec:
     volumeName: xyz-nfs-persistent-volume
 ```
 
-### Namespace
-
-**xyz-namespace.yaml**
-
-```yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-    name: xyz-dev
-```
-
-### Config map
-
-xyz-config-map.yaml
-
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-    name: xyz-config-map
-    namespace: xyz-dev
-    # <pod-name>.<service-name>.<namespace>.svc.cluster.local
-    # By default:                  .default.svc.cluster.local
-    pg-host: postgresql-1.postgresql-service.default.svc.cluster.local
-data:
-    variable: "Value in quotations"
-immutable: true
-```
-
-### Secrets map
-
-**xyz-secrets-map.yaml**
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-    name: xyz-secrets-map
-    namespace: xyz-dev
-data:
-    secret-variable: U2VjcmV0IHZhbHVl
-immutable: true
-```
-
 ### Deployment
 
 **xyz-deployment.yaml**
@@ -229,15 +229,19 @@ spec:
         spec:
             containers:
                 -   name: xyz
+                    #image: docker.io/setmyinfo/springboot-start-project:latest
+                    #image: setmyinfo/springboot-start-project:latest
                     image: xyz:latest
                     # For example, not needed in Minikube
                     # imagePullPolicy: Never
+                    #command: [ "java-execute" ]
+                    #args: ["echo 'Hello World'; exec myapp --start"]
                     ports:
-                        -   name: xyz-port
+                        -   name: ms-port
                             containerPort: 8080
                     env:
                         # For Spring boot
-                        -   name: PROFILES_LIST
+                        -   name: APPLICATION_PROFILES
                             value: "dev,api-docs"
                         ## From config-map
                         -   name: VARIABLE
@@ -246,6 +250,18 @@ spec:
                                     name: xyz-config-map
                                     key: variable
                                     optional: false
+                        -   name: POD_NAMESPACE
+                            valueFrom:
+                                fieldRef:
+                                    fieldPath: metadata.namespace
+                        -   name: POD_NAME
+                            valueFrom:
+                                fieldRef:
+                                    fieldPath: metadata.name
+                        -   name: NODE_NAME
+                            valueFrom:
+                                fieldRef:
+                                    fieldPath: spec.nodeName
                         ## From secrets
                         -   name: SECRET_VARIABLE
                             valueFrom:
@@ -253,13 +269,13 @@ spec:
                                     name: xyz-secrets-map
                                     key: secret-variable
                                     optional: false
-            volumeMounts:
+                    volumeMounts:
+                        -   name: nfs-volume
+                            mountPath: /mnt/gintra
+            volumes:
                 -   name: nfs-volume
-                    mountPath: /mnt/gintra
-        volumes:
-            -   name: nfs-volume
-                persistentVolumeClaim:
-                    claimName: xyz-nfs-persistent-volume-claim
+                    persistentVolumeClaim:
+                        claimName: xyz-nfs-persistent-volume-claim
 ```
 
 ### Service
@@ -277,8 +293,11 @@ spec:
         app.kubernetes.io/name: xyz
     ports:
         -   protocol: TCP
+            # Port where Ingress forwards to
             port: 80
-            targetPort: xyz-port
+            # Deployment or POD port
+            #targetPort: 8080
+            targetPort: ms-port
 ```
 
 ### Ingress
@@ -294,18 +313,21 @@ metadata:
     annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-    ingressClassName: nginx-example
+    #ingressClassName: nginx-example
+    ingressClassName: nginx
     rules:
-        -   http:
+        -   host: xyz-dev
+            http:
                 paths:
-                    -   path: /testpath
+                    #-   path: /testpath
+                    -   path: /xyz-dev
                         pathType: Prefix
                         backend:
                             service:
-                                name: test
+                                #name: test
+                                name: xyz-service
                                 port:
                                     number: 80
-
 ```
 
 ## Kind complete list

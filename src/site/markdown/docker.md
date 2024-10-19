@@ -203,19 +203,23 @@ Composer
 **docker-compose.yml**
 
 ```yaml
-version: '0.0.1'
 services:
-    db:
-    image: postgis/postgis
-    restart: always
-    environment:
-        POSTGRES_PASSWORD: 'g6p8'
-    volumes:
-        - pg-data:/var/lib/postgresql/data
-    ports:
-        - '5432:5432'
+    microservice-postgres:
+        #image: postgres:16.4
+        image: postgres:16.4
+        container_name: microservice-postgres
+        restart: always
+        environment:
+            POSTGRES_USER: microservice
+            POSTGRES_PASSWORD: g6p8
+            POSTGRES_DB: microservice-db
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+
 volumes:
-    pg-data:
+    postgres-data:
 ```
 
 ```shell

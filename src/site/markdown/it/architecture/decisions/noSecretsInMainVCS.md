@@ -2,7 +2,7 @@
 
 Main project (application, library, microservice, module, ...) VCS (Git, Mercurial, SVN, ...) repository should not
 contain secrets from administrators and DevOps. They should hold these somewhere else (other repo, secrets
-store/vault).
+store/vault). Test code part can have encrypted secrets.
 
 **Main** - in case of, where secrets are hold somewhere else - non-main, secondary place.
 
