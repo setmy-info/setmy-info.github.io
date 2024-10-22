@@ -232,6 +232,8 @@ UT, IT, ET are top level suites.
 
 UT in memory. Unit is method/function under test.
 
+Mutation tests are executed only with unit tests. Test coverage is executed only with unit tests.
+
 | Depend or can depend          | UT  | IT      | ET      |
 |-------------------------------|-----|---------|---------|
 | Java (or other platform)      | YES | YES     | YES     |
