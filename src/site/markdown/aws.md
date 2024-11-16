@@ -41,6 +41,13 @@ aws sts get-caller-identity
 
 aws s3 cp s3://oursuperbucker/ ~/uploads/temp/s3 --recursive --include "*.jpgGiven"
 
+#aws configure sso --profile abc-test
+aws configure --profile abc-test
+#(x, x, x)
+aws s3 ls --profile abc-test
+aws eks update-kubeconfig --name k8s-training --region eu-central-1 --profile abc-test
+aws eks list-clusters --region eu-central-1 --profile abc-test
+
 ```
 
 ### Adding profile
