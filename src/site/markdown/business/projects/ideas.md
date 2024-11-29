@@ -57,6 +57,7 @@ Learning project ideas
   has context, context is passed to steps, steps are for reading, writing, counting, incrementing. Protocol (steps flow)
   is defined by config. Library user should implement "connection" code for steps, where or to data is set or taken. Or
   config tels a variable name (in context/data collector).
+* [Low level protocol](io-protocol/index.md).
 
 ## See also
 
