@@ -3,6 +3,7 @@
 ## Idea
 
 To have Java (or other language) API that can be used to construct a protocol graph - a protocol as a graph.
+Fluent, chained API to build graph.
 
 ### Protocol context
 
