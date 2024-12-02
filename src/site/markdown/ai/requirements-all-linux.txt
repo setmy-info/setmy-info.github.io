@@ -17,7 +17,7 @@ conda==23.3.1
 conda-package-handling==2.0.2
 conda_package_streaming==0.7.0
 coverage==7.0.5
-cryptography==37.0.2
+cryptography==43.0.1
 cssselect==1.1.0
 cssselect2==0.7.0
 cupshelpers==1.0
