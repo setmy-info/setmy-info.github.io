@@ -32,8 +32,11 @@ cd example-software
 **Windows**
 
 ```commandline
+REM py -3.12 -m venv ./.venv
+REM most probavly works for tensorflow
 py -3.9 -m venv ./.venv
 .\.venv\Scripts\activate
+python --version
 ```
 
 ***nixes**
@@ -50,9 +53,23 @@ continue:
 ```shell
 python -m pip install --upgrade pip
 pip --version
+pip install --upgrade setuptools
+pip install numpy
+pip install pandas
+pip install jupyterlab
+pip install notebook
+pip install voila
 pip install imageio
-pip install jupyterlab notebook voila
-pip install tensorflow tensorflow-transform tfds-nightly matplotlib pandas
+pip install matplotlib
+pip install tensorflow
+pip install tensorflow-datasets
+pip install tensorflow-estimator
+pip install tfds-nightly
+pip install tensorboard
+pip install seaborn
+pip install Flask
+pip install itsdangerous
+#pip install tensorflow-transform
 pip freeze > requirements.txt
 # to install frozen packages
 pip install -r requirements.txt
