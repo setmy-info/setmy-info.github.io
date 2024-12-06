@@ -132,8 +132,8 @@ git log --graph --decorate --pretty=oneline --abbrev-commit
 
 git log --oneline development ^master
 
-git bisect [BAD_HAHS]
-git bisect goot GOOD_HASH
+git bisect start [BAD_HAHS]
+git bisect good GOOD_HASH
 git bisect bad
 git bisect good
 git bisect bad
