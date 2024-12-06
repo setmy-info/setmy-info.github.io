@@ -133,6 +133,8 @@ git log --graph --decorate --pretty=oneline --abbrev-commit
 git log --oneline development ^master
 
 git bisect start [BAD_HAHS]
+# Or when eithout hash then
+git bisect bad [BAD_HAHS]
 git bisect good GOOD_HASH
 git bisect bad
 git bisect good
@@ -259,6 +261,82 @@ exit ${?}
 ```
 [diff]
 external = git-meld
+```
+
+### bisect example
+
+```text
+C:\sources\temp>git log
+commit c63d2f39038a009f06c8f46e6f6283958a09a817 (HEAD -> master)
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:05:57 2024 +0200
+
+    Commit 7 (With commit 5 bug)
+
+commit 0ccd29033bdc2d52495b3bae40c181d7d45414d8
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:05:42 2024 +0200
+
+    Commit 6 (With commit 5 bug)
+
+commit e9fa9c9880c73a2113723f393538564284c336b5
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:05:31 2024 +0200
+
+    Commit 5 (Bug introduced)
+
+commit b157f9777aef1de99c0d9928878d687244ab8d20
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:05:00 2024 +0200
+
+    Commit 4
+
+commit 0e46b514523a19c59564e549940462c190bb5c9a
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:04:41 2024 +0200
+
+    Commit 3
+
+commit a4669d787f7e2bf21754a0da69d3893df4fb3f49
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:04:36 2024 +0200
+
+    Commit 2
+
+commit da57139a5cb5d807def761bd176933620d2678d2
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:04:21 2024 +0200
+
+    Commit 1
+
+C:\sources\temp>git bisect start
+status: waiting for both good and bad commits
+
+C:\sources\temp>git bisect bad c63d2f39038a009f06c8f46e6f6283958a09a817
+status: waiting for good commit(s), bad commit known
+
+C:\sources\temp>git bisect good da57139a5cb5d807def761bd176933620d2678d2
+Bisecting: 2 revisions left to test after this (roughly 2 steps)
+[b157f9777aef1de99c0d9928878d687244ab8d20] Commit 4
+
+C:\sources\temp>git bisect good
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[0ccd29033bdc2d52495b3bae40c181d7d45414d8] Commit 6
+
+C:\sources\temp>git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[e9fa9c9880c73a2113723f393538564284c336b5] Commit 5
+
+C:\sources\temp>git bisect bad
+e9fa9c9880c73a2113723f393538564284c336b5 is the first bad commit
+commit e9fa9c9880c73a2113723f393538564284c336b5 (HEAD)
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Fri Dec 6 15:05:31 2024 +0200
+
+    Commit 5
+
+test.txt | 1 +
+1 file changed, 1 insertion(+)
 ```
 
 ### See also
