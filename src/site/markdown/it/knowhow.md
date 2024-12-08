@@ -7,7 +7,7 @@ What Software Developers Need to Know.
 * Specific data types
     * Primitives (boolean, char, byte, short, int, long, float, double) their ranges and memory usage
     * and their wrappers (Boolean, Character, Short, Integer, Long, ...)
-    * operations: +, -, *, /, &, &&, |, ||, etc
+    * operations: + - * / & && | || etc
 * Variables
     * Constants (`final` keyword)
 * Specific data structures and containers and collections
