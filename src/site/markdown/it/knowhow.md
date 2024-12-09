@@ -2,10 +2,36 @@
 
 What Software Developers Need to Know.
 
+## Levels
+
+* L1 Hobby programmer, Sunday Programmer. Little to know to do some probes about programming - small probes four self.
+* L2 ...
+* L3 Junior programmer - everyday job, salary from programming. Simple bugs, simple enhancements development.
+  Team player. Existing project setup is done by others.
+* L4 Mid level programmer.
+* L5 Senior programmer, software architect. Hacker.
+
+Higher should same things as lower level.
+
 ## Java developers
 
+* Java and JVM
+    * Compiling classes
+    * Bytecode
+    * Garbage collector
+    * Heap
+    * Stack
+    * JIT
+    * Bytecode manipulation
+    * Reflection
+    * Debugging with IDE
+        * Local
+        * Remote
+    * JNI
+    * Profiler
 * Specific data types
     * Primitives (boolean, char, byte, short, int, long, float, double) their ranges and memory usage
+        * These data types representation in memory, in processor
     * and their wrappers (Boolean, Character, Short, Integer, Long, ...)
     * operations: + - * / & && etc
 * Variables
@@ -119,6 +145,21 @@ What Software Developers Need to Know.
     * Adapter
     * Proxy
 * Spring and Spring Boot
+* Other Java tools, utils, libraries frameworks
+    * Jackson, Gson
+    * JAXB, DOM, SAX
+    * Apache Commons: StringUtils, ...
+    * Lombok
+    * Logging: Log4j, Logback, SLF4J
+    * IDE
+        * IntelliJ IDEA
+        * Eclipse IDE
+        * NetBeans IDE
+    * Async tools
+        * Netty, Akka
+    * Event driven architecture
+        * RabbitMQ, Kafka
+    * Reactive programming
 
 ## Any developer
 
@@ -132,6 +173,10 @@ What Software Developers Need to Know.
 * Software development methodologies
     * Scrum
     * Kanban
+* Architecture related methodologies
+    * DDD
+    * Microservices, monoliths, modulith
+    *
 * Security
     * OWASP top 10
 * Containers
@@ -155,3 +200,5 @@ What Software Developers Need to Know.
 * Testing
     * Unit, integration and e2e testing
     * Selenium
+* Communication protocols (UDP, TCP, IP)
+    * OSI Network layer
