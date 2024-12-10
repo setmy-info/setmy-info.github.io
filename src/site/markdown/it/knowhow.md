@@ -8,10 +8,18 @@ What Software Developers Need to Know.
 * L2 ...
 * L3 Junior programmer - everyday job, salary from programming. Simple bugs, simple enhancements development.
   Team player. Existing project setup is done by others.
-* L4 Mid level programmer.
+* L4 Middle level programmer.
 * L5 Senior programmer, software architect. Hacker.
 
 Higher should same things as lower level.
+
+Depth level - how much should know.
+
+* D1 Check what is already done, and do it by that. No deeper understanding.
+* D2 ...
+* D3 ...
+* D4 ...
+* D5 Good understanding internals, most of the things tested and therefore high understanding how system acts.
 
 ## Java developers
 
@@ -130,20 +138,15 @@ Higher should same things as lower level.
     * BDD
         * Cucumber
         * Fitnesse
+    * Mutation testing
+    * Code quality tools:
+        * Find bug, stop bug
+        * ...
 * Build tools
     * Maven
+        * Site
     * Gradle
 * JavaDoc
-* Software design patterns
-    * Immutability
-    * Singleton
-    * Factory
-    * Builder
-    * Observer
-    * Strategy
-    * Decorator
-    * Adapter
-    * Proxy
 * Spring and Spring Boot
 * Other Java tools, utils, libraries frameworks
     * Jackson, Gson
@@ -160,6 +163,10 @@ Higher should same things as lower level.
     * Event driven architecture
         * RabbitMQ, Kafka
     * Reactive programming
+    * JPA, Hibernate
+    * Spring security: OAuth, authentication, authorization
+        * JWT
+    * Gatling
 
 ## Any developer
 
@@ -173,32 +180,60 @@ Higher should same things as lower level.
 * Software development methodologies
     * Scrum
     * Kanban
+* Software design patterns
+    * Immutability
+    * Singleton
+    * Factory
+    * Builder
+    * Observer
+    * Strategy
+    * Decorator
+    * Adapter
+    * Proxy
+    * Other detailed design principles
+        * Event sourcing
+        * CQRS
+        * Hexagonal architecture
+        * Pipeline Pattern (Data processing patterns)
 * Architecture related methodologies
     * DDD
     * Microservices, monoliths, modulith
     *
 * Security
     * OWASP top 10
-* Containers
+    * SSL/TLS, HTTPS
+        * Certificates
+* Containers & related technologies
     * Docker
     * Kubernetes
 * Cloud tools
     * AWS, Google Cloud, Microsoft Azure
 * DevOps
     * Monitoring
+        * ELK stack
+        * Prometheus
+        * Grafana
 * Soft Skills
     * Communication
     * Collaboration
     * Problem-solving
-* REST
-* GraphQL
-* Database
-    * SQL
-* Front-end / Web
+* Web Technologies, front-end / Web
+    * REST
+    * GraphQL
+    * WebSockets
+    * Server-Sent Events
+    * MPA, SPA, PWA
     * Angular or React or VueJs
     * WebAssembly
+    * OpenAPI/Swagger
+* Database
+    * SQL
+    * Indexing
 * Testing
     * Unit, integration and e2e testing
     * Selenium
-* Communication protocols (UDP, TCP, IP)
+    * BDD, Spec by example
+    * Contract testing (Pact.io)
+* Communication protocols
+    * UDP, TCP, IP
     * OSI Network layer
