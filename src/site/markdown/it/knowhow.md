@@ -21,6 +21,12 @@ Depth level - how much should know.
 * D4 ...
 * D5 Good understanding internals, most of the things tested and therefore high understanding how system acts.
 
+or
+
+* Basics
+* Enough
+* Good
+
 ## Java developers
 
 * Java and JVM
