@@ -4,7 +4,8 @@ What Software Developers Need to Know.
 
 ## Levels
 
-* L1 Hobby programmer, Sunday Programmer. Little to know to do some probes about programming - small probes four self.
+* L1 Hobby, student programmer, Sunday Programmer. Little to know to do some probes about programming - small probes
+  four self.
 * L2 ...
 * L3 Junior programmer - everyday job, salary from programming. Simple bugs, simple enhancements development.
   Team player. Existing project setup is done by others.
@@ -15,7 +16,8 @@ Higher should same things as lower level.
 
 Depth level - how much should know.
 
-* D1 Check what is already done, and do it by that. No deeper understanding.
+* D1 Check what is already done, and do it by that. Seen or heard something, knows some basics how things works at top
+  level, no deeper understanding.
 * D2 ...
 * D3 ...
 * D4 ...
@@ -26,6 +28,10 @@ or
 * Basics
 * Enough
 * Good
+
+Markers:
+
+* L1/D1 : L5/D5 - hobby programmer knows how things basically works; senior developer should have good understanding.
 
 ## Java developers
 
