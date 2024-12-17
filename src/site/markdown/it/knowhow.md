@@ -4,6 +4,12 @@ What Software Developers Need to Know.
 
 ## Levels
 
+How deeply developer by profiles should know.
+
+* L1/D1 : L5/D5 - hobby programmer knows how things basically works; senior developer should have good understanding.
+
+### Developer profiles
+
 * L1 Hobby, student programmer, Sunday Programmer. Little to know to do some probes about programming - small probes
   four self.
 * L2 ...
@@ -12,63 +18,55 @@ What Software Developers Need to Know.
 * L4 Middle level programmer.
 * L5 Senior programmer, software architect. Hacker.
 
-Higher should same things as lower level.
+### Depth level
 
-Depth level - how much should know.
-
-* D1 Check what is already done, and do it by that. Seen or heard something, knows some basics how things works at top
-  level, no deeper understanding.
-* D2 ...
-* D3 ...
+* D1 (or B) Basics. Check what is already done, and do it by that. Seen or heard something, knows some basics how things
+  works, no deeper understanding. Basic usage.
+* D2 Can do some enhancements by self, some bug fixes.
+* D3 (or C) More complex. Can handle everyday work by self. Knows what to search and solve problems. Can do some design.
+  Knows solution basic architecture (layers, models,components)
 * D4 ...
-* D5 Good understanding internals, most of the things tested and therefore high understanding how system acts.
+* D5 (or D) Deeply. Good understanding internals, deeply, most of the things tested and therefore high understanding how
+  system acts. Can do complex architecture, buildingblocks at any level (enterprise or solution).
 
-or
-
-* Basics
-* Enough
-* Good
-
-Markers:
-
-* L1/D1 : L5/D5 - hobby programmer knows how things basically works; senior developer should have good understanding.
+Higher should same things as lower level.
 
 ## Java developers
 
-* Java and JVM
+* Java and JVM (L1/B)
     * Compiling classes
     * Bytecode
     * Garbage collector
     * Heap
     * Stack
-    * JIT
+    * JIT (L4/D3)
     * Bytecode manipulation
     * Reflection
     * Debugging with IDE
-        * Local
-        * Remote
-    * JNI
-    * Profiler
-* Specific data types
+        * Local (Maybe L1, L2-L3 /B)
+        * Remote (L4)
+    * JNI (L4/D3)
+    * Profiler (L4/D3)
+* Specific data types (L1 must)
     * Primitives (boolean, char, byte, short, int, long, float, double) their ranges and memory usage
         * These data types representation in memory, in processor
     * and their wrappers (Boolean, Character, Short, Integer, Long, ...)
     * operations: + - * / & && etc
-* Variables
-    * Constants (`final` keyword)
-* Specific data structures and containers and collections
+* Variables (L1)
+    * Constants (`final` keyword) (L3)
+* Specific data structures and containers and collections (L3 must, earlier is better)
     * Arrays (fixed size collections)
     * Lists
     * Sets
     * Maps
     * Queues and stacks
     * Optional
-* Java
+* Java (L1)
     * Classes
     * Enums
     * Interfaces
         * Default methods
-    * Annotations
+    * Annotations (L3 preferred or L4 must)
     * Methods (functions)
         * Method Declaration: returnType methodName(parameters) { ... }
         * Method Signature and Overloading
@@ -78,20 +76,20 @@ Markers:
         * Instance Methods: Methods that belong to an object instance
         * Method Overriding and Overloading
         * Recursion (a method calling itself)
-* Core OOP Principles
+* Core OOP Principles (L3)
     * Inheritance
     * Encapsulation
     * Polymorphism
     * Abstraction
-* Control Flow Structures
+* Control Flow Structures (L1)
     * if-else
     * cycles:
         * for
         * while
             * do-while
         * continue
-* Advanced numerical classes (BigDecimal, BigInteger, ...)
-* Core algorithms
+* Advanced numerical classes (BigDecimal, BigInteger, ...) (L1-L4 - earlier is better, higher must)
+* Core algorithms (starting from L2)
     * Sorting
         * Quick sort
         * Merge sort
@@ -100,7 +98,7 @@ Markers:
         * Binary search
     * Hashing
     * Recursion
-* Error Handling
+* Error Handling (L1)
     * Exception
         * Checked Exceptions
         * Unchecked Exceptions
@@ -108,9 +106,9 @@ Markers:
     * User-defined Exceptions
     * try-catch
         * try-with-resources
-* Functional programming
+* Functional programming (L3)
     * Lambdas
-    * Functional Interfaces
+    * Functional Interfaces (L4)
         * Predicate
         * Consumer
         * Supplier
@@ -125,16 +123,16 @@ Markers:
             * operations (collect)
         * Parallel streams
     * Optional use cases
-* I/O and Data streams
+* I/O and Data streams (L1)
     * InputStream, OutputStream
     * Readers and Writers
     * NIO (Non-blocking I/O)
-* Modern Java Features
+* Modern Java Features (L4-L5)
     * Modularity (module-info.java)
-    * Date and Time API
+    * Date and Time API (L3)
     * Generics
-* Concurrency and multithreading
-    * Threads and Executors
+* Concurrency and multithreading (L4)
+    * Threads and Executors (L3)
         * ForkJoinPool, Latch (CountDownLatch)
         * Synchronization
         * Thread safety
@@ -142,32 +140,33 @@ Markers:
     * CompletableFuture and parallel computation
     * Virtual Threads
     * Structured concurrency
-* Testing frameworks
+* Testing frameworks (L3)
     * JUnit 5 (and still 4)
     * Mockito (mocking)
     * AssertJ
-    * WireMock
-    * BDD
+    * WireMock (L4)
+    * BDD (L4)
         * Cucumber
         * Fitnesse
-    * Mutation testing
-    * Code quality tools:
+    * Mutation testing (L4)
+    * Code quality tools (L4)
         * Find bug, stop bug
         * ...
 * Build tools
-    * Maven
-        * Site
-    * Gradle
-* JavaDoc
-* Spring and Spring Boot
-* Other Java tools, utils, libraries frameworks
+    * Maven (L3/B)
+        * Site (L4)
+        * Testing frameworks plugins (L4)
+    * Gradle (L3/B)
+* JavaDoc (L3)
+* Spring and Spring Boot (L4)
+* Other Java tools, utils, libraries frameworks (L4)
     * Jackson, Gson
     * JAXB, DOM, SAX
     * Apache Commons: StringUtils, ...
     * Lombok
-    * Logging: Log4j, Logback, SLF4J
+    * Logging: Log4j, Logback, SLF4J (L3)
     * IDE
-        * IntelliJ IDEA
+        * IntelliJ IDEA (L3)
         * Eclipse IDE
         * NetBeans IDE
     * Async tools
@@ -183,16 +182,16 @@ Markers:
 ## Any developer
 
 * Software Version Control
-    * Git
-* Build systems, CI
+    * Git (L2/B)
+* Build systems, CI (L2/B)
     * Jenkins or similar (Bitbucket or GitHub or GiLab CI)
-* Software Issue management
+* Software Issue management (L2/B)
     * Jira
     * Trello
 * Software development methodologies
     * Scrum
     * Kanban
-* Software design patterns
+* Software design patterns (L5/D5 must)
     * Immutability
     * Singleton
     * Factory
