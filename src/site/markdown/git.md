@@ -126,16 +126,19 @@ git rebase -i HEAD~3
 
 git rebase HEAD~1 --onto master
 
+git revert COMMITHASH
+git revert COMMITHASH --no-commit
+
 git log -n 4
 
 git log --graph --decorate --pretty=oneline --abbrev-commit
 
 git log --oneline development ^master
 
-git bisect start [BAD_HAHS]
-# Or when eithout hash then
-git bisect bad [BAD_HAHS]
-git bisect good GOOD_HASH
+git bisect start BAD_COMMITHASH
+# Or when without hash then
+git bisect bad BAD_COMMITHASH
+git bisect good GOOD_COMMITHASH
 git bisect bad
 git bisect good
 git bisect bad
