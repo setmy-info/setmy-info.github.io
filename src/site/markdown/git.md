@@ -227,6 +227,9 @@ git submodule update --init --recursive
 git clone --recurse-submodules MAIN_REPO_URL
 
 git diff --cached --submodule
+
+git mv ./submodules/OLD_SUBMODULE_NAME ./submodules/NEW_SUBMODULE_NAME
+
 ```
 
 Starting as server
