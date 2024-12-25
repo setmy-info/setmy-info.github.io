@@ -220,7 +220,7 @@ kubectl delete deployment training-deployment
 * Create yaml for service.
 * Check the content.
 
-<pod-name>.<service-name>.<namespace>.svc.cluster.local
+POD-NAME.SERVICE-NAME.NAMESPACE.svc.cluster.local
 
 ```sh
 kubectl apply -f ./k8s/service.yaml
@@ -234,6 +234,7 @@ http://127.0.0.1:8222
 http://localhost:8001/api/v1/namespaces/training/pods
 
 ## Ingress
+
 *
 * Create yaml for ingress.
 * Check the content.
