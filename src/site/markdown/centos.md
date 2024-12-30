@@ -95,14 +95,15 @@ Example with bc (command line calculator)
 sudo dnf install -y rpmdevtools rpmlint rpm-build
 rpmdev-setuptree
 
+# Download and install into different rpmbuild folders
 cd ~/rpmbuild/SRPMS/
 dnf info bc
 dnf download --source bc
-# Installs to ~/rpmbuild different folders needed things
 # rpm -ivh bc-*.src.rpm
 rpm -Uvh bc-*.src.rpm
 cd ~
 
+# Unpack source packages into original and changed folder
 cd ~/rpmbuild/BUILD/
 tar -xvzf ~/rpmbuild/SOURCES/bc-1.07.1.tar.gz
 mkdir ~/rpmbuild/BUILD/bc-1.07.1-changed
@@ -111,21 +112,24 @@ cd ~
 
 # Here make changes in changed folder
 
+# Creating patch (diff) for later use by spec build
 cd ~/rpmbuild/BUILD/
 diff -urN bc-1.07.1 bc-1.07.1-changed > ~/rpmbuild/SOURCES/bc-1.07.1-changed.patch
 cd ~
 
+# Edit spec to add one or more patch files, created earlier
 nano ~/rpmbuild/SPECS/bc.spec
 # Add one more patch (bc-1.07.1-changed.patch)
 # PatchN: bc-1.07.1-changed.patch
 # Example:
 # Patch3: bc-1.07.1-changed.patch
 
-# Install deps
+# Install build deps for package
 sudo dnf builddep bc
 
 # Direct src.rpm build
 #rpmbuild --rebuild ~/rpmbuild/SRPMS/bc-1.07.1-14.el9.src.rpm
+
 # Spec file build
 rpmbuild -ba ~/rpmbuild/SPECS/bc.spec
 ```
