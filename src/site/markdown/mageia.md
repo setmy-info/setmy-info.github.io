@@ -19,7 +19,7 @@
 ### RPM rebuild with changes
 
 ```bash
-sudo urpmi rpmdevtools rpmlint rpm-build
+sudo urpmi --auto rpmdevtools rpmlint rpm-build nano mc
 rpmdev-setuptree
 
 cd ~/rpmbuild/SRPMS/
