@@ -122,6 +122,9 @@ git apply --check diff.patch
 
 git am --signoff < diff.patch
 
+git difftool -d COMMITHASH^ COMMITHASH
+git difftool -d COMMITHASH^..COMMITHASH
+
 git rebase -i HEAD~3
 
 git rebase HEAD~1 --onto master
@@ -134,6 +137,12 @@ git log -n 4
 git log --graph --decorate --pretty=oneline --abbrev-commit
 
 git log --oneline development ^master
+
+git show COMMITHASH
+git log -1 COMMITHASH
+
+# 5 commits until hash
+git log -n 5 COMMITHASH
 
 git bisect start BAD_COMMITHASH
 # Or when without hash then
