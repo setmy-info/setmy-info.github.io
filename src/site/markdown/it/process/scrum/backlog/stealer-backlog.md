@@ -28,7 +28,7 @@ Withing few months. Best price proposal wins.
    **multi-projects** monorepo
 2. Branch: **develop**
 3. **Java 21** (OpenJDK) or **multi-projects** property **java.version**
-4. Modules to development: **java-vcs** (if need to change, probably not), **java-staler**
+4. Modules to development: **java-vcs**, **java-exec** (if need to change, probably not), **java-staler**
 5. **Lombok**, **JUnit 5**, **Mockito**, **AssertJ** and modules dependencies only.
 6. Prepare(d), fix and change repo A: **git@github.com:setmy-info/stealer-test-a.git**
 7. Prepare(d), fix and change repo B: **git@github.com:setmy-info/stealer-test-b.git**
@@ -62,6 +62,8 @@ Withing few months. Best price proposal wins.
 25. Code should not be squashed.
 26. Show us your code style. GitHub, GitLab, Bitbucket, ... anything you have made in Java.
 27. User stories should be ready to take in.
+28. Need to understand who is the end-user (tools users, tools depending on library) of the library and what is the goal
+    of the library.
 
 ## Existing
 
