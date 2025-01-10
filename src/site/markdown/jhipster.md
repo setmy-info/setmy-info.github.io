@@ -126,6 +126,12 @@ Export project JDL:
 jhipster export-jdl jhipster1.jh
 ```
 
+Importing JDL starting project from JDL file only
+
+```
+jhipster import-jdl jhipster1.jh
+```
+
 Importing JDL
 
 ```
