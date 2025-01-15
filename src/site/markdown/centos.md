@@ -1,4 +1,4 @@
-# centos and Rocky Linux
+# Centos and Rocky Linux
 
 ## Information
 

@@ -52,6 +52,14 @@ Subscribe:
 ```shell
 # -u username -P password
 mosquitto_sub -h localhost -t test/topic
+
+# Retain (last message holding)
+mosquitto_pub -h localhost -t test/topic -m "Last 1" -r
+mosquitto_pub -h localhost -t test/topic -m "Last 2" -r
+mosquitto_pub -h localhost -t test/topic -m "Last 3" -r
+
+# Clearing retain message
+mosquitto_pub -h localhost -t test/topic -m "" -r
 ```
 
 Publish:
