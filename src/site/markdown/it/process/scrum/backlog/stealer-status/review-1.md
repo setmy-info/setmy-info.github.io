@@ -8,23 +8,23 @@
    I suggest GitHub pull request, and I write there code review results. Demo by you and writen feedback from me does
    not need my microphone. Just in case I can still to do one more review.
 
-1.1. I want to see code review diff - that is the main tool from GitHub for reviewing the code. Also add comments to
-the source code lines.
+   I want to see code review diff - that is the main tool from GitHub for reviewing the code. Also add comments to the
+   source code lines.
 
-1.2. Suggest any other form, that is supporting these two.
+   Suggest any other form, that is supporting these two.
 
 2. Prepare better demo.
 
-2.1. Tests (Requirements in stealer-backlog.html) haven't demod for review. Test should prove code is working.
+Tests (Requirements in stealer-backlog.html) haven't demod for review. Test should prove code is working.
 **mvn clean install** should work for example or other trick I ask to do.
 
-2.1.1. IntelliJ tests was not executed for demo. Next time execute tests with debug mode and breakpoints (all lines
+IntelliJ tests was not executed for demo. Next time execute tests with debug mode and breakpoints (all lines
 in doSteal method), and show final folder - at beginning empty, at breakpoints files are appearing.
 
-2.2. Main code changes haven't demod for review. Demo: What was done? How was done? What are changes made? Line by
+Main code changes haven't demod for review. Demo: What was done? How was done? What are changes made? Line by
 line.
 
-2.3. And final result folder should be demod with final content after **mvn clean install** command execution.
+And final result folder should be demod with final content after **mvn clean install** command execution.
 
 3. In StepConfig patch files list was missing. Need to be added to pass patch files list locations. Patch files list
    have
