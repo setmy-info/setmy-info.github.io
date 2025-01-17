@@ -106,6 +106,8 @@ Late minute questions are not good. We should cancel meeting, when no prepared.
 
 doChange(stealerConfig); is out of scope, as we discussed.
 
+### Conclusion
+
 Prove through tests, that code is working - that is in the requirements list. Demo tests, through breakpoints and show
 output directory appearance at breakpoint moments.
-Please follow that document more, I see it is not so much under good focus.
+Please follow requirements document more, then you can also ask correct questions. Hold it under focus.
