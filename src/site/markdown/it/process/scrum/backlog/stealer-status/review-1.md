@@ -100,7 +100,7 @@ How Patch is executed? It should go through java-exec.
 
 ### 14
 
-Late minute questions are not acceptable. I will cancel meeting, until .
+Late minute questions are not good. We should cancel meeting, when no prepared.
 
 ### 15
 
