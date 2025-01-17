@@ -1,6 +1,7 @@
 # Stealer status review 1
 
-1. I consider first Code review done, but that not correct way to do it. For code review have to pull request have to be
+1. I consider first Code review done, but that not correct way to do it.
+   For code review have to pull request have to be
    made, so reviewer can write code review results into pull request (GitHub pull request) for example - that is code
    review nowadays.
    In case of communication problems, we need to do it properly. Next time when we have problems we need to
@@ -8,10 +9,10 @@
    I suggest GitHub pull request, and I write there code review results. Demo by you and writen feedback from me does
    not need my microphone. Just in case I can still to do one more review.
 
-   I want to see code review diff - that is the main tool from GitHub for reviewing the code. Also add comments to the
-   source code lines.
+I want to see code review diff - that is the main tool from GitHub for reviewing the code. Also add comments to the
+source code lines.
 
-   Suggest any other form, that is supporting these two.
+Suggest any other form, that is supporting these two.
 
 2. Prepare better demo.
 
