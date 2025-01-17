@@ -13,8 +13,6 @@ the source code lines.
 
 1.2. Suggest any other form, that is supporting these two.
 
-1.3. As I understand, you investigated that, how to do that code review in GitHub.
-
 2. Prepare better demo.
 
 2.1. Tests (Requirements in stealer-backlog.html) haven't demod for review. Test should prove code is working.
@@ -50,7 +48,7 @@ line.
 
 8. Meetings are too often, for such task. My time is therefore too much in this project. Task should be ready for demo!
    Then I do review. Let's do this time Sunday again, but then switch to once a week. It is turning to teaching and
-   teaching was not in the plans, as we discussed - no teaching.
+   teaching was not in the plans, as we discussed.
 
 9. Read requirements. Requirements in stealer-backlog.html. That Is your responsibility to
    prove, that all is done.
@@ -66,6 +64,8 @@ line.
 13. How Patch is executed? It should go through java-exec.
 
 14. Late minute questions are not acceptable. I will cancel meeting, until .
+
+15. doChange(stealerConfig); is out of scope, as we discussed.
 
 Prove through tests, that code is working - that is in the requirements list. Demo tests, through breakpoints and show
 output directory appearance at breakpoint moments.
