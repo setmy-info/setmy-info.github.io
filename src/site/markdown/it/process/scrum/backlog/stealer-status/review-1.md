@@ -1,20 +1,21 @@
 # Stealer status review 1
 
 1. I consider first Code review done, but that not correct way to do it.
-   For code review have to pull request have to be
-   made, so reviewer can write code review results into pull request (GitHub pull request) for example - that is code
-   review nowadays.
-   In case of communication problems, we need to do it properly. Next time when we have problems we need to
-   skip demo and code review. I can't accept such form of code reviewing.
-   I suggest GitHub pull request, and I write there code review results. Demo by you and writen feedback from me does
-   not need my microphone. Just in case I can still to do one more review.
+
+For code review have to pull request have to be
+made, so reviewer can write code review results into pull request (GitHub pull request) for example - that is code
+review nowadays.
+In case of communication problems, we need to do it properly. Next time when we have problems we need to
+skip demo and code review. I can't accept such form of code reviewing.
+I suggest GitHub pull request, and I write there code review results. Demo by you and writen feedback from me does
+not need my microphone. Just in case I can still to do one more review.
 
 I want to see code review diff - that is the main tool from GitHub for reviewing the code. Also add comments to the
 source code lines.
 
 Suggest any other form, that is supporting these two.
 
-2. Prepare better demo.
+2. Prepare more detailed demo.
 
 Tests (Requirements in stealer-backlog.html) haven't demod for review. Test should prove code is working.
 **mvn clean install** should work for example or other trick I ask to do.
@@ -27,14 +28,16 @@ line.
 
 And final result folder should be demod with final content after **mvn clean install** command execution.
 
-3. In StepConfig patch files list was missing. Need to be added to pass patch files list locations. Patch files list
-   have
-   to be added from test (hard coded into test).
-   Like:
-   final List<String> patchFiles = new ArrayList<>();
-   patchFiles.add("./src/test/resources/patch-files/patch.a");
-   etc
-   Requirements in stealer-backlog.html document Draft section point 4.
+3. In StepConfig patch files list was missing.
+
+Need to be added to pass patch files list locations. Patch files list
+have
+to be added from test (hard coded into test).
+Like:
+final List<String> patchFiles = new ArrayList<>();
+patchFiles.add("./src/test/resources/patch-files/patch.a");
+etc
+Requirements in stealer-backlog.html document Draft section point 4.
 
 4. If code is searching and using config.yaml - that is not correct and was not in requirements list. That is out of the
    scope. That is CLI project scope. Requirements in stealer-backlog.html document point 14.
