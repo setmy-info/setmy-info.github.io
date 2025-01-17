@@ -120,3 +120,7 @@ phase.
 5. As a library user I want the intermediate results of processing multiple repositories to be stored in the
    ./.stealer/final directory.
 6. I want the final results to be available in the working directory
+
+## Status meetings
+
+(Review 1)[stealer-status/review-1.md]
