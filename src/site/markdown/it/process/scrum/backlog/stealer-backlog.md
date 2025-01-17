@@ -123,4 +123,4 @@ phase.
 
 ## Status meetings
 
-(Review 1)[stealer-status/review-1.md]
+[Review 1](stealer-status/review-1.md)
