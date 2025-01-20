@@ -114,6 +114,52 @@ For demo need to learn some basics IntelliJ short keys and moving around back fo
 
 User stories (Draft section) are left without focus. Just started to work, like task is understood, but actually not.
 
+### 18
+
+Notes about Executor exists from the date:  27. July 2024.
+
+java-vcs works top on that. Notes about java-vcs is in documents from 22. July 2024.
+
+Executor simplifies the work and also narrows down task implementation (task scope).
+
+```
+commit 18e373a6e0dcd5a1661c4bd41c0d46838a8c577e
+Author: Imre Tabur <imre.tabur@mail.ee>
+Date:   Sat Jul 27 21:16:18 2024 +0300
+
+    Execution notes
+
+ src/site/markdown/it/process/scrum/backlog/stealer-backlog.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\sources\setmy.info\submodules\setmy-info.github.io>git bisect reset
+Previous HEAD position was 18e373a Execution notes
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+```
+git diff 18e373a6e0dcd5a1661c4bd41c0d46838a8c577e~1..18e373a6e0dcd5a1661c4bd41c0d46838a8c577e
+```
+
+```
+diff --git a/src/site/markdown/it/process/scrum/backlog/stealer-backlog.md b/src/site/markdown/it/process/scrum/backlog/stealer-backlog.md
+index 5ecd332..14df7d5 100644
+--- a/src/site/markdown/it/process/scrum/backlog/stealer-backlog.md
++++ b/src/site/markdown/it/process/scrum/backlog/stealer-backlog.md
+@@ -68,6 +68,7 @@ Withing few months. Best price proposal wins.
+ 1. java-vcs with git cloning, checkout functionality. Example code exists.
+ 2. Maven wrapper. Build should go smoothly.
+ 3. A and B repos with content prepared.
++4. Command execution code is ready: Executor
+
+ ## Goal description
+```
+
+```
+git diff 9bc52cfa~1..9bc52cfa
+```
+
 ### Conclusion
 
 Prove through tests, that code is working - that is in the requirements list. Demo tests, through breakpoints and show
