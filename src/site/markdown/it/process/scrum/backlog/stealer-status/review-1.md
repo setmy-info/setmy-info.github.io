@@ -106,6 +106,14 @@ Late minute questions are not good. We should cancel meeting, when no prepared.
 
 doChange(stealerConfig); is out of scope, as we discussed.
 
+### 16
+
+For demo need to learn some basics IntelliJ short keys and moving around back forward. Into class, into method.
+
+### 17
+
+User stories (Draft section) are left without focus. Just started to work, like task is understood, but actually not.
+
 ### Conclusion
 
 Prove through tests, that code is working - that is in the requirements list. Demo tests, through breakpoints and show
