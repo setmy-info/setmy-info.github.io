@@ -108,7 +108,7 @@ doChange(stealerConfig); is out of scope, as we discussed.
 
 ### 16
 
-For demo need to learn some basics IntelliJ short keys and moving around back forward. Into class, into method.
+For demo need to learn some basics IntelliJ short keys and moving around back forward. Into class, into method and back.
 
 ### 17
 
@@ -116,9 +116,9 @@ User stories (Draft section) are left without focus. Just started to work, like 
 
 ### 18
 
-Notes about Executor exists from the date:  27. July 2024.
+Notes about Executor (that is actually java-exec) exists from the date:  27. July 2024.
 
-java-vcs works top on that. Notes about java-vcs is in documents from 22. July 2024.
+java-vcs works top on that (Executor). Notes about java-vcs is in documents from 22. July 2024.
 
 Executor simplifies the work and also narrows down task implementation (task scope).
 
@@ -159,6 +159,11 @@ index 5ecd332..14df7d5 100644
 ```
 git diff 9bc52cfa~1..9bc52cfa
 ```
+
+### 19
+
+Consistency - using similar components for similar tasks/goal/functionality. For example, if java-vcs uses Executor,
+then java-stealer also should use it. That is common in good software development.
 
 ### Conclusion
 
