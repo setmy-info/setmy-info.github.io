@@ -251,6 +251,8 @@ sharing with others.
 * [Visualizing transformers and attention | Talk for TNG Big Tech Day '24 - YouTube](https://m.youtube.com/watch?v=KJtZARuO3JY)
 * [Transformers (how LLMs work) explained visually | DL5 - YouTube](https://m.youtube.com/watch?v=wjZofJX0v4M)
 * [Attention in transformers, step-by-step | DL6 - YouTube](https://m.youtube.com/watch?v=eMlx5fFNoYc)
+* [3 gen ANN](https://www.researchgate.net/figure/Three-generations-of-artificial-neural-networks-ANNs-MLP-multilayer-perceptron-MP_fig2_339481763)
+* [AI](https://www.researchgate.net/figure/Diagram-illustrates-the-relationship-between-artificial-intelligence-AI-machine_fig1_364337909)
 
 [https://www.deeplearning.ai/]()
 
