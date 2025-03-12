@@ -24,6 +24,7 @@ Neural networks, Deep Learning, Machine learning.
 * Volta and Turing Tensor Cores
 * ANN
 * RNN
+* SNN - Spiking Neural Networks
 * NLP
 * BERT
 * Long Short-Term Memory
@@ -241,6 +242,15 @@ sharing with others.
 * [machine learning zoo](https://www.youtube.com/watch?v=tdtpa1e5fsU)
 * [ML Math](https://www.youtube.com/watch?v=Ixl3nykKG9M)
 * [Backpropagation example](https://www.youtube.com/watch?v=khUVIZ3MON8)
+* [ACACES 2023: Neuromorphic computing: from theory to applications, Lecture 1 – Yulia Sandamirskaya - YouTube](https://m.youtube.com/watch?v=2XX8KLMyQN4)
+* [Tutorial on snnTorch: Jason Eshraghian ICONS 2021 - YouTube](https://m.youtube.com/watch?v=O2-mT291ygg)
+* [ICONS 2020 Keynote Presentation by Sander Bohte: Computing with Spiking Neurons - YouTube](https://m.youtube.com/watch?v=M4O3d8sl1tQ)
+* [Spiking Neural Networks for More Efficient AI Algorithms - YouTube](https://m.youtube.com/watch?v=PeW-TN3P1hk)
+* [A Brain-Inspired Algorithm For Memory - YouTube](https://m.youtube.com/watch?v=1WPJdAW-sFo)
+* [Generative Model That Won 2024 Nobel Prize - YouTube](https://m.youtube.com/watch?v=_bqa_I5hNAo)
+* [Visualizing transformers and attention | Talk for TNG Big Tech Day '24 - YouTube](https://m.youtube.com/watch?v=KJtZARuO3JY)
+* [Transformers (how LLMs work) explained visually | DL5 - YouTube](https://m.youtube.com/watch?v=wjZofJX0v4M)
+* [Attention in transformers, step-by-step | DL6 - YouTube](https://m.youtube.com/watch?v=eMlx5fFNoYc)
 
 [https://www.deeplearning.ai/]()
 
