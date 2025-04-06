@@ -1,5 +1,9 @@
 # Japan
 
+## Haneda Airport
+
+* https://tokyo-haneda.com/en/floor/index.html
+
 ## Mobile internet
 
 * Sakura Mobile - https://www.sakuramobile.jp/
@@ -8,6 +12,8 @@
     * Haneda Airport – Pick-up Box (Smart Locker)
 * Mobal - https://www.mobal.com/
 * Japan Wireless - https://www.japan-wireless.com/
+
+## Railways
 
 ## Approximate EUR to JPY Conversion Table
 
