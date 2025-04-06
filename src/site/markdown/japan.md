@@ -37,6 +37,8 @@ JR East selling machines.
 
 Tokyo Station -> Hiroshima
 
+(Map)[https://japantravel.navitime.com/static/parche/20240528-3/files/shinkansen-map.pdf]
+
 (SmartEX)[https://smart-ex.jp/en/index.php]
 
 ## Approximate EUR to JPY Conversion Table
@@ -62,3 +64,17 @@ Tokyo Station -> Hiroshima
 |     987 | 157,920 |
 
 * (Exchange rates)[https://www.eestipank.ee/valuutakursid]
+
+# See also
+
+* (Shinkansen)[https://www.youtube.com/watch?v=4zXBg91YC3M]
+* (Shinkansen Tokyo to Hiroshima)[https://www.youtube.com/watch?v=V9LHs6GxeB4]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
+* (xxxx)[xxxx]
