@@ -2,18 +2,42 @@
 
 ## Haneda Airport
 
-* https://tokyo-haneda.com/en/floor/index.html
+* [Airport plan](https://tokyo-haneda.com/en/floor/index.html)
 
 ## Mobile internet
 
-* Sakura Mobile - https://www.sakuramobile.jp/
+* [Sakura Mobile](https://www.sakuramobile.jp/)
     * Post Office (09:00–17:00) - Haneda Airport Terminal 3 Post Office (International Terminal) 羽田空港第3ターミナル郵便局,
       Terminal 3, Arrival Lobby (2nd floor) or  (Yamato-like delivery box)
     * Haneda Airport – Pick-up Box (Smart Locker)
 * Mobal - https://www.mobal.com/
 * Japan Wireless - https://www.japan-wireless.com/
 
+## Suica card
+
+JR East selling machines.
+
+* Start with 5000 ¥
+
 ## Railways
+
+* JR - Japan Railways Group
+    * JR East
+        * JR Yamanote Line (山手線)
+    * JR West
+    * JR Central
+* Keikyu Line (京急線 – Keikyū)
+* Tokyo Monorail (東京モノレール)
+
+### Shinkansen
+
+* Nozomi (fastest)
+* Hikari
+* Kodama
+
+Tokyo Station -> Hiroshima
+
+(SmartEX)[https://smart-ex.jp/en/index.php]
 
 ## Approximate EUR to JPY Conversion Table
 
@@ -36,3 +60,5 @@
 |     377 |  60,320 |
 |     610 |  97,600 |
 |     987 | 157,920 |
+
+* (Exchange rates)[https://www.eestipank.ee/valuutakursid]
