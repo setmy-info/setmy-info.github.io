@@ -1,5 +1,14 @@
 # Japan
 
+## Mobile internet
+
+* Sakura Mobile - https://www.sakuramobile.jp/
+    * Post Office (09:00–17:00) - Haneda Airport Terminal 3 Post Office (International Terminal) 羽田空港第3ターミナル郵便局,
+      Terminal 3, Arrival Lobby (2nd floor) or  (Yamato-like delivery box)
+    * Haneda Airport – Pick-up Box (Smart Locker)
+* Mobal - https://www.mobal.com/
+* Japan Wireless - https://www.japan-wireless.com/
+
 ## Approximate EUR to JPY Conversion Table
 
 💶 _Exchange rate used: 1 EUR = 160 JPY_
