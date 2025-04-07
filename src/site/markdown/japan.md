@@ -69,12 +69,22 @@ Tokyo Station -> Hiroshima
 
 * [Shinkansen](https://www.youtube.com/watch?v=4zXBg91YC3M)
 * [Shinkansen Tokyo to Hiroshima](https://www.youtube.com/watch?v=V9LHs6GxeB4)
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
+* [optimalnyj-plan](https://wrenjapan.com/yaponiya/optimalnyj-plan-poezdki-v-yaponiyu/)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
+* [xxxx](yyyyy)
