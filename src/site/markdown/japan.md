@@ -10,8 +10,8 @@
     * Post Office (09:00–17:00) - Haneda Airport Terminal 3 Post Office (International Terminal) 羽田空港第3ターミナル郵便局,
       Terminal 3, Arrival Lobby (2nd floor) or  (Yamato-like delivery box)
     * Haneda Airport – Pick-up Box (Smart Locker)
-* Mobal - https://www.mobal.com/
-* Japan Wireless - https://www.japan-wireless.com/
+* [Mobal](https://www.mobal.com/)
+* [Japan Wireless](https://www.japan-wireless.com/)
 
 ## Suica card
 
@@ -37,9 +37,9 @@ JR East selling machines.
 
 Tokyo Station -> Hiroshima
 
-(Map)[https://japantravel.navitime.com/static/parche/20240528-3/files/shinkansen-map.pdf]
+[Map](https://japantravel.navitime.com/static/parche/20240528-3/files/shinkansen-map.pdf)
 
-(SmartEX)[https://smart-ex.jp/en/index.php]
+[SmartEX](https://smart-ex.jp/en/index.php)
 
 ## Approximate EUR to JPY Conversion Table
 
@@ -63,12 +63,12 @@ Tokyo Station -> Hiroshima
 |     610 |  97,600 |
 |     987 | 157,920 |
 
-* (Exchange rates)[https://www.eestipank.ee/valuutakursid]
+* [Exchange rates](https://www.eestipank.ee/valuutakursid)
 
 # See also
 
-* (Shinkansen)[https://www.youtube.com/watch?v=4zXBg91YC3M]
-* (Shinkansen Tokyo to Hiroshima)[https://www.youtube.com/watch?v=V9LHs6GxeB4]
+* [Shinkansen](https://www.youtube.com/watch?v=4zXBg91YC3M)
+* [Shinkansen Tokyo to Hiroshima](https://www.youtube.com/watch?v=V9LHs6GxeB4)
 * (xxxx)[xxxx]
 * (xxxx)[xxxx]
 * (xxxx)[xxxx]
