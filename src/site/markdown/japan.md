@@ -13,11 +13,36 @@
 * Mobal - https://www.mobal.com/
 * Japan Wireless - https://www.japan-wireless.com/
 
-## Suica card
+## Transportation pre-paid / IC cards
+
+[Card Map](https://www.japan-guide.com/e/e2359_003.html)
+
+IC cards:
+
+* Suica (Tokyo area, by JR East)
+* PASMO (Tokyo area, by non JR companies)
+* ICOCA (JR West)
+* PiTaPa (Kansai Thru Pass, by non JR companies)
+* Kitaca (JR Hokkaido)
+* manaca (Various railways and bus lines serving Nagoya, including Meitetsu)
+* TOICA (JR Tokai)
+* SUGOCA (JR Kyushu)
+* nimoca (Various railways and bus lines serving Fukuoka)
+* Hayakaken (Various railways and bus lines serving Fukuoka)
+
+### Suica card
+
+[Home site](https://www.jreast.co.jp/multi/en/pass/suica.html)
+
+Search: ![Image](https://www.jreast.co.jp/multi/welcomesuica/img/welcomesuica/logo_ic.svg)
 
 JR East selling machines.
 
+**Welcome Suica: Haneda Airport Terminal 3 (Tokyo Monorail) Station**
+
 * Start with 5000 ¥
+
+### Pasmo card
 
 ## Railways
 
@@ -69,10 +94,10 @@ Tokyo Station -> Hiroshima
 
 * (Shinkansen)[https://www.youtube.com/watch?v=4zXBg91YC3M]
 * (Shinkansen Tokyo to Hiroshima)[https://www.youtube.com/watch?v=V9LHs6GxeB4]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
+* (smart-ex)[https://smart-ex.jp/en/lp/app/]
+* (jr-central)[https://global.jr-central.co.jp/en/]
+* (Tokio JR East map)[https://www.jreast.co.jp/e/routemaps/pdf/RouteMap_majorrailsub.pdf]
+* (Hotels)[https://wagaya-japan.com/en/rent/tokyo/ningyocho_0519-st/list/?room_kei=0,1,3&sort=0]
 * (xxxx)[xxxx]
 * (xxxx)[xxxx]
 * (xxxx)[xxxx]
