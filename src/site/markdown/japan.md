@@ -2,7 +2,10 @@
 
 ## Haneda Airport
 
-* [Airport plan](https://tokyo-haneda.com/en/floor/index.html)
+* [Haneda Airport plan](https://tokyo-haneda.com/en/floor/index.html)
+* [Haneda Lockers](https://tokyo-haneda.com/en/service/facilities/coin_locker.html)
+* [Haneda arrayval Lockers](https://tokyo-haneda.com/en/floor/terminal3/2nd_floor.html?pin=map1,SERVICE_010_050_001,/service/facilities/coin_locker.html%3Ftab%3Dterminal3)
+* [More about Haneda Lockers](https://airportlocker.guide/japan/haneda-airport-lockers)
 
 ## Mobile internet
 
@@ -10,8 +13,8 @@
     * Post Office (09:00–17:00) - Haneda Airport Terminal 3 Post Office (International Terminal) 羽田空港第3ターミナル郵便局,
       Terminal 3, Arrival Lobby (2nd floor) or  (Yamato-like delivery box)
     * Haneda Airport – Pick-up Box (Smart Locker)
-* Mobal - https://www.mobal.com/
-* Japan Wireless - https://www.japan-wireless.com/
+* [Mobal](https://www.mobal.com/)
+* [Japan Wireless](https://www.japan-wireless.com/)
 
 ## Transportation pre-paid / IC cards
 
@@ -62,9 +65,9 @@ JR East selling machines.
 
 Tokyo Station -> Hiroshima
 
-(Map)[https://japantravel.navitime.com/static/parche/20240528-3/files/shinkansen-map.pdf]
+[Map](https://japantravel.navitime.com/static/parche/20240528-3/files/shinkansen-map.pdf)
 
-(SmartEX)[https://smart-ex.jp/en/index.php]
+[SmartEX](https://smart-ex.jp/en/index.php)
 
 ## Approximate EUR to JPY Conversion Table
 
@@ -88,17 +91,17 @@ Tokyo Station -> Hiroshima
 |     610 |  97,600 |
 |     987 | 157,920 |
 
-* (Exchange rates)[https://www.eestipank.ee/valuutakursid]
+* [Exchange rates](https://www.eestipank.ee/valuutakursid)
 
 # See also
 
 * (Shinkansen)[https://www.youtube.com/watch?v=4zXBg91YC3M]
 * (Shinkansen Tokyo to Hiroshima)[https://www.youtube.com/watch?v=V9LHs6GxeB4]
+* [optimalnyj-plan](https://wrenjapan.com/yaponiya/optimalnyj-plan-poezdki-v-yaponiyu/)
 * (smart-ex)[https://smart-ex.jp/en/lp/app/]
 * (jr-central)[https://global.jr-central.co.jp/en/]
 * (Tokio JR East map)[https://www.jreast.co.jp/e/routemaps/pdf/RouteMap_majorrailsub.pdf]
 * (Hotels)[https://wagaya-japan.com/en/rent/tokyo/ningyocho_0519-st/list/?room_kei=0,1,3&sort=0]
-* (xxxx)[xxxx]
 * (xxxx)[xxxx]
 * (xxxx)[xxxx]
 * (xxxx)[xxxx]
