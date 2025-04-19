@@ -95,14 +95,16 @@ Tokyo Station -> Hiroshima
 
 # See also
 
-* (Shinkansen)[https://www.youtube.com/watch?v=4zXBg91YC3M]
-* (Shinkansen Tokyo to Hiroshima)[https://www.youtube.com/watch?v=V9LHs6GxeB4]
+* [Shinkansen](https://www.youtube.com/watch?v=4zXBg91YC3M)
+* [Shinkansen Tokyo to Hiroshima](https://www.youtube.com/watch?v=V9LHs6GxeB4)
 * [optimalnyj-plan](https://wrenjapan.com/yaponiya/optimalnyj-plan-poezdki-v-yaponiyu/)
-* (smart-ex)[https://smart-ex.jp/en/lp/app/]
-* (jr-central)[https://global.jr-central.co.jp/en/]
-* (Tokio JR East map)[https://www.jreast.co.jp/e/routemaps/pdf/RouteMap_majorrailsub.pdf]
-* (Hotels)[https://wagaya-japan.com/en/rent/tokyo/ningyocho_0519-st/list/?room_kei=0,1,3&sort=0]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
-* (xxxx)[xxxx]
+* [smart-ex](https://smart-ex.jp/en/lp/app/)
+* [jr-central](https://global.jr-central.co.jp/en/)
+* [Tokio JR East map](https://www.jreast.co.jp/e/routemaps/pdf/RouteMap_majorrailsub.pdf)
+* [Hotels](https://wagaya-japan.com/en/rent/tokyo/ningyocho_0519-st/list/?room_kei=0,1,3&sort=0)
+* [Home Stay](https://www.homestay.com/homestays/search?utf8=%E2%9C%93&search_type=map&latitude=35.6705&longitude=139.7409&country_code=&ne_lat=36.160422&ne_lng=140.345992&sw_lat=35.324462&sw_lng=139.027633&radius=&type=&order=&location_id=&google_place_id=&price_filter_nights=1&location=Tokyo%2C+Japan&check_in=02+May+2025&check_out=04+May+2025&guests=2&min_price=&max_price=&price_filter_currency=EUR&price_bracket=&meals_provided=0&self_catering=0&accept_male=0&accept_female=0&accept_couples=0&accept_families=0&accept_students=0&no_pets=0&cooking=0&golf=0&tennis=0&hiking=0&cycling=0&wheelchair_accessible=0&wifi=0&tv=0&garden=0&bikes=0&parking=0&swimming_pool=0&gym=0)
+* [xxxx](xxxx)
+* [xxxx](xxxx)
+* [xxxx](xxxx)
+* [xxxx](xxxx)
+* [xxxx](xxxx)
