@@ -94,3 +94,7 @@ https://mehler-systems.com/ballistic-protection/
 
 https://armory.ee/products/nij-level-3a-ballistiline-kiiver-mudel-pasgt?pr_prod_strat=e5_desc&pr_rec_id=b2b80fa2f&pr_rec_pid=7074136653860&pr_ref_pid=7045640028196&pr_seq=uniform
 
+https://bulletproofzone.com/blogs/bullet-proof-blog/buying-best-bulletproof-vest
+
+https://www.recon-company.com/en/nexus-ballistik-level-iii-stand-alone-side-plate-6-x6/25743
+
