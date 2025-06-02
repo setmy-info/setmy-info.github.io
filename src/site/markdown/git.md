@@ -177,6 +177,11 @@ git tag -a 1.2.3 -m "1.2.3" COMMITHASH
 
 git push origin 1.2.3
 
+git tag -f latest
+# Or
+git tag -f latest 1.2.3
+git push -f origin latest
+
 git push --tags
 
 git push --delete origin 1.2.3
