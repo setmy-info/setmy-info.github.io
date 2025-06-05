@@ -10,3 +10,4 @@ Example by needs:
 * Is PoCable tool/library doing in background requests (request cost). Should Answer to question, how to lower the
   requests.
 * Other rising questions
+* Is library, framework, tool working in(side) everyday software under development, is it working in that context?
