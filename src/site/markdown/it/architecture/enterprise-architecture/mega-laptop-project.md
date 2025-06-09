@@ -7,8 +7,8 @@ Movable Intranet server solution.
 * Serving module (minimum for serving)
     * PC (**POWER**)
     * WiFi router (**POWER**)
-    * USB 3.0 Hub (**POWER**) [TRB500](https://teltonika-networks.com/products/gateways/trb500)
-    * 5G modem (**POWER**)
+    * USB 3.0 Hub (**POWER**)[Anker Powered USB 3.0 Hub 7-port](https://www.anker.com/products/a7505)
+    * 5G modem (**POWER**) [TRB500](https://teltonika-networks.com/products/gateways/trb500)
 * Working station side
     * Monitor (**POWER**)
     * Mouse (wired)
