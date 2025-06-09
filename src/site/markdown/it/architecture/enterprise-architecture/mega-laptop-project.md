@@ -7,14 +7,14 @@ Movable Intranet server solution.
 * Serving module (minimum for serving)
     * PC (**POWER**)
     * WiFi router (**POWER**)
-    * USB 3.0 Hub (**POWER**) TRB500 https://teltonika-networks.com/products/gateways/trb500
+    * USB 3.0 Hub (**POWER**) [TRB500](https://teltonika-networks.com/products/gateways/trb500)
     * 5G modem (**POWER**)
 * Working station side
     * Monitor (**POWER**)
     * Mouse (wired)
     * Keyboard (wired)
 * Powering module
-    * UPS
+    * UPS [Eaton](https://www.eaton.com/gb/en-gb/skuPage.5SC1500I.html)
 
 POWER - power needed
 
