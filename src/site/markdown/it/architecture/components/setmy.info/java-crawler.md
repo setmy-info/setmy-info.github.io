@@ -5,4 +5,4 @@
 Tool to use selenium to crawl the web pages. Push helping JavaScript to browser that helps to collect data.
 Collect data (mostly text, their 2D location at page, ...)
 
-Uses Selenium HUB and FF as node.
+Uses (depends on) Selenium HUB and FF as node.
