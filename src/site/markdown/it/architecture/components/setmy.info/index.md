@@ -2,7 +2,7 @@
 
 Root mono repo with GIT submodules.
 
-Mostly for Java and Groovy related modules (libraries).
+Mostly for Java and Groovy-related modules (libraries).
 
 ## Architecture
 
@@ -31,7 +31,7 @@ git clone --recurse-submodules git@github.com:setmy-info/setmy.info.git
 
 Submoduler folder: ./submodules
 
-Submodules contains links to other GIT repositories and can be cloned all once.
+Submodules contain links to other GIT repositories and can be cloned all once.
 
 *-start-project submodules are starters or seed projects for starting new projects.
 
@@ -39,7 +39,7 @@ setmy-info-scripts is project for Linux and FreeBSD set of scripts.
 
 ### Incubation
 
-Incubation, that contains different probes, poc's, spikes before architecture decisions to add to main root folder:
+Incubation, which contains different probes, poc's, spikes before architecture decisions to add to main root folder:
 ./incubation
 
 ### Modules in root folder
