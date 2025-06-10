@@ -24,6 +24,10 @@ firefox --headless --url https://example.com
 firefox --headless --screenshot https://example.com
 firefox --new-tab `pwd`/src/site/resources/static.html
 firefox --new-tab `pwd`/target/site/index.html
+
+firefox.exe -CreateProfile "selenium-test"
+# -no-remote - many instances with same profile?
+firefox.exe -P "selenium-test" -no-remote
 ```
 
 ### Coding tips and tricks
