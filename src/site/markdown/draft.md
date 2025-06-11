@@ -6,11 +6,11 @@ https://www.objectdb.com/java/jpa/entity/persistence-unit
 https://vladmihalcea.com/how-to-use-external-xml-mappings-files-outside-of-jar-with-jpa-and-hibernate/
 http://java.sun.com/xml/ns/persistence/orm_2_0.xsd
 
-export JAVA_HOME=/opt/jdk-14.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH}
-export JAVA_HOME=/opt/jdk-14.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH}
-export PATH=/opt/apache-maven-3.6.0/bin:$PATH
+export JAVA_HOME=/opt/jdk-24.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH}
+export JAVA_HOME=/opt/jdk-24.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH}
+export PATH=/opt/apache-maven-3.9.9/bin:$PATH
 
-mvn cleaninstall &&
+mvn clean install &&
 cd groovy-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
 cd groovy-services && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
 cd java-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
@@ -102,7 +102,7 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 * Püüelda IDE-e funktsionaalsuse ärakasutamise suunas.
 * Roles: Business analüütikud: should not write tables, SQL, Java class model in any form. Its implementing team members
   responsibility.
-* Developer should have possibility to build current work on CI (push by push) to get feedback early. Without additional
+* Developers should have the possibility to build current work on CI (push by push) to get feedback early. Without additional
   steps (clicks, tool usage).
 * GIT should reflect reality and not fake result. Main/master/trunk should be releasable at eny moment without searching
   release tags, numbers somewhere.

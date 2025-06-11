@@ -60,6 +60,78 @@ mosquitto_pub -h localhost -t test/topic -m "Last 3" -r
 
 # Clearing retain message
 mosquitto_pub -h localhost -t test/topic -m "" -r
+
+# *nixes
+# AWS IoT MQTT QoS: 0, 1 only
+MQTT_ENDPOINT=xxxxxxxxxxxxxxxxxx-yyy.iot.eu-central-1.amazonaws.com
+MQTT_ENDPOINT_PORT=8883
+MQTT_QOS=1
+MQTT_SUB_ID=mosquitto_sub
+MQTT_PUB_ID=mosquitto_pub
+CA_FILE=AmazonRootCA1.pem
+CERT_FILE=certificate.crt
+KEY_FILE=private.key
+
+mosquitto_sub \
+    -d \
+    -h ${MQTT_ENDPOINT} \
+    -p ${MQTT_ENDPOINT_PORT} \
+    --cafile ${CA_FILE} \
+    --cert ${CERT_FILE} \
+    --key ${KEY_FILE} \
+    -q ${MQTT_QOS} \
+    -i ${MQTT_SUB_ID} \
+    -t "test/topic" \
+    --tls-version tlsv1.2
+
+mosquitto_pub \
+    -d \
+    -h ${MQTT_ENDPOINT} \
+    -p ${MQTT_ENDPOINT_PORT} \
+    --cafile ${CA_FILE} \
+    --cert ${CERT_FILE} \
+    --key ${KEY_FILE} \
+    -q ${MQTT_QOS} \
+    -i ${MQTT_PUB_ID} \
+    -t "test/topic" \
+    -m "{\"message\": \"Hello from Mosquitto!\", \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" \
+    --tls-version tlsv1.2
+
+# Windows
+@echo off
+set MQTT_ENDPOINT=xxxxxxxxxxxxxxxxxx-yyy.iot.eu-central-1.amazonaws.com
+set MQTT_ENDPOINT_PORT=8883
+set MQTT_QOS=1
+set MQTT_SUB_ID=mosquitto_sub
+set MQTT_PUB_ID=mosquitto_pub
+set CA_FILE=AmazonRootCA1.pem
+set CERT_FILE=certificate.crt
+set KEY_FILE=private.key
+
+mosquitto_sub ^
+    -d ^
+    -h %MQTT_ENDPOINT% ^
+    -p %MQTT_ENDPOINT_PORT% ^
+    --cafile %CA_FILE% ^
+    --cert %CERT_FILE% ^
+    --key %KEY_FILE% ^
+    -q %MQTT_QOS% ^
+    -i %MQTT_SUB_ID% ^
+    -t "test/topic" ^
+    --tls-version tlsv1.2
+
+mosquitto_pub ^
+    -d ^
+    -h %MQTT_ENDPOINT% ^
+    -p %MQTT_ENDPOINT_PORT% ^
+    --cafile %CA_FILE% ^
+    --cert %CERT_FILE% ^
+    --key %KEY_FILE% ^
+    -q %MQTT_QOS% ^
+    -i %MQTT_PUB_ID% ^
+    -t "test/topic" ^
+    -m "{\"message\": \"Hello from Mosquitto!\", \"timestamp\": \"%date% %time%\"}" ^
+    --tls-version tlsv1.2
 ```
 
 Publish:
