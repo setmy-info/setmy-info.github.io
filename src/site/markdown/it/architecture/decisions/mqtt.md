@@ -13,7 +13,7 @@
     - Required for possible duplication detection
 7. Sender should set a message version into header.
     - Property name: **"v"**
-    - Accepted types: int (with mask, like IPv4)
+    - Accepted types: int, long (with mask, like IPv4)
     - Semantic versioning: https://semver.org/
 8. Sender should set proper, correct **TTL for messages**, based on reality needs and requirements.
 9. Session Expiry Interval meaningful value should be set.
@@ -56,9 +56,10 @@
     - Required for value object immutability
     - Property name: **"c"**
 19. MQTT (plugin) + RabbitMQ as one single process is acceptable.
-20. mTLS (client certificate authentication) should be applied.
-21. RBAC should be set for topics.
+20. mTLS (client certificate authentication) should be applied for all clients.
+21. RBAC should be set for topics (queues, exchanges in RabbitMQ).
 22. Backpressure principles should be applied.
-23. Self-made (?) logging framework for error cases, for duplicate and continuous errors have to be developed.
+23. Self-made (?) logging framework for error cases, for duplicate and continuous errors have to be developed. Plan to
+    use the Prometheus plugin for RabbitMQ.
 24. Monitoring and metrics should be used.
-25. Use UTC to avoid ...
+25. Use UTC for all timestamps and logging to avoid timezone-related issues.
