@@ -15,7 +15,7 @@
 7. Sender should set a message version into header.
     - Property name: **"v"**
     - Accepted types: int, long (with mask, like IPv4)
-    - Semantic versioning: https://semver.org/
+    - Use [semantic versioning](https://semver.org/)
 8. Sender should set proper, correct **TTL for messages**, based on reality needs and requirements.
 9. Session Expiry Interval meaningful value should be set.
     - Apply the same rules as TTL
