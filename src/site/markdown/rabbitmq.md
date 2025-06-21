@@ -8,10 +8,10 @@
 
 	sudo rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
 	sudo dnf install socat logrotate -y
-	wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.6/rabbitmq-server-3.12.6-1.el8.noarch.rpm
-	wget https://github.com/rabbitmq/erlang-rpm/releases/download/v26.1.2/erlang-26.1.2-1.el9.x86_64.rpm
-	sudo dnf install -y erlang-26.1.2-1.el9.x86_64.rpm
-	sudo dnf install -y rabbitmq-server-3.12.6-1.el8.noarch.rpm
+	wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.1.1/rabbitmq-server-4.1.1-1.el8.noarch.rpm
+	wget https://github.com/rabbitmq/erlang-rpm/releases/download/v27.3.4.1/erlang-27.3.4.1-1.el9.x86_64.rpm
+	sudo dnf install -y erlang-27.3.4.1-1.el9.x86_64.rpm
+	sudo dnf install -y rabbitmq-server-4.1.1-1.el8.noarch.rpm
 
 	sudo systemctl enable rabbitmq-server
 	sudo systemctl start rabbitmq-server
