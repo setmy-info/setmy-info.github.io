@@ -68,3 +68,6 @@
 27. DevOps should define and document disaster recovery and backup procedures, including automated restore testing.
 28. IP allow/deny lists should be configured on broker/network level.
 29. Message maximum size should be measured, analyzed, decided and documented and set.
+30. The MQTT broker, subscriber/consumer, and database should be treated as a **single logical unit** — a message queue
+    processing system — and must be deployed in **high-availability (HA)** mode. All components should be monitored and
+    failover-tested together to ensure message delivery, persistence, and processing continuity.
