@@ -49,10 +49,12 @@ rabbitmqctl --version
 
 ```shell
 @echo off
-python %~dp0\rabbitmqadmin.py %*
+py %~dp0\rabbitmqadmin.py %*
 ```
 
 ```shell
+rabbitmqadmin --version
+
 rabbitmq-plugins enable rabbitmq_mqtt
 rabbitmq-plugins enable rabbitmq_management
 rabbitmqctl add_user admin PASSWORD1234
@@ -78,12 +80,17 @@ rabbitmqctl set_user_tags dev administrator
 
 # 6. Create Queue: test_queue
 rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare queue name=test_queue durable=true
+rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare queue name=test_queue2 durable=true
 
 # 7. Create MQTT topic exchange: test.topic.exchange (type topic)
 rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare exchange name=test.topic.exchange type=topic durable=true
+rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare exchange name=test.topic.exchange type=topic durable=true
 
 # 8. Bind exchange with routing key "test/topic" to the queue. Instead: "test/topic" shoule be "test.topic"
-rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare binding source=test.topic.exchange destination=test_queue routing_key=test.topic
+rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare binding source=test.topic.exchange  destination=test_queue routing_key=test.topic
+REM x-match = all
+REM x-match = any
+rabbitmqadmin -u dev -p PASSWORD1234 -V dev declare binding source=test.topic.exchange2 destination=test_queue2 arguments="{\"x-match\":\"all\",\"X-Application-Id\":\"test\",\"X-Tenant-Id\":\"tenant-1234\"}"
 
 # 9. Check queues
 rabbitmqctl list_queues --vhost dev name messages_ready messages_unacknowledged
