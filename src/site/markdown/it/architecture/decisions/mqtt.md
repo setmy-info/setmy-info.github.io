@@ -24,7 +24,7 @@
     - It Can be short, int, long, or UUID
     - Required for routing
 11. Property/header names should **not be "X-"** prefixed.
-    - See: RFC 6648 https://www.rfc-editor.org/rfc/rfc6648
+    - See: [RFC 6648](https://www.rfc-editor.org/rfc/rfc6648)
 12. Content type can be passed as a property.
     - Prefer **not to set it**
     - If absent, default is **"application/cbor"**
@@ -41,7 +41,7 @@
     - E.g., MongoDB (NB! but requires payload to be parsed!)
         - To avoid schema validation for better performance
     - Store as-is in binary form (no payload parsing)
-    - without processing (separate thread or process)
+    - Without processing (separate thread or process)
     - DB check heartbeats (separate thread or process) should be applied (cleanup, re-start processing, failing DB
       records handling, etc.)
 17. Payload must include message creation date/time
@@ -49,5 +49,5 @@
     - Encoding: CBOR
     - Timestamp must stay the same in case of retries
     - Required for value object immutability
-    - Property name: "c"
+    - Property name: **"c"**
 18. MQTT (plugin) + RabbitMQ as one single process is acceptable.
