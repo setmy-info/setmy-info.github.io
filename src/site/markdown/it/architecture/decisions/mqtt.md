@@ -11,43 +11,54 @@
     - Default and quick choice: **UUID**
     - Should also be in properties/headers
     - Required for possible duplication detection
-7. Sender should set proper, correct **TTL for messages**, based on reality needs and requirements.
-8. Session Expiry Interval meaningful value should be set.
+7. Sender should set a message version into header.
+    - Property name: **"v"**
+    - Accepted types: int (with mask, like IPv4)
+    - Semantic versioning: https://semver.org/
+8. Sender should set proper, correct **TTL for messages**, based on reality needs and requirements.
+9. Session Expiry Interval meaningful value should be set.
     - Apply the same rules as TTL
     - Replaces MQTT 3.x **clean session = false**
     - Do not use clean session = true equivalent (SEI = 0)
     - Default and quick choice: **3600**
-9. Avoid user properties/headers, except required ones mentioned in this document.
+10. Avoid user properties/headers, except required ones mentioned in this document.
     - If used, property names should be short (**1–3 characters**)
-10. Tenant ID property should be set.
+11. Tenant ID property should be set.
     - Property name: **"t"**
     - It Can be short, int, long, or UUID
     - Required for routing
-11. Property/header names should **not be "X-"** prefixed.
+12. Property/header names should **not be "X-"** prefixed.
     - See: [RFC 6648](https://www.rfc-editor.org/rfc/rfc6648)
-12. Content type can be passed as a property.
+13. Content type can be passed as a property.
     - Prefer **not to set it**
     - If absent, default is **"application/cbor"**
-13. Payload should be binary and compact.
+14. Payload should be binary and compact.
     - CBOR over JSON
     - Property names should be short (1–3 characters)
     - Timestamps, UUIDs, etc. should be in binary format (CBOR optimized)
-14. MQTT broker per tenant
+15. MQTT broker per tenant
     - Under low loads: multiple tenants per broker
     - Under high loads: multiple brokers per tenant
     - Reason: Mosquitto uses inner queues per subscriber
-15. Subscriber per topic
-16. Messages should be stored in schemaless DB as fast as possible
+16. Subscriber per topic
+17. Messages should be stored in schemaless DB as fast as possible
     - E.g., MongoDB (NB! but requires payload to be parsed!)
         - To avoid schema validation for better performance
+        - Good DB sharding
     - Store as-is in binary form (no payload parsing)
     - Without processing (separate thread or process)
     - DB check heartbeats (separate thread or process) should be applied (cleanup, re-start processing, failing DB
       records handling, etc.)
-17. Payload must include message creation date/time
+18. Payload must include message creation date/time
     - Precision: nanoseconds (e.g., Java Instant)
     - Encoding: CBOR
     - Timestamp must stay the same in case of retries
     - Required for value object immutability
     - Property name: **"c"**
-18. MQTT (plugin) + RabbitMQ as one single process is acceptable.
+19. MQTT (plugin) + RabbitMQ as one single process is acceptable.
+20. mTLS (client certificate authentication) should be applied.
+21. RBAC should be set for topics.
+22. Backpressure principles should be applied.
+23. Self-made (?) logging framework for error cases, for duplicate and continuous errors have to be developed.
+24. Monitoring and metrics should be used.
+25. Use UTC to avoid ...
