@@ -4,7 +4,8 @@
 2. MQTT **QoS = 2** should be used.
 3. Broker should **persist messages**.
 4. Static, not random number **Client ID** should be set.
-5. Prefer not to use retained messages. Use **non-retained** over retained messages.
+5. Prefer not to use retained messages. Use **non-retained** over retained messages. xcept well-analyzed and documented
+   use cases where retained messages are specifically needed.
 6. Sender should set **message ID**.
     - Property name: **"i"**
     - Accepted types: short, int, long, or UUID
@@ -57,9 +58,13 @@
     - Property name: **"c"**
 19. MQTT (plugin) + RabbitMQ as one single process is acceptable.
 20. mTLS (client certificate authentication) should be applied for all clients.
-21. RBAC should be set for topics (queues, exchanges in RabbitMQ).
-22. Backpressure principles should be applied.
-23. Self-made (?) logging framework for error cases, for duplicate and continuous errors have to be developed. Plan to
-    use the Prometheus plugin for RabbitMQ.
-24. Monitoring and metrics should be used.
+21. RBAC must be configured for all topics, queues and exchanges.
+22. Backpressure principles should be applied. Backpressure should be implemented via MQTT broker policies (e.g.,
+    message rate limits, inflight window size, per-client buffer limits) to avoid overload during burst traffic.
+23. Self-made (?) logging framework for error cases, for duplicate and continuous errors have to be developed.
+24. Monitoring and metrics should be used. Use RabbitMQ Prometheus plugin and MQTT client metrics where applicable.
 25. Use UTC for all timestamps and logging to avoid timezone-related issues.
+26. Configuration and schema versioning must be maintained (Git, CI/CD based).
+27. DevOps should define and document disaster recovery and backup procedures, including automated restore testing.
+28. IP allow/deny lists should be configured on broker/network level.
+29. Message maximum size should be measured, analyzed, decided and documented and set.
