@@ -52,11 +52,12 @@ Subscribe:
 ```shell
 # -u username -P password
 mosquitto_sub -h localhost -t test/topic
+mosquitto_sub -d -V mqttv5 -h localhost -t "test/probe" -u "dev" -P "PASSWORD1234" -q 2 -i subscriber_id -c -v
 
 # Retain (last message holding)
-mosquitto_pub -h localhost -t test/topic -m "Last 1" -r
-mosquitto_pub -h localhost -t test/topic -m "Last 2" -r
-mosquitto_pub -h localhost -t test/topic -m "Last 3" -r
+mosquitto_pub -V mqttv5 -h localhost -t test/topic -m "Last 1" -r
+mosquitto_pub -V mqttv5 -h localhost -t test/topic -m "Last 2" -r
+mosquitto_pub -V mqttv5 -h localhost -t test/topic -m "Last 3" -r
 
 # Clearing retain message
 mosquitto_pub -h localhost -t test/topic -m "" -r
@@ -138,10 +139,17 @@ Publish:
 
 ```shell
 # -u username -P password
-mosquitto_pub -h localhost -t test/topic -m "{"firstName":"John","lastName":"Doe"}"
+mosquitto_pub -d -V mqttv5 -h localhost -t test/topic -q 2 -i publisher_id -c -m "{"firstName":"John","lastName":"Doe"}"
 ```
 
+MQTT v3.1.1
 V3 message size : 256 MB
+
+Clean Session (bool)
+
+MQTT v3.1.1
+
+Session Expiry Interval (int seconds).
 
 ## See also
 
