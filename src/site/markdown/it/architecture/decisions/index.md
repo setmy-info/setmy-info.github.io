@@ -123,7 +123,7 @@ Examples:
 * Java + Selenium (hub and nodes)
 * Cucumber
 
-Test farm have to be built.
+Test farm has to be built.
 
 Smart devices and PC:
 
