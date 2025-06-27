@@ -1,5 +1,7 @@
 # MQTT Requirements
 
+# MQTT Requirements
+
 1. **MQTT v5** should be used.
 2. MQTT **QoS = 2** should be used.
 3. Broker should **persist messages**.
@@ -47,6 +49,8 @@
     - E.g., MongoDB (NB! but requires payload to be parsed!)
         - To avoid schema validation for better performance
         - Good DB sharding
+        - Alternatives: MapDB, Chronicle Queue, SQLite, LevelDB, RocksDB, UnQLite - those can be faster than network DB.
+          Also, h2, Derby, DB 18.x+
     - Store as-is in binary form (no payload parsing)
     - Without processing (separate thread or process)
     - DB check heartbeats (separate thread or process) should be applied (cleanup, re-start processing, failing DB
