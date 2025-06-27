@@ -37,6 +37,7 @@
     - CBOR over JSON
     - Property names should be short (1–3 characters)
     - Timestamps, UUIDs, etc. should be in binary format (CBOR optimized)
+    - gzip compression can be used with **Content-Encoding** equivalent user property: "e"
 15. MQTT broker per tenant
     - Under low loads: multiple tenants per broker
     - Under high loads: multiple brokers per tenant
@@ -50,6 +51,7 @@
     - Without processing (separate thread or process)
     - DB check heartbeats (separate thread or process) should be applied (cleanup, re-start processing, failing DB
       records handling, etc.)
+    - Duplicate detection should be done at processing implementation (with constraints).
 18. Payload must include message creation date/time
     - Precision: nanoseconds (e.g., Java Instant)
     - Encoding: CBOR
@@ -71,3 +73,7 @@
 30. The MQTT broker, subscriber/consumer, and database should be treated as a **single logical unit** — a message queue
     processing system — and must be deployed in **high-availability (HA)** mode. All components should be monitored and
     failover-tested together to ensure message delivery, persistence, and processing continuity.
+31. Clients MUST support a list of non-replicant Mosquitto brokers to which they can connect. In case of a connection
+    failure with one broker, the client SHALL resend QoS 2 messages to another available broker in the list until the
+    message is fully acknowledged or the session expiration interval has elapsed. This mechanism ensures reliable
+    delivery without requiring broker-to-broker replication.
