@@ -146,8 +146,8 @@ Higher should same things as lower level.
     * AssertJ
     * WireMock (L4)
     * BDD (L4)
-        * Cucumber
-        * Fitnesse
+        * Cucumber (it looks dead project or less managed project for now)
+        * Fitnesse (too heavy, need simpler something)
     * Mutation testing (L4)
     * Code quality tools (L4)
         * Find bug, stop bug
