@@ -151,3 +151,6 @@ Shapes
 * [Node attributes](https://graphviz.org/docs/nodes/)
 * [Edge attributes](https://graphviz.org/docs/edges/)
 * [Arrows](https://graphviz.org/doc/info/arrows.html)
+* [graphstream](https://graphstream-project.org/)
+* [dot-parser](https://github.com/Calpano/dot-parser)
+* [graphviz-java](https://github.com/nidi3/graphviz-java)
