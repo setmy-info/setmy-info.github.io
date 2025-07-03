@@ -120,7 +120,9 @@ cd ~
 # Edit spec to add one or more patch files, created earlier
 nano ~/rpmbuild/SPECS/bc.spec
 # Add one more patch (bc-1.07.1-changed.patch)
-# PatchN: bc-1.07.1-changed.patch
+# PatchN: bc-1.07.1-changed.patch[web-components.html](../../../../../../../Users/ImreTabur/Documents/personal/temp/web-components.html)
+[mikrofrontend-web-components.html](../../../../../../../Users/ImreTabur/Documents/personal/temp/mikrofrontend-web-components.html)
+![placeholder.svg](../../../../../../../Users/ImreTabur/Documents/personal/temp/placeholder.svg)
 # Example:
 # Patch3: bc-1.07.1-changed.patch
 
@@ -132,6 +134,18 @@ sudo dnf builddep bc
 
 # Spec file build
 rpmbuild -ba ~/rpmbuild/SPECS/bc.spec
+
+# YUM/DNF repo creation
+
+sudo dnf install -y createrepo
+mkdir /var/www/repo/rockylinux/10/{SRPMS,x86_64}
+mkdir ${REPO_PATH}
+cp /from/build/path/abc-1.2.3-4.noarch.rpm ${REPO_PATH}
+cd ${REPO_PATH}
+createrepo .
+# after new versions
+cp /from/build/path/abc-1.3.0-1.noarch.rpm ${REPO_PATH}
+createrepo --update .
 ```
 
 ### CUDA install

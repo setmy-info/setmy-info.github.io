@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Component template tag example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<hello-world></hello-world>
+
+<template id="hello-template">
+    <style>
+        p {
+            color: green;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <p>Hello, Web Components!</p>
+</template>
+
+<script>
+    class HelloWorld extends HTMLElement {
+        constructor() {
+            super();
+
+            const shadow = this.attachShadow({mode: 'open'});
+
+            const template = document.getElementById('hello-template');
+            const templateContent = template.content.cloneNode(true);
+
+            shadow.appendChild(templateContent);
+        }
+    }
+
+    customElements.define('hello-world', HelloWorld);
+</script>
+</body>
+</html>

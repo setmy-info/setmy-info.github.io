@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Micro Frontends with Web Component template tag example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .placeholder {
+            background-image: url('images/placeholder.svg');
+            background-size: cover;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<hello-world></hello-world>
+<user-card></user-card>
+<abc-def></abc-def>
+
+<img src="images/placeholder.svg" width="200" height="150" alt="Placeholder"/>
+<img src="images/placeholder.svg" width="200" height="50" alt="Placeholder"/>
+<div class="placeholder"></div>
+
+<template id="hello-world-template">
+    <style>
+        p {
+            color: green;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <p>Hello, Web Components!</p>
+</template>
+
+<template id="user-card-template">
+    <style>
+        div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: sans-serif;
+        }
+    </style>
+    <div>User card for Petrovich</div>
+</template>
+
+<script>
+    function registerTemplate(tagName) {
+        class TemplateComponent extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({mode: 'open'});
+
+                const templateId = `${tagName}-template`;
+                const template = document.getElementById(templateId);
+
+                if (template) {
+                    const content = template.content.cloneNode(true);
+                    shadow.appendChild(content);
+                } else {
+                    shadow.innerHTML = `<p style="color:red">Error: template '${templateId}' does not exist.</p>`;
+                }
+            }
+        }
+
+        customElements.define(tagName, TemplateComponent);
+    }
+
+    registerTemplate('hello-world');
+    registerTemplate('user-card');
+    registerTemplate('abc-def');
+</script>
+</body>
+</html>
