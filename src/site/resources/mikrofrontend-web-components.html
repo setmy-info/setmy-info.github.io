@@ -51,11 +51,10 @@
         class TemplateComponent extends HTMLElement {
             constructor() {
                 super();
-                const shadow = this.attachShadow({mode: 'open'});
-
                 const templateId = `${tagName}-template`;
                 const template = document.getElementById(templateId);
 
+                const shadow = this.attachShadow({mode: 'open'});
                 if (template) {
                     const content = template.content.cloneNode(true);
                     shadow.appendChild(content);
@@ -64,7 +63,6 @@
                 }
             }
         }
-
         customElements.define(tagName, TemplateComponent);
     }
 
