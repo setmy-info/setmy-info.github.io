@@ -30,8 +30,8 @@ https://ololiuhqui.github.io/magnolia-free-hugo-theme/
 https://writeonlycode.github.io/hugo-up-business/
 https://themes.gohugo.io/themes/hugo-universal-theme/
 
-| Tööriist            | Miks kasutada?                                | Kas sobib Hugo lehele? |
-|---------------------|-----------------------------------------------|------------------------|
-| **Calendly**        | Lihtne integreerimine, tasuta versioon olemas | ✅ iframe või script    |
-| **TidyCal**         | Ühekordne tasu, puhas UI                      | ✅                      |
-| **Booksy / Fresha** | Populaarsed salongide jaoks                   | ✅                      |
+| Tools               | Why to use?                                   | For hugo??          |
+|---------------------|-----------------------------------------------|---------------------|
+| **Calendly**        | Lihtne integreerimine, tasuta versioon olemas | ✅ iframe või script |
+| **TidyCal**         | Ühekordne tasu, puhas UI                      | ✅                   |
+| **Booksy / Fresha** | Populaarsed salongide jaoks                   | ✅                   |
