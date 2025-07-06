@@ -139,8 +139,8 @@ Resolutions
 * https://allcolorscreen.com/my-screen-resolution
 
 * Xiaomi Redmi Note 14 Pro+
-    * FF:       508 x 1130
-    * Chrome:   407 x 904
+    * FF:       508 x 1130  (DPR device pixel ratio: 2.40)
+    * Chrome:   407 x 904   (DPR: 3.0)
 * Nokia G20
     * FF:       408 x 907
     * Chrome:   412 x 915
