@@ -78,14 +78,9 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
    npm install -g @vue/cli
    npm install karma karma-coverage karma-junit-reporter --save-dev
 
-7. Hexo.io
+7. (...)
 
-   hexo init hexo-test-blog
-   cd hexo-test-blog
-   npm install
-   hexo server
-   firefox --new-tab http://localhost:4000
-   hexo generate
+Moved.
 
 9. Logging
 
@@ -102,7 +97,8 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 * Püüelda IDE-e funktsionaalsuse ärakasutamise suunas.
 * Roles: Business analüütikud: should not write tables, SQL, Java class model in any form. Its implementing team members
   responsibility.
-* Developers should have the possibility to build current work on CI (push by push) to get feedback early. Without additional
+* Developers should have the possibility to build current work on CI (push by push) to get feedback early. Without
+  additional
   steps (clicks, tool usage).
 * GIT should reflect reality and not fake result. Main/master/trunk should be releasable at eny moment without searching
   release tags, numbers somewhere.
