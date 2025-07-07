@@ -134,6 +134,20 @@ Smart devices and PC:
     * Nokia
 * Windows devices
 
+Resolutions
+
+* https://allcolorscreen.com/my-screen-resolution
+
+* Xiaomi Redmi Note 14 Pro+
+    * FF:       508 x 1130  (DPR device pixel ratio: 2.40)
+    * Chrome:   407 x 904   (DPR: 3.0)
+* Nokia G20
+    * FF:       408 x 907
+    * Chrome:   412 x 915
+* Sony Xperia 10 I4113 https://www.gsmarena.com/sony_xperia_10-9353.php
+    * FF:       360 x 840 ()
+    * Chrome:   360 x 840 (3:7)
+
 ### DB
 
 * H2
