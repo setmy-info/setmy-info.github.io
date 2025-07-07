@@ -191,6 +191,10 @@ git tag --delete 1.2.3
 # Remote tags
 git ls-remote --tags origin
 
+git fetch --tags
+
+git fetch origin tag latest --force
+
 # Uncommit last one commit
 git reset --soft HEAD~1
 
