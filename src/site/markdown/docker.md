@@ -269,6 +269,8 @@ Start shell by image
 
 ```sh
 docker run -it <image_name> /bin/sh
+docker run -it setmyinfo/setmy-info-rocky /bin/sh
+docker exec -it 131039bf7b6c /bin/bash
 ```
 
 ## See also
