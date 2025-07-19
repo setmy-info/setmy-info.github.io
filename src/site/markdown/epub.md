@@ -172,7 +172,7 @@ exit 0
 
 * [w3c epubcheck](https://github.com/w3c/epubcheck)
 * [w3 epub3](https://www.w3.org/publishing/epub3/)
-* [xxxx](https://xxxxxx)
+* [epub validator](https://www.bookery.app/epub_validation)
 * [xxxx](https://xxxxxx)
 * [xxxx](https://xxxxxx)
 * [xxxx](https://xxxxxx)
