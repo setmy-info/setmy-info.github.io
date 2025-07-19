@@ -2,3 +2,5 @@
 .idea
 **/.ipynb_checkpoints
 .venv
+src/site/resources/*.epub
+src/site/resources/*.epub.zip
