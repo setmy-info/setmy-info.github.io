@@ -37,6 +37,7 @@
         <item id="chapter1" href="chapter1.xhtml" media-type="application/xhtml+xml"/>
         <item id="chapter2" href="chapter2.xhtml" media-type="application/xhtml+xml"/>
         <item id="chapter3" href="chapter3.xhtml" media-type="application/xhtml+xml" properties="mathml"/>
+        <item id="chapter4" href="chapter4.xhtml" media-type="application/xhtml+xml"/>
         <item id="end" href="end.xhtml" media-type="application/xhtml+xml"/>
     </manifest>
 
@@ -46,6 +47,7 @@
         <itemref idref="chapter1"/>
         <itemref idref="chapter2"/>
         <itemref idref="chapter3"/>
+        <itemref idref="chapter4"/>
         <itemref idref="end" linear="yes"/>
     </spine>
 </package>
