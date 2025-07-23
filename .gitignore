@@ -4,3 +4,4 @@
 .venv
 src/site/resources/*.epub
 src/site/resources/*.epub.zip
+**/node_modules

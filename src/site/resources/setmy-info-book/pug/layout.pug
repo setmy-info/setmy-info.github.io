@@ -1,0 +1,14 @@
+//- layout.pug
+| <?xml version="1.0" encoding="UTF-8"?>
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:epub="http://www.idpf.org/2007/ops"
+    xmlns:math="http://www.w3.org/1998/Math/MathML"
+    xml:lang="et" lang="et")
+    head
+        title #{title}
+        //meta(charset="UTF-8")
+        | <meta charset="UTF-8"/>
+        link(rel="stylesheet" type="text/css" href="css/epub.css")
+    body
+        block content
