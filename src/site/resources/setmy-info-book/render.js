@@ -10,9 +10,9 @@ npm install pug
 const outputDir = 'output';
 
 const pages = [
-    {name: "book", title: "Sissejuhatus"},
-    {name: "page", title: "Sissejuhatus"},
-    {name: "chapter1", title: "Sissejuhatus"}
+    {name: "chapter1", title: "Chapter 1"},
+    {name: "chapter2", title: "Chapter 2"},
+    {name: "chapter4", title: "Chapter 4"},
 ];
 
 function makeOutputDir(name) {
