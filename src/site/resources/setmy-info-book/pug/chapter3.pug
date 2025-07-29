@@ -3,4 +3,383 @@ extends layout.pug
 
 block content
     h1= title
+    // a + 2 = c
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi a
+                mo +
+                mn 2
+                mo() =
+                mi c
 
+    // 2 × 3 = 6
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mn 2
+                mo &#x00D7;
+                mn 3
+                mo() =
+                mn 6
+
+    // 6 ÷ 2 = 3
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mn 6
+                mo &#x00F7;
+                mn 2
+                mo() =
+                mn 3
+
+    // 6 ÷ 2(1 + 2) = ?
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mn 6
+                mo &#x00F7;
+                mn 2
+                mo (
+                mn 1
+                mo +
+                mn 2
+                mo )
+                mo() =
+                mo ?
+
+    // Cube root of x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mroot
+                    mi x
+                    mn 3
+
+    // Square root of x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msqrt
+                    mi x
+
+    // x divided by y
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mfrac
+                    mi x
+                    mi y
+
+    // x to the power of y
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msup
+                    mi x
+                    mi y
+
+    // a with subscript i
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msub
+                    mi a
+                    mi i
+
+    // x to the power of (y + 1)
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msup
+                    mi x
+                    mrow
+                        mi y
+                        mo +
+                        mn 1
+
+    // x to the power of (x/y)
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msup
+                    mi x
+                    mrow
+                        mfrac
+                            mi x
+                            mi y
+
+    // Negative 1 in parentheses
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mo (
+                mrow
+                    mo(form="prefix") &#x2212;
+                    mn 1
+                mo )
+
+    // Summation from n=1 to 5 of f(n)
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mstyle(displaystyle="true")
+                munderover
+                    mo &#x2211;
+                    mrow
+                        mi n
+                        mo() =
+                        mn 1
+                    mn 5
+                mi f
+                mo (
+                mi n
+                mo )
+
+    // Summation from x=1 to 5 of f(x)
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msubsup
+                    mo &#x2211;
+                    mrow
+                        mi x
+                        mo() =
+                        mn 1
+                    mn 5
+                mi f
+                mo (
+                mi x
+                mo )
+
+    // Product from i=1 to 5 of i
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                munderover
+                    mo &#x220F;
+                    mrow
+                        mi i
+                        mo() =
+                        mn 1
+                    mn 5
+                mi i
+
+    // Integral from a to infinity of f(x) dx
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msubsup
+                    mo &#x222B;
+                    mi a
+                    mo &#x221E;
+                mi f
+                mo (
+                mi x
+                mo )
+                mo &#x2146;
+                mi x
+
+    // sin x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi sin
+                mi x
+
+    // f(x) = sin x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi f
+                mo (
+                mi x
+                mo )
+                mo() =
+                mi sin
+                mi x
+
+    // Matrix with subscripts
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mo (
+                mtable
+                    mtr
+                        mtd
+                            msub
+                                mi a
+                                mn 1
+                        mtd
+                            msub
+                                mi a
+                                mn 2
+                    mtr
+                        mtd
+                            msub
+                                mi a
+                                mn 3
+                        mtd
+                            msub
+                                mi a
+                                mn 4
+                mo )
+
+    // R(x) matrix
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mi R
+            mo (
+            mi x
+            mo )
+            mo() =
+            mrow
+                mo [
+                mtable
+                    mtr
+                        mtd
+                            mn 1
+                        mtd
+                            mn 0
+                        mtd
+                            mrow
+                                mi f
+                                mo (
+                                mi x
+                                mo )
+                    mtr
+                        mtd
+                            mn 0
+                        mtd
+                            mn 1
+                        mtd
+                            mn 0
+                    mtr
+                        mtd
+                            mn 0
+                        mtd
+                            mn 0
+                        mtd
+                            mn 1
+                mo ]
+
+    // Set M = {b, a, c}
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi M
+                mo() =
+                mo {
+                mi b
+                mo ,
+                mi a
+                mo ,
+                mi c
+                mo }
+
+    // Set M = {x | A(x)}
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi M
+                mo() =
+                mo {
+                mi x
+                mo |
+                mi A
+                mo (
+                mi x
+                mo )
+                mo }
+
+    // Natural numbers ℕ = {1, 2, 3, 4, ...}
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi &#x2115;
+                mo() =
+                mo {
+                mn 1
+                mo ,
+                mn 2
+                mo ,
+                mn 3
+                mo ,
+                mn 4
+                mo ,
+                mo ...
+                mo }
+
+    // Rational numbers ℚ = { n/m | n, m ∈ ℤ ∧ m ≠ 0 }
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mi &#x211A;
+                mo() =
+                mo {
+                mfrac
+                    mrow
+                        mi n
+                    mrow
+                        mi m
+                mo |
+                mi n
+                mo ,
+                mi m
+                mo &#x2208;
+                mi &#x2124;
+                mo &#x2227;
+                mi m
+                mo ≠
+                mn 0
+                mo }
+
+    // Underbrace x + y + z
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            munder(accentunder="true")
+                mrow
+                    mi x
+                    mo +
+                    mi y
+                    mo +
+                    mi z
+                mo &#x23DF;
+
+    // log x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mo log
+                mi x
+
+    // log base a of x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                msub
+                    mo log
+                    mi a
+                mi x
+
+    // natural logarithm ln x
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                mo ln
+                mi x
+
+    // limit as x approaches infinity of f(x)
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mrow
+                munder
+                    mo lim
+                    mrow
+                        mi x
+                        mo &#x2192;  // →
+                        mn &#x221E;  // ∞
+                mrow
+                    mi f
+                    mo (
+                    mi x
+                    mo )

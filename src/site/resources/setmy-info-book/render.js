@@ -12,7 +12,8 @@ const outputDir = 'output';
 const pages = [
     {name: "chapter1", title: "Chapter 1"},
     {name: "chapter2", title: "Chapter 2"},
-    {name: "chapter4", title: "Chapter 4"},
+    {name: "chapter3", title: "Chapter 3: Math test"},
+    {name: "chapter4", title: "Chapter 4"}
 ];
 
 function makeOutputDir(name) {
