@@ -7,8 +7,11 @@ block content
     p
         math(xmlns="http://www.w3.org/1998/Math/MathML")
             mrow
+                // Identifiers
                 mi a
+                // Operators
                 mo +
+                // Numbers
                 mn 2
                 mo() =
                 mi c
@@ -45,8 +48,8 @@ block content
                 mo +
                 mn 2
                 mo )
-                mo() =
-                mo ?
+                mo() &#x003D;
+                mo &#x003F;
 
     // Cube root of x
     p
@@ -170,7 +173,9 @@ block content
             mrow
                 msubsup
                     mo &#x222B;
+                    // Lower limit "a"
                     mi a
+                    // Upper limit infinity
                     mo &#x221E;
                 mi f
                 mo (
@@ -333,6 +338,18 @@ block content
                 mn 0
                 mo }
 
+    // Upbrace x + y + z
+    p
+        math(xmlns="http://www.w3.org/1998/Math/MathML")
+            mover(accent="true")
+                mrow
+                    mi x
+                    mo +
+                    mi y
+                    mo +
+                    mi z
+                mo &#x23DE;
+
     // Underbrace x + y + z
     p
         math(xmlns="http://www.w3.org/1998/Math/MathML")
@@ -376,8 +393,8 @@ block content
                     mo lim
                     mrow
                         mi x
-                        mo &#x2192;  // →
-                        mn &#x221E;  // ∞
+                        mo &#x2192;
+                        mn &#x221E;
                 mrow
                     mi f
                     mo (
