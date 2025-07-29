@@ -5,7 +5,8 @@
     "main": "render.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "node render.js"
+        "build": "node render.js",
+        "serve": "python3 -m http.server 8070"
     },
     "keywords": [],
     "author": "",
