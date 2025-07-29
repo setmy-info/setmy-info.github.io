@@ -7,7 +7,7 @@ npm init -y
 npm install pug
 */
 
-const outputDir = 'output';
+const outputDir = 'EPUB';
 
 const pages = [
     {name: "chapter1", title: "Chapter 1"},
@@ -37,7 +37,7 @@ function getInputName(name) {
 }
 
 function getOutputName(name) {
-    return path.join(outputDir, `${name}.html`);
+    return path.join(outputDir, `${name}.xhtml`);
 }
 
 makeOutputDir(outputDir);
