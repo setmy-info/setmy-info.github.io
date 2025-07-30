@@ -8,11 +8,49 @@
 
 ### Composition
 
+Strict association.
+
 ![](https://www.uml-diagrams.org/association/class-composition.png)
+
+```mermaid
+classDiagram
+    class House {
+        +String address
+    }
+
+    class Room {
+        +String name
+        +int area
+    }
+
+    House *-- "1..*" Room: consists of
+```
+
+A Room can't exist without a House. If the House is destroyed, the Room is destroyed as well.
 
 ### Aggregation
 
+Soft association.
+
 ![](https://www.uml-diagrams.org/association/shared-aggregation.png)
+
+```mermaid
+classDiagram
+    class Team {
+        +String name
+    }
+
+    class Player {
+        +String name
+    }
+
+Team o-- "0..*" Player: has
+```
+
+Players can exist independently of a Team.
+
+Aggregation is well-suited for linking to enum-like reference tables, where the associated values are shared, reusable,
+and not owned exclusively by the referring object.
 
 ### Generalization
 
