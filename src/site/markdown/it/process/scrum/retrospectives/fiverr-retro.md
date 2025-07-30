@@ -2,8 +2,8 @@
 
 ## Information
 
-First try to get some developers, cheaper as possible. from cheaper countries, for small tasks, those development were
-already postponed many years or decades.
+First try to get some developers, cheaper as possible. From less expensive countries, for small tasks, those
+developments were already postponed for many years or decades.
 
 ## Negative
 
@@ -11,11 +11,11 @@ already postponed many years or decades.
    background.
 2. Developers there doesn't read task description through.
 3. Like to get long conversation.
-4. Like to get fast proposal.
+4. Like to get a fast proposal.
 5. Proposed simple Java task, for (by profile) high level professionals, got rejection because missing knowledge
 6. Proposed simple Java task got over estimations. Looks like we should buy an air. Developers didn't read task, didn't
    concentrate. 100% of them.
-7. None of professionals asked additional questions to understand task background in details. 100% of them.
+7. None of the professionals asked additional questions to understand task background in details. 100% of them.
 8. Developers there are not ready to learn.
 9. Developers possibly are under pressure, because results should not have any open problems there.
 
