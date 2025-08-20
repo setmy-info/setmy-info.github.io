@@ -37,28 +37,26 @@ jhipster
 Answers:
 
 ```
-? May JHipster anonymously report usage statistics to improve the tool over time? No
-? Which *type* of application would you like to create? Monolithic application (recommended for simple projects)
-? What is the base name of your application? jhipster1
-? Do you want to make it reactive with Spring WebFlux? No
-? What is your default Java package name? info.setmy.jhipster
-? Which *type* of authentication would you like to use? JWT authentication (stateless, with a token)
-? Which *type* of database would you like to use? SQL (H2, PostgreSQL, MySQL, MariaDB, Oracle, MSSQL)
-? Which *production* database would you like to use? PostgreSQL
-? Which *development* database would you like to use? H2 with disk-based persistence
-? Which cache do you want to use? (Spring cache abstraction) Infinispan (hybrid cache, for multiple nodes)
-? Do you want to use Hibernate 2nd level cache? Yes
-? Would you like to use Maven or Gradle for building the backend? Maven
-? Do you want to use the JHipster Registry to configure, monitor and scale your application? No
-? Which other technologies would you like to use?
-? Which *Framework* would you like to use for the client? Angular
-? Do you want to generate the admin UI? Yes
-? Would you like to use a Bootswatch theme (https://bootswatch.com/)? Default JHipster
-? Would you like to enable internationalization support? Yes
-? Please choose the native language of the application English
-? Please choose additional languages to install Estonian, Russian
-? Besides JUnit and Jest, which testing frameworks would you like to use? Gatling, Cucumber
-? Would you like to install other generators from the JHipster Marketplace? No
+√ What is the base name of your application? jhipster1
+√ Which *type* of application would you like to create? Monolithic application (recommended for simple projects)
+√ What is your default Java package name? info.setmy.jhipster
+√ Would you like to use Maven or Gradle for building the backend? Maven
+√ Do you want to make it reactive with Spring WebFlux? No
+√ Which *type* of authentication would you like to use? JWT authentication (stateless, with a token)
+√ Besides JUnit, which testing frameworks would you like to use? Gatling, Cucumber
+√ Which *type* of database would you like to use? SQL (H2, PostgreSQL, MySQL, MariaDB, Oracle, MSSQL)
+√ Which *production* database would you like to use? PostgreSQL
+√ Which *development* database would you like to use? H2 with disk-based persistence
+√ Which cache do you want to use? (Spring cache abstraction) Infinispan (hybrid cache, for multiple nodes)
+√ Do you want to use Hibernate 2nd level cache? Yes
+√ Which other technologies would you like to use?
+√ Which *framework* would you like to use for the client? Angular
+√ Besides Jest/Vitest, which testing frameworks would you like to use?
+√ Do you want to generate the admin UI? Yes
+√ Would you like to use a Bootswatch theme (https://bootswatch.com/)? Default JHipster
+√ Would you like to enable internationalization support? Yes
+√ Please choose the native language of the application English
+√ Please choose additional languages to install Estonian, Russian
 ```
 
 Delete **.mvn/wrapper/jvm.config**
@@ -66,8 +64,8 @@ Delete **.mvn/wrapper/jvm.config**
 Edit **.mvn/wrapper/maven-wrapper.properties**
 
 ```properties
-distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.1/apache-maven-3.9.1-bin.zip
-wrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar
+wrapperVersion=3.3.2
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip
 ```
 
 Edit **pom.xml** and change as this:

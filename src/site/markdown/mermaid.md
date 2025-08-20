@@ -7,6 +7,7 @@
 ```shell
 npm install -g @mermaid-js/mermaid-cli
 mmdc --version
+mmdc -i input.mmd -o output.svg
 ```
 
 ## Usage, tips and tricks
