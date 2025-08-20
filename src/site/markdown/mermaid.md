@@ -73,6 +73,84 @@ classDiagram
     Employee ..|> WorkerInterface
 ```
 
+```mermaid
+classDiagram
+    class ExampleController {
+        <<class>>
+        + createExample(exampleRequest: ExampleRequestDTO) ExampleResponseDTO
+    }
+
+    class ExampleService {
+        <<class>>
+        + createExample(exampleRequest: ExampleRequest) Example
+    }
+
+    class ExampleRepository {
+        <<interface>>
+        + save(example: Example): Example
+    }
+
+    class ExampleValidation {
+        <<class>>
+        + validateExample(exampleRequest: ExampleRequest)
+    }
+
+    class ExampleMapper {
+        <<class>>
+        + mapToExample(exampleRequest: ExampleRequest) Example
+    }
+
+    class ExampleRequestDTO {
+        <<class>>
+        - String any
+        - String property
+        - String more
+    }
+
+    class ExampleResponseDTO {
+        <<class>>
+        - Long id
+        - String any
+        - String property
+        - String more
+    }
+
+    class ExampleRequest {
+        <<class>>
+        - String any
+        - String property
+        - String more
+    }
+
+    class ExampleResponse {
+        <<class>>
+        - Long id
+        - String any
+        - String property
+        - String more
+    }
+
+    class Example {
+        <<entity>>
+        - Long id
+        - String any
+        - String property
+        - String more
+    }
+
+    ExampleController o-- ExampleService
+    ExampleService o-- ExampleRepository
+    ExampleService o-- ExampleValidation
+    ExampleService o-- ExampleMapper
+    ExampleController --> ExampleRequestDTO: uses
+    ExampleController --> ExampleResponseDTO: uses
+    ExampleService --> ExampleRequest: uses
+    ExampleService --> ExampleResponse: uses
+    ExampleValidation --> ExampleRequest: uses
+    ExampleRepository --> Example: uses
+    ExampleService --> Example: uses
+```
+
 ### Coding tips and tricks
 
 ## See also
