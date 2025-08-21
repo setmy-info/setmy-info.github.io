@@ -12,6 +12,8 @@ mmdc -i input.mmd -o output.svg
 
 ## Usage, tips and tricks
 
+Class diagram example
+
 ```mermaid
 classDiagram
     class Book
@@ -73,31 +75,13 @@ classDiagram
     Employee ..|> WorkerInterface
 ```
 
+Usual (REST, GraphQL, gRPC) API
+
 ```mermaid
 classDiagram
     class ExampleController {
         <<class>>
         + createExample(exampleRequest: ExampleRequestDTO) ExampleResponseDTO
-    }
-
-    class ExampleService {
-        <<class>>
-        + createExample(exampleRequest: ExampleRequest) Example
-    }
-
-    class ExampleRepository {
-        <<interface>>
-        + save(example: Example): Example
-    }
-
-    class ExampleValidation {
-        <<class>>
-        + validateExample(exampleRequest: ExampleRequest)
-    }
-
-    class ExampleMapper {
-        <<class>>
-        + mapToExample(exampleRequest: ExampleRequest) Example
     }
 
     class ExampleRequestDTO {
@@ -115,6 +99,21 @@ classDiagram
         - String more
     }
 
+    class ExampleService {
+        <<class>>
+        + createExample(exampleRequest: ExampleRequest) Example
+    }
+
+    class ExampleValidation {
+        <<class>>
+        + validateExample(exampleRequest: ExampleRequest)
+    }
+
+    class ExampleMapper {
+        <<class>>
+        + mapToExample(exampleRequest: ExampleRequest) Example
+    }
+
     class ExampleRequest {
         <<class>>
         - String any
@@ -128,6 +127,11 @@ classDiagram
         - String any
         - String property
         - String more
+    }
+
+    class ExampleRepository {
+        <<interface>>
+        + save(example: Example): Example
     }
 
     class Example {
