@@ -546,6 +546,32 @@
     </math>
 </p>
 
+<h1>Physics: Charges</h1>
+
+<p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi>e</mi>
+            <msup>
+                <mo>⁺</mo>
+            </msup>
+        </mrow>
+        <mtext> - in physics means positron positive charge</mtext>
+    </math>
+</p>
+
+<p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi>e</mi>
+            <msup>
+                <mo>⁻</mo>
+            </msup>
+        </mrow>
+        <mtext> - in physics means electron negative charge</mtext>
+    </math>
+</p>
+
 </body>
 </html>
 ```
