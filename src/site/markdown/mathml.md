@@ -32,13 +32,11 @@
 <p>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
-            <msrow>
-                <mn>2</mn>
-                <mo>&times;</mo>
-                <mn>3</mn>
-                <mo>=</mo>
-                <mn>6</mn>
-            </msrow>
+            <mn>2</mn>
+            <mo>&times;</mo>
+            <mn>3</mn>
+            <mo>=</mo>
+            <mn>6</mn>
         </mrow>
     </math>
 </p>
@@ -46,13 +44,11 @@
 <p>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
-            <msrow>
-                <mn>6</mn>
-                <mo>&divide;</mo>
-                <mn>2</mn>
-                <mo>=</mo>
-                <mn>3</mn>
-            </msrow>
+            <mn>6</mn>
+            <mo>&divide;</mo>
+            <mn>2</mn>
+            <mo>=</mo>
+            <mn>3</mn>
         </mrow>
     </math>
 </p>
@@ -62,16 +58,14 @@
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
             <mfrac>
-                <msrow>
-                    <mn>36</mn>
-                    <mo>&divide;</mo>
-                    <mn>3</mn>
-                    <mo>(</mo>
-                    <mn>8</mn>
-                    <mo>-</mo>
-                    <mn>6</mn>
-                    <mo>)</mo>
-                </msrow>
+                <mn>36</mn>
+                <mo>&divide;</mo>
+                <mn>3</mn>
+                <mo>(</mo>
+                <mn>8</mn>
+                <mo>-</mo>
+                <mn>6</mn>
+                <mo>)</mo>
                 <mi>6</mi>
             </mfrac>
             <mo>&equals;</mo>
@@ -84,18 +78,16 @@
     Another similar ill-posed task.<br>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
-            <msrow>
-                <mn>6</mn>
-                <mo>&divide;</mo>
-                <mn>2</mn>
-                <mo>(</mo>
-                <mn>1</mn>
-                <mo>+</mo>
-                <mn>2</mn>
-                <mo>)</mo>
-                <mo>&equals;</mo>
-                <mo>&quest;</mo>
-            </msrow>
+            <mn>6</mn>
+            <mo>&divide;</mo>
+            <mn>2</mn>
+            <mo>(</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mn>2</mn>
+            <mo>)</mo>
+            <mo>&equals;</mo>
+            <mo>&quest;</mo>
         </mrow>
     </math>
 </p>
@@ -572,9 +564,60 @@
     </math>
 </p>
 
+<h1>Physics Example: Angle θ</h1>
+
+<p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi>F</mi>
+            <mo>=</mo>
+            <mi>mg</mi>
+            <mo>sin</mo>
+            <mo>(</mo>
+            <mi>θ</mi>
+            <mo>)</mo>
+        </mrow>
+        <mtext> - component of gravitational force along an inclined plane</mtext>
+    </math>
+</p>
+
+<h1>Physics Equations Grouped</h1>
+
+<p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mo>{</mo>
+            <mtable>
+                <mtr>
+                    <mtd>F = mg</mtd>
+                </mtr>
+                <mtr>
+                    <mtd>a = v / t</mtd>
+                </mtr>
+                <mtr>
+                    <mtd>v = v₀ + at</mtd>
+                </mtr>
+            </mtable>
+        </mrow>
+    </math>
+</p>
+
 </body>
 </html>
 ```
+
+| Number | Unicode | Märk | HTML entiteet |
+|--------|---------|------|---------------|
+| 0      | U+2080  | ₀    | `&#8320;`     |
+| 1      | U+2081  | ₁    | `&#8321;`     |
+| 2      | U+2082  | ₂    | `&#8322;`     |
+| 3      | U+2083  | ₃    | `&#8323;`     |
+| 4      | U+2084  | ₄    | `&#8324;`     |
+| 5      | U+2085  | ₅    | `&#8325;`     |
+| 6      | U+2086  | ₆    | `&#8326;`     |
+| 7      | U+2087  | ₇    | `&#8327;`     |
+| 8      | U+2088  | ₈    | `&#8328;`     |
+| 9      | U+2089  | ₉    | `&#8329;`     |
 
 ### Coding tips and tricks
 
