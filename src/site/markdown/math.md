@@ -45,6 +45,8 @@
 
 **Series** -
 
+**Discrete data set** - loendatavad (countable)
+
 ## See also
 
 * [Set](https://mathworld.wolfram.com/Set.html)
@@ -73,3 +75,7 @@
 * [Definite integral](https://www.mathsisfun.com/definitions/definite-integral.html)
 * [Indefinite integral](https://www.mathsisfun.com/definitions/indefinite-integral.html)
 * [Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function)
+* [Interpolation](https://byjus.com/maths/interpolation/)
+* [Interpolation 2](https://www.mathsisfun.com/definitions/interpolation.html)
+* [Discrete & Continuous Data](https://www.mathsisfun.com/data/data-discrete-continuous.html)
+* [Maths](https://byjus.com/maths/)

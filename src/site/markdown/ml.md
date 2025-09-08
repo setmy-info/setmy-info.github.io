@@ -253,27 +253,27 @@ sharing with others.
 * [Attention in transformers, step-by-step | DL6 - YouTube](https://m.youtube.com/watch?v=eMlx5fFNoYc)
 * [3 gen ANN](https://www.researchgate.net/figure/Three-generations-of-artificial-neural-networks-ANNs-MLP-multilayer-perceptron-MP_fig2_339481763)
 * [AI](https://www.researchgate.net/figure/Diagram-illustrates-the-relationship-between-artificial-intelligence-AI-machine_fig1_364337909)
-
-[https://www.deeplearning.ai/]()
-
-[https://openai.com/]()
-
-[https://arxiv.org/]()
-
-[https://paperswithcode.com/]()
-
-[https://distill.pub/]()
-
-[https://www.technologyreview.com/]()
-
-[https://towardsdatascience.com/]()
-
-[https://ai.google/]()
-
-[https://www.kaggle.com/]()
-
-[https://aiweekly.co/]()
-
-[https://cloud.google.com/vertex-ai]()
-
-[https://deepai.org/]()
+* [https://www.deeplearning.ai/](https://www.deeplearning.ai/)
+* [https://openai.com/](https://openai.com/)
+* [https://arxiv.org/](https://arxiv.org/)
+* [https://paperswithcode.com/](https://paperswithcode.com/)
+* [https://distill.pub/](https://distill.pub/)
+* [https://www.technologyreview.com/](https://www.technologyreview.com/)
+* [https://towardsdatascience.com/](https://towardsdatascience.com/)
+* [https://ai.google/](https://ai.google/)
+* [https://www.kaggle.com/](https://www.kaggle.com/)
+* [https://aiweekly.co/](https://aiweekly.co/)
+* [https://cloud.google.com/vertex-ai]([https://cloud.google.com/vertex-ai)
+* [https://deepai.org/](https://deepai.org/)
+* [xxxx](https://mljourney.com/how-to-build-a-large-language-model-from-scratch/)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
+* [xxxx](xxxxx)
