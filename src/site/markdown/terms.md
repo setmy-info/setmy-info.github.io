@@ -85,6 +85,10 @@ technical and non-technical team members (developers, domain experts, and stakeh
 **pure function** - no side effects (no mutation of local static variables, non-local variables, mutable reference
 arguments or input/output streams), idempotent, no mutable variables.
 
+**Factual Forced Development** - my own term for management driven development. Com with fact, that promised to do
+development for particular date, need to be done, because already agreed, without team. Putting team to face facts,
+therefore forcing it through that to be done (over time).
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html

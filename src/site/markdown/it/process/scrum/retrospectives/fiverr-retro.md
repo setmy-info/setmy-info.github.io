@@ -18,6 +18,7 @@ developments were already postponed for many years or decades.
 7. None of the professionals asked additional questions to understand task background in details. 100% of them.
 8. Developers there are not ready to learn.
 9. Developers possibly are under pressure, because results should not have any open problems there.
+10. Feeling like “buying a pig in a poke” - constantly hidden, what will be delivered or what is (really) ready
 
 ## Positive
 

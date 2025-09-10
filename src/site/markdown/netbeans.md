@@ -38,6 +38,14 @@ nano /opt/netbeans/etc/netbeans.conf
 netbeans_default_options="...  -J-Djava.io.tmpdir=/tmp/netbeans"
 ```
 
+### Editor fold
+
+```java
+// <editor-fold defaultstate="collapsed" desc="Instance">
+// Some code here
+// </editor-fold>
+```
+
 ## See also
 
 [xxxx](http://yyyyy)
