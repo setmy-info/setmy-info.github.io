@@ -92,6 +92,8 @@ therefore forcing it through that to be done (over time).
 **FFD** - Fact-Forced Development. Development where management, at any level, imposes sudden decisions, requirements,
 or deadlines as established “facts.” These top-down mandates force development teams to rework plans, adjust priorities,
 or extend working hours in order to stay on schedule. Sopurce of stress, inefficiency, and reduced product quality.
+A top-down anti-pattern where management imposes sudden “facts” that force teams to replan, work overtime,
+and sacrifice quality to meet imposed deadlines.
 
 https://www.dataprise.com/it-glossary
 
