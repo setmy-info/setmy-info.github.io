@@ -89,6 +89,10 @@ arguments or input/output streams), idempotent, no mutable variables.
 development for particular date, need to be done, because already agreed, without team. Putting team to face facts,
 therefore forcing it through that to be done (over time).
 
+**FFD** - Fact-Forced Development. Development where management, at any level, imposes sudden decisions, requirements,
+or deadlines as established “facts.” These top-down mandates force development teams to rework plans, adjust priorities,
+or extend working hours in order to stay on schedule. Sopurce of stress, inefficiency, and reduced product quality.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html
