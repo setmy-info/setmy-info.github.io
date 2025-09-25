@@ -24,6 +24,8 @@ pip install jupyterlab notebook voila \
             imageio \
             seaborn click colorama Flask itsdangerous Jinja2 MarkupSafe Markdown PyYAML Werkzeug \
             tensorboard tensorflow tensorflow-datasets tensorflow-estimator tfds-nightly
+
+imageio click MarkupSafe Markdown Werkzeug
 ```
 
 #### Script preparations
