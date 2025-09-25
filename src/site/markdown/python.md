@@ -438,6 +438,24 @@ PYTHONPATH is for searching modules, like PATH for commands.
 ```sh
 # TO build python
 sudo dnf install -y openssl-devel sqlite sqlite-devel
+# Maybe also these
+sudo dnf install -y \
+    gcc \
+    make \
+    zlib-devel \
+    bzip2-devel \
+    xz-devel \
+    openssl-devel \
+    libffi-devel \
+    readline-devel \
+    sqlite-devel \
+    tk-devel \
+    gdbm-devel \
+    ncurses-devel \
+    uuid-devel \
+    libuuid-devel \
+    expat-devel \
+    wget
 ```
 
 ```shell
