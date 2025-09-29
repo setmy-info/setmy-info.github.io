@@ -6,6 +6,20 @@
 
 ```shell
 pip install tensorflow tensorflow-transform tfds-nightly matplotlib
+
+# Installation file creation
+smi-download-package python311
+smi-install-package python311
+mkdir tensorflow-project
+cd tensorflow-project
+export PATH=/opt/python-3.11.13/bin:$PATH
+smi-create-venv
+smi-venv-command pip install tensorflow tensorflow-transform tensorflow-datasets tensorflow-estimator tfx-bsl tfds-nightly
+smi-venv-command pip install click imageio MarkupSafe Markdown wheel setuptools Werkzeug
+
+# Additional for Jupyter
+smi-venv-command pip install jupyterlab  notebook voila matplotlib  PyYAML  (pandas - is probably already installed)
+smi-venv-command pip install itsdangerous colorama seaborn
 ```
 
 ### CentOS, Rocky Linux
