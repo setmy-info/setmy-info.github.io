@@ -24,8 +24,6 @@ pip install jupyterlab notebook voila \
             imageio \
             seaborn click colorama Flask itsdangerous Jinja2 MarkupSafe Markdown PyYAML Werkzeug \
             tensorboard tensorflow tensorflow-datasets tensorflow-estimator tfds-nightly
-
-imageio click MarkupSafe Markdown Werkzeug
 ```
 
 #### Script preparations
@@ -38,10 +36,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
+import tensorflow_transform as tft
 from tensorflow.keras import layers
 import datetime
 import timeit
 import itertools
+import pyarrow as pa
 ```
 
 #### Plots
