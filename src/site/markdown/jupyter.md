@@ -44,6 +44,16 @@ import itertools
 import pyarrow as pa
 ```
 
+#### Versions
+
+```python
+print("TensorFlow:", tf.__version__)
+print("TensorFlow Transform:", tft.__version__)
+print("NumPy:", np.__version__)
+print("pandas:", pd.__version__)
+print("pyarrow:", pa.__version__)
+```
+
 #### Plots
 
 ```python
