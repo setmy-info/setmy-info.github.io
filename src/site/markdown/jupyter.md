@@ -19,11 +19,17 @@ jupyter-lab
 #### Installation with additionals
 
 ```shell
-pip install jupyterlab notebook voila \
-            numpy pandas matplotlib \
-            imageio \
-            seaborn click colorama Flask itsdangerous Jinja2 MarkupSafe Markdown PyYAML Werkzeug \
-            tensorboard tensorflow tensorflow-datasets tensorflow-estimator tfds-nightly
+mkdir jupyter-probe
+cd jupyter-probe
+smi-download-package python313
+smi-install-package python313
+export PATH=/opt/python-3.13.7/bin:${PATH}
+python3 --version
+smi-create-venv
+smi-venv-command pip install jupyterlab notebook voila
+smi-venv-command jupyter-lab
+smi-venv-command pip freeze > requirements.txt
+# Flask itsdangerous Jinja2 PyYAML
 ```
 
 #### Script preparations
@@ -36,7 +42,6 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
-import tensorflow_transform as tft
 from tensorflow.keras import layers
 import datetime
 import timeit
@@ -48,7 +53,6 @@ import pyarrow as pa
 
 ```python
 print("TensorFlow:", tf.__version__)
-print("TensorFlow Transform:", tft.__version__)
 print("NumPy:", np.__version__)
 print("pandas:", pd.__version__)
 print("pyarrow:", pa.__version__)
