@@ -88,6 +88,50 @@ Neural networks, Deep Learning, Machine learning.
 * Model deployment
 * Model feedback (And back to top)
 
+## ML architectures
+
+Feedforward Neural Networks (FNN)
+Classic multilayer perceptron (MLP).
+MLP (Multilayer Perceptron)
+
+Convolutional Neural Networks (CNN)
+Good for dimensional data structures (pictures, videos, 2D signals).
+LeNet (first CNN)
+AlexNet, VGG, Inception, ResNet, DenseNet, EfficientNet, ConvNeXt jne.
+Vision Transformers (ViT), Hybrid CNN-Transformer models.
+
+Recurrent Neural Networks (RNN)
+For sequential data (text, sound, time series).
+Simple RNN
+LSTM (Long Short-Term Memory)
+GRU (Gated Recurrent Unit)
+Bidirectional RNN
+Attention + RNN hybrid
+
+Graph Neural Networks (GNN)
+Works with graphs: nodes and edges
+GCN (Graph Convolutional Network)
+GAT (Graph Attention Network)
+GraphSAGE, Message Passing Neural Networks (MPNN)
+
+Transformers ja Attention-põhised mudelid
+NLP-s also in vision, audio analysis, reinforcement learning.
+self-attention
+Encoder-decoder (nt. BERT, T5)
+Decoder-only (nt. GPT-family)
+Vision Transformers (ViT), Audio Transformers
+
+Generative models
+Generates new data (picture, sound, text)
+GAN (Generative Adversarial Network)
+VAE (Variational Autoencoder)
+Diffusion Models (nt. Stable Diffusion, DALL·E)
+
+Neuroevolution and specific architectures
+NEAT, HyperNEAT
+Capsule Networks (Hinton)
+Liquid Neural Networks (neurodynamic systems)
+
 ## ML input
 
 **Raw Data**: This directory could contain raw, unprocessed data files, such as CSV, JSON, XML, or files in other
@@ -275,7 +319,7 @@ sharing with others.
 * [https://cloud.google.com/vertex-ai]([https://cloud.google.com/vertex-ai)
 * [https://deepai.org/](https://deepai.org/)
 * [xxxx](https://mljourney.com/how-to-build-a-large-language-model-from-scratch/)
-* [xxxx](xxxxx)
+* [Kaggle - TensorFLow HUB is integrated](https://www.kaggle.com/models?tfhub-redirect=true)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)
