@@ -132,6 +132,12 @@ NEAT, HyperNEAT
 Capsule Networks (Hinton)
 Liquid Neural Networks (neurodynamic systems)
 
+Future
+Neural Architecture Search (NAS) – automatic new arch. searching.
+Spiking Neural Networks (SNN) – biologically realistic networks.
+Quantum Neural Networks (QNN) – quantum computers related models.
+Liquid/Neural ODE Networks – continuously time dynamics models.
+
 ## ML input
 
 **Raw Data**: This directory could contain raw, unprocessed data files, such as CSV, JSON, XML, or files in other
@@ -321,7 +327,7 @@ sharing with others.
 * [HOWTO LLM](https://mljourney.com/how-to-build-a-large-language-model-from-scratch/)
 * [Kaggle - TensorFLow HUB is integrated](https://www.kaggle.com/models?tfhub-redirect=true)
 * [TensorFlow Hub](https://www.tensorflow.org/hub)
-* [xxxx](xxxxx)
+* [TF + Kaggle](https://www.kaggle.com/discussions/product-feedback/448425)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)
