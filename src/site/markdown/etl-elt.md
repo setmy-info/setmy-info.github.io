@@ -5,7 +5,7 @@
 
 ## Information
 
-| Aspect               | **ETL (Extract → Transform → Load)**                                    | **ELT (Extract → Load → Transform)**                                                                           |
+| Aspect               | **ETL**                                                                 | **ELT**                                                                                                        |
 |----------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **Processing order** | Data is **transformed** before being **loaded** into the data warehouse | Data is **loaded** first into the warehouse and **transformed** later                                          |
 | **Data storage**     | Only **transformed data** is stored. Some data is lost.                 | **raw (initial, original, as-is, with additional) data** is also stored and **transformed data** can be stored |
