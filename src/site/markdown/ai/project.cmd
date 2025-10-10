@@ -1,2 +1,2 @@
 set PROJECT_PYTHON_VERSION=3.13
-set PROJECT_REQUIREMENTS=requirements-all-win.txt
+set PROJECT_REQUIREMENTS=requirements.txt

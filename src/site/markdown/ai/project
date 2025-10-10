@@ -1,2 +1,2 @@
 PROJECT_PYTHON_VERSION=3.13
-PROJECT_REQUIREMENTS=requirements-all-linux.txt
+PROJECT_REQUIREMENTS=requirements.txt
