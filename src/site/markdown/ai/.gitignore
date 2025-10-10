@@ -1,0 +1,5 @@
+logs/
+model.keras
+requirements.old.txt
+titanic.tfsnap/
+traffic/
