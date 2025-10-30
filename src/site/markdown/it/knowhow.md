@@ -26,7 +26,8 @@ How deeply developer by profiles should know.
 * D3 (or C) More complex. Can handle everyday work by self. Knows what to search and solve problems. Can do some design.
   Knows solution basic architecture (layers, models,components)
 * D4 ...
-* D5 (or D) Deeply. Good understanding internals, deeply, most of the things tested and therefore high understanding how
+* D5 (or D) Deeply. Good understanding of internals, deeply, most of the things tested, and therefore high understanding
+  how
   system acts. Can do complex architecture, buildingblocks at any level (enterprise or solution).
 
 Higher should same things as lower level.
@@ -241,13 +242,107 @@ Higher should same things as lower level.
     * SQL
     * Indexing
 * Testing
-    * Unit, integration and e2e testing
+    * Unit, integration, and e2e testing
     * Selenium
     * BDD, Spec by example
     * Contract testing (Pact.io)
 * Communication protocols
     * UDP, TCP, IP
     * OSI Network layer
+* Documentation writing
+    * Confluence, Wiki, in code. *.md format
+    * UML
+
+## Typical Developer and Architect Activities
+
+This section provides a comprehensive overview of activities developers and architects typically engage in at
+workplaces, including technical, strategic, and organizational tasks.
+
+* Development activities
+    * Coding/programming
+        * New functionality/features
+        * Bug fixes
+        * Refactoring
+        * Writing and maintaining automated (unit, integration, system, and e2e) tests
+    * Code Reviews and Feedback
+        * Peer reviewing code, for
+            * Sharing best practices
+            * Ensuring adherence to coding standards
+    * Testing
+        * task/backlog item self-testing, End-user testing / QA simulation
+        * Test management (analyzing existing, planning new etc)
+    * PoC/Spike/research/examples/prototyping (new) solution development
+* Analysis
+    * Business Analysis
+        * Gathering and understanding requirements, also technical and architecture requirements
+        * Mapping and documenting business needs
+        * Input task related deep business requirements analysis - analysis-analysis
+    * Non-functional Requirements Analysis
+        * Security analysis
+        * Scalability analysis
+        * Performance analysis
+        * Usability analysis
+    * Technical Analysis
+        * Code or System Situation Analysis
+            * Codebase/Technical situation/state analysis/audit
+            * Technical debt analysis/assessment
+        * Evaluating technical solutions
+        * Making solution design decisions
+    * Innovation and Strategic Contribution
+        * Analyzing Company Strategy and Vision, assessing the impact on technical choices
+* Architecture/design (same things)
+    * Enterprise architecture planning
+    * Solution architecture planning
+* Planning and Management
+    * Task Estimation and Prioritization
+        * Work/backlog item refinement/estimation, story points
+        * Risk assessment
+    * Iteration / Sprint Planning with the Team
+        * Creating and managing sprint backlog
+        * Monitoring velocity and progress
+    * Daily Task Planning
+        * Organizing day-to-day and weekly tasks
+        * Everyday task implementation planning
+    * Technical Debt Planning and Reduction
+    * Architecture Planning
+        * Planning, preparing, and conducting architecture meetings (Technical Leadership)
+        * Creating diagrams and documentation
+        * Platform development, standards, and frameworks selection and documenting
+    * Retrospectives, postmortems, internal process improvements, (suggesting improvements, optimizing processes), ...
+* Reporting
+    * Daily/standup status reporting
+    * Iteration/sprint demo
+    * Retrospectives
+    * KPI and another metric reporting
+* Monitoring and Operations
+    * Log analysis
+    * Alert and anomaly monitoring, production/live, test/dev environment problems
+    * Troubleshooting Production Issues
+        * Hotfixes and rapid responses
+* Communication
+    * Strategy, vision, and goal presentations hearings
+    * Listening to business development and management plans
+    * Cross-team or cross-organization collaboration
+        * Integration, technical, and architecture discussions
+        * Coordinating dependencies and resources
+* Documentation
+    * Technical documentation writing
+        * Architectural documents in internal wikis or documentation storage
+        * Technical guides documents in internal wikis or documentation storage
+        * Code comments and API documentation
+    * Usage documentation
+* Learning and Self-Improvement
+    * Learning New Technologies
+        * Frameworks, languages, tools, platforms
+    * Monitoring Best Practices and Trends
+    * Training and Certifications driving
+        * Internal training (Code of Conduct, security, data protection, GDPR, etc.)
+        * External courses and conferences
+* Risk Assessment and Audits
+    * Compliance audits
+* Team driving, guiding, leading
+    * Scrum master or similar
+    * Tech lead
 
 ## Draft
 
@@ -260,7 +355,7 @@ principles.
 
 Basic Syntax and Data Types: Understanding variables, data types, operators, and control flow (if-else, switch, loops).
 Object-Oriented Programming (OOP): Familiarity with concepts like classes, objects, inheritance, polymorphism,
-encapsulation and abstraction.
+encapsulation, and abstraction.
 Exception Handling: Knowledge of try-catch blocks, throwing exceptions and creating custom exceptions.
 Collections Framework: Understanding of lists, sets, maps, and their implementations (e.g., ArrayList, HashMap).
 Java 8 Features: Familiarity with lambda expressions, streams, and the new date/time API.
