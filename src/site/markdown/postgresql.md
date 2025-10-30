@@ -30,13 +30,15 @@ sudo systemctl restart postgresql-16
 sudo su - postgres
 ```
 
-        psql
-        or
-        psql -d template1 -U postgres
-            \password
-            or
-            ALTER USER postgres WITH PASSWORD 'supersecretpassword';
-            \q
+```shell
+psql
+or
+psql -d template1 -U postgres
+    \password
+    or
+    ALTER USER postgres WITH PASSWORD 'supersecretpassword';
+    \q
+```
 
 In: /var/lib/pgsql/16/data pg_hba.conf
 
@@ -129,11 +131,22 @@ GRANT ALL PRIVILEGES ON DATABASE xyz_ci TO ciliquibase;
 GRANT ALL PRIVILEGES ON DATABASE xyz_prelive TO preliveliquibase;
 GRANT ALL PRIVILEGES ON DATABASE xyz_live TO liveliquibase;
 
-COPY "tablename" (col1, col2) FROM STDIN WITH (FORMAT CSV, DELIMITER ',', HEADER true)
+-- https://www.postgresql.org/docs/current/sql-copy.html
+COPY "tablename" (col1, col2) FROM STDIN WITH (FORMAT CSV, DELIMITER ';', QUOTE '"', HEADER true)
 
 DROP TABLE IF EXISTS table1, table2 CASCADE;
 
 DROP SEQUENCE IF EXISTS sequence1, sequence2 CASCADE;
+
+-- Drop DB
+DROP DATABASE IF EXISTS xyz_dev WITH (FORCE);
+
+-- Drop chema and create it again as Postgres does it
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public AUTHORIZATION pg_database_owner;
+GRANT ALL ON SCHEMA public TO pg_database_owner;
+GRANT USAGE ON SCHEMA public TO public;
+COMMENT ON SCHEMA public IS 'standard public schema';
 
 -- Columns for table
 SELECT column_name, data_type, ordinal_position, character_maximum_length, * FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'table_name';
