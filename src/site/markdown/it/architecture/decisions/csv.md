@@ -11,3 +11,5 @@ Example in [test.csv](../../../../resources/test.csv)
 3;"Carol ""C"" Smith";8.90;"{""role"":""manager""}"
 4;"ÕõÄäÖöÜü "" ' Tähestik";8.90;"{""role"":""manager""}"
 ```
+
+Excel → Data → Get Data → From Text/CSV
