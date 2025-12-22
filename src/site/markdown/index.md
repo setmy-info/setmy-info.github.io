@@ -27,7 +27,9 @@
             * [PoC & Spikes](it/architecture/decisions/poc-spikes/index.html)
         * [Enterprise architecture](it/architecture/enterprise-architecture/index.html)
             * [Environments and top level buildingblocks/components/software](it/architecture/enterprise-architecture/buildingblocks.html)
-        * [Components/Modules/Projects, Module or component or app or library as Project](it/architecture/components/index.html)
+        * [Components/Modules/Projects, Module or component or app or library as Project](it/architecture/components/index.html) (
+          NOTE: can be at the same level as **Knowledge** section items. these are things developers, DevOps, Admins
+          search perhaps first to start working on a project, to get information about software module/project. )
             * [Commons and overview](empty.html)
                 * [Architecture](empty.html)
                 * [Requirements](empty.html)
@@ -49,7 +51,8 @@
                 * [Maintenance](empty.html)
             * ...
         * [Problems](it/architecture/problems/index.html)
-    * Knowledge
+    * Knowledge (NOTE: Can be as this, separate directory. Or also can be in the **root** directory. So **Knowledge**
+      can be removed and content can be moved out from **IT** also. Everything is mostly about know how/howto.)
         * [git](git.html)
         * [ssh](ssh.html)
         * [openssl](openssl.html)
