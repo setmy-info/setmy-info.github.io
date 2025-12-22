@@ -1,5 +1,7 @@
 # Decisions and principles
 
+Folder section to write internal and external decisions and principles.
+
 ## Decisions
 
 ### Microservices and API-s
