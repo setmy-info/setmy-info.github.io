@@ -27,5 +27,3 @@
 [G-code](https://marlinfw.org/meta/gcode/)
 
 [G-code](https://www.cnccookbook.com/g-code-tutorial/)
-
-[xxxx](xxxxx)

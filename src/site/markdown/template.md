@@ -4,7 +4,7 @@
 
 ## Installation
 
-### CentOS, Rocky Linux
+### Rocky Linux
 
 ### Fedora
 
@@ -22,6 +22,8 @@
 
 * [xxxx](http://yyyyy)
 
+# Formatting examples
+
 # H1
 
 ## H2
@@ -34,7 +36,7 @@
 
 ###### H6
 
-This is also ordinary paragraph.
+This is also an ordinary paragraph.
 
 Alternatively, for H1 and H2, an underline-ish style:
 

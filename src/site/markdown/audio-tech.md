@@ -26,10 +26,4 @@ SENNHEISER E845S Foam Windscreen (Tuulekaitse)
 
 [Audio-Technica AT2031 condenser microphone](https://www.djservice.ee/article/audio-technica-at2031)
 
-[xxx](https://pvxmusic.ee/ee/rycote-foam-windshield-104405/)
-
-[xxx](yyyy)
-
-[xxx](yyyy)
-
-[xxx](yyyy)
+[Foam windshield](https://pvxmusic.ee/ee/rycote-foam-windshield-104405/)
