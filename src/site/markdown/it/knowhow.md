@@ -343,6 +343,7 @@ workplaces, including technical, strategic, and organizational tasks.
 * Team driving, guiding, leading
     * Scrum master or similar
     * Tech lead
+    * Project management/driver, PO (burndowns, managing events, epic estimations, ...)
 
 ## Draft
 
