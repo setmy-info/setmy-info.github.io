@@ -1,6 +1,6 @@
 # Decisions and principles
 
-Folder section to write internal and external decisions and principles.
+Folder section to write internal and external decisions and principles. Also other aspects in software development.
 
 ## Decisions
 
