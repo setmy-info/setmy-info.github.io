@@ -19,6 +19,7 @@
     - Often suggest black-box development, where they do as best they can, but works, skipping technical and
       non-functional requirements (trying to avoid these). Delivering functional results based on their own decisions,
       while skipping some technical or non-functional requirements.
+    - Unnecessary work is avoided, focusing only on tasks that generate value and contribute directly to outcomes.
 * Larger companies usually have more flexibility in how time is managed and can tolerate a certain level of
   inefficiency.
 
