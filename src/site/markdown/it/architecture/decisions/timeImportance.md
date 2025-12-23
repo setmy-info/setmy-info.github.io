@@ -80,3 +80,11 @@ Reasons for Time Tracking in Software Development
     * Improving estimation accuracy
     * Identifying recurring patterns
     * Supporting process refinement
+
+## Misc evidences
+
+That time aspect is important.
+
+* To win developers human
+  hours (+
+  comments): https://www.linkedin.com/posts/edvinassulzickis_githubactions-aws-devops-activity-7407298585333153792-pQyt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFxqg0B51NowfFbViZKgEfi_sAs-XLq11M
