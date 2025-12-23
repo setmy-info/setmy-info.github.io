@@ -31,3 +31,5 @@ In short: **yes, macOS is designed to be simple**, even if that sometimes means 
 
 * Support the claims in this answer with references to publicly available articles from trustworthy and reputable
   sources, applying source criticism.
+
+NB! Not a decision, just a guideline to validate architecture and software artifacts quality.
