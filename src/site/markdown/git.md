@@ -31,9 +31,15 @@ git config --global --unset url.https://github.com/.insteadof
 #[url "https://github.com/"]
 #    insteadOf = git@github.com:
 
+git remote get-url origin
+
 git remote set-url origin NEW_URL
 
 git config --global --list
+
+git remote
+
+git remote -v
 ```
 
 ```shell
@@ -84,7 +90,7 @@ git branch -d BRANCHNAME && git push origin --delete BRANCHNAME
 
 git fetch
 
-# Remove also local branches, those are deleted from remote
+# Sync with origin, remove also local branches, those are deleted from remote
 git fetch --prune
 
 git pull

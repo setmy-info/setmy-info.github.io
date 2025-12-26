@@ -27,7 +27,7 @@ set MOB_SKIP_CI_PUSH_OPTION_ENABLED=false
 
 Usual workflow
 
-Start timer (optional) to coordinate rotations (for example: "mobelisk-company-name"):
+Start a timer (optional) to coordinate rotations (for example, "mobelisk-company-name"):
 
 [timer.mob.sh](https://timer.mob.sh/)
 
