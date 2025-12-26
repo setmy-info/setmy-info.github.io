@@ -337,6 +337,115 @@ spec:
                                     number: 80
 ```
 
+### Secrets map
+
+**xyz-postgres-secrets-map.yaml**
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: xyz-postgres-secrets-map
+    namespace: xyz-dev
+data:
+    postgres-password: U2VjcmV0IHZhbHVl
+immutable: true
+```
+
+### Volumes
+
+**xyz-postgres-persistent-volume-claim.yaml**
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: xyz-postgres-persistent-volume-claim
+    namespace: xyz-dev
+spec:
+    accessModes:
+        - ReadWriteOnce
+        #- ReadWriteMany
+    resources:
+        requests:
+            storage: 1Gi
+    #storageClassName: ""
+    #volumeName: xyz-nfs-persistent-volume
+```
+
+### Deployment
+
+**xyz-postgres-deployment.yaml**
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: xyz-postgres-deployment
+    namespace: xyz-dev
+    labels:
+        app: xyz-postgres-deployment
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: xyz-postgres-deployment
+    template:
+        metadata:
+            labels:
+                app: xyz-postgres-deployment
+        spec:
+            containers:
+                -   name: postgres
+                    image: postgres:16
+                    ports:
+                        -   name: pg-port
+                            containerPort: 5432
+                    env:
+                        ## From secrets
+                        -   name: POSTGRES_PASSWORD
+                            valueFrom:
+                                secretKeyRef:
+                                    name: xyz-postgres-secrets-map
+                                    key: postgres-password
+                                    optional: false
+                    volumeMounts:
+                        -   name: postgres-volume
+                            mountPath: /var/lib/postgresql/data
+            volumes:
+                -   name: postgres-volume
+                    persistentVolumeClaim:
+                        claimName: xyz-postgres-persistent-volume-claim
+```
+
+### Service
+
+**xyz-service.yaml**
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: xyz-postgres-service
+    namespace: xyz-dev
+spec:
+    type: ClusterIP
+    selector:
+        app: xyz-postgres-deployment
+    ports:
+        -   protocol: TCP
+            # Port where Ingress forwards to
+            port: 5432
+            # Deployment or POD port in container port
+            #targetPort: 8080
+            targetPort: pg-port
+```
+
+kubectl apply -f xyz-postgres-secrets-map.yaml
+kubectl apply -f xyz-postgres-persistent-volume-claim.yaml
+kubectl apply -f xyz-postgres-deployment.yaml
+kubectl apply -f xyz-service.yaml
+
 ## Kind complete list
 
 ```yaml
