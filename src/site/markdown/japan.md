@@ -4,7 +4,7 @@
 
 * [Haneda Airport plan](https://tokyo-haneda.com/en/floor/index.html)
 * [Haneda Lockers](https://tokyo-haneda.com/en/service/facilities/coin_locker.html)
-* [Haneda arrayval Lockers](https://tokyo-haneda.com/en/floor/terminal3/2nd_floor.html?pin=map1,SERVICE_010_050_001,/service/facilities/coin_locker.html%3Ftab%3Dterminal3)
+* [Haneda arraival Lockers](https://tokyo-haneda.com/en/floor/terminal3/2nd_floor.html?pin=map1,SERVICE_010_050_001,/service/facilities/coin_locker.html%3Ftab%3Dterminal3)
 * [More about Haneda Lockers](https://airportlocker.guide/japan/haneda-airport-lockers)
 
 ## Mobile internet
