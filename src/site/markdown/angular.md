@@ -43,6 +43,10 @@ ng test
 # Single run
 ng test --watch=false
 ```
+    "@wdio/jasmine-framework": "^9.22.0",
+    "@wdio/local-runner": "^9.22.0",
+    "@wdio/schematics": "^1.2.1",
+    "@wdio/spec-reporter": "^9.20.0",
 
 ## Configuration
 
