@@ -27,7 +27,7 @@ Withing few months. Best price proposal wins.
 2. Repository: **git@github.com:setmy-info/setmy.info.git** in [GitHub](https://github.com/setmy-info/setmy.info) as
    **multi-projects** monorepo
 2. Branch: **develop**
-3. **Java 21** (OpenJDK) or **multi-projects** property **java.version**
+3. **Java 25** (OpenJDK) or **multi-projects** property **java.version**
 4. Modules to development: **java-vcs**, **java-exec** (if need to change, probably not), **java-staler**
 5. **Lombok**, **JUnit 5**, **Mockito**, **AssertJ** and modules dependencies only.
 6. Prepare(d), fix and change repo A: **git@github.com:setmy-info/stealer-test-a.git**

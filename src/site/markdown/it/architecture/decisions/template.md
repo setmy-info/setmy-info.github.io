@@ -1,7 +1,7 @@
 # ADR-XXXX: <Template, Short, descriptive title> Architecture Decision Record (ADR)
 
 > ## Notes & Guidelines
-> * file name **adr-0001-template.md**
+> * File name: **adr-0001-template.md**
 > * One decision per ADR
 > * Keep it short, clear, and factual
 > * Decisions should support long-term scalability and operational excellence
