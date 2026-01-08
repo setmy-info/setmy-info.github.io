@@ -50,4 +50,10 @@ In task context.
 
 In (sprint) plan.
 
-Promioses.
+Promises.
+
+...
+
+---
+
+End of draft.
