@@ -5,8 +5,8 @@
 Engineers actively collaborate with architects and are responsible for understanding and following approved
 architecture decisions, non-functional requirements, technologies, approaches, and relevant documentation.
 
-We do not expect architecture to be memorized. We expect it to be re-checked, reviewed, prepared, and consulted during
-implementation. ~~Developers commit to reviewing relevant architecture documentation and validating their
+We do not expect architecture to be memorized. We expect it to be re-checked, reviewed, prepared, and then consulted
+during implementation. ~~Developers commit to reviewing relevant architecture documentation and validating their
 implementations, as well as their chosen technologies, frameworks, and tools, against it.~~
 
 Technology choices are not unrestricted by default.
