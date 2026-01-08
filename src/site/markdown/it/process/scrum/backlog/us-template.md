@@ -1,4 +1,6 @@
-# User Story: <Short Description>
+# User Story
+
+Short Description.
 
 > ## Notes & Guidelines
 > * File name: **us-0001-template.md**

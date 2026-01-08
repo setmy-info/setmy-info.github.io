@@ -1,4 +1,6 @@
-# System / Service Story: <Short Description>
+# System / Service Story
+
+Short Description.
 
 > ## Notes & Guidelines
 > * File name: **ss-0001-template.md**

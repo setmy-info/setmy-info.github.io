@@ -214,6 +214,10 @@ pg_dump -U postgres -h localhost -p 5432 -F c -d database_name -f database_name.
 -- create DB
 -- set DB credentials
 pg_restore -U postgres -h localhost -p 5432 -d database_name -1 database_name.pgdump
+
+# Specific tables copy
+pg_dump -h localhost -p 5432 -U username -d dbname --data-only --table=table1 --table=table2 --inserts > data.sql
+psql -h localhost -p 5432 -U username -d dbname -f data.sql
 ```
 
 Restore

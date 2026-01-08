@@ -3,17 +3,13 @@
 ## Architecture Awareness & Collaboration
 
 Engineers actively collaborate with architects and are responsible for understanding and following approved
-architecture, technologies, and approaches.
-~~Engineers collaborate actively with architects and are responsible for understanding and following approved
-architecture decisions, non-functional requirements, and relevant documentation.~~
+architecture decisions, non-functional requirements, technologies, approaches, and relevant documentation.
 
-We do not expect architecture to be memorized.
-We expect it to be re-checked, reviewed, prepared, and consulted during implementation.
-Developers commit to reviewing relevant architecture documentation and validating their implementations, as well as
-their chosen technologies, frameworks, and tools, against it. Technology choices are not unrestricted by default.
+We do not expect architecture to be memorized. We expect it to be re-checked, reviewed, prepared, and consulted during
+implementation. ~~Developers commit to reviewing relevant architecture documentation and validating their
+implementations, as well as their chosen technologies, frameworks, and tools, against it.~~
 
-~~Architects acknowledge that architecture can be extensive and ensure it is accessible, navigable, and
-suitable for reference rather than memorization.~~
+Technology choices are not unrestricted by default.
 
 The development team explains exactly how features will be implemented during sprint planning. Check out
 the [Scrum Guide Sprint planning](https://scrumguides.org/scrum-guide.html#topic-three-how-will-the-chosen-work-get-done)
