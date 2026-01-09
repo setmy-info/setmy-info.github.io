@@ -24,8 +24,6 @@ We use proper tools for architectural communication.
 The development team explains exactly how features will be implemented during sprint planning. Check out
 the [Scrum Guide Sprint planning](https://scrumguides.org/scrum-guide.html#topic-three-how-will-the-chosen-work-get-done)
 
----
-
 **DRAFT**: Engineers/Developers clearly express their know-how, knowledge. Communicate what they truly understand and
 can implement, ~~and what they cannot, rather than just saying "We can do."~~
 
