@@ -39,16 +39,18 @@ To address these challenges, the team wants a frontend architecture that:
 We will adopt a framework-agnostic frontend core architecture, where all business logic and application behavior are
 implemented outside Angular and UI frameworks. These act only as **data visualizers**.
 
+Name it as: **Service For Component (SFC)** (like Backend For Frontend: BFF).
+
 Key decisions:
 
 1. Framework-Agnostic
 2. Layered Responsibility Model
 3. Thin UI Components
-4. Service per Feature / Component (Facade Pattern)
+4. Service per Component aka SFC
 5. UI-Independent Executability
-6. Developer Console Accessibility (Development Only)
+6. Developer Console Accessibility
 7. Testing Strategy
-8. Angular as an Adapter
+8. Angular as an Adapter or data visualizer
 
 ## 4. Rationale (Justification)
 
@@ -142,7 +144,9 @@ Accepted
 
 ## Context
 
-The frontend application is built using Angular (currently Angular 21). The application is expected to be long-lived, evolve over time, and undergo framework upgrades (Angular major versions) and potentially framework changes (e.g., React, Vite-based UI) with minimal risk and cost.
+The frontend application is built using Angular (currently Angular 21). The application is expected to be long-lived,
+evolve over time, and undergo framework upgrades (Angular major versions) and potentially framework changes (e.g.,
+React, Vite-based UI) with minimal risk and cost.
 
 Key challenges identified:
 
@@ -162,7 +166,8 @@ To address these challenges, the team wants a frontend architecture that:
 
 ## Decision
 
-We will adopt a **framework-agnostic frontend core architecture**, where all business logic and application behavior are implemented outside Angular and UI frameworks act only as adapters.
+We will adopt a **framework-agnostic frontend core architecture**, where all business logic and application behavior are
+implemented outside Angular and UI frameworks act only as adapters.
 
 ### Key decisions:
 
@@ -210,7 +215,8 @@ We will adopt a **framework-agnostic frontend core architecture**, where all bus
 
 6. **Developer Console Accessibility (Development Only)**
 
-    * In development environments, selected application services may be explicitly exposed on the browser `window` object for interactive testing and exploration.
+    * In development environments, selected application services may be explicitly exposed on the browser `window`
+      object for interactive testing and exploration.
     * No Angular services or framework internals may be exposed.
     * This exposure must be disabled in production builds.
 
@@ -274,4 +280,6 @@ To ensure the architecture is consistently applied:
 
 ## Notes
 
-This ADR intentionally prioritizes long-term maintainability, upgradeability, and developer experience over short-term simplicity. The architecture is particularly suitable for large, long-lived frontend applications with complex business logic.
+This ADR intentionally prioritizes long-term maintainability, upgradeability, and developer experience over short-term
+simplicity. The architecture is particularly suitable for large, long-lived frontend applications with complex business
+logic.

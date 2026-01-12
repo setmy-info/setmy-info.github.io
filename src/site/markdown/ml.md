@@ -64,6 +64,9 @@ Neural networks, Deep Learning, Machine learning.
 * Classification, Object detection, Semantic segmentation
 * 3D CNN
 * 3D CRNN
+* RAG (GraphRAG)
+* Agent
+* MCP
 
 ### MATH
 
@@ -328,8 +331,8 @@ sharing with others.
 * [Kaggle - TensorFLow HUB is integrated](https://www.kaggle.com/models?tfhub-redirect=true)
 * [TensorFlow Hub](https://www.tensorflow.org/hub)
 * [TF + Kaggle](https://www.kaggle.com/discussions/product-feedback/448425)
-* [xxxx](xxxxx)
-* [xxxx](xxxxx)
+* [Fine-tuning Large Language Models (LLMs) | w/ Example Code](https://www.youtube.com/watch?v=eC6Hd1hFvos)
+* [RAG vs. Fine Tuning](https://www.youtube.com/watch?v=00Q0G84kq3M)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)
