@@ -27,3 +27,5 @@ SENNHEISER E845S Foam Windscreen (Tuulekaitse)
 [Audio-Technica AT2031 condenser microphone](https://www.djservice.ee/article/audio-technica-at2031)
 
 [Foam windshield](https://pvxmusic.ee/ee/rycote-foam-windshield-104405/)
+
+[Focusrite Scarlett 16i16 sound card](https://focusrite.com/products/scarlett-16i16)

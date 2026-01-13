@@ -1,13 +1,9 @@
 # Architecture Decision Record (ADR)
 
-ADR-0030: Framework-Agnostic Frontend Development ADR
+ADR-0030: Framework-Agnostic Frontend Development with Thin UI ADR
 
-> ## Notes & Guidelines
-> * File name: **adr-0030-framework-agnostic-fe-development.md**
-> * One decision per ADR
-> * Keep it short, clear, and factual
-> * Decisions should support long-term scalability and operational excellence
-> * ADRs are living documents and may be superseded
+We will adopt a **framework-agnostic frontend core architecture**, where all business logic and application behavior are
+implemented outside Angular and UI frameworks act only as adapters.
 
 ## 1. Status
 
@@ -34,114 +30,6 @@ To address these challenges, the team wants a frontend architecture that:
 * Reduces **upgrade and migration costs**
 * Improves developer **productivity** and **confidence**
 
-## 3. Decision
-
-We will adopt a framework-agnostic frontend core architecture, where all business logic and application behavior are
-implemented outside Angular and UI frameworks. These act only as **data visualizers**.
-
-Name it as: **Service For Component (SFC)** (like Backend For Frontend: BFF).
-
-Key decisions:
-
-1. Framework-Agnostic
-2. Layered Responsibility Model
-3. Thin UI Components
-4. Service per Component aka SFC
-5. UI-Independent Executability
-6. Developer Console Accessibility
-7. Testing Strategy
-8. Angular as an Adapter or data visualizer
-
-## 4. Rationale (Justification)
-
-Explain **why** this decision was made.
-
-### 4.1. Advantages
-
-* ...
-* ...
-* ...
-
-### 4.2. Known drawbacks / accepted risks
-
-* ...
-* ...
-* ...
-
-## 5. Alternatives Considered / Considered Options
-
-List the alternatives that were evaluated and briefly explain why they were not chosen.
-
-* **Alternative A** – reason rejected
-* **Alternative B** – reason rejected
-* **Alternative C** – reason rejected
-
-## 6. Consequences, Impacts & Follow-up Actions
-
-Describe the consequences of this decision.
-
-* Technical impact
-* Organizational / process impact
-* Cost or operational impact
-* Required follow-up actions (tasks, reviews, migrations, documentation updates)
-
-## 7. References
-
-* Links to relevant documentation
-* Standards, RFCs, blog posts, or research
-* Related ADRs
-
-## 8. Related ADRs
-
-* [ADR-XXXX](template.md)
-* [ADR-YYYY](template.md)
-
----
-
-# ADR-XXXX: <Template, Short, descriptive title> Ultra-light Architecture Decision Record (ADR)
-
-> Use this when speed and simplicity are more important than detail.
-
-## 1. Status:
-
-**Draft** | **Accepted** | **Rejected** | **Deprecated**
-
-## 2. Context
-
-...
-
-## 3. Decision
-
-...
-
-## 4. Rationale (Justification):
-
-...
-
-## 3. Consequences, Impacts & Follow-up Actions
-
-...
-
----
-
-https://adr.github.io/
-
----
-
-# Architecture Decision Record (ADR)
-
-## Title
-
-Framework-Agnostic Frontend Core with Thin UI Adapters
-
-## Status
-
-Accepted
-
-## Date
-
-2026-01-07
-
 ## Context
 
 The frontend application is built using Angular (currently Angular 21). The application is expected to be long-lived,
@@ -162,40 +50,46 @@ To address these challenges, the team wants a frontend architecture that:
 * Reduces upgrade and migration costs
 * Improves developer productivity and confidence
 
----
+## 3. Decision
 
-## Decision
+We will adopt a framework-agnostic frontend core architecture, where all business logic and application behavior are
+implemented outside Angular and UI frameworks. These act only as **data visualizers**.
 
-We will adopt a **framework-agnostic frontend core architecture**, where all business logic and application behavior are
-implemented outside Angular and UI frameworks act only as adapters.
+Name it as: **Service For Component (SFC)** (like Backend For Frontend: BFF).
+
+Key decisions:
+
+1. Framework-Agnostic
+2. Layered Responsibility Model
+3. Thin UI Components
+4. Service per Component aka SFC
+5. UI-Independent Executability
+6. Developer Console Accessibility
+7. Testing Strategy
+8. Angular as an data visualizer
 
 ### Key decisions:
 
 1. **Framework-Agnostic Core**
 
-    * Business logic, workflows, validation, and state transitions are implemented in plain TypeScript modules.
+    * Business logic, workflows, validation, and state transitions are implemented in service layers.
     * The core must not import or depend on Angular or any UI framework.
 
 2. **Layered Responsibility Model**
 
    ```
-   UI Framework (Angular / React)
+   UI Presenter (Components in frameworks like Angular / React / VueJS / Other)
            ↓
-   UI Adapter / Presenter (Components)
-           ↓
-   Application Services (Facades / Use Cases)
-           ↓
-   Domain Logic
-           ↓
-   Resource Ports (Interfaces)
+   Application Services (Domain Logic, non or less depending from framework)
            ↓
    Resource Adapters (HTTP, storage, browser APIs)
    ```
 
-    * UI adapters (Angular components) are thin and UI-only.
-    * Application services coordinate use cases and expose behavior to the UI.
-    * Domain logic contains pure business rules.
-    * Resource access is abstracted behind interfaces (ports).
+    * (Angular) components are thin and UI-only.
+    * Application services coordinate use cases and expose behavior to the UI. Service layer prepare data for
+      visualization.
+    * Domain logic contains pure business rules and is implemented in service layer.
+    * Resource access are data sources.
 
 3. **Thin UI Components**
 
@@ -226,12 +120,44 @@ implemented outside Angular and UI frameworks act only as adapters.
     * Tests must not require DOM, Angular TestBed, or browser automation.
     * UI tests are limited to wiring, smoke tests, and critical user journeys.
 
-8. **Angular as an Adapter**
+8. **Angular as an data visualizer**
 
     * Angular is treated as an implementation detail of the UI layer.
     * Angular dependency injection may wrap or adapt application services but must not own business logic.
 
----
+## 4. Rationale (Justification)
+
+Explain **why** this decision was made.
+
+### 4.1. Advantages
+
+* ...
+* ...
+* ...
+
+### 4.2. Known drawbacks / accepted risks
+
+* ...
+* ...
+* ...
+
+## 5. Alternatives Considered / Considered Options
+
+1. **Traditional Angular Architecture**
+    * Rejected due to tight coupling, challenging upgrades, and heavy UI-based testing.
+2. **UI-First Development with E2E Testing**
+    * Rejected due to brittle tests, slow feedback, and high maintenance cost.
+3. **Micro-Frontends**
+    * Does not solve core testability and coupling issues by itself.
+
+## 6. Consequences, Impacts & Follow-up Actions
+
+Describe the consequences of this decision.
+
+* Technical impact
+* Organizational / process impact
+* Cost or operational impact
+* Required follow-up actions (tasks, reviews, migrations, documentation updates)
 
 ## Consequences
 
@@ -249,8 +175,6 @@ implemented outside Angular and UI frameworks act only as adapters.
 * Slightly more boilerplate due to explicit layering and adapters.
 * Team members must understand and follow dependency direction rules.
 
----
-
 ## Enforcement and Guardrails
 
 To ensure the architecture is consistently applied:
@@ -259,24 +183,6 @@ To ensure the architecture is consistently applied:
 * Dependency direction must always point inward (UI → Application → Domain).
 * Linting and CI checks should be used to enforce module boundaries.
 * Production builds must not expose application services on the global scope.
-
----
-
-## Alternatives Considered
-
-1. **Traditional Angular Architecture**
-
-    * Rejected due to tight coupling, difficult upgrades, and heavy UI-based testing.
-
-2. **UI-First Development with Extensive E2E Testing**
-
-    * Rejected due to brittle tests, slow feedback, and high maintenance cost.
-
-3. **Micro-Frontends**
-
-    * Considered orthogonal; does not solve core testability and coupling issues by itself.
-
----
 
 ## Notes
 

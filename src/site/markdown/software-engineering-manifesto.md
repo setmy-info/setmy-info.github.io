@@ -12,30 +12,25 @@ Engineers actively collaborate with architects and are responsible for understan
 implementation against approved architecture decisions, non-functional requirements, technologies, approaches, and
 relevant documentation.
 
-**DRAFT**: / When rules, guidelines, best practices, principles, or coding standards are not defined, developers
-proactively
-propose them to architects for review and adoption. | If rules, guidelines, best practices, principles, or coding
-standards are missing, developers take the initiative to present proposals to architects for approval. / Architecture
-proposals must
-follow the ADR format.
+When seeking information, a developer must follow this order: internal wiki first, then AI/assistants, then Google or
+Stack Overflow, then colleagues.
 
-We use proper tools for architectural communication.
+If rules, guidelines, best practices, principles, or coding standards are missing, developers take the initiative to
+present proposals to architects for approval.
+
+We use proper tools and format for architectural communication.
 
 The development team explains exactly how features will be implemented during sprint planning. Check out
 the [Scrum Guide Sprint planning](https://scrumguides.org/scrum-guide.html#topic-three-how-will-the-chosen-work-get-done)
 
-**DRAFT**: Engineers/Developers clearly express their know-how, knowledge. Communicate what they truly understand and
-can implement, ~~and what they cannot, rather than just saying "We can do."~~
+Engineers/Developers clearly express their know-how, knowledge. Communicate what they truly understand and can
+implement.
 
-**DRAFT**: AI tools may be used to assist in preparing architecture proposals or documentation, while final decisions
-remain with
-architects.
+AI tools may be used to assist in preparing architecture proposals or documentation, while final decisions
+remain with architects.
 
-**DRAFT**: When seeking information, a developer must follow this order: internal wiki first, then AI/assistants, then
-Google or Stack Overflow, then colleagues.
-
-**DRAFT**: Code reviews are used to share and increase team know-how about architectural decisions, coding styles, and
-best practices.
+Code reviews are the starting point for discussions. Code reviews are used to share and increase team know-how about
+architectural decisions, coding styles, and best practices.
 
 All architectural decisions and coding practices should be made transparently and documented in advance.
 
