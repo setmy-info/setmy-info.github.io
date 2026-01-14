@@ -29,3 +29,11 @@ SENNHEISER E845S Foam Windscreen (Tuulekaitse)
 [Foam windshield](https://pvxmusic.ee/ee/rycote-foam-windshield-104405/)
 
 [Focusrite Scarlett 16i16 sound card](https://focusrite.com/products/scarlett-16i16)
+
+* https://pvxmusic.ee/ee/sennheiser-dunaamiline-mikrofon-e845s/
+* https://pvxmusic.ee/ee/windscreen-black-w40b/
+* https://pvxmusic.ee/ee/madal-mikrofonistatiiv-basstrummile-2591030055/
+* https://pvxmusic.ee/ee/mixer-4-total-channels-2-mic-line-ch-with-digital-effects-miomix202ufx/
+* https://pvxmusic.ee/ee/m2k-microphone-cable-1m-m2k1fm0100/
+
+* https://www.progear.ee/soundcraft-notepad-8fx
