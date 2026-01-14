@@ -6,12 +6,12 @@ There is a need for a public Git [repository]((https://github.com/setmy-info/ang
 template project and can be used as a starting point for
 new Angular projects.
 
-To provide a reusable and maintainable Angular starter template that simplifies and standardizes the creation of new
-projects.
+To provide a **reusable** and **maintainable** Angular starter template that simplifies and standardizes the creation of
+new projects.
 
 ## Skills
 
-Skills and know-how to have at some level.
+Skills and know-how to have at some level (or willingness to learn more deeply).
 
 1. **[Node.js](https://nodejs.org)** and **npm**
 2. **Angular** and related build [tools](https://angular.dev/tools/cli/build-system-migration)
@@ -35,6 +35,13 @@ Skills and know-how to have at some level.
     * xxx
     * xxx
     * xxx
+* Old veb page
+    * Angular version XXX
+    * Solution have:
+        * Language change support
+        * Hamburger left side menu (hidden by default)
+        * Responsive divided into at least 3 levels
+        * Menubar
 
 ## Requirements
 
@@ -217,7 +224,6 @@ sõnastada explicit statement’i, et miks “How to start” puudub,
 
 või panna kogu selle asja üheks väga puhtaks README.md-ks.
 
-
 Siin on selge ja neutraalne ingliskeelne sõnastus, mis väljendab täpselt sinu mõtet:
 fookus ülekandmisel, mitte ümbertegemisel või refaktoreerimisel; nõuded on juba kõrgtasemel kirjas.
 
@@ -311,7 +317,6 @@ See annaks täieliku minimaalse arendajadokumentatsiooni.
 
 Kas soovid, et teeksin selle kohe valmis?
 
-
 Pending Items / Gaps
 
 This section captures elements that have not yet been documented or reviewed.
@@ -326,8 +331,8 @@ The goal is to ensure nothing is overlooked before further implementation or mig
 
 Lühike ja selge variant
 
-This list contains elements not yet documented. The assignee is responsible for identifying missing user stories, clarifying questions, and creating corresponding JIRA tasks for tracking.
-
+This list contains elements not yet documented. The assignee is responsible for identifying missing user stories,
+clarifying questions, and creating corresponding JIRA tasks for tracking.
 
 Hoiab fookuse täiendamisel ja jälgimisel, mitte implementeerimisel
 
@@ -345,7 +350,6 @@ JIRA Ticket
 
 Notes / Questions
 
-
 Timeline
 The project timeline is flexible, allowing for iterative development and adjustments.
 Flexibility is limited by a fixed project deadline, which marks the final delivery date.
@@ -356,6 +360,5 @@ Ametlik / guideline-stiil
 Development should follow an iterative and adaptive approach.
 The project has a defined end date, which serves as a non-negotiable limit.
 Planning and execution must balance flexibility with the requirement to deliver on time.
-
 
 No backend rendering.
