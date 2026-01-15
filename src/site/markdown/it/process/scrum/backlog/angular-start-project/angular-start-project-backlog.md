@@ -7,7 +7,7 @@ template project and can be used as a starting point for
 new Angular projects.
 
 To provide a **reusable** and **maintainable** Angular starter template that simplifies and standardizes the creation of
-new projects.
+new web-based **application** projects and **websites**.
 
 ## Skills
 
@@ -18,30 +18,39 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
     1. [esbuild](https://esbuild.github.io/)
     2. [Vite](https://vite.dev/)
 3. **JavaScript** and **TypeScript**
-4. **Git**
+4. **LESS** and CSS
+5. **Git**
     1. Git **workspaces** (monorepo-style approach for multi-module projects)
     2. Lerna may be used as an alternative if npm workspaces do not work out well
-5. **GitHub**
-6. **npmjs.com** and related public CDN providers.
+6. **GitHub**
+7. **npmjs.com** and related public CDN providers.
+8. **Vibe** coding with **Junie** AI
+    1. Task list in **LISP** language
 
 ## Current State
 
 * Branch: started in **develop** branch.
 * Angular CLI generated **Angular 21** project.
-* Folders:
-    * xxx
-    * xxx
-    * xxx
-    * xxx
-    * xxx
-    * xxx
-* Old veb page
-    * Angular version XXX
-    * Solution have:
+* Folders in a single repo muti module project:
+    * **application.old** - old Angular xxxx template.
+    * **angular-start-project** - newly generated (ng new) Angular project.
+    * **angular-start-project-style** - LESS module
+    * **angular-start-project-library** - strictly from UI separated logic layer, idepended from UI layer
+* Old existing web page repository in live/production
+    * Angular version XXXXXXXXX
+    * Solution/functionality have:
         * Language change support
         * Hamburger left side menu (hidden by default)
-        * Responsive divided into at least 3 levels
-        * Menubar
+        * Responsive divided into at least two levels (actually support is for more)
+        * Menubar (Home, Articles, Contacts)
+        * Content Pages (by URL)
+        * Multi tenancy
+            * By domain name
+        * Google Material design icons are used
+        * Consent popup
+        * HTML/DOM structure
+        * Some preparations for PWA
+            * HTML Headers, icons, ...
 
 ## Requirements
 
