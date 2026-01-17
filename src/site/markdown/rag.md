@@ -1,4 +1,6 @@
-# Retrieval-Augmented Generation (RAG)
+# Retrieval Augmented Generation (RAG)
+
+Estonian: Otsingu laiendatud genereerimine
 
 ## Information
 

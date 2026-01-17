@@ -14,14 +14,14 @@ new web-based **application** projects and **websites**.
 Skills and know-how to have at some level (or willingness to learn more deeply).
 
 1. **[Node.js](https://nodejs.org)** and **npm**
+    1. Node **workspaces** (monorepo-style approach for multi-module projects)
+    2. **Lerna** may be used as an alternative if npm workspaces do not work out well
 2. **Angular** and related build [tools](https://angular.dev/tools/cli/build-system-migration)
     1. [esbuild](https://esbuild.github.io/)
     2. [Vite](https://vite.dev/)
-3. **JavaScript** and **TypeScript**
-4. **LESS** and CSS
+3. Frontend **JavaScript** and **TypeScript**
+4. **LESS** and **CSS**
 5. **Git**
-    1. Git **workspaces** (monorepo-style approach for multi-module projects)
-    2. Lerna may be used as an alternative if npm workspaces do not work out well
 6. **GitHub**
 7. **npmjs.com** and related public CDN providers.
 8. **Vibe** coding with **Junie** AI
@@ -29,14 +29,17 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
 
 ## Current State
 
-* Branch: started in **develop** branch.
+* Repository: https://github.com/setmy-info/angular-start-project/
+    * Branch: started (instead old Angular created new into new folder) in **develop** branch.
 * Angular CLI generated **Angular 21** project.
 * Folders in a single repo muti module project:
     * **application.old** - old Angular xxxx template.
     * **angular-start-project** - newly generated (ng new) Angular project.
     * **angular-start-project-style** - LESS module
     * **angular-start-project-library** - strictly from UI separated logic layer, idepended from UI layer
-* Old existing web page repository in live/production
+* Old existing web page/system in live/production
+    * Old web page: https://setmy.info and https://www.hearandseesystems.com (Code will be given; DOM structure can be
+      checked) – domain name-based multi-tenant system
     * Angular version XXXXXXXXX
     * Solution/functionality have:
         * Language change support

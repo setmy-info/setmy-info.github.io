@@ -3,6 +3,7 @@
 ## Information
 
 * LLaMA 3
+* OLLAMA
 * Qwen
 * DeepSeek Coder
 * Code Llama
@@ -82,6 +83,15 @@ Local RAG PoC
 1 dokument
 
 MCP
+
+| Criterion            | LISP  | JSON | YAML | TOML | JS | TOON |
+|----------------------|-------|------|------|------|----|------|
+| Ambiguity-free       | ✅     | ⚠️   | ❌    | ⚠️   | ⚠️ | ✅    |
+| Intent clarity       | ✅     | ❌    | ⚠️   | ⚠️   | ❌  | ⚠️   |
+| Hierarchy            | ✅     | ✅    | ⚠️   | ⚠️   | ⚠️ | ✅    |
+| AI-friendly          | ⭐⭐⭐⭐⭐ | ⭐⭐   | ⭐⭐   | ⭐    | ⭐  | ⭐⭐   |
+| Risk of storytelling | ❌     | ⚠️   | ❌    | ⚠️   | ❌  | ⚠️   |
+| Suitable as DSL      | ✅     | ❌    | ❌    | ❌    | ⚠️ | ❌    |
 
 ## Installation
 
