@@ -33,14 +33,14 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
     * Branch: started (instead old Angular created new into new folder) in **develop** branch.
 * Angular CLI generated **Angular 21** project.
 * Folders in a single repo muti module project:
-    * **application.old** - old Angular xxxx template.
+    * **application.old** - old Angular **13.0.0** template.
     * **angular-start-project** - newly generated (ng new) Angular project.
     * **angular-start-project-style** - LESS module
     * **angular-start-project-library** - strictly from UI separated logic layer, idepended from UI layer
 * Old existing web page/system in live/production
     * Old web page: https://setmy.info and https://www.hearandseesystems.com (Code will be given; DOM structure can be
       checked) – domain name-based multi-tenant system
-    * Angular version XXXXXXXXX
+    * Angular version **13.0.0**
     * Solution/functionality have:
         * Language change support
         * Hamburger left side menu (hidden by default)
