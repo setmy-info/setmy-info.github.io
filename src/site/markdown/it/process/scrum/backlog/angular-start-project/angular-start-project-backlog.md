@@ -113,7 +113,10 @@ New requirements to apply on the new template project structure – differences 
 
 ## User Story Principles
 
-...
+1. Implement no more, no less than US tells.
+2. Do even less than US tells, be lazy – choose the shortest and fastest solution.
+3. If PO is not satisfied with the result, a new US will be created to have value to be added for the cost. PO is
+   responsible to the have results through these rules.
 
 ## System and User Stories
 
