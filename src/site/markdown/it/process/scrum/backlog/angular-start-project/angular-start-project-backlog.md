@@ -103,6 +103,7 @@ New requirements to apply on the new template project structure – differences 
 6. The responsible person (assignee) must update/suggest updating a user stories list. Missing or incomplete user
    stories should be identified and added.
 7. Open questions at any unclear aspects.
+8. Hourly cost rate is required or to know the cost of the project.
 
 ### Deadline
 
