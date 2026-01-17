@@ -2,11 +2,22 @@
 
 ## Description
 
-There is a need for a public Git [repository]((https://github.com/setmy-info/angular-start-project)) that serves as a
-template project and can be used as a starting point for new Angular projects.
+There is a need for a public Git [repository]((https://github.com/setmy-info/angular-start-project)) that serves **as a
+template** project and can be used as a starting point for new Angular projects.
 
 To provide a **reusable** and **maintainable** Angular starter template that simplifies and standardizes the creation of
 new web-based **application** projects and **websites**.
+
+In future such a template can be developed into a CLI tool for Angular projects generation.
+
+## Goal description
+
+To upgrade an old Angular template project to the newest Angular.
+Add a root folder / URL leaving for specifically styled and designed web pages.
+
+### Idea behind that
+
+...
 
 ## Skills
 
@@ -19,7 +30,7 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
     1. [esbuild](https://esbuild.github.io/)
     2. [Vite](https://vite.dev/)
 3. Frontend **JavaScript** and **TypeScript**
-4. **LESS** and **CSS**
+4. **LESS** for **CSS** generation
 5. **Git**
 6. **GitHub**
 7. **npmjs.com** and related public CDN providers.
@@ -29,7 +40,7 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
 ## Current State
 
 * Repository: https://github.com/setmy-info/angular-start-project/
-    * Branch: started (instead old Angular created new into new folder) in **develop** branch.
+    * **develop** branch (some preparations done).
 * Angular CLI generated **Angular 21** project.
 * Folders in a single repo multi-module (monorepo) project:
     * **application.old** - old Angular **13.0.0** template.
@@ -45,7 +56,7 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
         * Hamburger left side menu (hidden by default)
         * Responsive divided into at least two levels (actually support is for more)
         * Menubar (Home, Articles, Contacts)
-        * Content Pages (by URL)
+        * Content Pages (by/with URL)
         * Multi tenancy
             * By domain name
         * Google Material design icons are used
@@ -53,39 +64,52 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
         * HTML/DOM structure
         * Some preparations for PWA
             * HTML Headers, icons, ...
+        * Usage of Material design components
+        * Miscellaneous:
+            * robots.txt
+            * sitemap.xml
+            * [particles.js](https://github.com/marcbruederlin/particles.js) (2.0.2)
 
-## Required Understanding of Existing Projects
+## High-Level Requirements, understanding requirements of an existing project
 
-The developer must understand the following internals of the old template project and the web page project:
+The developer must understand the following internals of the old template project and the web page project. Old solution
+functionality is listed above. How these things are structured and how they work.
 
-1. How the language change mechanism works
-2. Domain name tenancy selection logic works
-
-## High-Level Requirements
-
-1. Software goes public under MIT license.
-2. No backend rendering. No nodejs in backend.
-3. Should handle language changes. Multilingual support.
-4. Multitenancy support (known that it is not so much a micro frontend direction)
-    1. By domain name
-    2. As developer can choose the tenant for a loclhost name or similar or better solution
-5. To use Less/CSS [setmy-info-less](https://github.com/setmy-info/setmy-info-less) located
-   at [npmjs repository](https://www.npmjs.com/package/setmy-info-less).
+1. Software goes **public** under **MIT** license.
+2. No backend rendering. No **nodejs in backend**.
+3. Old functionality is carried into a new template project – listed above.
 
 ## New requirements
 
 New requirements to apply on the new template project structure – differences from old solutions.
 
 1. Service for Component. Come up with singleton pattern services for components.
+2. To use Less/CSS [setmy-info-less](https://github.com/setmy-info/setmy-info-less) located
+   at [npmjs repository](https://www.npmjs.com/package/setmy-info-less).
+3. Considering switching to https://github.com/tsparticles/tsparticles instead of particles.js.
+4. Separation of an app like solution from web pages like solutions. Web pages (specifically designed, promotional web
+   pages).
 
-## Deadline
+## Other expectations
 
-Deadline withing few months.
+1. Communication in **Slack** or other.
+2. Meetings in **Google meet**, Zoom or Slack.
+3. In-depth learning of tools is at the developer’s own expense. Given that the software is publicly available, the
+   developer is expected not to bill for certain learning-related activities. Billing should primarily apply to
+   implementation work only.
+4. Finishing with less effort than a proposal, a new task list will be created to have value to be added for the cost.
+   Probably at other fields and projects.
+5. Documentation creation is not the primary responsibility of the developer.
+6. The responsible person (assignee) must update/suggest updating a user stories list. Missing or incomplete user
+   stories should be identified and added.
+7. Open questions at any unclear aspects.
 
-The project timeline is flexible, allowing for iterative development and adjustments.
+### Deadline
 
-Flexibility is limited by a fixed project deadline, which marks the final delivery date, which serves as a
-non-negotiable limit.
+* Deadline withing few months.
+* The project timeline is flexible, allowing for iterative development and adjustments.
+* Flexibility is limited by a fixed project deadline, which marks the final delivery date, which serves as a
+  non-negotiable limit.
 
 ## User Story Principles
 
@@ -110,53 +134,3 @@ non-negotiable limit.
 4. ...
 5. ...
 6. ...
-
----
-
-## Other expectations
-
-1. Communication in **Slack** or other.
-2. Meetings in Google **meet**, Zoom or Slack.
-
-1. Development and production helpers shell scripts writing and building with CMake, make and rpmbuild.
-2. Different software domains have scripts under submodules/folders in single repo.
-3. 3 times code reviews and fixes round.
-4. Setup not needed, buildable project is ready. Only coding.
-5. Constant communication in Slack
-6. In-depth learning of tools is at the developer’s own expense.
-   Given that the software is publicly available, the developer is expected not to bill for certain learning-related
-   activities.
-   **Billing should primarily apply to implementation work only**.
-
-## Pending Items / Gaps
-
-This section captures elements that have not yet been documented or reviewed.
-
-The responsible person (assignee) must update this list with missing items, open questions, and any unclear aspects.
-
-Missing or incomplete user stories should be identified and added.
-Ask questions at any unclear aspects.
-Each new or updated user story should be linked to its respective follow-up tasks and tracked separately.
-
-The goal is to ensure nothing is overlooked before further implementation or migration.
-
-Lühike ja selge variant
-
-This list contains elements not yet documented. The assignee is responsible for identifying missing user stories,
-clarifying questions. User stories should be created.
-
-## Prerequisites and requirements
-
-1. Repository: **git@xxxx** in [GitHub](https://github.com/xxxxxxxx)
-2. Branch: **develop | master | epic**
-3. All rights to code goes to buyer. Software goes public under MIT license.
-4. The work is done under a contractor agreement, not an employment contract.
-5. No documentation required.
-
-## Goal description
-
-...
-
-### Idea behind that
-
-...
