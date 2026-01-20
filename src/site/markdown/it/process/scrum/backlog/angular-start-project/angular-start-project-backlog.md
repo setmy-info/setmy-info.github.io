@@ -2,15 +2,22 @@
 
 ## Description
 
-There is a need for a public Git [repository]((https://github.com/setmy-info/angular-start-project)) that serves as a
-template project and can be used as a starting point for
-new Angular projects.
+There is a need for a public Git [repository]((https://github.com/setmy-info/angular-start-project)) that serves **as a
+template** project and can be used as a starting point for new Angular projects.
 
 To provide a **reusable** and **maintainable** Angular starter template that simplifies and standardizes the creation of
 new web-based **application** projects and **websites**.
 
-The main principle is to transfer over the old website to the new angular **as is** and **general**, skipping tenant
-specifics.
+In future such a template can be developed into a CLI tool for Angular projects generation.
+
+## Goal description
+
+To upgrade an old Angular template project to the newest Angular.
+Add a root folder / URL leaving for specifically styled and designed web pages.
+
+### Idea behind that
+
+...
 
 ## Skills
 
@@ -23,7 +30,7 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
     1. [esbuild](https://esbuild.github.io/)
     2. [Vite](https://vite.dev/)
 3. Frontend **JavaScript** and **TypeScript**
-4. **LESS** and **CSS**
+4. **LESS** for **CSS** generation
 5. **Git**
 6. **GitHub**
 7. **npmjs.com** and related public CDN providers.
@@ -33,23 +40,23 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
 ## Current State
 
 * Repository: https://github.com/setmy-info/angular-start-project/
-    * Branch: started (instead old Angular created new into new folder) in **develop** branch.
+    * **develop** branch (some preparations done).
 * Angular CLI generated **Angular 21** project.
-* Folders in a single repo muti module project:
-    * **application.old** - old Angular xxxx template.
+* Folders in a single repo multi-module (monorepo) project:
+    * **application.old** - old Angular **13.0.0** template.
     * **angular-start-project** - newly generated (ng new) Angular project.
     * **angular-start-project-style** - LESS module
     * **angular-start-project-library** - strictly from UI separated logic layer, idepended from UI layer
-* Old existing web page/system in live/production
+* Old existing web page/system/project in live/production, more or less derrived/copied from **application.old**
     * Old web page: https://setmy.info and https://www.hearandseesystems.com (Code will be given; DOM structure can be
       checked) – domain name-based multi-tenant system
-    * Angular version XXXXXXXXX
+    * Angular version **13.0.0**, .
     * Solution/functionality have:
         * Language change support
         * Hamburger left side menu (hidden by default)
         * Responsive divided into at least two levels (actually support is for more)
         * Menubar (Home, Articles, Contacts)
-        * Content Pages (by URL)
+        * Content Pages (by/with URL)
         * Multi tenancy
             * By domain name
         * Google Material design icons are used
@@ -57,40 +64,66 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
         * HTML/DOM structure
         * Some preparations for PWA
             * HTML Headers, icons, ...
+        * Usage of Material design components
+        * Miscellaneous:
+            * robots.txt
+            * sitemap.xml
+            * [particles.js](https://github.com/marcbruederlin/particles.js) (2.0.2)
 
-## Requirements
+## High-Level Requirements, understanding requirements of an existing project
 
-... Language changes support
-... Multitenant (not so much micro), developer work in context of each
-... To use Less/CSS [setmy-info-less](https://github.com/setmy-info/setmy-info-less) located at
-npmjs [repository](https://www.npmjs.com/package/setmy-info-less).
-...
+The developer must understand the following internals of the old template project and the web page project. Old solution
+functionality is listed above. How these things are structured and how they work.
 
+1. Software goes **public** under **MIT** license.
+2. No backend rendering. No **nodejs in backend**.
+3. Old functionality is carried into a new template project – listed above.
+4. The main principle is to transfer over the old website to the new angular **as is** and **general**, skipping tenant
+   specifics.
 
+## New requirements
 
----
+New requirements to apply on the new template project structure – differences from old solutions.
 
-## Deadline
+1. Service for Component. Come up with singleton pattern services for components.
+2. To use Less/CSS [setmy-info-less](https://github.com/setmy-info/setmy-info-less) located
+   at [npmjs repository](https://www.npmjs.com/package/setmy-info-less).
+3. Considering switching to https://github.com/tsparticles/tsparticles instead of particles.js.
+4. Separation of an app like solution from web pages like solutions. Web pages (specifically designed, promotional web
+   pages).
 
-Withing few months. Best price proposal wins.
+## Other expectations
 
-## Prerequisites and requirements
+1. Communication in **Slack** or other.
+2. Meetings in **Google meet**, Zoom or Slack.
+3. In-depth learning of tools is at the developer’s own expense. Given that the software is publicly available, the
+   developer is expected not to bill for certain learning-related activities. Billing should primarily apply to
+   implementation work only.
+4. Finishing with less effort than a proposal, a new task list will be created to have value to be added for the cost.
+   Probably at other fields and projects.
+5. Documentation creation is not the primary responsibility of the developer.
+6. The responsible person (assignee) must update/suggest updating a user stories list. Missing or incomplete user
+   stories should be identified and added.
+7. Open questions at any unclear aspects.
+8. Hourly cost rate is required or to know the cost of the project.
 
-1. Repository: **git@xxxx** in [GitHub](https://github.com/xxxxxxxx)
-2. Branch: **develop | master | epic**
-3. All rights to code goes to buyer. Software goes public under MIT license.
-4. The work is done under a contractor agreement, not an employment contract.
-5. No documentation required.
+### Deadline
 
-## Goal description
+* Deadline withing few months.
+* The project timeline is flexible, allowing for iterative development and adjustments.
+* Flexibility is limited by a fixed project deadline, which marks the final delivery date, which serves as a
+  non-negotiable limit.
 
-...
+## User Story Principles
 
-### Idea behind that
+1. Implement no more, no less than US tells.
+2. Do even less than US tells, be lazy – choose the shortest and fastest solution.
+3. If PO is not satisfied with the result, a new US will be created to have value to be added for the cost. PO is
+   responsible to the have results through these rules.
 
-...
+## System and User Stories
 
-## Ready
+### Ready
 
 1. ...
 2. ...
@@ -99,276 +132,11 @@ Withing few months. Best price proposal wins.
 5. ...
 6. ...
 
-## Draft
+### Draft
 
-1. ... Skeleton... by DOM structure, down to #application (included) content...
-4. ... Consent popup As-Is. ...
-2. ... main language selection, 2 languages, menubar ...
-3. ... mian menubar items with empty pages behind/for items
-4. ... Hamburger / side menu items and empty pages behind/for items ...
-3. ... N-languages selection in the hamburger menu content. As-is. ...
+1. ...
+2. ...
+3. ...
+4. ...
 5. ...
 6. ...
-
-1. Prepare folder structure (like modulith) in monorepo for different software component areas (submodules)
-2. Prepare CMake files as done for other similar submodules
-3. Fix the Bourne shell scripts where variable assignment using command output occurs
-4. Make build and build output rpm installation should install software correctly
-
-1. Submodules are: **term**, **pki**, **crm**, **infra**, **python**, **jail**, **packages**, **base**, **workstation**,
-   **vcs**, **cloud**, **virtualization**, **tools**
-2. Example sub modules are: **docker**, **diskless**, **selenium**
-3. All similar ETC_LOCATION=`smi-localhost-location` should be changed to ETC_LOCATION=$(smi-localhost-location)
-4. Only folder structure preparation, no existing file moves needed.
-
----
-
-Description / Purpose
-Project Current State
-Required Skills
-High-Level Requirements
-User Story Principles
-Scope (In / Out)
-Quick Start
-Contribution Expectations
-
-Minimaalne info, mida arendajatel on veel vaja
-
-Arvestades, et:
-
-Node.js ja Angular tööpõhimõtted on eeldatavad teadmised
-
-tegemist on template / starter projektiga
-
-rõhk on lihtsusel ja pragmaatikal
-
-1. Project Scope (Intentional Limitations)
-
-👉 Väga oluline, isegi kui kõik muu on minimaalne
-
-What the project intentionally does not cover
-
-What problems it is not trying to solve
-
-Näide:
-
-This project intentionally avoids enterprise-level abstractions and complex configurations.
-
-2. Decision Boundaries
-
-👉 Et arendajad teaksid, kus on vabadus
-
-Which parts are expected to change
-
-Which principles should remain stable
-
-Näide:
-
-Tooling choices may evolve. Core principles and the simplicity-first approach should remain unchanged.
-
-3. Contribution Principles (not process)
-
-👉 Ilma protsessita, ainult suund
-
-Small changes
-
-Minimal scope
-
-No speculative features
-
-Näide:
-
-Changes should be incremental, minimal, and aligned with the defined principles.
-
-4. Target Audience
-
-👉 Aitab vältida valesti kasutamist
-
-Näide:
-
-This template is intended for experienced developers who are familiar with Angular and Node.js fundamentals.
-
-5. Ownership & Direction
-
-👉 Väga alahinnatud, aga oluline
-
-Who provides direction
-
-Who resolves ambiguity
-
-Näide:
-
-Functional and strategic direction is provided by analysts, architects, and product owners.
-
-Mida teadlikult ei ole vaja
-
-✔ How to start
-✔ Installation steps
-✔ Angular basics
-✔ Tool documentation
-✔ Detailed processes
-
-➡️ Kõik see on teadlikult delegeeritud olemasolevale standardteadmisele.
-
-Kokkuvõte
-
-Sul on väga selge filosoofia:
-
-Assume competence
-
-Avoid duplication
-
-Document intent, not tutorials
-
-See teeb dokumendi:
-
-lühikeseks,
-
-ausaks,
-
-arendajate suhtes lugupidavaks.
-
-Kui tahad, võin aidata:
-
-sõnastada explicit statement’i, et miks “How to start” puudub,
-
-või panna kogu selle asja üheks väga puhtaks README.md-ks.
-
-Siin on selge ja neutraalne ingliskeelne sõnastus, mis väljendab täpselt sinu mõtet:
-fookus ülekandmisel, mitte ümbertegemisel või refaktoreerimisel; nõuded on juba kõrgtasemel kirjas.
-
-Migration Focus
-
-Certain elements will be transferred from an existing project.
-
-The focus is on identifying what needs to be carried over, not on refactoring or redesigning.
-
-Transferred components should remain functionally and structurally close to their original form.
-
-Requirements and constraints for the migration are defined in the High-Level Requirements section.
-
-Any refactoring or improvement should be explicitly justified and is not part of the default scope.
-
-Lühem variant
-
-Elements from an existing project will be carried over as-is, with minimal changes and no refactoring by default.
-
-Veidi ametlikum
-
-The migration aims to preserve existing behavior and structure.
-
-Changes beyond direct transfer are considered out of scope unless explicitly required.
-
-Mida see hästi teeb
-
-Väldib “salajast refaktoreerimist”
-
-Seob otseselt High-Level Requirements-iga
-
-Jätab ruumi eranditele, aga ainult teadlikult
-
-Kui tahad, võin aidata ka:
-
-koostada konkreetse checklist’i (what to migrate),
-
-või siduda selle Project Current State sektsiooniga.
-
-Migration / Transfer
-
-Elements from an existing project will be carried over as-is.
-
-Focus is on direct transfer, not refactoring or redesign.
-
-Transferred components should retain their original behavior and structure.
-
-Requirements and constraints for the transfer are defined in the High-Level Requirements section.
-
-Any improvements or refactoring beyond the direct transfer must be explicitly justified and are out of scope by default.
-
-New Features / Expectations
-
-This section outlines features or functionality that are expected to be added or improved beyond what is migrated.
-
-These features should align with project principles: simplicity, minimal effort, and incremental delivery.
-
-New features are prioritized according to product vision and guidance from analysts, architects, and product owners.
-
-Implementation should follow the same deliberately minimal and pragmatic approach as existing principles.
-
-💡 Näpunäide:
-
-Migration / Transfer = “mis tuleb üle” (stabiilne, ei muuda põhimõtteid)
-
-New Features / Expectations = “mis tuleb juurde” (pragmatiline, järgib sama printsiipi)
-
-Kui soovid, võin järgmises sammus koostada täieliku README skeletoni, kus kõik seni kokku pandud sektsioonid:
-
-Description
-
-Current State
-
-Skills
-
-High-Level Requirements
-
-User Story Principles
-
-Migration / Transfer
-
-New Features / Expectations
-
-Scope / Boundaries
-
-Contribution Principles
-
-Target Audience / Ownership
-
-See annaks täieliku minimaalse arendajadokumentatsiooni.
-
-Kas soovid, et teeksin selle kohe valmis?
-
-Pending Items / Gaps
-
-This section captures elements that have not yet been documented or reviewed.
-
-The responsible person (assignee) must update this list with missing items, open questions, and any unclear aspects.
-
-Missing or incomplete user stories should be identified and added to JIRA for proper tracking.
-
-Each new or updated user story should be linked to its respective follow-up tasks and tracked separately.
-
-The goal is to ensure nothing is overlooked before further implementation or migration.
-
-Lühike ja selge variant
-
-This list contains elements not yet documented. The assignee is responsible for identifying missing user stories,
-clarifying questions, and creating corresponding JIRA tasks for tracking.
-
-Hoiab fookuse täiendamisel ja jälgimisel, mitte implementeerimisel
-
-Sobib ideaalselt “To Be Completed” sektsiooniks README-s või backlogis
-
-Võib lisada ka tabeli või nimekirja veergudega:
-
-Element / Feature
-
-Status (Missing / Partially Documented)
-
-Responsible
-
-JIRA Ticket
-
-Notes / Questions
-
-Timeline
-The project timeline is flexible, allowing for iterative development and adjustments.
-Flexibility is limited by a fixed project deadline, which marks the final delivery date.
-While short-term plans and priorities may evolve, all work must ultimately align with the established end date.
-Timeline is flexible but bounded by a fixed project deadline. Iterative adjustments are allowed within this timeframe.
-
-Ametlik / guideline-stiil
-Development should follow an iterative and adaptive approach.
-The project has a defined end date, which serves as a non-negotiable limit.
-Planning and execution must balance flexibility with the requirement to deliver on time.
-
-No backend rendering.

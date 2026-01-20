@@ -2,6 +2,10 @@
 
 Estonian: Otsingu laiendatud genereerimine
 
+Process overview:
+
+![Retrieval Augmented Generation diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/RAG_diagram.svg/250px-RAG_diagram.svg.png)
+
 ## Information
 
 ## Installation
@@ -22,6 +26,7 @@ Estonian: Otsingu laiendatud genereerimine
 
 ## See also
 
+* [RAG: Wikipedia](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
 * [Learn RAG From Scratch](https://www.youtube.com/watch?v=sVcwVQRHIc8)
 * [ccc](https://www.youtube.com/watch?v=LpKGm1jJXv4)
 * [What is Retrieval-Augmented Generation (RAG)](https://www.youtube.com/watch?v=T-D1OfcDW1M&t=18s)
