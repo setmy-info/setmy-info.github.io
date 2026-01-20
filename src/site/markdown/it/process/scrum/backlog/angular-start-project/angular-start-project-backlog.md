@@ -9,6 +9,9 @@ new Angular projects.
 To provide a **reusable** and **maintainable** Angular starter template that simplifies and standardizes the creation of
 new web-based **application** projects and **websites**.
 
+The main principle is to transfer over the old website to the new angular **as is** and **general**, skipping tenant
+specifics.
+
 ## Skills
 
 Skills and know-how to have at some level (or willingness to learn more deeply).
@@ -25,7 +28,7 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
 6. **GitHub**
 7. **npmjs.com** and related public CDN providers.
 8. **Vibe** coding with **Junie** AI
-    1. Task list in **LISP** language
+    1. Task list in **s-expression** language (LLM handles self-defined s-expression aka LISP dialect better)
 
 ## Current State
 
@@ -61,18 +64,11 @@ Skills and know-how to have at some level (or willingness to learn more deeply).
 ... Multitenant (not so much micro), developer work in context of each
 ... To use Less/CSS [setmy-info-less](https://github.com/setmy-info/setmy-info-less) located at
 npmjs [repository](https://www.npmjs.com/package/setmy-info-less).
+...
 
 
 
 ---
-
-## Software development services expected
-
-1. Development and production helpers shell scripts writing and building with CMake, make and rpmbuild.
-2. Different software domains have scripts under submodules/folders in single repo.
-3. 3 times code reviews and fixes round.
-4. Setup not needed, buildable project is ready. Only coding.
-5. Constant communication in Slack
 
 ## Deadline
 
@@ -105,10 +101,12 @@ Withing few months. Best price proposal wins.
 
 ## Draft
 
-1. ...
-2. ...
-3. ...
-4. ...
+1. ... Skeleton... by DOM structure, down to #application (included) content...
+4. ... Consent popup As-Is. ...
+2. ... main language selection, 2 languages, menubar ...
+3. ... mian menubar items with empty pages behind/for items
+4. ... Hamburger / side menu items and empty pages behind/for items ...
+3. ... N-languages selection in the hamburger menu content. As-is. ...
 5. ...
 6. ...
 
