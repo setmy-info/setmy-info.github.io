@@ -11,7 +11,7 @@ ADR-XXXX: <Template, Short, descriptive title> Architecture Decision Record (ADR
 
 ## 1. Status
 
-**Draft** | **Accepted** | **Rejected** | **Deprecated**
+**Draft** | **Accepted** | **Rejected** | **Deprecated** | **Postponed**
 
 ## 2. Context
 

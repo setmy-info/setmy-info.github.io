@@ -3,7 +3,7 @@
 ADR-0030: Framework-Agnostic Frontend Development with Thin UI
 
 We will adopt a **framework-agnostic frontend core architecture**, where all business logic and application behavior are
-implemented outside Angular and UI frameworks act only as adapters.
+implemented outside Angular and UI frameworks act only as **data visualizer**.
 
 ## 1. Status
 
@@ -23,7 +23,7 @@ Key challenges identified:
     * End-to-end and UI tests based on CSS/XPath selectors are **fragile** and expensive to maintain.
 * ~~Developers lack a **fast feedback** loop to develop and validate frontend behavior without building UI first.~~
 
-To address these challenges, the team is reqiured to hold a frontend architecture that:
+To address these challenges, the team is required to hold a frontend architecture that:
 
 * **Separates business logic** from the UI framework as much as possible
 * Enables **UI-independent development** and **testing**
@@ -49,15 +49,15 @@ Name it as: **Service For Component (SFC)** (like **Backend For Frontend: BFF**)
    ```
    UI Presenter (Components in frameworks like Angular / React / VueJS / Other)
            ↓
-   Application Services (Domain Logic, non or less depending from framework)
+   Application Services (Domain Logic, non [depends on other InversifyJS, TSyringe, ... or plain JS/TS] or less depending from framework)
            ↓
-   Resource Adapters (HTTP, storage, browser APIs)
+   Resource (HTTP, storage, browser APIs)
    ```
 
     * (Angular) components are thin and UI-only.
-    * Application services coordinate use cases and expose behavior to the UI. Service layer prepare data for
+    * Application services coordinate use cases and expose behavior to the UI. Service layer prepares data for
       visualization.
-    * Domain logic contains pure business rules and is implemented in service layer.
+    * Domain logic contains pure business rules and is implemented in the service layer.
     * Resource access are data sources.
 
 3. **Thin UI Components**
@@ -133,7 +133,7 @@ Describe the consequences of this decision.
 ### Positive
 
 * Business logic is fully testable without UI, DOM, or Selenium-style tools.
-* Angular upgrades affect only UI adapters, reducing risk and effort.
+* Angular upgrades affect only UI, reducing risk and effort.
 * Developers can develop and debug frontend behavior using the browser console or Node.js.
 * Migration to other UI frameworks becomes feasible with minimal refactoring.
 * Faster feedback loops improve developer productivity and code quality.
@@ -141,14 +141,14 @@ Describe the consequences of this decision.
 ### Negative / Trade-offs
 
 * Additional upfront architectural discipline is required.
-* Slightly more boilerplate due to explicit layering and adapters.
+* Slightly more boilerplate due to explicit layering.
 * Team members must understand and follow dependency direction rules.
 
 ## Enforcement and Guardrails
 
 To ensure the architecture is consistently applied:
 
-* No Angular imports are allowed outside the UI adapter layer.
+* No Angular imports are allowed outside the UI layer.
 * Dependency direction must always point inward (UI → Application → Domain).
 * Linting and CI checks should be used to enforce module boundaries.
 * Production builds must not expose application services on the global scope.
