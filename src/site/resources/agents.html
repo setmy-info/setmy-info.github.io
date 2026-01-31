@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js 3 simple SPA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .requirements {
+            font-weight: bold;
+        }
+
+        .requirement {
+
+        }
+
+        .tasks {
+            font-weight: bold;
+        }
+
+        .task {
+
+        }
+
+        .task-input {
+            width: 100%;
+            height: 48px;
+            padding: 0 14px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .task-button {
+            height: 48px;
+            padding: 0 18px;
+            font-size: 15px;
+            border: 1px solid #4a90e2;
+            border-radius: 6px;
+            background-color: #4a90e2;
+            color: #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        table td {
+            height: 25px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <router-view></router-view>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.global.prod.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.global.prod.js"></script>
+
+<template id="home-page-template">
+    <div>
+        <table>
+            <tr v-for="group in groups" :key="group.name">
+                <td><label><input type="checkbox" v-model="group.show" @change="onGroupChange()"> {{ group.name
+                    }}</label>
+                </td>
+                <td>
+                    <span v-if="group.show && group.version">{{ group.name }} For/with/version:</span>
+                </td>
+                <td>
+                    <div v-if="group.show && group.version">
+                        <input type="text" v-model="group.version"
+                               :placeholder="'Enter ' + group.name + ' version'">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <p class="requirements"># Current code status and requirements to be used and followed</p>
+        <p class="requirement" v-for="(requirement, index) in requirements" :key="index">-
+            {{requirement.text}}</p>
+        <p class="tasks"># Tasklist</p>
+        <p class="task" v-for="(task, index) in tasks" :key="index">- {{task.text}}</p>
+        <input
+            class="task-input"
+            type="text"
+            v-model="taskInput"
+            @keyup.enter="addTask"
+            placeholder="Input task..."
+        />
+        <button class="task-button" @click="addTask">Lisa task</button>
+        <button @click="clearTasks" class="task-button task-button--danger" :disabled="tasks.length === 0">
+            Clear
+        </button>
+    </div>
+
+</template>
+
+<script>
+
+    const groupsService = {
+        groups: [
+            {name: 'Monorepo', show: false, version: 'For ...', activates: ['monorepo']},
+            {name: 'Java', show: false, version: '25.0.1', activates: ['java']},
+            {name: 'Maven', show: false, version: '3.9.12', activates: ['java', 'maven']},
+            {name: 'Node', show: false, version: '22.16', activates: ['node']},
+            {name: 'Angular', show: false, version: '21.1.0', activates: ['node', 'angular']},
+            {name: 'Spring Boot', show: false, version: '3.5.7', activates: ['java', 'maven']}
+        ]
+    };
+
+    const requirementsService = {
+        requirements: [
+            {text: "Monorepo for xxxx and yyyyy", groupingInfo: ["monorepo"]},
+            {text: "Java 25", groupingInfo: ["java"]},
+            {text: "Node 22.16", groupingInfo: ["node"]},
+            {text: "Angular 21.1.0", groupingInfo: ["angular"]},
+            {text: "Maven and maven wrapper 3.9.12", groupingInfo: ["maven"]},
+            {text: "Spring boot 3.5.7", groupingInfo: ["springboot"]},
+            {text: "Lombok", groupingInfo: ["java"]},
+            {text: "Mapstruct for mapping DTOs and other objects", groupingInfo: ["java"]},
+            {text: "JUnit 5, AssertJ, Mockito for tests", groupingInfo: ["java"]},
+            {text: "Log4j2 is used as a logging framework", groupingInfo: ["java"]},
+            {text: "Unit test files end with Test.java", groupingInfo: ["java"]},
+            {text: "Integration tests end with IT.java", groupingInfo: ["java"]},
+            {text: "E2E tests end with E2ET.java", groupingInfo: ["java"]},
+            {text: "E2E tests are executed with maven profile e2e", groupingInfo: ["maven"]},
+            {
+                text: "Maven spring boot application and backend module in yyyyy directory",
+                groupingInfo: ["maven", "springboot"]
+            },
+            {text: "Node and angular in xxxx directory", groupingInfo: ["node", "angular"]},
+            {text: "Maven wrapper is located ad yyy/mvnw", groupingInfo: ["maven"]},
+            {
+                text: "Maven frontend-maven-plugin plugin to build angular project during maven build into ./yyyy/src/main/resources/static directory",
+                groupingInfo: ["maven", "angular"]
+            },
+            {text: "Maven maven-surefire-plugin plugin is used for unit tests", groupingInfo: ["maven"]},
+            {
+                text: "Maven maven-failsafe-plugin plugin is used for integration and end-to-end tests",
+                groupingInfo: ["maven"]
+            },
+            {text: "Builder pattern is used with Lombok @Builder(toBuilder = true)"},
+            {text: "Lombok @Accessors(chain = false) should be used for models"},
+            {text: "Clean code rules that say no more than 3 parameters in method arguments, maximum 512 lines length class files"},
+            {text: "Mockito doReturn(...).when(...) instead when(...)"},
+            {
+                text: "application.yaml for properties and by spring profiles application-local.yaml, application-ci.yaml, application-dev.yaml, application-test.yaml, application-live.yaml",
+                groupingInfo: ["springboot"]
+            },
+            {text: "Maven profile s are local, ci, dev, test, prelive, live", groupingInfo: ["maven"]},
+            {text: "local profile is by default", groupingInfo: ["maven"]},
+            {text: "local profile is for developers local machines", groupingInfo: ["maven"]},
+            {text: "Java is located for Windows at C:\pub\jdk-25.0.1", groupingInfo: ["java"]},
+            {text: "Java is located for Unixes at /opt/jdk", groupingInfo: ["java"]},
+            /*
+            {text: "xxx"},
+            {text: "xxx"},
+            {text: "xxx"},
+            */
+        ]
+    };
+
+    const tasksService = {
+        tasks: [
+            /*
+            {text: "xxx"},
+            {text: "xxx"},
+            {text: "xxx"},
+            */
+        ]
+    };
+
+    const homePage = {
+        template: '#home-page-template',
+        data() {
+            return {
+                taskInput: '',
+                requirements: requirementsService.requirements,
+                tasks: tasksService.tasks,
+                groups: groupsService.groups
+            };
+        },
+        created() {
+            this.init();
+        },
+        computed: {},
+        methods: {
+            init() {
+                console.log("Init input field page");
+            },
+            onGroupChange() {
+            },
+            addTask() {
+                const value = this.taskInput.trim();
+                if (!value) {
+                    return;
+                }
+                this.tasks.push({
+                    text: value
+                });
+                this.taskInput = '';
+            },
+            clearTasks() {
+                this.tasks = [];
+            }
+        }
+    };
+
+    const router = VueRouter.createRouter({
+        history: VueRouter.createWebHashHistory(),//history: VueRouter.createWebHistory(),
+        routes: [
+            {path: '/', component: homePage}
+        ],
+    });
+
+    const app = Vue.createApp({
+        data() {
+            return {
+                appData: "app Data"
+            };
+        },
+        created() {
+            this.init();
+        },
+        methods: {
+            init() {
+                console.log("Init app")
+            }
+        }
+    });
+    app.use(router);
+    app.mount('#app');
+</script>
+</body>
+</html>

@@ -43,6 +43,7 @@ Name it as: **Service For Component (SFC)** (like **Backend For Frontend: BFF**)
 
     * Business logic, workflows, validation, and state transitions are implemented in service layers.
     * The core must not import or depend on Angular or any UI framework.
+    * Use browser APIs and standard libraries for cross-framework compatibility instead of Framework-specific libraries.
 
 2. **Layered Responsibility Model**
 
