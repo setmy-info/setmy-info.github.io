@@ -61,21 +61,25 @@
     <div>
         <table>
             <tr v-for="group in groups" :key="group.name">
-                <td><label><input type="checkbox" v-model="group.show" @change="onGroupChange()"> {{ group.name
-                    }}</label>
+                <td>
+                    <label>
+                        <input type="checkbox" v-model="group.show" @change="onGroupChange()">
+                        {{ group.name }}
+                    </label>
                 </td>
                 <td>
-                    <span v-if="group.show && group.version">{{ group.name }} For/with/version:</span>
+                    <span v-if="group.show && group.additional">{{ group.name }} For/with/version:</span>
                 </td>
                 <td>
-                    <div v-if="group.show && group.version">
-                        <input type="text" v-model="group.version"
+                    <div v-if="group.show && group.additional">
+                        <input type="text" v-model="group.additional"
                                :placeholder="'Enter ' + group.name + ' version'">
                     </div>
                 </td>
             </tr>
         </table>
-
+        Activated groups: {{activatedGroups}}
+        <hr>
         <p class="requirements"># Current code status and requirements to be used and followed</p>
         <p class="requirement" v-for="(requirement, index) in requirements" :key="index">-
             {{requirement.text}}</p>
@@ -100,12 +104,12 @@
 
     const groupsService = {
         groups: [
-            {name: 'Monorepo', show: false, version: 'For ...', activates: ['monorepo']},
-            {name: 'Java', show: false, version: '25.0.1', activates: ['java']},
-            {name: 'Maven', show: false, version: '3.9.12', activates: ['java', 'maven']},
-            {name: 'Node', show: false, version: '22.16', activates: ['node']},
-            {name: 'Angular', show: false, version: '21.1.0', activates: ['node', 'angular']},
-            {name: 'Spring Boot', show: false, version: '3.5.7', activates: ['java', 'maven']}
+            {name: 'Monorepo', show: false, additional: 'For ...', activates: ['monorepo']},
+            {name: 'Java', show: false, additional: '25.0.1', activates: ['java']},
+            {name: 'Maven', show: false, additional: '3.9.12', activates: ['java', 'maven']},
+            {name: 'Node', show: false, additional: '22.16', activates: ['node']},
+            {name: 'Angular', show: false, additional: '21.1.0', activates: ['node', 'angular']},
+            {name: 'Spring Boot', show: false, additional: '3.5.7', activates: ['java', 'maven', 'springboot']},
         ]
     };
 
@@ -151,7 +155,7 @@
             {text: "Maven profile s are local, ci, dev, test, prelive, live", groupingInfo: ["maven"]},
             {text: "local profile is by default", groupingInfo: ["maven"]},
             {text: "local profile is for developers local machines", groupingInfo: ["maven"]},
-            {text: "Java is located for Windows at C:\pub\jdk-25.0.1", groupingInfo: ["java"]},
+            {text: "Java is located for Windows at C:\\pub\\jdk-25.0.1", groupingInfo: ["java"]},
             {text: "Java is located for Unixes at /opt/jdk", groupingInfo: ["java"]},
             /*
             {text: "xxx"},
@@ -178,7 +182,8 @@
                 taskInput: '',
                 requirements: requirementsService.requirements,
                 tasks: tasksService.tasks,
-                groups: groupsService.groups
+                groups: groupsService.groups,
+                activatedGroups: []
             };
         },
         created() {
@@ -190,6 +195,22 @@
                 console.log("Init input field page");
             },
             onGroupChange() {
+                this.activatedGroups = [];
+                this.groups.forEach(group => {
+                    if (group.show && group.activates) {
+                        this.addAllGroupNonPresentItems(group);
+                    }
+                });
+            },
+            addAllGroupNonPresentItems(group) {
+                group.activates.forEach(item => {
+                    this.addNonPresentItems(item);
+                });
+            },
+            addNonPresentItems(item) {
+                if (!this.activatedGroups.includes(item)) {
+                    this.activatedGroups.push(item);
+                }
             },
             addTask() {
                 const value = this.taskInput.trim();
