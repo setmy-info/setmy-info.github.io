@@ -81,7 +81,7 @@
         Activated groups: {{activatedGroups}}
         <hr>
         <p class="requirements"># Current code status and requirements to be used and followed</p>
-        <p class="requirement" v-for="(requirement, index) in requirements" :key="index">-
+        <p class="requirement" v-for="(requirement, index) in requirements" :key="index" v-show="requirement.visible">-
             {{requirement.text}}</p>
         <p class="tasks"># Tasklist</p>
         <p class="task" v-for="(task, index) in tasks" :key="index">- {{task.text}}</p>
@@ -104,12 +104,16 @@
 
     const groupsService = {
         groups: [
+            {name: 'any', show: true, additional: '', activates: ['any']},
             {name: 'Monorepo', show: false, additional: 'For ...', activates: ['monorepo']},
             {name: 'Java', show: false, additional: '25.0.1', activates: ['java']},
             {name: 'Maven', show: false, additional: '3.9.12', activates: ['java', 'maven']},
             {name: 'Node', show: false, additional: '22.16', activates: ['node']},
             {name: 'Angular', show: false, additional: '21.1.0', activates: ['node', 'angular']},
             {name: 'Spring Boot', show: false, additional: '3.5.7', activates: ['java', 'maven', 'springboot']},
+            {name: 'Slf', show: false, additional: '22.16', activates: ['slf']},
+            {name: 'Log4j2', show: false, additional: '', activates: ['log4j2']},
+            {name: 'Logback', show: false, additional: '', activates: ['logback']},
         ]
     };
 
@@ -144,10 +148,10 @@
                 text: "Maven maven-failsafe-plugin plugin is used for integration and end-to-end tests",
                 groupingInfo: ["maven"]
             },
-            {text: "Builder pattern is used with Lombok @Builder(toBuilder = true)"},
-            {text: "Lombok @Accessors(chain = false) should be used for models"},
-            {text: "Clean code rules that say no more than 3 parameters in method arguments, maximum 512 lines length class files"},
-            {text: "Mockito doReturn(...).when(...) instead when(...)"},
+            {text: "Builder pattern is used with Lombok @Builder(toBuilder = true)", groupingInfo: ["java"]},
+            {text: "Lombok @Accessors(chain = false) should be used for models", groupingInfo: ["java"]},
+            {text: "Clean code rules that say no more than 3 parameters in method arguments, maximum 512 lines length class files", groupingInfo: ["any"]},
+            {text: "Mockito doReturn(...).when(...) instead when(...)", groupingInfo: ["java"]},
             {
                 text: "application.yaml for properties and by spring profiles application-local.yaml, application-ci.yaml, application-dev.yaml, application-test.yaml, application-live.yaml",
                 groupingInfo: ["springboot"]
@@ -193,6 +197,7 @@
         methods: {
             init() {
                 console.log("Init input field page");
+                this.onGroupChange();
             },
             onGroupChange() {
                 this.activatedGroups = [];
@@ -201,6 +206,7 @@
                         this.addAllGroupNonPresentItems(group);
                     }
                 });
+                this.visualizeActivatedGroups();
             },
             addAllGroupNonPresentItems(group) {
                 group.activates.forEach(item => {
@@ -224,6 +230,15 @@
             },
             clearTasks() {
                 this.tasks = [];
+            },
+            visualizeActivatedGroups() {
+                this.requirements.forEach(requirement => {
+                    if (requirement.groupingInfo) {
+                        requirement.visible = requirement.groupingInfo.some(info => this.activatedGroups.includes(info));
+                    } else {
+                        requirement.visible = false;
+                    }
+                });
             }
         }
     };
