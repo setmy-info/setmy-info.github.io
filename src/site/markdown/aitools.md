@@ -27,7 +27,9 @@
 
 ## Audio
 
-* [xxxx](xxxxxx)
+* [Elevenlabs](https://elevenlabs.io/)
+* [Chatterbox](https://chatterboxai.net/)
+* [AI Vocal](https://aivocal.io/)
 * [xxxx](xxxxxx)
 * [xxxx](xxxxxx)
 
@@ -228,14 +230,14 @@
 
 * [Sora 2](xxxxxx) vs [Hunyuan](xxxxxx)
 * [Lovable](xxxxxx) vs [Dyad](xxxxxx)
-* [Elevenlabs](xxxxxx) vs [Chatterbox](xxxxxx)
+* [Elevenlabs](https://elevenlabs.io/) vs [Chatterbox](https://chatterboxai.net/)
 * [Midjourney](xxxxxx) vs [StableDiffusion](xxxxxx)
 * [Heygen ](xxxxxx) vs [Hedera](xxxxxx)
 * [Grammarly](xxxxxx) vs [Hemingway](xxxxxx)
 * [KIMI 2](xxxxxx) video?
 * [DomoAI](xxxxxx) video?
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Resemble AI](xxxxxx) - Audio
+* [RVC / XTTS / Coqui](xxxxxx) Open Source
 * [xxxx](xxxxxx)
 * [xxxx](xxxxxx)
 * [xxxx](xxxxxx)

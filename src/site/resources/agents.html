@@ -73,6 +73,7 @@
                 <td>
                     <div v-if="group.show && group.additional">
                         <input type="text" v-model="group.additional"
+                               @input="onGroupChange()"
                                :placeholder="'Enter ' + group.name + ' version'">
                     </div>
                 </td>
@@ -82,7 +83,7 @@
         <hr>
         <p class="requirements"># Current code status and requirements to be used and followed</p>
         <p class="requirement" v-for="(requirement, index) in requirements" :key="index" v-show="requirement.visible">-
-            {{requirement.text}}</p>
+            {{requirement.processedText}}</p>
         <p class="tasks"># Tasklist</p>
         <p class="task" v-for="(task, index) in tasks" :key="index">- {{task.text}}</p>
         <input
@@ -120,11 +121,11 @@
     const requirementsService = {
         requirements: [
             {text: "Monorepo for xxxx and yyyyy", groupingInfo: ["monorepo"]},
-            {text: "Java 25", groupingInfo: ["java"]},
-            {text: "Node 22.16", groupingInfo: ["node"]},
-            {text: "Angular 21.1.0", groupingInfo: ["angular"]},
-            {text: "Maven and maven wrapper 3.9.12", groupingInfo: ["maven"]},
-            {text: "Spring boot 3.5.7", groupingInfo: ["springboot"]},
+            {text: "Java ${Java}", groupingInfo: ["java"]},
+            {text: "Node ${Node}", groupingInfo: ["node"]},
+            {text: "Angular ${Angular}", groupingInfo: ["angular"]},
+            {text: "Maven and maven wrapper ${Maven}", groupingInfo: ["maven"]},
+            {text: "Spring boot ${Spring Boot}", groupingInfo: ["springboot"]},
             {text: "Lombok", groupingInfo: ["java"]},
             {text: "Mapstruct for mapping DTOs and other objects", groupingInfo: ["java"]},
             {text: "JUnit 5, AssertJ, Mockito for tests", groupingInfo: ["java"]},
@@ -207,6 +208,19 @@
                     }
                 });
                 this.visualizeActivatedGroups();
+                this.processRequirementsText();
+            },
+            processRequirementsText() {
+                this.requirements.forEach(requirement => {
+                    let text = requirement.text;
+                    const regex = /\${(.*?)}/g;
+                    requirement.processedText = text.replace(regex, (match, p1) => {
+                        //TODO
+                        const groupName = p1.trim();
+                        const group = this.groups.find(g => g.name.toLowerCase() === groupName.toLowerCase());
+                        return group ? group.additional : match;
+                    });
+                });
             },
             addAllGroupNonPresentItems(group) {
                 group.activates.forEach(item => {
