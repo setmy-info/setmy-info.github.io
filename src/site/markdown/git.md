@@ -86,7 +86,7 @@ git switch NEWBRANCHNAME
 
 git branch -m OLDBRANCHNAME NEWBRANCHNAME
 
-git branch -d BRANCHNAME && git push origin --delete BRANCHNAME
+git branch -D BRANCHNAME && git push origin --delete BRANCHNAME
 
 git fetch
 

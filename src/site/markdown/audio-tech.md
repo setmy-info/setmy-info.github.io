@@ -37,3 +37,8 @@ SENNHEISER E845S Foam Windscreen (Tuulekaitse)
 * https://pvxmusic.ee/ee/m2k-microphone-cable-1m-m2k1fm0100/
 
 * https://www.progear.ee/soundcraft-notepad-8fx
+
+* XENYX 1002SFX: https://www.behringer.com/product.html?modelCode=0601-AHQ
+* Maono stand: https://www.maono.com/collections/mic-stand/products/maono-ba92-microphone-boom-arm-stand
+* K&M Microphone Stand: https://pvxmusic.ee/gb/k-m-microphone-stand-flat-base-2599330055/?___SID=U
+  https://pvxmusic.ee/gb/mic-stand-2596030055/
