@@ -105,8 +105,8 @@
 
     const groupsService = {
         groups: [
-            {name: 'any', show: true, additional: '', activates: ['any']},
-            {name: 'Monorepo', show: false, additional: 'For ...', activates: ['monorepo']},
+            {name: 'misc', show: true, additional: '', activates: ['misc']},
+            {name: 'Monorepo', show: false, additional: 'For...', activates: ['monorepo']},
             {name: 'Java', show: false, additional: '25.0.1', activates: ['java']},
             {name: 'Maven', show: false, additional: '3.9.12', activates: ['java', 'maven']},
             {name: 'Node', show: false, additional: '22.16', activates: ['node']},
@@ -115,12 +115,14 @@
             {name: 'Slf', show: false, additional: '', activates: ['slf']},
             {name: 'Log4j2', show: false, additional: '', activates: ['log4j2']},
             {name: 'Logback', show: false, additional: '', activates: ['logback']},
+            {name: 'CMake', show: false, additional: '3.31.5', activates: ['cmake']},
+            {name: 'Gradle', show: false, additional: '8.12.1', activates: ['gradle']},
         ]
     };
 
     const requirementsService = {
         requirements: [
-            {text: "Monorepo for xxxx and yyyyy", groupingInfo: ["monorepo"]},
+            {text: "Monorepo ${Monorepo}", groupingInfo: ["monorepo"]},
             {text: "Java ${Java}", groupingInfo: ["java"]},
             {text: "Node ${Node}", groupingInfo: ["node"]},
             {text: "Angular ${Angular}", groupingInfo: ["angular"]},
@@ -160,6 +162,10 @@
             {text: "Maven profile s are local, ci, dev, test, prelive, live", groupingInfo: ["maven"]},
             {text: "local profile is by default", groupingInfo: ["maven"]},
             {text: "local profile is for developers local machines", groupingInfo: ["maven"]},
+            {text: "CMake ${CMake}", groupingInfo: ["cmake"]},
+            {text: "Maven is located for Unixes at /opt/maven", groupingInfo: ["maven"]},
+            {text: "CMake is located for Unixes at /opt/cmake", groupingInfo: ["cmake"]},
+            {text: "Gradle is located for Unixes at /opt/gradle", groupingInfo: ["gradle"]},
             {text: "Java is located for Windows at C:\\pub\\jdk-25.0.1", groupingInfo: ["java"]},
             {text: "Java is located for Unixes at /opt/jdk", groupingInfo: ["java"]},
             /*
