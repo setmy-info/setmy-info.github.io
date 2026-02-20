@@ -6,23 +6,31 @@
 
 ```lisp
 (task-list
- (pre-condition "some ...")
- (required "To xxx")
- (avoid "xxx changes")
- (do-not "change xxxx")
- (constraints "are in updated AGENTS.md")
- (example "xxxx")
+ (constraints (constraint "are in updated AGENTS.md"))
+ (pre-conditions (pre-condition "some ..."))
+ (required "To ...")
+ (avoid "... changes")
+ (do-not "change ...")
+ (example "...")
  (task
   (actual "")
-  (to-do "In Frontend do in Terminal detail view Terminal response appendable, so all things thiose are happened remains in the pane. Add separator for new responses.")
-  (avoid "Thing not to do")
-  (result "")))
+  (required "To ...")
+  (to-do "...")
+  (result "")
+  (npm-build-error-message "")
+  (mvn-build-error-message "")
+  (node-build-error-message "")
+  (java-build-error-message "")
+ )
+)
 ```
 
 Prompt
 
 ```
-Execute TASKLIST.lisp
+Follow TASKLIST.md
+Follow TASKLIST.lisp
+Follow TASKLIST.sexp
 ```
 
 ### Coding tips and tricks

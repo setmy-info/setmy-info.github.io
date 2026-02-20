@@ -43,3 +43,4 @@ SENNHEISER E845S Foam Windscreen (Tuulekaitse)
 * K&M Microphone Stand: https://pvxmusic.ee/gb/k-m-microphone-stand-flat-base-2599330055/?___SID=U
   https://pvxmusic.ee/gb/mic-stand-2596030055/
 * https://shop.geekria.com/products/geekria-for-creators-foam-windscreen-compatible-with-sennheiser-e-935-e-945-e-835-e-845-s-microphone-antipop-foam-cover-mic-wind-cover-sponge-foam-filter-orange-2-pack?srsltid=AfmBOoq0oFR6hwOoQJC0MX508fzR6jWe_GarEhObcu5ZhcKH9CSwqUTp
+FIFINE BM88 LP Arm
