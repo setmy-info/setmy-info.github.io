@@ -6,8 +6,9 @@
 
 ```lisp
 (task-list
- (constraints (constraint "are in updated AGENTS.md"))
- (pre-conditions (pre-condition "some ..."))
+ (constraint "are in updated AGENTS.md")
+ (modules "")
+ (pre-condition "some ...")
  (required "To ...")
  (avoid "... changes")
  (do-not "change ...")
