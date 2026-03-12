@@ -28,6 +28,10 @@ sudo install minikube /usr/local/bin/minikube
 rm ./minikube
 ```
 
+### Windows
+
+Download `https://storage.googleapis.com/minikube/releases/latest/minikube-installer.exe`
+
 #### Alternative way
 
 ```sh
