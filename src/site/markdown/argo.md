@@ -38,6 +38,7 @@ kubectl logs hello-world-2qvr7 -c main -n argo
 kubectl logs hello-world-zglf9 -c main -n argo
 kubectl delete wf hello-world-2qvr7 -n argo
 kubectl delete wf hello-world-zglf9 -n argo
+kubectl delete pods -n argo -l workflows.argoproj.io/completed=true
 
 # Re-setup
 ARGO_VERSION=4.0.2
