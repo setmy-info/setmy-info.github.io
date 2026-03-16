@@ -95,6 +95,18 @@ or extend working hours in order to stay on schedule. A source of stress, ineffi
 A top-down anti-pattern where management imposes sudden “facts” that force teams to replan, work overtime,
 and sacrifice quality to meet imposed deadlines.
 
+**Interpretability problem** - The challenge of understanding how AI models make decisions and why they produce
+certain outputs.
+
+**Superposition of concepts** - The phenomenon where a single neural pattern or neuron in an AI model represents
+multiple different concepts simultaneously, depending on the context or input.
+
+**Features inside features** - A concept where AI models contain hidden knowledge that is not directly accessible
+or readable by humans or even the AI itself until the correct prompt or "viewing angle" activates it. It is
+comparable to a hologram picture: watching it from one angle, an object is visible, while what is behind it is hidden;
+from another angle, that hidden object appears. Similarly, models can have hidden knowledge that only manifests when
+passing the correct information in.
+
 https://www.dataprise.com/it-glossary
 
 https://www.phoenix.edu/blog/40-it-terms-every-it-professional-needs-to-know.html
