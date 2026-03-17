@@ -54,14 +54,18 @@ kubectl cluster-info
 
 # -n NAMESPACE can be appended
 kubectl create namespace xyz-namespace
-kubectl apply -f xyz-namespace.yaml
-kubectl apply -f xyz-config-map.yaml
-kubectl apply -f xyz-secrets-map.yaml
-kubectl apply -f xyz-nfs-persistent-volume.yaml
-kubectl apply -f xyz-nfs-persistent-volume-claim.yaml
-kubectl apply -f xyz-deployment.yaml
-kubectl apply -f xyz-service.yaml
-kubectl apply -f xyz-ingress.yaml
+kubectl apply -f 01-xyz-namespace.yaml
+kubectl apply -f 02-xyz-config-map.yaml
+kubectl apply -f 03-xyz-secrets-map.yaml
+kubectl apply -f 04-xyz-nfs-persistent-volume.yaml
+kubectl apply -f 05-xyz-nfs-persistent-volume-claim.yaml
+kubectl apply -f 06-xyz-postgres-secrets-map.yaml
+kubectl apply -f 07-xyz-postgres-persistent-volume-claim.yaml
+kubectl apply -f 08-xyz-postgres-deployment.yaml
+kubectl apply -f 09-xyz-postgres-service.yaml
+kubectl apply -f 10-xyz-deployment.yaml
+kubectl apply -f 11-xyz-service.yaml
+kubectl apply -f 12-xyz-ingress.yaml
 
 kubectl edit xyz-deployment
 kubectl get pods
@@ -131,7 +135,7 @@ kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/downloa
 
 ### Namespace
 
-**xyz-namespace.yaml**
+**01-xyz-namespace.yaml**
 
 ```yaml
 apiVersion: v1
@@ -142,7 +146,7 @@ metadata:
 
 ### Config map
 
-xyz-config-map.yaml
+02-xyz-config-map.yaml
 
 ```yaml
 apiVersion: v1
@@ -160,7 +164,7 @@ immutable: true
 
 ### Secrets map
 
-**xyz-secrets-map.yaml**
+**03-xyz-secrets-map.yaml**
 
 ```yaml
 apiVersion: v1
@@ -175,7 +179,7 @@ immutable: true
 
 ### Volumes
 
-**xyz-nfs-persistent-volume.yaml**
+**04-xyz-nfs-persistent-volume.yaml**
 
 ```yaml
 apiVersion: v1
@@ -185,16 +189,18 @@ metadata:
     namespace: xyz-dev
 spec:
     capacity:
-        storage: 10Gi
+        storage: 1Gi
+    volumeMode: Filesystem
     accessModes:
         - ReadWriteMany
     persistentVolumeReclaimPolicy: Retain
+    storageClassName: nfs
     nfs:
         server: 127.0.0.1 # nfs.gintra
         path: /var/opt/setmy.info/gintra
 ```
 
-**xyz-nfs-persistent-volume-claim.yaml**
+**05-xyz-nfs-persistent-volume-claim.yaml**
 
 ```yaml
 apiVersion: v1
@@ -205,16 +211,15 @@ metadata:
 spec:
     accessModes:
         - ReadWriteMany
+    storageClassName: nfs
     resources:
         requests:
-            storage: 5Gi
-    storageClassName: ""
-    volumeName: xyz-nfs-persistent-volume
+            storage: 1Gi
 ```
 
 ### Deployment
 
-**xyz-deployment.yaml**
+**10-xyz-deployment.yaml**
 
 ```yaml
 apiVersion: apps/v1
@@ -238,13 +243,14 @@ spec:
                 -   name: xyz
                     #image: docker.io/setmyinfo/springboot-start-project:latest
                     #image: setmyinfo/springboot-start-project:latest
+                    #image: http://gcr.io/google-samples/node-hello:1.0
                     image: xyz:latest
                     # For example, not needed in Minikube
                     # imagePullPolicy: Never
                     #command: [ "java-execute" ]
                     #args: ["echo 'Hello World'; exec myapp --start"]
                     ports:
-                        -   name: ms-port
+                        -   name: xyz-port
                             containerPort: 8080
                     env:
                         # For Spring boot
@@ -287,7 +293,7 @@ spec:
 
 ### Service
 
-**xyz-service.yaml**
+**11-xyz-service.yaml**
 
 ```yaml
 apiVersion: v1
@@ -297,19 +303,19 @@ metadata:
     namespace: xyz-dev
 spec:
     selector:
-        app.kubernetes.io/name: xyz
+        app: xyz-deployment
     ports:
         -   protocol: TCP
             # Port where Ingress forwards to
             port: 80
             # Deployment or POD port in container port
             #targetPort: 8080
-            targetPort: ms-port
+            targetPort: xyz-port
 ```
 
 ### Ingress
 
-**xyz-ingress.yaml**
+**12-xyz-ingress.yaml**
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -339,7 +345,7 @@ spec:
 
 ### Secrets map
 
-**xyz-postgres-secrets-map.yaml**
+**06-xyz-postgres-secrets-map.yaml**
 
 ```yaml
 apiVersion: v1
@@ -354,7 +360,7 @@ immutable: true
 
 ### Volumes
 
-**xyz-postgres-persistent-volume-claim.yaml**
+**07-xyz-postgres-persistent-volume-claim.yaml**
 
 ```yaml
 apiVersion: v1
@@ -375,7 +381,7 @@ spec:
 
 ### Deployment
 
-**xyz-postgres-deployment.yaml**
+**08-xyz-postgres-deployment.yaml**
 
 ```yaml
 apiVersion: apps/v1
@@ -420,7 +426,7 @@ spec:
 
 ### Service
 
-**xyz-service.yaml**
+**09-xyz-postgres-service.yaml**
 
 ```yaml
 apiVersion: v1
@@ -440,11 +446,6 @@ spec:
             #targetPort: 8080
             targetPort: pg-port
 ```
-
-kubectl apply -f xyz-postgres-secrets-map.yaml
-kubectl apply -f xyz-postgres-persistent-volume-claim.yaml
-kubectl apply -f xyz-postgres-deployment.yaml
-kubectl apply -f xyz-service.yaml
 
 ## Kind complete list
 
