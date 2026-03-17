@@ -13,7 +13,7 @@ spec:
     volumes:
         -   name: nfs-storage
             persistentVolumeClaim:
-                claimName: nfs-shared-pvc
+                claimName: argo-nfs-shared-persistent-volume-claim
     entrypoint: pipeline
     arguments:
         parameters:
