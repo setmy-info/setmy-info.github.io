@@ -12,5 +12,7 @@ spec:
     persistentVolumeReclaimPolicy: Retain
     storageClassName: nfs
     nfs:
-        server: 127.0.0.1
-        path: /var/opt/setmy.info/gintra
+        #server: 127.0.0.1
+        #path: /var/opt/setmy.info/gintra
+        server: xyz-nfs-server.xyz-dev.svc.cluster.local
+        path: /

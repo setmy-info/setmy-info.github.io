@@ -55,17 +55,19 @@ kubectl cluster-info
 # -n NAMESPACE can be appended
 kubectl create namespace xyz-namespace
 kubectl apply -f 01-xyz-namespace.yaml
-kubectl apply -f 02-xyz-config-map.yaml
-kubectl apply -f 03-xyz-secrets-map.yaml
-kubectl apply -f 04-xyz-nfs-persistent-volume.yaml
-kubectl apply -f 05-xyz-nfs-persistent-volume-claim.yaml
-kubectl apply -f 06-xyz-postgres-secrets-map.yaml
-kubectl apply -f 07-xyz-postgres-persistent-volume-claim.yaml
-kubectl apply -f 08-xyz-postgres-deployment.yaml
-kubectl apply -f 09-xyz-postgres-service.yaml
-kubectl apply -f 10-xyz-deployment.yaml
-kubectl apply -f 11-xyz-service.yaml
-kubectl apply -f 12-xyz-ingress.yaml
+kubectl apply -f 02-xyz-nfs-server-deployment.yaml
+kubectl apply -f 03-xyz-nfs-server-service.yaml
+kubectl apply -f 04-xyz-config-map.yaml
+kubectl apply -f 05-xyz-secrets-map.yaml
+kubectl apply -f 06-xyz-nfs-persistent-volume.yaml
+kubectl apply -f 07-xyz-nfs-persistent-volume-claim.yaml
+kubectl apply -f 08-xyz-postgres-secrets-map.yaml
+kubectl apply -f 09-xyz-postgres-persistent-volume-claim.yaml
+kubectl apply -f 10-xyz-postgres-deployment.yaml
+kubectl apply -f 11-xyz-postgres-service.yaml
+kubectl apply -f 12-xyz-deployment.yaml
+kubectl apply -f 13-xyz-service.yaml
+kubectl apply -f 14-xyz-ingress.yaml
 
 kubectl edit xyz-deployment
 kubectl get pods
@@ -144,9 +146,61 @@ metadata:
     name: xyz-dev
 ```
 
+### NFS Server
+
+**02-xyz-nfs-server-deployment.yaml**
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: xyz-nfs-server
+    namespace: xyz-dev
+    labels:
+        app: xyz-nfs-server
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: xyz-nfs-server
+    template:
+        metadata:
+            labels:
+                app: xyz-nfs-server
+        spec:
+            containers:
+                -   name: nfs-server
+                    image: itsthenetwork/nfs-server-alpine
+                    securityContext:
+                        privileged: true
+                    env:
+                        -   name: SHARED_DIRECTORY
+                            value: /exports
+                    ports:
+                        -   containerPort: 2049
+```
+
+**03-xyz-nfs-server-service.yaml**
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: xyz-nfs-server
+    namespace: xyz-dev
+spec:
+    selector:
+        app: xyz-nfs-server
+    ports:
+        -   name: nfs
+            port: 2049
+            targetPort: 2049
+    clusterIP: None
+```
+
 ### Config map
 
-02-xyz-config-map.yaml
+04-xyz-config-map.yaml
 
 ```yaml
 apiVersion: v1
@@ -164,7 +218,7 @@ immutable: true
 
 ### Secrets map
 
-**03-xyz-secrets-map.yaml**
+**05-xyz-secrets-map.yaml**
 
 ```yaml
 apiVersion: v1
@@ -179,7 +233,7 @@ immutable: true
 
 ### Volumes
 
-**04-xyz-nfs-persistent-volume.yaml**
+**06-xyz-nfs-persistent-volume.yaml**
 
 ```yaml
 apiVersion: v1
@@ -196,11 +250,13 @@ spec:
     persistentVolumeReclaimPolicy: Retain
     storageClassName: nfs
     nfs:
-        server: 127.0.0.1 # nfs.gintra
-        path: /var/opt/setmy.info/gintra
+        #server: 127.0.0.1 # nfs.gintra
+        #path: /var/opt/setmy.info/gintra
+        server: xyz-nfs-server.xyz-dev.svc.cluster.local
+        path: /
 ```
 
-**05-xyz-nfs-persistent-volume-claim.yaml**
+**07-xyz-nfs-persistent-volume-claim.yaml**
 
 ```yaml
 apiVersion: v1
@@ -219,7 +275,7 @@ spec:
 
 ### Deployment
 
-**10-xyz-deployment.yaml**
+**12-xyz-deployment.yaml**
 
 ```yaml
 apiVersion: apps/v1
@@ -293,7 +349,7 @@ spec:
 
 ### Service
 
-**11-xyz-service.yaml**
+**13-xyz-service.yaml**
 
 ```yaml
 apiVersion: v1
@@ -315,7 +371,7 @@ spec:
 
 ### Ingress
 
-**12-xyz-ingress.yaml**
+**14-xyz-ingress.yaml**
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -345,7 +401,7 @@ spec:
 
 ### Secrets map
 
-**06-xyz-postgres-secrets-map.yaml**
+**08-xyz-postgres-secrets-map.yaml**
 
 ```yaml
 apiVersion: v1
@@ -360,7 +416,7 @@ immutable: true
 
 ### Volumes
 
-**07-xyz-postgres-persistent-volume-claim.yaml**
+**09-xyz-postgres-persistent-volume-claim.yaml**
 
 ```yaml
 apiVersion: v1
@@ -381,7 +437,7 @@ spec:
 
 ### Deployment
 
-**08-xyz-postgres-deployment.yaml**
+**10-xyz-postgres-deployment.yaml**
 
 ```yaml
 apiVersion: apps/v1
@@ -426,7 +482,7 @@ spec:
 
 ### Service
 
-**09-xyz-postgres-service.yaml**
+**11-xyz-postgres-service.yaml**
 
 ```yaml
 apiVersion: v1
