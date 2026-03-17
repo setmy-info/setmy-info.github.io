@@ -105,12 +105,12 @@ Ports (minukube):
 minikube start
 # minikube start --vm-driver=none
 # For peristent volumes
-# minikube start --mount-string="/path/on/host:/path/on/minikube"
-# minikube start --mount-string="hostpath=/tank/peristent-volumes,nfs-server=YOUR_NFS_SERVER_IP,nfs-share=YOUR_NFS_SHARE"
+# minikube start --mount --mount-string="/path/on/host:/path/on/minikube"
+# minikube start --mount --mount-string="hostpath=/tank/peristent-volumes,nfs-server=YOUR_NFS_SERVER_IP,nfs-share=YOUR_NFS_SHARE"
 # Mounted to Kubernetes host
-# minikube start --mount-string="hostpath=/tank/peristent-volumes,nfs-server=nfs.intra,nfs-share=/tank/nfs/peristent-volumes"
+# minikube start --mount --mount-string="hostpath=/tank/peristent-volumes,nfs-server=nfs.intra,nfs-share=/tank/nfs/peristent-volumes"
 # Munted directly to virtual machine
-# minikube start --mount-string="type=nfs,source=nfs.intra:/tank/nfs/peristent-volumes,target=/tank/peristent-volume"
+# minikube start --mount --mount-string="type=nfs,source=nfs.intra:/tank/nfs/peristent-volumes,target=/tank/peristent-volume"
 # minikube docker-env # ?
 # Minikube klaster IP, use for services
 minikube ip
@@ -119,6 +119,29 @@ minikube dashboard
 # http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 # pgrep -f "minikube dashboard" | xargs kill
 ```
+
+### Mounting host folders
+
+To use a host folder (e.g., `/var/opt/setmy.info/gintra`) in a Minikube pod via `hostPath`, the folder must be
+accessible within the Minikube virtual machine.
+
+#### Option 1: Using `minikube start` with mount flag
+
+```shell
+minikube start --mount --mount-string="/var/opt/setmy.info/gintra:/var/opt/setmy.info/gintra"
+```
+
+#### Option 2: Using `minikube mount` command
+
+While Minikube is running, use the `mount` command to map a host folder:
+
+```shell
+# In a separate terminal
+minikube mount /var/opt/setmy.info/gintra:/var/opt/setmy.info/gintra
+```
+
+This makes `/var/opt/setmy.info/gintra` on your host available as `/var/opt/setmy.info/gintra` inside the Minikube node,
+which allows the `xyz-nfs-server` deployment to use it via its `hostPath` volume.
 
 ## Usage, tips and tricks
 

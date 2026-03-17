@@ -32,6 +32,25 @@ kubectl get pods -A
 
 ## Usage, tips and tricks
 
+### Mounting host folders
+
+Since K3s typically runs directly on the Linux host, any folder on the host system (e.g., `/var/opt/setmy.info/gintra`) is already accessible to the K3s node.
+
+In your `xyz-nfs-server` deployment, the `hostPath` volume can point directly to the host directory:
+
+```yaml
+volumes:
+    -   name: nfs-exports
+        hostPath:
+            path: /var/opt/setmy.info/gintra
+            type: DirectoryOrCreate
+```
+
+Ensure that:
+1.  The folder exists on the host (or use `DirectoryOrCreate`).
+2.  The user running K3s has read/write permissions for that folder.
+3.  On systems with SELinux (like CentOS/Rocky/Fedora), you may need to set the correct context or use the `:z` or `:Z` mount options if using raw container engines, but K3s `hostPath` usually works if permissions are correct.
+
 ### Coding tips and tricks
 
 ## See also
