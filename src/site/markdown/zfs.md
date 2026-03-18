@@ -8,7 +8,7 @@
 
 Not tested!
 
-```
+```shell
 sudo rpm -e --nodeps zfs-fuse
 sudo dnf install https://zfsonlinux.org/epel/zfs-release-2-3$(rpm --eval "%{dist}").noarch.rpm
 sudo dnf install -y epel-release
@@ -45,7 +45,14 @@ sudo zpool create gintra mirror /dev/sda /dev/sdb
 sudo zfs set mountpoint=/mnt/gintra gintra
 sudo zpool status gintra
 
-# To see possible ZFS disks and stauses, in use, ID-s
+# Res set tank to gintra
+sudo zfs set mountpoint=/mnt/gintra tank
+# Create the symlink to /mnt/gintra
+sudo ln -s /mnt/gintra /var/opt/setmy.info/gintra
+# Legacy and Compatibility Symlink
+sudo ln -s /mnt/gintra /tank
+
+# To see possible ZFS disks and statuses, in use, ID-s
 zpool import
 # Import By id. Importing ONLINE disk.
 zpool import 3433150060417765046
@@ -65,7 +72,7 @@ sudo zpool status gintra
 
 Check disk to use
 
-```
+```shell
 lsblk
 ```
 
@@ -77,10 +84,50 @@ lsblk
 
 ## Configuration
 
+### Setting a Specific Mountpoint
+
+To set a specific directory as the root of your ZFS pool (e.g., `/var/opt/setmy.info/gintra`) while keeping the parent
+directories as part of the normal filesystem:
+
+**1. Create the parent directories on the normal filesystem:**
+
+```bash
+sudo mkdir -p /var/opt/setmy.info
+```
+
+**2. Option A: Create a new pool with the desired mountpoint:**
+
+```bash
+sudo zpool create -m /var/opt/setmy.info/gintra gintra /dev/sda /dev/sdb
+```
+
+**3. Option B: Change the mountpoint of an existing pool (e.g., from `/tank` to `/var/opt/setmy.info/gintra`):**
+
+```bash
+# Rename the pool if necessary (optional)
+# sudo zpool export tank
+# sudo zpool import tank gintra
+
+# Set the new mountpoint
+sudo zfs set mountpoint=/var/opt/setmy.info/gintra gintra
+```
+
+**4. Verification:**
+
+```bash
+zfs list
+df -h
+```
+
+The output should show that `gintra` is mounted at `/var/opt/setmy.info/gintra`, while `/var/opt/setmy.info` remains
+part of the root (`/`) or other existing filesystem.
+
 ## Usage, tips and tricks
 
 ### Coding tips and tricks
 
 ## See also
 
-[xxxx](http://yyyyy)
+* [AI](ai.md)
+* [VectorDB](vectordb.md)
+* [OpenVPN](openvpn.md)

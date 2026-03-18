@@ -285,7 +285,7 @@ match val:
 
 ```python
 numbers = [1, 2, 3, 4, 5]
-squared = list(map(lambda x: x**2, numbers))
+squared = list(map(lambda x: x ** 2, numbers))
 filtered = list(filter(lambda x: x % 2 == 0, numbers))
 result = reduce(lambda x, y: x + y, numbers)
 ```
@@ -293,15 +293,16 @@ result = reduce(lambda x, y: x + y, numbers)
 #### List comprehensions
 
 ```python
-squared = [x**2 for x in numbers if x % 2 == 0]
+squared = [x ** 2 for x in numbers if x % 2 == 0]
 ```
 
 #### Itertools
 
 ```python
 import itertools
+
 numbers = [1, 2, 3, 4, 5]
-squared = itertools.starmap(lambda x, y: x**y, zip(numbers, itertools.repeat(2)))
+squared = itertools.starmap(lambda x, y: x ** y, zip(numbers, itertools.repeat(2)))
 ```
 
 #### Testing mocking
@@ -361,11 +362,13 @@ behave
 
 ## Frameworks
 
-Django
+[FastAPI](fastapi.md)
 
-Flask (http://flask.pocoo.org/)
+[Django](https://www.djangoproject.com/)
 
-Falcon
+[Flask](http://flask.pocoo.org/)
+
+[Falcon](https://falconframework.org/)
 
 Jinja2 (Template engine : http://jinja.pocoo.org/)
 

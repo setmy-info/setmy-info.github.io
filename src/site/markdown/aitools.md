@@ -2,225 +2,235 @@
 
 ## Text
 
-* [ChatGPT](xxxxxx)
-* [Gemini](xxxxxx)
-* [Copy AI](xxxxxx)
-* [Perplexity](xxxxxx)
-* [Jasper AI](xxxxxx)
-* [Claude](xxxxxx)
-* [WriteSonic](xxxxxx)
-* [Copilot](xxxxxx)
-* [Word AI](xxxxxx)
-* [Notion](xxxxxx)
-* [Taskade](xxxxxx)
-* [Jenni AI](xxxxxx)
-* [Qoil](xxxxxx)
-* [Ollama](xxxxxx) - Chatgpt replacement?
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [ChatGPT](https://chatgpt.com/)
+* [Gemini](https://gemini.google.com/)
+* [Copy AI](https://www.copy.ai/)
+* [Perplexity](https://www.perplexity.ai/)
+* [Jasper AI](https://www.jasper.ai/)
+* [Claude](https://claude.ai/)
+* [WriteSonic](https://writesonic.com/)
+* [Copilot](https://copilot.microsoft.com/)
+* [Word AI](https://wordai.com/)
+* [Notion AI](https://www.notion.so/product/ai)
+* [Taskade](https://www.taskade.com/)
+* [Jenni AI](https://jenni.ai/)
+* [Qoil](https://qoil.ai/)
+* [Ollama](https://ollama.com/) - Chatgpt replacement?
+* [Mistral AI](https://mistral.ai/)
+* [Grok](https://x.ai/)
+* [You.com](https://you.com/)
+* [Cohere](https://cohere.com/)
 
 ## Image
 
-* [Nano Banana](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Nano Banana](https://nanobanana.com/)
+* [Midjourney](https://www.midjourney.com/)
+* [Stable Diffusion](https://stability.ai/)
+* [DALL-E 3](https://openai.com/dall-e-3)
+* [Adobe Firefly](https://www.adobe.com/products/firefly.html)
+* [Leonardo.ai](https://leonardo.ai/)
+* [Canva Magic Design](https://www.canva.com/magic-design/)
 
 ## Audio
 
 * [Elevenlabs](https://elevenlabs.io/)
 * [Chatterbox](https://chatterboxai.net/)
 * [AI Vocal](https://aivocal.io/)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Suno](https://suno.com/)
+* [Udio](https://www.udio.com/)
+* [Murf AI](https://murf.ai/)
+* [Speechify](https://speechify.com/)
 
 ## Video
 
-* [Veo](xxxxxx)
-* [LTX-2](xxxxxx) - Locally
-* [xxxx](xxxxxx)
+* [Veo](https://deepmind.google/technologies/veo/)
+* [LTX-2](https://lightricks.com/) - Locally
+* [Sora](https://openai.com/sora)
+* [Runway Gen-3 Alpha](https://runwayml.com/)
+* [Pika Labs](https://pika.art/)
+* [Luma Dream Machine](https://lumalabs.ai/dream-machine)
+* [HeyGen](https://www.heygen.com/)
+* [Synthesia](https://www.synthesia.io/)
 
-## Website
+## Coding
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [FastAPI](fastapi.md)
+* [GitHub Copilot](https://github.com/features/copilot)
+* [Cursor](https://www.cursor.com/)
+* [Tabnine](https://www.tabnine.com/)
+* [Codeium](https://codeium.com/)
+* [Replit Agent](https://replit.com/ai)
 
 ## Research
 
-* [Perplexity](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Perplexity](https://www.perplexity.ai/)
+* [Consensus](https://consensus.app/)
+* [Elicit](https://elicit.org/)
+* [Scite.ai](https://scite.ai/)
+* [Scholarcy](https://www.scholarcy.com/)
 
 ## Copywriting
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Jasper AI](https://www.jasper.ai/)
+* [Copy.ai](https://www.copy.ai/)
+* [Anyword](https://anyword.com/)
+* [Writesonic](https://writesonic.com/)
 
 ## Meetings
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Otter.ai](https://otter.ai/)
+* [Fireflies.ai](https://fireflies.ai/)
+* [Read.ai](https://www.read.ai/)
+* [Avoma](https://www.avoma.com/)
 
 ## SEO
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Surfer SEO](https://www.surferseo.com/)
+* [Frase](https://www.frase.io/)
+* [GrowthBar](https://www.growthbarseo.com/)
+* [MarketMuse](https://www.marketmuse.com/)
 
 ## Design
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Canva AI](https://www.canva.com/ai-powered-design-tools/)
+* [Microsoft Designer](https://designer.microsoft.com/)
+* [Looka](https://looka.com/)
+* [Uizard](https://uizard.io/)
+* [Figma AI](https://www.figma.com/ai/)
 
 ## Prompts
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [PromptBase](https://promptbase.com/)
+* [Snack Prompt](https://snackprompt.com/)
+* [FlowGPT](https://flowgpt.com/)
 
 ## Chatbots
 
-* [Pop AI](xxxxxx)
-* [Notion](xxxxxx)
-* [ForeFront](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Pop AI](https://www.popai.pro/)
+* [Notion AI](https://www.notion.so/product/ai)
+* [ForeFront](https://www.forefront.ai/)
+* [Intercom Fin](https://www.intercom.com/fin)
+* [Chatbase](https://www.chatbase.co/)
 
 ## Automation
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Zapier Central](https://zapier.com/central)
+* [Make.com](https://www.make.com/)
+* [Bardeen](https://www.bardeen.ai/)
 
 ## Presentation
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Gamma](https://gamma.app/)
+* [Beautiful.ai](https://www.beautiful.ai/)
+* [Tome](https://tome.app/)
+* [SlidesAI](https://www.slidesai.io/)
 
 ## Logo
 
-* [Looka](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Looka](https://looka.com/)
+* [Logomaster.ai](https://logomaster.ai/)
+* [Brandmark](https://brandmark.io/)
 
 ## Marketing / Sales
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [6sense](https://6sense.com/)
+* [Apollo.ai](https://apollo.ai/)
+* [Seamless.ai](https://www.seamless.ai/)
 
 ## SMMA
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [GoHighLevel](https://www.gohighlevel.com/)
+* [Criya](https://www.criya.co/)
+* [ManyChat](https://manychat.com/)
 
 ## Startups
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Y Combinator Library](https://www.ycombinator.com/library)
+* [Founderpath](https://founderpath.com/)
+* [Mixpanel](https://mixpanel.com/)
 
 ## Productivity
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [SaneBox](https://www.sanebox.com/)
+* [Mem](https://mem.ai/)
+* [Clockwise](https://www.getclockwise.com/)
 
 ## PPTS
 
-* [Gamma](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Gamma](https://gamma.app/)
+* [Decktopus](https://www.decktopus.com/)
+* [Plus AI](https://www.plusdocs.com/)
 
 ## Edit reels
 
-* [Edits](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Submagic](https://www.submagic.co/)
+* [Munch](https://www.getmunch.com/)
+* [OpusClip](https://www.opus.pro/)
+* [Captions](https://www.captions.ai/)
 
 ## Clone Voice
 
-* [Eleven Labs](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Eleven Labs](https://elevenlabs.io/voice-cloning)
+* [Play.ht](https://play.ht/)
+* [Resemble AI](https://www.resemble.ai/)
 
 ## Avatars
 
-* [HeyGen](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [HeyGen](https://www.heygen.com/)
+* [Synthesia](https://www.synthesia.io/)
+* [Colossyan](https://www.colossyan.com/)
 
 ## Music
 
-* [Suno](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Suno](https://suno.com/)
+* [Udio](https://www.udio.com/)
+* [AIVA](https://www.aiva.ai/)
+* [Soundraw](https://soundraw.io/)
 
 ## Mindmaps
 
-* [Chatmind](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Chatmind](https://www.chatmind.tech/)
+* [Whimsical AI](https://whimsical.com/ai)
+* [Ayoa AI](https://www.ayoa.com/ai/)
 
 ## Summaries
 
-* [NotebookLM](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [NotebookLM](https://notebooklm.google.com/)
+* [Humata AI](https://www.humata.ai/)
+* [ChatPDF](https://www.chatpdf.com/)
 
 ## Marketing
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [HubSpot AI](https://www.hubspot.com/products/artificial-intelligence)
+* [MarketMuse](https://www.marketmuse.com/)
+* [Mutiny](https://www.mutinyhq.com/)
 
-## xxxxxxxx
+## Browser Extensions
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Monica](https://monica.im/)
+* [MaxAI.me](https://www.maxai.me/)
+* [Harpa AI](https://harpa.ai/)
 
-## xxxxxxxx
+## AI Agents
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
+* [BabyAGI](https://github.com/yoheinakajima/babyagi)
+* [AgentGPT](https://agentgpt.reworkd.ai/)
+* [AI Agent](agent.md)
+* [Model Context Protocol (MCP)](mcp.md)
+* [LangChain](langchain.md)
 
-## xxxxxxxx
+## Translation
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [DeepL](https://www.deepl.com/)
+* [ModernMT](https://www.modernmt.com/)
+* [Lilt](https://lilt.com/)
 
-## xxxxxxxx
+## Legal
 
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Harvey AI](https://www.harvey.ai/)
+* [Casetext](https://casetext.com/)
+* [Spellbook](https://www.spellbook.com/)
 
 ## Usage, tips and tricks
 
@@ -228,25 +238,18 @@
 
 ## See also
 
-* [Sora 2](xxxxxx) vs [Hunyuan](xxxxxx)
-* [Lovable](xxxxxx) vs [Dyad](xxxxxx)
+* [Sora](https://openai.com/sora) vs [Hunyuan Video](https://github.com/Tencent/HunyuanVideo)
+* [Lovable](https://lovable.dev/) vs [Dyad](https://www.dyad.com/)
 * [Elevenlabs](https://elevenlabs.io/) vs [Chatterbox](https://chatterboxai.net/)
-* [Midjourney](xxxxxx) vs [StableDiffusion](xxxxxx)
-* [Heygen ](xxxxxx) vs [Hedera](xxxxxx)
-* [Grammarly](xxxxxx) vs [Hemingway](xxxxxx)
-* [KIMI 2](xxxxxx) video?
-* [DomoAI](xxxxxx) video?
-* [Resemble AI](xxxxxx) - Audio
-* [RVC / XTTS / Coqui](xxxxxx) Open Source
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
-* [xxxx](xxxxxx)
+* [Midjourney](https://www.midjourney.com/) vs [Stable Diffusion](https://stability.ai/)
+* [Heygen](https://www.heygen.com/) vs [Hedra](https://www.hedra.com/)
+* [Grammarly](https://www.grammarly.com/) vs [Hemingway Editor](https://hemingwayapp.com/)
+* [KIMI](https://www.moonshot.cn/)
+* [DomoAI](https://domoai.app/)
+* [Resemble AI](https://www.resemble.ai/)
+* [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) / [XTTS](https://github.com/coqui-ai/TTS) / [Coqui](https://coqui.ai/)
+* [Hugging Face](https://huggingface.co/)
+* [Civitai](https://civitai.com/)
+* [FutureTools](https://www.futuretools.io/)
+* [There's An AI For That](https://theresanaiforthat.com/)
+* [Product Hunt - AI](https://www.producthunt.com/topics/ai)
