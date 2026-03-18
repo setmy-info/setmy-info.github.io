@@ -40,6 +40,8 @@ kubectl delete wf hello-world-2qvr7 -n argo
 kubectl delete wf hello-world-zglf9 -n argo
 kubectl delete pods -n argo -l workflows.argoproj.io/completed=true
 
+argo delete --completed --all-namespaces
+
 # Re-setup
 ARGO_VERSION=4.0.2
 # TODO : notes about stop, delete, ..
