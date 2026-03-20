@@ -32,7 +32,7 @@ To build your own MCP servers or clients, you can use the following SDKs and lib
 
 * **[MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk):** The official Python implementation of the
   Model Context Protocol.
-* **[FastMCP](https://github.com/jiggy-ai/fastmcp):** A high-level framework for building MCP servers quickly with
+* **[FastMCP](fastmcp.md):** A high-level framework for building MCP servers quickly with
   Python, inspired by FastAPI.
 * **[MCP-Server-Template](https://github.com/modelcontextprotocol/python-sdk/tree/main/examples):** Official examples
   and templates for Python-based servers.
@@ -55,9 +55,9 @@ To build your own MCP servers or clients, you can use the following SDKs and lib
 
 Building an MCP server involves defining **tools**, **resources**, and **prompts** that an AI host can use.
 
-### Python (FastMCP)
+### Python ([FastMCP](fastmcp.md))
 
-[FastMCP](https://github.com/jiggy-ai/fastmcp) is a high-level framework that makes it easy to build MCP servers with
+[FastMCP](fastmcp.md) is a high-level framework that makes it easy to build MCP servers with
 Python.
 
 **1. Installation:**
@@ -281,4 +281,5 @@ Once configured, the AI assistant will automatically detect the available tools 
 * [AI Tools](aitools.md)
 * [VectorDB](vectordb.md)
 * [LangChain](langchain.md)
+* [FastMCP](fastmcp.md)
 * [OpenVPN](openvpn.md)

@@ -59,6 +59,7 @@ kubectl apply -f 02-xyz-nfs-server-deployment.yaml
 kubectl apply -f 03-xyz-nfs-server-service.yaml
 kubectl apply -f 04-xyz-config-map.yaml
 kubectl apply -f 05-xyz-secrets-map.yaml
+# kubectl create secret generic ai-review-secrets --namespace=review --from-literal=anthropic-api-key=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 kubectl apply -f 06-xyz-nfs-persistent-volume.yaml
 kubectl apply -f 07-xyz-nfs-persistent-volume-claim.yaml
 kubectl apply -f 08-xyz-postgres-secrets-map.yaml
@@ -598,9 +599,11 @@ kind: PodSecurityPolicyReview
 * [kubectl installation](https://kubernetes.io/docs/tasks/tools/#kubectl)
 * [minikube](https://kubernetes.io/docs/setup/minikube/)
 * [kubectl cli usage](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+* [AWS (Amazon Web Services)](aws.md)
 * [Deployment](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
 * [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
 * [Config maps](ttps://kubernetes.io/docs/concepts/configuration/configmap/)
 * [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
 * [Sealed secrets](https://github.com/bitnami-labs/sealed-secrets/releases)
 * [PCI-DSS](https://raesene.github.io/blog/2022/10/01/PCI-Kubernetes-Section1-Authentication/)
+* [Terraform K8s Setup](terraform.md)

@@ -1,0 +1,144 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+    generateName: argo-code-review-
+    namespace: review
+spec:
+    volumes:
+        -   name: shared-storage
+            persistentVolumeClaim:
+                claimName: argo-host-path-persistent-volume-claim
+    serviceAccountName: default
+    entrypoint: pipeline
+    arguments:
+        parameters:
+            -   name: working-dir
+                value: "/var/opt/setmy.info/minikube"
+            -   name: repo-name
+                value: "example-app"
+            -   name: from-commit
+                value: "HEAD~1"
+            -   name: to-commit
+                value: "HEAD"
+    templates:
+        -   name: pipeline
+            steps:
+                -   -   name: cleanup
+                        template: cleanup
+                -   -   name: generate-diff
+                        template: generate-diff
+                -   -   name: create-tasklist
+                        template: create-tasklist
+                -   -   name: run-code-review
+                        template: run-claude-review
+
+        -   name: cleanup
+            container:
+                image: setmyinfo/setmy-info-rocky:latest
+                volumeMounts:
+                    -   name: shared-storage
+                        mountPath: /var/opt/setmy.info/minikube
+                workingDir: "{{workflow.parameters.working-dir}}"
+                securityContext:
+                    runAsUser: 1001
+                    runAsGroup: 1001
+                command: [ "/bin/sh", "-c" ]
+                args:
+                    - |
+                        echo "Cleaning up..."
+                        rm -rf CODE-REVIEW.md TASKLIST.md diff.patch claude-review.sh
+                        ls -la
+
+        -   name: generate-diff
+            container:
+                image: setmyinfo/setmy-info-rocky:latest
+                volumeMounts:
+                    -   name: shared-storage
+                        mountPath: /var/opt/setmy.info/minikube
+                workingDir: "{{workflow.parameters.working-dir}}"
+                command: [ "/bin/sh", "-c" ]
+                args:
+                    - |
+                        dnf install -y git
+                        # Ensure shared storage and dependencies are available
+                        dnf install -y curl ca-certificates tar gzip
+
+                        # Ensure shared storage is writable by microservice
+                        chown -R microservice:microservice "{{workflow.parameters.working-dir}}"
+
+                        echo "Generating diff for {{workflow.parameters.repo-name}} from {{workflow.parameters.from-commit}} to {{workflow.parameters.to-commit}}..."
+                        cd "clones/{{workflow.parameters.repo-name}}"
+                        git config --global --add safe.directory "*"
+                        git diff {{workflow.parameters.from-commit}}..{{workflow.parameters.to-commit}} > ../../diff.patch || { echo "Git diff failed"; exit 1; }
+                        cd ../..
+                        chown microservice:microservice diff.patch
+                        ls -la diff.patch
+
+        -   name: create-tasklist
+            container:
+                image: setmyinfo/setmy-info-rocky:latest
+                volumeMounts:
+                    -   name: shared-storage
+                        mountPath: /var/opt/setmy.info/minikube
+                workingDir: "{{workflow.parameters.working-dir}}"
+                command: [ "/bin/sh", "-c" ]
+                args:
+                    - |
+                        echo "Installing gettext..."
+                        dnf install -y gettext
+
+                        echo "Building tasklist..."
+                        runuser -u microservice -- smi-build-tasklist
+                        ls -la TASKLIST.md
+
+        -   name: run-claude-review
+            container:
+                image: setmyinfo/setmy-info-rocky:latest
+                volumeMounts:
+                    -   name: shared-storage
+                        mountPath: "{{workflow.parameters.working-dir}}"
+                workingDir: "{{workflow.parameters.working-dir}}"
+                command: [ "/bin/sh", "-c" ]
+                args:
+                    - |
+                        dnf update -y && \
+                        dnf install -y \
+                            curl \
+                            git \
+                            bash \
+                            ca-certificates \
+                            tar \
+                            gzip \
+                        && dnf clean all
+
+                        if [ ! -f "claude-review.sh" ]; then
+                          echo "Creating claude-review.sh..."
+                          cat << 'EOF' > claude-review.sh
+                        #!/bin/bash
+                        export HOME="{{workflow.parameters.working-dir}}"
+                        export CLAUDE_CONFIG_DIR="$HOME/.claude"
+                        export PATH="$HOME/.local/bin:$HOME/.claude/bin:$PATH"
+
+                        mkdir -p "$CLAUDE_CONFIG_DIR"
+
+                        if ! command -v claude &> /dev/null; then
+                          echo "Installing Claude CLI..."
+                          curl -fsSL https://claude.ai/install.sh | bash
+                        fi
+
+                        echo "Running Claude Review..."
+                        claude --version
+                        claude --dangerously-skip-permissions "Start executing newly written tasklist TASKLIST.md"
+                        EOF
+                          chmod a+x claude-review.sh
+                          chown microservice:microservice claude-review.sh
+                        fi
+
+                        echo "Executing as microservice user..."
+                        runuser -u microservice -- ./claude-review.sh
+                env:
+                    -   name: ANTHROPIC_API_KEY
+                        valueFrom:
+                            secretKeyRef:
+                                name: ai-review-secrets
+                                key: anthropic-api-key

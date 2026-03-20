@@ -125,13 +125,15 @@ minikube dashboard
 To use a host folder (e.g., `/var/opt/setmy.info/gintra`) in a Minikube pod via `hostPath`, the folder must be
 accessible within the Minikube virtual machine.
 
-#### Option 1: Using `minikube start` with mount flag
+#### Linux / Unix / macOS
+
+##### Option 1: Using `minikube start` with mount flag
 
 ```shell
 minikube start --mount --mount-string="/var/opt/setmy.info/gintra:/var/opt/setmy.info/gintra"
 ```
 
-#### Option 2: Using `minikube mount` command
+##### Option 2: Using `minikube mount` command
 
 While Minikube is running, use the `mount` command to map a host folder:
 
@@ -140,14 +142,51 @@ While Minikube is running, use the `mount` command to map a host folder:
 minikube mount /var/opt/setmy.info/gintra:/var/opt/setmy.info/gintra
 ```
 
-This makes `/var/opt/setmy.info/gintra` on your host available as `/var/opt/setmy.info/gintra` inside the Minikube node,
-which allows the `xyz-nfs-server` deployment to use it via its `hostPath` volume.
+#### Windows
+
+On Windows, you can mount host folders using either the `--mount` flag during start or the `minikube mount` command. 
+Ensure you use proper path formatting.
+
+Example folder: `C:\pub\setmy.info\data\minikube`
+
+##### Option 1: Using `minikube start` with mount flag
+
+For a fresh minikube start or restart:
+
+```powershell
+minikube start --mount --mount-string="C:\pub\setmy.info\data\minikube:/var/opt/setmy.info/minikube"
+```
+
+##### Option 2: Using `minikube mount` command
+
+For an already running minikube:
+
+```powershell
+# In a separate PowerShell terminal (must stay open)
+minikube mount C:\pub\setmy.info\data\minikube:/var/opt/setmy.info/minikube
+```
+
+This makes `C:\pub\setmy.info\data\minikube` on your Windows host available as `/var/opt/setmy.info/minikube` inside the Minikube node. 
+You can then use `/var/opt/setmy.info/minikube` in your Pod's `hostPath` volume.
+
+#### Verification
+
+To verify that the folder is mounted, you can ssh into the minikube node:
+
+```shell
+minikube ssh
+ls /var/opt/setmy.info/minikube
+exit
+```
 
 ## Usage, tips and tricks
 
 ### Load image into K8s
 
 ```shell
+minikube image ls
+minikube image ls --format table
+minikube image rm aa11bb22cc334
 minikube image rm gihub.io/ORGNAME/IMAGENAME:VERSION_OR_TAG
 minikube image load gihub.io/ORGNAME/IMAGENAME:VERSION_OR_TAG --overwrite
 # Local images can be like that (minikube image list can show these: docker.io/ORGNAME/IMAGENAME:VERSION_OR_TAG)
@@ -155,9 +194,6 @@ minikube image load ORGNAME/IMAGENAME:VERSION_OR_TAG
 # DEPRECATED
 minikube cache add gihub.io/ORGNAME/IMAGENAME:VERSION
 # In kubernetes deployment config should be: spec.templates.container.imagePullPolicy: Never
-minikube image ls
-minikube image ls --format table
-minikube image rm aa11bb22cc334
 minikube addons enable ingress
 
 minikube tunnel

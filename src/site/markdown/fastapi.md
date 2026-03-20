@@ -19,6 +19,11 @@ type hints. It is one of the fastest Python frameworks available, only slower th
 * **Standards-based:** Based on (and fully compatible with) the open standards for APIs: OpenAPI (previously known as
   Swagger) and JSON Schema.
 
+### Similar Frameworks
+
+* **[FastMCP](fastmcp.md):** A high-level framework for building [Model Context Protocol (MCP)](mcp.md) servers,
+  directly inspired by FastAPI's design and decorator-based API.
+
 ## Installation
 
 ### Prerequisites
@@ -94,6 +99,12 @@ uvicorn main:app --reload
 * `app`: the object created inside of `main.py` with the line `app = FastAPI()`.
 * `--reload`: make the server restart after code changes. Only use for development.
 
+### Integrating MCP support
+
+If you are developing a microservice with FastAPI, you can easily add [Model Context Protocol (MCP)](mcp.md) support using [FastMCP](fastmcp.md). This allows AI models to interact with your service logic.
+
+See the [FastMCP guide: Adding MCP to an Existing FastAPI Microservice](fastmcp.md#adding-mcp-to-an-existing-fastapi-microservice) for a complete example and configuration.
+
 ### Interactive API Documentation
 
 Once the server is running, you can access the automatic interactive API documentation:
@@ -107,4 +118,5 @@ Once the server is running, you can access the automatic interactive API documen
 * [FastAPI GitHub Repository](https://github.com/tiangolo/fastapi)
 * [Python](python.md)
 * [AI](ai.md)
+* [FastMCP](fastmcp.md)
 * [Model Context Protocol (MCP)](mcp.md) (FastMCP is inspired by FastAPI)
