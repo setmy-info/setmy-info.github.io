@@ -10,20 +10,22 @@ set FROM_COMMIT=%4
 if "%FROM_COMMIT%"=="" set FROM_COMMIT=HEAD~1
 set TO_COMMIT=%5
 if "%TO_COMMIT%"=="" set TO_COMMIT=HEAD
+set AGENT=%6
+if "%AGENT%"=="" set AGENT=claude
+for /f "tokens=*" %%a in ('uuid') do set UUID=%%a
 
 set CLONES_DIR=clones
 
-if exist %CLONES_DIR% rd /s /q %CLONES_DIR%
 mkdir %CLONES_DIR%
 
-call clone-repo.cmd %REPO_URL% %REPO_NAME% %REPO_BRANCH%
-if exist secondary-clones.cmd call secondary-clones.cmd
-
-echo Submitting Argo Workflow for repo: %REPO_NAME% (from: %FROM_COMMIT% to: %TO_COMMIT%)
+echo Submitting Argo Workflow for repo: %REPO_URL% : %REPO_NAME% (from: %FROM_COMMIT% to: %TO_COMMIT%, agent: %AGENT%, uuid: %UUID%)
 argo submit -n review --watch ^
+    -p repo-url=%REPO_URL% ^
     -p repo-name=%REPO_NAME% ^
     -p from-commit=%FROM_COMMIT% ^
     -p to-commit=%TO_COMMIT% ^
-    C:\sources\setmy.info\submodules\setmy-info.github.io\src\site\resources\argo\review\argo-code-review.yaml
+    -p agent=%AGENT% ^
+    -p uuid=%UUID% ^
+    argo-wf.yaml
 
 echo All done.

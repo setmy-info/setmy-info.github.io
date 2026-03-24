@@ -59,7 +59,7 @@ kubectl apply -f 02-xyz-nfs-server-deployment.yaml
 kubectl apply -f 03-xyz-nfs-server-service.yaml
 kubectl apply -f 04-xyz-config-map.yaml
 kubectl apply -f 05-xyz-secrets-map.yaml
-# kubectl create secret generic ai-review-secrets --namespace=review --from-literal=anthropic-api-key=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# kubectl create secret generic ai-secrets --namespace=review --from-literal=anthropic-api-key=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 kubectl apply -f 06-xyz-nfs-persistent-volume.yaml
 kubectl apply -f 07-xyz-nfs-persistent-volume-claim.yaml
 kubectl apply -f 08-xyz-postgres-secrets-map.yaml

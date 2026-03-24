@@ -91,10 +91,11 @@ A specialized workflow for automated code reviews of multiple repositories can b
 Specifically, the version in `src/site/resources/argo/review/` is pre-configured for **Minikube** with host folder sharing.
 
 The workflow performs the following steps:
-1.  **Cleanup:** Removes previous `CODE-REVIEW.md`, `TASKLIST.md`, and `diff.patch`.
-2.  **Diff Generation:** Generates a `diff.patch` for a specific repository folder (`clones/{{repo-name}}`) using from/to commit hashes.
-3.  **Tasklist:** Executes `smi-build-tasklist` on the manually cloned repositories in the `clones` folder to generate `TASKLIST.md`.
-4.  **Review:** Performs a non-interactive code review by executing the `TASKLIST.md`, saving results to `CODE-REVIEW.md`.
+1.  **Setup:** Creates a unique working directory `clones/{{uuid}}` to isolate the workflow execution.
+2.  **Clone:** Clones the target repository into the unique workflow directory.
+3.  **Diff Generation:** Generates a `diff.patch` for the repository using from/to commit hashes.
+4.  **Tasklist:** Executes `smi-build-tasklist` on the cloned repository to generate `TASKLIST.md`.
+5.  **Review:** Performs a non-interactive code review by executing the `TASKLIST.md` using the selected `agent` (claude or cursor), saving results to `CODE-REVIEW.md`.
 
 #### Minikube Setup (Windows)
 
@@ -104,15 +105,15 @@ To use the code review workflow on Minikube with your local host folder, first m
 minikube mount C:\pub\setmy.info\data\minikube:/var/opt/setmy.info/minikube
 ```
 
-Then manually clone your repositories into `C:\pub\setmy.info\data\minikube\clones\`. You can use the provided `prepare.cmd` script to automate cloning and submission:
+Then manually clone your repositories into `C:\pub\setmy.info\data\minikube\clones\`. You can use the provided `argo-wf.cmd` script to automate cloning and submission:
 
 ```cmd
 cd src\site\resources\argo\review
-# Usage: prepare.cmd <repo_url> <repo_name> <repo_branch> <from_commit> <to_commit>
-prepare.cmd git@bitbucket.org:example/example-app.git example-app master HEAD~1 HEAD
+# Usage: argo-wf.cmd <repo_url> <repo_name> <repo_branch> <from_commit> <to_commit> <agent>
+argo-wf.cmd git@bitbucket.org:example/example-app.git example-app master HEAD~1 HEAD claude
 ```
 
-If you need to clone multiple "secondary" repositories, you can create a file named `secondary-clones.cmd` in the same directory as `prepare.cmd`. If this file exists, it will be automatically called by `prepare.cmd` to perform additional cloning operations. Example `secondary-clones.cmd`:
+If you need to clone multiple "secondary" repositories, you can create a file named `secondary-clones.cmd` in the same directory as `argo-wf.cmd`. If this file exists, it will be automatically called by `argo-wf.cmd` to perform additional cloning operations. Example `secondary-clones.cmd`:
 
 ```cmd
 @echo off
@@ -120,7 +121,7 @@ call clone-repo.cmd git@bitbucket.org:example/example-app2.git example-app2 mast
 call clone-repo.cmd git@bitbucket.org:example/example-additional-repo.git example-additional master
 ```
 
-Apply the supporting resources from `src/site/resources/argo/review/` (ensure `03-argo-secrets-map.yaml` is updated with your `anthropic-api-key`):
+Apply the supporting resources from `src/site/resources/argo/review/` (ensure `03-argo-secrets-map.yaml` is updated with your `ai-secrets`):
 
 ```shell
 kubectl apply -f src/site/resources/argo/review/00-argo-namespace.yaml
@@ -134,14 +135,17 @@ kubectl apply -f src/site/resources/argo/review/05-argo-rolebinding.yaml
 To submit this workflow with specific parameters:
 
 ```shell
-# Basic submit (uses default HEAD~1..HEAD)
-argo submit -n review src/site/resources/argo/review/argo-code-review.yaml
+# Basic submit (uses default HEAD~1..HEAD and agent=claude)
+argo submit -n review src/site/resources/argo/review/argo-wf.yaml \
+  -p uuid=$(uuid)
 
-# Submit for a specific repo and commit range
-argo submit -n review src/site/resources/argo/review/argo-code-review.yaml \
+# Submit for a specific repo, commit range, and agent
+argo submit -n review src/site/resources/argo/review/argo-wf.yaml \
   -p repo-name=my-repository \
   -p from-commit=v1.0.0 \
-  -p to-commit=v1.1.0
+  -p to-commit=v1.1.0 \
+  -p agent=cursor \
+  -p uuid=$(uuid)
 ```
 
 The default `working-dir` is set to `/var/opt/setmy.info/minikube`.
