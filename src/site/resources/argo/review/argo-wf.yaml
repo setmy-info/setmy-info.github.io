@@ -29,6 +29,8 @@ spec:
                 value: "claude"
             -   name: uuid
                 value: "427ae6c8-2d17-4e1c-be75-2c43883cdf95"
+            -   name: mode
+                value: "review"
     templates:
         -   name: pipeline
             steps:
@@ -38,9 +40,10 @@ spec:
                         template: clone-git
                 -   -   name: generate-diff
                         template: generate-diff
+                        when: "{{workflow.parameters.mode}} != code"
                 -   -   name: create-tasklist
                         template: create-tasklist
-                -   -   name: run-code-review
+                -   -   name: run-agent
                         template: run-agent
 
         -   name: setup-dir
@@ -84,7 +87,17 @@ spec:
                         echo "Cloning to: {{workflow.parameters.working-dir}}/clones/{{workflow.parameters.uuid}}"
                         cd "{{workflow.parameters.working-dir}}/clones/{{workflow.parameters.uuid}}"
                         git clone "{{workflow.parameters.repo-url}}"
-                        cd ../..
+
+                        cd "{{workflow.parameters.repo-name}}"
+                        if [ -f "additional-clone.sh" ]; then
+                          echo "Executing additional-clone.sh..."
+                          chmod +x additional-clone.sh
+                          ./additional-clone.sh
+                        fi
+                        cd ../../..
+                env:
+                    -   name: CLONE_BASE_DIR
+                        value: "{{workflow.parameters.working-dir}}/clones/{{workflow.parameters.uuid}}"
 
 
         -   name: generate-diff
@@ -166,7 +179,7 @@ spec:
                           fi
                           echo "Running Claude Review..."
                           claude --version
-                          claude --dangerously-skip-permissions "Start executing newly written tasklist TASKLIST.md"
+                          claude --output-format text --dangerously-skip-permissions "Start executing newly written tasklist TASKLIST.md"
                         elif [ "$AGENT" == "cursor" ]; then
                           mkdir -p "$CURSOR_CONFIG_DIR"
                           mkdir -p "$LOCAL_CONFIG_DIR/share/cursor-agent/versions"
@@ -175,7 +188,7 @@ spec:
                             curl https://cursor.com/install -fsS | bash
                           fi
                           echo "Running Cursor CLI..."
-                          agent -p "Start executing newly written tasklist TASKLIST.md" --force --trust
+                          agent -p "Start executing newly written tasklist TASKLIST.md" --force --trust --output-format text
                         else
                           echo "Unknown agent: $AGENT"
                           exit 1
