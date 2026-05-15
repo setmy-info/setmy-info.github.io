@@ -28,10 +28,9 @@ ERLANG_VERSION=${LATEST_TAG#OTP-}
 echo "Latest OTP tag: $LATEST_TAG ($ERLANG_VERSION)"
 git checkout "$LATEST_TAG"
 
-#./configure --prefix=/opt/erlang-$ERLANG_VERSION--without-javac
-#./configure --prefix=/opt/erlang-$ERLANG_VERSION --without-wx --without-javac
-#./configure --prefix=/opt/erlang-$ERLANG_VERSION --without-wx --without-javac --disable-debugger --disable-observer --disable-hipe 
-./configure --prefix=/opt/erlang-$ERLANG_VERSION --without-wx --without-javac --disable-debugger --disable-observer --disable-hipe --disable-et --disable-megaco --disable-dialyzer --disable-typer
+# https://github.com/erlang/otp/issues/7694
+export KERL_CONFIGURE_OPTIONS="--without-wx --without-debugger --without-observer --without-et --without-javac"
+./configure --prefix=/opt/erlang-$ERLANG_VERSION --without-wx --without-debugger --without-observer --without-et --without-javac
 
 make
 sudo make install
