@@ -52,3 +52,5 @@ sudo make install
 
 * [Erlang Home page](https://www.erlang.org/)
 * [Erlang Source Code](https://github.com/erlang/otp)
+* [Erlang VSCode Plugin](https://open-vsx.org/extension/elixir-lsp/elixir-ls)
+* [Erlang Package Repo](https://hex.pm/)
