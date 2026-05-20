@@ -16,6 +16,16 @@ Combined with REST best practices.
 | `user.$update()` | PUT    | Replace entire resource | `/users/42` | Replaces the whole object         | ✅ Yes         | ❌ No  | ❌ No      |
 | `user.$patch()`  | PATCH  | Partial update          | `/users/42` | Updates only specified fields     | ❌* Usually no | ❌ No  | ❌ No      |
 
+## Standard or defacto usage
+
+### Base
+
+Entity as a resource.
+
+```
+/{name}-api/v{version}/{entities}/{entityId}/{subEntities}/{subEntityId}
+```
+
 ## Usage, tips and tricks
 
 ### Coding tips and tricks
