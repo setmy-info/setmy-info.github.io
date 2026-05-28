@@ -4,9 +4,12 @@ metadata:
     name: nfs-client-test
     namespace: generator
     # kubectl exec -it nfs-client-test -n generator -- sh
-    # mount -t nfs nfs-server-service.generator.svc.cluster.local:/exports/packages /mnt/nfs/packages
-    # mount -t nfs nfs-server-service.generator.svc.cluster.local:/exports/minikube /mnt/nfs/minikube
-    # mount -t nfs nfs-server-service.generator.svc.cluster.local:/ /mnt/nfs
+    # mkdir /mnt/gintra
+    # mount -t nfs nfs-server-service.generator.svc.cluster.local:/ /mnt/gintra
+    # mount -t nfs nfs-server-service.generator.svc.cluster.local:/exports/gintra /mnt/gintra
+    # mount -t nfs nfs-server-service.generator.svc.cluster.local:/exports /mnt/gintra
+    # mkdir -p /mnt/gintra/organizations/ee/has/workflows
+    # mkdir -p /mnt/gintra/organizations/ee/has/ai
 spec:
     containers:
         -   name: client

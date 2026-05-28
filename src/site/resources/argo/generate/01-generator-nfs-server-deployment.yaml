@@ -31,5 +31,5 @@ spec:
             volumes:
                 -   name: var-data
                     hostPath:
-                        path: /var/opt/setmy.info
+                        path: /var/opt/setmy.info/gintra
                         type: DirectoryOrCreate

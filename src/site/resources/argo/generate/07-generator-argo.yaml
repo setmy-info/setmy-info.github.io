@@ -9,6 +9,10 @@ spec:
 
     arguments:
         parameters:
+            -   name: cc
+                value: "ee"
+            -   name: org
+                value: "has"
             -   name: uuid
                 value: "427ae6c8-2d17-4e1c-be75-2c43883cdf95"
 
@@ -19,12 +23,18 @@ spec:
                         template: make-working-dir
                         arguments:
                             parameters:
+                                -   name: cc
+                                    value: "{{workflow.parameters.cc}}"
+                                -   name: org
+                                    value: "{{workflow.parameters.org}}"
                                 -   name: uuid
                                     value: "{{workflow.parameters.uuid}}"
 
         -   name: make-working-dir
             inputs:
                 parameters:
+                    -   name: cc
+                    -   name: org
                     -   name: uuid
             container:
                 image: alpine
@@ -35,19 +45,29 @@ spec:
                     - |
                         set -e
 
+                        CC="{{inputs.parameters.cc}}"
+                        ORG="{{inputs.parameters.org}}"
                         UUID="{{inputs.parameters.uuid}}"
-                        WORKDIR="/mnt/nfs/minikube/$UUID"
+                        GINTRA_ROOT="/mnt/gintra"
+                        ORG_ROOT="$GINTRA_ROOT/organizations/$CC/$ORG"
+                        WORKFLOWS_DIR="$ORG_ROOT/workflows"
+                        AI_DIR="$ORG_ROOT/ai"
+                        WORKDIR="$WORKFLOWS_DIR/$UUID"
+                        AI_WORKDIR="$AI_DIR/$UUID"
 
                         apk add --no-cache nfs-utils
 
-                        mkdir -p /mnt/nfs
-                        mount -t nfs nfs-server-service.generator.svc.cluster.local:/ /mnt/nfs
+                        mkdir -p "$GINTRA_ROOT"
+                        mount -t nfs nfs-server-service.generator.svc.cluster.local:/ "$GINTRA_ROOT"
 
-                        echo "NFS contents:"
-                        ls /mnt/nfs
-                        ls /mnt/nfs/minikube
-                        ls $WORKDIR
+                        echo "Gintra root: $GINTRA_ROOT"
+                        ls "$GINTRA_ROOT"
+                        mkdir -p "$WORKFLOWS_DIR" "$AI_DIR"
+                        ls "$ORG_ROOT"
 
                         mkdir -p "$WORKDIR"
+                        mkdir -p "$AI_WORKDIR"
                         echo "Created: $WORKDIR"
-                        ls $WORKDIR
+                        ls "$WORKDIR"
+                        echo "Created: $AI_WORKDIR"
+                        ls "$AI_WORKDIR"
