@@ -66,6 +66,9 @@ git config --global mergetool.meld.path "c:\Program Files (x86)\Meld\Meld.exe"
 # Show remote origin repo url
 git config --get remote.origin.url
 
+# Make git fetch automatically prune deleted remote-tracking branches
+git config --global fetch.prune true
+
 git remote -v
 
 git remote rename OLDNAME NEWNAME
@@ -92,6 +95,8 @@ git fetch
 
 # Sync with origin, remove also local branches, those are deleted from remote
 git fetch --prune
+
+git fetch origin --prune
 
 git pull
 

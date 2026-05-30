@@ -25,8 +25,8 @@ Argo Workflows is implemented as a Kubernetes CRD (Custom Resource Definition).
 ## Installation
 
 ```shell
-ARGO_VERSION=4.0.2
-#ARGO_VERSION=3.5.15
+ARGO_VERSION=4.0.5
+#ARGO_VERSION=4.0.2
 kubectl create namespace argo
 kubectl apply --server-side -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v${ARGO_VERSION}/quick-start-minimal.yaml
 #kubectl apply --server-side -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v%ARGO_VERSION%/quick-start-minimal.yaml
@@ -67,7 +67,7 @@ kubectl delete pods -n argo -l workflows.argoproj.io/completed=true
 argo delete --completed --all-namespaces
 
 # Re-setup
-ARGO_VERSION=4.0.2
+ARGO_VERSION=4.0.5
 # TODO : notes about stop, delete, ..
 kubectl create namespace argo
 kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v${ARGO_VERSION}/quick-start-minimal.yaml

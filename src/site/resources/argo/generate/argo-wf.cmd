@@ -8,6 +8,6 @@ argo submit -n generator --watch ^
     -p cc=%CC% ^
     -p org=%ORG% ^
     -p uuid=%UUID% ^
-    07-generator-argo.yaml
+    09-generator-argo.yaml
 
 echo All done.

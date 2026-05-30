@@ -12,9 +12,15 @@
 sudo dnf -y install nfs-utils
 sudo systemctl start nfs-server
 sudo systemctl enable nfs-server
+sudo firewall-cmd --permanent --add-service=nfs
+sudo firewall-cmd --permanent --add-service=mountd
+sudo firewall-cmd --permanent --add-service=rpc-bind
+sudo firewall-cmd --reload
 sudo nano /etc/exports
 exportfs -a
 sudo systemctl status nfs-server
+sudo exportfs -v
+showmount -e localhost
 
 # Client
 sudo nano /etc/fstab
