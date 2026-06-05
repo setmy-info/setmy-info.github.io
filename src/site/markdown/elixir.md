@@ -190,6 +190,124 @@ end
 # => 22
 ```
 
+## Most Common Production Technologies in the Elixir Ecosystem (2026)
+
+This is a clean, production-focused overview of the most commonly used Elixir ecosystem technologies, including web,
+data, authentication (Keycloak + JWT), APIs, observability, and infrastructure.
+
+### 📦 Core Data & Database Layer
+
+| Name                      | Description                                                                                        |
+|---------------------------|----------------------------------------------------------------------------------------------------|
+| Ecto                      | Standard database toolkit in Elixir. Provides query building, schemas, changesets, and migrations. |
+| PostgreSQL                | Primary relational database used in most Elixir production systems.                                |
+| ETS (Erlang Term Storage) | High-performance in-memory key-value store for caching and state.                                  |
+| Mnesia                    | Erlang distributed database, used in niche distributed systems and internal state management.      |
+
+### 🌐 Web, API & Framework Layer
+
+| Name              | Description                                                                    |
+|-------------------|--------------------------------------------------------------------------------|
+| Phoenix Framework | Main web framework for building APIs, MVC applications, and real-time systems. |
+| Plug              | HTTP middleware layer used to compose request/response pipelines.              |
+| Bandit            | Modern HTTP server for Elixir, used in newer Phoenix deployments.              |
+| Phoenix LiveView  | Real-time server-rendered UI without requiring a JavaScript SPA.               |
+| Phoenix Channels  | WebSocket-based real-time communication layer.                                 |
+
+### 🔐 Authentication, Identity & Security (Keycloak + JWT)
+
+| Name                 | Description                                                                              |
+|----------------------|------------------------------------------------------------------------------------------|
+| Keycloak             | Identity and access management system (SSO, OAuth2, OpenID Connect, M2M authentication). |
+| OAuth 2.0            | Standard authorization framework used for delegated and machine-to-machine access.       |
+| OpenID Connect       | Identity layer on top of OAuth2 for authentication and identity verification.            |
+| JWT (JSON Web Token) | Stateless token format used for authentication and service-to-service communication.     |
+| Joken                | Elixir library for encoding and verifying JWT tokens.                                    |
+| JOSE                 | Low-level cryptographic library for signing and verifying JWT/JWS/JWE.                   |
+| Guardian             | Authentication library for Phoenix applications using JWT pipelines and guards.          |
+
+### ⚙️ Background Jobs & Async Processing
+
+| Name      | Description                                             |
+|-----------|---------------------------------------------------------|
+| Oban      | Production job processing library built on PostgreSQL.  |
+| GenServer | Core OTP abstraction for stateful concurrent processes. |
+| Quantum   | Cron-style scheduler for periodic tasks.                |
+
+### 🔌 API Communication & Microservices
+
+| Name             | Description                                                          |
+|------------------|----------------------------------------------------------------------|
+| gRPC             | High-performance RPC framework for service-to-service communication. |
+| GraphQL          | API query language used in Elixir via libraries like Absinthe.       |
+| Broadway         | Data ingestion and streaming pipeline (Kafka, SQS, etc.).            |
+| Phoenix Channels | Real-time WebSocket communication layer.                             |
+
+### 📄 API Documentation (Swagger / OpenAPI Equivalent)
+
+| Name                  | Description                                                                       |
+|-----------------------|-----------------------------------------------------------------------------------|
+| OpenAPI Specification | Standard format for describing REST APIs (Swagger equivalent in Java ecosystems). |
+| OpenApiSpex           | Elixir library for generating and validating OpenAPI specifications from code.    |
+| Phoenix Framework     | Often used to expose OpenAPI JSON endpoints and integrate API documentation.      |
+
+### 🧠 Architecture & Domain Design
+
+| Name             | Description                                                                           |
+|------------------|---------------------------------------------------------------------------------------|
+| Ash Framework    | High-level domain-driven framework for APIs, policies, and business logic automation. |
+| Phoenix Contexts | Recommended pattern for structuring business logic into domain boundaries.            |
+| Protocols        | Elixir language feature enabling polymorphism similar to interfaces in OOP languages. |
+
+### 📡 Observability & Monitoring
+
+| Name       | Description                                                        |
+|------------|--------------------------------------------------------------------|
+| Telemetry  | Standard instrumentation library for metrics and events.           |
+| Prometheus | Metrics collection and alerting system widely used in production.  |
+| Grafana    | Visualization and dashboarding for metrics and observability data. |
+| Sentry     | Error tracking and monitoring platform for production systems.     |
+
+### 🧪 Testing
+
+| Name       | Description                                            |
+|------------|--------------------------------------------------------|
+| ExUnit     | Built-in testing framework in Elixir.                  |
+| Mox        | Mocking library based on behaviours and contracts.     |
+| StreamData | Property-based testing library inspired by QuickCheck. |
+
+### 📦 Build & Development Tools
+
+| Name | Description                                                          |
+|------|----------------------------------------------------------------------|
+| Mix  | Build tool for dependency management, compilation, and task running. |
+| Hex  | Package manager and registry for Elixir dependencies.                |
+| IEx  | Interactive Elixir shell (REPL) for debugging and development.       |
+
+### 🚀 Deployment & Infrastructure
+
+| Name       | Description                                                       |
+|------------|-------------------------------------------------------------------|
+| Docker     | Containerization platform used for deploying Elixir applications. |
+| Kubernetes | Container orchestration system for scalable distributed systems.  |
+| Fly.io     | Popular hosting platform for Elixir and Phoenix applications.     |
+| Gigalixir  | Managed platform specifically designed for Elixir deployments.    |
+
+### 🧩 Summary
+
+A typical modern Elixir production stack looks like:
+
+- **Phoenix** → web & APIs
+- **Ecto + PostgreSQL** → data layer
+- **OTP (GenServer)** → concurrency & state
+- **Oban** → background jobs
+- **Keycloak + JWT** → authentication & M2M security
+- **OpenAPI + OpenApiSpex** → API documentation
+- **Telemetry + Prometheus** → observability
+
+Elixir's ecosystem is intentionally small but highly composable, relying on a few strong primitives rather than large
+monolithic frameworks.
+
 ### Coding tips and tricks
 
 ## See also
