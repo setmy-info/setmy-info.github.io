@@ -241,6 +241,8 @@ data, authentication (Keycloak + JWT), APIs, observability, and infrastructure.
 | gRPC             | High-performance RPC framework for service-to-service communication. |
 | GraphQL          | API query language used in Elixir via libraries like Absinthe.       |
 | Broadway         | Data ingestion and streaming pipeline (Kafka, SQS, etc.).            |
+| Tortoise         | De facto standard MQTT client for Elixir.                            |
+| EMQX ExMQTT      | Elixir wrapper for the EMQX MQTT client.                             |
 | Phoenix Channels | Real-time WebSocket communication layer.                             |
 
 ### 📄 API Documentation (Swagger / OpenAPI Equivalent)
@@ -292,6 +294,7 @@ data, authentication (Keycloak + JWT), APIs, observability, and infrastructure.
 | Kubernetes | Container orchestration system for scalable distributed systems.  |
 | Fly.io     | Popular hosting platform for Elixir and Phoenix applications.     |
 | Gigalixir  | Managed platform specifically designed for Elixir deployments.    |
+| Nerves     | Framework and platform for building embedded systems with Elixir. |
 
 ### 🧩 Summary
 
@@ -312,5 +315,8 @@ monolithic frameworks.
 
 ## See also
 
+* [Nerves Project](https://nerves-project.org/)
+* [Tortoise](https://github.com/gausby/tortoise)
+* [EMQX ExMQTT](https://github.com/emqx/exmqtt)
 * [xxxx](http://yyyyy)
 * [Erlang Package Repo](https://hex.pm/)
