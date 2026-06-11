@@ -33,6 +33,8 @@ kubectl apply --server-side -n argo -f https://github.com/argoproj/argo-workflow
 
 #?
 kubectl patch deployment argo-server --namespace argo --type=json -p="[{\"op\":\"replace\",\"path\":\"/spec/template/spec/containers/0/args\",\"value\":[\"server\",\"--auth-mode=server\"]}]"
+# Error in argo WF-s
+kubectl patch configmap workflow-controller-configmap -n argo --type merge -p '{"data":{"artifactRepository":"archiveLogs: false\n"}}'
 kubectl -n argo port-forward service/argo-server 2746:2746
 #kubectl -n argo port-forward svc/argo-server 2746:2746
 #kubectl -n argo port-forward service/argo-server 8080:2746
