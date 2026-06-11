@@ -2,7 +2,9 @@
 
 ## Information
 
-Postfix is an open-source mail transfer agent (`MTA`) used to accept, route, relay, and deliver email over `SMTP`. In many teams it is used as the local or environment-level mail relay that applications talk to when they need to send notifications, password resets, invoices, alerts, and other outbound messages.
+Postfix is an open-source mail transfer agent (`MTA`) used to accept, route, relay, and deliver email over `SMTP`. In
+many teams it is used as the local or environment-level mail relay that applications talk to when they need to send
+notifications, password resets, invoices, alerts, and other outbound messages.
 
 In practice, Postfix is often chosen when teams need a lightweight and well-understood SMTP component that can:
 
@@ -17,17 +19,21 @@ In practice, Postfix is often chosen when teams need a lightweight and well-unde
 * **SMTP server and relay**: Receives mail from local clients or upstream systems and forwards it to the next hop.
 * **Mail queueing**: Retries delivery automatically when the destination is temporarily unavailable.
 * **Local submission**: Applications can submit mail to `localhost:25` or an authenticated submission port.
-* **Upstream relay support**: Can forward outgoing mail through an ISP relay, cloud email provider, or internal smart host.
+* **Upstream relay support**: Can forward outgoing mail through an ISP relay, cloud email provider, or internal smart
+  host.
 * **TLS support**: Supports opportunistic or required encryption for SMTP client and server sides.
 * **SASL authentication**: Can authenticate to an upstream relay using username and password credentials.
-* **Policy and restriction controls**: Supports relay restrictions, sender rules, network allow lists, and anti-open-relay configuration.
-* **Compatibility with common mail tools**: Works with `mailx`, `sendmail`-compatible commands, scripts, cron jobs, and many application frameworks.
+* **Policy and restriction controls**: Supports relay restrictions, sender rules, network allow lists, and
+  anti-open-relay configuration.
+* **Compatibility with common mail tools**: Works with `mailx`, `sendmail`-compatible commands, scripts, cron jobs, and
+  many application frameworks.
 
 ### Common Developer Use Cases
 
 * Run a local SMTP relay for development and integration testing.
 * Relay application mail through an ISP-provided SMTP server.
-* Keep application code simple by letting apps send to a local Postfix instance rather than directly to the public internet.
+* Keep application code simple by letting apps send to a local Postfix instance rather than directly to the public
+  internet.
 * Capture or reroute outgoing mail in non-production environments.
 * Standardize outbound email for multiple services on one machine or inside one Docker network.
 
@@ -54,7 +60,8 @@ In Estonia and similar residential or SME internet environments, it is common th
 * you authenticate with the mailbox username and password provided by that ISP,
 * and you use the submission port such as `587` with `STARTTLS` or `465` with implicit `TLS`.
 
-If direct external delivery does not work, assume first that your ISP expects you to use its relay credentials rather than allowing anonymous outbound mail from your connection.
+If direct external delivery does not work, assume first that your ISP expects you to use its relay credentials rather
+than allowing anonymous outbound mail from your connection.
 
 ## Installation
 
@@ -86,7 +93,9 @@ If direct external delivery does not work, assume first that your ISP expects yo
 
 ### Debian, Ubuntu
 
-During package installation you may be asked for a mail configuration type. For a developer relay host, `Internet Site` or `Satellite system` is the most common choice depending on whether the machine delivers directly or always relays through an upstream server.
+During package installation you may be asked for a mail configuration type. For a developer relay host, `Internet Site`
+or `Satellite system` is the most common choice depending on whether the machine delivers directly or always relays
+through an upstream server.
 
 1. **Install Postfix**:
    ```bash
@@ -100,7 +109,8 @@ During package installation you may be asked for a mail configuration type. For 
 
 ### macOS
 
-Postfix is historically included with macOS, but the platform is not ideal for running a long-term customized mail relay. For quick local experiments, the built-in binary may be enough:
+Postfix is historically included with macOS, but the platform is not ideal for running a long-term customized mail
+relay. For quick local experiments, the built-in binary may be enough:
 
 ```bash
 postconf mail_version
@@ -128,11 +138,13 @@ pkg install service/network/smtp/postfix
 svcadm enable postfix
 ```
 
-If the package is not available in your configured repository, Docker or another container runtime is usually the faster developer path.
+If the package is not available in your configured repository, Docker or another container runtime is usually the faster
+developer path.
 
 ## Setup with Docker for Developer
 
-For developers, the most practical setup is usually **not** a full public mail server. Instead, run Postfix as a **local relay container** and forward all outgoing mail to an upstream SMTP provider.
+For developers, the most practical setup is usually **not** a full public mail server. Instead, run Postfix as a **local
+relay container** and forward all outgoing mail to an upstream SMTP provider.
 
 This approach is useful when:
 
@@ -199,7 +211,8 @@ RELAYHOST_USERNAME=mailbox@example.com
 RELAYHOST_PASSWORD=change-this-password
 ```
 
-This is often the quickest way for developers to share a standard local mail relay setup without hard-coding credentials in source-controlled files.
+This is often the quickest way for developers to share a standard local mail relay setup without hard-coding credentials
+in source-controlled files.
 
 ### Quick Developer Flow
 
@@ -218,7 +231,8 @@ smtp.password=
 smtp.starttls.enable=false
 ```
 
-In this model, the **application does not authenticate to the upstream ISP**. Instead, the application sends locally to Postfix, and Postfix performs the authenticated upstream relay.
+In this model, the **application does not authenticate to the upstream ISP**. Instead, the application sends locally to
+Postfix, and Postfix performs the authenticated upstream relay.
 
 ## Configuration
 
@@ -279,7 +293,8 @@ When your ISP provides the outgoing mail server, Postfix usually needs these val
 * **Username**: often the full mailbox address such as `user@isp-domain.example`
 * **Password**: the mailbox password or an app-specific password
 * **TLS mode**: `STARTTLS` on `587` is the most common pattern
-* **Allowed sender address**: some providers only allow `From:` addresses that belong to the authenticated mailbox or domain
+* **Allowed sender address**: some providers only allow `From:` addresses that belong to the authenticated mailbox or
+  domain
 
 Before configuring Postfix, confirm these provider-specific details:
 
@@ -313,7 +328,8 @@ smtp_tls_security_level = encrypt
 [smtp.isp.example]:587 developer@isp.example:change-this-password
 ```
 
-If your ISP only allows mail from its own address space, also make sure your application sends using a matching `From:` address such as `developer@isp.example` or another address explicitly permitted by the provider.
+If your ISP only allows mail from its own address space, also make sure your application sends using a matching `From:`
+address such as `developer@isp.example` or another address explicitly permitted by the provider.
 
 ### Rocky Linux (`systemd` service)
 
@@ -428,16 +444,19 @@ The second option is often easier when:
 * **Watch the mail queue** with `mailq` or `postqueue -p` when delivery looks delayed.
 * **Use `postconf -n`** to inspect the active non-default configuration quickly.
 * **Use `swaks`** to test SMTP behavior before blaming application code.
-* **Match the sender address to the ISP account rules** because some providers reject or rewrite mail from unrelated domains.
+* **Match the sender address to the ISP account rules** because some providers reject or rewrite mail from unrelated
+  domains.
 
 ### Troubleshooting Notes
 
 Common symptoms and likely causes:
 
 * **`Relay access denied`**: wrong relay policy, sender restriction, or missing authentication.
-* **`SASL authentication failed`**: wrong username, wrong password, wrong submission port, or the provider expects the full email address as username.
+* **`SASL authentication failed`**: wrong username, wrong password, wrong submission port, or the provider expects the
+  full email address as username.
 * **`Connection timed out` on port `25`**: your ISP may block direct outbound SMTP.
-* **`Sender address rejected`**: your upstream provider may only allow sender identities from the authenticated mailbox or domain.
+* **`Sender address rejected`**: your upstream provider may only allow sender identities from the authenticated mailbox
+  or domain.
 * **Messages remain in queue**: inspect logs and confirm upstream hostname, credentials, and TLS settings.
 
 Useful commands:
@@ -457,7 +476,8 @@ journalctl -u postfix -f
 
 ### Backup and Restore Notes
 
-For Postfix relay setups, the most important backup scope is usually **configuration and credentials**, not large mailbox stores.
+For Postfix relay setups, the most important backup scope is usually **configuration and credentials**, not large
+mailbox stores.
 
 Recommended backup scope:
 
@@ -476,8 +496,10 @@ sudo tar -czf postfix-config-$(date +%F).tar.gz /etc/postfix
 Important backup notes:
 
 * Protect backups because relay credentials are sensitive.
-* If using containerized Postfix, keep compose files and environment templates under version control, but keep real passwords outside the repository.
-* After restore, always validate that `postmap` has been regenerated if needed and that the relay credentials still work.
+* If using containerized Postfix, keep compose files and environment templates under version control, but keep real
+  passwords outside the repository.
+* After restore, always validate that `postmap` has been regenerated if needed and that the relay credentials still
+  work.
 
 ## See also
 

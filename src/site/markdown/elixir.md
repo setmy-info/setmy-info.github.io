@@ -164,30 +164,85 @@ end
 
 
 # ============================================================
-# USAGE EXAMPLES (comments only)
+# USAGE EXAMPLES
 # ============================================================
 
-# FPPatterns.composition_example(10)
+defmodule MySaver do
+  def save(value), do: {:ok, "Saved: #{value}"}
+end
+
+composition_result = FPPatterns.composition_example(10)
 # => 22
 
-# FPPatterns.apply_twice(fn x -> x * 2 end, 5)
+apply_twice_result = FPPatterns.apply_twice(fn x -> x * 2 end, 5)
 # => 20
 
-# FPPatterns.map_filter_reduce([1,2,3,4])
-# => pipeline result
+map_filter_reduce_result = FPPatterns.map_filter_reduce([1, 2, 3, 4])
+# => 14
 
-# FPPatterns.pipeline("  hello  ")
+pipeline_result = FPPatterns.pipeline("  hello  ")
 # => {:ok, "Saved: HELLO"}
 
-# FPPatterns.result_pipeline(10)
-# => {:ok, ...}
+result_pipeline_result = FPPatterns.result_pipeline(10)
+# => {:ok, 19}
 
-# FPPatterns.process("hello", &String.upcase/1)
+process_result = FPPatterns.process("hello", &String.upcase/1)
 # => "HELLO"
 
-# f = FPPatterns.compose(fn x -> x + 1 end, fn x -> x * 2 end)
-# f.(10)
+f = FPPatterns.compose(fn x -> x + 1 end, fn x -> x * 2 end)
+composed_result = f.(10)
 # => 22
+
+user = %{
+  name: "Mari",
+  age: 30,
+  greet: fn u -> "Hello " <> u.name end,
+  bye: fn u -> "Bye " <> u.name end
+}
+
+greet_result = user.greet.(user)
+# => "Hello Mari"
+bye_result = user.bye.(user)
+# => "Bye Mari"
+
+user = %{}
+user = Map.put(user, :name, "Mari")
+user = Map.put(user, :age, 30)
+# => %{name: "Mari", age: 30}
+
+registry = %{
+  trim: &String.trim/1,
+  upcase: &String.upcase/1,
+  save: &MySaver.save/1
+}
+
+config = [:trim, :upcase, :save]
+input = "  hello  "
+
+pipeline =
+  Enum.map(config, fn step ->
+    registry[step]
+  end)
+
+registry_pipeline_result =
+  Enum.reduce(pipeline, input, fn fun, acc ->
+    fun.(acc)
+  end)
+# => {:ok, "Saved: HELLO"}
+
+%{
+  composition_result: composition_result,
+  apply_twice_result: apply_twice_result,
+  map_filter_reduce_result: map_filter_reduce_result,
+  pipeline_result: pipeline_result,
+  result_pipeline_result: result_pipeline_result,
+  process_result: process_result,
+  composed_result: composed_result,
+  greet_result: greet_result,
+  bye_result: bye_result,
+  updated_user: user,
+  registry_pipeline_result: registry_pipeline_result
+}
 ```
 
 ## Most Common Production Technologies in the Elixir Ecosystem (2026)
@@ -201,6 +256,7 @@ data, authentication (Keycloak + JWT), APIs, observability, and infrastructure.
 |---------------------------|----------------------------------------------------------------------------------------------------|
 | Ecto                      | Standard database toolkit in Elixir. Provides query building, schemas, changesets, and migrations. |
 | PostgreSQL                | Primary relational database used in most Elixir production systems.                                |
+| Bolt.Sips                 | Neo4j driver for Elixir, used to connect Elixir applications to Neo4j over the Bolt protocol.      |
 | ETS (Erlang Term Storage) | High-performance in-memory key-value store for caching and state.                                  |
 | Mnesia                    | Erlang distributed database, used in niche distributed systems and internal state management.      |
 
@@ -236,14 +292,16 @@ data, authentication (Keycloak + JWT), APIs, observability, and infrastructure.
 
 ### 🔌 API Communication & Microservices
 
-| Name             | Description                                                          |
-|------------------|----------------------------------------------------------------------|
-| gRPC             | High-performance RPC framework for service-to-service communication. |
-| GraphQL          | API query language used in Elixir via libraries like Absinthe.       |
-| Broadway         | Data ingestion and streaming pipeline (Kafka, SQS, etc.).            |
-| Tortoise         | De facto standard MQTT client for Elixir.                            |
-| EMQX ExMQTT      | Elixir wrapper for the EMQX MQTT client.                             |
-| Phoenix Channels | Real-time WebSocket communication layer.                             |
+| Name             | Description                                                                                                    |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| gRPC             | High-performance RPC framework for service-to-service communication.                                           |
+| GraphQL          | API query language used in Elixir via libraries like Absinthe.                                                 |
+| Broadway         | Data ingestion and streaming pipeline (Kafka, SQS, etc.).                                                      |
+| AMQP             | Elixir client library commonly used to communicate with RabbitMQ over the AMQP protocol.                       |
+| :eldap           | Built-in Erlang/OTP LDAP client that Elixir applications can use for LDAP authentication and directory access. |
+| Tortoise         | De facto standard MQTT client for Elixir.                                                                      |
+| EMQX ExMQTT      | Elixir wrapper around the `emqtt` MQTT client from EMQX.                                                       |
+| Phoenix Channels | Real-time WebSocket communication layer.                                                                       |
 
 ### 📄 API Documentation (Swagger / OpenAPI Equivalent)
 

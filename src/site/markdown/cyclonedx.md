@@ -2,7 +2,10 @@
 
 ## Information
 
-`CycloneDX` is an open standard for software bill of materials (`SBOM`) and related supply chain security artifacts. It is used to describe application components, libraries, services, dependencies, and associated metadata in a machine-readable way so that build systems, security tools, and governance platforms can exchange software inventory data consistently.
+`CycloneDX` is an open standard for software bill of materials (`SBOM`) and related supply chain security artifacts. It
+is used to describe application components, libraries, services, dependencies, and associated metadata in a
+machine-readable way so that build systems, security tools, and governance platforms can exchange software inventory
+data consistently.
 
 ### Main Functionalities and Features
 

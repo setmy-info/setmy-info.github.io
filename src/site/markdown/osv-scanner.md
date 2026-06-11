@@ -2,13 +2,18 @@
 
 ## Information
 
-`OSV-Scanner` is an open-source vulnerability scanner from Google that checks project dependencies, lockfiles, source trees, container images, and related artifacts against the `OSV` vulnerability database. In practice, it is used by developers and security teams to detect known vulnerabilities early, work with open vulnerability data, and integrate dependency risk checks into local workflows and `CI/CD` pipelines.
+`OSV-Scanner` is an open-source vulnerability scanner from Google that checks project dependencies, lockfiles, source
+trees, container images, and related artifacts against the `OSV` vulnerability database. In practice, it is used by
+developers and security teams to detect known vulnerabilities early, work with open vulnerability data, and integrate
+dependency risk checks into local workflows and `CI/CD` pipelines.
 
 ### Main Functionalities and Features
 
-* **Dependency and Lockfile Scanning**: Detects vulnerable packages from supported manifests and lockfiles across multiple ecosystems.
+* **Dependency and Lockfile Scanning**: Detects vulnerable packages from supported manifests and lockfiles across
+  multiple ecosystems.
 * **Source Directory Scanning**: Recursively scans repositories and source trees for supported package metadata.
-* **Container Image Scanning**: Analyzes container images for vulnerable operating system packages and language-specific dependencies.
+* **Container Image Scanning**: Analyzes container images for vulnerable operating system packages and language-specific
+  dependencies.
 * **Official `OSV` Database Frontend**: Uses the open `OSV.dev` vulnerability database and related ecosystem data.
 * **Offline Scanning Support**: Can work with downloaded local vulnerability databases when network access is limited.
 * **Guided Remediation**: Offers remediation suggestions and related upgrade guidance for selected ecosystems.
@@ -27,7 +32,8 @@
 
 ### Prebuilt Binary
 
-The recommended installation method is usually to download a prebuilt binary from the project releases for your platform.
+The recommended installation method is usually to download a prebuilt binary from the project releases for your
+platform.
 
 ### Build with Go
 
@@ -40,7 +46,8 @@ go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest
 ### Practical Notes
 
 * Prefer a pinned version in automation instead of always pulling the latest release.
-* Verify which `OSV-Scanner` major version your workflow expects, especially when older `V1` material still exists online.
+* Verify which `OSV-Scanner` major version your workflow expects, especially when older `V1` material still exists
+  online.
 * In restricted environments, plan how offline database downloads and updates will be managed.
 
 ## Configuration
@@ -53,7 +60,8 @@ Typical configuration concerns include:
 * supported package ecosystem coverage for the repositories you scan,
 * and handling of external services such as `OSV.dev` and related metadata APIs.
 
-For team environments, document which commands are mandatory in local development and `CI`, how findings are triaged, and when remediation suggestions may be applied automatically or only reviewed manually.
+For team environments, document which commands are mandatory in local development and `CI`, how findings are triaged,
+and when remediation suggestions may be applied automatically or only reviewed manually.
 
 ## Usage, tips and tricks
 

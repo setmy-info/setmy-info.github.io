@@ -2,15 +2,20 @@
 
 ## Information
 
-`git-cliff` is an open-source changelog generator for Git repositories. It is designed to create release notes and changelog files from commit history, with strong emphasis on customization, conventional commit workflows, and configuration-driven output formatting. In practice, it is useful for teams that want repeatable changelog generation in local development, release automation, and `CI/CD` pipelines.
+`git-cliff` is an open-source changelog generator for Git repositories. It is designed to create release notes and
+changelog files from commit history, with strong emphasis on customization, conventional commit workflows, and
+configuration-driven output formatting. In practice, it is useful for teams that want repeatable changelog generation in
+local development, release automation, and `CI/CD` pipelines.
 
 ### Main Functionalities and Features
 
-* **Automated Changelog Generation**: Builds changelogs from Git history instead of maintaining every release note manually.
+* **Automated Changelog Generation**: Builds changelogs from Git history instead of maintaining every release note
+  manually.
 * **Highly Customizable Output**: Uses configuration files and regex-based parsing to shape the final changelog format.
 * **Conventional Commits Support**: Works especially well with repositories that follow conventional commit conventions.
 * **Release-oriented Workflow Support**: Useful for generating release notes between tags or versions.
-* **CLI and Library Usage**: Primarily used as a command-line tool and can also be embedded in Rust projects as a library.
+* **CLI and Library Usage**: Primarily used as a command-line tool and can also be embedded in Rust projects as a
+  library.
 * **Easy Automation**: Fits naturally into build scripts, release pipelines, and repository maintenance workflows.
 
 ### Common Developer and Release Engineering Use Cases
@@ -23,7 +28,9 @@
 
 ## Installation
 
-`git-cliff` provides installation options through its documentation and release distribution channels. In practice, teams usually install it either from a package manager, from release binaries, or by integrating it into existing language- or toolchain-specific workflows.
+`git-cliff` provides installation options through its documentation and release distribution channels. In practice,
+teams usually install it either from a package manager, from release binaries, or by integrating it into existing
+language- or toolchain-specific workflows.
 
 ### Practical Notes
 
@@ -41,7 +48,8 @@ Typical configuration areas include:
 * tag and release range selection,
 * and inclusion or exclusion of commits that should not appear in public changelogs.
 
-Because `git-cliff` is intentionally very customizable, the most important team practice is to version the configuration file together with the repository and document which release process is expected to use it.
+Because `git-cliff` is intentionally very customizable, the most important team practice is to version the configuration
+file together with the repository and document which release process is expected to use it.
 
 ## Usage, tips and tricks
 

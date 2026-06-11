@@ -2,16 +2,21 @@
 
 ## Information
 
-`single-spa` is a JavaScript microfrontend framework and router for building front-end applications from multiple independently developed modules. In practice, teams use it to compose several `SPA` or frontend applications into one browser experience while allowing different teams to ship and operate their parts with more autonomy.
+`single-spa` is a JavaScript microfrontend framework and router for building front-end applications from multiple
+independently developed modules. In practice, teams use it to compose several `SPA` or frontend applications into one
+browser experience while allowing different teams to ship and operate their parts with more autonomy.
 
 ### Main Functionalities and Features
 
 * **Microfrontend Orchestration**: Mounts and unmounts independently delivered frontend applications in one page.
-* **Framework Freedom**: Commonly used with `React`, `Angular`, `Vue`, and framework-agnostic modules in the same overall application.
+* **Framework Freedom**: Commonly used with `React`, `Angular`, `Vue`, and framework-agnostic modules in the same
+  overall application.
 * **Route-based Activation**: Loads applications only when their route or activation condition matches.
-* **Incremental Migration Support**: Useful for introducing new frontend modules next to older applications instead of rewriting everything at once.
+* **Incremental Migration Support**: Useful for introducing new frontend modules next to older applications instead of
+  rewriting everything at once.
 * **Team Autonomy**: Helps separate frontend ownership by domain, business capability, or product area.
-* **Shared Shell Possibilities**: Can be combined with shared navigation, authentication, design systems, and platform utilities.
+* **Shared Shell Possibilities**: Can be combined with shared navigation, authentication, design systems, and platform
+  utilities.
 
 ### Common Developer Use Cases
 
@@ -30,11 +35,13 @@ For most projects, install `single-spa` from the JavaScript package ecosystem:
 npm install single-spa
 ```
 
-In practice, teams usually install it together with a broader microfrontend setup, for example a root configuration application, shared dependency strategy, and deployment approach for each frontend module.
+In practice, teams usually install it together with a broader microfrontend setup, for example a root configuration
+application, shared dependency strategy, and deployment approach for each frontend module.
 
 ### Practical Notes
 
-* The framework itself is only one part of the solution; you still need conventions for deployment, shared libraries, and local development.
+* The framework itself is only one part of the solution; you still need conventions for deployment, shared libraries,
+  and local development.
 * Review the official recommended setup when starting a new microfrontend platform from scratch.
 * Keep runtime ownership and versioning of shared dependencies explicit.
 
@@ -49,7 +56,8 @@ Typical configuration areas include:
 * error handling between microfrontends,
 * and deployment / version rollout conventions.
 
-For team environments, document which applications are loaded by which routes, who owns them, and how shared libraries are versioned.
+For team environments, document which applications are loaded by which routes, who owns them, and how shared libraries
+are versioned.
 
 ## Usage, tips and tricks
 

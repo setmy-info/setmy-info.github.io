@@ -2,7 +2,9 @@
 
 ## Information
 
-`SDL` (`Simple DirectMedia Layer`) is a cross-platform multimedia and low-level application development library. It is widely used for games, emulators, visualization tools, media applications, and interactive software that need portable access to graphics, audio, input devices, timers, and window management.
+`SDL` (`Simple DirectMedia Layer`) is a cross-platform multimedia and low-level application development library. It is
+widely used for games, emulators, visualization tools, media applications, and interactive software that need portable
+access to graphics, audio, input devices, timers, and window management.
 
 ### Main Functionalities and Features
 

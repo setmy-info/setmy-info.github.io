@@ -2,7 +2,9 @@
 
 ## Information
 
-`Grype` is an open-source vulnerability scanner for container images, filesystems, and `SBOM` inputs. It is commonly used in developer workstations, CI/CD pipelines, and container security workflows to identify known vulnerabilities in operating system packages and application dependencies.
+`Grype` is an open-source vulnerability scanner for container images, filesystems, and `SBOM` inputs. It is commonly
+used in developer workstations, CI/CD pipelines, and container security workflows to identify known vulnerabilities in
+operating system packages and application dependencies.
 
 ### Main Functionalities and Features
 
@@ -32,7 +34,8 @@ curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
 
 ### Other Installation Options
 
-The project also documents additional installation methods such as package managers, container images, and platform-specific distribution channels.
+The project also documents additional installation methods such as package managers, container images, and
+platform-specific distribution channels.
 
 ## Configuration
 

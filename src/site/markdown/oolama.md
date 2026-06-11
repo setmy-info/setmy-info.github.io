@@ -1,4 +1,29 @@
-# ollama.md
+# Ollama
+
+## Information
+
+[Ollama](https://ollama.com/) is a local LLM runtime for downloading, serving, and running AI models on your own
+machine.
+It is commonly used for private local AI workflows, development experiments, API-based integrations, and testing models
+without relying on a hosted cloud inference provider.
+
+## Recommended models to know
+
+If you use Ollama as a local runtime, these model families are worth knowing because they are commonly used for general
+reasoning, coding, math, multilingual work, and research-oriented experimentation.
+
+* [Qwen2.5 / Qwen3](qwen.html) - strong general-purpose open models.
+* [Qwen2.5-Coder](qwen-coder.html) - Qwen family variant focused on programming tasks.
+* [NVIDIA OpenReasoning-Nemotron](nvidia-openreasoning-nemotron.html) - tuned for math and reasoning-heavy workflows.
+* [DeepSeek](deepseek.html) - powerful open model family with strong general and coding relevance.
+* [Yi](yi.html) - open-license family with good multilingual support.
+* [InternLM](internlm.html) - research-friendly family with Apache 2.0 licensed variants.
+
+### Practical Ollama note
+
+Model availability in Ollama depends on what has been packaged or imported for Ollama usage. Some of these families may
+be available directly from the Ollama library, while others may require checking the latest model names, tags,
+quantizations, or community packaging status before pulling them locally.
 
 ## Ollama Setup Guide (Local LLM Runtime)
 
@@ -149,3 +174,12 @@ export OLLAMA_PORT=11434
 * CPU works but is slower
 * GPU strongly recommended for >13B models
 * All processing is local (no API cost, full privacy)
+
+## See also
+
+* [Qwen2.5 / Qwen3](qwen.html)
+* [Qwen2.5-Coder](qwen-coder.html)
+* [NVIDIA OpenReasoning-Nemotron](nvidia-openreasoning-nemotron.html)
+* [DeepSeek](deepseek.html)
+* [Yi](yi.html)
+* [InternLM](internlm.html)

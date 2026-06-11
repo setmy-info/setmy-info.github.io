@@ -146,6 +146,67 @@ target
 
 ## Configuration
 
+## Example
+
+```
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName jhipsterFirst
+    buildTool maven
+    cacheProvider infinispan
+    clientFramework angular
+    clientTheme none
+    creationTimestamp 1703150424899
+    databaseType sql
+    devDatabaseType h2Disk
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+	# Uncomment in case of generation problems
+    #feignClient false
+    jhipsterVersion "8.1.0"
+    jwtSecretKey "xxxx="
+    languages [et, en, ru, sk, ua]
+    messageBroker false
+    microfrontends []
+    nativeLanguage et
+    packageName info.setmy.jhipster
+    prodDatabaseType postgresql
+    reactive false
+    searchEngine false
+    serviceDiscoveryType false
+    testFrameworks [cucumber, cypress]
+    websocket false
+    withAdminUi true
+  }
+
+  entities Author, Book
+}
+
+@ChangelogDate("20231221151227")
+entity Author {
+  name String required minlength(5) maxlength(20)
+  birthDate LocalDate
+  notes String
+}
+@ChangelogDate("20231221152455")
+entity Book {
+  name String required
+  description String maxlength(125)
+}
+relationship ManyToOne {
+  Book{author} to Author
+}
+
+dto Author, Book with mapstruct
+paginate Author, Book with pagination
+service Author, Book with serviceClass
+search Author, Book with no
+filter Author, Book
+```
+
 ## Usage, tips and tricks
 
 ### Coding tips and tricks

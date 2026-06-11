@@ -2,14 +2,17 @@
 
 ## Information
 
-`SystemJS` is a dynamic JavaScript module loader commonly used in browser-based applications and microfrontend setups. In practice, it is often used to load JavaScript modules at runtime, work with import maps, and support scenarios where applications or frontend modules need to be composed and updated independently.
+`SystemJS` is a dynamic JavaScript module loader commonly used in browser-based applications and microfrontend setups.
+In practice, it is often used to load JavaScript modules at runtime, work with import maps, and support scenarios where
+applications or frontend modules need to be composed and updated independently.
 
 ### Main Functionalities and Features
 
 * **Dynamic Module Loading**: Loads JavaScript modules in the browser at runtime.
 * **Import Map Support**: Commonly used with browser import maps to control how module specifiers resolve.
 * **Microfrontend Compatibility**: Frequently used together with `single-spa` and similar architectures.
-* **Legacy and Mixed Environment Support**: Helps bridge environments where native module loading support or compatibility requirements vary.
+* **Legacy and Mixed Environment Support**: Helps bridge environments where native module loading support or
+  compatibility requirements vary.
 * **Pluggable Loading Behavior**: Can be extended for custom resolution and loading workflows in advanced scenarios.
 * **Runtime Composition**: Useful when separate frontend artifacts are deployed and wired together after build time.
 
@@ -30,7 +33,8 @@ For package-managed projects, install `SystemJS` from `npm`:
 npm install systemjs
 ```
 
-For browser-based setups, teams may also load the runtime from a hosted asset or build output, depending on how their import maps and deployment process are managed.
+For browser-based setups, teams may also load the runtime from a hosted asset or build output, depending on how their
+import maps and deployment process are managed.
 
 ### Practical Notes
 
@@ -70,7 +74,8 @@ For team usage, document who owns each module entry and how runtime mapping chan
 
 ### Practical Notes
 
-* Use `SystemJS` when runtime module composition is part of your architecture, not only as a default choice for every frontend.
+* Use `SystemJS` when runtime module composition is part of your architecture, not only as a default choice for every
+  frontend.
 * Keep import maps small, readable, and environment-aware.
 * Test the integrated runtime behavior, because resolution issues often appear only after deployment.
 * When used with microfrontends, align `SystemJS` configuration with the shell, routing, and release strategy.

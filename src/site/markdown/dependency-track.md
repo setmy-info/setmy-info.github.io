@@ -2,17 +2,22 @@
 
 ## Information
 
-Dependency-Track is an open-source software supply chain security platform focused on continuous `SBOM` analysis. In practice, it is used to ingest software bill of materials data, monitor component risk over time, correlate vulnerabilities, and help teams reduce exposure across applications, services, and product portfolios.
+Dependency-Track is an open-source software supply chain security platform focused on continuous `SBOM` analysis. In
+practice, it is used to ingest software bill of materials data, monitor component risk over time, correlate
+vulnerabilities, and help teams reduce exposure across applications, services, and product portfolios.
 
 ### Main Functionalities and Features
 
-* **Continuous `SBOM` Analysis**: Tracks component inventories over time instead of treating analysis as a one-time scan.
+* **Continuous `SBOM` Analysis**: Tracks component inventories over time instead of treating analysis as a one-time
+  scan.
 * **Vulnerability Correlation**: Maps components and versions to known vulnerabilities and related risk intelligence.
-* **Policy and Risk Visibility**: Helps security and engineering teams review risk by project, portfolio, component, and severity.
+* **Policy and Risk Visibility**: Helps security and engineering teams review risk by project, portfolio, component, and
+  severity.
 * **Standards-Based `SBOM` Support**: Commonly used together with `CycloneDX` and similar software inventory workflows.
 * **Portfolio and Project Views**: Useful when one organization needs to monitor many applications and teams centrally.
 * **Notifications and Integrations**: Can be integrated with build pipelines, ticketing, and operational workflows.
-* **REST API and Automation**: Supports automated uploads, reporting, and synchronization from CI/CD or external systems.
+* **REST API and Automation**: Supports automated uploads, reporting, and synchronization from CI/CD or external
+  systems.
 
 ### Common Developer and DevSecOps Use Cases
 
@@ -26,7 +31,9 @@ Dependency-Track is an open-source software supply chain security platform focus
 
 ### Docker / Container-based Setup
 
-Dependency-Track is commonly deployed as a containerized application together with its required storage services. For local evaluation or team environments, start with the official deployment guidance and version-specific release notes from the project site.
+Dependency-Track is commonly deployed as a containerized application together with its required storage services. For
+local evaluation or team environments, start with the official deployment guidance and version-specific release notes
+from the project site.
 
 Typical high-level steps:
 
@@ -52,7 +59,8 @@ Typical areas to configure:
 * vulnerability source settings,
 * data retention and operational monitoring.
 
-For real environments, keep configuration versioned and document how `SBOM` uploads, access policies, and alert handling are governed.
+For real environments, keep configuration versioned and document how `SBOM` uploads, access policies, and alert handling
+are governed.
 
 ## Usage, tips and tricks
 
