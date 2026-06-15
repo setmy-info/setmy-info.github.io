@@ -243,6 +243,69 @@ registry_pipeline_result =
   updated_user: user,
   registry_pipeline_result: registry_pipeline_result
 }
+
+defmodule Person do
+  defstruct first_name_fn: nil,
+            last_name_fn: nil
+
+  def new(f, l) when is_function(f, 0) and is_function(l, 0) do
+    %Person{
+      first_name_fn: f,
+      last_name_fn: l
+    }
+  end
+end
+
+
+defmodule SetMyInfo.Gap do
+
+  def as_first_name(value) do
+    fn -> value end
+  end
+
+  def as_last_name(value) do
+    fn -> value end
+  end
+
+  def data_builder(first_name, last_name) do
+    first = first_name.()
+    last = last_name.()
+
+    transform(first) <> " " <> transform(last)
+  end
+
+  defp transform(value) when is_binary(value) do
+    case rem(:rand.uniform(100), 2) do
+      0 -> String.upcase(value)
+      1 -> String.downcase(value)
+    end
+  end
+
+  def person_data_builder(%Person{} = person) do
+    first = person.first_name_fn.()
+    last  = person.last_name_fn.()
+
+    transform(first) <> " " <> transform(last)
+  end
+end
+
+result =
+  SetMyInfo.Gap.data_builder(
+    SetMyInfo.Gap.as_first_name("John"),
+    SetMyInfo.Gap.as_last_name("Doe")
+  )
+
+person =
+  Person.new(
+    SetMyInfo.Gap.as_first_name("John"),
+    SetMyInfo.Gap.as_last_name("Doe")
+  )
+
+person_string =
+  SetMyInfo.Gap.person_data_builder(person)
+
+IO.inspect(result, label: "Result")
+IO.inspect(person_string, label: "Person Result")
 ```
 
 ## Most Common Production Technologies in the Elixir Ecosystem (2026)
