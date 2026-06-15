@@ -1157,3 +1157,4 @@ At minimum, verify that you can:
 * [Keycloak Guides](https://www.keycloak.org/guides)
 * [Securing Apps and Services Guide](https://www.keycloak.org/guides#securing-apps)
 * [Server Configuration Guide](https://www.keycloak.org/server/configuration)
+* [ADR-0039: JWT claims for person and organization context](it/architecture/decisions/adr-0039-jwt-claims-for-person-and-organization-context.md)
