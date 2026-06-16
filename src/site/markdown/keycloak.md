@@ -10,6 +10,49 @@ When it is deployed with a persistent database, proper `TLS`, reverse proxy or i
 and operational monitoring, Keycloak is a reasonable choice for live production use, including public-facing identity
 services reachable by users and applications from the public internet.
 
+### Keycloak Structure and Terminology
+
+Keycloak is organized as a hierarchy of configuration and identity objects. Understanding this structure makes it easier
+to design realms, onboard applications, and explain where users, permissions, and integrations live.
+
+Typical hierarchy:
+
+* **Keycloak instance / deployment**: The running Keycloak server or clustered installation. One instance can host
+  multiple realms and provides the admin APIs, login endpoints, themes, extensions, and operational settings.
+* **Realm**: The main top-level security boundary inside Keycloak. A realm contains its own users, groups, clients,
+  roles, sessions, authentication flows, identity providers, and token settings. Realms are often used like tenants or
+  isolated IAM spaces for separate environments, products, or organizations.
+* **Users**: Human identities stored locally in the realm or linked through federation. Users can have profile
+  attributes, credentials, required actions, group membership, and role mappings.
+* **Groups**: Hierarchical collections of users. Groups are commonly used to reflect departments, teams, or operational
+  membership and to assign shared roles to many users at once.
+* **Roles**: Permission labels assigned either directly or through groups.
+    * **Realm roles** apply across the whole realm and are useful for shared capabilities.
+    * **Client roles** belong to a specific client and are useful for application-specific permissions.
+* **Clients**: Applications or services that trust the realm for authentication and token issuance. A client can be a
+  browser frontend, backend API, mobile app, CLI tool, or machine-to-machine integration.
+* **Client scopes**: Reusable claim and scope definitions that control what token content is released to clients.
+* **Identity providers (`IdP`)**: External login sources such as another `OIDC` provider, `SAML` provider, social
+  login, or enterprise identity system.
+* **User federation**: Connectors to external user directories such as `LDAP` or `Active Directory`, allowing Keycloak
+  to use external users instead of storing all identities locally.
+* **Authentication flows**: The configurable sequence of login steps such as username/password, MFA, conditional
+  checks, required actions, and brokered login behavior.
+
+In practice, a useful mental model is:
+
+`Keycloak instance -> realm -> users / groups / roles / clients / identity providers / flows`
+
+Important glossary notes:
+
+* **Realm** is usually the most important organizing term. Most configuration is created inside a realm.
+* **Tenant-like separation** in Keycloak is typically achieved with separate realms, but realms are not lightweight
+  labels; they are strong administrative and security boundaries.
+* **Group hierarchy** is inside a realm, while **role hierarchy** is modeled through mappings and composites rather
+  than by putting roles under users in a tree.
+* **Clients** represent relying applications, while **users** represent identities and **service accounts** represent
+  non-human access tied to confidential clients.
+
 ### Main Functionalities and Features
 
 * **Single Sign-On (SSO)**: Users authenticate with Keycloak rather than each individual application.
