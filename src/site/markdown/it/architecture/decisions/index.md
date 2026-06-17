@@ -350,12 +350,12 @@ and do in sprint/iteration testing and increase automatic testing.
 
 To **release** and **master** merging is organizational (QA, developers, board, etc.) decision.
 
-| Branch  | Environment         | Branch name          | Artifacts published                    | Tag                   | Notes                                     |
-|---------|---------------------|----------------------|----------------------------------------|-----------------------|-------------------------------------------|
-| feature | -                   | feature/xxxxxxxxxxxx | -                                      | -                     |                                           |
-| develop | dev, test           | develop              | snapshot software and snapshot reports | -                     | Can go only to dev env, skip test deploy. |
-| release | dev, test, pre-live | release/1.0.0        | -                                      | -                     | Can skip dev env. deploy.                 |
-| master  | live                | master               | release software and release reports   | automatically created |                                           |
+| Branch  | Environment        | Branch name          | Artifacts published                    | Tag                   | Notes                                     |
+|---------|--------------------|----------------------|----------------------------------------|-----------------------|-------------------------------------------|
+| feature | -                  | feature/xxxxxxxxxxxx | -                                      | -                     |                                           |
+| develop | dev, test          | develop              | snapshot software and snapshot reports | -                     | Can go only to dev env, skip test deploy. |
+| release | dev, test, prelive | release/1.0.0        | -                                      | -                     | Can skip dev env. deploy.                 |
+| master  | live               | master               | release software and release reports   | automatically created |                                           |
 
 #### Stages
 
@@ -366,7 +366,7 @@ To **release** and **master** merging is organizational (QA, developers, board, 
 5. **Deploy** installs (published) software on environment.
 
 NB! We consider artifact re-creation from source as low level or too small risk. We don't use same built artifacts for
-dev, test, pre-live and live. We put more effort into inspection and build verification stages, to lover risk, that
+dev, test, prelive and live. We put more effort into inspection and build verification stages, to lover risk, that
 packages are created differently in different branches. In most cases we are using specific Java Docker images with
 concrete version and maven is used by wrapper (also concrete version). Same JDK and maven should produce same results.
 Possibility that it's not so, is too small.
@@ -411,6 +411,6 @@ QA **manual tests** are executed on **development** branch.
 1. [Self managed repos](shouldHaveSelfManagedRepos.md)
 1. [Should have VCS hash](shouldHaveVCShash.md)
 1. [UI requirements](uiRequirements.md)
-1. [Versioning](versioning.md)
+1. [ADR-0029 Versioning](adr-0029-versioning.md)
 1. [Arch as code](architectureAsACode.md)
 1. [JPA entities](jpaEntitiesAndDTOs.md)

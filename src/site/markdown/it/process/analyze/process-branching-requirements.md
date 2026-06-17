@@ -22,7 +22,7 @@
 
 ## Environment
 
-1. Should be auto deployed to dev, test automatically and pre-live, live by user interaction.
+1. Should be auto deployed to dev, test automatically and prelive, live by user interaction.
 2. Developer should get constant and full (all automatic tests are executed) feedback for task under development.
 
 ## Process
