@@ -60,9 +60,14 @@ binary in your `PATH`.
 Typical flow:
 
 ```bash
-curl -LO https://github.com/dagu-org/dagu/releases/latest/download/dagu_linux_amd64.tar.gz
-tar -xzf dagu_linux_amd64.tar.gz
-sudo install dagu /usr/local/bin/dagu
+curl -fsSL https://raw.githubusercontent.com/dagucloud/dagu/main/scripts/installer.sh | \
+  bash -s -- \
+    --service no \
+    --no-prompt \
+    --service-scope user \
+    --install-dir /opt/setmy.info/bin \
+    --admin-username admin \
+    --admin-password 'change-me-now'
 dagu version
 ```
 
