@@ -11,6 +11,8 @@ after "marketplace module" is changed.
 
 Sel-managed in-house Jenkins give more flexibility in error cases.
 
+See also [GitHub CI/CD Tips and Tricks](../../../ci-github.md) for working with GitHub Actions when necessary.
+
 Example:
 
 * GitHub gave at random point for a fev days: "Unknown host repo.osgeo.org".

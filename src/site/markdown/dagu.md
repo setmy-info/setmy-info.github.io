@@ -25,6 +25,33 @@ small-to-medium workflow orchestration rather than large-scale container-native 
 
 The most practical installation method is to use the official release binary or package for your platform.
 
+### Docker
+
+If you want to run Dagu in a container instead of installing the binary directly on the host, use the official image:
+
+```bash
+docker pull ghcr.io/dagucloud/dagu:latest
+```
+
+Example:
+
+```bash
+docker run --rm ghcr.io/dagucloud/dagu:latest version
+```
+
+Windows example for starting the web UI and local services with your DAG directory mounted:
+
+```powershell
+docker run -d ^
+  --name dagu ^
+  -p 7700:8080 ^
+  -v "C:\sources\setmy.info\submodules\setmy-info-scripts\src\main\dagu:/data/dags" ^
+  ghcr.io/dagucloud/dagu:latest
+```
+
+For real usage, mount your DAGs directory and Dagu home/data directories into the container, and publish the HTTP port
+when running `dagu server` or `dagu start-all`.
+
 ### Linux
 
 For Linux hosts, download the latest release archive from the Dagu GitHub releases page, extract it, and place the
@@ -100,13 +127,21 @@ Run it:
 dagu start hello.yaml
 ```
 
-Open the web UI:
+Open the web UI and local runtime services with the all-in-one startup command:
 
-```bash
-dagu server
+```powershell
+dagu start-all --dagu-home C:\sources\temp\dagu --dags C:\sources\setmy.info\submodules\setmy-info-scripts\src\main\dagu --port 7700 --host 127.0.0.1
 ```
 
-Then browse to the local Dagu UI endpoint shown in the startup output, typically `http://127.0.0.1:8080`.
+Then browse to `http://127.0.0.1:7700`.
+
+This startup form is the relevant local setup for our ADR-like usage because it keeps Dagu state under
+`C:\sources\temp\dagu`, reads DAG definitions from
+`C:\sources\setmy.info\submodules\setmy-info-scripts\src\main\dagu`, and exposes the UI/API only on local
+loopback at port `7700`.
+
+`dagu server` is only the web/API process. `dagu start-all` is the local all-in-one startup command, so it is the
+better choice when you want a single process that serves the UI and also runs scheduled workflows on the same machine.
 
 ### Can `dagu server` start workflows directly?
 
@@ -119,11 +154,17 @@ If you want to start a workflow that the server knows about, use one of these ap
 * start it from the web UI after `dagu server` is running;
 * let `dagu scheduler` or `dagu start-all` run scheduled workflows automatically.
 
+In practice, think of the service commands like this:
+
+* `dagu server` = UI/API only;
+* `dagu scheduler` = scheduler only;
+* `dagu start-all` = local all-in-one mode that starts the server, scheduler, and executor together.
+
 Example:
 
-```bash
-dagu server --dags=/srv/workflows/dagu --host=127.0.0.1 --port=7700
-dagu start --dags=/srv/workflows/dagu hello.yaml
+```powershell
+dagu start-all --dagu-home C:\sources\temp\dagu --dags C:\sources\setmy.info\submodules\setmy-info-scripts\src\main\dagu --host 127.0.0.1 --port 7700
+dagu start --dags C:\sources\setmy.info\submodules\setmy-info-scripts\src\main\dagu hello.yaml
 ```
 
 In other words, the server can know and display available DAGs, but starting a run is still a separate action.
@@ -267,8 +308,8 @@ dagu start-all
 
 Or entirely through CLI options:
 
-```bash
-dagu start-all --dags=/srv/workflows/dagu --host=0.0.0.0 --port=7700
+```powershell
+dagu start-all --dagu-home C:\sources\temp\dagu --dags C:\sources\setmy.info\submodules\setmy-info-scripts\src\main\dagu --host 127.0.0.1 --port 7700
 ```
 
 `dagu start-all` is the easiest single-process mode for a normal server because it starts the HTTP server, scheduler,
@@ -330,15 +371,19 @@ variables override `~/.config/dagu/config.yaml`.
 If you run more than one Dagu server, or you protect the API/UI with an API key, use CLI contexts so you do not have
 to repeat the server URL on every command.
 
-For example, after starting a local server on port `7700`, you can register it as a named context:
+For example, after starting a localhost server on port `7700`, you can register it as a named context:
 
 ```bash
-dagu context add local --server http://127.0.0.1:7700 --api-key dagu_XXXXXXXX
-dagu context use local
+dagu context add localhost --server http://127.0.0.1:7700 --api-key dagu_XXXXXXXX
+dagu context list
+dagu context use localhost
+# Or
+dagu context use dev7700
+dagu context remove localhost
 ```
 
 After that, context-aware CLI commands use the selected server and API key automatically. This is useful when you
-switch between a local lab instance, a test server, and a production-like Dagu environment.
+switch between a localhost lab instance, a test server, and a production-like Dagu environment.
 
 Practical tips:
 
@@ -421,6 +466,17 @@ Example with a custom server port:
 ```bash
 dagu server --host=127.0.0.1 --port=7700 --dags=/srv/workflows/dagu
 curl http://127.0.0.1:7700/api/v1/dags
+```
+
+Example requests for the local ADR-style setup with the API token masked:
+
+```powershell
+curl http://localhost:7700/api/v1/health
+curl http://localhost:7700/api/v1/openapi.json
+curl -H "Authorization: Bearer dagu_********" -H "Accept: application/json" http://localhost:7700/api/v1/dags
+curl -H "Authorization: Bearer dagu_********" -H "Accept: application/json" "http://localhost:7700/api/v1/dags?sort=name&order=desc"
+curl -H "Authorization: Bearer dagu_********" -H "Accept: application/json" http://localhost:7700/api/v1/dags/hello-wf
+curl -X POST -H "Authorization: Bearer dagu_********" -H "Accept: application/json" -H "Content-Type: application/json" -d "{}" http://localhost:7700/api/v1/dags/hello-wf/start
 ```
 
 When you already have the UI running, think of the REST API as the HTTP equivalent of the CLI for automation and

@@ -1,6 +1,19 @@
-# MQTT Requirements
+# Architecture Decision Record (ADR)
 
-# MQTT Requirements
+ADR-0028: MQTT Requirements
+
+## 1. Status
+
+**Accepted**
+
+## 2. Context
+
+MQTT usage in setmy.info needs one documented set of technical and operational requirements so that message transport,
+storage, reliability, security, and processing behavior stay consistent across implementations.
+
+## 3. Decision
+
+The following MQTT requirements are accepted and should be used as-is:
 
 1. **MQTT v5** should be used.
 2. MQTT **QoS = 2** should be used.
@@ -14,7 +27,7 @@
     - Default and quick choice: **UUID**
     - Should also be in properties/headers
     - Required for possible duplication detection
-7. Sender should set a message version into header.
+7. Sender should set a message version into a header.
     - Property name: **"v"**
     - Accepted types: int, long (with mask, like IPv4)
     - Use [semantic versioning](https://semver.org/)
@@ -24,7 +37,7 @@
     - Replaces MQTT 3.x **clean session = false**
     - Do not use clean session = true equivalent (SEI = 0)
     - Default and quick choice: **3600**
-10. Avoid user properties/headers, except required ones mentioned in this document.
+10. Avoid user properties/headers, except the required ones mentioned in this document.
     - If used, property names should be short (**1–3 characters**)
 11. Tenant ID property should be set.
     - Property name: **"t"**
@@ -34,7 +47,7 @@
     - See: [RFC 6648](https://www.rfc-editor.org/rfc/rfc6648)
 13. Content type can be passed as a property.
     - Prefer **not to set it**
-    - If absent, default is **"application/cbor"**
+    - If absent, the default is **"application/cbor"**
 14. Payload should be binary and compact.
     - CBOR over JSON
     - Property names should be short (1–3 characters)
@@ -81,3 +94,16 @@
     failure with one broker, the client SHALL resend QoS 2 messages to another available broker in the list until the
     message is fully acknowledged or the session expiration interval has elapsed. This mechanism ensures reliable
     delivery without requiring broker-to-broker replication.
+
+## 4. Rationale (Justification)
+
+This ADR keeps the original MQTT requirement set intact while putting it into the ADR structure used in this directory.
+That preserves the detailed requirement list and makes the document easier to track, reference, and maintain as an
+architecture decision.
+
+## 5. Consequences, Impacts & Follow-up Actions
+
+All MQTT-related implementations and reviews should use this ADR as the source of requirements. Future changes should
+extend or supersede this ADR instead of creating conflicting undocumented rules.
+
+[Architecture](../index.md)
