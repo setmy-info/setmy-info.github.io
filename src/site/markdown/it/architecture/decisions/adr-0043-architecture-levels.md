@@ -43,6 +43,7 @@ the current reference:
 | Monitoring                                                  | No (Manual)                      |                      | ...     |                      | Yes                    |
 | SSH File server                                             | Yes, Single, In-house, in CI     |                      | ...     |                      | Yes                    |
 | SMTP server per environment                                 | Yes                              |                      | ...     |                      | Yes                    |
+<!-- REVIEW: R-08 — IAM "No" at Level 1 conflicts with loginOnce.md which requires SSO; no resolution documented -->
 | IAM (Keycloak)                                              | No                               |                      | ...     |                      | Yes                    |
 | Cloud, Cloud-Hybrid, Private comp. env.                     | Cloud-Hybrid                     |                      | ...     |                      | Self made Cloud-Hybrid |
 | Feature switches  level                                     | 2                                |                      | 3       |                      | 5                      |
@@ -65,6 +66,7 @@ Placing the level matrix into its own ADR makes it an explicit architecture base
 an overview page. That improves reuse in later ADRs, lets reviews cite one stable decision, and keeps the architecture
 index shorter and more focused on navigation.
 
+<!-- REVIEW: R-07 — duplicate section number "3."; should be "5. Consequences, Impacts & Follow-up Actions" -->
 ## 3. Consequences, Impacts & Follow-up Actions
 
 Future updates to architecture maturity levels should modify this ADR instead of reintroducing the table into

@@ -334,6 +334,242 @@ Stop portainer
 docker compose stop
 ```
 
+### Relationships and Structural Coverage
+
+PostgreSQL provides several ways to represent structural relationships between entities, satisfying common modeling
+requirements.
+
+#### One-to-One
+
+Usually implemented with a primary key that is also a foreign key, or a unique foreign key.
+
+```sql
+CREATE TABLE profile
+(
+    user_id int PRIMARY KEY REFERENCES users (id),
+    bio     text
+);
+```
+
+#### One-to-Many
+
+The most common relationship, implemented with a foreign key on the "many" side.
+
+```sql
+CREATE TABLE post
+(
+    id      serial PRIMARY KEY,
+    user_id int NOT NULL REFERENCES users (id),
+    title   text
+);
+```
+
+#### Many-to-Many
+
+Implemented using a join table (link table) with foreign keys to both entities.
+
+```sql
+CREATE TABLE user_roles
+(
+    user_id int REFERENCES users (id),
+    role_id int REFERENCES roles (id),
+    PRIMARY KEY (user_id, role_id)
+);
+```
+
+#### Multi-Parent Relationships
+
+An entity can belong to multiple parents. This is typically implemented with multiple foreign keys (often nullable) and
+a constraint to ensure at least one parent exists.
+
+```sql
+CREATE TABLE comment (
+    id          serial PRIMARY KEY,
+    post_id     int REFERENCES post(id),
+    page_id     int REFERENCES page(id),
+    content     text,
+    CONSTRAINT at_least_one_parent CHECK (post_id IS NOT NULL OR page_id IS NOT NULL)
+);
+```
+
+#### Hierarchy and Self-Referencing
+
+Used for trees and organizational structures where an entity belongs to another entity of the same type.
+
+```sql
+CREATE TABLE department
+(
+    id        serial PRIMARY KEY,
+    name      text,
+    parent_id int REFERENCES department (id)
+);
+```
+
+#### Enumerative (Lookup Tables)
+
+Used for global shared entities or fixed sets of values.
+
+```sql
+CREATE TABLE status_lookup
+(
+    code        text PRIMARY KEY,
+    description text
+);
+
+CREATE TABLE task
+(
+    id     serial PRIMARY KEY,
+    status text REFERENCES status_lookup (code)
+);
+```
+
+#### Composition and Strong Ownership
+
+Uses `ON DELETE CASCADE` to ensure child entities are deleted with the parent (lifecycle dependency).
+
+```sql
+CREATE TABLE order_items
+(
+    id        serial PRIMARY KEY,
+    order_id  int NOT NULL REFERENCES orders (id) ON DELETE CASCADE,
+    item_data text
+);
+```
+
+### Partitioning
+
+PostgreSQL supports table partitioning, which allows a table to be physically divided into smaller pieces. Since
+PostgreSQL 10, declarative partitioning is the recommended way to implement this.
+
+#### Types of Partitioning
+
+1. **Range Partitioning**: The table is partitioned into "ranges" defined by a key column or set of columns, with no
+   overlap between the ranges of values assigned to different partitions.
+2. **List Partitioning**: The table is partitioned by explicitly listing which key value(s) appear in each partition.
+3. **Hash Partitioning**: The table is partitioned by specifying a modulus and a remainder for each partition.
+
+#### Examples
+
+**Range Partitioning (by Date)**
+
+```sql
+CREATE TABLE measurement
+(
+    city_id   int  not null,
+    logdate   date not null,
+    peaktemp  int,
+    unitsales int
+) PARTITION BY RANGE (logdate);
+
+-- Create partitions
+CREATE TABLE measurement_y2024m01 PARTITION OF measurement
+    FOR VALUES FROM
+(
+    '2024-01-01'
+) TO
+(
+    '2024-02-01'
+);
+
+CREATE TABLE measurement_y2024m02 PARTITION OF measurement
+    FOR VALUES FROM
+(
+    '2024-02-01'
+) TO
+(
+    '2024-03-01'
+);
+```
+
+**List Partitioning (by Category)**
+
+```sql
+CREATE TABLE products
+(
+    product_id int  not null,
+    category   text not null,
+    name       text
+) PARTITION BY LIST (category);
+
+-- Create partitions
+CREATE TABLE products_electronics PARTITION OF products
+    FOR VALUES IN
+(
+    'electronics',
+    'gadgets'
+);
+
+CREATE TABLE products_clothing PARTITION OF products
+    FOR VALUES IN
+(
+    'clothing',
+    'footwear'
+);
+```
+
+**Hash Partitioning**
+
+```sql
+CREATE TABLE users
+(
+    user_id  int not null,
+    username text
+) PARTITION BY HASH (user_id);
+
+-- Create partitions (modulus 4)
+CREATE TABLE users_0 PARTITION OF users FOR VALUES WITH
+(
+    MODULUS
+    4,
+    REMAINDER
+    0
+);
+CREATE TABLE users_1 PARTITION OF users FOR VALUES WITH
+(
+    MODULUS
+    4,
+    REMAINDER
+    1
+);
+CREATE TABLE users_2 PARTITION OF users FOR VALUES WITH
+(
+    MODULUS
+    4,
+    REMAINDER
+    2
+);
+CREATE TABLE users_3 PARTITION OF users FOR VALUES WITH
+(
+    MODULUS
+    4,
+    REMAINDER
+    3
+);
+```
+
+#### Best Practices and Maintenance
+
+Managing partitions manually is error-prone. In production, you should automate partition creation.
+
+1. **Automated Management with `pg_partman`**:
+   `pg_partman` is the most popular extension for managing partitions. It can automatically create future partitions and
+   drop/archive old ones.
+2. **Scheduled Jobs with `pg_cron`**:
+   If you cannot use `pg_partman`, you can use `pg_cron` to run a stored procedure daily that checks for missing future
+   partitions and creates them.
+3. **Naming Conventions**:
+   Use clear naming for partitions (e.g., `table_name_p2024_01`) to make it easier to manage and debug.
+4. **Indexes**:
+   Indexes must be created on each partition individually or on the parent table (which will automatically create them
+   on partitions since PG 11).
+5. **Default Partition**:
+   Consider creating a `DEFAULT` partition to catch rows that don't fit into any existing partition, but monitor it
+   closely as it can impact performance if it grows too large.
+
+```sql
+CREATE TABLE measurement_default PARTITION OF measurement DEFAULT;
+```
+
 ## Control questions
 
     What is xxxx?

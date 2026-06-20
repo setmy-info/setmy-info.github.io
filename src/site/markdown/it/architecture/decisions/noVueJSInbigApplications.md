@@ -1,5 +1,6 @@
 # No VueJS in big or huge applications.
 
+<!-- REVIEW: R-11 — only VueJS is restricted; React and Vite-based UI are mentioned as migration targets in adr-0030 but no decision allows or prohibits them -->
 VueJS can be used only as simple one HTML SPA.
 
 Examples:

@@ -1,5 +1,6 @@
 # Developer should be able to log in once in into one environment and start working
 
+<!-- REVIEW: R-08 — SSO requirement here cannot be satisfied at Level 1 where IAM (Keycloak) is "No" per adr-0043; no resolution documented -->
 Can be many times in day (login time out).
 
 SSO.

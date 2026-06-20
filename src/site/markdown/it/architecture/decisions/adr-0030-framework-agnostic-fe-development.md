@@ -7,12 +7,14 @@ implemented outside Angular and UI frameworks act only as **data visualizer**.
 
 ## 1. Status
 
+<!-- REVIEW: R-06 — dual status "Draft | Accepted" is contradictory; must be exactly one status -->
 **Draft** | **Accepted**
 
 ## 2. Context
 
 **Problem / Need**
 
+<!-- REVIEW: R-11 — mentions React and Vite-based UI as potential framework changes; no ADR allows or prohibits React; noVueJSInbigApplications.md only restricts VueJS -->
 The frontend application is built using Angular (currently Angular 21). The application is expected to be long-lived,
 evolve over time, and undergo framework upgrades (Angular major versions) and potentially framework changes (e.g.,
 React, Vite-based UI) with minimal risk and cost.

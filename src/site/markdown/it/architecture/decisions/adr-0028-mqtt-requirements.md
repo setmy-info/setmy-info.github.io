@@ -58,6 +58,7 @@ The following MQTT requirements are accepted and should be used as-is:
     - Under high loads: multiple brokers per tenant
     - Reason: Mosquitto uses inner queues per subscriber
 16. Subscriber per topic
+<!-- REVIEW: R-01 — contradicts mqtDB.md which uses PostgreSQL for the same MQTT incoming message pipeline -->
 17. Messages should be stored in schemaless DB as fast as possible
     - E.g., MongoDB (NB! but requires payload to be parsed!)
         - To avoid schema validation for better performance

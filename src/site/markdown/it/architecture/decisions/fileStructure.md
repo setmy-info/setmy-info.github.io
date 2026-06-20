@@ -1,5 +1,6 @@
 # File Structure (Standard)
 
+<!-- REVIEW: R-09 — DRAFT; overlaps with adr-0032 (SMI FHS) and adr-0033 (gintra); canonical source should be the ADRs; consider retiring this file -->
 DRAFT
 
 Data storage locations prefixes:
