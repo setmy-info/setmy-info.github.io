@@ -97,7 +97,9 @@ Examples:
 * Single-Page application
 * PWA
 * Responsive web design
+
 <!-- REVIEW: R-05 — IE11 reached end-of-life June 2022; conflicts with pwaFirst.md and constantUpgrade.md; remove and replace with a modern browser baseline -->
+
 * Cross-browser
     * IE11 (minimum IE)
 * Jasmine FW
@@ -399,20 +401,20 @@ nature of the conflict.
 
 ### R-01 — MQTT storage technology contradiction
 
-**Documents**: `adr-0028-mqtt-requirements.md` (requirement 17), `mqtDB.md`
+**Documents**: `adr-0028-mqtt-requirements.md` (requirement 17), `mqttDB.md`
 
 ADR-0028 requirement 17 states that incoming MQTT messages should be stored in a **schemaless DB** (MongoDB or similar
-alternatives such as LevelDB, RocksDB) as fast as possible, in raw binary form and without parsing. `mqtDB.md`
+alternatives such as LevelDB, RocksDB) as fast as possible, in raw binary form and without parsing. `mqttDB.md`
 contradicts this by designing a **PostgreSQL** relational partitioned table (`incoming_message2`) for the same incoming
 message pipeline, which requires payload parsing for JPA mapping and uses a relational schema. These two documents
 describe fundamentally different storage technologies and strategies for the same pipeline stage. One must be chosen and
 the other superseded or reconciled by a dedicated ADR.
 
-### R-02 — mqtDB.md requirement list is an empty stub
+### R-02 — mqttDB.md requirement list is an empty stub
 
-**Documents**: `mqtDB.md`, `index.md` (reference)
+**Documents**: `mqttDB.md`, `index.md` (reference)
 
-`mqtDB.md` is listed as a real decision document but its numbered requirements list (items 1–32) consists entirely of
+`mqttDB.md` is listed as a real decision document but its numbered requirements list (items 1–32) consists entirely of
 placeholder dots. The document contains no actual requirements — only the SQL schema and Java class at the bottom. The
 file is not marked as DRAFT and is referenced from this index without qualification. Either the requirements should be
 written or the file should be marked DRAFT/placeholder.
@@ -532,7 +534,7 @@ acceptable migration target" is undefined. A decision is needed.
 1. [Login once](loginOnce.md)
 1. [MacOS design principles](macOSPrinciples.md)
 1. [Maven](maven.md)
-1. [MQTT PostgreSQL DB incoming messages requirements](mqtDB.md)
+1. [MQTT PostgreSQL DB incoming messages requirements](mqttDB.md)
 1. [ADR-0028 MQTT Requirements](adr-0028-mqtt-requirements.md)
 1. [No binaries in VCS](noBinariesInVCS.md)
 1. [No Chrome browser as main requirements source](noChromeAsMainRequirementsSource.md)
