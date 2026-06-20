@@ -429,11 +429,11 @@ SSR (server-side rendering), which is required for Genkit AI flow integration an
 directly incompatible. The boundary between "Node.js backend" (prohibited) and "Angular SSR Node.js runtime" (in use)
 has not been defined or documented. A clarifying decision is needed.
 
-### R-04 — Pure JS preference contradicts Angular TypeScript mandate
+### R-04 — Pure JS preference contradicts an Angular TypeScript mandate
 
 **Documents**: `index.md` (section 7.2), `adr-0030-framework-agnostic-fe-development.md`
 
-`index.md` section 7.2 states "Prefer Pure JS to TypeScript". Angular (the chosen frontend framework in the same
+`index.md` section 7.2 states, "Prefer Pure JS to TypeScript". Angular (the chosen frontend framework in the same
 `index.md` Front end section and throughout ADR-0030) requires TypeScript and all code examples in ADR-0030 are written
 in TypeScript. The preference and the chosen framework are mutually exclusive. The decision in `index.md` section 7.2
 should either be updated to reflect actual TypeScript usage or the boundary of when Pure JS is preferred should be
@@ -444,7 +444,7 @@ explicitly scoped (e.g., simple scripts only).
 **Documents**: `index.md` (Front end section and section 4.2), `pwaFirst.md`, `constantUpgrade.md`
 
 `index.md` lists IE11 as the minimum supported browser in two places. Internet Explorer 11 reached end-of-life in June
-2022 and is not supported by any current version of Angular, PWA standards, or modern web APIs. This directly conflicts
+2022 and is not supported by any current version of Angular, PWA standards or modern web APIs. This directly conflicts
 with `pwaFirst.md` (PWA requires modern browsers) and `constantUpgrade.md` (constant dependency upgrades). The IE11
 requirement should be removed and replaced with a modern baseline browser definition.
 
@@ -460,7 +460,7 @@ accepted, or the status should be set to "Draft" if it is still under review.
 
 **Documents**: `adr-0043-architecture-levels.md`
 
-ADR-0043 contains two sections numbered "3." — one titled "Decision" and a second one titled "Consequences, Impacts &
+ADR-0043 it contains two sections numbered "3." — one titled "Decision" and a second one titled "Consequences, Impacts &
 Follow-up Actions". The ADR template uses sections 1–5. The second "3." should be renumbered to "5." to match the
 standard ADR structure used in other documents in this folder.
 
