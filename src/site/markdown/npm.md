@@ -5,6 +5,11 @@
 **npm** is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line
 client, also called npm, and an online database of public and paid-for private packages, called the npm registry.
 
+npm is bundled with Node.js and follows the Node.js release cadence. When you install a Node.js LTS version, the
+bundled npm version is also a stable, LTS-tested release. Using a Node.js LTS version is the recommended approach for
+production projects — it ensures both the runtime and npm receive long-term security patches. See [node.md](node.md)
+for details on LTS vs non-LTS Node.js versioning.
+
 ## Installation
 
 ### Windows & Linux

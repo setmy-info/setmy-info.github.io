@@ -2,6 +2,18 @@
 
 ## Information
 
+Electron is a framework for building cross-platform desktop applications using web technologies — HTML, CSS, and
+JavaScript. It bundles Chromium and Node.js into a single runtime so you can write desktop apps with the same code
+as a web application.
+
+Each Electron release ships with a specific embedded Node.js version (not the system-installed one). The embedded
+Node.js version follows Node.js LTS releases. Check the [Electron release page](https://releases.electronjs.org/) to
+see which Node.js version a given Electron release bundles.
+
+For your development environment, install a Node.js **LTS** version as well. Electron's tooling and build plugins
+(electron-builder, electron-forge) are tested against LTS releases. See [node.md](node.md) for Node.js LTS versioning
+details.
+
 ## Installation
 
 ```shell
@@ -119,4 +131,10 @@ and Electron <span id="electron-version"></span>.
 
 ## See also
 
-* [xxxx](http://yyyyy)
+* [Electron official documentation](https://www.electronjs.org/docs/latest)
+* [Electron releases and bundled Node.js versions](https://releases.electronjs.org/)
+* [electron-builder](https://www.electron.build/)
+* [electron-forge](https://www.electronforge.io/)
+* [Node.js](node.md)
+* [npm](npm.md)
+* [JavaScript](javascript.md)
