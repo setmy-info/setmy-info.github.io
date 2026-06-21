@@ -1,12 +1,43 @@
 # VueJS
 
+## Information
+
+Vue.js is a progressive JavaScript framework for building user interfaces. Developed by Evan You and released in 2014,
+Vue is designed to be incrementally adoptable — you can use it for a single widget or build a full single-page
+application (SPA) with it.
+
+**Vue 2 vs Vue 3:** Vue 3 (released 2020) is the current stable version. It introduced the Composition API alongside
+the existing Options API, improved TypeScript support, and better performance. Vue 2 reached end-of-life on
+December 31, 2023.
+
+**Composition API vs Options API:**
+- Options API: organizes code by option type (data, methods, computed, watch). Classic Vue 2 style.
+- Composition API: organizes code by logical concern using `setup()` or `<script setup>`. Preferred for Vue 3.
+
+Node.js **LTS** version is required for CLI tooling and build processes. See [node.md](node.md).
+
 ## Installation
+
+### Vue 3 (modern, recommended)
+
+```shell
+# Create a new Vue 3 project with Vite (recommended)
+npm create vue@latest
+```
+
+This runs the official `create-vue` scaffolding tool with interactive prompts for TypeScript, JSX, Vue Router,
+Pinia, Vitest, ESLint, and Prettier.
+
+### Vue 2 (legacy, via Vue CLI)
 
 ```shell
 npm install -g @vue/cli
+vue --version
 ```
 
-## Project creation
+## Preparations
+
+### Create a Project (Vue CLI — Vue 2 style)
 
 ```shell
 vue create vue-start-project
@@ -28,10 +59,14 @@ Vue CLI v4.3.1
 ? Save preset as: vue-start-project-preset
 ```
 
+For a full project setup guide see [vue-start-project.md](vue-start-project.md).
+
 ## Usage, tips and tricks
 
 ```shell
 yarn serve
+# or with npm
+npm run dev
 ```
 
 ### Simple SPA
@@ -181,6 +216,7 @@ yarn serve
 </html>
 ```
 
+### Select dropdown snippet
 
 ```html
         <label for="itemDropdown">Select item:</label>
@@ -188,3 +224,13 @@ yarn serve
             <option v-for="(item, key) in items" :key="key" :value="item">{{ key }} {{ item.type }}</option>
         </select>
 ```
+
+## See also
+
+* [Vue.js official documentation](https://vuejs.org/)
+* [Vue Router](https://router.vuejs.org/)
+* [Pinia (state management)](https://pinia.vuejs.org/)
+* [Vite](https://vitejs.dev/)
+* [Vue start project](vue-start-project.md)
+* [Node.js](node.md)
+* [npm](npm.md)

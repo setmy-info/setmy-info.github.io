@@ -2,6 +2,13 @@
 
 ## Information
 
+Mermaid is a JavaScript-based diagramming and charting tool that renders text-based diagram definitions into SVG or
+PNG. Diagrams are written in a Markdown-inspired syntax and can be embedded in documentation, wikis, and code
+repositories. Mermaid is natively supported in GitHub, GitLab, Notion, Obsidian, and many other tools.
+
+Supported diagram types: flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, state diagrams,
+pie charts, and more.
+
 ## Installation
 
 ```shell

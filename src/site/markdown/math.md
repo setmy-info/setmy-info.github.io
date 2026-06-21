@@ -2,6 +2,24 @@
 
 ## Information
 
+This page is a reference for mathematical notation and symbols used in software engineering, scientific computing,
+and data science. It covers Greek letters, set theory terms, and common mathematical operations.
+
+### Common Mathematical Operations
+
+| Operation       | Notation         | Programming equivalent   | Notes                              |
+|-----------------|------------------|--------------------------|------------------------------------|
+| Modulo          | a mod b          | `a % b`                  | Remainder after division           |
+| Floor           | ⌊x⌋              | `Math.floor(x)`          | Round down to nearest integer      |
+| Ceiling         | ⌈x⌉              | `Math.ceil(x)`           | Round up to nearest integer        |
+| Absolute value  | \|x\|            | `Math.abs(x)`            | Distance from zero                 |
+| Natural log     | ln(x)            | `Math.log(x)`            | Logarithm base e                   |
+| Log base 10     | log₁₀(x)         | `Math.log10(x)`          | Logarithm base 10                  |
+| Log base 2      | log₂(x)          | `Math.log2(x)`           | Logarithm base 2 (bit complexity)  |
+| Exponential     | eˣ               | `Math.exp(x)`            | e raised to x                      |
+| Power           | xⁿ               | `Math.pow(x, n)`         | x raised to n                      |
+| Square root     | √x               | `Math.sqrt(x)`           | Square root                        |
+
 ## Greek Letters meaning
 
 | Greek Letter | Meaning and Usage                                                                                    |

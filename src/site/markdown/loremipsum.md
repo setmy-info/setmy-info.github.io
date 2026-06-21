@@ -1,5 +1,17 @@
 # Lorem Ipsum
 
+## Information
+
+Lorem ipsum is the standard placeholder text used in graphic design, typography, web design, and publishing since
+the 1500s. It is derived from Cicero's philosophical work "de Finibus Bonorum et Malorum" (On the Ends of Good and
+Evil), written in 45 BC. The original passage was scrambled and rendered meaningless to prevent readers from being
+distracted by the content when evaluating a font, layout, or mockup.
+
+The phrase "Lorem ipsum dolor sit amet..." has become the default dummy text in design software, word processors,
+and web frameworks worldwide.
+
+---
+
 *"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."*
 
 `"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."`
@@ -33,3 +45,9 @@ bibendum.
 Nam enim lacus, fringilla a aliquet eget, dictum vel metus. Phasellus id interdum risus, ac maximus quam. Vivamus ut
 faucibus sem. Curabitur scelerisque metus sed ornare lacinia. Vivamus molestie suscipit orci, id bibendum leo lacinia
 nec. Phasellus nec commodo nisi. Praesent volutpat sodales sapien vitae feugiat. Suspendisse potenti.
+
+## See also
+
+* [lipsum.com — Lorem Ipsum generator](https://www.lipsum.com/)
+* [loremipsum.io](https://loremipsum.io/)
+* [de Finibus Bonorum et Malorum (Wikipedia)](https://en.wikipedia.org/wiki/De_finibus_bonorum_et_malorum)

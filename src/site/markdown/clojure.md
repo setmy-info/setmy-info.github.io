@@ -4,6 +4,18 @@
 
 ## Information
 
+Clojure is a dynamically typed, functional programming language that runs on the JVM (and also compiles to JavaScript
+via ClojureScript). It is a Lisp dialect created by Rich Hickey, first released in 2007. Key design principles:
+
+* **Immutable data structures** by default — persistent vectors, lists, maps, and sets.
+* **Functional first** — pure functions, higher-order functions, function composition with `->` and `->>`.
+* **REPL-driven development** — interactive evaluation speeds up exploration and debugging.
+* **Software Transactional Memory (STM)** — `ref`, `atom`, `agent` for safe concurrent state management.
+* **Java interop** — direct access to the entire Java ecosystem from Clojure code.
+* **Hosted language** — same code model on the JVM (Clojure) and in the browser (ClojureScript).
+
+Clojure is well suited for data processing, concurrent systems, and applications where immutability reduces bugs.
+
 ## Installation
 
 ```shell

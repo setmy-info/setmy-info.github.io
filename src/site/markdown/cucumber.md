@@ -2,6 +2,99 @@
 
 ## Information
 
+Cucumber is a Behaviour-Driven Development (BDD) framework that implements Specification by Example. Tests are written
+in **Gherkin** — a plain-language syntax using Given/When/Then steps that business analysts, QA engineers, and
+developers can all read and understand.
+
+Gherkin example:
+
+```gherkin
+Feature: User login
+
+  Scenario: Successful login with valid credentials
+    Given a registered user with email "user@example.com"
+    When the user submits valid credentials
+    Then the user should be redirected to the dashboard
+```
+
+How it works:
+
+1. Business analysts or QA write `.feature` files with Gherkin scenarios.
+2. Developers implement **step definitions** — Java/JS/Python methods that map Gherkin sentences to code.
+3. Cucumber runs the scenarios and reports pass/fail results readable by all roles.
+
+The key value is a **single shared artifact** across dev, QA, analysts, and product owners — making functionality
+and test coverage transparent to the whole team.
+
+## Installation
+
+### Java / Maven
+
+Add to `pom.xml`:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.x.x</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit-platform-engine</artifactId>
+        <version>7.x.x</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-spring</artifactId>
+        <version>7.x.x</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+```
+
+### JavaScript / npm
+
+```shell
+npm install --save-dev @cucumber/cucumber
+```
+
+## Configuration
+
+### Java — glue path and feature file location
+
+Create a JUnit 5 test runner class or configure via `cucumber.properties`:
+
+```properties
+cucumber.glue=info.setmy.steps
+cucumber.features=src/test/resources/features
+cucumber.plugin=pretty,html:target/cucumber-report.html
+```
+
+Or annotation-based:
+
+```java
+@Suite
+@IncludeEngines("cucumber")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "info.setmy.steps")
+@ConfigurationParameter(key = FEATURES_PROPERTY_NAME, value = "src/test/resources/features")
+public class CucumberTestSuite {}
+```
+
+### JavaScript — `cucumber.js` config
+
+```javascript
+module.exports = {
+    default: {
+        paths: ['features/**/*.feature'],
+        require: ['step-definitions/**/*.js'],
+        format: ['progress', 'html:reports/cucumber-report.html']
+    }
+};
+```
+
 ## Complaints
 
 Most of the cases, developers and managers are saying: we have or end/ended with a heavy amount and unmanageable test
@@ -58,9 +151,13 @@ Non failing project BDD project:
 
 ## Killer feature of Spec by example
 
-Unified and transparent tool for most of the roles (dev, QA, Analysts, PO and maybe even CO) in software development
+Unified and transparent tool for most of the roles (dev, QA, Analysts, PO and maybe even CO) in software development.
 Simply saying single artifact for all of them.
 
 ## See also
 
-[xxxx](http://yyyyy)
+* [Cucumber official documentation](https://cucumber.io/docs/cucumber/)
+* [Cucumber on GitHub](https://github.com/cucumber/cucumber-jvm)
+* [BDD — Behaviour-Driven Development](https://cucumber.io/docs/bdd/)
+* [Gherkin reference](https://cucumber.io/docs/gherkin/reference/)
+* [Unittesting](unittesting.md)

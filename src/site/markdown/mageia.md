@@ -2,17 +2,32 @@
 
 ## Information
 
+Mageia is a community-developed Linux distribution forked from Mandriva Linux in 2010. It is RPM-based and uses
+the `urpmi` package manager (and the newer `dnf` in recent versions). Mageia ships with GNOME and KDE Plasma as
+desktop options, and is designed as a stable, user-friendly distribution maintained by a non-profit foundation.
+
 ## Installation
 
-### CentOS, Rocky Linux
+Download ISOs and installation instructions from [mageia.org](https://www.mageia.org/).
 
-### Fedora
+### Mageia package management
 
-### FreeBSD
+```shell
+# Install a package
+sudo urpmi packagename
 
-### OpenIndiana
+# Remove a package
+sudo urpme packagename
 
-## Configuration
+# Search for a package
+urpmq packagename
+
+# Update all packages
+sudo urpmi --auto-update
+
+# List installed packages
+rpm -qa
+```
 
 ## Usage, tips and tricks
 
@@ -95,8 +110,8 @@ urpmi --auto --buildrequires ~/rpmbuild/SRPMS/chrony-4.3-1.mga9.src.rpm
 rpmbuild -ba ~/rpmbuild/SPECS/chrony.spec
 ```
 
-### Coding tips and tricks
-
 ## See also
 
-* [xxxx](http://yyyyy)
+* [Mageia official site](https://www.mageia.org/)
+* [Mageia wiki](https://wiki.mageia.org/)
+* [urpmi documentation](https://wiki.mageia.org/en/Urpmi)

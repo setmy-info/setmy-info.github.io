@@ -2,6 +2,13 @@
 
 ## Information
 
+Minikube is a tool that runs a local single-node Kubernetes cluster on your workstation. It is the standard tool for
+learning Kubernetes, testing manifests, and running integration tests locally without a full cloud cluster. Minikube
+supports multiple drivers (Docker, VirtualBox, KVM, Hyper-V) and produces a certified Kubernetes cluster in minutes.
+
+Key features: `kubectl` compatibility, addons (ingress, metrics-server, dashboard), image loading, host folder
+mounting, and a built-in web dashboard.
+
 ## Installation
 
 ### CentOS, Rocky Linux

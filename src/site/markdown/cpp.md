@@ -1,5 +1,50 @@
 # C++
 
+## Information
+
+C++ is a compiled, statically typed, general-purpose programming language that extends C with object-oriented
+programming, templates (generic programming), and the Standard Template Library (STL). It is used for
+performance-critical applications: embedded systems, game engines, operating systems, high-frequency trading,
+scientific computing, and graphics.
+
+Key characteristics:
+
+* **Zero-cost abstractions** — templates, inline functions, and RAII incur no runtime overhead.
+* **Manual memory management** — raw pointers, `new`/`delete`, and modern smart pointers (`unique_ptr`,
+  `shared_ptr`).
+* **OOP + Generic programming** — classes, inheritance, virtual dispatch, templates, and concepts (C++20).
+* **Standards**: C++11, C++14, C++17, C++20, C++23 — each adds language features and library improvements.
+
+## Installation
+
+### Rocky Linux / CentOS / Fedora
+
+```shell
+sudo dnf install -y gcc-c++ clang cmake make
+g++ --version
+clang++ --version
+cmake --version
+```
+
+### Debian / Ubuntu
+
+```shell
+sudo apt install -y g++ clang cmake make
+```
+
+### Build Tools
+
+```shell
+# CMake-based project
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+```
+
+### Package Managers
+
+* **vcpkg** — Microsoft's C++ library manager: `vcpkg install boost openssl`
+* **Conan** — cross-platform C/C++ package manager: `conan install .`
+
 ## Coding standard
 
 ### Include loading order
@@ -171,40 +216,17 @@ void FiveTwo() {
 
 ## See also
 
-Google C++ Style Guide: https://google.github.io/styleguide/cppguide.html
-
-LLVM Coding Standards: https://llvm.org/docs/CodingStandards.html
-
-C++ Core
-Guidelines: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines,
-https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md,
-https://isocpp.org/wiki/faq/coding-standards
-
-Microsoft C++ Coding Standards: https://docs.microsoft.com/en-us/cpp/cpp/cpp-coding-standards
-
-GNU Coding Standards for C++: https://www.gnu.org/prep/standards/standards.html#Formatting
-
-Mozilla C++ Coding Style Guide: https://firefox-source-docs.mozilla.org/code-quality/coding-style/coding_style_cpp.html
-
-Bjarne Stroustrup's C++ Style and Technique FAQ: https://www.stroustrup.com/bs_faq2.html
-
-CERT C++ Coding Standards:
-
-* https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88046682
-* https://insights.sei.cmu.edu/library/sei-cert-c-coding-standard-rules-for-developing-safe-reliable-and-secure-systems-2016-edition-2/
-* https://insights.sei.cmu.edu/library/sei-cert-c-and-c-coding-standards/
-
-MISRA C++: https://www.amazon.co.uk/dp/1911700103
-
-JOINT STRIKE FIGHTER (JSF): https://stroustrup.com/JSF-AV-rules.pdf
-
-Sutter and Alexandrescu: https://www.amazon.com/exec/obidos/ASIN/0321113586/
-
-http://fftw.org/
-
-[xxxx](http://yyyyy)
-
-https://www.learncpp.com/cpp-tutorial/pure-virtual-functions-abstract-base-classes-and-interface-classes/
-
-https://en.cppreference.com/w/cpp/language/abstract_class
+* [cppreference.com](https://en.cppreference.com/) — comprehensive C++ language and library reference
+* [isocpp.org](https://isocpp.org/) — ISO C++ committee and FAQ
+* [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+* [learncpp.com](https://www.learncpp.com/) — free beginner-to-advanced C++ tutorial
+* [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
+* [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html)
+* [Mozilla C++ Coding Style Guide](https://firefox-source-docs.mozilla.org/code-quality/coding-style/coding_style_cpp.html)
+* [Bjarne Stroustrup's FAQ](https://www.stroustrup.com/bs_faq2.html)
+* [CERT C++ Coding Standards](https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88046682)
+* [Pure virtual functions — learncpp](https://www.learncpp.com/cpp-tutorial/pure-virtual-functions-abstract-base-classes-and-interface-classes/)
+* [Abstract classes — cppreference](https://en.cppreference.com/w/cpp/language/abstract_class)
+* [FFTW](http://fftw.org/)
+* [cmake-start-project](cmake-start-project.md)
 

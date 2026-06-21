@@ -2,56 +2,87 @@
 
 ## Information
 
+EPUB is an open e-book standard maintained by the W3C (originally by the IDPF). An EPUB file is a ZIP archive
+containing XHTML content, CSS stylesheets, images, and metadata.
+
+- **EPUB 2**: uses `toc.ncx` for navigation, OPF 2.0 package.
+- **EPUB 3**: uses `navigation.xhtml` (HTML5 `<nav epub:type="toc">`), OPF 3.0. EPUB 3 is the current standard.
+
+The `mimetype` file inside the ZIP must be the first entry and must not be compressed.
+
 ## Installation
 
-### CentOS, Rocky Linux
+### CentOS, Rocky Linux / Fedora
 
-### Fedora
+```shell
+# Calibre — read, edit, and convert e-books
+sudo dnf install -y calibre
 
-### FreeBSD
+# Pandoc — convert documents (Markdown, DOCX, etc.) to EPUB
+sudo dnf install -y pandoc
+```
 
-### OpenIndiana
+### Debian
+
+```shell
+sudo apt install -y calibre pandoc
+```
+
+### Python (programmatic creation)
+
+```shell
+pip install ebooklib
+```
+
+### Validation
+
+```shell
+# epubcheck — W3C's official EPUB validator (requires Java)
+# Download from https://github.com/w3c/epubcheck/releases
+java -jar epubcheck.jar my-book.epub
+```
 
 ## Configuration
 
-## Usage, tips and tricks
+### content.opf — package document (EPUB 3)
 
-### Basic file structure
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="3.0" xmlns="http://www.idpf.org/2007/opf"
+         unique-identifier="book-id"
+         xml:lang="et">
 
-Basic file structure inside EPUB (ZIP):
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:identifier id="book-id">urn:uuid:c4520679-c296-4412-98af-57a2f31a4031</dc:identifier>
+        <dc:title id="title">Test Book</dc:title>
+        <dc:creator id="creator">Author Name</dc:creator>
+        <dc:language>et</dc:language>
+        <dc:date>2007-03-13</dc:date>
+        <meta property="dcterms:modified">2025-07-18T00:00:00Z</meta>
+        <dc:publisher>By My Self</dc:publisher>
+        <dc:rights>Copyright © 2025 Imre Tabur</dc:rights>
+    </metadata>
 
+    <manifest>
+        <item id="css"      href="css/epub.css"        media-type="text/css"/>
+        <item id="cover"    href="cover.xhtml"         media-type="application/xhtml+xml"/>
+        <item id="nav"      href="navigation.xhtml"    properties="nav" media-type="application/xhtml+xml"/>
+        <item id="chapter1" href="chapter1.xhtml"      media-type="application/xhtml+xml"/>
+        <item id="chapter2" href="chapter2.xhtml"      media-type="application/xhtml+xml"/>
+        <item id="end"      href="end.xhtml"           media-type="application/xhtml+xml"/>
+    </manifest>
+
+    <spine>
+        <itemref idref="cover"/>
+        <itemref idref="nav"/>
+        <itemref idref="chapter1"/>
+        <itemref idref="chapter2"/>
+        <itemref idref="end"/>
+    </spine>
+</package>
 ```
-smi-book.epub/
-├── mimetype
-├── META-INF/
-│   └── container.xml
-└── EPUB/
-    ├── css/
-    │   ├── epub.css
-    │   ├── style1.css
-    │   └── style2.css
-    ├── images/
-    │   ├── cover.svg
-    │   ├── fallback-cover.png
-    │   ├── image1.png
-    │   └── image2.png
-    ├── content.opf
-    ├── navigation.xhtml (EPUB 3) or toc.ncx (EPUB 2)
-    ├── cover.xhtml
-    ├── end.xhtml
-    ├── chapter1.xhtml
-    └── chapter2.xhtml
-```
 
-#### mimetype
-
-NB! No new line at the end
-
-```
-application/epub+zip
-```
-
-#### container.xml
+### container.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
@@ -62,80 +93,45 @@ application/epub+zip
 </container>
 ```
 
-#### content.opf
+## Usage, tips and tricks
+
+### Basic file structure inside EPUB (ZIP)
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-
-<package version="3.0" xmlns="http://www.idpf.org/2007/opf"
-         unique-identifier="book-id"
-         xml:lang="et"
-         prefix="schema: http://schema.org/ dcterms: http://purl.org/dc/terms/">
-
-    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"
-              xmlns:dcterms="http://purl.org/dc/terms/"
-              xmlns:schema="http://schema.org/">
-
-        <dc:identifier id="book-id">urn:uuid:c4520679-c296-4412-98af-57a2f31a4031</dc:identifier>
-        <meta property="dcterms:identifier" refines="#book-id">_manual_book</meta>
-        <dc:title id="title">Test Book</dc:title>
-        <dc:creator id="creator">Author Name</dc:creator>
-        <dc:language>et</dc:language>
-        <dc:date>2007-03-13</dc:date>
-        <meta property="dcterms:modified">2025-07-18T00:00:00Z</meta>
-        <dc:publisher>By My Self</dc:publisher>
-        <dc:rights>Copyright © 2025 Imre Tabur</dc:rights>
-        <meta property="dcterms:rightsHolder">Imre Tabur</meta>
-        <dc:subject>Subject 1</dc:subject>
-        <dc:subject>Subject 2</dc:subject>
-        <meta property="schema:accessMode">textual</meta>
-        <meta property="schema:accessModeSufficient">textual</meta>
-        <meta property="schema:accessibilityFeature">tableOfContents</meta>
-        <meta property="schema:accessibilityHazard">none</meta>
-        <meta property="schema:accessibilitySummary">This publication contains text content and navigation.</meta>
-    </metadata>
-
-    <manifest>
-        <item id="css" href="css/epub.css" media-type="text/css"/>
-        <item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>
-        <item id="cover-image" href="images/cover.svg" media-type="image/svg+xml"/>
-        <item id="fallback-cover" href="images/fallback-cover.jpg" media-type="image/jpeg"/>
-        <item id="nav" href="navigation.xhtml" properties="nav" media-type="application/xhtml+xml"/>
-        <item id="chapter1" href="chapter1.xhtml" media-type="application/xhtml+xml"/>
-        <item id="chapter2" href="chapter2.xhtml" media-type="application/xhtml+xml"/>
-        <item id="end" href="end.xhtml" media-type="application/xhtml+xml"/>
-    </manifest>
-
-    <spine>
-        <itemref idref="cover" linear="yes"/>
-        <itemref idref="nav"/>
-        <itemref idref="chapter1"/>
-        <itemref idref="chapter2"/>
-        <itemref idref="end" linear="yes"/>
-    </spine>
-</package>
+smi-book.epub/
+├── mimetype                          (no newline at end)
+├── META-INF/
+│   └── container.xml
+└── EPUB/
+    ├── css/
+    │   ├── epub.css
+    │   └── style1.css
+    ├── images/
+    │   ├── cover.svg
+    │   └── image1.png
+    ├── content.opf
+    ├── navigation.xhtml              (EPUB 3) or toc.ncx (EPUB 2)
+    ├── cover.xhtml
+    ├── chapter1.xhtml
+    ├── chapter2.xhtml
+    └── end.xhtml
 ```
 
-#### navigation.xhtml
+### navigation.xhtml (EPUB 3)
 
-EPUB 3
-
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:epub="http://www.idpf.org/2007/ops"
-      xml:lang="et"
-      lang="et">
+      xml:lang="et" lang="et">
 <head>
     <title>Navigation</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="css/epub.css"/>
 </head>
 <body>
-<nav epub:type="toc"
-     role="doc-toc"
-     id="toc">
+<nav epub:type="toc" role="doc-toc" id="toc">
     <h1>Table of Contents</h1>
     <ol>
         <li><a href="chapter1.xhtml">Chapter 1</a></li>
@@ -146,11 +142,9 @@ EPUB 3
 </html>
 ```
 
-For EPUB 2 **toc.ncx**
+### Build script
 
-#### ZIP
-
-```
+```shell
 #!/bin/sh
 
 buildBook() {
@@ -160,21 +154,13 @@ buildBook() {
     zip -Xr9D ../${BOOK_NAME} META-INF EPUB
 }
 
-buildBook setmy-info-book.epub.zip
 buildBook setmy-info-book.epub
-
-exit 0
 ```
-
-### Coding tips and tricks
 
 ## See also
 
-* [w3c epubcheck](https://github.com/w3c/epubcheck)
-* [w3 epub3](https://www.w3.org/publishing/epub3/)
-* [epub validator](https://www.bookery.app/epub_validation)
-* [xxxx](https://xxxxxx)
-* [xxxx](https://xxxxxx)
-* [xxxx](https://xxxxxx)
-* [xxxx](https://xxxxxx)
-* [xxxx](https://xxxxxx)
+* [W3C EPUB 3 specification](https://www.w3.org/publishing/epub3/)
+* [epubcheck — W3C EPUB validator](https://github.com/w3c/epubcheck)
+* [Bookery EPUB validator (online)](https://www.bookery.app/epub_validation)
+* [Calibre e-book manager](https://calibre-ebook.com/)
+* [Pandoc document converter](https://pandoc.org/)

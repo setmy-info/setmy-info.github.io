@@ -2,6 +2,10 @@
 
 ## Information
 
+Audacity is a free, open-source, cross-platform digital audio editor and recording application. It supports
+multi-track editing, audio recording from microphones or line-in, format conversion, and a wide range of effects
+(equalisation, noise reduction, compression, reverb, delay). Available for Windows, macOS, and Linux.
+
 ## Usage, tips and tricks
 
 * Split the track Ctr + I

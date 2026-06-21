@@ -1,18 +1,60 @@
 # LibreOffice
 
+## Information
+
+LibreOffice is a free, open-source office productivity suite maintained by The Document Foundation. It includes:
+
+* **Writer** — word processor (compatible with .docx)
+* **Calc** — spreadsheet (compatible with .xlsx)
+* **Impress** — presentation tool (compatible with .pptx)
+* **Draw** — vector graphics and diagrams
+* **Base** — database front-end
+* **Math** — formula editor
+
+LibreOffice supports headless mode for server-side batch document conversion (e.g. .doc to PDF), which makes it
+useful as a backend service in document processing pipelines.
+
+## Installation
+
+### CentOS, Rocky Linux
+
+```shell
+sudo dnf install libreoffice -y
+```
+
+### Fedora
+
+```shell
+sudo dnf install libreoffice -y
+```
+
+### Debian, Ubuntu
+
+```shell
+sudo apt install libreoffice -y
+```
+
+### Windows
+
+Download the installer from [libreoffice.org](https://www.libreoffice.org/download/).
+
 ## Usage, tips and tricks
 
-### Remove remove all ruler tabs
+### Remove all ruler tabs
 
 Menu -> Format -> Paragraph... then -> Tabs
 
 Delete all
 
-### As service
+### As a background service (Windows)
 
 ```shell
 "C:\Program Files\LibreOffice\program\soffice.exe" -accept="socket,host=0.0.0.0,port=8100;urp;StarOffice.ServiceManager" -headless -nodefault -nofirststartwizard -nolockcheck -nologo -norestore
 ```
+
+### Headless document conversion
+
+Convert a document to PDF using LibreOffice headlessly:
 
 ```shell
 libreoffice -env:UserInstallation=file:///tmp/conversion_file_name_#{timestamp} \
@@ -32,3 +74,7 @@ rm /tmp/"$template_file"
 ```
 
 ## See also
+
+* [LibreOffice official site](https://www.libreoffice.org/)
+* [LibreOffice documentation](https://documentation.libreoffice.org/)
+* [unoconv](https://github.com/unoconv/unoconv)
