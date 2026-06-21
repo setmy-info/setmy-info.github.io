@@ -1,5 +1,14 @@
 # Manifesto for Agile Software Development
 
+## Information
+
+The Agile Manifesto is a declaration of values and principles for software development. It was created and signed in
+February 2001 by 17 software practitioners at a retreat in Snowbird, Utah. The manifesto defines four core values and
+twelve principles that prioritise people, working software, collaboration, and adaptability over rigid processes and
+documentation. It has since become the foundation for Scrum, Kanban, XP, and many other agile methodologies.
+
+---
+
 We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have
 come to value:
 
@@ -164,4 +173,10 @@ Agile-процессы позволяют использовать измене�
 улучшения эффективности и соответственно корректировать
 стиль своей работы.
 
+## See also
+
 * [Manifesto for Agile Software Development](https://agilemanifesto.org/)
+* [Agile Alliance](https://www.agilealliance.org/)
+* [Scrum Guide](https://scrumguides.org/)
+* [Kanban](kanban.md)
+* [eduScrum](eduscrum.md)

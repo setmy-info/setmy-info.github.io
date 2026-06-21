@@ -2,9 +2,28 @@
 
 ## Information
 
+Jenkins is an open-source automation server written in Java. It orchestrates build, test, and deployment pipelines
+and is extensible via over 1 800 community plugins. Pipelines are defined in a `Jenkinsfile` using either the
+**Declarative Pipeline** DSL (recommended) or the more flexible **Scripted Pipeline** DSL. Jenkins runs on any
+platform with a JDK, from a single server to distributed agent fleets.
+
+Key features: parallel stages, Blue Ocean UI, GitHub/GitLab/Bitbucket integration, Docker/Kubernetes agents, shared
+libraries, credential management, and fine-grained role-based access control.
+
 ## Installation
 
-### CentOS, Rocky Linux
+### CentOS, Rocky Linux (modern — systemd)
+
+```shell
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo dnf install -y java-21-openjdk jenkins
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+```
+
+### CentOS, Rocky Linux (legacy — SysV init, older notes)
 
 ```shell
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
@@ -14,20 +33,16 @@ chkconfig --level 345 jenkins on
 service jenkins start
 ```
 
-From old notes (for FreeBSD or manual setup?):
+From old notes (manual home directory setup):
 
 ```shell
 mkdir /var/lib/jenkins
 chown -R jenkins:jenkins /var/lib/jenkins
 ```
 
-Jenkins working home directory is:
+Jenkins working home directory: **/var/lib/jenkins**
 
-**/var/lib/jenkins**
-
-Service execution script is:
-
-**/etc/init.d/jenkins**
+Service execution script: **/etc/init.d/jenkins**
 
 ### Fedora
 
@@ -36,15 +51,15 @@ Fedora 21 config changes can be done in:
 **nano /etc/sysconfig/jenkins**
 
 ```
-#JENKINS_PORT='--httpPort=7070'\
-#Should work also this\
+#JENKINS_PORT='--httpPort=7070'
+#Should work also this
 JENKINS_PORT='7070'
 daemon --user "$JENKINS_USER" --pidfile "$JENKINS_PID_FILE" $JAVA_CMD $PARAMS $JENKINS_PORT > /dev/null
 ```
 
 ### FreeBSD
 
-/etc/rc.conf
+**/etc/rc.conf**
 
 ```
 jenkins_enable="YES"
@@ -52,42 +67,80 @@ jenkins_args="--httpPort=7070"
 jenkins_java_home="/usr/local/openjdk16"
 ```
 
-### OpenIndiana
-
 ## Configuration
 
-### Plugins
+### Key directories
 
-Mercurial, Blue Ocean, i18n for Blue Ocean, Gravatar, Avatar, Green Balls, Docker, Kubernetes, SSH, Publish Over SSH,
-docker-build-step, CMake,
-Build Pipeline, JaCoCo, Cucumber reports
+| Path | Purpose |
+|------|---------|
+| `/var/lib/jenkins` | `$JENKINS_HOME` — jobs, workspaces, configs |
+| `/var/lib/jenkins/plugins` | installed plugins |
+| `/var/lib/jenkins/secrets/initialAdminPassword` | first-run unlock key |
+| `/etc/sysconfig/jenkins` | service environment variables (Fedora/RHEL) |
+
+### Recommended plugins
+
+Mercurial, Blue Ocean, i18n for Blue Ocean, Gravatar, Avatar, Green Balls, Docker, Kubernetes, SSH,
+Publish Over SSH, docker-build-step, CMake, Build Pipeline, JaCoCo, Cucumber reports
+
+### Declarative Jenkinsfile skeleton
+
+```groovy
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            when { branch 'main' }
+            steps {
+                sh './deploy.sh'
+            }
+        }
+    }
+    post {
+        always { junit '**/target/surefire-reports/*.xml' }
+    }
+}
+```
 
 ## Usage, tips and tricks
 
-**Unlock Jenkins**
+**Unlock Jenkins on first start**
 
 ```shell
 cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-Run shell as Jenkins user
+**Run shell as Jenkins user**
 
 ```shell
 chsh -s /bin/sh jenkins
-```
-
-Change user to Jenkins
-
-```shell
-su -
 su -l -p jenkins
 ```
 
-Modules polling:
+**Polling interval (every 5 minutes)**
 
 ```
 */5 * * * *
 ```
+
+**Key URLs**
+
+| URL | Purpose |
+|-----|---------|
+| `http://host:8080/` | Dashboard |
+| `http://host:8080/manage` | Manage Jenkins |
+| `http://host:8080/blue` | Blue Ocean UI |
+| `http://host:8080/admin/docs` (JHipster) | Swagger |
 
 ## GitHub
 
@@ -104,13 +157,12 @@ Modules polling:
 
 NB! **github** is used by default for registering new pipelines.
 
-Also some options for docker:
+Docker environment variables:
 
+```
 -e GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 -e GITHUB_USERNAME=e@mail.com
-
-Don't forget set polling option inside config for pipeline.
+```
 
 ### Create SSH keys
 
@@ -130,43 +182,20 @@ docker exec -it jenkins /bin/sh -c "cat /var/lib/jenkins/.ssh/id_ed25519.pub"
 3. Add public key to GitHub: GitHub profile picture -> Settings
    -> SSH and GPG keys -> New SSH key. Set title: Docker Jenkins GitHub Token
 
-### Problems
+### Docker exec shortcuts
 
-```
-Branch indexing
-Connecting to https://api.github.com with no credentials, anonymous access
-Jenkins-Imposed API Limiter: Current quota for Github API usage has 46 remaining (1 over budget). Next quota of 60 in 49 min. Sleeping for 4 min 30 sec.
-Jenkins is attempting to evenly distribute GitHub API requests. To configure a different rate limiting strategy, such as having Jenkins restrict GitHub API requests only when near or above the GitHub rate limit, go to "GitHub API usage" under "Configure System" in the Jenkins settings.
-Jenkins-Imposed API Limiter: Still sleeping, now only 1 min 28 sec remaining.
-Jenkins-Imposed API Limiter: Current quota for Github API usage has 42 remaining (2 over budget). Next quota of 60 in 45 min. Sleeping for 6 min 8 sec.
-Jenkins is attempting to evenly distribute GitHub API requests. To configure a different rate limiting strategy, such as having Jenkins restrict GitHub API requests only when near or above the GitHub rate limit, go to "GitHub API usage" under "Configure System" in the Jenkins settings.
-Jenkins-Imposed API Limiter: Still sleeping, now only 3 min 6 sec remaining.
-Jenkins-Imposed API Limiter: Still sleeping, now only 5.1 sec remaining.
-```
-
-Commands (git, mvn, gradle, etc) can't be executed. Reason was that ant unpacked tar file wrongly.
-
-```
-Caused by: java.io.IOException: Cannot run program "git" (in directory "/var/lib/jenkins/.jenkins/workspace/jenkinsfile-starter_develop"): error=13, Permission denied
-```
-
-Use Jenkins inside docker as **jenkins** user
-
-```
+```shell
+# Enter as jenkins user
 docker exec -it jenkins /bin/sh
-```
 
-Use Jenkins inside docker as **root** user
-
-```
+# Enter as root
 docker exec -u root -it jenkins /bin/sh
-```
 
-Use Jenkins image and start shell
-
-```
+# Start a fresh shell from the image
 docker run -it setmyinfo/setmy-info-rocky-java-jenkins:latest /bin/sh
 ```
+
+### Kubernetes service account
 
 ```
 kubectl create sa jenkins
@@ -178,11 +207,11 @@ kubectl get secret
 
 Workflows for **master**, **release/x**, **develop**, **feature/y** branches
 
-Publication - package sending to file server/storage/package managment süstem etc.
+Publication — package sending to file server/storage/package management system.
 
-Deploy - deploy package to environment (**dev**, **testing**, **prelive**, **live**).
+Deploy — deploy package to environment (**dev**, **testing**, **prelive**, **live**).
 
-Tagging - make tag for released (**tested/verified**, **published** and **deployed**) software into VCS.
+Tagging — make tag for released (**tested/verified**, **published** and **deployed**) software into VCS.
 
 ![Image](../resources/images/jenkinsfile-starter/master.png)
 
@@ -194,4 +223,7 @@ Tagging - make tag for released (**tested/verified**, **published** and **deploy
 
 ## See also
 
-[xxxx](http://yyyyy)
+* [Jenkins official documentation](https://www.jenkins.io/doc/)
+* [Jenkins Pipeline syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)
+* [Blue Ocean](https://www.jenkins.io/doc/book/blueocean/)
+* [Jenkins plugin index](https://plugins.jenkins.io/)

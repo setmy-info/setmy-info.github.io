@@ -4,14 +4,32 @@ Open software project presentation as RDF data.
 
 ## Information
 
+DOAP (Description of a Project) is an RDF/XML vocabulary for describing open source software projects. It was
+originally created by Edd Dumbill and is widely used by the Apache Software Foundation and other open source
+communities to express project metadata in a machine-readable format.
+
+DOAP describes projects with properties such as name, homepage, repository location, license, release versions,
+developers, and programming languages. The namespace URI is `http://usefulinc.com/ns/doap#`.
+
 ## Configuration
+
+Key DOAP properties:
+
+| Property           | Purpose                                        |
+|--------------------|------------------------------------------------|
+| `doap:name`        | Project name                                   |
+| `doap:homepage`    | Project homepage URL                           |
+| `doap:description` | Short description of the project               |
+| `doap:release`     | A specific release version                     |
+| `doap:Version`     | Version string within a release                |
+| `doap:developer`   | Developer (foaf:Person) contributing to project|
+| `doap:license`     | License URI (e.g. Apache 2.0, MIT)             |
+| `doap:repository`  | Source repository reference                    |
+| `doap:programming-language` | Implementation language              |
 
 ## Usage, tips and tricks
 
-### Coding tips and tricks
-
 ```xml
-
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:doap="http://usefulinc.com/ns/doap#">
 
@@ -46,5 +64,6 @@ Open software project presentation as RDF data.
 ## See also
 
 * [DOAP Wikipedia](https://en.wikipedia.org/wiki/DOAP)
-* https://github.com/ewilderj/doap/wiki
-* https://github.com/ewilderj/doap/tree/master/examples
+* [DOAP namespace — usefulinc.com/ns/doap](http://usefulinc.com/ns/doap)
+* [DOAP GitHub repository and examples](https://github.com/ewilderj/doap/tree/master/examples)
+* [Apache DOAP usage](https://projects.apache.org/doap.html)
