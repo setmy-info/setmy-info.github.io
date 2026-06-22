@@ -36,6 +36,8 @@
 
 ###### H6
 
+<!-- This is a comment -->
+
 This is also an ordinary paragraph.
 
 Alternatively, for H1 and H2, an underline-ish style:
@@ -93,10 +95,10 @@ There must be at least 3 dashes separating each header cell.
 The outer pipes (|) are optional, and you don't need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
- Markdown | Less      | Pretty
+ Markdown | Less      | Pretty     
 ----------|-----------|------------
- *Still*  | `renders` | **nicely**
- 1        | 2         | 3
+ *Still*  | `renders` | **nicely** 
+ 1        | 2         | 3          
 
 Here should be a text. In Github ia a problem with directly adding code after table.
 
