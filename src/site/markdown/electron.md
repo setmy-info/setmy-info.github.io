@@ -2,7 +2,6 @@
 
 ## Information
 
-<<<<<<< HEAD
 `Electron` is a framework for building cross-platform desktop applications with web technologies such as `HTML`, `CSS`,
 and `JavaScript` / `TypeScript`. It combines `Chromium` for rendering with `Node.js` for local system access, which
 makes it useful for internal tools, developer utilities, offline-first business applications, and desktop wrappers
@@ -23,7 +22,7 @@ around existing web products.
 * Turn an existing web app into a desktop client with tray and auto-start support.
 * Ship a cross-platform offline-capable business application.
 * Wrap a local service, daemon, or background workflow with a graphical desktop shell.
-=======
+
 Electron is a framework for building cross-platform desktop applications using web technologies — HTML, CSS, and
 JavaScript. It bundles Chromium and Node.js into a single runtime so you can write desktop apps with the same code
 as a web application.
@@ -35,7 +34,6 @@ see which Node.js version a given Electron release bundles.
 For your development environment, install a Node.js **LTS** version as well. Electron's tooling and build plugins
 (electron-builder, electron-forge) are tested against LTS releases. See [node.md](node.md) for Node.js LTS versioning
 details.
->>>>>>> 03b243b (Node related notest)
 
 ## Installation
 
@@ -304,7 +302,6 @@ Useful approaches:
 
 ## See also
 
-<<<<<<< HEAD
 * [Official Electron Website](https://www.electronjs.org/)
 * [Electron Security Tutorial](https://www.electronjs.org/docs/latest/tutorial/security)
 * [Node.js](nodejs.md)
@@ -312,7 +309,7 @@ Useful approaches:
 * [PWA vs. Native vs. Desktop Comparison](pwa-comparison.md)
 * [CapacitorJS (capacitorjs)](capacitorjs.md)
 * [Qt](qt.md)
-=======
+
 * [Electron official documentation](https://www.electronjs.org/docs/latest)
 * [Electron releases and bundled Node.js versions](https://releases.electronjs.org/)
 * [electron-builder](https://www.electron.build/)
@@ -320,4 +317,4 @@ Useful approaches:
 * [Node.js](node.md)
 * [npm](npm.md)
 * [JavaScript](javascript.md)
->>>>>>> 03b243b (Node related notest)
+
