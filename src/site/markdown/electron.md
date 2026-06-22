@@ -174,7 +174,7 @@ Typical Electron configuration topics:
 * code signing and packaging settings,
 * auto-start or background behavior if the app should live in tray.
 
-### Main process vs renderer process
+### Main process vs. a renderer process
 
 Electron applications usually have at least two responsibility layers:
 
@@ -307,14 +307,10 @@ Useful approaches:
 * [Node.js](nodejs.md)
 * [npm Development](npm.md)
 * [PWA vs. Native vs. Desktop Comparison](pwa-comparison.md)
-* [CapacitorJS (capacitorjs)](capacitorjs.md)
-* [Qt](qt.md)
-
+* [CapacitorJS](capacitorjs.md)
 * [Electron official documentation](https://www.electronjs.org/docs/latest)
 * [Electron releases and bundled Node.js versions](https://releases.electronjs.org/)
 * [electron-builder](https://www.electron.build/)
 * [electron-forge](https://www.electronforge.io/)
-* [Node.js](node.md)
-* [npm](npm.md)
 * [JavaScript](javascript.md)
 
