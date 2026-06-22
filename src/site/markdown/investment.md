@@ -1,5 +1,10 @@
 # Startup Roadmap — From Idea to Exit (3-Year Early Stage Plan)
 
+Related:
+
+* [Startup funding rounds](investment-rounds.md)
+* [Incubators in Dubai (2026)](dubai-incubators.md)
+
 ## Overview
 
 This document outlines a realistic startup journey from idea stage to scaling and potential exit.  
@@ -257,7 +262,8 @@ Attract and retain high-quality employees and advisors.
 
 ## What Is ESOP?
 
-ESOP (Employee Stock Option Pool) gives employees the right to acquire shares in the company under predefined conditions.
+ESOP (Employee Stock Option Pool) gives employees the right to acquire shares in the company under predefined
+conditions.
 
 This is commonly used in startups because:
 
@@ -773,7 +779,7 @@ Very few become:
 
 # Core Startup Philosophy
 
-A startup is fundamentally:
+A startup is fundamental:
 
 “Buying time to discover whether the market truly wants the solution.”
 

@@ -54,6 +54,7 @@
 
 ## Coding
 
+* [App generators](app-generators.md)
 * [FastAPI](fastapi.md)
 * [GitHub Copilot](https://github.com/features/copilot)
 * [Cursor](https://www.cursor.com/)
@@ -111,6 +112,7 @@
 * [ForeFront](https://www.forefront.ai/)
 * [Intercom Fin](https://www.intercom.com/fin)
 * [Chatbase](https://www.chatbase.co/)
+* [OpenClaw](openclaw.md)
 
 ## Automation
 

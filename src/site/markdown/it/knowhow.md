@@ -588,3 +588,7 @@ contribute significantly to their organization.
 | **Compliance Standards**            | Basic awareness of compliance               | Awareness of compliance standards                      | In-depth knowledge of compliance standards (e.g., GDPR, PCI-DSS)      |
 | **Leadership and Mentorship**       | N/A                                         | Mentorship of junior developers                        | Project leadership, mentoring, guiding teams                          |
 | **Continuous Learning**             | Willingness to learn                        | Commitment to learning new technologies                | Staying updated, community involvement                                |
+
+## Related know-how
+
+* [Dependency Injection and Inversion of Control](../di-ioc.md)

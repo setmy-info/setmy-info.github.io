@@ -607,3 +607,7 @@ kind: PodSecurityPolicyReview
 * [Sealed secrets](https://github.com/bitnami-labs/sealed-secrets/releases)
 * [PCI-DSS](https://raesene.github.io/blog/2022/10/01/PCI-Kubernetes-Section1-Authentication/)
 * [Terraform K8s Setup](terraform.md)
+* [Knative](knative.md)
+* [OpenFaaS](openfaas.md)
+* [MinIO](minio.md)
+* [Ceph](ceph.md)

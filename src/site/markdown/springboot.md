@@ -67,20 +67,21 @@ Or in pom.xml
     <artifactId>spring-boot-maven-plugin</artifactId>
     <version>${spring.boot.verions}</version>
     <configuration>
-        >jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
-    </jvmArguments>
-</configuration>
-    </plugin>
+        <jvmArguments>jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
+        </jvmArgumentsjvmArguments>
+    </configuration>
+</plugin>
 ```
 
 ### Getting profiles in code
 
 ```Java
-    @Autowired
-    Environment environment;
+
+@Autowired
+Environment environment;
 ```
 
-### Make console silent
+### Make the console silent
 
 ```yml
 spring:
