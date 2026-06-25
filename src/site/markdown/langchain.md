@@ -80,6 +80,12 @@ console.log(res);
 
 In the Java ecosystem, the most prominent implementation inspired by LangChain is **LangChain4j**.
 
+For Spring Boot projects, another important option is **Spring AI**. A practical rule of thumb is:
+
+* use `LangChain4j` when you want Java-centric LangChain-style abstractions and AI service patterns
+* use `Spring AI` when you want Spring Boot native configuration and integrations
+* use direct SDKs when you need raw provider-specific control
+
 **Installation (Maven):**
 
 ```xml
@@ -104,6 +110,53 @@ public class Main {
     }
 }
 ```
+
+### Spring Boot and Java notes
+
+#### LangChain vs LangChain4j vs Spring AI
+
+* **LangChain:** Originally the Python ecosystem framework, with a JavaScript implementation as well.
+* **LangChain4j:** The Java ecosystem framework most closely aligned with LangChain ideas.
+* **Spring AI:** The Spring ecosystem abstraction for integrating AI models, embeddings, vector stores, and tools in
+  Spring Boot applications.
+
+In practice, Java teams often choose between `LangChain4j` and `Spring AI` rather than using Python LangChain
+directly.
+
+#### When to choose LangChain4j
+
+`LangChain4j` is a good choice if you need:
+
+* Java-first APIs for chat, embeddings, and moderation-like workflows
+* AI services mapped to annotated Java interfaces
+* memory, retrieval, and tool support in a Java style
+* framework usage that is not limited to Spring Boot only
+
+#### When to choose Spring AI instead
+
+`Spring AI` is often the better fit if your application is already heavily based on Spring Boot and you want:
+
+* starter-based autoconfiguration
+* property-driven setup in `application.yml`
+* Spring-friendly abstractions around model providers and vector stores
+* easier alignment with the rest of the Spring ecosystem
+
+#### Spring Boot integration tips
+
+* Wrap model access in a service instead of calling providers directly from controllers.
+* Keep prompts versioned and testable.
+* Return structured outputs for business workflows where possible.
+* Use Spring profiles to switch between local and cloud-backed models.
+* Add observability around latency, token usage, failures, and retries.
+
+#### Related Java ecosystem tools
+
+Useful tools often combined with `LangChain4j` or `Spring AI`:
+
+* `Ollama` for local model execution
+* vector databases such as `pgvector`, `Milvus`, `Weaviate`, or `Qdrant`
+* Spring Boot scheduling and batch processing for document ingestion
+* Spring Security for protecting AI-backed APIs
 
 ## Similar Software
 

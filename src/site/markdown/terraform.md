@@ -121,7 +121,8 @@ kubectl get nodes
 
 Your cluster is now ready for [Argo Workflows installation](argo.md#installation).
 
-**Important:** To avoid unnecessary costs in AWS after your PoC, remember to shut down your cluster. See [AWS Cost Management](aws.md#managing-kubernetes-eks-costs).
+**Important:** To avoid unnecessary costs in AWS after your PoC, remember to shut down your cluster.
+See [AWS Cost Management](aws.md#managing-kubernetes-eks-costs).
 
 ---
 
@@ -208,13 +209,15 @@ Your cluster is now ready for [Argo Workflows installation](argo.md#installation
 
 ## Step-by-Step Guide: Exposing Applications and IP Whitelisting
 
-When deploying a REST API and an Angular web SPA to a Kubernetes cluster, you need to expose them to the internet while ensuring security. A common approach is to use an **Ingress Controller** with a **Load Balancer**.
+When deploying a REST API and an Angular web SPA to a Kubernetes cluster, you need to expose them to the internet while
+ensuring security. A common approach is to use an **Ingress Controller** with a **Load Balancer**.
 
 To restrict access to specific companies with fixed IP addresses, you can use **IP Whitelisting**.
 
 ### 1. AWS (Using AWS Load Balancer Controller)
 
-In AWS, the recommended way is to use the **AWS Load Balancer Controller**, which provisions an Application Load Balancer (ALB).
+In AWS, the recommended way is to use the **AWS Load Balancer Controller**, which provisions an Application Load
+Balancer (ALB).
 
 #### A. Install AWS Load Balancer Controller (Terraform)
 
@@ -252,36 +255,37 @@ Use the `alb.ingress.kubernetes.io/inbound-cidrs` annotation to specify the allo
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-app-ingress
-  annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    # IP Whitelisting: Only these IPs can access the app
-    alb.ingress.kubernetes.io/inbound-cidrs: "203.0.113.0/24, 1.2.3.4/32"
+    name: my-app-ingress
+    annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/target-type: ip
+        # IP Whitelisting: Only these IPs can access the app
+        alb.ingress.kubernetes.io/inbound-cidrs: "203.0.113.0/24, 1.2.3.4/32"
 spec:
-  rules:
-    - http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: rest-api-service
-                port:
-                  number: 80
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: angular-spa-service
-                port:
-                  number: 80
+    rules:
+        -   http:
+                paths:
+                    -   path: /api
+                        pathType: Prefix
+                        backend:
+                            service:
+                                name: rest-api-service
+                                port:
+                                    number: 80
+                    -   path: /
+                        pathType: Prefix
+                        backend:
+                            service:
+                                name: angular-spa-service
+                                port:
+                                    number: 80
 ```
 
 ### 2. Google Cloud (Using GKE Ingress & Cloud Armor)
 
-In GCP, the GKE Ingress controller uses Google Cloud Load Balancing (GCLB). For IP whitelisting, you should use **Google Cloud Armor**.
+In GCP, the GKE Ingress controller uses Google Cloud Load Balancing (GCLB). For IP whitelisting, you should use **Google
+Cloud Armor**.
 
 #### A. Terraform: Cloud Armor Security Policy
 
@@ -327,10 +331,10 @@ resource "google_compute_security_policy" "policy" {
 apiVersion: cloud.google.com/v1
 kind: BackendConfig
 metadata:
-  name: my-backend-config
+    name: my-backend-config
 spec:
-  securityPolicy:
-    name: "allow-fixed-ips"
+    securityPolicy:
+        name: "allow-fixed-ips"
 ```
 
 2. Annotate your **Service** to use the `BackendConfig`:
@@ -339,12 +343,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: rest-api-service
-  annotations:
-    cloud.google.com/backend-config: '{"default": "my-backend-config"}'
+    name: rest-api-service
+    annotations:
+        cloud.google.com/backend-config: '{"default": "my-backend-config"}'
 spec:
-  type: NodePort
-  ...
+    type: NodePort
+    ...
 ```
 
 3. Your **Ingress** will then automatically use the Cloud Armor policy via the linked services.
@@ -358,3 +362,4 @@ spec:
 * [Argo Workflows](argo.md)
 * [Minikube](minikube.md)
 * [AWS (Amazon Web Services)](aws.md)
+* [openTofu](opentofu.md)
