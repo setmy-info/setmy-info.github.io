@@ -4,29 +4,33 @@
 
 ### Introduction
 
-Dgraph is an open-source, distributed, native graph database designed for high performance and scalability. Unlike Neo4j, which uses Cypher, Dgraph was originally built with a GraphQL-like query language (DQL) and now supports standard GraphQL natively. It is built in Go and designed to run in a distributed environment, making it a great choice for modern cloud-native applications.
+Dgraph is an open-source, distributed, native graph database designed for high performance and scalability. Unlike
+Neo4j, which uses Cypher, Dgraph was originally built with a GraphQL-like query language (DQL) and now supports standard
+GraphQL natively. It is built in Go and designed to run in a distributed environment, making it a great choice for
+modern cloud-native applications.
 
 ### Key Features
 
-*   **Native GraphQL:** Expose a GraphQL API automatically from a schema definition.
-*   **Distributed and Scalable:** Built to scale horizontally by sharding data across multiple nodes.
-*   **ACID Compliant:** Supports transactional integrity.
-*   **High Performance:** Optimized for low-latency graph traversals.
-*   **Vector Search:** Support for vector embeddings to enable similarity search and AI-driven features (similar to RAG).
+* **Native GraphQL:** Expose a GraphQL API automatically from a schema definition.
+* **Distributed and Scalable:** Built to scale horizontally by sharding data across multiple nodes.
+* **ACID Compliant:** Supports transactional integrity.
+* **High Performance:** Optimized for low-latency graph traversals.
+* **Vector Search:** Support for vector embeddings to enable similarity search and AI-driven features (similar to RAG).
 
 ## Installation
 
 ### Docker
 
-For local development, the easiest way to run Dgraph is using the `standalone` Docker image, which includes all necessary components (Zero, Alpha, and Ratel UI).
+For local development, the easiest way to run Dgraph is using the `standalone` Docker image, which includes all
+necessary components (Zero, Alpha, and Ratel UI).
 
 ```bash
 docker run -it -p 8080:8080 -p 9080:9080 -p 8000:8000 dgraph/standalone:latest
 ```
 
-*   `8080`: HTTP port for GraphQL and DQL queries.
-*   `9080`: gRPC port for client communication.
-*   `8000`: Ratel (the web-based UI for Dgraph).
+* `8080`: HTTP port for GraphQL and DQL queries.
+* `9080`: gRPC port for client communication.
+* `8000`: Ratel (the web-based UI for Dgraph).
 
 ### Docker Compose
 
@@ -223,11 +227,11 @@ upsert {
 
 ## See also
 
-*   [Dgraph Official Website](https://dgraph.io/)
-*   [Dgraph Documentation](https://dgraph.io/docs/)
-*   [Neo4j](neo4j.md)
-*   [VectorDB](vectordb.md)
-*   [AI](ai.md)
-*   [AI Agent](agent.md)
-*   [Model Context Protocol (MCP)](mcp.md)
-*   [OpenVPN](openvpn.md)
+* [Dgraph Official Website](https://dgraph.io/)
+* [Dgraph Documentation](https://dgraph.io/docs/)
+* [Neo4j](neo4j.md)
+* [VectorDB](vectordb.md)
+* [AI](ai.md)
+* [AI Agent](agent.md)
+* [Model Context Protocol (MCP)](mcp.md)
+* [OpenVPN](openvpn.md)

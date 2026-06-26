@@ -1,6 +1,7 @@
 # Branching
 
 <!-- REVIEW: R-10 — two branching strategies listed without a decided winner; "currently master" rename is an unresolved transition; needs a deciding ADR -->
+
 * git flow (Vincent Driessen aka [nvie], https://nvie.com/posts/a-successful-git-branching-model/)
   master, default, feature, release branches. master should be releasable at any moment without thinking (investigating,
   analyzing) about latest tag's investigation, thinking.

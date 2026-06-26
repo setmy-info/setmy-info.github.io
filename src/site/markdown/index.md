@@ -61,6 +61,7 @@
         * [DigitalOcean](digitalocean.html)
         * [Hetzner Cloud](hetzner-cloud.html)
         * [OCPI (Open Charge Point Interface)](ocpi.html)
+        * [Direct Payment](directpayment.html)
         * [Terraform](terraform.html)
         * [Kubernetes (K8s)](kubernetes.html)
         * [Argo Workflows](argo.html)

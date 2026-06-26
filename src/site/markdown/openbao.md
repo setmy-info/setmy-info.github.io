@@ -2,7 +2,9 @@
 
 ## Information
 
-OpenBao is an open-source, community-governed secrets and encryption management platform. It is designed to centralize sensitive data handling such as application secrets, encryption keys, certificates, and machine identities while enforcing policy-based access and auditability.
+OpenBao is an open-source, community-governed secrets and encryption management platform. It is designed to centralize
+sensitive data handling such as application secrets, encryption keys, certificates, and machine identities while
+enforcing policy-based access and auditability.
 
 At a practical level, OpenBao gives teams one place to:
 
@@ -14,14 +16,17 @@ At a practical level, OpenBao gives teams one place to:
 
 ### OpenBao Overview
 
-OpenBao is commonly used as a control plane for secret lifecycle and cryptographic operations rather than as a place where applications directly embed sensitive material.
+OpenBao is commonly used as a control plane for secret lifecycle and cryptographic operations rather than as a place
+where applications directly embed sensitive material.
 
 #### What it is used for
 
 * **Application secret storage** for passwords, API tokens, connection strings, and environment-specific configuration.
-* **Encryption as a service** through the Transit engine so applications can encrypt, decrypt, sign, verify, and derive keys without storing raw key material themselves.
+* **Encryption as a service** through the Transit engine so applications can encrypt, decrypt, sign, verify, and derive
+  keys without storing raw key material themselves.
 * **Certificate and PKI workflows** for internal CAs, mTLS, and short-lived service certificates.
-* **Machine authentication** through auth methods such as AppRole, Kubernetes, cloud IAM, LDAP, JWT/OIDC, and token-based access.
+* **Machine authentication** through auth methods such as AppRole, Kubernetes, cloud IAM, LDAP, JWT/OIDC, and
+  token-based access.
 * **Operational security controls** such as secret leasing, renewal, revocation, policy enforcement, and audit logging.
 
 #### Core platform characteristics
@@ -34,9 +39,13 @@ OpenBao is commonly used as a control plane for secret lifecycle and cryptograph
 
 #### Compatibility notes in OpenBao context
 
-OpenBao is frequently used through APIs, workflows, and client libraries that were originally popular in the broader Vault-compatible ecosystem. In practice, that means developers will often encounter familiar endpoint structures, policy concepts, HCL configuration style, and integration libraries.
+OpenBao is frequently used through APIs, workflows, and client libraries that were originally popular in the broader
+Vault-compatible ecosystem. In practice, that means developers will often encounter familiar endpoint structures, policy
+concepts, HCL configuration style, and integration libraries.
 
-For this page, the important point is that OpenBao can usually fit into those operational patterns while still being documented and operated as its own platform with its own binary (`bao`), environment variables (`BAO_*`), release lifecycle, and community roadmap.
+For this page, the important point is that OpenBao can usually fit into those operational patterns while still being
+documented and operated as its own platform with its own binary (`bao`), environment variables (`BAO_*`), release
+lifecycle, and community roadmap.
 
 #### Ecosystem support
 
@@ -51,13 +60,15 @@ OpenBao can be integrated with:
 
 * **Secrets Management**: Securely store and control access to tokens, passwords, certificates, and encryption keys.
 * **Dynamic Secrets**: Generate secrets on-demand for various systems, reducing the risk of static credential leaks.
-* **Data Encryption (Transit)**: Allows applications to encrypt/decrypt data without storing it, offloading cryptographic operations.
+* **Data Encryption (Transit)**: Allows applications to encrypt/decrypt data without storing it, offloading
+  cryptographic operations.
 * **PKI (Certificate Management)**: Manage and rotate X.509 certificates at scale.
 * **Key Management**: Create, rotate, and manage cryptographic keys.
 * **Leasing and Renewal**: Issue time-limited credentials and renew them only while they are still required.
 * **Revocation**: Revoke a single secret, all secrets generated from a role, or an entire access tree when needed.
 * **Secret Versioning (KV v2)**: Keep versions of secrets, support rollback, and implement soft delete / destroy flows.
-* **Authentication Brokering**: Authenticate users and workloads through tokens, AppRole, Kubernetes, LDAP, GitHub, cloud IAM, and more.
+* **Authentication Brokering**: Authenticate users and workloads through tokens, AppRole, Kubernetes, LDAP, GitHub,
+  cloud IAM, and more.
 * **Identity and Access**: Fine-grained access control based on identities and policies.
 * **Audit Logging**: Keep a detailed record of all access and changes.
 
@@ -66,12 +77,14 @@ OpenBao can be integrated with:
 Depending on enabled auth methods and secrets engines, OpenBao is commonly used for:
 
 * **KV v1 / KV v2** for application secrets, environment-specific configuration, and secret rotation workflows.
-* **Transit** for encrypt/decrypt, signing, verification, HMAC, data key generation, and convergent encryption use cases.
+* **Transit** for encrypt/decrypt, signing, verification, HMAC, data key generation, and convergent encryption use
+  cases.
 * **PKI** for internal certificate authorities, short-lived TLS certificates, and service-to-service mTLS.
 * **SSH** for one-time SSH credentials or signed SSH certificates.
 * **Database** for temporary database usernames/passwords for PostgreSQL, MySQL, and other supported systems.
 * **TOTP** for OTP-based authentication support in selected workflows.
-* **Cloud/Auth integrations** for AWS, GCP, Azure, Kubernetes, LDAP, GitHub, JWT/OIDC, and AppRole based access patterns.
+* **Cloud/Auth integrations** for AWS, GCP, Azure, Kubernetes, LDAP, GitHub, JWT/OIDC, and AppRole based access
+  patterns.
 
 ### Supported Cryptographic Algorithms
 
@@ -93,38 +106,62 @@ OpenBao supports a wide range of algorithms, primarily through its **Transit** e
 
 ### Post-Quantum Cryptography (PQC) Notes
 
-OpenBao is primarily used today with classical cryptographic primitives such as AES, RSA, ECDSA, Ed25519, SHA-2, and ChaCha20-Poly1305. In practice, you should treat PQC support as **architecture and integration guidance**, not as a built-in guarantee that all OpenBao cryptographic operations are already quantum-resistant.
+OpenBao is primarily used today with classical cryptographic primitives such as AES, RSA, ECDSA, Ed25519, SHA-2, and
+ChaCha20-Poly1305. In practice, you should treat PQC support as **architecture and integration guidance**, not as a
+built-in guarantee that all OpenBao cryptographic operations are already quantum-resistant.
 
 What to keep in mind:
 
-* **Transit engine algorithms**: The commonly documented Transit key types are classical algorithms. PQC KEM/signature types are not typically exposed in the same way as `rsa-*`, `ecdsa-*`, or `ed25519` keys.
-* **TLS layer**: If you want PQC or hybrid PQC protection for client-to-OpenBao traffic, this is usually handled by the TLS stack in front of or around OpenBao, for example via a reverse proxy, load balancer, service mesh, or a custom build of TLS libraries supporting hybrid groups such as ML-KEM/Kyber combinations.
-* **Auto-unseal / HSM / KMS**: A future-ready design can place OpenBao together with external KMS or HSM systems. In that model, OpenBao still manages secrets and policy, while the external crypto boundary may evolve faster toward hardware-backed or PQC-capable services.
-* **PKI impact**: Most current internal PKI deployments with OpenBao still issue classical RSA or ECDSA certificates. If your environment is planning for PQC migration, certificate issuance and trust-chain design should be reviewed separately from secret storage.
-* **Hybrid migration**: For most teams, the practical approach is hybrid migration: keep OpenBao for secret lifecycle and access control, while introducing PQC first at transport, edge, VPN, or application protocol level.
+* **Transit engine algorithms**: The commonly documented Transit key types are classical algorithms. PQC KEM/signature
+  types are not typically exposed in the same way as `rsa-*`, `ecdsa-*`, or `ed25519` keys.
+* **TLS layer**: If you want PQC or hybrid PQC protection for client-to-OpenBao traffic, this is usually handled by the
+  TLS stack in front of or around OpenBao, for example via a reverse proxy, load balancer, service mesh, or a custom
+  build of TLS libraries supporting hybrid groups such as ML-KEM/Kyber combinations.
+* **Auto-unseal / HSM / KMS**: A future-ready design can place OpenBao together with external KMS or HSM systems. In
+  that model, OpenBao still manages secrets and policy, while the external crypto boundary may evolve faster toward
+  hardware-backed or PQC-capable services.
+* **PKI impact**: Most current internal PKI deployments with OpenBao still issue classical RSA or ECDSA certificates. If
+  your environment is planning for PQC migration, certificate issuance and trust-chain design should be reviewed
+  separately from secret storage.
+* **Hybrid migration**: For most teams, the practical approach is hybrid migration: keep OpenBao for secret lifecycle
+  and access control, while introducing PQC first at transport, edge, VPN, or application protocol level.
 
 Practical recommendation:
 
 1. Use OpenBao normally for secrets, Transit, PKI, and access control.
-2. Terminate TLS with a component that can adopt modern hybrid PQC ciphersuites or key exchange earlier than your application stack.
-3. Keep cryptographic agility in application design so that key types, certificates, and transport security can be replaced as standards and product support mature.
+2. Terminate TLS with a component that can adopt modern hybrid PQC ciphersuites or key exchange earlier than your
+   application stack.
+3. Keep cryptographic agility in application design so that key types, certificates, and transport security can be
+   replaced as standards and product support mature.
 4. Track OpenBao release notes and the surrounding crypto library ecosystem for native PQC-related enhancements.
 
 ### Making OpenBao Deployment PQC-Ready
 
-If your goal is to make OpenBao data handling more future-ready against quantum-era risks, the practical focus should be on **crypto agility, transport protection, and key-lifecycle planning**, not on assuming current stored Raft data is magically converted into a PQC format.
+If your goal is to make OpenBao data handling more future-ready against quantum-era risks, the practical focus should be
+on **crypto agility, transport protection, and key-lifecycle planning**, not on assuming current stored Raft data is
+magically converted into a PQC format.
 
 Recommended approach:
 
-* **Protect data in transit first** by using TLS endpoints, reverse proxies, service meshes, VPNs, or ingress components that can adopt hybrid PQC key exchange before OpenBao itself exposes native PQC primitives.
-* **Prefer strong symmetric settings now**. Symmetric encryption such as `AES-256` remains comparatively resilient in a post-quantum model relative to many classical public-key schemes, so using strong symmetric defaults is still sensible.
-* **Reduce long-lived plaintext exposure**. Keep secrets encrypted at rest, avoid uncontrolled exports, and minimize the number of places where secret material is decrypted outside OpenBao.
-* **Plan certificate agility**. Internal PKI hierarchies, service certificates, and trust bundles should be designed so they can be rotated or replaced when PQC-capable PKI standards and tooling mature.
-* **Classify long-retention sensitive data**. Secrets or encrypted payloads that must remain confidential for many years deserve earlier migration planning because "harvest now, decrypt later" is mainly a risk for long-lived confidentiality.
-* **Use external KMS / HSM boundaries where appropriate**. If your organization expects earlier PQC or hardware-backed crypto changes outside OpenBao itself, keep a clean architecture boundary so those systems can evolve independently.
-* **Document algorithm dependencies**. Track where you rely on RSA, ECDSA, Ed25519, TLS certificate types, client libraries, and external trust anchors so migration work is not blocked later by hidden dependencies.
+* **Protect data in transit first** by using TLS endpoints, reverse proxies, service meshes, VPNs, or ingress components
+  that can adopt hybrid PQC key exchange before OpenBao itself exposes native PQC primitives.
+* **Prefer strong symmetric settings now**. Symmetric encryption such as `AES-256` remains comparatively resilient in a
+  post-quantum model relative to many classical public-key schemes, so using strong symmetric defaults is still
+  sensible.
+* **Reduce long-lived plaintext exposure**. Keep secrets encrypted at rest, avoid uncontrolled exports, and minimize the
+  number of places where secret material is decrypted outside OpenBao.
+* **Plan certificate agility**. Internal PKI hierarchies, service certificates, and trust bundles should be designed so
+  they can be rotated or replaced when PQC-capable PKI standards and tooling mature.
+* **Classify long-retention sensitive data**. Secrets or encrypted payloads that must remain confidential for many years
+  deserve earlier migration planning because "harvest now, decrypt later" is mainly a risk for long-lived
+  confidentiality.
+* **Use external KMS / HSM boundaries where appropriate**. If your organization expects earlier PQC or hardware-backed
+  crypto changes outside OpenBao itself, keep a clean architecture boundary so those systems can evolve independently.
+* **Document algorithm dependencies**. Track where you rely on RSA, ECDSA, Ed25519, TLS certificate types, client
+  libraries, and external trust anchors so migration work is not blocked later by hidden dependencies.
 
-Short version: make the **surrounding architecture** PQC-ready now, and be ready to adopt native PQC features in OpenBao and its ecosystem later.
+Short version: make the **surrounding architecture** PQC-ready now, and be ready to adopt native PQC features in OpenBao
+and its ecosystem later.
 
 ## Installation
 
@@ -156,7 +193,8 @@ pkg install openbao
 
 ### Fedora
 
-OpenBao is often installed the same way as on Rocky Linux: download the release archive and place the `bao` binary into a directory on `PATH`.
+OpenBao is often installed the same way as on Rocky Linux: download the release archive and place the `bao` binary into
+a directory on `PATH`.
 
 ```bash
 BAO_VER="2.0.0"
@@ -167,7 +205,8 @@ sudo mv bao /usr/local/bin/
 
 ### OpenIndiana
 
-If no native package is available in your repository set, install from the upstream release archive and place the binary in a system path similarly to Linux or use a containerized deployment.
+If no native package is available in your repository set, install from the upstream release archive and place the binary
+in a system path similarly to Linux or use a containerized deployment.
 
 ## Setup with Docker for Developer
 
@@ -208,8 +247,10 @@ docker exec -it openbao-dev bao secrets list
 Developer notes:
 
 * **Root token**: In this example the development root token is `main-secret`.
-* **Persistence**: Dev mode is intentionally ephemeral. Restarting the container resets in-memory data unless you move to a non-dev server configuration.
-* **CLI in container**: The container already includes the `bao` CLI, so `docker exec` is convenient for quick learning and troubleshooting.
+* **Persistence**: Dev mode is intentionally ephemeral. Restarting the container resets in-memory data unless you move
+  to a non-dev server configuration.
+* **CLI in container**: The container already includes the `bao` CLI, so `docker exec` is convenient for quick learning
+  and troubleshooting.
 
 ## Learning Examples (Step-by-Step)
 
@@ -451,7 +492,8 @@ AppRole is one of the most common ways to let applications authenticate without 
 
 ### Storage Requirements (Integrated Storage)
 
-OpenBao supports **Integrated Storage (Raft)**, which is recommended for high availability without external dependencies.
+OpenBao supports **Integrated Storage (Raft)**, which is recommended for high availability without external
+dependencies.
 
 Before going live, plan for:
 
@@ -589,14 +631,18 @@ After starting a new non-dev instance, initialize it once and securely store the
 
 ### Backup and Restore Notes
 
-OpenBao backup planning should cover more than just the Raft data directory. A restorable deployment typically requires **data snapshots, configuration, TLS material references, audit configuration, and secure custody of bootstrap / recovery material**.
+OpenBao backup planning should cover more than just the Raft data directory. A restorable deployment typically requires
+**data snapshots, configuration, TLS material references, audit configuration, and secure custody of bootstrap /
+recovery material**.
 
 #### Developer / Local Machine Backups
 
 For developers, the first question is whether the local setup is **ephemeral** or **worth preserving**:
 
-* **`server -dev` / dev-mode container**: normally do **not** back it up. It is intended for throwaway learning and quick experiments.
-* **Local non-dev server with Raft storage**: back it up if it contains useful policies, Transit keys, PKI state, or test data you want to keep between restarts.
+* **`server -dev` / dev-mode container**: normally do **not** back it up. It is intended for throwaway learning and
+  quick experiments.
+* **Local non-dev server with Raft storage**: back it up if it contains useful policies, Transit keys, PKI state, or
+  test data you want to keep between restarts.
 
 Practical developer backup scope:
 
@@ -616,14 +662,16 @@ Developer tips:
 
 * Do not keep snapshots in the same directory as the live Raft data only.
 * Protect local snapshot files because they may contain highly sensitive encrypted state.
-* If the machine is just a disposable lab, documenting how to recreate it can be more useful than preserving every snapshot.
+* If the machine is just a disposable lab, documenting how to recreate it can be more useful than preserving every
+  snapshot.
 
 #### Live / Production Backups
 
 For live environments, define a repeatable backup set:
 
 1. **Raft snapshot** on a schedule.
-2. **Configuration backup** for `bao.hcl`, systemd unit overrides, container manifests, and auth/audit-related environment configuration.
+2. **Configuration backup** for `bao.hcl`, systemd unit overrides, container manifests, and auth/audit-related
+   environment configuration.
 3. **TLS asset backup or reproducible certificate issuance process**.
 4. **Recovery key custody records** and bootstrap documentation stored separately and securely.
 5. **Policy / automation / infrastructure-as-code backup** so the control plane can be rebuilt consistently.
@@ -637,9 +685,12 @@ bao operator raft snapshot save /secure-backup/openbao-$(date +%F-%H%M).snap
 
 Important live backup notes:
 
-* **Do not rely on filesystem copies of the live Raft directory as your main backup strategy** when OpenBao is running. Prefer supported snapshots.
-* **Auto-unseal does not replace backups**. Even with AWS KMS or another seal mechanism, you still need restorable snapshots.
-* **Store backups off-host and off-cluster** so ransomware, host loss, or operator mistakes do not destroy both production and backup copies.
+* **Do not rely on filesystem copies of the live Raft directory as your main backup strategy** when OpenBao is running.
+  Prefer supported snapshots.
+* **Auto-unseal does not replace backups**. Even with AWS KMS or another seal mechanism, you still need restorable
+  snapshots.
+* **Store backups off-host and off-cluster** so ransomware, host loss, or operator mistakes do not destroy both
+  production and backup copies.
 * **Encrypt backup storage and restrict access** to the minimum set of operators or backup services.
 * **Test restore regularly** in a non-production environment. A backup is only proven after a successful restore drill.
 
@@ -665,28 +716,39 @@ If you are preparing for long-term PQC migration, backup design should also supp
 
 ### AWS KMS Auto-Unseal
 
-AWS KMS auto-unseal lets OpenBao automatically decrypt the internal seal material during startup. In practical terms, OpenBao still protects all data with its internal barrier and master key hierarchy, but it no longer requires operators to manually enter unseal key shards after every restart.
+AWS KMS auto-unseal lets OpenBao automatically decrypt the internal seal material during startup. In practical terms,
+OpenBao still protects all data with its internal barrier and master key hierarchy, but it no longer requires operators
+to manually enter unseal key shards after every restart.
 
 How it works at a high level:
 
 1. During initialization, OpenBao generates the internal root/master material used to protect the barrier.
-2. Instead of relying only on manual Shamir unseal operations, OpenBao encrypts the seal-wrapping material with the AWS KMS key you configure.
-3. On restart, OpenBao calls AWS KMS to decrypt that seal-wrapping material and automatically becomes unsealed if it can access KMS successfully.
-4. Recovery keys are still important in auto-unseal deployments because they replace the old manual unseal workflow for disaster recovery and certain privileged operations.
+2. Instead of relying only on manual Shamir unseal operations, OpenBao encrypts the seal-wrapping material with the AWS
+   KMS key you configure.
+3. On restart, OpenBao calls AWS KMS to decrypt that seal-wrapping material and automatically becomes unsealed if it can
+   access KMS successfully.
+4. Recovery keys are still important in auto-unseal deployments because they replace the old manual unseal workflow for
+   disaster recovery and certain privileged operations.
 
 Important clarifications:
 
-* **Auto-unseal does not store all secrets in AWS KMS**. Your OpenBao data still lives in Raft or another storage backend; KMS protects the seal process, not every secret read/write operation.
-* **Auto-unseal is not a substitute for backups**. You still need Raft snapshots, configuration backup, TLS asset backup, and a tested restore process.
-* **Auto-unseal is not a substitute for access control**. Root token hygiene, audit devices, least-privilege policies, and short-lived workload authentication still matter.
-* **KMS availability matters**. If OpenBao cannot reach AWS KMS during startup, it may remain sealed until KMS access is restored.
+* **Auto-unseal does not store all secrets in AWS KMS**. Your OpenBao data still lives in Raft or another storage
+  backend; KMS protects the seal process, not every secret read/write operation.
+* **Auto-unseal is not a substitute for backups**. You still need Raft snapshots, configuration backup, TLS asset
+  backup, and a tested restore process.
+* **Auto-unseal is not a substitute for access control**. Root token hygiene, audit devices, least-privilege policies,
+  and short-lived workload authentication still matter.
+* **KMS availability matters**. If OpenBao cannot reach AWS KMS during startup, it may remain sealed until KMS access is
+  restored.
 
 #### When AWS KMS Auto-Unseal Fits Well
 
 Typical good-fit scenarios:
 
-* **Production VMs or cloud instances** that must restart unattended after patching, scaling events, or host maintenance.
-* **Containerized live environments** where manual operator unseal on every pod or container restart would be operationally painful.
+* **Production VMs or cloud instances** that must restart unattended after patching, scaling events, or host
+  maintenance.
+* **Containerized live environments** where manual operator unseal on every pod or container restart would be
+  operationally painful.
 * **Multi-node Raft clusters** where consistent startup automation is important.
 * **Teams already using AWS IAM, CloudTrail, and KMS governance** for centralized key control.
 
@@ -701,11 +763,14 @@ Typical non-goals:
 Before enabling AWS KMS auto-unseal, prepare:
 
 * **An AWS KMS symmetric key** in the same region where your OpenBao nodes can reach it.
-* **IAM permissions** allowing `kms:Encrypt`, `kms:Decrypt`, `kms:DescribeKey`, and typically `kms:GenerateDataKey*` for the OpenBao runtime identity.
-* **Network egress** from the host/container to AWS KMS endpoints, whether directly, through NAT, or through a private VPC endpoint.
+* **IAM permissions** allowing `kms:Encrypt`, `kms:Decrypt`, `kms:DescribeKey`, and typically `kms:GenerateDataKey*` for
+  the OpenBao runtime identity.
+* **Network egress** from the host/container to AWS KMS endpoints, whether directly, through NAT, or through a private
+  VPC endpoint.
 * **CloudTrail logging** for KMS operations so key usage is auditable.
 * **Recovery key handling process** because recovery keys still need secure offline custody.
-* **A plan for IAM credential delivery** such as EC2 instance profiles, ECS task roles, EKS IRSA, or another short-lived AWS credential source.
+* **A plan for IAM credential delivery** such as EC2 instance profiles, ECS task roles, EKS IRSA, or another short-lived
+  AWS credential source.
 
 #### Example `bao.hcl` for AWS KMS Auto-Unseal
 
@@ -738,9 +803,12 @@ ui           = true
 
 Notes:
 
-* Prefer the full **KMS key ARN** rather than a short alias when you want configuration to be explicit across accounts and environments.
-* `endpoint` is optional for normal AWS public-region use, but it can be useful when documenting a fixed region or using interface endpoints / special routing.
-* Avoid hardcoding `access_key` and `secret_key` in `bao.hcl`. Prefer IAM roles or environment-based short-lived credentials.
+* Prefer the full **KMS key ARN** rather than a short alias when you want configuration to be explicit across accounts
+  and environments.
+* `endpoint` is optional for normal AWS public-region use, but it can be useful when documenting a fixed region or using
+  interface endpoints / special routing.
+* Avoid hardcoding `access_key` and `secret_key` in `bao.hcl`. Prefer IAM roles or environment-based short-lived
+  credentials.
 
 #### Example IAM Policy for OpenBao Runtime
 
@@ -796,7 +864,8 @@ LimitNOFILE=65536
 WantedBy=multi-user.target
 ```
 
-If you are not on EC2 and must pass AWS settings through environment variables, prefer an environment file with restricted permissions, for example `/etc/openbao/openbao.env`:
+If you are not on EC2 and must pass AWS settings through environment variables, prefer an environment file with
+restricted permissions, for example `/etc/openbao/openbao.env`:
 
 ```bash
 AWS_REGION=eu-central-1
@@ -814,7 +883,8 @@ Ensure only the service user and administrators can read that file.
 
 #### Production Docker Example with AWS KMS Auto-Unseal
 
-For containers, the preferred production pattern is again to avoid static access keys and rely on the platform's IAM integration.
+For containers, the preferred production pattern is again to avoid static access keys and rely on the platform's IAM
+integration.
 
 **docker-compose.prod.yaml:**
 
@@ -901,7 +971,8 @@ For developer laptops and local machines, the best practice is usually **not** t
 Recommended approach for most developers:
 
 * Use **`server -dev`** for learning, demos, and throwaway local testing.
-* Use a **local non-prod server config** only when you specifically need to learn initialization, sealing, policies, or production-like behavior.
+* Use a **local non-prod server config** only when you specifically need to learn initialization, sealing, policies, or
+  production-like behavior.
 * Avoid sharing a long-lived AWS account key across developer machines just to make local OpenBao start automatically.
 
 If a developer truly needs to test AWS KMS auto-unseal locally:
@@ -916,7 +987,8 @@ Practical developer pattern:
 
 1. Learn OpenBao features in `-dev` mode first.
 2. Learn production concepts such as init/recovery/TLS with a local non-prod config next.
-3. Test AWS KMS auto-unseal only in a dedicated sandbox when you specifically need to validate IAM, KMS, or restart automation.
+3. Test AWS KMS auto-unseal only in a dedicated sandbox when you specifically need to validate IAM, KMS, or restart
+   automation.
 
 #### Security and Operational Best Practices
 
@@ -927,7 +999,8 @@ Practical developer pattern:
 * Use **TLS for API and cluster traffic** even though KMS protects auto-unseal.
 * Test **restart behavior**, **restore procedures**, and **regional failure assumptions** before going live.
 * Consider **VPC endpoints for KMS** when you want tighter network control in AWS-hosted environments.
-* Do not confuse **auto-unseal** with **hardware-backed Transit encryption**. If you need HSM-style cryptographic boundaries for data operations, that is a separate design topic.
+* Do not confuse **auto-unseal** with **hardware-backed Transit encryption**. If you need HSM-style cryptographic
+  boundaries for data operations, that is a separate design topic.
 
 #### Common Pitfalls
 
@@ -942,35 +1015,53 @@ Practical developer pattern:
 
 ### Payment Systems, PIN Protection, and Chip & PIN Considerations
 
-For payment environments, especially where **PIN data**, **PIN blocks**, **cardholder data**, or **EMV / Chip & PIN** related keys are involved, the answer is nuanced:
+For payment environments, especially where **PIN data**, **PIN blocks**, **cardholder data**, or **EMV / Chip & PIN**
+related keys are involved, the answer is nuanced:
 
-* **OpenBao can support surrounding key-management workflows**, secret distribution, application encryption services, certificate issuance, and access control.
-* **It is not, by itself, automatically equivalent to a certified payment HSM** for all payment-network, issuer, acquirer, or card-personalization use cases.
-* **PIN processing is a special domain**: real payment PIN handling usually requires dedicated controls around PIN block formats, cryptographic device certification, dual control, split knowledge, tamper resistance, and strict operational procedures.
+* **OpenBao can support surrounding key-management workflows**, secret distribution, application encryption services,
+  certificate issuance, and access control.
+* **It is not, by itself, automatically equivalent to a certified payment HSM** for all payment-network, issuer,
+  acquirer, or card-personalization use cases.
+* **PIN processing is a special domain**: real payment PIN handling usually requires dedicated controls around PIN block
+  formats, cryptographic device certification, dual control, split knowledge, tamper resistance, and strict operational
+  procedures.
 
 In practical terms:
 
-* For **application-level encryption of payment-adjacent secrets** or internal service credentials, OpenBao can be a strong fit.
-* For **true online PIN encryption / translation / verification workflows**, organizations often still require a **dedicated payment HSM** or a service built on certified HSM infrastructure.
-* For **EMV / Chip & PIN** ecosystems, OpenBao may help manage non-PIN secrets, certificates, service credentials, and some key-lifecycle automation, but the most sensitive issuer/acquirer cryptographic operations are commonly kept in specialized HSM platforms.
+* For **application-level encryption of payment-adjacent secrets** or internal service credentials, OpenBao can be a
+  strong fit.
+* For **true online PIN encryption / translation / verification workflows**, organizations often still require a *
+  *dedicated payment HSM** or a service built on certified HSM infrastructure.
+* For **EMV / Chip & PIN** ecosystems, OpenBao may help manage non-PIN secrets, certificates, service credentials, and
+  some key-lifecycle automation, but the most sensitive issuer/acquirer cryptographic operations are commonly kept in
+  specialized HSM platforms.
 
 ### Is OpenBao Supported for PIN Encryption?
 
-OpenBao is technically capable of cryptographic operations and key management, but whether it is "supported" depends on the type of support you mean:
+OpenBao is technically capable of cryptographic operations and key management, but whether it is "supported" depends on
+the type of support you mean:
 
-* **Technically possible for general encryption**: Yes, OpenBao Transit can encrypt/decrypt application data and manage keys.
-* **Suitable as the only control for payment PIN operations**: Usually **not enough on its own** for serious PCI PIN / card-payment environments.
-* **Suitable as part of a broader payment architecture**: Yes, potentially, when paired with certified HSMs, tightly scoped policies, auditing, and network segmentation.
+* **Technically possible for general encryption**: Yes, OpenBao Transit can encrypt/decrypt application data and manage
+  keys.
+* **Suitable as the only control for payment PIN operations**: Usually **not enough on its own** for serious PCI PIN /
+  card-payment environments.
+* **Suitable as part of a broader payment architecture**: Yes, potentially, when paired with certified HSMs, tightly
+  scoped policies, auditing, and network segmentation.
 
-If your requirement is specifically "store or process PIN-related keys and PIN blocks in a way acceptable for production card-payment operations," the safer guidance is:
+If your requirement is specifically "store or process PIN-related keys and PIN blocks in a way acceptable for production
+card-payment operations," the safer guidance is:
 
-1. Use **OpenBao** for orchestration, secret distribution, application auth, certificates, and possibly non-PIN encryption.
-2. Use a **certified HSM or payment HSM** for actual PIN generation, PIN translation, PIN verification, Zone PIN Key handling, and other card-scheme-sensitive cryptographic operations.
-3. Document the boundary very clearly so developers and auditors can distinguish **general secret management** from **payment cryptographic processing**.
+1. Use **OpenBao** for orchestration, secret distribution, application auth, certificates, and possibly non-PIN
+   encryption.
+2. Use a **certified HSM or payment HSM** for actual PIN generation, PIN translation, PIN verification, Zone PIN Key
+   handling, and other card-scheme-sensitive cryptographic operations.
+3. Document the boundary very clearly so developers and auditors can distinguish **general secret management** from *
+   *payment cryptographic processing**.
 
 ### PCI-DSS and Related Compliance Considerations
 
-PCI-DSS is broader than just encryption. Using OpenBao does not itself make an environment PCI-compliant. You still need architecture, process, and operational controls.
+PCI-DSS is broader than just encryption. Using OpenBao does not itself make an environment PCI-compliant. You still need
+architecture, process, and operational controls.
 
 Typical expectations include:
 
@@ -981,9 +1072,11 @@ Typical expectations include:
 * **TLS everywhere** for service-to-service and administrative access.
 * **Secure backup and recovery procedures** for encrypted storage, initialization material, and recovery keys.
 * **Separation of duties** so one operator does not control the entire cryptographic lifecycle alone.
-* **Monitoring and alerting** for unusual access patterns, failed authentication, policy changes, and key-management events.
+* **Monitoring and alerting** for unusual access patterns, failed authentication, policy changes, and key-management
+  events.
 
-If PIN data is involved, you may also need to consider requirements beyond general PCI-DSS, such as **PCI PIN Security** expectations and the payment-network rules applicable to your role.
+If PIN data is involved, you may also need to consider requirements beyond general PCI-DSS, such as **PCI PIN Security**
+expectations and the payment-network rules applicable to your role.
 
 ### What Should Be Done in Practice
 
@@ -994,7 +1087,8 @@ If you want to use OpenBao in a payment environment, a practical approach is:
     * Are you handling PAN data?
     * Are you handling actual PIN blocks or issuer/acquirer PIN keys?
 2. **Keep payment-HSM responsibilities separate** when PIN processing is in scope.
-3. **Use Transit carefully** for application encryption use cases, but do not assume it replaces a certified payment cryptographic module.
+3. **Use Transit carefully** for application encryption use cases, but do not assume it replaces a certified payment
+   cryptographic module.
 4. **Enable audit devices early** and ship logs to a protected central system.
 5. **Use auto-unseal carefully**:
     * Good for operational startup automation.
@@ -1008,19 +1102,22 @@ If you want to use OpenBao in a payment environment, a practical approach is:
     * Which component performs encryption.
     * Which component is certified or not certified.
     * How key rotation, revocation, and incident response are handled.
-8. **Validate with your QSA / compliance team** before go-live if the system will touch cardholder data or payment cryptography.
+8. **Validate with your QSA / compliance team** before go-live if the system will touch cardholder data or payment
+   cryptography.
 
 ### Short Recommendation
 
 * **OpenBao**: good for secrets management, application encryption, auth, PKI, and supporting controls.
-* **Certified HSM / payment HSM**: preferred or required for sensitive PIN-centric cryptographic operations in real payment ecosystems.
+* **Certified HSM / payment HSM**: preferred or required for sensitive PIN-centric cryptographic operations in real
+  payment ecosystems.
 * **PCI-DSS alignment**: achievable only with the full operating model, not just by deploying the product.
 
 ## Usage, tips and tricks
 
 ### Importing Key or Key Pairs via REST/curl
 
-OpenBao Transit can import externally generated keys, but the imported material must first be wrapped with the Transit wrapping key.
+OpenBao Transit can import externally generated keys, but the imported material must first be wrapped with the Transit
+wrapping key.
 
 1. **Fetch the Wrapping Key**:
    ```bash
@@ -1038,7 +1135,8 @@ OpenBao Transit can import externally generated keys, but the imported material 
    ```
 
 3. **Wrap the external key material**:
-   The private key or symmetric key must be wrapped outside OpenBao using the previously fetched wrapping key. The exact wrapping procedure depends on the key type and the helper tooling you use.
+   The private key or symmetric key must be wrapped outside OpenBao using the previously fetched wrapping key. The exact
+   wrapping procedure depends on the key type and the helper tooling you use.
 
 4. **Import wrapped key**:
    Submit the wrapped key blob to the import endpoint.
@@ -1088,15 +1186,19 @@ bao policy write my-app-policy my-app-policy.hcl
 
 ### Libraries for Application Integration
 
-If you want to integrate OpenBao into application code instead of using only `curl`, the most practical approach is to use Vault-compatible clients because OpenBao keeps strong API compatibility with Vault 1.14-style APIs.
+If you want to integrate OpenBao into application code instead of using only `curl`, the most practical approach is to
+use Vault-compatible clients because OpenBao keeps strong API compatibility with Vault 1.14-style APIs.
 
 #### Java
 
 Common library choices for Java applications:
 
-* **Spring Vault** (`org.springframework.vault:spring-vault-core`) for Spring Boot / Spring Framework applications that need KV, Transit, token authentication, AppRole, or certificate workflows.
-* **BetterCloud Vault Java Driver** (`com.bettercloud:vault-java-driver`) for non-Spring Java services that want a lightweight Vault/OpenBao client.
-* **Plain HTTP clients** such as Spring `RestTemplate`, Spring `WebClient`, or `OkHttp` when you want direct control over OpenBao REST API calls.
+* **Spring Vault** (`org.springframework.vault:spring-vault-core`) for Spring Boot / Spring Framework applications that
+  need KV, Transit, token authentication, AppRole, or certificate workflows.
+* **BetterCloud Vault Java Driver** (`com.bettercloud:vault-java-driver`) for non-Spring Java services that want a
+  lightweight Vault/OpenBao client.
+* **Plain HTTP clients** such as Spring `RestTemplate`, Spring `WebClient`, or `OkHttp` when you want direct control
+  over OpenBao REST API calls.
 
 Typical Java use cases:
 
@@ -1109,8 +1211,10 @@ Typical Java use cases:
 
 Common library choices for Python applications:
 
-* **HVAC** (`hvac`) is the main Python client for Vault-compatible APIs and is usually the first choice for OpenBao integrations.
-* **Requests** (`requests`) is a good option when you want to call OpenBao REST endpoints directly and keep the integration very explicit.
+* **HVAC** (`hvac`) is the main Python client for Vault-compatible APIs and is usually the first choice for OpenBao
+  integrations.
+* **Requests** (`requests`) is a good option when you want to call OpenBao REST endpoints directly and keep the
+  integration very explicit.
 * **HTTPX** (`httpx`) can be useful for async or modern HTTP-based integrations when building Python services.
 
 Typical Python use cases:
@@ -1125,7 +1229,8 @@ Typical Python use cases:
 * Use **Spring Vault** when your application is already based on Spring Boot and you want higher-level integration.
 * Use **vault-java-driver** or direct HTTP if you want a smaller dependency surface in Java.
 * Use **HVAC** for most Python cases because it already maps many Vault/OpenBao features into Python methods.
-* Use direct REST calls when you need a brand-new endpoint, want exact request control, or are documenting platform-neutral examples.
+* Use direct REST calls when you need a brand-new endpoint, want exact request control, or are documenting
+  platform-neutral examples.
 
 ### Java Example (Using Spring Vault/OpenBao compatible client)
 
@@ -1288,9 +1393,12 @@ print(client_token)
 * **Dev Mode**: Always use `-dev` for testing, never for production.
 * **Base64**: Remember that the Transit engine always expects `plaintext` to be base64-encoded.
 * **Unsealing**: In production, OpenBao starts "Sealed". Use `bao operator init` and `bao operator unseal`.
-* **Root Token Hygiene**: Use the initial root token only for bootstrap tasks. Create scoped policies and auth roles for daily use.
-* **Audit Logs**: Enable at least one audit device early in any live environment so access history is preserved from the beginning.
-* **TLS Everywhere**: Use HTTPS for API access outside localhost development. Protect both `api_addr` and cluster communication.
+* **Root Token Hygiene**: Use the initial root token only for bootstrap tasks. Create scoped policies and auth roles for
+  daily use.
+* **Audit Logs**: Enable at least one audit device early in any live environment so access history is preserved from the
+  beginning.
+* **TLS Everywhere**: Use HTTPS for API access outside localhost development. Protect both `api_addr` and cluster
+  communication.
 * **Token TTLs**: Prefer short-lived child tokens or AppRole/Kubernetes auth over long-lived manually copied tokens.
 * **Backups**: For Raft storage, schedule snapshots and test restore procedures before you need them.
 

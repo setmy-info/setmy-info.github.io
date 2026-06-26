@@ -2,29 +2,33 @@
 
 ## Information
 
-HAProxy (High Availability Proxy) is a free, very fast and reliable open-source solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers quite a number of the world's most visited ones.
+HAProxy (High Availability Proxy) is a free, very fast and reliable open-source solution offering high availability,
+load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for very high traffic web
+sites and powers quite a number of the world's most visited ones.
 
 ### Main Functionalities and Features
 
-*   **Layer 4 (TCP) and Layer 7 (HTTP) Load Balancing**: Efficiently distribute traffic at both transport and application layers.
-*   **SSL/TLS Termination**: Handle SSL handshake and decryption to offload work from backend servers.
-*   **Post-Quantum Cryptography (PQC)**: Support for quantum-resistant key exchange algorithms (requires OpenSSL 3.2+).
-*   **Health Checking**: Automatically detect and remove failed backend servers from the rotation.
-*   **High Availability**: Support for VRRP (via keepalived) and other mechanisms to ensure the proxy itself is not a single point of failure.
-*   **Sticky Sessions**: Ensure a user stays connected to the same backend server (Persistence).
-*   **Content Switching**: Route requests based on URL, headers, or other request attributes.
-*   **DDoS Protection & Rate Limiting**: Built-in mechanisms to limit request rates and block abusive traffic.
-*   **Detailed Metrics**: Real-time statistics via a dedicated stats page or API.
+* **Layer 4 (TCP) and Layer 7 (HTTP) Load Balancing**: Efficiently distribute traffic at both transport and application
+  layers.
+* **SSL/TLS Termination**: Handle SSL handshake and decryption to offload work from backend servers.
+* **Post-Quantum Cryptography (PQC)**: Support for quantum-resistant key exchange algorithms (requires OpenSSL 3.2+).
+* **Health Checking**: Automatically detect and remove failed backend servers from the rotation.
+* **High Availability**: Support for VRRP (via keepalived) and other mechanisms to ensure the proxy itself is not a
+  single point of failure.
+* **Sticky Sessions**: Ensure a user stays connected to the same backend server (Persistence).
+* **Content Switching**: Route requests based on URL, headers, or other request attributes.
+* **DDoS Protection & Rate Limiting**: Built-in mechanisms to limit request rates and block abusive traffic.
+* **Detailed Metrics**: Real-time statistics via a dedicated stats page or API.
 
 ### Supported Load Balancing Algorithms
 
-*   `roundrobin`: Each server is used in turns, according to their weights.
-*   `leastconn`: The server with the lowest number of connections receives the request.
-*   `first`: The first server with available connection slots receives the connection.
-*   `source`: The source IP address is hashed and divided by the total weight of the running servers.
-*   `uri`: The left part of the URI (before the question mark) is hashed.
-*   `hdr(name)`: The HTTP header `name` is looked up in each request and hashed.
-*   `random`: A random number is used as a hash key.
+* `roundrobin`: Each server is used in turns, according to their weights.
+* `leastconn`: The server with the lowest number of connections receives the request.
+* `first`: The first server with available connection slots receives the connection.
+* `source`: The source IP address is hashed and divided by the total weight of the running servers.
+* `uri`: The left part of the URI (before the question mark) is hashed.
+* `hdr(name)`: The HTTP header `name` is looked up in each request and hashed.
+* `random`: A random number is used as a hash key.
 
 ## Installation
 
@@ -43,6 +47,7 @@ sudo dnf install haproxy
 ### macOS
 
 Install via Homebrew:
+
 ```bash
 brew install haproxy
 ```
@@ -61,7 +66,8 @@ pkg install haproxy
 
 ## Setup with Docker for Developer
 
-For local development, you can run HAProxy with a simple configuration to proxy to your local services and serve small static files.
+For local development, you can run HAProxy with a simple configuration to proxy to your local services and serve small
+static files.
 
 **docker-compose.yaml:**
 
@@ -128,11 +134,12 @@ backend api_backend
 
 While HAProxy is primarily a load balancer, it can serve static content in a few ways:
 
-1.  **Native `http-request return`**: Suitable for small files (index, maintenance pages, robot.txt).
-    ```haproxy
-    http-request return status 200 content-type "text/plain" string "Hello World" if { path /hello }
-    ```
-2.  **Proxying to a Backend**: The standard way for production. HAProxy sits in front of a lightweight server like Nginx, Apache, or a dedicated static file server.
+1. **Native `http-request return`**: Suitable for small files (index, maintenance pages, robot.txt).
+   ```haproxy
+   http-request return status 200 content-type "text/plain" string "Hello World" if { path /hello }
+   ```
+2. **Proxying to a Backend**: The standard way for production. HAProxy sits in front of a lightweight server like Nginx,
+   Apache, or a dedicated static file server.
 
 ### Proxying to Local Network API Servers
 
@@ -155,30 +162,32 @@ backend local_apis
 
 HAProxy is commonly used to terminate SSL/TLS connections, offloading the cryptographic work from backend servers.
 
-1.  **Combined PEM**: HAProxy requires the certificate, any intermediate certificates, and the private key to be combined into a single `.pem` file.
-    ```bash
-    cat cert.crt intermediate.crt key.key > mysite.pem
-    ```
+1. **Combined PEM**: HAProxy requires the certificate, any intermediate certificates, and the private key to be combined
+   into a single `.pem` file.
+   ```bash
+   cat cert.crt intermediate.crt key.key > mysite.pem
+   ```
 
-2.  **Basic Configuration**:
-    ```haproxy
-    frontend https-in
-        bind *:443 ssl crt /etc/ssl/certs/mysite.pem
-        http-request set-header X-Forwarded-Proto https
-        default_backend api_backend
-    ```
+2. **Basic Configuration**:
+   ```haproxy
+   frontend https-in
+       bind *:443 ssl crt /etc/ssl/certs/mysite.pem
+       http-request set-header X-Forwarded-Proto https
+       default_backend api_backend
+   ```
 
-3.  **Global Security Settings**:
-    ```haproxy
-    global
-        # Modern security profile
-        ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
-        ssl-default-bind-options no-sslv3 no-tlsv10 no-tlsv11 no-tls-tickets
-    ```
+3. **Global Security Settings**:
+   ```haproxy
+   global
+       # Modern security profile
+       ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
+       ssl-default-bind-options no-sslv3 no-tlsv10 no-tlsv11 no-tls-tickets
+   ```
 
 ### Post-Quantum Cryptography (PQC)
 
-Post-Quantum Cryptography (PQC) aims to be secure against attacks by quantum computers. HAProxy supports PQC when compiled with compatible libraries like **OpenSSL 3.2+** or **WolfSSL**.
+Post-Quantum Cryptography (PQC) aims to be secure against attacks by quantum computers. HAProxy supports PQC when
+compiled with compatible libraries like **OpenSSL 3.2+** or **WolfSSL**.
 
 To enable PQC hybrid key exchange (e.g., combining X25519 with Kyber/ML-KEM):
 
@@ -195,15 +204,15 @@ global
 
 ### Rocky Linux (systemd service)
 
-1.  **Configure HAProxy**: Edit `/etc/haproxy/haproxy.cfg`.
-2.  **Validate Configuration**:
-    ```bash
-    haproxy -c -f /etc/haproxy/haproxy.cfg
-    ```
-3.  **Enable and Start**:
-    ```bash
-    sudo systemctl enable --now haproxy
-    ```
+1. **Configure HAProxy**: Edit `/etc/haproxy/haproxy.cfg`.
+2. **Validate Configuration**:
+   ```bash
+   haproxy -c -f /etc/haproxy/haproxy.cfg
+   ```
+3. **Enable and Start**:
+   ```bash
+   sudo systemctl enable --now haproxy
+   ```
 
 ### Production Docker Setup
 
@@ -230,17 +239,18 @@ services:
 
 ### Coding tips and tricks
 
-*   **Config Validation**: Always run `haproxy -c -f <file>` before restarting the service to catch syntax errors.
-*   **Zero-Downtime Reloads**: Use `systemctl reload haproxy` which sends a `SIGUSR2` signal for seamless transition to the new configuration.
-*   **Logging**: Use `option httplog` in the `defaults` or `frontend` section to get detailed request logs.
-*   **Debugging Headers**: Add headers to responses to see which backend handled the request:
-    ```haproxy
-    http-response set-header X-Backend %s
-    ```
-*   **SSL termination**: Combine your certificate and private key into a single `.pem` file for HAProxy.
-    ```bash
-    cat cert.crt key.key > mysite.pem
-    ```
+* **Config Validation**: Always run `haproxy -c -f <file>` before restarting the service to catch syntax errors.
+* **Zero-Downtime Reloads**: Use `systemctl reload haproxy` which sends a `SIGUSR2` signal for seamless transition to
+  the new configuration.
+* **Logging**: Use `option httplog` in the `defaults` or `frontend` section to get detailed request logs.
+* **Debugging Headers**: Add headers to responses to see which backend handled the request:
+  ```haproxy
+  http-response set-header X-Backend %s
+  ```
+* **SSL termination**: Combine your certificate and private key into a single `.pem` file for HAProxy.
+  ```bash
+  cat cert.crt key.key > mysite.pem
+  ```
 
 ## See also
 

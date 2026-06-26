@@ -181,10 +181,9 @@ yarn serve
 </html>
 ```
 
-
 ```html
         <label for="itemDropdown">Select item:</label>
-        <select v-model="selectedItem" @change="onItemChange" id="itemDropdown">
-            <option v-for="(item, key) in items" :key="key" :value="item">{{ key }} {{ item.type }}</option>
-        </select>
+<select v-model="selectedItem" @change="onItemChange" id="itemDropdown">
+    <option v-for="(item, key) in items" :key="key" :value="item">{{ key }} {{ item.type }}</option>
+</select>
 ```

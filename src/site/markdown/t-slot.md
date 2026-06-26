@@ -8,7 +8,7 @@
 
 ## Environments and building blocks
 
-*   [Environments and building blocks](it/architecture/enterprise-architecture/buildingblocks.md)
+* [Environments and building blocks](it/architecture/enterprise-architecture/buildingblocks.md)
 
 ## Usage, tips and tricks
 

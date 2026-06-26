@@ -11,4 +11,5 @@ expertise of full-stack developers.
 Users still have the ability to "install" individual sub-apps within the SMI ecosystem, as well as "install" a root app
 that contains all sub-apps, ensuring accessibility and convenience.
 
-See [PWA vs. Native vs. Desktop Comparison](../../../pwa-comparison.md) for more details on obstacles and hybrid solutions.
+See [PWA vs. Native vs. Desktop Comparison](../../../pwa-comparison.md) for more details on obstacles and hybrid
+solutions.

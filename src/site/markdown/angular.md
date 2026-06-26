@@ -36,13 +36,13 @@ ng serve --open
 /opt/firefox/firefox --new-tab http://localhost:4200/
 ```
 
-
 ```shell
 #Interactive unit test
 ng test
 # Single run
 ng test --watch=false
 ```
+
     "@wdio/jasmine-framework": "^9.22.0",
     "@wdio/local-runner": "^9.22.0",
     "@wdio/schematics": "^1.2.1",

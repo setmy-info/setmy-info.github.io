@@ -2,7 +2,9 @@
 
 ## Information
 
-Zeebe is a cloud-native workflow engine for microservices orchestration, the core engine of Camunda 8. It is designed to be horizontally scalable, fault-tolerant, and high-performance. Zeebe uses BPMN 2.0 to define workflows and gRPC for client communication.
+Zeebe is a cloud-native workflow engine for microservices orchestration, the core engine of Camunda 8. It is designed to
+be horizontally scalable, fault-tolerant, and high-performance. Zeebe uses BPMN 2.0 to define workflows and gRPC for
+client communication.
 
 ### Main Functionalities and Features
 
@@ -41,7 +43,8 @@ sudo dnf install java-21-openjdk-devel
 
 For most developers, Docker Desktop is the easiest way to run Zeebe locally on macOS.
 
-If you want native CLI tooling such as `zbctl`, download the matching release binary from the Camunda releases page and place it in your `PATH`.
+If you want native CLI tooling such as `zbctl`, download the matching release binary from the Camunda releases page and
+place it in your `PATH`.
 
 ### FreeBSD
 
@@ -59,7 +62,9 @@ pkg install jdk-21
 
 ## Setup with Docker for Developer
 
-For local development, the quickest reliable setup is a single-node Zeebe broker. If you also want Operate, Tasklist, Identity, and the other Camunda 8 components, prefer the official Camunda self-managed Docker Compose bundle because those services need additional configuration.
+For local development, the quickest reliable setup is a single-node Zeebe broker. If you also want Operate, Tasklist,
+Identity, and the other Camunda 8 components, prefer the official Camunda self-managed Docker Compose bundle because
+those services need additional configuration.
 
 **docker-compose.yaml:**
 
@@ -93,7 +98,8 @@ docker-compose up -d
 * **Zeebe Gateway**: `localhost:26500`
 * **Metrics / management port**: `localhost:9600`
 
-If you need Operate or the full Camunda 8 stack locally, use the official Camunda self-managed Docker Compose examples instead of trying to wire only one or two components manually.
+If you need Operate or the full Camunda 8 stack locally, use the official Camunda self-managed Docker Compose examples
+instead of trying to wire only one or two components manually.
 
 ## CLI Tools (zbctl)
 
@@ -223,7 +229,8 @@ docker run --name zeebe \
   camunda/zeebe:8.5.0
 ```
 
-For a real multi-node cluster, use the official Helm chart or official multi-node Docker examples. A Zeebe cluster needs consistent broker IDs, cluster settings, networking, and persistent storage on every node.
+For a real multi-node cluster, use the official Helm chart or official multi-node Docker examples. A Zeebe cluster needs
+consistent broker IDs, cluster settings, networking, and persistent storage on every node.
 
 ### Docker compose
 
@@ -257,7 +264,9 @@ docker-compose up -d
 
 ### Kubernetes (Self-Managed)
 
-For Kubernetes, the recommended production-style path is the official Camunda Helm chart. A plain `StatefulSet` example without services, persistent volumes, cluster settings, and identity/configuration is not enough for a correct live installation.
+For Kubernetes, the recommended production-style path is the official Camunda Helm chart. A plain `StatefulSet` example
+without services, persistent volumes, cluster settings, and identity/configuration is not enough for a correct live
+installation.
 
 ```shell
 minikube start
@@ -280,7 +289,8 @@ kubectl get pods -n camunda
 kubectl get svc -n camunda
 ```
 
-If you only want Zeebe for a local test cluster, disable the components you do not need in the Helm values file instead of hand-writing an incomplete `StatefulSet`.
+If you only want Zeebe for a local test cluster, disable the components you do not need in the Helm values file instead
+of hand-writing an incomplete `StatefulSet`.
 
 **Minimal example values (`values-zeebe-only.yaml`)**
 
@@ -363,9 +373,12 @@ sudo systemctl enable --now zeebe
 
 ### PostgreSQL as Zeebe Exporter
 
-Zeebe does not use PostgreSQL as its primary broker state backend. Its broker state is stored in Zeebe's own log and state storage.
+Zeebe does not use PostgreSQL as its primary broker state backend. Its broker state is stored in Zeebe's own log and
+state storage.
 
-If you need PostgreSQL in a Camunda 8 environment, it is usually for surrounding platform components or custom reporting pipelines, not as a drop-in broker storage replacement. For export/reporting use cases, verify the exact exporter or downstream pipeline you plan to use instead of assuming a built-in PostgreSQL backend.
+If you need PostgreSQL in a Camunda 8 environment, it is usually for surrounding platform components or custom reporting
+pipelines, not as a drop-in broker storage replacement. For export/reporting use cases, verify the exact exporter or
+downstream pipeline you plan to use instead of assuming a built-in PostgreSQL backend.
 
 ## See also
 

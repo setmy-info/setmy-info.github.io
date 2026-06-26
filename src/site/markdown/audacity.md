@@ -23,7 +23,7 @@
 
 ### Small echo room
 
-Volume +  Reverb + EQ + Delay
+Volume + Reverb + EQ + Delay
 
 1) Volume: Effect -> Volume and Compression -> Amplify
 
@@ -46,8 +46,6 @@ Volume +  Reverb + EQ + Delay
 100Hz 2dB , 5000Hz 10dB -2dB, 20000Hz 20dB -8dB
 
 4) Delay: Effects -> Delay and reverb -> Delay
-
-
 
 ### Coding tips and tricks
 

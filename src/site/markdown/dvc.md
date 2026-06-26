@@ -2,7 +2,8 @@
 
 ## Information
 
-`DVC` (`Data Version Control`) is a command-line tool for tracking large files, datasets, models, and machine learning pipelines together with normal source code repositories.
+`DVC` (`Data Version Control`) is a command-line tool for tracking large files, datasets, models, and machine learning
+pipelines together with normal source code repositories.
 
 In practice, it gives developers a workflow similar to `Git`, but for data and reproducible processing steps:
 
@@ -15,7 +16,8 @@ In practice, it gives developers a workflow similar to `Git`, but for data and r
 Main functionalities and features:
 
 * **Large file tracking** without committing raw data blobs directly into normal `Git` history.
-* **Local cache + remote storage** support for local paths, `S3`, `SSH`, `Azure Blob`, `GCS`, and similar backends depending on installed extras.
+* **Local cache + remote storage** support for local paths, `S3`, `SSH`, `Azure Blob`, `GCS`, and similar backends
+  depending on installed extras.
 * **Reproducible pipelines** via `dvc.yaml`, `dvc.lock`, tracked dependencies, and commands.
 * **Experiment tracking** for data science and machine learning workflows.
 * **Data checkout / rollback** so a repository revision can restore the matching data state.
@@ -31,7 +33,8 @@ Good use cases:
 
 ## Installation
 
-`DVC` is a Python-based CLI. The most common and reliable installation approach is `pip`, `pipx`, or an official Python environment. Some operating systems may have community packages, but those can lag behind the upstream release.
+`DVC` is a Python-based CLI. The most common and reliable installation approach is `pip`, `pipx`, or an official Python
+environment. Some operating systems may have community packages, but those can lag behind the upstream release.
 
 Before installing, verify Python:
 
@@ -85,7 +88,8 @@ pipx install dvc
 
 Developer note:
 
-* On enterprise-like systems, `pipx` or a virtual environment is often safer than mixing many Python CLI tools into the base interpreter.
+* On enterprise-like systems, `pipx` or a virtual environment is often safer than mixing many Python CLI tools into the
+  base interpreter.
 
 ### Fedora
 
@@ -136,7 +140,8 @@ python3 -m ensurepip --upgrade
 python3 -m pip install --user dvc
 ```
 
-If the Python package name differs in your image/repository, use the available Python 3 runtime and then install `DVC` with `pip`.
+If the Python package name differs in your image/repository, use the available Python 3 runtime and then install `DVC`
+with `pip`.
 
 ## Configuration
 
@@ -192,7 +197,8 @@ Typical remote types developers use:
 
 ### Continuous Example Script: How DVC Works End-to-End
 
-The following script is meant to show the normal developer flow from empty repository to tracked data, remote push, modification, and restoring an older state. Adjust paths for your platform.
+The following script is meant to show the normal developer flow from empty repository to tracked data, remote push,
+modification, and restoring an older state. Adjust paths for your platform.
 
 ```shell
 mkdir dvc-demo
@@ -307,7 +313,9 @@ dvc metrics show
 
 ### Experimenting with DVC with Sapling (`sl`)
 
-`DVC` is often used with `Git`, but it can still be useful in workflows where you want DVC-managed data and another source-control workflow around the repository. The main idea remains the same: commit `DVC` metadata files to your chosen VCS, and store real data in DVC cache/remotes.
+`DVC` is often used with `Git`, but it can still be useful in workflows where you want DVC-managed data and another
+source-control workflow around the repository. The main idea remains the same: commit `DVC` metadata files to your
+chosen VCS, and store real data in DVC cache/remotes.
 
 The example below keeps `DVC` in `--no-scm` mode while `Sapling` tracks the metadata files.
 
@@ -363,11 +371,13 @@ dvc checkout
 
 Important note:
 
-* `Git` remains the best-documented and most common DVC workflow. If you use another VCS, keep the process simple and verify the exact commands in your environment.
+* `Git` remains the best-documented and most common DVC workflow. If you use another VCS, keep the process simple and
+  verify the exact commands in your environment.
 
 ### Example `.gitignore`
 
-When you track raw files with `DVC`, the actual data path is often added to `.gitignore` while the small `.dvc` metadata file is committed.
+When you track raw files with `DVC`, the actual data path is often added to `.gitignore` while the small `.dvc` metadata
+file is committed.
 
 ```shell
 # Huge files
@@ -377,12 +387,16 @@ root-huge-file.txt
 
 ### Coding tips and tricks
 
-* Commit `.dvc` files, `dvc.yaml`, `dvc.lock`, and intentional config changes; do **not** commit the actual large tracked outputs unless you truly mean to keep them in normal VCS.
+* Commit `.dvc` files, `dvc.yaml`, `dvc.lock`, and intentional config changes; do **not** commit the actual large
+  tracked outputs unless you truly mean to keep them in normal VCS.
 * Prefer one well-named DVC remote per environment instead of many ad-hoc remotes.
-* Keep local-only secrets such as cloud credentials out of committed `.dvc/config`; store machine-specific overrides in `.dvc/config.local` or normal credential providers.
+* Keep local-only secrets such as cloud credentials out of committed `.dvc/config`; store machine-specific overrides in
+  `.dvc/config.local` or normal credential providers.
 * Use `dvc pull` after switching branches if the working tree data does not match the checked-out metadata.
-* Use `dvc gc` carefully. Garbage collection can remove cache objects that other branches, tags, or teammates may still need.
-* For CI/CD, make the workflow explicit: source checkout, `dvc pull`, run pipeline/tests, then optionally `dvc push` for newly produced approved artifacts.
+* Use `dvc gc` carefully. Garbage collection can remove cache objects that other branches, tags, or teammates may still
+  need.
+* For CI/CD, make the workflow explicit: source checkout, `dvc pull`, run pipeline/tests, then optionally `dvc push` for
+  newly produced approved artifacts.
 * If your goal is full pipeline reproducibility, track parameters and metrics too, not only the dataset files.
 
 ## Alternatives

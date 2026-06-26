@@ -39,14 +39,14 @@ Over-engineering should be avoided unless clearly justified by the requirements.
 
 User stories should be implemented in the simplest possible way, with minimal effort and no unnecessary complexity.
 
-
 User stories shall be implemented strictly according to their defined scope.
 
 Any additional functionality beyond the user story must be explicitly justified.
 
 Implementation decisions should favor minimal effort and the most direct solution.
 
-Developed in a deliberately lazy and pragmatic manner. | Developed using a deliberately lazy approach, favoring simplicity and minimal effort.
+Developed in a deliberately lazy and pragmatic manner. | Developed using a deliberately lazy approach, favoring
+simplicity and minimal effort.
 A deliberately lazy development style is preferred, focusing on the simplest viable implementation.
 
 Additional Principles
@@ -62,7 +62,8 @@ Development focuses on short, actionable steps while maintaining alignment with 
 Plans are expected to evolve as new information becomes available.
 
 Avoid excessive upfront planning.
-Agile user story decomposition enables progress toward long-term goals, guided by analysts, architects, and product owners.
+Agile user story decomposition enables progress toward long-term goals, guided by analysts, architects, and product
+owners.
 
 Long-term detailed planning shall be minimized.
 

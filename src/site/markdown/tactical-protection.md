@@ -87,7 +87,6 @@ https://www.ulbrichts.com/protection/en/products/
 
 https://mehler-protection.com/body-armour/shields/
 
-
 https://mehler-protection.com/wp-content/uploads/2024/03/Omega-Helmets-Data-Sheets-EN_Sep.pdf
 
 https://mehler-systems.com/ballistic-protection/
