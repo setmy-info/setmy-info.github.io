@@ -101,9 +101,12 @@ uvicorn main:app --reload
 
 ### Integrating MCP support
 
-If you are developing a microservice with FastAPI, you can easily add [Model Context Protocol (MCP)](mcp.md) support using [FastMCP](fastmcp.md). This allows AI models to interact with your service logic.
+If you are developing a microservice with FastAPI, you can easily add [Model Context Protocol (MCP)](mcp.md) support
+using [FastMCP](fastmcp.md). This allows AI models to interact with your service logic.
 
-See the [FastMCP guide: Adding MCP to an Existing FastAPI Microservice](fastmcp.md#adding-mcp-to-an-existing-fastapi-microservice) for a complete example and configuration.
+See
+the [FastMCP guide: Adding MCP to an Existing FastAPI Microservice](fastmcp.md#adding-mcp-to-an-existing-fastapi-microservice)
+for a complete example and configuration.
 
 ### Interactive API Documentation
 

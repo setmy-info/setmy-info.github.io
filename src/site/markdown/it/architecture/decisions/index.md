@@ -396,111 +396,85 @@ QA **manual tests** are executed on **development** branch.
 
 ## Review
 
-Cross-document inconsistency and contradiction review. Each finding references the documents involved and states the
-nature of the conflict.
+Cross-document inconsistency review. Each finding names the affected documents and the conflict.
 
 ### R-01 — MQTT storage technology contradiction
 
 **Documents**: `adr-0028-mqtt-requirements.md` (requirement 17), `mqttDB.md`
 
-ADR-0028 requirement 17 states that incoming MQTT messages should be stored in a **schemaless DB** (MongoDB or similar
-alternatives such as LevelDB, RocksDB) as fast as possible, in raw binary form and without parsing. `mqttDB.md`
-contradicts this by designing a **PostgreSQL** relational partitioned table (`incoming_message2`) for the same incoming
-message pipeline, which requires payload parsing for JPA mapping and uses a relational schema. These two documents
-describe fundamentally different storage technologies and strategies for the same pipeline stage. One must be chosen and
-the other superseded or reconciled by a dedicated ADR.
+ADR-0028 requirement 17 requires raw incoming MQTT messages to be stored quickly in a **schemaless DB**. `mqttDB.md`
+defines a **PostgreSQL** relational design for the same pipeline stage. The storage model must be unified or separated
+by
+a dedicated ADR.
 
 ### R-02 — mqttDB.md requirement list is an empty stub
 
 **Documents**: `mqttDB.md`, `index.md` (reference)
 
-`mqttDB.md` is listed as a real decision document but its numbered requirements list (items 1–32) consists entirely of
-placeholder dots. The document contains no actual requirements — only the SQL schema and Java class at the bottom. The
-file is not marked as DRAFT and is referenced from this index without qualification. Either the requirements should be
-written or the file should be marked DRAFT/placeholder.
+`mqttDB.md` is indexed as a real decision document, but requirements 1–32 are only placeholders. It should either be
+completed or marked as `DRAFT` / placeholder.
 
 ### R-03 — No Node.js backend vs Angular SSR
 
 **Documents**: `noNodeJSBackend.md`, `adr-0030-framework-agnostic-fe-development.md`, `angular.md`
 
-`noNodeJSBackend.md` prohibits Node.js as a backend technology for security and dependency management reasons. Angular
-SSR (server-side rendering), which is required for Genkit AI flow integration and is described in ADR-0030 and
-`angular.md`, runs a Node.js server process as the application backend. The prohibition and the SSR architecture are
-directly incompatible. The boundary between "Node.js backend" (prohibited) and "Angular SSR Node.js runtime" (in use)
-has not been defined or documented. A clarifying decision is needed.
+`noNodeJSBackend.md` prohibits Node.js in the backend, while Angular SSR in ADR-0030 and `angular.md` depends on a
+Node.js runtime. The boundary between prohibited backend usage and allowed SSR runtime is undefined and needs a
+clarifying decision.
 
 ### R-04 — Pure JS preference contradicts an Angular TypeScript mandate
 
 **Documents**: `index.md` (section 7.2), `adr-0030-framework-agnostic-fe-development.md`
 
-`index.md` section 7.2 states, "Prefer Pure JS to TypeScript". Angular (the chosen frontend framework in the same
-`index.md` Front end section and throughout ADR-0030) requires TypeScript and all code examples in ADR-0030 are written
-in TypeScript. The preference and the chosen framework are mutually exclusive. The decision in `index.md` section 7.2
-should either be updated to reflect actual TypeScript usage or the boundary of when Pure JS is preferred should be
-explicitly scoped (e.g., simple scripts only).
+`index.md` section 7.2 says to prefer pure JavaScript, but the chosen frontend stack is Angular, which requires
+TypeScript and is documented that way in ADR-0030. The JavaScript preference should be narrowed or updated.
 
 ### R-05 — IE11 cross-browser requirement is outdated
 
 **Documents**: `index.md` (Front end section and section 4.2), `pwaFirst.md`, `constantUpgrade.md`
 
-`index.md` lists IE11 as the minimum supported browser in two places. Internet Explorer 11 reached end-of-life in June
-2022 and is not supported by any current version of Angular, PWA standards or modern web APIs. This directly conflicts
-with `pwaFirst.md` (PWA requires modern browsers) and `constantUpgrade.md` (constant dependency upgrades). The IE11
-requirement should be removed and replaced with a modern baseline browser definition.
+`index.md` still lists IE11 as the minimum browser. That conflicts with modern Angular, PWA requirements, and
+`constantUpgrade.md`. Replace it with a current browser baseline.
 
 ### R-06 — ADR-0030 has contradictory dual status
 
 **Documents**: `adr-0030-framework-agnostic-fe-development.md`
 
-The Status field of ADR-0030 reads "**Draft** | **Accepted**" — both statuses simultaneously. An ADR must have exactly
-one status. The document body reads as an accepted decision. The "Draft" qualifier should be removed if the decision is
-accepted, or the status should be set to "Draft" if it is still under review.
+ADR-0030 shows both `Draft` and `Accepted` in the status field. It should have exactly one status.
 
 ### R-07 — ADR-0043 has duplicate section number 3
 
 **Documents**: `adr-0043-architecture-levels.md`
 
-ADR-0043 it contains two sections numbered "3." — one titled "Decision" and a second one titled "Consequences, Impacts &
-Follow-up Actions". The ADR template uses sections 1–5. The second "3." should be renumbered to "5." to match the
-standard ADR structure used in other documents in this folder.
+ADR-0043 contains two sections numbered `3.`. The second one should be renumbered to match the standard ADR structure.
 
 ### R-08 — loginOnce SSO requirement impossible at Level 1
 
 **Documents**: `loginOnce.md`, `adr-0043-architecture-levels.md`
 
-`loginOnce.md` requires single sign-on (SSO) across all environments so that a developer logs in once per session.
-ADR-0043 lists IAM (Keycloak) as "No" at Level 1 architecture. Without IAM there is no SSO infrastructure, making the
-loginOnce principle unachievable at Level 1. No documentation resolves this contradiction — either a Level 1 SSO
-alternative should be specified or loginOnce should explicitly note that it applies from Level 2 or 3 onwards.
+`loginOnce.md` requires SSO across environments, but ADR-0043 says Level 1 has no IAM (`Keycloak`). Either Level 1 needs
+an SSO alternative or `loginOnce.md` must explicitly apply only from a higher architecture level.
 
 ### R-09 — fileStructure.md overlaps with ADR-0032 and ADR-0033
 
 **Documents**: `fileStructure.md`, `adr-0032-smi-fhs.md`, `adr-0033-gintra-group-intranet-directory-structure.md`
 
-`fileStructure.md` (marked DRAFT) defines file system paths including the gintra directory structure
-(`/var/opt/setmy.info/gintra`, `/tank/organizations/...`). ADR-0032 covers the SMI FHS standard and ADR-0033 defines
-gintra as a group intranet directory structure. All three documents cover overlapping territory. The DRAFT file may
-predate the ADRs but has not been superseded or removed. The canonical source for FHS and gintra paths should be
-identified (the ADRs) and `fileStructure.md` should either be updated to reference them or be retired.
+`fileStructure.md` overlaps with ADR-0032 and ADR-0033 on filesystem and `gintra` path rules. The ADRs should be treated
+as canonical, and `fileStructure.md` should either reference them or be retired.
 
 ### R-10 — Branching strategy is unresolved
 
 **Documents**: `branching.md`, `index.md` (CI section), `noRewriteBranch.md`
 
-`index.md` CI section describes a complete git-flow model (feature → develop → release → master with per-branch
-environments). `branching.md` describes git-flow as one option but also mentions a "flexible but complex internal
-branching schema" as an alternative, and notes that the current active state is "master" with all branches pending
-rename to "default" or "main". The transition state has not been resolved into a single decided branching model. A
-follow-up ADR should close this open decision.
+`index.md` describes a full git-flow model, while `branching.md` presents multiple alternatives and an unresolved branch
+rename transition. A follow-up ADR should close this branching decision.
 
 ### R-11 — React allowed or not: no decision exists
 
 **Documents**: `noVueJSInbigApplications.md`, `adr-0030-framework-agnostic-fe-development.md`, `index.md`
 
-`noVueJSInbigApplications.md` explicitly restricts VueJS. ADR-0030 lists React and Vite-based UIs as potential
-migration targets for the framework-agnostic architecture. The `index.md` Front end section only lists Angular. No
-document explicitly allows or prohibits React. The boundary between "Angular is the chosen framework" and "React is an
-acceptable migration target" is undefined. A decision is needed.
+`noVueJSInbigApplications.md` restricts VueJS, ADR-0030 mentions React and Vite as migration targets, and `index.md`
+lists only Angular. React is neither clearly allowed nor clearly prohibited, so an explicit decision is needed.
 
 ## Other
 

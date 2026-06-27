@@ -15,11 +15,6 @@ upgrading either Angular or Node.js. See [node.md](node.md) for LTS versioning d
 
 LTS Node.js is required. Install the Angular CLI globally:
 
-```shell
-npm install -g @angular/cli
-ng --version
-```
-
 Upgrade npm before installing to avoid resolver warnings:
 
 ```shell
@@ -40,6 +35,11 @@ ng new my-app
 ng new my-app \
   --style=less \
   --ssr=false \
+  --ai-config=agents \
+  --ai-config=gemini \
+  --ai-config=jetbrains \
+  --ai-config=claude \
+  --ai-config=cursor \
   --strict \
   --routing=true \
   --defaults \
@@ -60,9 +60,9 @@ Browse to [http://localhost:4200/](http://localhost:4200/).
 /opt/firefox/firefox --new-tab http://localhost:4200/
 ```
 
+```shell
 ### Run Tests
 
-```shell
 # Interactive watch mode
 ng test
 # Single run (useful for CI)

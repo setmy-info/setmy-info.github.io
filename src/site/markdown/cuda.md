@@ -1,4 +1,4 @@
-# CUDA
+# CUDAe
 
 ## Information
 
@@ -83,15 +83,21 @@ nvidia-smi --query-gpu=name,compute_cap --format=csv
 
 GPU hardware notes:
 
-```
+```text
 CUDA Capability for RTX 30 Series: 8.6
 
 GeForce RTX 3080
                     RTX 3080 Ti             RTX 3080
 NVIDIA CUDA Cores   10240                   8960 / 8704
-
-GeForce RTX 2060: 1920 CUDA cores, 240 Tensor Cores
 ```
+
+https://ordi.eu/ordi-lauaarvutid-ordi-twister-r5-5gen
+
+```text
+The GeForce RTX 2060 features 1,920 CUDA cores, 240 Tensor Cores that can deliver 52 teraflops of deep learning horsepower,...
+```
+
+8GB MSI RTX3050 Ventus 2X OC
 
 * CUDA 12.x is required for the latest PyTorch and TensorFlow releases.
 * Use `nvidia-smi` to monitor GPU utilization and VRAM usage during training.
@@ -108,3 +114,4 @@ GeForce RTX 2060: 1920 CUDA cores, 240 Tensor Cores
 * [NVIDIA GPU Compare](https://www.nvidia.com/en-eu/geforce/graphics-cards/compare/?section=compare-16)
 * [MSI RTX 3050 Ventus 2X 8G OC](https://www.msi.com/Graphics-Card/GeForce-RTX-3050-VENTUS-2X-8G-OC)
 * [PyTorch](pytorch.md)
+

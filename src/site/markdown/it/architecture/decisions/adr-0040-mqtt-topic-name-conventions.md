@@ -8,7 +8,8 @@ ADR-0040: MQTT topic name conventions Ultra-light Architecture Decision Record (
 
 ## 2. Context
 
-setmy.info already has MQTT transport requirements in `adr-0028-mqtt-requirements.md`, but there is no explicit architecture decision that
+setmy.info already has MQTT transport requirements in `adr-0028-mqtt-requirements.md`, but there is no explicit
+architecture decision that
 defines how MQTT topic names themselves must be structured. Without one naming convention, producers, consumers,
 authorization rules, and monitoring become inconsistent across teams and tenants.
 
@@ -65,7 +66,8 @@ topic-level contract evolution without overloading one topic with incompatible p
 
 All new MQTT producers, consumers, ACL definitions, dashboards, and documentation must use `ADR-0040` as the canonical
 topic naming convention. Existing topic names that do not follow this structure should be migrated gradually or mapped
-through compatibility subscriptions and bridges. `adr-0028-mqtt-requirements.md` should continue to define transport-level MQTT requirements,
+through compatibility subscriptions and bridges. `adr-0028-mqtt-requirements.md` should continue to define
+transport-level MQTT requirements,
 while this ADR defines naming only. Future topic reviews must check segment meaning, casing, tenant placement, and
 version suffix consistency. Reviews must also verify that MQTT application topics use the exact segment order
 `<env>/<cc>/<org>/<domain>/<entity>/<event>/<version>`.

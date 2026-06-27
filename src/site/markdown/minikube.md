@@ -151,7 +151,7 @@ minikube mount /var/opt/setmy.info/gintra:/var/opt/setmy.info/gintra
 
 #### Windows
 
-On Windows, you can mount host folders using either the `--mount` flag during start or the `minikube mount` command. 
+On Windows, you can mount host folders using either the `--mount` flag during start or the `minikube mount` command.
 Ensure you use proper path formatting.
 
 Example folder: `C:\pub\setmy.info\data\minikube`
@@ -173,7 +173,8 @@ For an already running minikube:
 minikube mount C:\pub\setmy.info\data\minikube:/var/opt/setmy.info/minikube
 ```
 
-This makes `C:\pub\setmy.info\data\minikube` on your Windows host available as `/var/opt/setmy.info/minikube` inside the Minikube node. 
+This makes `C:\pub\setmy.info\data\minikube` on your Windows host available as `/var/opt/setmy.info/minikube` inside the
+Minikube node.
 You can then use `/var/opt/setmy.info/minikube` in your Pod's `hostPath` volume.
 
 #### Verification

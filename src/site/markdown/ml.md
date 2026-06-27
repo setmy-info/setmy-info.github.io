@@ -32,14 +32,15 @@ Neural networks, Deep Learning, Machine learning.
 * Attention-based Neural Machine Translation
 * Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)
 * ML types:
-  * Supervised Learning - using labeled data as ML input. k-Nearest Neighbours, Linear Regression, Logistic Regression, Support Vector Machines (SVMs), Decision Trees and Random Forests, Neural Networks
-  * Unsupervised - using only data as ML input. Clustering.
-  * Semisupervised - mix of both
-  * Reinforcement learning - observing and detecting environment learning
-  * Online learning
-  * Batch learning
-  * Instance-based learning
-  * Model-based learning
+    * Supervised Learning - using labeled data as ML input. k-Nearest Neighbours, Linear Regression, Logistic
+      Regression, Support Vector Machines (SVMs), Decision Trees and Random Forests, Neural Networks
+    * Unsupervised - using only data as ML input. Clustering.
+    * Semisupervised - mix of both
+    * Reinforcement learning - observing and detecting environment learning
+    * Online learning
+    * Batch learning
+    * Instance-based learning
+    * Model-based learning
 * θ (Theta) - model parameters
 * Predictions
 * Convolutional NN, Recurrent NN (neural nets) - RNN, ...

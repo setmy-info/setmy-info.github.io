@@ -44,6 +44,10 @@ covers microphones, mixers, audio interfaces, stands, and accessories.
 
 ## See also
 
-* [Audacity](audacity.md)
-* [Sound formats](soundformats.md)
-* [Human voice](human-voice.md)
+* https://pvxmusic.ee/ee/windscreen-black-w40b/
+* https://pvxmusic.ee/ee/madal-mikrofonistatiiv-basstrummile-2591030055/
+* https://pvxmusic.ee/ee/mixer-4-total-channels-2-mic-line-ch-with-digital-effects-miomix202ufx/
+* https://pvxmusic.ee/ee/m2k-microphone-cable-1m-m2k1fm0100/
+* https://pvxmusic.ee/gb/mic-stand-2596030055/
+* https://shop.geekria.com/products/geekria-for-creators-foam-windscreen-compatible-with-sennheiser-e-935-e-945-e-835-e-845-s-microphone-antipop-foam-cover-mic-wind-cover-sponge-foam-filter-orange-2-pack?srsltid=AfmBOoq0oFR6hwOoQJC0MX508fzR6jWe_GarEhObcu5ZhcKH9CSwqUTp
+* FIFINE BM88 LP Arm

@@ -103,15 +103,16 @@ def greet(name: str) -> str:
 
 ### Adding MCP to an Existing FastAPI Microservice
 
-If you have an existing [FastAPI](fastapi.md) service (e.g., a microservice for software management), you can easily add 
+If you have an existing [FastAPI](fastapi.md) service (e.g., a microservice for software management), you can easily add
 MCP support to it. This allows AI agents to interact with your service's logic directly.
 
 #### 1. Integration Strategy
 
 There are two main ways to integrate MCP into your existing service:
 
-*   **Co-located:** Run both the FastAPI web server and the MCP interface in the same process (using SSE for MCP).
-*   **Sidecar / Wrapper:** Create a small `mcp_server.py` that imports your existing service logic and exposes it via `stdio`.
+* **Co-located:** Run both the FastAPI web server and the MCP interface in the same process (using SSE for MCP).
+* **Sidecar / Wrapper:** Create a small `mcp_server.py` that imports your existing service logic and exposes it via
+  `stdio`.
 
 #### 2. Example: Software Management Microservice
 

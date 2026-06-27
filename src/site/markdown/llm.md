@@ -7,6 +7,10 @@
 * Qwen
 * DeepSeek Coder
 * Code Llama
+* vLLM
+* Text Generation Inference
+* LM Studio
+* Open WebUI
 
 ### Tokenizers
 
@@ -24,17 +28,17 @@
   SQL DB
   Redis
 
-  Kiireks prototüüpimiseks – Pickle + sõnastiku klass
-  LLM-de jaoks – HuggingFace Tokenizers (salvestab automaatselt)
-  Eestikeelseks töötluseks – EstNLTK või spaCy et_core_news_sm
-  Tootmiskeskkonnaks – Redis või PostgreSQL
-  Suurte korpuste jaoks – SQLite või LevelDB
+  For fast prototyping – Pickle + a dictionary class
+  For LLM workflows – HuggingFace Tokenizers (saves automatically)
+  For Estonian-language processing – EstNLTK or spaCy `et_core_news_sm`
+  For production environments – Redis or PostgreSQL
+  For large corpora – SQLite or LevelDB
 
-  EstNLTK on parim eestikeelseks tokeniseerimiseks
-  HuggingFace'i mitmekeelsed mudelid (bert-base-multilingual, XLM-R) töötavad eesti keelega hästi
-  SentencePiece on hea, kui treenite oma mudelit eesti keelel
+  EstNLTK is one of the strongest choices for Estonian tokenization
+  Hugging Face multilingual models (`bert-base-multilingual`, `XLM-R`) work well with Estonian
+  SentencePiece is useful when training your own model on Estonian text
 
-Lihtne stack (lokaalne)
+Simple stack (local)
 Ollama (LLM)
 sentence-transformers (embeddings)
 SQLite / DuckDB / Chroma / FAISS
@@ -44,35 +48,40 @@ Continue.dev
 Ollama + DeepSeek Coder
 AGENT.md + TASKS.md
 
-DeepSeek Coder Spetsiaalselt koodi genereerimiseks, hästi Java ja Maven + JUnit Lokaalne, CPU/GPU
-Code Llama Meta mudel, optimeeritud koodi genereerimiseks 7B–34B parameetrit
-Qwen-Coder Open-source, multiturn coding tasks 7B–14B parameetrit
-StarCoder / StarCoderBase Suur kogemus GitHub koodist 15B, GPU soovitatav
+DeepSeek Coder Specialized for code generation, strong for Java and Maven + JUnit, local CPU/GPU use
+Code Llama Meta model optimized for code generation, 7B–34B parameters
+Qwen-Coder Open-source model family for multiturn coding tasks, 0.5B–32B+ parameters
+StarCoder / StarCoderBase Trained heavily on GitHub code, 15B, GPU recommended
 
-Mudel Märkused Suurus
-LLaMA 3 General reasoning, summarization 7B–65B
-Mistral 7B / Mistral 7B-Instruct Fast, open instruction-following 7B
-Falcon 7B / 40B Hea reasoning ja instruction-following 7B / 40B
+Model Size Strengths
+Llama 1B–405B General-purpose, large ecosystem
+Qwen 0.5B–235B+ Very strong for coding and multilingual tasks
+DeepSeek 1.5B–671B Good quality-to-cost ratio, strong reasoning
+Mistral 3B–141B Fast and efficient
+Gemma 1B–27B Smaller models for local usage
+Phi 1.5B–14B Very good with limited resources
+OLMo 1B–32B Fully open training data
+Falcon 1B–180B Still used in some enterprises
 
-Mudel Märkused
-all-MiniLM-L6-v2 Väga kiire ja täpne lõikude embeddings
-nomic-embed-text Open-source, sobib dokumentide indeksiks
-bge-small / bge-large Väga hea semantic search, open-source
-text-embedding-3-small / 3-large Kui tahad rohkem OpenAI stiilis, võib lokaalselt asendada
+Model Notes
+all-MiniLM-L6-v2 Very fast and accurate for passage embeddings
+nomic-embed-text Open-source, well suited for document indexing
+bge-small / bge-large Very good for semantic search, open-source
+text-embedding-3-small / 3-large If you want a more OpenAI-style option, these are common reference models
 
 Coding Agent → DeepSeek / Code Llama / StarCoder
 Review Agent → LLaMA 3 / Mistral / Falcon
 Knowledge embeddings → MiniLM / nomic-embed-text / bge
-Orchestrator → lihtsalt daemon või Zeebe ei vaja LLM-i
+Orchestrator → a simple daemon or Zeebe; no LLM required
 
 Embedding / Vector DB, FAISS, Chroma, Qdrant
 
-| Agent                                  | Tokeniseerimine | Hind                  |
-|----------------------------------------|-----------------|-----------------------|
-| Pilve GPT / OpenAI                     | automaatne      | tokenipõhine          |
-| Local LLM (Ollama, LLaMA)              | kohalik         | tasuta (v.a hardware) |
-| Embedding teenused pilves              | automaatne      | tokenipõhine          |
-| Local embedding (FAISS + transformers) | kohalik         | tasuta                |
+| Agent                                     | Tokenization | Cost                 |
+|-------------------------------------------|--------------|----------------------|
+| Cloud GPT / OpenAI                        | automatic    | token-based          |
+| Local LLM (`Ollama`, `LLaMA`)             | local        | free except hardware |
+| Cloud embedding services                  | automatic    | token-based          |
+| Local embeddings (`FAISS` + transformers) | local        | free                 |
 
 Chip Huyen book
 What is inference and what is retrieval
@@ -80,7 +89,7 @@ What is inference and what is retrieval
 Local RAG PoC
 1 LLM
 1 vector DB
-1 dokument
+1 document
 
 MCP
 

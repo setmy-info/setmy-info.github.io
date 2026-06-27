@@ -2,7 +2,9 @@
 
 ## Information
 
-HashiCorp Vault is an identity-based secrets and encryption management system. A modern computing environment is full of secrets: API keys, passwords, certificates, etc. Vault provides a unified interface to any secret while providing tight access control and recording a detailed audit log.
+HashiCorp Vault is an identity-based secrets and encryption management system. A modern computing environment is full of
+secrets: API keys, passwords, certificates, etc. Vault provides a unified interface to any secret while providing tight
+access control and recording a detailed audit log.
 
 ### Main Functionalities and Features
 
@@ -33,14 +35,22 @@ Vault supports various algorithms through its different engines, most notably th
 
 ### Post-Quantum Cryptography (PQC) Notes
 
-Vault is still primarily used with classical cryptographic primitives such as AES, RSA, ECDSA, Ed25519, SHA-2, and ChaCha20-Poly1305. In practice, PQC readiness for Vault today is mostly an **architecture and migration-planning topic**, not a signal that all Vault cryptographic operations are already natively quantum-resistant.
+Vault is still primarily used with classical cryptographic primitives such as AES, RSA, ECDSA, Ed25519, SHA-2, and
+ChaCha20-Poly1305. In practice, PQC readiness for Vault today is mostly an **architecture and migration-planning topic
+**, not a signal that all Vault cryptographic operations are already natively quantum-resistant.
 
 Key points:
 
-* **Transit key types are mainly classical**. Commonly documented Vault Transit operations still center on classical symmetric and asymmetric algorithms.
-* **Transport security can evolve sooner than application crypto**. PQC or hybrid PQC is most realistically introduced first in the TLS layer around Vault, for example through a reverse proxy, ingress, load balancer, service mesh, or compatible TLS library stack.
-* **Auto-unseal, KMS, and HSM integrations remain useful**. They do not make Vault natively PQC by themselves, but they can provide a cleaner crypto boundary for future upgrades.
-* **PKI migration is a separate design topic**. If you issue RSA or ECDSA certificates from Vault today, making the environment PQC-ready means planning for future certificate and trust-chain rotation rather than assuming existing PKI instantly becomes quantum-safe.
+* **Transit key types are mainly classical**. Commonly documented Vault Transit operations still center on classical
+  symmetric and asymmetric algorithms.
+* **Transport security can evolve sooner than application crypto**. PQC or hybrid PQC is most realistically introduced
+  first in the TLS layer around Vault, for example through a reverse proxy, ingress, load balancer, service mesh, or
+  compatible TLS library stack.
+* **Auto-unseal, KMS, and HSM integrations remain useful**. They do not make Vault natively PQC by themselves, but they
+  can provide a cleaner crypto boundary for future upgrades.
+* **PKI migration is a separate design topic**. If you issue RSA or ECDSA certificates from Vault today, making the
+  environment PQC-ready means planning for future certificate and trust-chain rotation rather than assuming existing PKI
+  instantly becomes quantum-safe.
 
 ### Making Vault Data PQC-Ready
 
@@ -51,13 +61,15 @@ The practical meaning of "make Vault data PQC ready" is usually:
 * **prefer strong symmetric defaults such as AES-256 where applicable**,
 * **design applications for crypto agility** so certificates, trust anchors, and key types can be rotated later,
 * **classify long-retention secrets and encrypted payloads** that may be exposed to "harvest now, decrypt later" risk,
-* and **track external dependencies** such as client SDKs, ingress proxies, HSMs, KMS services, and internal PKI components that will influence your migration path.
+* and **track external dependencies** such as client SDKs, ingress proxies, HSMs, KMS services, and internal PKI
+  components that will influence your migration path.
 
 Short recommendation:
 
 1. Keep using Vault normally for secrets, Transit, PKI, and access control.
 2. Introduce PQC or hybrid PQC first at the transport / edge layer when your platform supports it.
-3. Keep key rotation, certificate rotation, and application configuration automated so future migration is operationally realistic.
+3. Keep key rotation, certificate rotation, and application configuration automated so future migration is operationally
+   realistic.
 4. Follow Vault, OpenSSL, cloud KMS, HSM, and platform release notes for native PQC-related developments.
 
 ## Installation
@@ -128,11 +140,13 @@ docker-compose up -d
 
 ## Configuration
 
-Vault is configured using HCL (HashiCorp Configuration Language). In production, a persistent storage backend is required.
+Vault is configured using HCL (HashiCorp Configuration Language). In production, a persistent storage backend is
+required.
 
 ### Storage Backend (Raft)
 
-HashiCorp recommends **Integrated Storage (Raft)** for most production environments as it eliminates the need for external dependencies like Consul.
+HashiCorp recommends **Integrated Storage (Raft)** for most production environments as it eliminates the need for
+external dependencies like Consul.
 
 **Requirements:**
 
@@ -232,14 +246,17 @@ After starting a new live instance, it will be in a "Sealed" state and must be i
 
 ### Backup and Restore Notes
 
-Whether the deployment is a developer sandbox or a live environment, backup planning should include more than just the data directory. A usable Vault backup strategy usually includes **Raft snapshots, configuration, TLS references, audit setup, and secure handling of bootstrap materials**.
+Whether the deployment is a developer sandbox or a live environment, backup planning should include more than just the
+data directory. A usable Vault backup strategy usually includes **Raft snapshots, configuration, TLS references, audit
+setup, and secure handling of bootstrap materials**.
 
 #### Developer / Local Machine Backups
 
 For developer machines, decide first whether the instance is ephemeral:
 
 * **Dev mode (`-dev` or the simple Docker dev setup)** is usually disposable and normally does **not** need backup.
-* **Local non-dev Vault with persistent Raft storage** should be backed up if it contains reusable policies, Transit keys, PKI state, or demo data you want to keep.
+* **Local non-dev Vault with persistent Raft storage** should be backed up if it contains reusable policies, Transit
+  keys, PKI state, or demo data you want to keep.
 
 Recommended developer backup scope:
 
@@ -266,7 +283,8 @@ Developer notes:
 For live environments, define a standard backup set:
 
 1. **Scheduled Raft snapshots**.
-2. **Configuration backup** for `vault.hcl`, systemd overrides, container manifests, seal configuration references, and environment files.
+2. **Configuration backup** for `vault.hcl`, systemd overrides, container manifests, seal configuration references, and
+   environment files.
 3. **TLS asset backup** or a tested process to re-issue the same server certificates and trust chain.
 4. **Unseal / recovery material custody process** kept offline or in a separately controlled secure system.
 5. **Policy and infrastructure-as-code backup** so the platform can be recreated consistently.
@@ -281,7 +299,8 @@ vault operator raft snapshot save /secure-backup/vault-$(date +%F-%H%M).snap
 Important live backup notes:
 
 * **Prefer supported Raft snapshots over ad-hoc filesystem copies** of a running cluster.
-* **Auto-unseal is not a backup feature**. AWS KMS or HSM seal integration helps startup and key protection, but it does not replace snapshots.
+* **Auto-unseal is not a backup feature**. AWS KMS or HSM seal integration helps startup and key protection, but it does
+  not replace snapshots.
 * **Store copies off-host and off-cluster** to survive node loss, operator error, ransomware, or storage corruption.
 * **Protect access to backups** with encryption, least privilege, retention rules, and auditability.
 * **Run restore drills** in a non-production environment so the team knows the process actually works.
@@ -299,7 +318,8 @@ At minimum, validate that you can:
 
 #### Backups and PQC Readiness Together
 
-If you are also preparing for long-term PQC migration, backups should help future algorithm transitions rather than block them:
+If you are also preparing for long-term PQC migration, backups should help future algorithm transitions rather than
+block them:
 
 * keep documentation of **which algorithms, key types, and certificate chains** are currently in use,
 * keep **policy and automation definitions** under version control so re-issuance and rotation can be repeated later,
@@ -311,7 +331,8 @@ Vault integrates deeply with AWS to provide automated unsealing and hardware-bac
 
 ### AWS KMS Auto-Unseal
 
-Instead of manual unsealing with key shards, Vault can use **AWS KMS** to automatically encrypt and decrypt its master key.
+Instead of manual unsealing with key shards, Vault can use **AWS KMS** to automatically encrypt and decrypt its master
+key.
 
 **Configuration (`vault.hcl`):**
 
@@ -326,7 +347,8 @@ seal "awskms" {
 
 ### AWS CloudHSM (Hardware Security Module)
 
-For FIPS 140-2 Level 3 compliance or high-performance hardware-backed encryption, Vault can offload cryptographic operations to **AWS CloudHSM** using the PKCS#11 provider.
+For FIPS 140-2 Level 3 compliance or high-performance hardware-backed encryption, Vault can offload cryptographic
+operations to **AWS CloudHSM** using the PKCS#11 provider.
 
 **Configuration for HSM Seal (PKCS#11):**
 
@@ -345,9 +367,12 @@ seal "pkcs11" {
 It is possible to architect a solution using both:
 
 1. **Main Secret (Seal)**: Use **AWS KMS** for Auto-Unseal. This handles the protection of the master key.
-2. **Hardware Encryption**: Use **CloudHSM** for **Entropy Augmentation** (improving random number generation quality) or as a backend for the **Transit engine** (requires Vault Enterprise for Managed Keys) to perform AES hardware-accelerated encryption.
+2. **Hardware Encryption**: Use **CloudHSM** for **Entropy Augmentation** (improving random number generation quality)
+   or as a backend for the **Transit engine** (requires Vault Enterprise for Managed Keys) to perform AES
+   hardware-accelerated encryption.
 
-This setup allows Vault to boot automatically via KMS while ensuring the highest level of cryptographic security for data operations via HSM.
+This setup allows Vault to boot automatically via KMS while ensuring the highest level of cryptographic security for
+data operations via HSM.
 
 ## OpenBao Compatibility and Payment / PIN System Notes
 
@@ -355,45 +380,69 @@ If you are comparing Vault with its open-source fork, also see [OpenBao Document
 
 ### OpenBao Compatibility
 
-For many common secrets-management and Transit use cases, OpenBao is broadly compatible with HashiCorp Vault 1.14-style APIs and workflows:
+For many common secrets-management and Transit use cases, OpenBao is broadly compatible with HashiCorp Vault 1.14-style
+APIs and workflows:
 
-* **Transit API compatibility**: Basic encrypt/decrypt, sign/verify, key creation, key import, and policy-driven access patterns are largely intended to remain compatible.
-* **Operational model**: Initialization, sealing/unsealing, Raft storage, auth methods, and most day-to-day API concepts are very similar.
-* **Migration mindset**: Existing Vault scripts and clients often need only endpoint, binary, or environment-variable adjustments.
+* **Transit API compatibility**: Basic encrypt/decrypt, sign/verify, key creation, key import, and policy-driven access
+  patterns are largely intended to remain compatible.
+* **Operational model**: Initialization, sealing/unsealing, Raft storage, auth methods, and most day-to-day API concepts
+  are very similar.
+* **Migration mindset**: Existing Vault scripts and clients often need only endpoint, binary, or environment-variable
+  adjustments.
 
-That said, for regulated payment workloads you should validate exact version behavior, support expectations, audit requirements, and external integrations in a controlled environment before treating OpenBao as a drop-in replacement for an already qualified Vault deployment.
+That said, for regulated payment workloads you should validate exact version behavior, support expectations, audit
+requirements, and external integrations in a controlled environment before treating OpenBao as a drop-in replacement for
+an already qualified Vault deployment.
 
 ### Payment Systems, PIN Protection, and Chip & PIN Considerations
 
-For payment environments, especially where **PIN data**, **PIN blocks**, **cardholder data**, or **EMV / Chip & PIN** related keys are involved, the answer is nuanced:
+For payment environments, especially where **PIN data**, **PIN blocks**, **cardholder data**, or **EMV / Chip & PIN**
+related keys are involved, the answer is nuanced:
 
-* **OpenBao / Vault can support surrounding key-management workflows**, secret distribution, application encryption services, certificate issuance, and access control.
-* **They are not, by themselves, automatically equivalent to a certified payment HSM** for all payment-network, issuer, acquirer, or card-personalization use cases.
-* **PIN processing is a special domain**: real payment PIN handling usually requires dedicated controls around PIN block formats, cryptographic device certification, dual control, split knowledge, tamper resistance, and strict operational procedures.
+* **OpenBao / Vault can support surrounding key-management workflows**, secret distribution, application encryption
+  services, certificate issuance, and access control.
+* **They are not, by themselves, automatically equivalent to a certified payment HSM** for all payment-network, issuer,
+  acquirer, or card-personalization use cases.
+* **PIN processing is a special domain**: real payment PIN handling usually requires dedicated controls around PIN block
+  formats, cryptographic device certification, dual control, split knowledge, tamper resistance, and strict operational
+  procedures.
 
 In practical terms:
 
-* For **application-level encryption of payment-adjacent secrets** or internal service credentials, Vault/OpenBao can be a strong fit.
-* For **true online PIN encryption / translation / verification workflows**, organizations often still require a **dedicated payment HSM** or a service built on certified HSM infrastructure.
-* For **EMV / Chip & PIN** ecosystems, Vault/OpenBao may help manage non-PIN secrets, certificates, service credentials, and some key-lifecycle automation, but the most sensitive issuer/acquirer cryptographic operations are commonly kept in specialized HSM platforms.
+* For **application-level encryption of payment-adjacent secrets** or internal service credentials, Vault/OpenBao can be
+  a strong fit.
+* For **true online PIN encryption / translation / verification workflows**, organizations often still require a *
+  *dedicated payment HSM** or a service built on certified HSM infrastructure.
+* For **EMV / Chip & PIN** ecosystems, Vault/OpenBao may help manage non-PIN secrets, certificates, service credentials,
+  and some key-lifecycle automation, but the most sensitive issuer/acquirer cryptographic operations are commonly kept
+  in specialized HSM platforms.
 
 ### Is OpenBao Supported for PIN Encryption?
 
-OpenBao is technically capable of cryptographic operations and key management similar to Vault, but whether it is "supported" depends on the type of support you mean:
+OpenBao is technically capable of cryptographic operations and key management similar to Vault, but whether it is "
+supported" depends on the type of support you mean:
 
-* **Technically possible for general encryption**: Yes, OpenBao Transit can encrypt/decrypt application data and manage keys.
-* **Suitable as the only control for payment PIN operations**: Usually **not enough on its own** for serious PCI PIN / card-payment environments.
-* **Suitable as part of a broader payment architecture**: Yes, potentially, when paired with certified HSMs, tightly scoped policies, auditing, and network segmentation.
+* **Technically possible for general encryption**: Yes, OpenBao Transit can encrypt/decrypt application data and manage
+  keys.
+* **Suitable as the only control for payment PIN operations**: Usually **not enough on its own** for serious PCI PIN /
+  card-payment environments.
+* **Suitable as part of a broader payment architecture**: Yes, potentially, when paired with certified HSMs, tightly
+  scoped policies, auditing, and network segmentation.
 
-If your requirement is specifically "store or process PIN-related keys and PIN blocks in a way acceptable for production card-payment operations," the safer guidance is:
+If your requirement is specifically "store or process PIN-related keys and PIN blocks in a way acceptable for production
+card-payment operations," the safer guidance is:
 
-1. Use **Vault/OpenBao** for orchestration, secret distribution, application auth, certificates, and possibly non-PIN encryption.
-2. Use a **certified HSM or payment HSM** for actual PIN generation, PIN translation, PIN verification, Zone PIN Key handling, and other card-scheme-sensitive cryptographic operations.
-3. Document the boundary very clearly so developers and auditors can distinguish **general secret management** from **payment cryptographic processing**.
+1. Use **Vault/OpenBao** for orchestration, secret distribution, application auth, certificates, and possibly non-PIN
+   encryption.
+2. Use a **certified HSM or payment HSM** for actual PIN generation, PIN translation, PIN verification, Zone PIN Key
+   handling, and other card-scheme-sensitive cryptographic operations.
+3. Document the boundary very clearly so developers and auditors can distinguish **general secret management** from *
+   *payment cryptographic processing**.
 
 ### PCI-DSS and Related Compliance Considerations
 
-PCI-DSS is broader than just encryption. Using Vault or OpenBao does not itself make an environment PCI-compliant. You still need architecture, process, and operational controls.
+PCI-DSS is broader than just encryption. Using Vault or OpenBao does not itself make an environment PCI-compliant. You
+still need architecture, process, and operational controls.
 
 Typical expectations include:
 
@@ -404,9 +453,11 @@ Typical expectations include:
 * **TLS everywhere** for service-to-service and administrative access.
 * **Secure backup and recovery procedures** for encrypted storage, initialization material, and recovery keys.
 * **Separation of duties** so one operator does not control the entire cryptographic lifecycle alone.
-* **Monitoring and alerting** for unusual access patterns, failed authentication, policy changes, and key-management events.
+* **Monitoring and alerting** for unusual access patterns, failed authentication, policy changes, and key-management
+  events.
 
-If PIN data is involved, you may also need to consider requirements beyond general PCI-DSS, such as **PCI PIN Security** expectations and the payment-network rules applicable to your role.
+If PIN data is involved, you may also need to consider requirements beyond general PCI-DSS, such as **PCI PIN Security**
+expectations and the payment-network rules applicable to your role.
 
 ### What Should Be Done in Practice
 
@@ -417,7 +468,8 @@ If you want to use Vault or OpenBao in a payment environment, a practical approa
     * Are you handling PAN data?
     * Are you handling actual PIN blocks or issuer/acquirer PIN keys?
 2. **Keep payment-HSM responsibilities separate** when PIN processing is in scope.
-3. **Use Transit carefully** for application encryption use cases, but do not assume it replaces a certified payment cryptographic module.
+3. **Use Transit carefully** for application encryption use cases, but do not assume it replaces a certified payment
+   cryptographic module.
 4. **Enable audit devices early** and ship logs to a protected central system.
 5. **Use auto-unseal carefully**:
     * Good for operational startup automation.
@@ -431,12 +483,14 @@ If you want to use Vault or OpenBao in a payment environment, a practical approa
     * Which component performs encryption.
     * Which component is certified or not certified.
     * How key rotation, revocation, and incident response are handled.
-8. **Validate with your QSA / compliance team** before go-live if the system will touch cardholder data or payment cryptography.
+8. **Validate with your QSA / compliance team** before go-live if the system will touch cardholder data or payment
+   cryptography.
 
 ### Short Recommendation
 
 * **Vault / OpenBao**: good for secrets management, application encryption, auth, PKI, and supporting controls.
-* **Certified HSM / payment HSM**: preferred or required for sensitive PIN-centric cryptographic operations in real payment ecosystems.
+* **Certified HSM / payment HSM**: preferred or required for sensitive PIN-centric cryptographic operations in real
+  payment ecosystems.
 * **PCI-DSS alignment**: achievable only with the full operating model, not just by deploying the product.
 
 ## Usage, tips and tricks
@@ -456,7 +510,8 @@ curl --header "X-Vault-Token: $VAULT_TOKEN" \
 
 #### 2. Wrap the External Key
 
-The external key must be wrapped (encrypted) using the wrapping key fetched in the previous step (typically using RSA-OAEP).
+The external key must be wrapped (encrypted) using the wrapping key fetched in the previous step (typically using
+RSA-OAEP).
 
 #### 3. Import to Vault
 
@@ -476,7 +531,8 @@ curl --header "X-Vault-Token: $VAULT_TOKEN" \
 ### Coding tips and tricks
 
 * **Token Management**: Use `VAULT_TOKEN` environment variable for local development.
-* **Error Handling**: Always check for `403 Forbidden` errors, which usually indicate expired tokens or insufficient policies.
+* **Error Handling**: Always check for `403 Forbidden` errors, which usually indicate expired tokens or insufficient
+  policies.
 * **Leases**: Implement logic to renew leases for dynamic secrets.
 
 ## See also

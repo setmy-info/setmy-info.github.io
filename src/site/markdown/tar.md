@@ -54,7 +54,7 @@ Extract to specific folder:
     lzip -d  ./foo.tar.lz && tar xvf ./foo.tar -C /path/to/extract/directory
 
 View
-    
+
     tar tvf  ./foo.tar
     tar tvzf ./foo.tar.gz
     tar tvjf ./foo.tar.bz2
@@ -62,12 +62,12 @@ View
     tar tvZf ./foo.tar.Z
     lzip -d  ./foo.tar.lz && tar tvf  ./foo.tar
 
-.tar.gz	Tarball compressed with gzip.	.tgz (shorter variant)
-.tar.bz2	Tarball compressed with bzip2.	.tbz, .tbz2
-.tar.xz	Tarball compressed with xz.	.txz
-.tar.lz	Tarball compressed with lzip.	.tlz
-.tar.Z	Tarball compressed with compress (older method).	
-.tar.lzma	Tarball compressed with LZMA.
+.tar.gz Tarball compressed with gzip. .tgz (shorter variant)
+.tar.bz2 Tarball compressed with bzip2. .tbz, .tbz2
+.tar.xz Tarball compressed with xz. .txz
+.tar.lz Tarball compressed with lzip. .tlz
+.tar.Z Tarball compressed with compress (older method).
+.tar.lzma Tarball compressed with LZMA.
 
 ### Coding tips and tricks
 

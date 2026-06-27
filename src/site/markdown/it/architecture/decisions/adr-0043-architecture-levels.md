@@ -17,48 +17,49 @@ page makes the decision harder to reference, review, and evolve in the same way 
 Keep the architecture capability matrix as a dedicated ADR and use the following `Architecture levels 1-5` table as
 the current reference:
 
-| Tool                                                        | Level 1                          | Level 2<br/>Reserved | Level 3 | Level 4<br/>Reserved | Level 5                |
-|-------------------------------------------------------------|----------------------------------|----------------------|---------|----------------------|------------------------|
-| Standard prog. language set                                 | All                              |                      | ...     |                      | All+                   |
-| Jenkins CI                                                  | Yes, Single, In-house            |                      | ...     |                      | Yes, Multi, ?          |
-| Docker Registry/Harbor                                      | No (?), in CI                    |                      | ...     |                      | Yes                    |
-| SeleniumHQ cluster (Hub, Nodes)                             | Yes, Single                      |                      | ...     |                      | Yes. Multi             |
-| Multi/Single API/ APPs                                      | Single                           |                      | ...     |                      | Multi, HA              |
-| Multi/Single DBs                                            | Single                           |                      | ...     |                      | Multi, HA              |
-| Multi/Single Queues (RabbitMQ, Mosquitto)                   | Single                           |                      | ...     |                      | Multi, HA              |
-| Multi/Single process engine (Zeebe, Camunda)                | Single                           |                      | ...     |                      | Multi, HA              |
-| Profiles                                                    | All                              |                      | ...     |                      | All                    |
-| Poor man's Wiki (mvn site, .md)                             | Yes                              |                      | ...     |                      | No                     |
-| Poor man's Issue Management (Wiki)                          | Yes                              |                      | ...     |                      | No                     |
-| Poor man's SonarQube (or similar) - wiki, mvn site          | Yes                              |                      | ...     |                      | No                     |
-| Poor man's Log systems                                      | Yes                              |                      | ...     |                      | No                     |
-| Poor man's DB (H2/Derby file)                               | Yes                              |                      | ...     |                      | No, Multi, HA          |
-| Poor man's Intra server (Nginx)                             | Yes                              |                      | ...     |                      | No, Multi, HA          |
-| Poor man's CDN (http(s) File server, Nginx)                 | Yes                              |                      | ...     |                      | No, Multi, HA          |
-| Poor man's AI training process loop                         | Yes (existing Jenkins Ci, Zeebe) |                      | ...     |                      | No                     |
-| Poor man's manual test management (Wiki)                    | Yes                              |                      | ...     |                      | No                     |
-| K8S ready                                                   | Yes, K3S                         |                      | ...     |                      | Yes                    |
-| Service communication over TLS                              | No                               |                      | ...     |                      | Yes                    |
-| PKI, Key management                                         | Minimal, for public web          |                      | ...     |                      | Yes                    |
-| Monitoring                                                  | No (Manual)                      |                      | ...     |                      | Yes                    |
-| SSH File server                                             | Yes, Single, In-house, in CI     |                      | ...     |                      | Yes                    |
-| SMTP server per environment                                 | Yes                              |                      | ...     |                      | Yes                    |
+| Tool                                               | Level 1                          | Level 2<br/>Reserved | Level 3 | Level 4<br/>Reserved | Level 5       |
+|----------------------------------------------------|----------------------------------|----------------------|---------|----------------------|---------------|
+| Standard prog. language set                        | All                              |                      | ...     |                      | All+          |
+| Jenkins CI                                         | Yes, Single, In-house            |                      | ...     |                      | Yes, Multi, ? |
+| Docker Registry/Harbor                             | No (?), in CI                    |                      | ...     |                      | Yes           |
+| SeleniumHQ cluster (Hub, Nodes)                    | Yes, Single                      |                      | ...     |                      | Yes. Multi    |
+| Multi/Single API/ APPs                             | Single                           |                      | ...     |                      | Multi, HA     |
+| Multi/Single DBs                                   | Single                           |                      | ...     |                      | Multi, HA     |
+| Multi/Single Queues (RabbitMQ, Mosquitto)          | Single                           |                      | ...     |                      | Multi, HA     |
+| Multi/Single process engine (Zeebe, Camunda)       | Single                           |                      | ...     |                      | Multi, HA     |
+| Profiles                                           | All                              |                      | ...     |                      | All           |
+| Poor man's Wiki (mvn site, .md)                    | Yes                              |                      | ...     |                      | No            |
+| Poor man's Issue Management (Wiki)                 | Yes                              |                      | ...     |                      | No            |
+| Poor man's SonarQube (or similar) - wiki, mvn site | Yes                              |                      | ...     |                      | No            |
+| Poor man's Log systems                             | Yes                              |                      | ...     |                      | No            |
+| Poor man's DB (H2/Derby file)                      | Yes                              |                      | ...     |                      | No, Multi, HA |
+| Poor man's Intra server (Nginx)                    | Yes                              |                      | ...     |                      | No, Multi, HA |
+| Poor man's CDN (http(s) File server, Nginx)        | Yes                              |                      | ...     |                      | No, Multi, HA |
+| Poor man's AI training process loop                | Yes (existing Jenkins Ci, Zeebe) |                      | ...     |                      | No            |
+| Poor man's manual test management (Wiki)           | Yes                              |                      | ...     |                      | No            |
+| K8S ready                                          | Yes, K3S                         |                      | ...     |                      | Yes           |
+| Service communication over TLS                     | No                               |                      | ...     |                      | Yes           |
+| PKI, Key management                                | Minimal, for public web          |                      | ...     |                      | Yes           |
+| Monitoring                                         | No (Manual)                      |                      | ...     |                      | Yes           |
+| SSH File server                                    | Yes, Single, In-house, in CI     |                      | ...     |                      | Yes           |
+| SMTP server per environment                        | Yes                              |                      | ...     |                      | Yes           |
+
 <!-- REVIEW: R-08 — IAM "No" at Level 1 conflicts with loginOnce.md which requires SSO; no resolution documented -->
-| IAM (Keycloak)                                              | No                               |                      | ...     |                      | Yes                    |
-| Cloud, Cloud-Hybrid, Private comp. env.                     | Cloud-Hybrid                     |                      | ...     |                      | Self made Cloud-Hybrid |
-| Feature switches  level                                     | 2                                |                      | 3       |                      | 5                      |
-| Multi tenant                                                | Yes                              |                      | ...     |                      | Yes                    |
-| Management tools (Ansible, ...)                             | No                               |                      | ...     |                      | Yes                    |
-| In-house DNS                                                | Yes                              |                      | ...     |                      | Yes                    |
-| In-house DHCP                                               | Yes                              |                      | ...     |                      | Yes                    |
-| In-house LDAP (OpenLDAP)                                    | Yes                              |                      | ...     |                      | Yes                    |
-| In-house SMTP (Sendmail, Postfix, ...)                      | Yes                              |                      | ...     |                      | ...                    |
-| Admin tools (b/w simple html, static, SPA, in existing APP) | Yes                              |                      | ...     |                      | No (Full featured?)    |
-| Monolith (backend reuse, ...)                               | Yes                              |                      | ...     |                      | No (μS)                |
-| ...                                                         | ...                              |                      | ...     |                      | ...                    |
-| ...                                                         | ...                              |                      | ...     |                      | ...                    |
-| ...                                                         | ...                              |                      | ...     |                      | ...                    |
-| ...                                                         | ...                              |                      | ...     |                      | ...                    |
+| IAM (Keycloak)                                              | No | | ... | | Yes |
+| Cloud, Cloud-Hybrid, Private comp. env. | Cloud-Hybrid | | ... | | Self made Cloud-Hybrid |
+| Feature switches level | 2 | | 3 | | 5 |
+| Multi tenant | Yes | | ... | | Yes |
+| Management tools (Ansible, ...)                             | No | | ... | | Yes |
+| In-house DNS | Yes | | ... | | Yes |
+| In-house DHCP | Yes | | ... | | Yes |
+| In-house LDAP (OpenLDAP)                                    | Yes | | ... | | Yes |
+| In-house SMTP (Sendmail, Postfix, ...)                      | Yes | | ... | | ... |
+| Admin tools (b/w simple html, static, SPA, in existing APP) | Yes | | ... | | No (Full featured?)    |
+| Monolith (backend reuse, ...)                               | Yes | | ... | | No (μS)                |
+| ... | ... | | ... | | ... |
+| ... | ... | | ... | | ... |
+| ... | ... | | ... | | ... |
+| ... | ... | | ... | | ... |
 
 ## 4. Rationale (Justification):
 
@@ -67,6 +68,7 @@ an overview page. That improves reuse in later ADRs, lets reviews cite one stabl
 index shorter and more focused on navigation.
 
 <!-- REVIEW: R-07 — duplicate section number "3."; should be "5. Consequences, Impacts & Follow-up Actions" -->
+
 ## 3. Consequences, Impacts & Follow-up Actions
 
 Future updates to architecture maturity levels should modify this ADR instead of reintroducing the table into
