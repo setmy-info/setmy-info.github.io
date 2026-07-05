@@ -105,6 +105,8 @@ npm outdated -r
 
 ```shell
 npm update -w <workspace-name>
+# Or
+npx npm-check-updates -u
 ```
 
 ## Usage, Tips and Tricks
