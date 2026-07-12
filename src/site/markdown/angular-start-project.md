@@ -190,6 +190,8 @@ ng lint
 ## See also
 
 * [Angular](angular.md)
+* [A2UI components](a2ui.md)
+* [AG-UI protocol](ag-ui.md)
 * [Angular official documentation](https://angular.dev/)
 * [Angular CLI reference](https://angular.dev/tools/cli)
 * [Angular version compatibility](https://angular.dev/reference/releases)

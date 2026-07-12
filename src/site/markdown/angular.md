@@ -143,4 +143,6 @@ ng lint
 * [Node.js](node.md)
 * [npm](npm.md)
 * [Angular start project](angular-start-project.md)
+* [A2UI components](a2ui.md)
+* [AG-UI protocol](ag-ui.md)
 * [Lerna monorepo](lerna.md)

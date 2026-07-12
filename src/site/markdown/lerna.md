@@ -151,3 +151,5 @@ npx lerna diff
 * [npm workspaces](npm.md)
 * [Node.js](node.md)
 * [Angular](angular.md)
+* [A2UI components](a2ui.md)
+* [AG-UI protocol](ag-ui.md)
