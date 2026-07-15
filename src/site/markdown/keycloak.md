@@ -1193,6 +1193,241 @@ At minimum, verify that you can:
 * validate `/.well-known/openid-configuration` and `JWKS` responses,
 * and confirm at least one protected application can authenticate correctly.
 
+## Keycloak Production Readiness Checklist
+
+### 1. Infrastructure
+
+- [ ] Run the latest stable Keycloak release.
+- [ ] Keep Keycloak updated with security patches.
+- [ ] Use PostgreSQL (avoid embedded database in production).
+- [ ] Configure automatic database backups.
+- [ ] Test database restore procedure.
+- [ ] Synchronize system time using NTP.
+- [ ] Allocate sufficient CPU and memory.
+- [ ] Configure persistent storage where required.
+- [ ] Run behind a reverse proxy (Nginx, Traefik, Caddy, HAProxy).
+- [ ] Enable health checks.
+- [ ] Enable graceful restart strategy.
+- [ ] Configure high availability if required.
+
+### 2. TLS / HTTPS
+
+- [ ] HTTPS enabled everywhere.
+- [ ] Redirect HTTP → HTTPS.
+- [ ] Use modern TLS versions only.
+- [ ] Disable weak ciphers.
+- [ ] Enable HSTS.
+- [ ] Use trusted certificates (Let's Encrypt or commercial CA).
+- [ ] Automate certificate renewal.
+- [ ] Verify certificate expiration monitoring.
+
+### 3. Network Security
+
+- [ ] Database not publicly accessible.
+- [ ] Keycloak admin console protected.
+- [ ] Firewall configured.
+- [ ] Only required ports open.
+- [ ] Restrict admin access by VPN or IP allowlist if possible.
+- [ ] Internal services communicate over private network.
+- [ ] Disable unused endpoints where possible.
+
+# 4. Secrets Management
+
+- [ ] Strong database password.
+- [ ] Strong admin password.
+- [ ] Secrets not stored in Git.
+- [ ] Secrets stored in Vault, Docker Secrets, Kubernetes Secrets or equivalent.
+- [ ] Rotate secrets periodically.
+- [ ] Protect SMTP credentials.
+- [ ] Protect OIDC client secrets.
+
+### 5. Administrator Accounts
+
+- [ ] Remove default admin account if unnecessary.
+- [ ] Create named administrator accounts.
+- [ ] Enable MFA for all administrators.
+- [ ] Use least privilege principle.
+- [ ] Review administrator permissions regularly.
+- [ ] Disable unused administrator accounts.
+
+### 6. Authentication
+
+- [ ] Require email verification.
+- [ ] Configure password policy.
+- [ ] Configure password history.
+- [ ] Configure minimum password length.
+- [ ] Configure password complexity.
+- [ ] Configure account lockout.
+- [ ] Configure brute-force protection.
+- [ ] Enable MFA (TOTP or WebAuthn) where appropriate.
+- [ ] Configure backup codes if supported.
+- [ ] Review authentication flows.
+
+### 7. Session Security
+
+- [ ] Configure access token lifetime.
+- [ ] Configure refresh token lifetime.
+- [ ] Configure idle session timeout.
+- [ ] Configure maximum session lifetime.
+- [ ] Enable secure cookies.
+- [ ] Enable HttpOnly cookies.
+- [ ] Enable SameSite protection.
+- [ ] Review remember-me policy.
+
+### 8. OAuth / OIDC
+
+- [ ] Use Authorization Code Flow.
+- [ ] Use PKCE for public clients.
+- [ ] Avoid Implicit Flow.
+- [ ] Validate redirect URIs.
+- [ ] Avoid wildcard redirect URIs.
+- [ ] Configure correct client scopes.
+- [ ] Remove unused clients.
+- [ ] Rotate client secrets.
+- [ ] Review confidential vs public client settings.
+
+### 9. User Management
+
+- [ ] Disable self-registration if unnecessary.
+- [ ] Configure user profile validation.
+- [ ] Remove inactive users periodically.
+- [ ] Review privileged accounts.
+- [ ] Review role assignments.
+- [ ] Use groups where appropriate.
+- [ ] Remove orphaned users.
+
+### 10. Email
+
+- [ ] Configure SMTP over TLS.
+- [ ] Verify sender domain.
+- [ ] Configure SPF.
+- [ ] Configure DKIM.
+- [ ] Configure DMARC.
+- [ ] Test verification emails.
+- [ ] Test password reset emails.
+
+### 11. Logging
+
+- [ ] Enable authentication logs.
+- [ ] Enable admin event logs.
+- [ ] Enable security event logs.
+- [ ] Send logs to centralized logging.
+- [ ] Configure log retention.
+- [ ] Protect logs from tampering.
+- [ ] Monitor failed login attempts.
+
+### 12. Monitoring
+
+- [ ] Enable metrics.
+- [ ] Configure Prometheus if applicable.
+- [ ] Configure Grafana dashboards.
+- [ ] Monitor CPU.
+- [ ] Monitor memory.
+- [ ] Monitor database.
+- [ ] Monitor login failures.
+- [ ] Monitor token issuance.
+- [ ] Monitor disk usage.
+- [ ] Configure alerts.
+
+### 13. Backup
+
+- [ ] Daily database backup.
+- [ ] Backup encryption.
+- [ ] Off-site backup storage.
+- [ ] Backup retention policy.
+- [ ] Periodic restore testing.
+- [ ] Document recovery process.
+
+### 14. Disaster Recovery
+
+- [ ] Recovery documentation.
+- [ ] Restore procedure tested.
+- [ ] Recovery Time Objective (RTO) defined.
+- [ ] Recovery Point Objective (RPO) defined.
+- [ ] Emergency contacts documented.
+
+### 15. Containers
+
+- [ ] Use official Keycloak image.
+- [ ] Pin image version.
+- [ ] Do not use latest tag.
+- [ ] Run as non-root.
+- [ ] Read-only filesystem where possible.
+- [ ] Resource limits configured.
+- [ ] Security updates applied.
+
+### 16. Reverse Proxy
+
+- [ ] Forward correct headers.
+- [ ] Preserve X-Forwarded-* headers.
+- [ ] Configure proxy timeouts.
+- [ ] Enable compression if appropriate.
+- [ ] Configure rate limiting.
+- [ ] Configure request size limits.
+
+### 17. Database
+
+- [ ] PostgreSQL updated.
+- [ ] SSL enabled between Keycloak and database.
+- [ ] Database backups verified.
+- [ ] Database monitoring enabled.
+- [ ] Slow query monitoring enabled.
+- [ ] Least privilege database account.
+
+### 18. API Security
+
+- [ ] Validate JWT signatures.
+- [ ] Validate issuer.
+- [ ] Validate audience.
+- [ ] Validate expiration.
+- [ ] Validate scopes.
+- [ ] Validate roles.
+
+### 19. Security Headers
+
+- [ ] Content-Security-Policy
+- [ ] X-Frame-Options
+- [ ] X-Content-Type-Options
+- [ ] Referrer-Policy
+- [ ] Permissions-Policy
+- [ ] Strict-Transport-Security
+
+### 20. Operational Procedures
+
+- [ ] Document deployment process.
+- [ ] Document rollback process.
+- [ ] Document upgrade process.
+- [ ] Document maintenance window.
+- [ ] Test upgrades in staging first.
+- [ ] Review configuration after upgrades.
+
+### 21. Compliance
+
+- [ ] GDPR requirements reviewed.
+- [ ] Data retention policy defined.
+- [ ] User deletion process documented.
+- [ ] Audit logging enabled.
+- [ ] Privacy policy updated.
+
+### 22. Final Production Verification
+
+- [ ] HTTPS enforced.
+- [ ] MFA tested.
+- [ ] Password reset tested.
+- [ ] Email verification tested.
+- [ ] Brute-force protection tested.
+- [ ] Session expiration tested.
+- [ ] Token refresh tested.
+- [ ] Logout tested.
+- [ ] Backup restore tested.
+- [ ] Monitoring operational.
+- [ ] Alerts operational.
+- [ ] Logs verified.
+- [ ] Disaster recovery documented.
+- [ ] Security review completed.
+- [ ] Penetration test completed (recommended).
+- [ ] Production deployment approved.
+
 ## See also
 
 * [Keycloak Home Page](https://www.keycloak.org/)

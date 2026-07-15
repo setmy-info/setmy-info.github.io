@@ -493,6 +493,8 @@ lists only Angular. React is neither clearly allowed nor clearly prohibited, so 
 1. [ADR-0041 Environment name conventions](adr-0041-environment-name-conventions.md)
 1. [ADR-0042 Runtime and build-time profile name conventions](adr-0042-runtime-and-build-time-profile-name-conventions.md)
 1. [ADR-0043 Architecture levels 1-5](adr-0043-architecture-levels.md)
+1. [ADR-0044 Logging and Monitoring Platform](adr-0044-logging-and-monitoring-platform.md)
+1. [ADR-0045 Software build lifecycles](adr-0045-software-build-lifecycles.md)
 1. [Arch as code](architectureAsACode.md)
 1. [No addons, extensions, plugins into git](noGitAddons.md)
 1. [Branching](branching.md)
