@@ -87,6 +87,7 @@
         * [Xfce](xfce.html)
         * [Lerna](lerna.html)
         * [Zeebe](zeebe.html)
+        * [Tauri](tauri.html)
         * [Elasticsearch](elasticsearch.html)
         * [OpenSearch](opensearch.html)
         * [Graylog](graylog.html)
