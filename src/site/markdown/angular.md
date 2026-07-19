@@ -138,6 +138,7 @@ ng lint
 
 * [Angular official documentation](https://angular.dev/)
 * [Angular version compatibility](https://angular.dev/reference/releases)
+* [Angular update guide](https://angular.dev/update-guide?v=21.0-22.0&l=3)
 * [Angular CLI reference](https://angular.dev/tools/cli)
 * [WebdriverIO](https://webdriver.io/)
 * [Node.js](node.md)

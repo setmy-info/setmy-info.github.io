@@ -77,8 +77,14 @@
                         <item name="openssl" href="openssl.html"/>
                         <item name="webpack" href="webpack.html"/>
                         <item name="material design icons" href="materialdicons.html"/>
+                        <item name="material symbols" href="material-symbols.html"/>
+                        <item name="MDI (Pictogrammers)" href="mdi.html"/>
+                        <item name="MUI Icons" href="mui-icons.html"/>
                         <item name="xfce" href="xfce.html"/>
                         <item name="tauri" href="tauri.html"/>
+                        <item name="Angular" href="angular.html"/>
+                        <item name="Angular Start Project" href="angular-start-project.html"/>
+                        <item name="AngularJS (Angular 1.x)" href="angular1x.html"/>
                         <item name="template" href="template.html"/>
                     </item>
                     <item name="Misc" href="empty.html">

@@ -77,6 +77,8 @@ import '@material/web/textfield/filled-text-field.js';
 
 ### MUI (React)
 
+For using icons specifically with MUI, see the [MUI Material Icons](mui-icons.html) guide.
+
 ```shell
 npm install @mui/material @emotion/react @emotion/styled
 ```
@@ -175,6 +177,7 @@ Material Symbols (the updated icon font replacing Material Icons):
 ## See also
 
 * [Material 3](https://m3.material.io/)
+* [Material Design 3 Icons Overview](https://m3.material.io/styles/icons/overview)
 * [Material Design on Google for Developers](https://developers.google.com/material-design)
 * [Material Components](https://github.com/material-components)
 
