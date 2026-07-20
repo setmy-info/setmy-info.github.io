@@ -27,8 +27,8 @@
             * [PoC & Spikes](it/architecture/decisions/poc-spikes/index.html)
         * [Enterprise architecture](it/architecture/enterprise-architecture/index.html)
             * [Environments and top level buildingblocks/components/software](it/architecture/enterprise-architecture/buildingblocks.html)
-        * [Components/Modules/Projects, Module or component or app or library as Project](it/architecture/components/index.html) (
-          NOTE: can be at the same level as **Knowledge** section items. these are things developers, DevOps, Admins
+        * [Components/Modules/Projects, Module or component or app or library as Project](it/architecture/components/index.html)
+          (NOTE: can be at the same level as **Knowledge** section items. these are things developers, DevOps, Admins
           search perhaps first to start working on a project, to get information about software module/project. )
             * [Commons and overview](empty.html)
                 * [Architecture](empty.html)
@@ -87,6 +87,8 @@
         * [DeepSpeed](deepspeed.html)
         * [LitGPT](litgpt.html)
         * [AIKit](aikit.html)
+        * [CrewAI](crewai.html)
+        * [AgentKit](agentkit.html)
         * [Colossal-AI](colossal-ai.html)
         * [Xfce](xfce.html)
         * [Lerna](lerna.html)

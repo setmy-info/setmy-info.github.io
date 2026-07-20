@@ -72,6 +72,8 @@ What AI agents usually do inside ecosystems like **Model Context Protocol (MCP)*
 * [AI Tools](aitools.md)
 * [Model Context Protocol (MCP)](mcp.md)
 * [LangChain](langchain.md)
+* [CrewAI](crewai.md)
+* [AgentKit](agentkit.md)
 * [VectorDB](vectordb.md)
 * [OpenVPN](openvpn.md)
 * [Don't learn AI Agents without Learning these Fundamentals](https://www.youtube.com/watch?v=ZaPbP9DwBOE)

@@ -11,6 +11,8 @@
 * Text Generation Inference
 * LM Studio
 * Open WebUI
+* CrewAI
+* AgentKit
 
 ### Tokenizers
 
@@ -252,6 +254,7 @@ MCP
 | LangGraph                              | Graph-based multi-agent workflow framework             | Stateful agent workflows        | Built on LangChain; supports cycles                        |
 | LlamaIndex                             | RAG and data ingestion framework                       | Document-based AI systems       | Strong ingestion pipeline; many connectors                 |
 | CrewAI                                 | Role-based multi-agent framework                       | Structured team-of-agents       | Easy to define roles; opinionated                          |
+| AgentKit                               | Blockchain-enabled agent framework                     | Wallet & on-chain interaction   | Built by Coinbase; integrates with CDP                   |
 | AutoGen                                | Microsoft multi-agent conversation framework           | Automated agent collaboration   | Agents converse to solve tasks                             |
 | Semantic Kernel                        | Microsoft SDK for LLM + plugin integration             | Enterprise .NET/Python AI apps  | Strong Azure + OpenAI integration                          |
 | **— Agent state & task management —**  |                                                        |                                 |                                                            |

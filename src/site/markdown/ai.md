@@ -31,6 +31,8 @@ AI models have evolved from simple text interfaces to complex multimodal systems
 * [AI Agent](agent.md)
 * [Model Context Protocol (MCP)](mcp.md)
 * [LangChain](langchain.md)
+* [CrewAI](crewai.md)
+* [AgentKit](agentkit.md)
 * [Neo4j](neo4j.md)
 * [Dgraph](dgraph.md)
 * [FastAPI](fastapi.md)

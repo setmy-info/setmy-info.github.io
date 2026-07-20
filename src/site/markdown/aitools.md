@@ -221,6 +221,8 @@
 * [AI Agent](agent.md)
 * [Model Context Protocol (MCP)](mcp.md)
 * [LangChain](langchain.md)
+* [CrewAI](crewai.md)
+* [AgentKit](agentkit.md)
 
 ## Translation
 
