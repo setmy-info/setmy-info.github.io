@@ -10,7 +10,7 @@ to prompts, an AI agent can reason, plan, and execute actions using external too
 
 ### How it works
 
-AI agents typically operate in a loop, often referred to as a **Reasoning-Action (ReAct)** cycle:
+AI agents typically operate in a loop, such as the [RALPH Loop](ralph-loop.md) or the **Reasoning-Action (ReAct)** cycle:
 
 1. **Perception:** The agent receives a task or environment state (input/prompt).
 2. **Reasoning:** The agent analyzes the task, breaks it down into sub-tasks, and decides what to do next.
@@ -74,6 +74,7 @@ What AI agents usually do inside ecosystems like **Model Context Protocol (MCP)*
 * [LangChain](langchain.md)
 * [CrewAI](crewai.md)
 * [AgentKit](agentkit.md)
+* [RALPH Loop](ralph-loop.md)
 * [VectorDB](vectordb.md)
 * [OpenVPN](openvpn.md)
 * [Don't learn AI Agents without Learning these Fundamentals](https://www.youtube.com/watch?v=ZaPbP9DwBOE)

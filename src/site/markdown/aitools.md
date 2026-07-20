@@ -223,6 +223,7 @@
 * [LangChain](langchain.md)
 * [CrewAI](crewai.md)
 * [AgentKit](agentkit.md)
+* [RALPH Loop](ralph-loop.md)
 
 ## Translation
 

@@ -89,6 +89,7 @@
         * [AIKit](aikit.html)
         * [CrewAI](crewai.html)
         * [AgentKit](agentkit.html)
+        * [RALPH Loop](ralph-loop.html)
         * [Colossal-AI](colossal-ai.html)
         * [Xfce](xfce.html)
         * [Lerna](lerna.html)

@@ -33,6 +33,7 @@ AI models have evolved from simple text interfaces to complex multimodal systems
 * [LangChain](langchain.md)
 * [CrewAI](crewai.md)
 * [AgentKit](agentkit.md)
+* [RALPH Loop](ralph-loop.md)
 * [Neo4j](neo4j.md)
 * [Dgraph](dgraph.md)
 * [FastAPI](fastapi.md)

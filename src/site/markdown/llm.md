@@ -260,6 +260,7 @@ MCP
 | **— Agent state & task management —**  |                                                        |                                 |                                                            |
 | Scratchpad / working memory            | Temporary reasoning space within a single run          | Intermediate computation        | Invisible to user; used for CoT and planning steps         |
 | Agent state machine                    | Explicit states + transitions for agent lifecycle      | Predictable behavior            | States: idle → planning → executing → verifying → done     |
+| RALPH Loop                            | Conceptual cognitive cycle for agents                  | Reasoning framework             | Read → Analyze → Learn → Plan → Help                      |
 | Checkpoint / resume                    | Saving agent progress for recovery or continuation     | Fault tolerance                 | Required for long-running tasks exceeding context window   |
 | Task decomposition                     | Breaking a goal into ordered sub-tasks                 | Manageability                   | Planner output; enables parallelism                        |
 | Parallelism vs sequential execution    | Running agent tasks concurrently vs in order           | Performance vs correctness      | Use parallel for independent tasks; sequential for deps    |
