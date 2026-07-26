@@ -2,9 +2,9 @@
 
 ## Information
 
-Angular is a TypeScript-based, open-source front-end web application framework developed and maintained by Google.
-It provides a comprehensive platform for building scalable single-page applications (SPAs), including a component
-model, dependency injection, reactive forms, routing, and HTTP client out of the box.
+Angular is a TypeScript-based, open-source front-end web application framework developed and maintained by Google. It
+provides a comprehensive platform for building scalable single-page applications (SPAs), including a component model,
+dependency injection, reactive forms, routing, and HTTP client out of the box.
 
 Angular requires **Node.js** to run its CLI tooling and development server. Always use an **LTS** Node.js version for
 Angular development and CI pipelines. Each Angular major version specifies a minimum Node.js LTS version in its
@@ -137,6 +137,7 @@ ng lint
 ## See also
 
 * [Angular official documentation](https://angular.dev/)
+* [Agentic UI with Angular](https://agentic-angular.com/)
 * [Angular version compatibility](https://angular.dev/reference/releases)
 * [Angular update guide](https://angular.dev/update-guide?v=21.0-22.0&l=3)
 * [Angular CLI reference](https://angular.dev/tools/cli)

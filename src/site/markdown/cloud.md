@@ -2,18 +2,18 @@
 
 ## Information
 
-Cloud computing is the on-demand delivery of IT resources — compute, storage, databases, networking, software — over
-the internet with pay-as-you-go pricing. Instead of owning and operating physical infrastructure, organizations
-provision resources from cloud providers.
+Cloud computing is the on-demand delivery of IT resources — compute, storage, databases, networking, software — over the
+internet with pay-as-you-go pricing. Instead of owning and operating physical infrastructure, organizations provision
+resources from cloud providers.
 
 ### Service Models
 
-| Model    | Description                                                           | Examples                              |
-|----------|-----------------------------------------------------------------------|---------------------------------------|
-| **IaaS** | Infrastructure as a Service — raw compute, storage, networking        | AWS EC2, Azure VMs, GCP Compute       |
-| **PaaS** | Platform as a Service — managed runtime, databases, middleware        | AWS Elastic Beanstalk, Heroku, GCP App Engine |
-| **SaaS** | Software as a Service — fully managed application                     | Gmail, Salesforce, GitHub             |
-| **FaaS** | Function as a Service — event-driven serverless execution             | AWS Lambda, Azure Functions, GCP Cloud Functions |
+| Model    | Description                                                    | Examples                                         |
+|----------|----------------------------------------------------------------|--------------------------------------------------|
+| **IaaS** | Infrastructure as a Service — raw compute, storage, networking | AWS EC2, Azure VMs, GCP Compute                  |
+| **PaaS** | Platform as a Service — managed runtime, databases, middleware | AWS Elastic Beanstalk, Heroku, GCP App Engine    |
+| **SaaS** | Software as a Service — fully managed application              | Gmail, Salesforce, GitHub                        |
+| **FaaS** | Function as a Service — event-driven serverless execution      | AWS Lambda, Azure Functions, GCP Cloud Functions |
 
 ### Deployment Models
 
@@ -80,3 +80,6 @@ function: runtime, orchestration, observability, security, storage, etc.
 * [Cloud First](https://resources.boomi.com/resources/resources-library/cloud-first-what-does-it-mean-and-how-does-it-work)
 * [12-Factor App](https://12factor.net/)
 * [CNCF Landscape](https://landscape.cncf.io/)
+* [AWS](aws.md)
+* [Hetzner Cloud](hetzner-cloud.md)
+* [Scaleway](scaleway.md)

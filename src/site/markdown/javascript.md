@@ -2,15 +2,15 @@
 
 ## Information
 
-JavaScript is a high-level, interpreted programming language that is one of the core technologies of the World Wide
-Web, alongside HTML and CSS. It runs in web browsers, but also server-side via Node.js and other runtimes.
+JavaScript is a high-level, interpreted programming language that is one of the core technologies of the World Wide Web,
+alongside HTML and CSS. It runs in web browsers, but also server-side via Node.js and other runtimes.
 
 JavaScript is standardized through the **ECMAScript (ES)** specification. Modern JavaScript (ES6+) supports classes,
 modules, arrow functions, async/await, destructuring, and many other features.
 
-When running JavaScript server-side with Node.js, use a **Node.js LTS version** for production workloads. The
-JavaScript language itself (ECMAScript) evolves independently of the runtime, but the Node.js version determines which
-ES features are available without transpilation. See [node.md](node.md) for the Node.js LTS versioning policy.
+When running JavaScript server-side with Node.js, use a **Node.js LTS version** for production workloads. The JavaScript
+language itself (ECMAScript) evolves independently of the runtime, but the Node.js version determines which ES features
+are available without transpilation. See [node.md](node.md) for the Node.js LTS versioning policy.
 
 ## Installation
 
@@ -107,3 +107,7 @@ const sum = numbers.reduce((acc, x) => acc + x, 0);
 * [Flow — structural typing](https://flow.org/en/docs/getting-started/)
 * [SockJS](https://github.com/sockjs/sockjs-client)
 * [Svelte](https://svelte.dev/)
+* [Monaco Editor](monaco-editor.md)
+* [CodeMirror](codemirror.md)
+* [Ace Editor](ace.md)
+* [Diff2Html](diff2html.md)

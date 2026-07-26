@@ -64,16 +64,16 @@ my-app/
 
 ### Common Packages and Their Purpose
 
-| Package                    | Purpose                                                        |
-|----------------------------|----------------------------------------------------------------|
-| `react-router-dom`         | Client-side routing for SPAs                                   |
-| `@reduxjs/toolkit`         | Redux state management — simplified setup and best practices   |
-| `react-redux`              | React bindings for Redux                                       |
-| `zustand`                  | Lightweight alternative to Redux for local/global state        |
-| `axios`                    | HTTP client for API calls                                      |
-| `@tanstack/react-query`    | Server state management — fetching, caching, synchronisation   |
-| `@testing-library/react`   | Utilities for testing React components from the user's perspective |
-| `jest` / `vitest`          | Test runner — Jest for CRA, Vitest for Vite projects           |
+| Package                  | Purpose                                                            |
+|--------------------------|--------------------------------------------------------------------|
+| `react-router-dom`       | Client-side routing for SPAs                                       |
+| `@reduxjs/toolkit`       | Redux state management — simplified setup and best practices       |
+| `react-redux`            | React bindings for Redux                                           |
+| `zustand`                | Lightweight alternative to Redux for local/global state            |
+| `axios`                  | HTTP client for API calls                                          |
+| `@tanstack/react-query`  | Server state management — fetching, caching, synchronisation       |
+| `@testing-library/react` | Utilities for testing React components from the user's perspective |
+| `jest` / `vitest`        | Test runner — Jest for CRA, Vitest for Vite projects               |
 
 ## Configuration
 
@@ -189,3 +189,4 @@ npm test
 * [Node.js](node.md)
 * [npm](npm.md)
 * [JavaScript](javascript.md)
+* [Twenty](twenty.md)

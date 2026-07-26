@@ -122,4 +122,5 @@ When working with npm workspaces, use the `--workspaces` flag in your CI scripts
 * [npm Monorepo Management](npm.md)
 * [Android Development](android.md)
 * [iOS Development](ios.md)
+* [Spotless](spotless.md)
 * [Docker Decisions](it/architecture/decisions/index.md#docker)

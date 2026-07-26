@@ -92,6 +92,7 @@ They are often used together to build sophisticated agentic applications.
 
 ## See also
 
+* [Agentic UI with Angular](https://agentic-angular.com/)
 * [AG-UI Official Documentation](https://docs.ag-ui.com/)
 * [AG-UI GitHub Repository](https://github.com/ag-ui-protocol/ag-ui)
 * [A2UI components](a2ui.md)

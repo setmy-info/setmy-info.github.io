@@ -401,6 +401,19 @@ architecture across web, mobile, and desktop applications.
 319. Notification Stack Animation
 320. Inline Validation Fade
 
+## Main UI/UX + AI design modes
+
+Neumorphism Liquid Glass Soft UI Minimalism Maxmimalism Brutalism Flat UI Claymorphism Bento Grid Material UI
+Skeuomorphism Glassmorphism Spatial UI
+
+## Principles
+
+UI/UX: <-Liiga kirju pilt... Vähe kirju / liiga lihtne ->
+UI/UX: Eeldatav info koheselt UI/UX: Vähem klikke eeldatava infoni või funktsionaalsuseni. Ideal 0, normal 2, abnormal
+already 3. UI/UX: Darkmode, Lihtmode UI/UX: Shortcut, shorthand to resources UI/UX: look and feel anf experience as
+App - Users want App experience REQ: Ui view shouldwork in FF Reader mode also. Brauser is for humans. At least at the
+moment.
+
 ## See also
 
 * [Bootstrap](bootstrap.md)
@@ -427,3 +440,25 @@ architecture across web, mobile, and desktop applications.
 * [Motion](motion-dev.md)
 * [Page Flows](page-flows.md)
 * [Dribbble](dribbble.md)
+* [Flux AI](flux.md)
+* [Kiro](kiro.md)
+* [Agentic UI with Angular](https://agentic-angular.com/)
+* [AG-UI protocol](ag-ui.md)
+* [Monaco Editor](monaco-editor.md)
+* [CodeMirror](codemirror.md)
+* [Ace Editor](ace.md)
+* [Diff2Html](diff2html.md)
+* [Dark Design](dark-design.md)
+* [Whimsical](whimsical.md)
+* [Refero](refero.md)
+* [Aceternity UI](aceternity-ui.md)
+* [Componentry](componentry.md)
+* [Neumorphism](neumorphism.md)
+* [Arduino](arduino.md)
+* [Raspberry Pi](rasberry-pi.md)
+* [ESP32](esp32.md)
+* [3D Printers](3dprinters.md)
+* [Twenty](twenty.md)
+* [AppLess](appless.md)
+* [OpenUI](openui.md)
+* [iPhone presentation 2007](https://youtu.be/MnrJzXM7a6o?t=280)

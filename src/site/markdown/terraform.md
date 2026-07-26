@@ -5,9 +5,8 @@
 ### Introduction
 
 [Terraform](https://www.terraform.io/) is an open-source infrastructure as code (IaC) software tool created by
-Hashicorp.
-Users define and provide data center infrastructure using a declarative configuration language known as HashiCorp
-Configuration Language (HCL), or optionally JSON.
+Hashicorp. Users define and provide data center infrastructure using a declarative configuration language known as
+HashiCorp Configuration Language (HCL), or optionally JSON.
 
 ### Key Features
 
@@ -15,8 +14,8 @@ Configuration Language (HCL), or optionally JSON.
   blueprint of your data center to be versioned and treated as you would any other code.
 * **Execution Plans:** Terraform has a "planning" step where it generates an execution plan. The execution plan shows
   what Terraform will do when you call apply.
-* **Resource Graph:** Terraform builds a graph of all your resources, and parallelizes the creation and modification
-  of any non-dependent resources.
+* **Resource Graph:** Terraform builds a graph of all your resources, and parallelizes the creation and modification of
+  any non-dependent resources.
 * **Change Automation:** Complex changesets can be applied to your infrastructure with minimal human interaction.
 
 ## Installation
@@ -362,4 +361,6 @@ spec:
 * [Argo Workflows](argo.md)
 * [Minikube](minikube.md)
 * [AWS (Amazon Web Services)](aws.md)
+* [Hetzner Cloud](hetzner-cloud.md)
+* [Scaleway](scaleway.md)
 * [openTofu](opentofu.md)

@@ -36,6 +36,7 @@ Desktop entry files allow applications to appear in the system menu. Locations:
 ```
 
 Specs:
+
 * [freedesktop.org Menu Specification](https://standards.freedesktop.org/menu-spec/latest/)
 * [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html)
 
@@ -140,3 +141,7 @@ rsync -av --delete --exclude 'exclude.file.txt' ./source/ ./destination/
 * [freedesktop.org Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html)
 * [Fedora documentation](https://docs.fedoraproject.org/)
 * [Rocky Linux documentation](https://docs.rockylinux.org/)
+* [LibreWolf](librewolf.md)
+* [Raspberry Pi](rasberry-pi.md)
+* [ESP32](esp32.md)
+* [3D Printers](3dprinters.md)

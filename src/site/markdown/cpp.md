@@ -4,8 +4,8 @@
 
 C++ is a compiled, statically typed, general-purpose programming language that extends C with object-oriented
 programming, templates (generic programming), and the Standard Template Library (STL). It is used for
-performance-critical applications: embedded systems, game engines, operating systems, high-frequency trading,
-scientific computing, and graphics.
+performance-critical applications: embedded systems, game engines, operating systems, high-frequency trading, scientific
+computing, and graphics.
 
 Key characteristics:
 
@@ -181,8 +181,8 @@ int main() {
 
 # Returning
 
-1. Return class instances by value (return by value) and caller should use 'const' keyword for function return value
-   to avoid class copy. Compiler optimizes and uses caller stack instance.
+1. Return class instances by value (return by value) and caller should use 'const' keyword for function return value to
+   avoid class copy. Compiler optimizes and uses caller stack instance.
 
 ```cpp
 Example GetExampleReturnByValue() {
@@ -197,8 +197,8 @@ void CallerFunction() {
 }
 ```
 
-2. Or return pointer and put it immediately into smart pointer, to be released when exiting scope.
-   Use this form at low level services/components.
+2. Or return pointer and put it immediately into smart pointer, to be released when exiting scope. Use this form at low
+   level services/components.
 
 ```cpp
 Example *GetExampleReturnByPointer() {
@@ -228,5 +228,8 @@ void FiveTwo() {
 * [Pure virtual functions — learncpp](https://www.learncpp.com/cpp-tutorial/pure-virtual-functions-abstract-base-classes-and-interface-classes/)
 * [Abstract classes — cppreference](https://en.cppreference.com/w/cpp/language/abstract_class)
 * [FFTW](http://fftw.org/)
+* [Arduino](arduino.md)
+* [Raspberry Pi](rasberry-pi.md)
+* [ESP32](esp32.md)
 * [cmake-start-project](cmake-start-project.md)
 

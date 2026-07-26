@@ -80,3 +80,5 @@ https://maven.apache.org/ref/3.9.0/maven-core/lifecycles.html
 https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#lifecycle-reference
 
 (Maven search)[https://search.maven.org/]
+
+* [Spotless](spotless.md)

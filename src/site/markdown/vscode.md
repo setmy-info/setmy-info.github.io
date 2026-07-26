@@ -2,8 +2,8 @@
 
 ## Information
 
-Visual Studio Code (VS Code) is a lightweight, cross-platform source code editor developed by Microsoft. It is built
-on the Electron framework and supports a rich extension ecosystem covering languages, debuggers, linters, themes, and
+Visual Studio Code (VS Code) is a lightweight, cross-platform source code editor developed by Microsoft. It is built on
+the Electron framework and supports a rich extension ecosystem covering languages, debuggers, linters, themes, and
 remote development workflows.
 
 Key characteristics:
@@ -83,27 +83,27 @@ Workspace-level settings go in `.vscode/settings.json` at the project root and o
 
 ### Key Shortcuts
 
-| Action                  | Shortcut          |
-|-------------------------|-------------------|
-| Command Palette         | `Ctrl+Shift+P`    |
-| Quick file open         | `Ctrl+P`          |
-| Integrated terminal     | Ctrl+\`           |
-| Toggle sidebar          | `Ctrl+B`          |
-| Multi-cursor (add)      | `Alt+Click`       |
-| Format document         | `Ctrl+Shift+I`    |
-| Go to definition        | `F12`             |
-| Find in files           | `Ctrl+Shift+F`    |
-| Rename symbol           | `F2`              |
+| Action              | Shortcut       |
+|---------------------|----------------|
+| Command Palette     | `Ctrl+Shift+P` |
+| Quick file open     | `Ctrl+P`       |
+| Integrated terminal | Ctrl+\`        |
+| Toggle sidebar      | `Ctrl+B`       |
+| Multi-cursor (add)  | `Alt+Click`    |
+| Format document     | `Ctrl+Shift+I` |
+| Go to definition    | `F12`          |
+| Find in files       | `Ctrl+Shift+F` |
+| Rename symbol       | `F2`           |
 
 ### Recommended Extensions
 
-| Extension      | Purpose                                                      |
-|----------------|--------------------------------------------------------------|
-| ESLint         | JavaScript/TypeScript linting inline in the editor           |
-| Prettier       | Code formatter — integrates with formatOnSave                |
-| GitLens        | Enhanced Git blame, history, and diff views                  |
-| Remote - SSH   | Edit files on remote servers as if they were local           |
-| EditorConfig   | Applies `.editorconfig` rules in the editor                  |
+| Extension           | Purpose                                              |
+|---------------------|------------------------------------------------------|
+| ESLint              | JavaScript/TypeScript linting inline in the editor   |
+| Prettier            | Code formatter — integrates with formatOnSave        |
+| GitLens             | Enhanced Git blame, history, and diff views          |
+| Remote - SSH        | Edit files on remote servers as if they were local   |
+| EditorConfig        | Applies `.editorconfig` rules in the editor          |
 | Java Extension Pack | Full Java support (Language Server, Debugger, Maven) |
 
 ### Workspace Snippets
@@ -117,3 +117,5 @@ Place custom code snippets in `.vscode/<language>.json` to share them with a tea
 * [EditorConfig](editorconfig.md)
 * [ESLint](https://eslint.org/)
 * [Remote development overview](https://code.visualstudio.com/docs/remote/remote-overview)
+* [Monaco Editor](monaco-editor.md)
+* [Kiro](kiro.md)

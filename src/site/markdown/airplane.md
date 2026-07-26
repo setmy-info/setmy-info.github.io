@@ -99,9 +99,7 @@ Key points
 
 ## Terminology
 
-**Canopy** - varikatus
-**Canopy jettison lever** -
-**Yaw string** -
+**Canopy** - varikatus **Canopy jettison lever** - **Yaw string** -
 
 ## See also
 
@@ -113,3 +111,11 @@ Key points
 * [@IgorVolkov](https://www.youtube.com/@IgorVolkov)
 * [Instruments video](https://www.youtube.com/watch?v=G5WHFwiPkxc)
 * [Glider Handbook](https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/glider_handbook)
+* [PRANDTL-D No. 3 Takes Flight](https://www.youtube.com/watch?v=FC6WSo2grNs)
+* [MH 60 Airfoil](https://www.mh-aerotools.de/airfoils/mh60koo.htm)
+* [MH 45 Airfoil](https://www.mh-aerotools.de/airfoils/mh45koo.htm)
+* [Condor Soaring – The Complete Soaring Simulator](https://www.condorsoaring.com/)
+* [Glider Sim Pro - Just Soaring](https://www.justsoaring.com/glider-sim-pro.html)
+* [WeGlide](https://www.weglide.org)
+* [WeGlide Flight 129745](https://www.weglide.org/flight/129745)
+* [WeGlide Flight 129983](https://www.weglide.org/flight/129983)

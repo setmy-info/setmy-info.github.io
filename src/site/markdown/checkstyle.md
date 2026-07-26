@@ -2,12 +2,12 @@
 
 ## Information
 
-**Checkstyle** is a static analysis tool for Java that enforces coding standards and style rules. It checks source
-code against a configurable rule set and reports violations. Common rule sets are based on the **Google Java Style
-Guide** or the original **Sun Coding Conventions**.
+**Checkstyle** is a static analysis tool for Java that enforces coding standards and style rules. It checks source code
+against a configurable rule set and reports violations. Common rule sets are based on the **Google Java Style Guide** or
+the original **Sun Coding Conventions**.
 
-Checkstyle integrates with Maven, Gradle, Ant, and IDE plugins (IntelliJ IDEA, Eclipse). It is typically run as part
-of the build process to fail the build on style violations, or in IDE to give inline feedback during development.
+Checkstyle integrates with Maven, Gradle, Ant, and IDE plugins (IntelliJ IDEA, Eclipse). It is typically run as part of
+the build process to fail the build on style violations, or in IDE to give inline feedback during development.
 
 ### What it checks
 
@@ -140,4 +140,5 @@ mvn checkstyle:checkstyle
 * [Checkstyle configuration reference](https://checkstyle.sourceforge.io/config.html)
 * [Available checks](https://checkstyle.sourceforge.io/checks.html)
 * [Google Java Style checks config](https://raw.githubusercontent.com/checkstyle/checkstyle/refs/heads/master/config/checkstyle-checks.xml)
+* [Spotless](spotless.md)
 * [Maven](maven.md)

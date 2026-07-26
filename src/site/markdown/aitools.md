@@ -20,6 +20,11 @@
 * [Grok](https://x.ai/)
 * [You.com](https://you.com/)
 * [Cohere](https://cohere.com/)
+* [DeepSeek](https://www.deepseek.com/)
+* [Qwen](https://qwenlm.github.io/)
+* [GLM (Zhipu AI)](https://chatglm.cn/)
+* [Kimi (Moonshot AI)](https://kimi.moonshot.cn/)
+* [NVIDIA Nemotron 3 Ultra](nemotron-3-ultra.md)
 
 ## Image
 
@@ -29,6 +34,7 @@
 * [DALL-E 3](https://openai.com/dall-e-3)
 * [Adobe Firefly](https://www.adobe.com/products/firefly.html)
 * [Leonardo.ai](https://leonardo.ai/)
+* [Flux AI](flux.md)
 * [Canva Magic Design](https://www.canva.com/magic-design/)
 
 ## Audio
@@ -61,9 +67,11 @@
 * [Tabnine](https://www.tabnine.com/)
 * [Codeium](https://codeium.com/)
 * [Replit Agent](https://replit.com/ai)
+* [Kiro](kiro.md)
 
 ## Research
 
+* [Artificial Analysis](artificial-analysis.md)
 * [Perplexity](https://www.perplexity.ai/)
 * [Consensus](https://consensus.app/)
 * [Elicit](https://elicit.org/)
@@ -225,8 +233,16 @@
 * [AgentKit](agentkit.md)
 * [RALPH Loop](ralph-loop.md)
 
+## Generative UI
+
+* [AppLess](appless.md)
+* [OpenUI](openui.md)
+* [V0](https://v0.dev/)
+* [Bolt.new](https://bolt.new/)
+
 ## Translation
 
+* [Lingua](lingua.md)
 * [DeepL](https://www.deepl.com/)
 * [ModernMT](https://www.modernmt.com/)
 * [Lilt](https://lilt.com/)
@@ -243,6 +259,8 @@
 
 ## See also
 
+* [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+* [NVIDIA Nemotron 3 Ultra](https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/)
 * [Sora](https://openai.com/sora) vs [Hunyuan Video](https://github.com/Tencent/HunyuanVideo)
 * [Lovable](https://lovable.dev/) vs [Dyad](https://www.dyad.com/)
 * [Elevenlabs](https://elevenlabs.io/) vs [Chatterbox](https://chatterboxai.net/)

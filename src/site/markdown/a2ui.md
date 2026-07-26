@@ -99,6 +99,7 @@ A2UI uses LESS variables for theming. You can override these in your `styles.les
 
 ## See also
 
+* [Agentic UI with Angular](https://agentic-angular.com/)
 * [A2UI Official Website](https://a2ui.org/)
 * [A2UI GitHub Repository](https://github.com/a2ui/a2ui)
 * [AG-UI protocol](ag-ui.md)

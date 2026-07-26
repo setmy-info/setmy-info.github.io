@@ -1,13 +1,12 @@
 # Firefox
 
 Firefox is Mozilla's open-source web browser. It is widely used for web development, testing, automation,
-privacy-focused
-browsing, and `WebExtension` development.
+privacy-focused browsing, and `WebExtension` development.
 
 ## Information
 
-Firefox is an open-source web browser developed by Mozilla. It is available for Linux, macOS, Windows, Android,
-and iOS. Firefox is notable for its strong privacy defaults, extension ecosystem, and developer tools.
+Firefox is an open-source web browser developed by Mozilla. It is available for Linux, macOS, Windows, Android, and iOS.
+Firefox is notable for its strong privacy defaults, extension ecosystem, and developer tools.
 
 For automated testing and CI use, Firefox supports a headless mode (`--headless`) that runs without a display.
 
@@ -228,8 +227,7 @@ Common distribution approaches are:
 - temporary unsigned loading during development only
 
 The exact rules can differ by Firefox channel and deployment model, so the Mozilla signing and distribution
-documentation
-should be checked before deciding how you want to ship the add-on.
+documentation should be checked before deciding how you want to ship the add-on.
 
 ### High-level publishing process
 
@@ -267,3 +265,4 @@ The publication process is typically:
 * [Firefox developer tools documentation](https://firefox-source-docs.mozilla.org/devtools-user/)
 * [Firefox release notes](https://www.mozilla.org/firefox/releases/)
 * [WebDriver (geckodriver)](https://github.com/mozilla/geckodriver)
+* [LibreWolf](librewolf.md)

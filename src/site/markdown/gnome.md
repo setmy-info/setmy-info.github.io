@@ -20,6 +20,8 @@ cd /home/has/.local/share/applications
 
 ```shell
 xdg-settings set default-web-browser firefox.desktop
+# For LibreWolf
+xdg-settings set default-web-browser librewolf.desktop
 # Not working
 xdg-settings set default-email-client thunderbird.desktop
 

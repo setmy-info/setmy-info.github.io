@@ -235,8 +235,8 @@ Support is more limited and should be planned for explicitly:
 * storage eviction and caching behavior can be more aggressive,
 * push notifications and other capabilities depend on OS and browser version.
 
-For broad handheld support, documentation and UX should never assume one identical install flow everywhere.
-Users may need platform-specific instructions even when the application itself remains the same.
+For broad handheld support, documentation and UX should never assume one identical install flow everywhere. Users may
+need platform-specific instructions even when the application itself remains the same.
 
 ## Offline Storage Options
 
@@ -413,3 +413,4 @@ Typical configuration topics for a PWA include:
 
 * [PWA dev](https://web.dev/explore/progressive-web-apps)
 * [Learn PWA](https://web.dev/learn/pwa)
+* [How can Firefox create the best support for web apps on the desktop? - Mozilla Connect](https://connect.mozilla.org/t5/discussions/how-can-firefox-create-the-best-support-for-web-apps-on-the/td-p/60561)

@@ -68,6 +68,7 @@ Neural networks, Deep Learning, Machine learning.
 * RAG (GraphRAG)
 * Agent
 * MCP
+* [Open Weights Models](llm.md#open-weights-models)
 
 ### MATH
 
@@ -95,52 +96,39 @@ Neural networks, Deep Learning, Machine learning.
 ## ML architectures
 
 Feedforward Neural Networks (FNN)
-Classic multilayer perceptron (MLP).
-MLP (Multilayer Perceptron)
+Classic multilayer perceptron (MLP). MLP (Multilayer Perceptron)
 
 Convolutional Neural Networks (CNN)
-Good for dimensional data structures (pictures, videos, 2D signals).
-LeNet (first CNN)
-AlexNet, VGG, Inception, ResNet, DenseNet, EfficientNet, ConvNeXt jne.
-Vision Transformers (ViT), Hybrid CNN-Transformer models.
+Good for dimensional data structures (pictures, videos, 2D signals). LeNet (first CNN)
+AlexNet, VGG, Inception, ResNet, DenseNet, EfficientNet, ConvNeXt jne. Vision Transformers (ViT), Hybrid CNN-Transformer
+models.
 
 Recurrent Neural Networks (RNN)
-For sequential data (text, sound, time series).
-Simple RNN
-LSTM (Long Short-Term Memory)
+For sequential data (text, sound, time series). Simple RNN LSTM (Long Short-Term Memory)
 GRU (Gated Recurrent Unit)
-Bidirectional RNN
-Attention + RNN hybrid
+Bidirectional RNN Attention + RNN hybrid
 
 Graph Neural Networks (GNN)
-Works with graphs: nodes and edges
-GCN (Graph Convolutional Network)
+Works with graphs: nodes and edges GCN (Graph Convolutional Network)
 GAT (Graph Attention Network)
 GraphSAGE, Message Passing Neural Networks (MPNN)
 
-Transformers ja Attention-põhised mudelid
-NLP-s also in vision, audio analysis, reinforcement learning.
-self-attention
+Transformers ja Attention-põhised mudelid NLP-s also in vision, audio analysis, reinforcement learning. self-attention
 Encoder-decoder (nt. BERT, T5)
 Decoder-only (nt. GPT-family)
 Vision Transformers (ViT), Audio Transformers
 
-Generative models
-Generates new data (picture, sound, text)
+Generative models Generates new data (picture, sound, text)
 GAN (Generative Adversarial Network)
 VAE (Variational Autoencoder)
-Diffusion Models (nt. Stable Diffusion, DALL·E)
+Diffusion Models (nt. Stable Diffusion, DALL·E, [Flux AI](flux.md))
 
-Neuroevolution and specific architectures
-NEAT, HyperNEAT
-Capsule Networks (Hinton)
+Neuroevolution and specific architectures NEAT, HyperNEAT Capsule Networks (Hinton)
 Liquid Neural Networks (neurodynamic systems)
 
-Future
-Neural Architecture Search (NAS) – automatic new arch. searching.
-Spiking Neural Networks (SNN) – biologically realistic networks.
-Quantum Neural Networks (QNN) – quantum computers related models.
-Liquid/Neural ODE Networks – continuously time dynamics models.
+Future Neural Architecture Search (NAS) – automatic new arch. searching. Spiking Neural Networks (SNN) – biologically
+realistic networks. Quantum Neural Networks (QNN) – quantum computers related models. Liquid/Neural ODE Networks –
+continuously time dynamics models.
 
 ## ML input
 
@@ -217,6 +205,7 @@ sharing with others.
 
 ## See also
 
+* [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 * 3Blue1Brown ([https://www.youtube.com/@3blue1brown]()):
     * [https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]()
         1. [https://www.youtube.com/watch?v=aircAruvnKk]()
@@ -333,6 +322,10 @@ sharing with others.
 * [TensorFlow Hub](https://www.tensorflow.org/hub)
 * [TF + Kaggle](https://www.kaggle.com/discussions/product-feedback/448425)
 * [Fine-tuning Large Language Models (LLMs) | w/ Example Code](https://www.youtube.com/watch?v=eC6Hd1hFvos)
+* [Artificial Analysis](artificial-analysis.md)
+* [Lingua](lingua.md)
+* [Kiro](kiro.md)
+* [NVIDIA Nemotron 3 Ultra](nemotron-3-ultra.md)
 * [RAG vs. Fine Tuning](https://www.youtube.com/watch?v=00Q0G84kq3M)
 * [xxxx](xxxxx)
 * [xxxx](xxxxx)

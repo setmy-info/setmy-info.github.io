@@ -146,3 +146,4 @@ This command will:
 * [Terraform K8s Setup](terraform.md)
 * [Kubernetes (K8s)](kubernetes.md)
 * [Argo Workflows](argo.md)
+* [Scaleway](scaleway.md)

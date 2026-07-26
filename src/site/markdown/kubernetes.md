@@ -600,6 +600,8 @@ kind: PodSecurityPolicyReview
 * [minikube](https://kubernetes.io/docs/setup/minikube/)
 * [kubectl cli usage](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 * [AWS (Amazon Web Services)](aws.md)
+* [Hetzner Cloud](hetzner-cloud.md)
+* [Scaleway](scaleway.md)
 * [Deployment](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
 * [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
 * [Config maps](ttps://kubernetes.io/docs/concepts/configuration/configmap/)
@@ -611,3 +613,4 @@ kind: PodSecurityPolicyReview
 * [OpenFaaS](openfaas.md)
 * [MinIO](minio.md)
 * [Ceph](ceph.md)
+* [Krustlet WASM in K8S](https://krustlet.dev/)

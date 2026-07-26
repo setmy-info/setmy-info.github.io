@@ -2,10 +2,10 @@
 
 ## Information
 
-Jenkins is an open-source automation server written in Java. It orchestrates build, test, and deployment pipelines
-and is extensible via over 1 800 community plugins. Pipelines are defined in a `Jenkinsfile` using either the
-**Declarative Pipeline** DSL (recommended) or the more flexible **Scripted Pipeline** DSL. Jenkins runs on any
-platform with a JDK, from a single server to distributed agent fleets.
+Jenkins is an open-source automation server written in Java. It orchestrates build, test, and deployment pipelines and
+is extensible via over 1 800 community plugins. Pipelines are defined in a `Jenkinsfile` using either the **Declarative
+Pipeline** DSL (recommended) or the more flexible **Scripted Pipeline** DSL. Jenkins runs on any platform with a JDK,
+from a single server to distributed agent fleets.
 
 Key features: parallel stages, Blue Ocean UI, GitHub/GitLab/Bitbucket integration, Docker/Kubernetes agents, shared
 libraries, credential management, and fine-grained role-based access control.
@@ -71,17 +71,17 @@ jenkins_java_home="/usr/local/openjdk16"
 
 ### Key directories
 
-| Path | Purpose |
-|------|---------|
-| `/var/lib/jenkins` | `$JENKINS_HOME` — jobs, workspaces, configs |
-| `/var/lib/jenkins/plugins` | installed plugins |
-| `/var/lib/jenkins/secrets/initialAdminPassword` | first-run unlock key |
-| `/etc/sysconfig/jenkins` | service environment variables (Fedora/RHEL) |
+| Path                                            | Purpose                                     |
+|-------------------------------------------------|---------------------------------------------|
+| `/var/lib/jenkins`                              | `$JENKINS_HOME` — jobs, workspaces, configs |
+| `/var/lib/jenkins/plugins`                      | installed plugins                           |
+| `/var/lib/jenkins/secrets/initialAdminPassword` | first-run unlock key                        |
+| `/etc/sysconfig/jenkins`                        | service environment variables (Fedora/RHEL) |
 
 ### Recommended plugins
 
-Mercurial, Blue Ocean, i18n for Blue Ocean, Gravatar, Avatar, Green Balls, Docker, Kubernetes, SSH,
-Publish Over SSH, docker-build-step, CMake, Build Pipeline, JaCoCo, Cucumber reports
+Mercurial, Blue Ocean, i18n for Blue Ocean, Gravatar, Avatar, Green Balls, Docker, Kubernetes, SSH, Publish Over SSH,
+docker-build-step, CMake, Build Pipeline, JaCoCo, Cucumber reports
 
 ### Declarative Jenkinsfile skeleton
 
@@ -135,22 +135,31 @@ su -l -p jenkins
 
 **Key URLs**
 
-| URL | Purpose |
-|-----|---------|
-| `http://host:8080/` | Dashboard |
-| `http://host:8080/manage` | Manage Jenkins |
-| `http://host:8080/blue` | Blue Ocean UI |
-| `http://host:8080/admin/docs` (JHipster) | Swagger |
+| URL                                      | Purpose           |
+|------------------------------------------|-------------------|
+| `http://host:8080/`                      | Dashboard         |
+| `http://host:8080/manage`                | Manage Jenkins    |
+| `http://host:8080/blue`                  | Blue Ocean UI     |
+| `http://host:8080/admin/docs` (JHipster) | Swagger           |
+| `http://host:8080/pipeline-syntax/`      | Snippet Generator |
+
+## Controlling Concurrent Builds
+
+* **Variant 1: Allow only one build at a time (simplest)**: Use `disableConcurrentBuilds()` option in the pipeline.
+* **Variant 2: Allow up to N parallel builds**: Use slots with
+  the [Throttle Concurrent Builds Plugin](https://plugins.jenkins.io/throttle-concurrent-builds/) (most suitable).
+* **Variant 3: Advanced throttling**: Use
+  the [Lockable Resources Plugin](https://plugins.jenkins.io/lockable-resources/) for managing shared resources.
 
 ## GitHub
 
 ### Insert GitHub Blue Ocean pipeline
 
-1. Create GitHub token: GitHub profile picture -> Settings -> Developer settings
-   -> Personal access tokens -> Tokens (classic) -> Generate new token
+1. Create GitHub token: GitHub profile picture -> Settings -> Developer settings -> Personal access tokens -> Tokens
+   (classic) -> Generate new token
 2. Add credentials to Jenkins: Manage Jenkins -> Credentials -> System (Global) -> Add Credentials:
-   Kind: Username with password; Username: GITHUBUSERNAME; Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
-   ID: github; Description Token information.
+   Kind: Username with password; Username: GITHUBUSERNAME; Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx; ID:
+   github; Description Token information.
 3. In Jenkins: Open Blue Ocean -> GitHub -> Insert token
 4. Fix build settings: open build -> Configure -> Add GitHub credentials from dropdown
 5. Manage Jenkins -> In-process Script Approval -> Method Signatures -> hudson.plugins.git.GitChangeSet getPaths
@@ -179,8 +188,8 @@ docker exec -it jenkins /bin/sh -c "ssh-keygen -t ed25519 -b 4096 -C 'e@mail.com
 docker exec -it jenkins /bin/sh -c "cat /var/lib/jenkins/.ssh/id_ed25519.pub"
 ```
 
-3. Add public key to GitHub: GitHub profile picture -> Settings
-   -> SSH and GPG keys -> New SSH key. Set title: Docker Jenkins GitHub Token
+3. Add public key to GitHub: GitHub profile picture -> Settings -> SSH and GPG keys -> New SSH key. Set title: Docker
+   Jenkins GitHub Token
 
 ### Docker exec shortcuts
 

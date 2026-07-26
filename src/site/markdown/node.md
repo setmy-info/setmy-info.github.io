@@ -25,12 +25,12 @@ Node.js follows a predictable release cycle with two release types:
 
 Release phases for an LTS version:
 
-| Phase           | Duration       | Description                                  |
-|-----------------|----------------|----------------------------------------------|
-| Current         | 6 months       | Active development, new features added       |
-| Active LTS      | 12 months      | Bug fixes, security patches, performance     |
-| Maintenance LTS | 12 months      | Critical fixes and security patches only     |
-| End-of-Life     | —              | No further updates, do not use in production |
+| Phase           | Duration  | Description                                  |
+|-----------------|-----------|----------------------------------------------|
+| Current         | 6 months  | Active development, new features added       |
+| Active LTS      | 12 months | Bug fixes, security patches, performance     |
+| Maintenance LTS | 12 months | Critical fixes and security patches only     |
+| End-of-Life     | —         | No further updates, do not use in production |
 
 Typical guidance:
 
@@ -250,5 +250,6 @@ Then open `chrome://inspect` in Chrome or connect from VS Code to attach the deb
 * [NVM — Node Version Manager](https://github.com/nvm-sh/nvm)
 * [fnm — Fast Node Manager](https://github.com/Schniz/fnm)
 * [npm](npm.md)
+* [Twenty](twenty.md)
 * [Node start project](node-start-project.md)
 * [JavaScript](javascript.md)
