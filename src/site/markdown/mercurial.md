@@ -142,6 +142,53 @@ hg merge feature-x
 hg commit -m "Merge feature-x"
 ```
 
+### Working with Remotes
+
+#### Push and Pull with Remotes
+
+You can interact with multiple remote repositories by using their defined names (aliases). A common remote name is `default`.
+
+```shell
+hg push gintra
+
+hg push gintra -b branch-name
+
+hg pull gintra
+
+hg pull gintra -b branch-name
+
+hg update branch-name
+```
+
+#### Configuring Remotes
+
+Remotes are defined in the `[paths]` section of your repository's `.hg/hgrc` file.
+
+To add a new remote or change the `default` remote, you can edit `.hg/hgrc` directly:
+
+```ini
+[paths]
+default = https://repo.example.com/main
+gintra = https://repo.example.com/gintra
+```
+
+To list currently configured paths:
+
+```shell
+hg paths
+```
+
+Since Mercurial doesn't have a direct `remote add` command, you can use shell commands to create or append paths to `.hg/hgrc`:
+
+```shell
+# Initialize the paths section if it doesn't exist
+echo "[paths]" >> .hg/hgrc
+
+# Add a new remote or set the default path
+echo "gintra = https://repo.example.com/gintra" >> .hg/hgrc
+echo "default = https://repo.example.com/main" >> .hg/hgrc
+```
+
 ### Undo
 
 ```shell
