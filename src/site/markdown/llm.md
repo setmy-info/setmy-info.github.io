@@ -83,14 +83,14 @@ Local RAG PoC 1 LLM 1 vector DB 1 document
 
 MCP
 
-| Criterion            | LISP       | JSON | YAML | TOML | JS | TOON |
-|----------------------|------------|------|------|------|----|------|
-| Ambiguity-free       | ✅         | ⚠️   | ❌   | ⚠️   | ⚠️ | ✅   |
-| Intent clarity       | ✅         | ❌   | ⚠️   | ⚠️   | ❌ | ⚠️   |
-| Hierarchy            | ✅         | ✅   | ⚠️   | ⚠️   | ⚠️ | ✅   |
-| AI-friendly          | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐   | ⭐ | ⭐⭐ |
-| Risk of storytelling | ❌         | ⚠️   | ❌   | ⚠️   | ❌ | ⚠️   |
-| Suitable as DSL      | ✅         | ❌   | ❌   | ❌   | ⚠️ | ❌   |
+| Criterion            | LISP       | JSON | YAML | TOML | JS | [TOON](toon.html) |
+|----------------------|------------|------|------|------|----|-------------------|
+| Ambiguity-free       | ✅         | ⚠️   | ❌   | ⚠️   | ⚠️ | ✅                |
+| Intent clarity       | ✅         | ❌   | ⚠️   | ⚠️   | ❌ | ⚠️                |
+| Hierarchy            | ✅         | ✅   | ⚠️   | ⚠️   | ⚠️ | ✅                |
+| AI-friendly          | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐   | ⭐ | ⭐⭐              |
+| Risk of storytelling | ❌         | ⚠️   | ❌   | ⚠️   | ❌ | ⚠️                |
+| Suitable as DSL      | ✅         | ❌   | ❌   | ❌   | ⚠️ | ❌                |
 
 ## Installation
 
@@ -325,6 +325,7 @@ MCP
 
 ## See also
 
+* [TOON (Transparent Object-Oriented Notation)](toon.md)
 * [NVIDIA Nemotron 3 Ultra](nemotron-3-ultra.md)
 * [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 * [Artificial Analysis](artificial-analysis.md)

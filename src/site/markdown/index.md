@@ -73,6 +73,7 @@
         * [Minikube](minikube.html)
         * [FastAPI](fastapi.html)
         * [MCP (Model Context Protocol)](mcp.html)
+        * [TOON (Transparent Object-Oriented Notation)](toon.html)
         * [Ollama](oolama.html)
         * [Qwen2.5 / Qwen3](qwen.html)
         * [Qwen2.5-Coder](qwen-coder.html)
