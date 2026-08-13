@@ -163,7 +163,7 @@ Higher should same things as lower level.
 * Other Java tools, utils, libraries frameworks (L4)
     * Jackson, Gson
     * JAXB, DOM, SAX
-    * Apache Commons: StringUtils, ...
+    * Apache Commons: StringUtils, JEXL, ...
     * Lombok
     * Logging: Log4j, Logback, SLF4J (L3)
     * IDE

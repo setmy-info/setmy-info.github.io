@@ -120,6 +120,7 @@
         * [AngularJS (Angular 1.x)](angular1x.html)
         * [A2UI](a2ui.html)
         * [AG-UI](ag-ui.html)
+        * [Apache Commons JEXL](apache-commons-jexl.html)
         * [Agentic UI with Angular](https://agentic-angular.com/)
         * [Arduino](arduino.html)
         * [Raspberry Pi](rasberry-pi.html)
