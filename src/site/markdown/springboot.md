@@ -250,6 +250,10 @@ Best when you need low-level control or vendor-specific features immediately.
 Useful for local development, privacy-sensitive environments, and low-cost prototyping. A common path is running local
 models via `Ollama` and exposing them through the same application services used for cloud providers.
 
+### SpEL
+
+Spring Expression Language'i ehk SpEL
+
 ## See also
 
 * [Spring Boot Starter](https://start.spring.io/)
