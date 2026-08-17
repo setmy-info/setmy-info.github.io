@@ -32,12 +32,12 @@ Typical hierarchy:
 * **Clients**: Applications or services that trust the realm for authentication and token issuance. A client can be a
   browser frontend, backend API, mobile app, CLI tool, or machine-to-machine integration.
 * **Client scopes**: Reusable claim and scope definitions that control what token content is released to clients.
-* **Identity providers (`IdP`)**: External login sources such as another `OIDC` provider, `SAML` provider, social
-  login, or enterprise identity system.
+* **Identity providers (`IdP`)**: External login sources such as another `OIDC` provider, `SAML` provider, social login,
+  or enterprise identity system.
 * **User federation**: Connectors to external user directories such as `LDAP` or `Active Directory`, allowing Keycloak
   to use external users instead of storing all identities locally.
-* **Authentication flows**: The configurable sequence of login steps such as username/password, MFA, conditional
-  checks, required actions, and brokered login behavior.
+* **Authentication flows**: The configurable sequence of login steps such as username/password, MFA, conditional checks,
+  required actions, and brokered login behavior.
 
 In practice, a useful mental model is:
 
@@ -48,8 +48,8 @@ Important glossary notes:
 * **Realm** is usually the most important organizing term. Most configuration is created inside a realm.
 * **Tenant-like separation** in Keycloak is typically achieved with separate realms, but realms are not lightweight
   labels; they are strong administrative and security boundaries.
-* **Group hierarchy** is inside a realm, while **role hierarchy** is modeled through mappings and composites rather
-  than by putting roles under users in a tree.
+* **Group hierarchy** is inside a realm, while **role hierarchy** is modeled through mappings and composites rather than
+  by putting roles under users in a tree.
 * **Clients** represent relying applications, while **users** represent identities and **service accounts** represent
   non-human access tied to confidential clients.
 
@@ -126,20 +126,32 @@ The practical meaning of “make Keycloak PQC-ready” usually is:
 
 ### CentOS, Rocky Linux
 
-1. **Install Java**:
-   ```bash
-   sudo dnf install -y java-21-openjdk-devel
-   ```
-2. **Download Keycloak**:
-   ```bash
-   curl -L -o keycloak-25.0.2.tar.gz https://github.com/keycloak/keycloak/releases/download/25.0.2/keycloak-25.0.2.tar.gz
-   tar -xzf keycloak-25.0.2.tar.gz
-   sudo mv keycloak-25.0.2 /opt/keycloak
-   ```
-3. **Optional first run check**:
-   ```bash
-   /opt/keycloak/bin/kc.sh --help
-   ```
+```bash
+# Download and install usin SMI tools
+smi-download-package keycloak
+smi-install-package keycloak
+
+/opt/keycloak/bin/kc.sh --version
+/opt/keycloak/bin/kc.sh --help
+
+sudo mkdir -p /opt/keycloak/{data,log,tmp}
+sudo chown -R has:has /opt/keycloak/data
+sudo chown -R has:has /opt/keycloak/log
+sudo chown -R has:has /opt/keycloak/tmp
+sudo chown -R has:has /opt/keycloak/lib/quarkus
+
+/opt/keycloak/bin/kc.sh start-dev --http-port=8100
+```
+
+### Windows
+
+```cmd
+cd C:\pub\keycloak-26.7.1
+.\bin\kc.bat --version
+.\bin\kc.bat --help
+
+.\bin\kc.bat start-dev --http-port=8100
+```
 
 ### Fedora
 

@@ -49,12 +49,34 @@ sudo systemctl start infinispan
 ```
 
 ```xml
-      <interfaces>
-         <interface name="public">
-            <!--inet-address value="${infinispan.bind.address:127.0.0.1}"/-->
-            <inet-address value="${infinispan.bind.address:0.0.0.0}"/>
-         </interface>
-      </interfaces>
+
+<interfaces>
+    <interface name="public">
+        <!--inet-address value="${infinispan.bind.address:127.0.0.1}"/-->
+        <inet-address value="${infinispan.bind.address:0.0.0.0}"/>
+    </interface>
+</interfaces>
+```
+
+```shell
+cd ~/temp/infinispan
+/opt/infinispan/bin/server.sh \
+    -Dinfinispan.server.data.path=~/temp/infinispan \
+    -Dinfinispan.server.log.path=~/temp/infinispan
+
+/opt/infinispan/bin/cli.sh user create admin -p admin -g admin
+```
+
+Fails:
+
+```cmd
+cd C:\pub\infinispan-server-16.2.2
+mkdir C:\pub\infinispan-server-16.2.2\data
+mkdir C:\pub\infinispan-server-16.2.2\log
+
+REM .\bin\cli.sh user create admin -p admin -g admin
+REM .\bin\server.bat -Dinfinispan.server.data.path=C:\pub\infinispan-server-16.2.2\data -Dinfinispan.server.log.path=C:\pub\infinispan-server-16.2.2\log
+REM .\bin\server.bat -Dinfinispan.server.data.path=C:/pub/infinispan-server-16.2.2/data -Dinfinispan.server.log.path=C:/pub/infinispan-server-16.2.2/log
 ```
 
 ## See also

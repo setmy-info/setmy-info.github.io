@@ -15,12 +15,23 @@ libraries, credential management, and fine-grained role-based access control.
 ### CentOS, Rocky Linux (modern — systemd)
 
 ```shell
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-sudo dnf install -y java-21-openjdk jenkins
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/rpm-stable/jenkins.repo
+sudo yum upgrade
+sudo yum install fontconfig java-21-openjdk
+sudo yum install jenkins
+sudo systemctl daemon-reload
+
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
+
+curl -sO http://localhost:7070/jnlpJars/agent.jar
+java -jar agent.jar -url http://localhost:7070/ -secret xxxxxxxxxxxxxxxxxx -name "linux-1" -webSocket -workDir "/tmp/linux-1"
+
+cd C:\pub\jenkins
+set JENKINS_HOME=C:\pub\jenkins\home
+java -jar jenkins.war --httpPort=7070
+java -jar agent.jar -url http://localhost:7070/ -secret xxxxxxxxxxxxxxxxxx -name "windows-1" -webSocket -workDir "C:\pub\jenkins\windows-1"
 ```
 
 ### CentOS, Rocky Linux (legacy — SysV init, older notes)
@@ -112,9 +123,74 @@ pipeline {
 }
 ```
 
+Another probe Jenkiinsfile
+
+```groovy
+pipeline {
+    agent any
+
+    environment {
+        PATH = "/opt/python314/bin:${env.PATH}"
+    }
+
+    options {
+        buildDiscarder(
+            logRotator(
+                numToKeepStr: '20',
+                artifactNumToKeepStr: '10'
+            )
+        )
+    }
+
+    stages {
+        stage('Test') {
+            steps {
+                sh '''
+                    echo "PATH:"
+                    echo "$PATH"
+
+                    echo ""
+                    echo "Platform Python:"
+                    which python
+                    python3 --version
+
+                    echo ""
+                    echo "Creating virtual environment..."
+                    python3 -m venv .venv
+
+                    echo ""
+                    echo "Virtual environment:"
+                    .venv/bin/python --version
+
+                    echo ""
+                    echo "Maven:"
+                    mvn --version
+
+                    echo ""
+                    echo "Node: ${NODE_NAME}"
+
+                    echo "Hello World" > hello-world.txt
+                    echo "Node: ${NODE_NAME}" >> hello-world.txt
+                    echo "Python: $(python --version 2>&1)" >> hello-world.txt
+                    echo "Venv Python: $(.venv/bin/python --version 2>&1)" >> hello-world.txt
+                    echo "Maven:" >> hello-world.txt
+                    mvn --version >> hello-world.txt
+
+                    cat hello-world.txt
+
+                    sleep 10
+
+                    echo "Finished on node: ${NODE_NAME}"
+                '''
+            }
+        }
+    }
+}
+```
+
 ## Usage, tips and tricks
 
-**Unlock Jenkins on first start**
+**Unlock Jenkins on the first start**
 
 ```shell
 cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -142,6 +218,16 @@ su -l -p jenkins
 | `http://host:8080/blue`                  | Blue Ocean UI     |
 | `http://host:8080/admin/docs` (JHipster) | Swagger           |
 | `http://host:8080/pipeline-syntax/`      | Snippet Generator |
+
+### Jenkins Script Console
+
+Manage Jenkins → Script Console
+
+```groovy
+Jenkins.instance.pluginManager.plugins.each {
+    println(it.shortName)
+}
+```
 
 ## Controlling Concurrent Builds
 
@@ -236,3 +322,4 @@ Tagging — make tag for released (**tested/verified**, **published** and **depl
 * [Jenkins Pipeline syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)
 * [Blue Ocean](https://www.jenkins.io/doc/book/blueocean/)
 * [Jenkins plugin index](https://plugins.jenkins.io/)
+* [plugin-installation-manager-tool](https://github.com/jenkinsci/plugin-installation-manager-tool/releases?utm_source=chatgpt.com)

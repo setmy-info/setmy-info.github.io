@@ -106,7 +106,23 @@ MCP
 
 ## Usage, tips and tricks
 
+### Some light models, or open source models
+
+* Cactus open-sourced Needle 2 — an agentic model in a single 14 MB binary.
+* Colibri https://justvugg.github.io/colibri/
+* Code Graph RAG (look at gittrend.io)
+* Code Graph RAG https://github.com/vitali87/code-graph-rag
+
 ### Coding tips and tricks
+
+#### Possible social media hash tags
+
+```
+#localai #dataprivacy #professionalservices #aiforbusiness #aprendio
+#opensource #github #ai #code #rag #developer #knowledgegraph
+#programacion #javascript #desarrollo #desarrolloweb #ia
+#opensource #github #ai #code #rag #developer #knowledgegraph
+```
 
 ## Terms
 
