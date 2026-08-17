@@ -67,6 +67,8 @@ mvn wrapper:wrapper
 .\mvnw versions:set -DnewVersion=%RELEASE_NUMBER% -DprocessAllModules
 ```
 
+## See also
+
 Surefire + Junit 5
 
 https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html
@@ -82,3 +84,4 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#
 (Maven search)[https://search.maven.org/]
 
 * [Spotless](spotless.md)
+* [CycloneDX Maven Plugin](https://cyclonedx.github.io/cyclonedx-maven-plugin/index.html)

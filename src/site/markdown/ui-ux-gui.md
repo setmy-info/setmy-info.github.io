@@ -414,6 +414,61 @@ already 3. UI/UX: Darkmode, Lihtmode UI/UX: Shortcut, shorthand to resources UI/
 App - Users want App experience REQ: Ui view shouldwork in FF Reader mode also. Brauser is for humans. At least at the
 moment.
 
+## One more hierarchy
+
+```
+Design Language
+│
+├── Philosophy
+│   ├── Minimalism
+│   ├── Maximalism
+│   ├── Brutalism
+│   ├── Skeuomorphism
+│   ├── Material
+│   ├── Fluent
+│   └── ...
+│
+├── Morphism
+│   ├── Glassmorphism
+│   ├── Liquid Glass
+│   ├── Claymorphism
+│   ├── Neumorphism
+│   └── ...
+│
+├── Layout
+│   ├── Bento Grid
+│   ├── Card Layout
+│   ├── Masonry
+│   └── ...
+│
+├── Spatial
+│   ├── 3D
+│   ├── Layered
+│   ├── Isometric
+│   ├── Floating
+│   └── ...
+│
+├── Effects
+│   ├── Blur
+│   ├── Glow
+│   ├── Mesh Gradient
+│   ├── Reflection
+│   └── ...
+│
+├── Motion
+│   ├── Spring
+│   ├── Morph
+│   ├── Physics
+│   └── ...
+│
+└── Components
+├── Rounded
+├── Squircle
+├── Filled
+├── Outline
+└── Floating
+```
+
 ## See also
 
 * [Bootstrap](bootstrap.md)

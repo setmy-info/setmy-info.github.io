@@ -156,8 +156,9 @@ make remote calls (using `:rpc.call`, `Node.spawn`, `GenServer.call`, etc.). Thi
 
 For web applications requiring real-time interaction:
 
-*   **Phoenix Channels**: Enables soft real-time communication between clients and the server, typically using WebSockets.
-*   **Phoenix LiveView**: Allows building rich, interactive user interfaces with server-rendered HTML and real-time updates, significantly reducing the need for complex client-side JavaScript.
+* **Phoenix Channels**: Enables soft real-time communication between clients and the server, typically using WebSockets.
+* **Phoenix LiveView**: Allows building rich, interactive user interfaces with server-rendered HTML and real-time
+  updates, significantly reducing the need for complex client-side JavaScript.
 
 ## Most Common Production Technologies (2026)
 
@@ -877,7 +878,17 @@ The security principle is identical:
 
 > Keep SQL structure separate from user-controlled data.
 
----
+## Misc
+
+| Need                    | Sugestion     |
+|-------------------------|---------------|
+| Very fast cache         | ETS           |
+| Small persistend KV     | DETS          |
+| Embedded distributed KV | Mnesia        |
+| SQL app                 | SQLite + Ecto |
+| Analysis                | DuckDB        |
+| Huge  KV                | RocksDB       |
+| Maximum performance     | LMDB          |
 
 ## Conclusion
 

@@ -389,3 +389,6 @@ These components create the real helicopter feeling.
 * [WeGlide](https://www.weglide.org)
 * [WeGlide Flight 129745](https://www.weglide.org/flight/129745)
 * [WeGlide Flight 129983](https://www.weglide.org/flight/129983)
+* http://airfoiltools.com/airfoil/details?airfoil=hq17-il
+* https://foil.tools/foil/hq17
+* https://m-selig.web.engr.illinois.edu/ads/coord_database.html

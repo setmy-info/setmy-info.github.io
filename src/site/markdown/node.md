@@ -175,6 +175,13 @@ Team members and CI pipelines then run `nvm use` to switch to the correct versio
 
 ## Usage, tips and tricks
 
+```shell
+npm start --prefix angular-start-project
+# Equivalent to (package.json must be inside angular-start-project):
+cd angular-start-project
+npm start
+```
+
 ### Switching Versions with NVM
 
 ```shell

@@ -117,15 +117,6 @@ MCP
 
 ### Coding tips and tricks
 
-#### Possible social media hash tags
-
-```
-#localai #dataprivacy #professionalservices #aiforbusiness #aprendio
-#opensource #github #ai #code #rag #developer #knowledgegraph
-#programacion #javascript #desarrollo #desarrolloweb #ia
-#opensource #github #ai #code #rag #developer #knowledgegraph
-```
-
 ## Terms
 
 | Topic                                  | What it is                                             | Why it matters                  | Practical insights / pro tips                                                                       |
