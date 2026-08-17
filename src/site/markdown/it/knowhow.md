@@ -172,6 +172,10 @@ Higher should same things as lower level.
         * NetBeans IDE
     * Async tools
         * Netty, Akka
+    * Other Languages and Runtimes (L4)
+        * BEAM VM: [Erlang](../erlang.md), [Elixir](../elixir.md), [LFE](../lfe.md), [Nerves](../nerves.md)
+        * Lisp Dialects: [Common LISP](../lisp.md), [Clojure](../clojure.md)
+        * [Python](../python.md), [C++](../cpp.md), ...
     * Event driven architecture
         * RabbitMQ, Kafka
     * Reactive programming

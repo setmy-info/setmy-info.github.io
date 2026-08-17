@@ -7,7 +7,7 @@ created by José Valim and first released in 2012. Elixir inherits Erlang's acto
 capabilities, and legendary fault tolerance, while providing a modern Ruby-inspired syntax and a rich macro system.
 
 Common use cases: web APIs (Phoenix framework), real-time systems (Phoenix Channels / LiveView), embedded systems
-(Nerves), data pipelines (Broadway), IoT (Tortoise MQTT).
+([Nerves](nerves.md)), data pipelines (Broadway), IoT (Tortoise MQTT).
 
 ## Installation
 
@@ -86,7 +86,11 @@ module imports:
 
 ```elixir
 # ~/.iex.exs
-IEx.configure(inspect: [limit: 50])
+IEx.configure(
+    inspect: [
+        limit: 50
+    ]
+)
 ```
 
 ## Usage, tips and tricks
@@ -112,21 +116,21 @@ Functional programming patterns with the pipe operator:
 
 ```elixir
 defmodule FPPatterns do
-  def add1(x), do: x + 1
-  def double(x), do: x * 2
+    def add1(x), do: x + 1
+    def double(x), do: x * 2
 
-  def composition_example(x) do
-    x
-    |> add1()
-    |> double()
-  end
+    def composition_example(x) do
+        x
+        |> add1()
+        |> double()
+    end
 
-  def map_filter_reduce(list) do
-    list
-    |> Enum.map(fn x -> x * 2 end)
-    |> Enum.filter(fn x -> x > 4 end)
-    |> Enum.reduce(0, fn x, acc -> x + acc end)
-  end
+    def map_filter_reduce(list) do
+        list
+        |> Enum.map(fn x -> x * 2 end)
+        |> Enum.filter(fn x -> x > 4 end)
+        |> Enum.reduce(0, fn x, acc -> x + acc end)
+    end
 end
 ```
 
@@ -134,13 +138,26 @@ Result/error flow (railway-oriented programming):
 
 ```elixir
 def result_pipeline(x) do
-  with {:ok, a} <- step1(x),
-       {:ok, b} <- step2(a),
-       {:ok, c} <- step3(b) do
-    {:ok, c}
-  end
+    with {:ok, a} <- step1(x),
+         {:ok, b} <- step2(a),
+         {:ok, c} <- step3(b) do
+        {:ok, c}
+    end
 end
 ```
+
+### Distributed Elixir
+
+Elixir inherits Erlang's powerful distribution model. Multiple nodes (e.g., `alice@host` and `bob@host`) can be
+connected to each other. Once connected, if a process is registered or a module exists on one node, the other node can
+make remote calls (using `:rpc.call`, `Node.spawn`, `GenServer.call`, etc.). This is quite common in the Elixir world.
+
+### Real-time Communication with Phoenix
+
+For web applications requiring real-time interaction:
+
+*   **Phoenix Channels**: Enables soft real-time communication between clients and the server, typically using WebSockets.
+*   **Phoenix LiveView**: Allows building rich, interactive user interfaces with server-rendered HTML and real-time updates, significantly reducing the need for complex client-side JavaScript.
 
 ## Most Common Production Technologies (2026)
 
@@ -183,6 +200,7 @@ end
 | ExUnit     | Built-in testing framework                |
 | Mox        | Mocking library based on behaviours       |
 | StreamData | Property-based testing (QuickCheck style) |
+| Hound      | Selenium framework for browser automation |
 
 ## Secure SQL Practices in Elixir: A Comprehensive Guide to Preventing SQL Injection
 
@@ -238,9 +256,9 @@ Example of unsafe SQL:
 username = params["username"]
 
 sql =
-  "SELECT * FROM users WHERE username = '" <>
-  username <>
-  "'"
+    "SELECT * FROM users WHERE username = '" <>
+    username <>
+    "'"
 ```
 
 An attacker could submit:
@@ -272,8 +290,8 @@ Example:
 import Ecto.Query
 
 query =
-  from u in User,
-    where: u.username == ^username
+    from u in User,
+         where: u.username == ^username
 
 Repo.all(query)
 ```
@@ -308,17 +326,17 @@ Avoid:
 
 ```elixir
 sql =
-  "SELECT * FROM users WHERE email = '" <>
-  email <>
-  "'"
+    "SELECT * FROM users WHERE email = '" <>
+    email <>
+    "'"
 ```
 
 Avoid:
 
 ```elixir
 sql =
-  "DELETE FROM users WHERE id = " <>
-  id
+    "DELETE FROM users WHERE id = " <>
+    id
 ```
 
 These patterns create SQL Injection risks.
@@ -333,8 +351,8 @@ or:
 
 ```elixir
 from(
-  u in User,
-  where: u.email == ^email
+    u in User,
+    where: u.email == ^email
 )
 |> Repo.one()
 ```
@@ -349,7 +367,7 @@ Use changesets:
 
 ```elixir
 changeset =
-  User.changeset(%User{}, user_params)
+    User.changeset(%User{}, user_params)
 
 Repo.insert(changeset)
 ```
@@ -369,8 +387,8 @@ Safe:
 
 ```elixir
 changeset =
-  user
-  |> User.changeset(params)
+    user
+    |> User.changeset(params)
 
 Repo.update(changeset)
 ```
@@ -379,7 +397,7 @@ Avoid:
 
 ```elixir
 Repo.query(
-  "UPDATE users SET name='#{name}'"
+    "UPDATE users SET name='#{name}'"
 )
 ```
 
@@ -397,8 +415,8 @@ Avoid:
 
 ```elixir
 Ecto.Adapters.SQL.query!(
-  Repo,
-  "DELETE FROM users WHERE id=#{id}"
+    Repo,
+    "DELETE FROM users WHERE id=#{id}"
 )
 ```
 
@@ -419,8 +437,8 @@ Unsafe:
 
 ```elixir
 Ecto.Adapters.SQL.query!(
-  Repo,
-  "SELECT * FROM users WHERE email='#{email}'"
+    Repo,
+    "SELECT * FROM users WHERE email='#{email}'"
 )
 ```
 
@@ -428,9 +446,9 @@ Safe:
 
 ```elixir
 Ecto.Adapters.SQL.query!(
-  Repo,
-  "SELECT * FROM users WHERE email=$1",
-  [email]
+    Repo,
+    "SELECT * FROM users WHERE email=$1",
+    [email]
 )
 ```
 
@@ -448,13 +466,13 @@ PostgreSQL example:
 
 ```elixir
 Ecto.Adapters.SQL.query!(
-  Repo,
-  """
-  SELECT *
-  FROM accounts
-  WHERE account_number = $1
-  """,
-  [account_number]
+    Repo,
+    """
+    SELECT *
+    FROM accounts
+    WHERE account_number = $1
+    """,
+    [account_number]
 )
 ```
 
@@ -483,23 +501,23 @@ Example:
 
 ```elixir
 query =
-  from u in User
+    from u in User
 
 query =
-  if email do
-    from u in query,
-      where: u.email == ^email
-  else
-    query
-  end
+    if email do
+        from u in query,
+             where: u.email == ^email
+    else
+        query
+    end
 
 query =
-  if active do
-    from u in query,
-      where: u.active == true
-  else
-    query
-  end
+    if active do
+        from u in query,
+             where: u.active == true
+    else
+        query
+    end
 
 Repo.all(query)
 ```
@@ -518,7 +536,7 @@ Unsafe:
 sort = params["sort"]
 
 query =
-  "SELECT *
+    "SELECT *
    FROM users
    ORDER BY #{sort}"
 ```
@@ -544,21 +562,21 @@ Example:
 
 ```elixir
 allowed_fields = %{
-  "name" => :name,
-  "email" => :email,
-  "created" => :inserted_at
+    "name" => :name,
+    "email" => :email,
+    "created" => :inserted_at
 }
 
 sort_field =
-  Map.get(
-    allowed_fields,
-    params["sort"],
-    :name
-  )
+    Map.get(
+        allowed_fields,
+        params["sort"],
+        :name
+    )
 
 query =
-  from u in User,
-    order_by: field(u, ^sort_field)
+    from u in User,
+         order_by: field(u, ^sort_field)
 ```
 
 Only approved values are accepted.
@@ -581,12 +599,12 @@ Use explicit mapping:
 
 ```elixir
 tables = %{
-  "customers" => Customer,
-  "orders" => Order
+    "customers" => Customer,
+    "orders" => Order
 }
 
 schema =
-  Map.get(tables, requested_table)
+    Map.get(tables, requested_table)
 ```
 
 ---
@@ -630,10 +648,10 @@ Example:
 
 ```elixir
 def changeset(user, attrs) do
-  user
-  |> cast(attrs, [:email, :age])
-  |> validate_required([:email])
-  |> validate_format(:email, ~r/@/)
+    user
+    |> cast(attrs, [:email, :age])
+    |> validate_required([:email])
+    |> validate_format(:email, ~r/@/)
 end
 ```
 
@@ -771,10 +789,10 @@ Example:
 
 ```elixir
 test "search is safe" do
-  result =
-    search_users("' OR 1=1 --")
+    result =
+        search_users("' OR 1=1 --")
 
-  assert result == []
+    assert result == []
 end
 ```
 
@@ -878,7 +896,8 @@ A secure Elixir application follows a simple rule:
 * [Hex package manager](https://hex.pm/)
 * [HexDocs](https://hexdocs.pm/)
 * [Phoenix Framework](https://www.phoenixframework.org/)
-* [Nerves Project](https://nerves-project.org/)
+* [Nerves Project](nerves.md)
 * [Tortoise MQTT](https://github.com/gausby/tortoise)
 * [EMQX ExMQTT](https://github.com/emqx/exmqtt)
+* [Hound](https://github.com/HashNuke/hound)
 * [Erlang](erlang.md)
