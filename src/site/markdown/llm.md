@@ -112,6 +112,8 @@ MCP
 * Colibri https://justvugg.github.io/colibri/
 * Code Graph RAG (look at gittrend.io)
 * Code Graph RAG https://github.com/vitali87/code-graph-rag
+*  https://huggingbay.xyz/
+*  https://thinkingmachines.ai/
 
 ### Coding tips and tricks
 
