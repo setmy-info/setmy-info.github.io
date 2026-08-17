@@ -31,6 +31,9 @@ Use the pattern `main-name.<SUFFIX>` where `<SUFFIX>` is the environment or DNS 
 | `elk`       | `elk.<SUFFIX>`       | Central log ingestion, search, and visualization with `ELK` stack        |
 | `portainer` | `portainer.<SUFFIX>` | Container management UI, for example `Portainer`                         |
 | `proxy`     | `proxy.<SUFFIX>`     | Reverse proxy / ingress                                                  |
+| `vpn`       | `vpn.<SUFFIX>`       | General `VPN` gateway                                                    |
+| `openvpn`   | `openvpn.<SUFFIX>`   | `OpenVPN` server                                                         |
+| `wireguard` | `wireguard.<SUFFIX>` | `WireGuard` server                                                       |
 | `monitor`   | `monitor.<SUFFIX>`   | Monitoring and observability                                             |
 | `backup`    | `backup.<SUFFIX>`    | Backup service                                                           |
 
@@ -65,6 +68,8 @@ using `8170` to `8179`.
 | HTTPS                            | `443/tcp`                                                                 | Encrypted web traffic                                                                                                                              |
 | `IAM` / `Keycloak`               | `8180/tcp`, `8543/tcp`, `9000/tcp`                                        | Avoids collision with reserved backend range; app and admin                                                                                        |
 | `PKI` / `OpenBao`                | `8200/tcp`, `8201/tcp`                                                    | API / UI and cluster or internal communication                                                                                                     |
+| `OpenVPN`                        | `1194/udp`, `1194/tcp`, `943/tcp`                                         | Standard OpenVPN tunnel traffic (UDP preferred, TCP fallback) and Access Server admin UI                                                           |
+| `WireGuard`                      | `51820/udp`                                                               | Default WireGuard VPN tunnel traffic                                                                                                               |
 | Reverse proxy admin              | `18081/tcp` or custom                                                     | Optional internal management; keep outside app ranges                                                                                              |
 | Application backend app 1 nodes  | `8080/tcp` to `8089/tcp`                                                  | Reserve 10 ports for one service across up to 10 nodes                                                                                             |
 | Application backend app 2 nodes  | `8090/tcp` to `8099/tcp`                                                  | Reserve 10 ports for one service across up to 10 nodes                                                                                             |
