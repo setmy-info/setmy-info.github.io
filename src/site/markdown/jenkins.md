@@ -308,6 +308,21 @@ Deploy — deploy package to environment (**dev**, **testing**, **prelive**, **l
 
 Tagging — make tag for released (**tested/verified**, **published** and **deployed**) software into VCS.
 
+```
+admin : bf69e89292704227868d15617de7e802
+linux-0 : 0f79d1def5385b2a00dfe1c6ff0144155396ea9ca2973cd36732391b07c59d1b
+linux-1 : f56d068ca0ba7324d77667cb05f850572ae01355aa1e3de0b173ab0992066f5f
+linux-2 : 0b94561ad7ce952fabfb1438fa2f3d8cb9e9261d35c2d4f5d48be92732e5e1f8 
+linux-3 : 0cc0f4ac954867af5a8c1dcc2732e76a96699f885bad58cb8761f8e761ebdee1 
+linux-4 : c3512f2137fe9a231576b5af2f435308f30aced3b2fa4993c60dd7ecbe389314 
+linux-5 : 27269d5306892af86c41f4d8d649e9259e70a0f6e9f3d996142d0a29b6c2059c 
+linux-6 : 3b6a8e053a5ae3da3589ec1d6c2604321daf10b77639b55a7317edef186093d2 
+linux-7 : 60b6a21e1238ebc2473b60f21d27176c9c6068af55067e331fa48801a5dc2321 
+linux-8 : 21a3fc302a962505ddd98ff9d746baf4006834eafc7301e7b246bb1a35accd3e 
+linux-9 : 92a9b1d3f154b34d0e85367f558905c8abbf31bcbab7f59ac1268294b4808b13
+```
+
+
 ![Image](../resources/images/jenkinsfile-starter/master.png)
 
 ![Image](../resources/images/jenkinsfile-starter/release_1.0.0.png)
