@@ -127,7 +127,10 @@ Another probe Jenkiinsfile
 
 ```groovy
 pipeline {
-    agent any
+    //agent any
+    agent {
+        label 'linux && x86_64 && rockylinux'
+    }
 
     environment {
         PATH = "/opt/python314/bin:${env.PATH}"
@@ -140,6 +143,7 @@ pipeline {
                 artifactNumToKeepStr: '10'
             )
         )
+        disableConcurrentBuilds(abortPrevious: true)
     }
 
     stages {
@@ -151,7 +155,6 @@ pipeline {
 
                     echo ""
                     echo "Platform Python:"
-                    which python
                     python3 --version
 
                     echo ""
@@ -337,7 +340,7 @@ linux-9 :   92a9b1d3f154b34d0e85367f558905c8abbf31bcbab7f59ac1268294b4808b13
 ```
 smi-jenkins-controller --host 0.0.0.0
 # Or
-docker run -it --name jenkins-controller -e SMI_JENKINS_ROLE=controller -p 7070:7070 setmyinfo/setmy-info-rocky-java-jenkins:latest
+docker run -it --name jenkins-controller -p 7070:7070 setmyinfo/setmy-info-rocky-java-jenkins:latest controller
 
 # In co
 export SMI_JENKINS_SECRET=0f79d1def5385b2a00dfe1c6ff0144155396ea9ca2973cd36732391b07c59d1b
@@ -346,12 +349,20 @@ smi-jenkins-node --name linux-0 --workdir /home/SOME_USER/.setmy.info/.jenkins/n
 # Better to use: --env-file jenkins-node.env
 docker run --name linux-0 \
     -e SMI_JENKINS_SECRET=0f79d1def5385b2a00dfe1c6ff0144155396ea9ca2973cd36732391b07c59d1b \
-    -e SMI_JENKINS_ROLE=node \
     -e SMI_JENKINS_CONTROLLER_HOST=192.168.0.10 \
     -e SMI_JENKINS_CONTROLLER_PORT=7070 \
 	-e SMI_JENKINS_WORKDIR=/var/lib/jenkins \
     -e SMI_JENKINS_NODE_NAME=linux-0 \
-    -d setmyinfo/setmy-info-rocky-java-jenkins:latest
+    -d setmyinfo/setmy-info-rocky-java-jenkins:latest node
+    
+docker run --name linux-0 \
+    -e SMI_JENKINS_SECRET=0f79d1def5385b2a00dfe1c6ff0144155396ea9ca2973cd36732391b07c59d1b \
+    -e SMI_JENKINS_CONTROLLER_HOST=192.168.0.10 \
+    -e SMI_JENKINS_CONTROLLER_PORT=7070 \
+    -e SMI_JENKINS_WORKDIR=/var/lib/jenkins \
+    -e SMI_JENKINS_NODE_NAME=linux-0 \
+    -d setmyinfo/setmy-info-rocky-java-jenkins:latest node
+
 ```
 
 ![Image](../resources/images/jenkinsfile-starter/master.png)

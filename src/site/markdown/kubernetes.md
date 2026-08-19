@@ -107,6 +107,9 @@ kubectl delete namespace xyz-namespace
 
 kubectl exec --stdin --tty some-pod-596744778-dcgtz -- /bin/bash
 
+kubectl get nodes
+kubectl describe node <node-name>
+
 # Kubernetes config update
 aws sso login
 # Or
