@@ -325,6 +325,8 @@ linux-9 : 92a9b1d3f154b34d0e85367f558905c8abbf31bcbab7f59ac1268294b4808b13
 ```
 
 ```
+smi-jenkins-controller --host 0.0.0.0
+# Or
 docker run -it --name jenkins-controller -e SMI_JENKINS_ROLE=controller -p 7070:7070 setmyinfo/setmy-info-rocky-java-jenkins:latest
 
 # In co
