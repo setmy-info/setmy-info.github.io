@@ -340,9 +340,9 @@ linux-9 :   92a9b1d3f154b34d0e85367f558905c8abbf31bcbab7f59ac1268294b4808b13
 ```
 smi-jenkins-controller --host 0.0.0.0
 # Or
-docker run -it --name jenkins-controller -p 7070:7070 setmyinfo/setmy-info-rocky-java-jenkins:latest controller
+docker run -it --name jenkins-controller -p 7070:7070 -d setmyinfo/setmy-info-rocky-java-jenkins:latest controller
 
-# In co
+# In developer machine
 export SMI_JENKINS_SECRET=0f79d1def5385b2a00dfe1c6ff0144155396ea9ca2973cd36732391b07c59d1b
 smi-jenkins-node --name linux-0 --workdir /home/SOME_USER/.setmy.info/.jenkins/nodes/linux-0
 
@@ -352,14 +352,6 @@ docker run --name linux-0 \
     -e SMI_JENKINS_CONTROLLER_HOST=192.168.0.10 \
     -e SMI_JENKINS_CONTROLLER_PORT=7070 \
 	-e SMI_JENKINS_WORKDIR=/var/lib/jenkins \
-    -e SMI_JENKINS_NODE_NAME=linux-0 \
-    -d setmyinfo/setmy-info-rocky-java-jenkins:latest node
-    
-docker run --name linux-0 \
-    -e SMI_JENKINS_SECRET=0f79d1def5385b2a00dfe1c6ff0144155396ea9ca2973cd36732391b07c59d1b \
-    -e SMI_JENKINS_CONTROLLER_HOST=192.168.0.10 \
-    -e SMI_JENKINS_CONTROLLER_PORT=7070 \
-    -e SMI_JENKINS_WORKDIR=/var/lib/jenkins \
     -e SMI_JENKINS_NODE_NAME=linux-0 \
     -d setmyinfo/setmy-info-rocky-java-jenkins:latest node
 
