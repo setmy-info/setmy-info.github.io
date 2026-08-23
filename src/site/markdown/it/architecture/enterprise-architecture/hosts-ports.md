@@ -10,37 +10,39 @@ Use the pattern `main-name.<SUFFIX>` where `<SUFFIX>` is the environment or DNS 
 
 ### Core infrastructure host names
 
-| Main name   | Example FQDN         | Service                                                                  |
-|-------------|----------------------|--------------------------------------------------------------------------|
-| `dns1`      | `dns1.<SUFFIX>`      | Primary `DNS` server                                                     |
-| `dns2`      | `dns2.<SUFFIX>`      | Secondary `DNS` server                                                   |
-| `dhcp1`     | `dhcp1.<SUFFIX>`     | Primary `DHCP` server                                                    |
-| `dhcp2`     | `dhcp2.<SUFFIX>`     | Secondary `DHCP` server                                                  |
-| `nfs`       | `nfs.<SUFFIX>`       | `NFS` file server                                                        |
-| `samba`     | `samba.<SUFFIX>`     | `Samba` / `SMB` file sharing                                             |
-| `mqtt`      | `mqtt.<SUFFIX>`      | `MQTT` broker                                                            |
-| `mq`        | `mq.<SUFFIX>`        | Message queue broker                                                     |
-| `wf`        | `wf.<SUFFIX>`        | Workflow orchestration service, for example `ArgoWF`, `Dagu`, or `Zeebe` |
-| `ci`        | `ci.<SUFFIX>`        | Continuous integration server, for example `Jenkins`                     |
-| `db1`       | `db1.<SUFFIX>`       | Primary `PostgreSQL` database server                                     |
-| `graph`     | `graph.<SUFFIX>`     | Graph database server, for example `Neo4j`                               |
-| `cache`     | `cache.<SUFFIX>`     | Distributed cache service, for example `Infinispan`                      |
-| `iam`       | `iam.<SUFFIX>`       | Identity and access management, for example `Keycloak`                   |
-| `pki`       | `pki.<SUFFIX>`       | Secrets, key management, and `PKI`, for example `OpenBao`                |
-| `selenium`  | `selenium.<SUFFIX>`  | Browser automation and UI test service, for example `Selenium Grid`      |
-| `elk`       | `elk.<SUFFIX>`       | Central log ingestion, search, and visualization with `ELK` stack        |
-| `portainer` | `portainer.<SUFFIX>` | Container management UI, for example `Portainer`                         |
-| `proxy`     | `proxy.<SUFFIX>`     | Reverse proxy / ingress                                                  |
-| `vpn`       | `vpn.<SUFFIX>`       | General `VPN` gateway                                                    |
-| `openvpn`   | `openvpn.<SUFFIX>`   | `OpenVPN` server                                                         |
-| `wireguard` | `wireguard.<SUFFIX>` | `WireGuard` server                                                       |
-| `mail`      | `mail.<SUFFIX>`      | Mail server / test mail server, for example `Postfix` or `GreenMail`     |
-| `smtp`      | `smtp.<SUFFIX>`      | `SMTP` mail service                                                      |
-| `imap`      | `imap.<SUFFIX>`      | `IMAP` mail service                                                      |
-| `pop3`      | `pop3.<SUFFIX>`      | `POP3` mail service                                                      |
-| `greenmail` | `greenmail.<SUFFIX>` | `GreenMail` test mail server and mock suite                              |
-| `monitor`   | `monitor.<SUFFIX>`   | Monitoring and observability                                             |
-| `backup`    | `backup.<SUFFIX>`    | Backup service                                                           |
+| Main name   | Example FQDN         | Service                                                                           |
+|-------------|----------------------|-----------------------------------------------------------------------------------|
+| `dns1`      | `dns1.<SUFFIX>`      | Primary `DNS` server                                                              |
+| `dns2`      | `dns2.<SUFFIX>`      | Secondary `DNS` server                                                            |
+| `dhcp1`     | `dhcp1.<SUFFIX>`     | Primary `DHCP` server                                                             |
+| `dhcp2`     | `dhcp2.<SUFFIX>`     | Secondary `DHCP` server                                                           |
+| `nfs`       | `nfs.<SUFFIX>`       | `NFS` file server                                                                 |
+| `samba`     | `samba.<SUFFIX>`     | `Samba` / `SMB` file sharing                                                      |
+| `mqtt`      | `mqtt.<SUFFIX>`      | `MQTT` broker                                                                     |
+| `mq`        | `mq.<SUFFIX>`        | Message queue broker                                                              |
+| `wf`        | `wf.<SUFFIX>`        | Workflow orchestration service, for example `ArgoWF`, `Dagu`, or `Zeebe`          |
+| `ci`        | `ci.<SUFFIX>`        | Continuous integration server, for example `Jenkins`                              |
+| `db1`       | `db1.<SUFFIX>`       | Primary `PostgreSQL` database server                                              |
+| `graph`     | `graph.<SUFFIX>`     | Graph database server, for example `Neo4j`                                        |
+| `cache`     | `cache.<SUFFIX>`     | Distributed cache service, for example `Infinispan`                               |
+| `iam`       | `iam.<SUFFIX>`       | Identity and access management, for example `Keycloak`                            |
+| `pki`       | `pki.<SUFFIX>`       | Secrets, key management, and `PKI`, for example `OpenBao`                         |
+| `selenium`  | `selenium.<SUFFIX>`  | Browser automation and UI test service, for example `Selenium Grid`               |
+| `elk`       | `elk.<SUFFIX>`       | Central log ingestion, search, and visualization with `ELK` stack                 |
+| `portainer` | `portainer.<SUFFIX>` | Container management UI, for example `Portainer`                                  |
+| `proxy`     | `proxy.<SUFFIX>`     | Reverse proxy / ingress                                                           |
+| `vpn`       | `vpn.<SUFFIX>`       | General `VPN` gateway                                                             |
+| `openvpn`   | `openvpn.<SUFFIX>`   | `OpenVPN` server                                                                  |
+| `wireguard` | `wireguard.<SUFFIX>` | `WireGuard` server                                                                |
+| `mail`      | `mail.<SUFFIX>`      | Mail server / test mail server, for example `Postfix` or `GreenMail`              |
+| `smtp`      | `smtp.<SUFFIX>`      | `SMTP` mail service                                                               |
+| `imap`      | `imap.<SUFFIX>`      | `IMAP` mail service                                                               |
+| `pop3`      | `pop3.<SUFFIX>`      | `POP3` mail service                                                               |
+| `greenmail` | `greenmail.<SUFFIX>` | `GreenMail` test mail server and mock suite                                       |
+| `monitor`   | `monitor.<SUFFIX>`   | Monitoring and observability                                                      |
+| `backup`    | `backup.<SUFFIX>`    | Backup service                                                                    |
+| `livebook`  | `livebook.<SUFFIX>`  | Interactive Erlang and Elixir notebook service (`Livebook`)                       |
+| `jupyter`   | `jupyter.<SUFFIX>`   | Interactive Python and multi-language notebook service (`Jupyter` / `JupyterLab`) |
 
 ## Service and port table
 
@@ -63,6 +65,8 @@ using `8170` to `8179`.
 | Message queue                     | `5672/tcp`, `5671/tcp`, `15672/tcp`                                                | Typical `RabbitMQ` AMQP, `TLS`, and management UI                                                                                                                           |
 | Workflow orchestration            | `2746/tcp`, `9090/tcp`, `26500/tcp`, `26501/tcp`, `26502/tcp`, `9600/tcp`          | Plan `ArgoWF` server on `2746`, keep `Dagu` UI outside the `8080` to `8179` app range, and reserve `Zeebe` gateway, internal, and monitoring ports                          |
 | `CI` / `Jenkins`                  | `7070/tcp`, `50000/tcp`                                                            | Usual in-house `Jenkins` web UI and agent port                                                                                                                              |
+| `Livebook` (Erlang/Elixir)        | `7777/tcp`                                                                         | Interactive notebook service; avoids `8080` collisions; `4369/tcp` (`EPMD`) for attached nodes                                                                              |
+| `Jupyter` / `JupyterLab`          | `8888/tcp`                                                                         | Standard interactive notebook web UI; default for JupyterLab and Notebook server; avoids `8080` backend range                                                               |
 | Database `PostgreSQL`             | `5432/tcp`                                                                         | Common relational database port                                                                                                                                             |
 | Graph database `Neo4j`            | `7474/tcp`, `7473/tcp`, `7687/tcp`                                                 | HTTP UI, HTTPS UI, and `Bolt` protocol                                                                                                                                      |
 | Cache `Infinispan`                | `11222/tcp`, `7800/tcp`                                                            | Client access plus cluster transport                                                                                                                                        |
