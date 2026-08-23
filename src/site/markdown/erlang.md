@@ -2,11 +2,11 @@
 
 ## Information
 
-Erlang is a concurrent, fault-tolerant, distributed functional programming language originally developed by
-Ericsson for telecommunications systems. It runs on the BEAM (Bogdan/Björn's Erlang Abstract Machine) virtual
-machine, which provides lightweight processes, message passing (actor model), hot code swapping (upgrade running
-systems without downtime), and built-in distribution across nodes. Erlang systems are known for achieving
-nine-nines (99.9999999%) uptime in production.
+Erlang is a concurrent, fault-tolerant, distributed functional programming language originally developed by Ericsson for
+telecommunications systems. It runs on the BEAM (Bogdan/Björn's Erlang Abstract Machine) virtual machine, which provides
+lightweight processes, message passing (actor model), hot code swapping (upgrade running systems without downtime), and
+built-in distribution across nodes. Erlang systems are known for achieving nine-nines (99.9999999%) uptime in
+production.
 
 Key concepts:
 
@@ -117,6 +117,10 @@ All nodes in a cluster must have the same cookie value.
 ### Interactive REPL
 
 ```shell
+erl -noshell -eval 'io:format("Hello world!~n"), halt().'
+```
+
+```shell
 erl
 ```
 
@@ -169,12 +173,12 @@ handle_cast(_Msg, State) ->
 
 ### Key OTP behaviors
 
-| Behavior      | Purpose                                             |
-|---------------|-----------------------------------------------------|
-| `gen_server`  | Client-server pattern with synchronous/async calls  |
-| `gen_statem`  | Finite state machine                                |
-| `supervisor`  | Monitors child processes and restarts on failure    |
-| `application` | Top-level OTP application component                 |
+| Behavior      | Purpose                                            |
+|---------------|----------------------------------------------------|
+| `gen_server`  | Client-server pattern with synchronous/async calls |
+| `gen_statem`  | Finite state machine                               |
+| `supervisor`  | Monitors child processes and restarts on failure   |
+| `application` | Top-level OTP application component                |
 
 ### Coding tips and tricks
 

@@ -95,6 +95,10 @@ IEx.configure(
 
 ## Usage, tips and tricks
 
+```shell
+elixir -e 'IO.puts("Hello world!")'
+```
+
 Interactive shell:
 
 ```shell
