@@ -170,6 +170,7 @@ docker run --gpus all --name IMAGE_NAME -v "${DOCKER_HOST_DIR}":/var/opt/setmy.i
 
 docker run -d --name jenkins -p 2376:8080 -v jenkins-data:/var/lib/jenkins setmyinfo/setmy-info-rocky-java-jenkins:latest
 docker exec -u root -it jenkins /bin/sh
+docker run --rm -it setmyinfo/setmy-info-rocky-python:latest /bin/sh
 docker cp jenkins:/var/lib/jenkins.tar.gz ./jenkins.tar.gz
 ```
 
