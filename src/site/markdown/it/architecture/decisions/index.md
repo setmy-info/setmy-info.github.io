@@ -111,7 +111,7 @@ Examples:
 ### Back end
 
 * Standard language set
-    * Java, Groovy, Clojure, Python, C/C++
+    * Java, Groovy, Clojure, Python, C/C++, Elixir
 * SpringBoot, Spring
 * JSR-330
 * 3 Layer (Controller/REST/SOAP/etc., Service, DAO/API/DataSource)
