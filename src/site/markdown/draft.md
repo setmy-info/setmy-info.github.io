@@ -6,38 +6,31 @@ https://www.objectdb.com/java/jpa/entity/persistence-unit
 https://vladmihalcea.com/how-to-use-external-xml-mappings-files-outside-of-jar-with-jpa-and-hibernate/
 http://java.sun.com/xml/ns/persistence/orm_2_0.xsd
 
-export JAVA_HOME=/opt/jdk-24.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH}
-export JAVA_HOME=/opt/jdk-24.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH}
-export PATH=/opt/apache-maven-3.9.9/bin:$PATH
+export JAVA_HOME=/opt/jdk-24.0.1/ && export PATH=${JAVA_HOME}/bin:${PATH} export JAVA_HOME=/opt/jdk-24.0.1/ && export
+PATH=${JAVA_HOME}/bin:${PATH} export PATH=/opt/apache-maven-3.9.9/bin:$PATH
 
-mvn clean install &&
-cd groovy-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
-cd groovy-services && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
-cd java-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
-cd jwt-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. &&
-cd springboot-start-project && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd ..&&
-cd submodules/setmy-info.github.io && mvn site:site && cd ..
+mvn clean install && cd groovy-models && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. && cd
+groovy-services && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd .. && cd java-models && mvn org.pitest:
+pitest-maven:mutationCoverage site:site && cd .. && cd jwt-models && mvn org.pitest:pitest-maven:mutationCoverage site:
+site && cd .. && cd springboot-start-project && mvn org.pitest:pitest-maven:mutationCoverage site:site && cd ..&& cd
+submodules/setmy-info.github.io && mvn site:site && cd ..
 
 1.
 
-docker build -t setmyinfo/node-start-project .
-npm run docker-build
-docker run -p 4000:3000 -d setmyinfo/node-start-project
-npm run docker-run
+docker build -t setmyinfo/node-start-project . npm run docker-build docker run -p 4000:3000 -d
+setmyinfo/node-start-project npm run docker-run
 
 1.
     1. Micronaut microservice
 
-docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT .
-docker run -p 8010:8080 -d setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
+docker build -t setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT . docker run -p 8010:8080 -d
+setmyinfo/micronaut-start-project:1.0.0-SNAPSHOT
 
-1.2. Spring boot microservice
-docker build -t setmyinfo/springboot-start-project:1.0.0-SNAPSHOT .
-docker run -p 8020:8080 -d setmyinfo/springboot-start-project:1.0.0-SNAPSHOT
+1.2. Spring boot microservice docker build -t setmyinfo/springboot-start-project:1.0.0-SNAPSHOT . docker run -p 8020:
+8080 -d setmyinfo/springboot-start-project:1.0.0-SNAPSHOT
 
-1.3. Tomcat web app
-docker build -t setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT .
-docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
+1.3. Tomcat web app docker build -t setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT . docker run -p 8030:8080 -d
+setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 
 2. Or
 
@@ -59,24 +52,20 @@ docker run -p 8030:8080 -d setmyinfo/tomcat-start-project:1.0.0-SNAPSHOT
 
 4. Golang Microservice
 
-   docker build -t setmyinfo/go-start-project .
-   docker run -p 8040:8080 -d setmyinfo/go-start-project
+   docker build -t setmyinfo/go-start-project . docker run -p 8040:8080 -d setmyinfo/go-start-project
 
 5. Karma
 
    Fro project:
    npm install karma karma-jasmine karma-chrome-launcher karma-firefox-launcher jasmine-core jasmine karma-html-reporter
-   --save-dev
-   Globaly:
-   npm install -g karma-cli
-   karma init karma.conf.js
+   --save-dev Globaly:
+   npm install -g karma-cli karma init karma.conf.js
 
 6. Node main development tools set
 
    npm install -g bower grunt gulp karma-cli sass less typescript express-generator yarn jshint protractor karma-cli
-   @hapi/joi @hapi/topo @hapi/hoek
-   npm install -g @vue/cli
-   npm install karma karma-coverage karma-junit-reporter --save-dev
+   @hapi/joi @hapi/topo @hapi/hoek npm install -g @vue/cli npm install karma karma-coverage karma-junit-reporter
+   --save-dev
 
 7. (...)
 
@@ -98,8 +87,7 @@ Moved.
 * Roles: Business analüütikud: should not write tables, SQL, Java class model in any form. Its implementing team members
   responsibility.
 * Developers should have the possibility to build current work on CI (push by push) to get feedback early. Without
-  additional
-  steps (clicks, tool usage).
+  additional steps (clicks, tool usage).
 * GIT should reflect reality and not fake result. Main/master/trunk should be releasable at eny moment without searching
   release tags, numbers somewhere.
 
@@ -124,12 +112,10 @@ Moved.
 ### Questions for
 
 '''
-What was the last biggest waste you detected and eliminated.
-What happens single developer waste problems?
-Work culture and team dynamics:
-How would you describe the work culture in this company/project?
-How are teamwork and communication fostered?
-What are the mutual expectations and collaboration methods among team members?
+What was the last biggest waste you detected and eliminated. What happens single developer waste problems? Work culture
+and team dynamics:
+How would you describe the work culture in this company/project? How are teamwork and communication fostered? What are
+the mutual expectations and collaboration methods among team members?
 
     Work process and methodology:
         What project management methodology is followed here (e.g., waterfall, Agile, Scrum)?
@@ -213,23 +199,27 @@ young.
 
 TODO : recheck value dimensions and correctness
 
-| Data type     | Java                      | Python              | Clojure                        | SBCL Common LISP        | H2 SQL                    | PostgreSQL                   | C++                           |
-|---------------|---------------------------|---------------------|--------------------------------|-------------------------|---------------------------|------------------------------|-------------------------------|
-| Integer       | `int` or `Integer`        | `int`               | `int`                          | `fixnum`                | `INT` or `INTEGER`        | `integer` or `int`           | `int` või `Integer`           |
-| Short         | `short`                   | -                   | `short`                        | `fixnum`                | `SMALLINT`                | `smallint`                   | `short`                       |
-| Double        | `double`                  | `float`             | `double`                       | `double-float`          | `REAL` or `DOUBLE`        | `real` or `double precision` | `double`                      |
-| BigDecimal    | `BigDecimal`              | -                   | -                              | -                       | `NUMERIC` or `DECIMAL`    | `numeric` or `decimal`       | `cpp_dec_float_50` GMP, Boost |
-| BigInteger    | `BigInteger`              | -                   | -                              | -                       | -                         | -                            | `mpz_class ` GMP, Boost       |
-| Float         | `float`                   | `float`             | `float`                        | `single-float`          | `REAL` or `FLOAT`         | `real` or `float`            | `float`                       |
-| Char          | `char` or `Character`     | -                   | `char`                         | `character`             | `CHAR` or `CHARACTER`     | `char` or `character`        | `char`                        |
-| String        | `String`                  | `str`               | `String`                       | `string`                | `VARCHAR` or `TEXT`       | `varchar` or `text`          | `std::string`                 |
-| List          | `java.util.List`          | `list`              | `vector`                       | -                       | -                         | -                            | `std::vector`                 |
-| Set           | `java.util.Set`           | `set`               | `set`                          | -                       | -                         | -                            | `std::set`                    |
-| Timestamp     | `java.sql.Timestamp`      | `time.time()`       | `java.sql.Timestamp`           | `get-universal-time`    | `TIMESTAMP` or `DATETIME` | `timestamp`                  | `std::chrono::time_point`     |
-| LocalDate     | `java.time.LocalDate`     | `datetime.date`     | `java.time.LocalDate`          | `decode-universal-time` | `DATE`                    | `date`                       | `std::tm`                     |
-| LocalDateTime | `java.time.LocalDateTime` | `datetime.datetime` | `java.time.LocalDateTime`      | `decode-universal-time` | `TIMESTAMP` or `DATETIME` | `timestamp`                  | `std::chrono::time_point`     |
-| FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue` | -                       | -                         | -                            | `std::queue`                  |
-| FILO          | `java.util.Stack`         | `list`              | `clojure.lang.PersistentList`  | -                       | -                         | -                            | `std::stack`                  |
+| Data type     | Java                      | Python              | Clojure                          | SBCL Common LISP        | Elixir                    | H2 SQL                 | PostgreSQL                    | C                            | C++                                       |
+|---------------|---------------------------|---------------------|----------------------------------|-------------------------|---------------------------|------------------------|-------------------------------|------------------------------|-------------------------------------------|
+| Boolean       | `boolean` or `Boolean`    | `bool`              | `boolean` or `Boolean`           | `boolean` (`t` / `nil`) | `boolean()`               | `BOOLEAN` or `BOOL`    | `boolean` or `bool`           | `bool` (`<stdbool.h>`)       | `bool`                                    |
+| Byte          | `byte` or `Byte`          | `bytes` / `int`     | `byte` or `Byte`                 | `(unsigned-byte 8)`     | `byte()` / `0..255`       | `TINYINT` or `BYTE`    | `smallint` (or `"char"`)      | `char` / `uint8_t`           | `uint8_t` / `unsigned char`               |
+| Short         | `short` or `Short`        | `int`               | `short` or `Short`               | `(signed-byte 16)`      | `integer()`               | `SMALLINT` or `SHORT`  | `smallint` (or `int2`)        | `short` / `int16_t`          | `short` / `int16_t`                       |
+| Integer       | `int` or `Integer`        | `int`               | `int` or `Integer`               | `fixnum` or `integer`   | `integer()`               | `INT` or `INTEGER`     | `integer` or `int` (`int4`)   | `int` / `int32_t`            | `int` / `int32_t`                         |
+| Long          | `long` or `Long`          | `int`               | `long` or `Long`                 | `(signed-byte 64)`      | `integer()`               | `BIGINT`               | `bigint` (or `int8`)          | `long long` / `int64_t`      | `long long` / `int64_t`                   |
+| BigInteger    | `BigInteger`              | `int`               | `bigint` (`BigInt`)              | `bignum` or `integer`   | `integer()`               | `NUMERIC` or `DECIMAL` | `numeric`                     | `mpz_t` (GMP)                | `mpz_class` (GMP) / `cpp_int`             |
+| Float         | `float` or `Float`        | `float`             | `float` or `Float`               | `single-float`          | `float()`                 | `REAL` or `FLOAT`      | `real` (or `float4`)          | `float`                      | `float`                                   |
+| Double        | `double`                  | `float`             | `double` or `Double`             | `double-float`          | `float()`                 | `DOUBLE PRECISION`     | `double precision` (`float8`) | `double`                     | `double`                                  |
+| BigDecimal    | `BigDecimal`              | `decimal.Decimal`   | `bigdec` (`BigDecimal`)          | `rational` / `ratio`    | `Decimal`                 | `NUMERIC` or `DECIMAL` | `numeric` or `decimal`        | `_Decimal128` / `decNumber`  | `cpp_dec_float_50` (Boost)                |
+| Char          | `char` or `Character`     | `str` (length 1)    | `char` or `Character`            | `character`             | `char()` (`?a`)           | `CHAR` or `CHARACTER`  | `char` or `character(1)`      | `char`                       | `char`                                    |
+| String        | `String`                  | `str`               | `String`                         | `string`                | `String.t()` / `binary()` | `VARCHAR` or `TEXT`    | `varchar` or `text`           | `char*` or `char[]`          | `std::string`                             |
+| List          | `java.util.List`          | `list`              | `vector` or `list`               | `list` or `vector`      | `list()` / `List`         | `ARRAY`                | `array` (e.g. `text[]`)       | `[]` / pointer array         | `std::vector`                             |
+| Set           | `java.util.Set`           | `set`               | `set` (`PersistentHashSet`)      | `list` / `hash-table`   | `MapSet`                  | -                      | -                             | -                            | `std::set` / `unordered_set`              |
+| Map           | `java.util.Map`           | `dict`              | `hash-map` (`PersistentHashMap`) | `hash-table`            | `map()` / `Map` (`%{}`)   | `JSON`                 | `jsonb` / `hstore`            | -                            | `std::map` / `unordered_map`              |
+| Timestamp     | `java.sql.Timestamp`      | `datetime.datetime` | `java.sql.Timestamp`             | `get-universal-time`    | `DateTime`                | `TIMESTAMP`            | `timestamp` / `timestamptz`   | `time_t` / `struct timespec` | `std::chrono::system_clock::time_point`   |
+| LocalDate     | `java.time.LocalDate`     | `datetime.date`     | `java.time.LocalDate`            | `decode-universal-time` | `Date`                    | `DATE`                 | `date`                        | `struct tm`                  | `std::chrono::year_month_day` / `std::tm` |
+| LocalDateTime | `java.time.LocalDateTime` | `datetime.datetime` | `java.time.LocalDateTime`        | `decode-universal-time` | `NaiveDateTime`           | `TIMESTAMP`            | `timestamp`                   | `struct tm`                  | `std::chrono::local_time` / `std::tm`     |
+| FIFO          | `java.util.Queue`         | `queue.Queue`       | `clojure.lang.PersistentQueue`   | `sb-concurrency:queue`  | `:queue` (Erlang)         | -                      | -                             | custom queue struct / buffer | `std::queue`                              |
+| FILO          | `java.util.Stack`         | `list` / `deque`    | `clojure.lang.PersistentList`    | `list` (`push`/`pop`)   | `list()` (`[h \| t]`)     | -                      | -                             | custom stack struct / array  | `std::stack`                              |
 
 ### C++ data types
 
@@ -257,18 +247,17 @@ TODO : recheck value dimensions and correctness
 ## Refactoring
 
 More refactoring - a) in enhancement/fix task refactoring and b) in refactoring task. 2 backlogs - technical and product
-backlog. Actually technical backlog is wiki page(s) with things to do. When ready, then product backlog item is created
+backlog. Actually technical backlog is wiki page (s) with things to do. When ready, then product backlog item is created
 from technical backlog wiki items.
 
-Do things the same way - Injectables, more injectables (Mappers, Validators, ...) no or less static
-functions - places where function can be moved around - better testability with fewer tools.
+Do things the same way - Injectables, more injectables (Mappers, Validators, ...) no or less static functions - places
+where function can be moved around - better testability with fewer tools.
 
-Packages like a library - all its own. A a = foo(new B()) - A, B anf foo() are inside that library. Callers should use
-these. Library can't use solution classes.
+Packages like a library - all its own. A a = foo (new B ()) - A, B anf foo () are inside that library. Callers should
+use these. Library can't use solution classes.
 
 Layered (Application, Service, DAL/DAO/Resoucres). At least two separations: application (Web App [Controllers], CLI,
-JavaFX, ...) and
-service layer (service and below - DAO/DAL/Resources/APIs).
+JavaFX, ...) and service layer (service and below - DAO/DAL/Resources/APIs).
 
 Like POJO - avoid vendor lock-in inside code. Less code?
 
@@ -285,8 +274,7 @@ Steps:
 1. Common packages - generic code. Depends almost on "edge" libraries, no enterprise frameworks (Spring Boot, Micronaut,
    JEE).
 2. Functionality/technology area packages. Depends almost on "edge" libraries, no enterprise frameworks (Spring Boot,
-   Micronaut,
-   JEE). Depends on commons (commons is aslo edge library).
+   Micronaut, JEE). Depends on commons (commons is aslo edge library).
 3. Application package - final solution dependencies (Spring Boot, Micronaut, JEE)
 
 # Class Groups
