@@ -168,6 +168,21 @@ docker run --name postgis -p 5432:5432 --restart always -v pg-data:/var/lib/post
 
 docker run --gpus all --name IMAGE_NAME -v "${DOCKER_HOST_DIR}":/var/opt/setmy.info/data --rm docker.hub/setmy.info/IMAGE:VERSION
 
+# Get the Docker group GID, e.g. 980
+getent group docker
+ls -l /var/run/docker.sock
+stat -c '%A %U %G %g' /var/run/docker.sock
+# Replace 980 with the Docker GID obtained above.
+docker run --rm -it --group-add 980 -v /var/run/docker.sock:/var/run/docker.sock setmyinfo/setmy-info-rocky-python:latest /bin/sh
+# Inside Docker Container install Docker CLI and gieve commands
+dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+dnf install -y docker-ce-cli docker-buildx-plugin
+groupmod -g 980 docker
+usermod -aG docker microservice
+su - microservice
+
+# TODO : Docker GID in host and in Container should match.
+
 docker run -d --name jenkins -p 2376:8080 -v jenkins-data:/var/lib/jenkins setmyinfo/setmy-info-rocky-java-jenkins:latest
 docker exec -u root -it jenkins /bin/sh
 docker run --rm -it setmyinfo/setmy-info-rocky-python:latest /bin/sh
