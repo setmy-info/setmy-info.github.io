@@ -108,6 +108,8 @@ Examples:
     * Service layer independent of Frameworks (VueJS, Angular, React etc.), dependent on Axios (browsers' support
       **fetch**).
 
+Browser market share: https://gs.statcounter.com/browser-market-share
+
 ### Back end
 
 * Standard language set
