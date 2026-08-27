@@ -41,7 +41,6 @@ sudo systemctl enable --now haproxy
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
 sudo firewall-cmd --reload
-curl http://localhost
 
 # 2. Detailed
 sudo dnf install haproxy
