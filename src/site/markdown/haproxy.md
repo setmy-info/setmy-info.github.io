@@ -35,7 +35,53 @@ sites and powers quite a number of the world's most visited ones.
 ### CentOS, Rocky Linux
 
 ```bash
+# 1. Quick setup
 sudo dnf install haproxy
+sudo systemctl enable --now haproxy
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+curl http://localhost
+
+# 2. Detailed
+sudo dnf install haproxy
+haproxy -v
+sudo systemctl enable --now haproxy
+#sudo systemctl start haproxy
+#sudo systemctl enable haproxy
+
+## 2.1. Running checks
+sudo systemctl status haproxy
+sudo systemctl is-active haproxy
+sudo systemctl is-enabled haproxy
+sudo ss -ltnp | grep ':80'
+sudo ss -ltnp | grep ':443'
+sudo journalctl -u haproxy -n 50 --no-pager
+
+## 2.2. Reconfigure: only reload if configuration is valid
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg && sudo systemctl reload haproxy
+
+## 2.3. Firewall OPEN
+sudo firewall-cmd --state
+sudo firewall-cmd --list-services
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+#sudo firewall-cmd --permanent --add-port={80/tcp,443/tcp}
+sudo firewall-cmd --reload
+
+## 2.4. Restart: only restart if configuration is valid
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg && sudo systemctl restart haproxy
+
+## 2.5. Firewall CLOSE
+sudo firewall-cmd --permanent --remove-service=http
+sudo firewall-cmd --permanent --remove-service=https
+sudo firewall-cmd --reload
+
+## 2.6. Stopping
+sudo systemctl disable --now haproxy
+#sudo systemctl stop haproxy
+#sudo systemctl disable haproxy
+
 ```
 
 ### Fedora
@@ -74,15 +120,15 @@ static files.
 ```yaml
 version: '3.8'
 services:
-  haproxy:
-    image: haproxy:2.9
-    container_name: haproxy-dev
-    ports:
-      - "80:80"
-      - "8404:8404" # Stats page
-    volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-      - ./static:/var/www/static:ro
+    haproxy:
+        image: haproxy:2.9
+        container_name: haproxy-dev
+        ports:
+            - "80:80"
+            - "8404:8404" # Stats page
+        volumes:
+            - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+            - ./static:/var/www/static:ro
 ```
 
 **haproxy.cfg:**
@@ -221,18 +267,18 @@ global
 ```yaml
 version: '3.8'
 services:
-  haproxy:
-    image: haproxy:2.9-alpine
-    restart: always
-    network_mode: "host" # Better performance for high traffic
-    volumes:
-      - /etc/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-      - /etc/ssl/certs/mysite.pem:/etc/ssl/certs/mysite.pem:ro
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
+    haproxy:
+        image: haproxy:2.9-alpine
+        restart: always
+        network_mode: "host" # Better performance for high traffic
+        volumes:
+            - /etc/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+            - /etc/ssl/certs/mysite.pem:/etc/ssl/certs/mysite.pem:ro
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "10m"
+                max-file: "3"
 ```
 
 ## Usage, tips and tricks
