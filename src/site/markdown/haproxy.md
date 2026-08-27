@@ -36,7 +36,8 @@ sites and powers quite a number of the world's most visited ones.
 
 ```bash
 # 1. Quick setup
-sudo dnf install haproxy
+sudo semanage port -a -t http_port_t -p tcp 5002
+sudo dnf install -y haproxy
 sudo systemctl enable --now haproxy
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
@@ -45,6 +46,8 @@ sudo firewall-cmd --reload
 # 2. Detailed
 sudo dnf install haproxy
 haproxy -v
+sudo semanage port -a -t http_port_t -p tcp 5002
+sudo semanage port -l | grep http_port_t
 sudo systemctl enable --now haproxy
 #sudo systemctl start haproxy
 #sudo systemctl enable haproxy
@@ -80,6 +83,10 @@ sudo firewall-cmd --reload
 sudo systemctl disable --now haproxy
 #sudo systemctl stop haproxy
 #sudo systemctl disable haproxy
+
+sudo semanage port -a -t http_port_t -p tcp 5002
+sudo semanage port -d -t http_port_t -p tcp 5002
+sudo semanage port -l | grep 5002
 
 ```
 

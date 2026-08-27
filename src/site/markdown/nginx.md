@@ -8,7 +8,7 @@
 
 ```shell
 # 1. Quick setup
-sudo dnf install nginx
+sudo dnf install -y nginx
 sudo systemctl enable --now nginx
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
