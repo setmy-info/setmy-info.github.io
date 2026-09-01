@@ -6,4 +6,7 @@ src/site/resources/*.epub
 src/site/resources/*.epub.zip
 **/node_modules
 claude.session.sh
+claude.session.cmd
+cursor.session.sh
+cursor.session.cmd
 .junie
