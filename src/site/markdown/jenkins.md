@@ -303,6 +303,11 @@ kubectl get secret
 
 ## Jenkinsfile starter project
 
+Plugins:
+
+* build-monitor-plugin
+* pipeline-graph-view
+
 Workflows for **master**, **release/x**, **develop**, **feature/y** branches
 
 Publication — package sending to file server/storage/package management system.
