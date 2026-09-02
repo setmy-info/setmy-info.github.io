@@ -68,6 +68,7 @@
 * [Codeium](https://codeium.com/)
 * [Replit Agent](https://replit.com/ai)
 * [Kiro](kiro.md)
+* [OpenCode](opencode.md)
 
 ## Research
 

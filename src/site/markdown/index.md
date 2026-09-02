@@ -108,6 +108,8 @@
         * [Xfce](xfce.html)
         * [Lerna](lerna.html)
         * [Zeebe](zeebe.html)
+        * [Rodar](rodar.html)
+        * [OpenCode](opencode.html)
         * [Traefik](traefik.html)
         * [LibreWolf](librewolf.html)
         * [Tauri](tauri.html)
