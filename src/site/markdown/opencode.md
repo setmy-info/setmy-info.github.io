@@ -65,6 +65,13 @@ export OPENCODE_LLM_PROVIDER="ollama"
 export OLLAMA_BASE_URL="http://localhost:11434"
 ```
 
+### Tinker backend
+
+In the SMI toolset OpenCode is used with the [Tinker](https://thinkingmachines.ai/tinker/)
+backend: a custom `tinker` provider in the OpenCode config with `TINKER_API_KEY` in the
+environment, serving Qwen and Llama models, including your own fine-tuned ones. The Tinker
+client itself installs with `smi-install-package tinker`.
+
 ## Passing a logged-in session to another machine
 
 After `opencode auth login`, the credentials are stored in `~/.local/share/opencode/auth.json`.

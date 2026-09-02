@@ -6,9 +6,8 @@
 management tool used on RHEL, CentOS, Rocky Linux, Fedora, AlmaLinux, and SUSE/openSUSE. Package files use the
 `.rpm` extension and contain compressed software, metadata, pre/post install scripts, and dependency declarations.
 
-RPM is both a binary package format and a command-line tool. Higher-level tools (dnf, yum, zypper) call the RPM
-database internally for dependency resolution; the `rpm` command is used for lower-level operations and package
-building.
+RPM is both a binary package format and a command-line tool. Higher-level tools (dnf, yum, zypper) call the RPM database
+internally for dependency resolution; the `rpm` command is used for lower-level operations and package building.
 
 ## Installation
 
@@ -120,14 +119,24 @@ Output: `~/rpmbuild/RPMS/` (binary) and `~/rpmbuild/SRPMS/` (source RPM).
 
 ### Spec file sections
 
-| Section      | Purpose                                        |
-|--------------|------------------------------------------------|
-| `%prep`      | Unpack and patch sources                       |
-| `%build`     | Compile                                        |
-| `%install`   | Install into `%{buildroot}`                    |
-| `%files`     | List files that go into the package            |
-| `%changelog` | Chronological list of changes                  |
-| `%pre`/`%post` | Scripts run before/after installation        |
+| Section        | Purpose                               |
+|----------------|---------------------------------------|
+| `%prep`        | Unpack and patch sources              |
+| `%build`       | Compile                               |
+| `%install`     | Install into `%{buildroot}`           |
+| `%files`       | List files that go into the package   |
+| `%changelog`   | Chronological list of changes         |
+| `%pre`/`%post` | Scripts run before/after installation |
+
+### Unpacking a portion of RPM
+
+```shell
+sudo dnf install -y cpio wget && \
+mkdir -p ~/temp/nginx-conf && \
+cd ~/temp/nginx-conf && \
+wget https://nginx.org/packages/centos/10/x86_64/RPMS/nginx-1.30.4-1.el10.ngx.x86_64.rpm && \
+rpm2cpio nginx-1.30.4-1.el10.ngx.x86_64.rpm | cpio -idmv './etc/*'
+```
 
 ## See also
 
