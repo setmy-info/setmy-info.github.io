@@ -84,6 +84,10 @@
                         <item name="tauri" href="tauri.html"/>
                         <item name="Rodar" href="rodar.html"/>
                         <item name="OpenCode" href="opencode.html"/>
+                        <item name="Gemini CLI" href="gemini-cli.html"/>
+                        <item name="Codex CLI" href="codex.html"/>
+                        <item name="Codewhale" href="codewhale.html"/>
+                        <item name="Cursor" href="cursor.html"/>
                         <item name="Angular" href="angular.html"/>
                         <item name="Angular Start Project" href="angular-start-project.html"/>
                         <item name="AngularJS (Angular 1.x)" href="angular1x.html"/>

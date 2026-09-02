@@ -65,6 +65,19 @@ export OPENCODE_LLM_PROVIDER="ollama"
 export OLLAMA_BASE_URL="http://localhost:11434"
 ```
 
+## Passing a logged-in session to another machine
+
+After `opencode auth login`, the credentials are stored in `~/.local/share/opencode/auth.json`.
+Copy that file to the same path on the target machine and the CLI is logged in there without a
+second login. The headless alternative is a provider API key in the environment, for example
+`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`, as shown above. Non-interactive execution:
+`opencode run "prompt"`.
+
+For a CLI executor such as [Argo Workflows](argo.md) or [Dagu](dagu.md), a pre step exports the
+key into the process environment, then starts the agent, for example through `smi-agent`.
+Distributing the secret itself is planned later through a secret tool such as
+[OpenBao](openbao.md): the pre step reads the current key from there.
+
 ## See also
 
 * [OpenCode Website](https://opencode.ai/)
