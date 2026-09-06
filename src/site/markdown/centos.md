@@ -198,6 +198,9 @@ sudo rpm -qa
 sudo rpm -qa --qf '(%{INSTALLTIME:date}): %{NAME}-%{VERSION}\n'
 sudo rpm -qi package-name
 sudo rpm -ql package-name
+
+# To use sudo, add user to wheel group
+sudo usermod -aG wheel USERNAME
 ```
 
 ## See also

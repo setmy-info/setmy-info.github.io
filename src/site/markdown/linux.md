@@ -205,6 +205,9 @@ localectl set-locale LANG=en_US.UTF-8
 
 ```shell
 sudo useradd NEW_USER --shell /sbin/nologin --no-create-home
+
+# To use sudo, add user to wheel group
+sudo usermod -aG wheel USERNAME
 ```
 
 ### zip
