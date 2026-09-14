@@ -122,6 +122,10 @@ zone "test" IN {
     type master;
     file "/var/named/test.zone";
 };
+zone "1.168.192.in-addr.arpa" IN {
+    type master;
+    file "/var/named/192.168.1.rev";
+};
 
 zone "." IN {
     type hint;
@@ -172,8 +176,28 @@ tenant1 IN      A       192.168.1.10
 tenant2 IN      A       192.168.1.10
 ```
 
+**sudo nano /var/named/192.168.1.rev**
+
+```
+$TTL 3600
+
+@       IN      SOA     ns1.gintra. admin.gintra. (
+                        2026091401
+                        3600
+                        900
+                        604800
+                        3600
+                        )
+
+        IN      NS      ns1.gintra.
+
+10      IN      PTR     ns1.gintra.
+20      IN      PTR     dev.gintra.
+```
+
 **sudo named-checkzone gintra /var/named/gintra.zone**
 **sudo named-checkzone test /var/named/test.zone**
+**sudo named-checkzone test /var/named/192.168.1.rev**
 **sudo named-checkconf**
 **sudo systemctl reload named**
 **dig @192.168.1.10 tenant1.gintra +short**
