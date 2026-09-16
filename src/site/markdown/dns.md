@@ -15,9 +15,11 @@ sudo systemctl status named
 sudo firewall-cmd --get-zones
 sudo firewall-cmd --get-active-zones
 ip -br addr
-sudo firewall-cmd --permanent --zone=internal --change-interface=eno1
+#TCP/53 - AXFR/IXFR;  UDP/53 - DNS
+#sudo firewall-cmd --permanent --zone=internal --change-interface=eno1
+#sudo firewall-cmd --permanent --zone=internal --remove-interface=enp1s0
 # OR
-#sudo firewall-cmd --permanent --zone=internal --add-source=192.168.1.0/24
+sudo firewall-cmd --permanent --zone=internal --add-source=192.168.1.0/24
 sudo firewall-cmd --permanent --zone=internal --add-service=dns
 sudo firewall-cmd --reload
 sudo firewall-cmd --get-active-zones
@@ -29,7 +31,7 @@ dig @10.0.0.2 intranet.<ZONE_NAME>
 systemd-resolve --status
 ```
 
-**nano /etc/named.conf**
+**sudo nano /etc/named.conf**
 
 ```
 options {
@@ -49,7 +51,9 @@ options {
 include "/etc/named/<ZONE_NAME>/index.zone";
 ```
 
-**nano /etc/named/<ZONE_NAME>/index.zone**
+**NB! /etc/named/<ZONE_NAME>/ is outdated form**
+
+**sudo nano /etc/named/<ZONE_NAME>/index.zone**
 
 ```
 zone "0.0.10.in-addr.arpa" {
@@ -65,7 +69,7 @@ zone "<ZONE_NAME>" {
 
 ```
 
-**nano /etc/named/<ZONE_NAME>/0.0.10.in-addr.arpa**
+**sudo nano /etc/named/<ZONE_NAME>/0.0.10.in-addr.arpa**
 
 ```
 ;
@@ -115,18 +119,63 @@ intranet.<ZONE_NAME>.   IN      A       10.0.0.2
 	forward only;
     . . .
 zone "gintra" IN {
-    type master;
+    //type master;
+    type primary;
     file "/var/named/gintra.zone";
+    allow-transfer {
+        192.168.1.15;
+    };
+    also-notify {
+        192.168.1.15;
+    };
 };
 zone "test" IN {
-    type master;
+    //type master;
+    type primary;
     file "/var/named/test.zone";
+        allow-transfer {
+        192.168.1.15;
+    };
+    also-notify {
+        192.168.1.15;
+    };
 };
 zone "1.168.192.in-addr.arpa" IN {
-    type master;
+    //type master;
+    type primary;
     file "/var/named/192.168.1.rev";
+    allow-transfer {
+        192.168.1.15;
+    };
+    also-notify {
+        192.168.1.15;
+    };
 };
 
+# FOR SLAVE
+/*
+zone "gintra" IN {
+    type secondary;
+    primaries {
+        192.168.1.10;
+    };
+    file "/var/named/slaves/gintra.zone";
+};
+zone "test" IN {
+    type secondary;
+    primaries {
+        192.168.1.10;
+    };
+    file "/var/named/slaves/test.zone";
+};
+zone "1.168.192.in-addr.arpa" IN {
+    type secondary;
+    primaries {
+        192.168.1.10;
+    };
+    file "/var/named/slaves/192.168.1.rev";
+};
+*/
 zone "." IN {
     type hint;
     file "/etc/named.ca";
@@ -141,7 +190,7 @@ include "/etc/named.root.key";
 ```
 $TTL 3600
 @       IN      SOA     ns1.gintra. admin.gintra. (
-                        2026091401 ; serial
+                        2026091601 ; serial
                         3600       ; refresh
                         900        ; retry
                         604800     ; expire
@@ -149,8 +198,10 @@ $TTL 3600
                         )
 
         IN      NS      ns1.gintra.
+        IN      NS      ns2.gintra.
 
 ns1     IN      A       192.168.1.10
+ns2     IN      A       192.168.1.15
 
 tenant1 IN      A       192.168.1.10
 tenant2 IN      A       192.168.1.10
@@ -161,7 +212,7 @@ tenant2 IN      A       192.168.1.10
 ```
 $TTL 3600
 @       IN      SOA     ns1.test. admin.test. (
-                        2026091401 ; serial
+                        2026091601 ; serial
                         3600       ; refresh
                         900        ; retry
                         604800     ; expire
@@ -169,8 +220,10 @@ $TTL 3600
                         )
 
         IN      NS      ns1.test.
+        IN      NS      ns2.test.
 
 ns1     IN      A       192.168.1.10
+ns2     IN      A       192.168.1.15
 
 tenant1 IN      A       192.168.1.10
 tenant2 IN      A       192.168.1.10
@@ -180,28 +233,28 @@ tenant2 IN      A       192.168.1.10
 
 ```
 $TTL 3600
-
 @       IN      SOA     ns1.gintra. admin.gintra. (
-                        2026091401
-                        3600
-                        900
-                        604800
-                        3600
+                        2026091601 ; serial
+                        3600       ; refresh
+                        900        ; retry
+                        604800     ; expire
+                        3600       ; minimum
                         )
 
         IN      NS      ns1.gintra.
+        IN      NS      ns2.gintra.
 
 10      IN      PTR     ns1.gintra.
-20      IN      PTR     dev.gintra.
+15      IN      PTR     ns2.gintra.
 ```
 
-**sudo named-checkzone gintra /var/named/gintra.zone**
-**sudo named-checkzone test /var/named/test.zone**
-**sudo named-checkzone test /var/named/192.168.1.rev**
-**sudo named-checkconf**
-**sudo systemctl reload named**
-**dig @192.168.1.10 tenant1.gintra +short**
-**dig @192.168.1.10 tenant2.test +short**
+* **sudo named-checkzone gintra /var/named/gintra.zone**
+* **sudo named-checkzone test /var/named/test.zone**
+* **sudo named-checkzone 1.168.192.in-addr.arpa /var/named/192.168.1.rev**
+* **sudo named-checkconf**
+* **sudo systemctl reload named**
+* **dig @192.168.1.10 tenant1.gintra +short**
+* **dig @192.168.1.10 tenant2.test +short**
 
 ### FreeBSD
 
