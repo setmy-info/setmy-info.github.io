@@ -29,6 +29,17 @@ nslookup intranet.<ZONE_NAME> 10.0.0.2
 dig @10.0.0.2 intranet.<ZONE_NAME>
 
 systemd-resolve --status
+sudo systemctl reload named
+# For primary
+dig @192.168.1.10 tenant1.gintra +short
+dig @192.168.1.10 tenant1.test +short
+# For secondary, after primary changes, to check is names getting over to secondary
+dig @192.168.1.15 tenant2.gintra +short
+dig @192.168.1.15 tenant2.test +short
+resolvectl status
+resolvectl dns
+
+
 ```
 
 **sudo nano /etc/named.conf**
@@ -255,6 +266,15 @@ $TTL 3600
 * **sudo systemctl reload named**
 * **dig @192.168.1.10 tenant1.gintra +short**
 * **dig @192.168.1.10 tenant2.test +short**
+
+* **sudo nano /etc/systemd/resolved.conf**
+
+    [Resolve]
+    DNS=127.0.0.1 192.168.1.10
+    FallbackDNS=192.168.1.1
+    Domains=~.
+
+sudo systemctl restart systemd-resolved
 
 ### FreeBSD
 

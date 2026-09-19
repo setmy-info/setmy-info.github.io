@@ -79,7 +79,8 @@ The following MQTT requirements are accepted and should be used as-is:
     - Required for value object immutability
     - Property name: **"c"**
 19. MQTT (plugin) + RabbitMQ as one single process is acceptable.
-20. mTLS (client certificate authentication) should be applied for all clients.
+20. mTLS (client certificate authentication) should be applied for all servers. Server should authenticate a user by
+    client certificate.
 21. RBAC must be configured for all topics, queues and exchanges.
 22. Backpressure principles should be applied. Backpressure should be implemented via MQTT broker policies (e.g.,
     message rate limits, inflight window size, per-client buffer limits) to avoid overload during burst traffic.
