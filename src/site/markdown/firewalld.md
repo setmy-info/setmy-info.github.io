@@ -114,121 +114,70 @@ too many management methods on the same host unless you understand the interacti
 
 ```bash
 sudo dnf install -y firewalld
-```
-
-Start and enable it:
-
-```bash
-sudo systemctl enable --now firewalld
+sudo systemctl enable firewalld
+#sudo systemctl enable --now firewalld
 sudo systemctl status firewalld
-```
 
-### Debian / Ubuntu
-
-```bash
-sudo apt update
-sudo apt install -y firewalld
-```
-
-Then enable it:
-
-```bash
-sudo systemctl enable --now firewalld
-sudo systemctl status firewalld
-```
-
-### openSUSE
-
-```bash
-sudo zypper install -y firewalld
-```
-
-### Main commands to know first
-
-```bash
 sudo firewall-cmd --state
 sudo firewall-cmd --get-default-zone
 sudo firewall-cmd --get-active-zones
 sudo firewall-cmd --list-all
-```
+sudo firewall-cmd --list-all-zones
 
-These commands help you inspect the current state before making changes.
-
-## Basic setup
-
-### Check whether `firewalld` is running
-
-```bash
-sudo firewall-cmd --state
-```
-
-Expected output is typically:
-
-```text
-running
-```
-
-### See active zones and assigned interfaces
-
-```bash
-sudo firewall-cmd --get-active-zones
-```
-
-Example output:
-
-```text
-public
-  interfaces: eth0
-```
-
-This is important because opening a port in the wrong zone is a common mistake.
-
-### List the current rules of one zone
-
-```bash
 sudo firewall-cmd --zone=public --list-all
-```
 
-### Open `SSH`, `HTTP`, and `HTTPS`
-
-Runtime only:
-
-```bash
 sudo firewall-cmd --zone=public --add-service=ssh
 sudo firewall-cmd --zone=public --add-service=http
 sudo firewall-cmd --zone=public --add-service=https
-```
 
-Permanent:
-
-```bash
 sudo firewall-cmd --zone=public --add-service=ssh --permanent
 sudo firewall-cmd --zone=public --add-service=http --permanent
 sudo firewall-cmd --zone=public --add-service=https --permanent
 sudo firewall-cmd --reload
-```
 
-### Open one custom application port
-
-```bash
 sudo firewall-cmd --zone=public --add-port=8080/tcp
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --reload
-```
 
-### Remove a service or port
-
-```bash
 sudo firewall-cmd --zone=public --remove-service=http
 sudo firewall-cmd --zone=public --remove-port=8080/tcp
-```
 
-Permanent removal:
-
-```bash
 sudo firewall-cmd --zone=public --remove-service=http --permanent
 sudo firewall-cmd --zone=public --remove-port=8080/tcp --permanent
 sudo firewall-cmd --reload
+
+
+
+sudo ip link show
+# wlp3s0
+sudo firewall-cmd --get-zone-of-interface=wlp3s0
+
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+#sudo firewall-cmd --permanent --add-port={80/tcp,443/tcp}
+sudo firewall-cmd --reload
+
+sudo firewall-cmd --permanent --remove-service=http
+sudo firewall-cmd --permanent --remove-service=https
+sudo firewall-cmd --reload
+
+# --zone=public
+
+sudo firewall-cmd --permanent --zone=public --add-forward-port=port=80:proto=tcp:toport=8080
+sudo firewall-cmd --reload
+
+sudo firewall-cmd --permanent --zone=public --add-masquerade
+sudo firewall-cmd --reload
+
+sudo firewall-cmd --permanent --zone=public --add-interface=eth0
+sudo firewall-cmd --reload
+
+sudo firewall-cmd --permanent --zone=internal --add-source=10.10.0.0/16
+sudo firewall-cmd --reload
+
+sudo firewall-cmd --zone=public --list-ports
+sudo firewall-cmd --zone=public --list-all
+
 ```
 
 ## Practical examples
@@ -266,16 +215,6 @@ sudo firewall-cmd --reload
 
 This is safer than opening `5432/tcp` to every source.
 
-### Publish a reverse proxy host
-
-Typical minimal setup for a web entry point:
-
-```bash
-sudo firewall-cmd --permanent --zone=public --add-service=http
-sudo firewall-cmd --permanent --zone=public --add-service=https
-sudo firewall-cmd --reload
-```
-
 Often this server would expose only:
 
 * `80/tcp` for redirect or plain `HTTP`,
@@ -299,42 +238,6 @@ sudo firewall-cmd --reload
 ```
 
 If not, remove the runtime rule again.
-
-### Forward one port to another local port
-
-This can be useful when exposing one external port that should map to a local application listener.
-
-```bash
-sudo firewall-cmd --permanent --zone=public --add-forward-port=port=80:proto=tcp:toport=8080
-sudo firewall-cmd --reload
-```
-
-### Enable masquerading for a simple gateway host
-
-If a server acts as a router or outbound gateway:
-
-```bash
-sudo firewall-cmd --permanent --zone=public --add-masquerade
-sudo firewall-cmd --reload
-```
-
-This is only one part of the setup. Routing, interface settings, and kernel forwarding also need to be correct.
-
-## Zones in practice
-
-### Assign an interface to a zone
-
-```bash
-sudo firewall-cmd --permanent --zone=public --add-interface=eth0
-sudo firewall-cmd --reload
-```
-
-### Bind a source subnet to a zone
-
-```bash
-sudo firewall-cmd --permanent --zone=internal --add-source=10.10.0.0/16
-sudo firewall-cmd --reload
-```
 
 This can be useful when different traffic origins should get different policy treatment.
 
