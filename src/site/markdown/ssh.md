@@ -13,14 +13,15 @@ Prefer lengths in bits, even when some algorithms suggest shorter:
 
 * **4096**
 
-On **server side**:
+On **the server side**:
 
 ```sh
 mkdir ~/.ssh
 chmod 700 ~/.ssh
+chown -R "$USER:$USER" ~/.ssh
 ```
 
-On **client side** on password request enter password or just press Enter to make auto login:
+On **the client side on the password request,** enter password or just press Enter to make auto login:
 
 ```sh
 cd ~/.ssh
@@ -36,7 +37,7 @@ cd ~/.ssh
 chmod 600 id_ed25519
 ```
 
-Append public key to **authorized_keys**:
+Append a public key to **authorized_keys**:
 
 ```sh
 cd ~/.ssh
@@ -44,14 +45,14 @@ cat id_ed25519.pub >> authorized_keys
 chmod 600 authorized_keys
 ```
 
-Copy authorized_keys to server side:
+Copy authorized_keys to the server side:
 
 ```sh
 cd ~/.ssh
 scp authorized_keys ${REMOTE_USER}@${REMOTE_MACHINE}:~/.ssh
 ```
 
-Or on client side:
+Or on the client side:
 
 ```sh
 mkdir ~/bin
@@ -117,4 +118,54 @@ Change key file password
 ```sh
 ssh-keygen -p -f ~/.ssh/id_rsa
 ssh-keygen -p -f ~/.ssh/id_ed25519
+```
+
+## Tips and tricks
+
+### Hardening
+
+```sh
+sudo nano /etc/ssh/sshd_config.d/10-port.conf
+```
+
+    Port 12345
+    #Port 22
+
+```sh
+sshd -T | grep '^port '
+semanage port -a -t ssh_port_t -p tcp 12345
+semanage port -l | grep ssh_port_t
+```
+
+```sh
+sudo groupadd sshusers
+sudo usermod -aG sshusers SOMEUSER
+sudo id SOMEUSER
+
+sudo nano /etc/ssh/sshd_config.d/20-hardening.conf
+```
+
+    PermitRootLogin no
+    PasswordAuthentication no
+    KbdInteractiveAuthentication no
+    PubkeyAuthentication yes
+    PermitEmptyPasswords no
+    AllowGroups sshusers
+    MaxAuthTries 3
+    X11Forwarding no
+    AllowAgentForwarding no
+    AllowTcpForwarding no
+    ClientAliveInterval 300
+    ClientAliveCountMax 2
+
+```sh
+sshd -T | grep permitrootlogin
+sshd -T | grep passwordauthentication
+sshd -T | grep kbdinteractiveauthentication
+sshd -T | grep pubkeyauthentication
+sshd -T | grep permitemptypasswords
+
+sudo sshd -t
+sudo sshd -T | grep -E \
+'^(permitrootlogin|passwordauthentication|kbdinteractiveauthentication|pubkeyauthentication|permitemptypasswords|allowgroups|maxauthtries|x11forwarding|allowagentforwarding|allowtcpforwarding|clientaliveinterval|clientalivecountmax)'
 ```

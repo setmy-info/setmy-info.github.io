@@ -31,8 +31,14 @@ lsmod | grep '^nf_conntrack'
 
 sudo nano /etc/sysctl.d/90-hardening.conf
 
+# Get IP addresses and device names
+ip -br addr
+
 # Prepare configuration
 sudo nano /etc/nftables/main.nft
+sudo chown root:root /etc/nftables/main.nft
+sudo chmod 0644 /etc/nftables/main.nft
+sudo restorecon -v /etc/nftables/main.nft
 
 # Uncomment the include line in /etc/sysconfig/nftables.conf
 sudo nano  /etc/sysconfig/nftables.conf
@@ -61,8 +67,7 @@ sudo nft list ruleset
 #sudo nft flush ruleset
 
 # nftables configuration
-sudo chown root:root /etc/nftables/main.nft
-sudo chmod 0644 /etc/nftables/main.nft
+
 
 sudo chown root:root /etc/sysconfig/nftables.conf
 sudo chmod 0644 /etc/sysconfig/nftables.conf
@@ -75,7 +80,6 @@ sudo chmod 0644 /etc/modules-load.d/nf_conntrack.conf
 sudo chown root:root /etc/sysctl.d/90-hardening.conf
 sudo chmod 0644 /etc/sysctl.d/90-hardening.conf
 
-sudo restorecon -v /etc/nftables/main.nft
 sudo restorecon -v /etc/sysconfig/nftables.conf
 sudo restorecon -v /etc/modules-load.d/nf_conntrack.conf
 sudo restorecon -v /etc/sysctl.d/90-hardening.conf

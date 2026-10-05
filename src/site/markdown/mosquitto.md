@@ -36,22 +36,38 @@ sudo nano /etc/mosquitto/mosquitto.conf
     password_file /etc/mosquitto/passwd
 
 ```shell
-# firewall-cmd --add-port=1883/tcp --permanent
-sudo mosquitto_passwd -c /etc/mosquitto/passwd USERNAME
-chown mosquitto:mosquitto /etc/mosquitto/passwd
-sudo systemctl start mosquitto
-sudo systemctl restart mosquitto
-lsof -i :1883 -i :9001
+sudo dnf install mosquitto
+rpm -ql mosquitto | grep -E 'mosquitto.conf|mosquitto.service|/etc/mosquitto'
+rpm -ql mosquitto
+ls -la /etc/mosquitto
+ls -laZ /etc/mosquitto
 
-sudo mkdir -p /var/lib/mosquitto
-sudo chown -R mosquitto:mosquitto /etc/mosquitto
-sudo chown -R mosquitto:mosquitto /var/lib/mosquitto
-sudo chmod 600 /etc/mosquitto/passwd
+sudo install -d -o root -g root -m 0755 /etc/mosquitto
+sudo install -d -o mosquitto -g mosquitto -m 0700 /var/lib/mosquitto
+sudo install -d -o mosquitto -g mosquitto -m 0750 /var/log/mosquitto
+
+sudo mosquitto_passwd -c /etc/mosquitto/passwd USERNAME
+
+sudo chown root:root /etc/mosquitto
+sudo chmod 755 /etc/mosquitto
+sudo chown root:root /etc/mosquitto/mosquitto.conf
+sudo chmod 644 /etc/mosquitto/mosquitto.conf
+sudo chown root:mosquitto /etc/mosquitto/passwd
+sudo chmod 640 /etc/mosquitto/passwd
+sudo chown mosquitto:mosquitto /var/lib/mosquitto
 sudo chmod 700 /var/lib/mosquitto
-mosquitto -c /etc/mosquitto/mosquitto.conf
-sudo mosquitto_passwd -c /etc/mosquitto/passwd has
-sudo mosquitto_passwd /etc/mosquitto/passwd has
-sudo chown mosquitto:mosquitto /etc/mosquitto/passwd
+sudo chown mosquitto:mosquitto /var/log/mosquitto
+sudo chmod 750 /var/log/mosquitto
+
+sudo restorecon -RFv /etc/mosquitto /var/lib/mosquitto /var/log/mosquitto
+
+sudo systemctl daemon-reload
+sudo systemctl enable mosquitto
+sudo systemctl restart mosquitto
+
+lsof -i :1883 -i :9001
+sudo ss -lntup | grep 1883
+ls -laZ /etc/mosquitto
 ```
 
 ### CentOS, Rocky Linux
@@ -72,6 +88,8 @@ Subscribe:
 mosquitto_sub -d -V mqttv5 -h localhost -t "ee/test/dok" -u "has" -P "xxxxx" -q 2 -i subscriber_id -c -v
 mosquitto_pub -d -V mqttv5 -h localhost -p 1883 -u "has" -P "xxx" -t "ee/test/dok" -m "Critical QoS 2 message" -q 2
 
+mosquitto_sub -d -V mqttv5 -h localhost -p 8883 --cafile /path/to/ca.crt --cert /path/to/client.crt --key /path/to/client.key --tls-version tlsv1.3 -t "ee/test/dok" -q 2 -i subscriber_id -c -v
+mosquitto_pub -d -V mqttv5 -h localhost -p 8883 --cafile /path/to/ca.crt --cert /path/to/client.crt --key /path/to/client.key --tls-version tlsv1.3 -t "ee/test/dok" -m "Critical QoS 2 message" -q 2
 # -u username -P password
 mosquitto_sub -h localhost -t test/topic
 mosquitto_sub -d -V mqttv5 -h localhost -t "test/probe" -u "dev" -P "PASSWORD1234" -q 2 -i subscriber_id -c -v

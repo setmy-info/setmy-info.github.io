@@ -35,6 +35,10 @@ sites and powers quite a number of the world's most visited ones.
 ### CentOS, Rocky Linux
 
 ```bash
+semanage port -l | grep haproxy
+semanage port -l | grep 8090
+ps -eZ | grep haproxy
+
 # 1. Quick setup
 sudo semanage port -a -t http_port_t -p tcp 5002
 sudo dnf install -y haproxy

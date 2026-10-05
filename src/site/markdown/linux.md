@@ -247,6 +247,19 @@ sudo visudo -f /etc/sudoers.d/jenkins-rpm
 jenkins ALL=(ALL) NOPASSWD: /usr/bin/rpm, /usr/bin/dnf, /usr/bin/yum
 ```
 
+## Misc
+
+```shell
+chmod u=rwx,g=rx,o=rx /var/log/nginx
+# r w x : 4 2 1
+chmod 755 /var/log/nginx
+```
+
+```shell
+# NIC devices and IPS
+ip -br addr
+```
+
 ## See also
 
 * [kernel.org](https://www.kernel.org/)

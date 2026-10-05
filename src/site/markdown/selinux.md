@@ -44,12 +44,19 @@ sudo semanage port -l | grep '^http_port_t'
 
 ps axfZ
 
+# List all context, check specific type and bt path
+# For example: httpd_t - nginx process; httpd_log_t - log folder;
+semanage fcontext -l
+semanage fcontext -l | grep httpd_log_t
+semanage fcontext -l | grep /var/log/nginx
+
 semanage fcontext -a -t httpd_sys_content_t "/some/folder/www(/.*)?"
 restorecon -Rv /some/folder/www
 
 # httpd_config_t
 ls -Z /etc/nginx
 # httpd_log_t
+# semanage fcontext -a -t httpd_log_t '/var/log/nginx(/.*)?'
 ls -Z /var/log/nginx
 # httpd_sys_content_t
 ls -Z /usr/share/nginx/html
@@ -58,8 +65,18 @@ restorecon -Rv /var/log/nginx
 sudo semanage port -a -t http_port_t -p tcp 8080
 sudo semanage port -a -t http_port_t -p tcp 8081
 
+# Try, not to apply, see what it woult like to change
+restorecon -nRv /etc/nginx
+
+ss -lntp | grep nginx
+
+ausearch -m AVC -ts recent | grep -E 'nginx|httpd_t'
+ausearch -c 'ps' --raw | audit2allow -M my-ps
+semodule -X 300 -i my-ps.pp
+
 ```
 
+* httpd_t
 * httpd_config_t
 * httpd_sys_content_t
 * httpd_sys_rw_content_t

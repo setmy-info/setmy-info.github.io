@@ -140,7 +140,9 @@ sudo chown -R has:has /opt/keycloak/log
 sudo chown -R has:has /opt/keycloak/tmp
 sudo chown -R has:has /opt/keycloak/lib/quarkus
 
-/opt/keycloak/bin/kc.sh start-dev --http-port=8100
+/opt/keycloak/bin/kc.sh start-dev --http-port=8180
+#kc.sh start --http-enabled=true --http-port=8180 --proxy-headers=xforwarded
+
 ```
 
 ### Windows
