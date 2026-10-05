@@ -6,6 +6,75 @@
 the older `iptables`, `ip6tables`, `arptables`, and `ebtables` toolchain with one more consistent rules engine and one
 configuration model.
 
+## Installation
+
+### Rocky Linux / AlmaLinux / CentOS / Fedora
+
+On many modern systems `nftables` is already available or installed.
+
+```sh
+sudo dnf install -y nftables
+nft --version
+sudo ls -la /etc/nftables/
+sudo ls -la /etc/sysconfig/
+sudo cp -a /etc/sysconfig/nftables.conf /etc/sysconfig/nftables.conf.backup
+for f in /etc/nftables/*.nft; do sudo cp -- "$f" "$f.backup"; done
+
+# Check current state
+sudo nft list ruleset
+
+# Prepare configuration
+sudo nano /etc/nftables/main.nft
+
+# Uncomment the include line in /etc/sysconfig/nftables.conf
+sudo nano  /etc/sysconfig/nftables.conf
+
+# Validate
+sudo nft -c -f /etc/sysconfig/nftables.conf
+sudo nft -c -f /etc/nftables/main.nft
+
+# Load config
+sudo nft -f /etc/nftables/main.nft
+
+sudo systemctl enable --now nftables
+sudo systemctl status nftables
+systemctl is-enabled nftables
+systemctl is-active nftables
+
+sudo systemctl disable --now firewalld
+sudo systemctl mask firewalld
+systemctl is-enabled firewalld
+systemctl is-active firewalld
+
+# Final verification
+sudo nft list ruleset
+
+# NB! Droping is default rule, so be careful
+#sudo nft flush ruleset
+```
+
+## Basic commands
+
+
+### Flush current ruleset
+
+Use this carefully, especially on remote servers.
+
+```bash
+sudo nft flush ruleset
+```
+
+### Save service-managed configuration
+
+Typical persistent workflow is:
+
+1. edit `/etc/nftables.conf`,
+2. validate with `nft -c -f`,
+3. load it with `nft -f`,
+4. restart or enable the service if needed.
+
+## Detailed information
+
 In practical infrastructure and platform work, `nftables` is useful when you want to:
 
 * control ingress and egress traffic directly at host level,
@@ -132,79 +201,6 @@ Operationally, this means:
 * log selectively before dropping when you need troubleshooting,
 * keep the rule flow readable and intentional,
 * avoid mixing ad-hoc one-off rules with a managed baseline unless you understand the full ruleset.
-
-## Installation
-
-### Rocky Linux / AlmaLinux / CentOS / Fedora
-
-On many modern systems `nftables` is already available or installed.
-
-```bash
-sudo dnf install -y nftables
-sudo systemctl enable --now nftables
-sudo systemctl status nftables
-```
-
-### Debian / Ubuntu
-
-```bash
-sudo apt update
-sudo apt install -y nftables
-sudo systemctl enable --now nftables
-sudo systemctl status nftables
-```
-
-### Check version and service state
-
-```bash
-nft --version
-sudo systemctl status nftables
-```
-
-Common configuration file:
-
-```text
-/etc/nftables.conf
-```
-
-## Basic commands
-
-### Show current ruleset
-
-```bash
-sudo nft list ruleset
-```
-
-### Validate a ruleset file
-
-Validate before applying changes:
-
-```bash
-sudo nft -c -f /etc/nftables.conf
-```
-
-### Load a ruleset file
-
-```bash
-sudo nft -f /etc/nftables.conf
-```
-
-### Flush current ruleset
-
-Use this carefully, especially on remote servers.
-
-```bash
-sudo nft flush ruleset
-```
-
-### Save service-managed configuration
-
-Typical persistent workflow is:
-
-1. edit `/etc/nftables.conf`,
-2. validate with `nft -c -f`,
-3. load it with `nft -f`,
-4. restart or enable the service if needed.
 
 ## Basic setup
 
