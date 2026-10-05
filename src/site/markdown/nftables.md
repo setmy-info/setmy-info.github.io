@@ -23,6 +23,14 @@ for f in /etc/nftables/*.nft; do sudo cp -- "$f" "$f.backup"; done
 # Check current state
 sudo nft list ruleset
 
+lsmod | grep '^nf_conntrack'
+sudo nano /etc/modules-load.d/nf_conntrack.conf
+sudo modinfo nf_conntrack
+sudo modprobe nf_conntrack
+lsmod | grep '^nf_conntrack'
+
+sudo nano /etc/sysctl.d/90-hardening.conf
+
 # Prepare configuration
 sudo nano /etc/nftables/main.nft
 
@@ -51,6 +59,50 @@ sudo nft list ruleset
 
 # NB! Droping is default rule, so be careful
 #sudo nft flush ruleset
+
+# nftables configuration
+sudo chown root:root /etc/nftables/main.nft
+sudo chmod 0644 /etc/nftables/main.nft
+
+sudo chown root:root /etc/sysconfig/nftables.conf
+sudo chmod 0644 /etc/sysconfig/nftables.conf
+
+# Kernel module loading configuration
+sudo chown root:root /etc/modules-load.d/nf_conntrack.conf
+sudo chmod 0644 /etc/modules-load.d/nf_conntrack.conf
+
+# sysctl hardening configuration
+sudo chown root:root /etc/sysctl.d/90-hardening.conf
+sudo chmod 0644 /etc/sysctl.d/90-hardening.conf
+
+sudo restorecon -v /etc/nftables/main.nft
+sudo restorecon -v /etc/sysconfig/nftables.conf
+sudo restorecon -v /etc/modules-load.d/nf_conntrack.conf
+sudo restorecon -v /etc/sysctl.d/90-hardening.conf
+
+ls -lZ \
+    /etc/nftables/main.nft \
+    /etc/sysconfig/nftables.conf \
+    /etc/modules-load.d/nf_conntrack.conf \
+    /etc/sysctl.d/90-hardening.conf
+    
+sudo systemctl restart systemd-modules-load
+lsmod | grep '^nf_conntrack'
+
+sudo sysctl --system
+
+sysctl net.ipv4.conf.all.rp_filter
+sysctl net.ipv4.conf.default.rp_filter
+sysctl net.ipv4.conf.eth0.rp_filter
+
+sysctl net.ipv4.ip_forward
+sysctl net.ipv4.icmp_echo_ignore_all
+
+sysctl net.ipv6.conf.all.disable_ipv6
+sysctl net.ipv6.conf.default.disable_ipv6
+
+sysctl net.netfilter.nf_conntrack_max
+sysctl net.netfilter.nf_conntrack_tcp_loose
 ```
 
 ## Basic commands
