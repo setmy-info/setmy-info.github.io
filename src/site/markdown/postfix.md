@@ -249,6 +249,140 @@ For most application teams, the first option is simpler and safer.
 
 Typical `/etc/postfix/main.cf` entries:
 
+    sudo postconf -n
+    sudo postconf -e 'myhostname = smtp.intranet'
+    sudo postconf -e 'mydomain = intranet'
+    sudo postconf -e 'myorigin = $mydomain'
+    sudo postconf -e 'mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain'
+    sudo postconf -e 'relayhost = [mail.example.com]:465'
+    sudo postconf relayhost
+    sudo postconf -e 'smtp_tls_wrappermode = yes'
+    sudo postconf -e 'smtp_tls_security_level = encrypt'
+    sudo postconf smtp_tls_wrappermode
+    sudo postconf smtp_tls_security_level
+    sudo postconf -e 'smtp_sasl_auth_enable = yes'
+    sudo postconf -e 'smtp_sasl_security_options = noanonymous'
+    sudo postconf -e 'smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd'
+    sudo postconf -e 'inet_interfaces = all'
+
+    sudo postconf -e 'smtpd_tls_cert_file = /etc/pki/postfix/certs/smtp.intranet.fullchain.crt'
+    sudo postconf -e 'smtpd_tls_key_file = /etc/pki/postfix/private/smtp.intranet.key'
+    sudo postconf -e 'smtpd_tls_security_level = may'
+    # Forsing to use TLS
+    sudo postconf -e 'smtpd_tls_security_level = encrypt'
+    sudo postconf -e 'smtpd_tls_loglevel = 1'
+    
+    sudo nano /etc/postfix/sasl_passwd
+        [mail.example.com]:465 user.name@example.com:PASSWORD
+    sudo postmap /etc/postfix/sasl_passwd
+    sudo chown root:root /etc/postfix/sasl_passwd*
+    sudo chmod 600 /etc/postfix/sasl_passwd*
+    sudo ls -l /etc/postfix/sasl_passwd*
+    postconf relayhost
+    postconf smtp_tls_wrappermode
+    postconf smtp_tls_security_level
+    postconf smtp_sasl_auth_enable
+    postconf smtp_sasl_password_maps
+    postconf mydestination
+
+    nmcli connection show --active
+    nmcli connection show "Wired connection 1" | grep -E 'ipv4.dns|ipv4.dns-search'
+    sudo nmcli connection modify "Wired connection 1" ipv4.dns "192.168.1.1"
+    sudo nmcli connection modify "Wired connection 1" ipv4.dns-search "intranet"
+    sudo nmcli connection up "Wired connection 1"
+
+    #sudo postconf -e 'home_mailbox = Maildir/'
+    sudo postconf -e 'home_mailbox = mail/'
+    sudo postconf home_mailbox
+    mkdir -p ~/mail/{cur,new,tmp}
+    chmod 700 ~/mail
+    ls -la ~/mail
+    #mkdir -p ~/Maildir/{cur,new,tmp}
+    #chmod 700 ~/Maildir
+    #ls -la ~/Maildir
+    sudo postfix check
+    sudo systemctl reload postfix
+
+    echo "Internal Postfix test" | mail -r "user@intranet" -s "Internal test" user@intranet
+    ls -la ~/mail/new
+
+    sudo systemctl status dovecot --no-pager
+    sudo ss -lntp | grep -E ':(143|993)\b'
+    sudo doveconf -n | grep -E 'protocols|ssl|mail_driver|mail_home|mail_path|passdb|userdb'
+
+    sudo openssl x509 -in /etc/pki/dovecot/certs/dovecot.pem -noout -subject -issuer -dates -ext subjectAltName
+        subject=OU=IMAP server, CN=imap.example.com, emailAddress=postmaster@example.com
+        issuer=OU=IMAP server, CN=imap.example.com, emailAddress=postmaster@example.com
+        notBefore=Sep 24 06:58:29 2026 GMT
+        notAfter=Sep 24 06:58:29 2027 GMT
+        No extensions in certificate
+
+    sudo nano /etc/dovecot/dovecot.conf
+    #or
+    sudo doveconf -e 'ssl_server.cert_file = /etc/pki/dovecot/certs/imap.intranet.fullchain.crt'
+    sudo doveconf -e 'ssl_server.key_file = /etc/pki/dovecot/private/imap.intranet.key'
+
+    sudo firewall-cmd --zone=public --add-service=imaps --permanent
+    sudo firewall-cmd --zone=public --add-service=smtp --permanent
+    sudo firewall-cmd --reload
+
+```ini
+dovecot_config_version = 2.4.5
+
+first_valid_uid = 1000
+
+protocols {
+imap = yes
+lmtp = yes
+}
+
+ssl = required
+ssl_cipher_list = PROFILE=SYSTEM
+
+namespace inbox {
+inbox = yes
+separator = /
+}
+
+#
+# Default: normal Linux users
+#
+mail_driver = maildir
+mail_path = ~/mail
+
+#
+# Authentication
+#
+passdb pam {
+}
+
+#
+# Normal Linux users
+#
+userdb passwd {
+}
+
+#
+# AI agent users
+#
+userdb static {
+fields {
+uid = %{user}
+gid = %{user}
+home = /var/lib/mail/agents/%{user}
+mail_driver = maildir
+mail_path = /var/lib/mail/agents/%{user}/Maildir
+}
+
+skip = never
+}
+
+ssl_server {
+cert_file = /etc/pki/dovecot/certs/imap.intranet.fullchain.crt
+key_file = /etc/pki/dovecot/private/imap.intranet.key
+}
+```
+
 ```ini
 myhostname = app01.example.internal
 myorigin = example.com

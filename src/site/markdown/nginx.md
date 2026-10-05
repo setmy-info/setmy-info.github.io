@@ -34,12 +34,39 @@ sudo journalctl -u nginx -n 50 --no-pager
 sudo nginx -t && sudo systemctl reload nginx
 
 ## 2.3. Firewall OPEN
+sudo firewall-cmd --get-default-zone
 sudo firewall-cmd --state
 sudo firewall-cmd --list-services
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
+#sudo firewall-cmd --permanent --add-service=http --zone=internal
+#sudo firewall-cmd --permanent --add-service=https --zone=internal
 #sudo firewall-cmd --permanent --add-port={80/tcp,443/tcp}
 sudo firewall-cmd --reload
+
+## 2.4.1
+getenforce
+ps -eZ | grep nginx
+ls -Zd /usr/share/nginx/html
+ls -lZ /usr/share/nginx/html
+ls -Zd /usr/share/nginx/html/index.html
+ls -lZ /usr/share/nginx/html/index.html 
+sudo semanage port -l | grep '^http_port_t'
+sudo firewall-cmd --list-all
+sudo ss -lntp | grep ':80'
+sudo ausearch -m AVC -ts recent | grep nginx
+sudo journalctl -k | grep -i 'avc\|selinux'
+sudo journalctl | grep -i 'avc\|selinux'
+sudo semanage port -a -t http_port_t -p tcp 7070
+sudo semanage port -l | grep 7070
+sudo ausearch -m AVC -ts recent | audit2allow -M nginx-localhost-7070
+sudo semodule -i nginx-localhost-7070.pp
+sudo semodule -l | grep nginx-localhost-7070
+
+### 2.4.2
+#sudo k3s kubectl patch svc traefik -n kube-system -p '{"spec":{"type":"ClusterIP"}}'
+#sudo k3s kubectl get pods -n kube-system -o wide
+#sudo nft list ruleset | grep -E 'dport 80|dport 443'
 
 ## 2.4. Restart: only restart if configuration is valid
 sudo nginx -t && sudo systemctl restart nginx

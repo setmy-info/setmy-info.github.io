@@ -10,50 +10,54 @@ Use the pattern `main-name.<SUFFIX>` where `<SUFFIX>` is the environment or DNS 
 
 ### Core infrastructure host names
 
-| Main name       | Example FQDN             | Service                                                                           |
-|-----------------|--------------------------|-----------------------------------------------------------------------------------|
-| `dns1`          | `dns1.<SUFFIX>`          | Primary `DNS` server                                                              |
-| `dns2`          | `dns2.<SUFFIX>`          | Secondary `DNS` server                                                            |
-| `dhcp1`         | `dhcp1.<SUFFIX>`         | Primary `DHCP` server                                                             |
-| `dhcp2`         | `dhcp2.<SUFFIX>`         | Secondary `DHCP` server                                                           |
-| `nfs`           | `nfs.<SUFFIX>`           | `NFS` file server                                                                 |
-| `samba`         | `samba.<SUFFIX>`         | `Samba` / `SMB` file sharing                                                      |
-| `mqtt`          | `mqtt.<SUFFIX>`          | `MQTT` broker                                                                     |
-| `mq`            | `mq.<SUFFIX>`            | Message queue broker                                                              |
-| `wf`            | `wf.<SUFFIX>`            | Workflow orchestration service, for example `ArgoWF`, `Dagu`, or `Zeebe`          |
-| `ci`            | `ci.<SUFFIX>`            | Continuous integration server, for example `Jenkins`                              |
-| `db1`           | `db1.<SUFFIX>`           | Primary `PostgreSQL` database server                                              |
-| `graph`         | `graph.<SUFFIX>`         | Graph database server, for example `Neo4j`                                        |
-| `cache`         | `cache.<SUFFIX>`         | Distributed cache service, for example `Infinispan`                               |
-| `iam`           | `iam.<SUFFIX>`           | Identity and access management, for example `Keycloak`                            |
-| `pki`           | `pki.<SUFFIX>`           | Secrets, key management, and `PKI`, for example `OpenBao`                         |
-| `selenium`      | `selenium.<SUFFIX>`      | Browser automation and UI test service, for example `Selenium Grid`               |
-| `elk`           | `elk.<SUFFIX>`           | Central log ingestion, search, and visualization with `ELK` stack                 |
-| `elasticsearch` | `elasticsearch.<SUFFIX>` | `Elasticsearch` distributed search and analytics engine                           |
-| `logstash`      | `logstash.<SUFFIX>`      | `Logstash` data processing and ingestion pipeline                                 |
-| `kibana`        | `kibana.<SUFFIX>`        | `Kibana` data visualization and exploration dashboard                             |
-| `prometheus`    | `prometheus.<SUFFIX>`    | `Prometheus` systems monitoring and time-series metrics collection                |
-| `grafana`       | `grafana.<SUFFIX>`       | `Grafana` metrics and observability dashboard                                     |
-| `portainer`     | `portainer.<SUFFIX>`     | Container management UI, for example `Portainer`                                  |
-| `proxy`         | `proxy.<SUFFIX>`         | Reverse proxy / ingress                                                           |
-| `lb`            | `lb.<SUFFIX>`            | Load balancer, for example `Nginx`                                                |
-| `gw`            | `gw.<SUFFIX>`            | Microservices API gateway, for example `Traefik`                                  |
-| `nginx`         | `nginx.<SUFFIX>`         | `Nginx` load balancer and reverse proxy                                           |
-| `traefik`       | `traefik.<SUFFIX>`       | `Traefik` microservices API gateway and edge router                               |
-| `vpn`           | `vpn.<SUFFIX>`           | General `VPN` gateway                                                             |
-| `openvpn`       | `openvpn.<SUFFIX>`       | `OpenVPN` server                                                                  |
-| `wireguard`     | `wireguard.<SUFFIX>`     | `WireGuard` server                                                                |
-| `mail`          | `mail.<SUFFIX>`          | Mail server / test mail server, for example `Postfix` or `GreenMail`              |
-| `smtp`          | `smtp.<SUFFIX>`          | `SMTP` mail service                                                               |
-| `imap`          | `imap.<SUFFIX>`          | `IMAP` mail service                                                               |
-| `pop3`          | `pop3.<SUFFIX>`          | `POP3` mail service                                                               |
-| `greenmail`     | `greenmail.<SUFFIX>`     | `GreenMail` test mail server and mock suite                                       |
-| `monitor`       | `monitor.<SUFFIX>`       | Monitoring and observability                                                      |
-| `backup`        | `backup.<SUFFIX>`        | Backup service                                                                    |
-| `livebook`      | `livebook.<SUFFIX>`      | Interactive Erlang and Elixir notebook service (`Livebook`)                       |
-| `jupyter`       | `jupyter.<SUFFIX>`       | Interactive Python and multi-language notebook service (`Jupyter` / `JupyterLab`) |
-| `solr`          | `solr.<SUFFIX>`          | Search and indexing server / SolrCloud (`Solr`)                                   |
-| `zookeeper`     | `zookeeper.<SUFFIX>`     | Centralized coordination service and ensemble (`ZooKeeper`)                       |
+| Main name       | Example FQDN                     | Service                                                                           |
+|-----------------|----------------------------------|-----------------------------------------------------------------------------------|
+| `dns1`          | `dns1.<SUFFIX>`                  | Primary `DNS` server                                                              |
+| `dns2`          | `dns2.<SUFFIX>`                  | Secondary `DNS` server                                                            |
+| `dhcp1`         | `dhcp1.<SUFFIX>`                 | Primary `DHCP` server                                                             |
+| `dhcp2`         | `dhcp2.<SUFFIX>`                 | Secondary `DHCP` server                                                           |
+| `nfs`           | `nfs.<SUFFIX>`                   | `NFS` file server                                                                 |
+| `samba`         | `samba.<SUFFIX>`                 | `Samba` / `SMB` file sharing                                                      |
+| `mqtt`          | `mqtt.<SUFFIX>`                  | `MQTT` broker                                                                     |
+| `mq`            | `mq.<SUFFIX>`                    | Message queue broker                                                              |
+| `wf`            | `wf.<SUFFIX>`                    | Workflow orchestration service, for example `ArgoWF`, `Dagu`, or `Zeebe`          |
+| `ci`            | `ci.<SUFFIX>`                    | Continuous integration server, for example `Jenkins`                              |
+| `db1`           | `db1.<SUFFIX>`                   | Primary `PostgreSQL` database server                                              |
+| `graph`         | `graph.<SUFFIX>`                 | Graph database server, for example `Neo4j`                                        |
+| `cache`         | `cache.<SUFFIX>`                 | Distributed cache service, for example `Infinispan`                               |
+| `iam`           | `iam.<SUFFIX>`                   | Identity and access management, for example `Keycloak`                            |
+| `pki`           | `pki.<SUFFIX>`                   | Secrets, key management, and `PKI`, for example `OpenBao`                         |
+| `selenium`      | `selenium.<SUFFIX>`              | Browser automation and UI test service, for example `Selenium Grid`               |
+| `elk`           | `elk.<SUFFIX>`                   | Central log ingestion, search, and visualization with `ELK` stack                 |
+| `elasticsearch` | `elasticsearch.<SUFFIX>`         | `Elasticsearch` distributed search and analytics engine                           |
+| `logstash`      | `logstash.<SUFFIX>`              | `Logstash` data processing and ingestion pipeline                                 |
+| `kibana`        | `kibana.<SUFFIX>`                | `Kibana` data visualization and exploration dashboard                             |
+| `prometheus`    | `prometheus.<SUFFIX>`            | `Prometheus` systems monitoring and time-series metrics collection                |
+| `grafana`       | `grafana.<SUFFIX>`               | `Grafana` metrics and observability dashboard                                     |
+| `portainer`     | `portainer.<SUFFIX>`             | Container management UI, for example `Portainer`                                  |
+| `proxy`         | `proxy.<SUFFIX>`                 | Reverse proxy / ingress                                                           |
+| `lb`            | `lb.<SUFFIX>`                    | Load balancer, for example `Nginx`                                                |
+| `gw`            | `gw.<SUFFIX>`                    | Microservices API gateway, for example `Traefik`                                  |
+| `nginx`, `www`  | `nginx.<SUFFIX>`, `www.<SUFFIX>` | `Nginx` load balancer and reverse proxy                                           |
+| `traefik`       | `traefik.<SUFFIX>`               | `Traefik` microservices API gateway and edge router                               |
+| `vpn`           | `vpn.<SUFFIX>`                   | General `VPN` gateway                                                             |
+| `openvpn`       | `openvpn.<SUFFIX>`               | `OpenVPN` server                                                                  |
+| `wireguard`     | `wireguard.<SUFFIX>`             | `WireGuard` server                                                                |
+| `mail`          | `mail.<SUFFIX>`                  | Mail server / test mail server, for example `Postfix` or `GreenMail`              |
+| `smtp`          | `smtp.<SUFFIX>`                  | `SMTP` mail service                                                               |
+| `imap`          | `imap.<SUFFIX>`                  | `IMAP` mail service                                                               |
+| `pop3`          | `pop3.<SUFFIX>`                  | `POP3` mail service                                                               |
+| `greenmail`     | `greenmail.<SUFFIX>`             | `GreenMail` test mail server and mock suite                                       |
+| `monitor`       | `monitor.<SUFFIX>`               | Monitoring and observability                                                      |
+| `backup`        | `backup.<SUFFIX>`                | Backup service                                                                    |
+| `livebook`      | `livebook.<SUFFIX>`              | Interactive Erlang and Elixir notebook service (`Livebook`)                       |
+| `jupyter`       | `jupyter.<SUFFIX>`               | Interactive Python and multi-language notebook service (`Jupyter` / `JupyterLab`) |
+| `solr`          | `solr.<SUFFIX>`                  | Search and indexing server / SolrCloud (`Solr`)                                   |
+| `zookeeper`     | `zookeeper.<SUFFIX>`             | Centralized coordination service and ensemble (`ZooKeeper`)                       |
+| `scm`           | `scm.<SUFFIX>`                   | Source code management (SCM) (`Git`, `Mercurial`, `Sapling`, `SVN`)               |
+| `template`      | `template.<SUFFIX>`              | Template (`Template`)                                                             |
+| `template`      | `template.<SUFFIX>`              | Template (`Template`)                                                             |
+| `template`      | `template.<SUFFIX>`              | Template (`Template`)                                                             |
 
 ## Service and port table
 
@@ -106,12 +110,12 @@ assigned a contiguous multi-node port range (diapason) following `PORT = BASE_PO
 | Reverse proxy admin              | `18081/tcp` or custom                                                              | `18081/tcp` – `18085/tcp`                                                                                                             | Optional internal management; keep outside app ranges                                                                                                                                                                                                            |
 | Angular/Node PWA app 10 nodes    | `4200/tcp`                                                                         | `4200/tcp` to `4209/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 1 nodes  | `8080/tcp` Java ports. Or reserved for Neginx, as NAT                              | `8080/tcp` to `8089/tcp`. Nginx 8080 HTTP, 8081 HTTPS                                                                                 | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
-| Application backend app 2 nodes  | `8090/tcp` --''--. Or reserved for HAProxy                                         | `8090/tcp` to `8099/tcp`  Nginx 8090 HTTP, 8091 HTTPS                                                                                 | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
+| Application backend app 2 nodes  | `8090/tcp` --''--. Or reserved for HAProxy                                         | `8090/tcp` to `8099/tcp`  HAProxy 8090 HTTP, 8091 HTTPS                                                                               | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 3 nodes  | `8100/tcp` --''--                                                                  | `8100/tcp` to `8109/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 4 nodes  | `8110/tcp` Node ports. Brand page locally.                                         | `8110/tcp` to `8119/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 5 nodes  | `8120/tcp` --''--                                                                  | `8120/tcp` to `8129/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 6 nodes  | `8130/tcp` --''--                                                                  | `8130/tcp` to `8139/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
-| Application backend app 7 nodes  | `8140/tcp` Erlang/Elixir/OTP/BEAM ports                                            | `8140/tcp` to `8149/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
+| Application backend app 7 nodes  | `8140/tcp` Erlang/Elixir/OTP/BEAM ports                                            | `8140/tcp` to `8149/tcp`  Elixir port for serving folders is 8140                                                                     | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 8 nodes  | `8150/tcp` --''--                                                                  | `8150/tcp` to `8159/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 9 nodes  | `8160/tcp` --''--                                                                  | `8160/tcp` to `8169/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |
 | Application backend app 10 nodes | `8170/tcp` Reserved                                                                | `8170/tcp` to `8179/tcp`                                                                                                              | Reserve 10 ports for one service across up to 10 nodes                                                                                                                                                                                                           |

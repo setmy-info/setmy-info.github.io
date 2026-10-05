@@ -230,6 +230,23 @@ Mirror and delete files removed from source:
 rsync -av --delete --exclude 'exclude.file.txt' ./source/ ./destination/
 ```
 
+### Firewall
+
+```shell
+sudo firewall-cmd --permanent --zone=internal --add-port=7070/tcp
+sudo firewall-cmd --reload
+```
+
+### SUO to allow some commands without password for user
+
+```shell
+sudo visudo -f /etc/sudoers.d/jenkins-rpm
+```
+
+```text
+jenkins ALL=(ALL) NOPASSWD: /usr/bin/rpm, /usr/bin/dnf, /usr/bin/yum
+```
+
 ## See also
 
 * [kernel.org](https://www.kernel.org/)

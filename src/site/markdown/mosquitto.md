@@ -16,10 +16,19 @@ sudo nano /etc/mosquitto/mosquitto.conf
 ```
 
     per_listener_settings true
-    listener 1883
+    listener 1883 127.0.0.1
     protocol mqtt
+    persistence true
+    persistence_file mosquitto.db
+    persistence_location /var/lib/mosquitto/
+    autosave_interval 1
+    autosave_on_changes true
+    max_queued_messages 0
+    max_queued_bytes 0
+    max_inflight_messages 1
     allow_anonymous false
     password_file /etc/mosquitto/passwd
+    #acl_file /etc/mosquitto/aclfile
     listener 9001
     protocol websockets
     socket_domain ipv4
@@ -33,6 +42,16 @@ chown mosquitto:mosquitto /etc/mosquitto/passwd
 sudo systemctl start mosquitto
 sudo systemctl restart mosquitto
 lsof -i :1883 -i :9001
+
+sudo mkdir -p /var/lib/mosquitto
+sudo chown -R mosquitto:mosquitto /etc/mosquitto
+sudo chown -R mosquitto:mosquitto /var/lib/mosquitto
+sudo chmod 600 /etc/mosquitto/passwd
+sudo chmod 700 /var/lib/mosquitto
+mosquitto -c /etc/mosquitto/mosquitto.conf
+sudo mosquitto_passwd -c /etc/mosquitto/passwd has
+sudo mosquitto_passwd /etc/mosquitto/passwd has
+sudo chown mosquitto:mosquitto /etc/mosquitto/passwd
 ```
 
 ### CentOS, Rocky Linux
@@ -50,6 +69,9 @@ lsof -i :1883 -i :9001
 Subscribe:
 
 ```shell
+mosquitto_sub -d -V mqttv5 -h localhost -t "ee/test/dok" -u "has" -P "xxxxx" -q 2 -i subscriber_id -c -v
+mosquitto_pub -d -V mqttv5 -h localhost -p 1883 -u "has" -P "xxx" -t "ee/test/dok" -m "Critical QoS 2 message" -q 2
+
 # -u username -P password
 mosquitto_sub -h localhost -t test/topic
 mosquitto_sub -d -V mqttv5 -h localhost -t "test/probe" -u "dev" -P "PASSWORD1234" -q 2 -i subscriber_id -c -v
