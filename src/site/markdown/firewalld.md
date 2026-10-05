@@ -5,18 +5,7 @@
 `firewalld` is a dynamic firewall management service for Linux systems. It provides a higher-level way to manage
 packet filtering rules without editing raw `iptables`, `nftables`, or legacy firewall command sets directly.
 
-In practical infrastructure and platform work, `firewalld` is often used when you want to:
-
-* manage host-level network access in a structured way,
-* separate trust levels with zones,
-* open only selected services or ports,
-* apply runtime changes without rebuilding the whole ruleset manually,
-* standardize server firewall operations across environments.
-
-For `SMI`-style operational usage, `firewalld` is useful because it gives operators a consistent interface for
-common firewall work while still allowing more advanced policy design when needed.
-
-### Main functionalities and features
+Main functionalities and features
 
 * **Zones**: group network interfaces or traffic sources by trust level,
 * **Services**: open predefined collections of ports and protocols such as `ssh` or `http`,
@@ -26,28 +15,9 @@ common firewall work while still allowing more advanced policy design when neede
 * **Masquerading and forwarding**: support simple `NAT`, gateway, and routing scenarios,
 * **Direct integration with backend firewall engines**: commonly `nftables` on modern systems.
 
-### Typical use cases
-
-* allow `SSH` from a management subnet only,
-* open `HTTP` and `HTTPS` for a reverse proxy or web server,
-* restrict database access to one application subnet,
-* expose one service temporarily during testing and remove it later,
-* configure a server as a simple router or `NAT` gateway,
-* create layered egress and ingress controls together with proxies such as `Squid`.
-
 ## Core concepts
 
-### Zones
-
-Zones are one of the most important ideas in `firewalld`.
-
-A zone represents a trust level for traffic coming from:
-
-* a network interface,
-* a source subnet,
-* or another traffic origin.
-
-Common built-in zones include:
+### Common built-in zones include:
 
 * `public`: default for untrusted or partially trusted networks,
 * `internal`: more trusted internal networks,
@@ -57,36 +27,6 @@ Common built-in zones include:
 * `trusted`: traffic is broadly allowed,
 * `drop`: packets are silently dropped,
 * `block`: packets are rejected.
-
-In practice, many teams use only a few zones, but understanding the model is important before opening ports broadly.
-
-### Services versus ports
-
-`firewalld` can open network access by:
-
-* **service**, for example `ssh`, `http`, `https`,
-* **port**, for example `8080/tcp`,
-* **rich rule**, when more control is needed.
-
-Prefer services when they match the real application because they are clearer and easier to review later.
-
-### Runtime and permanent configuration
-
-This is operationally critical.
-
-`firewalld` keeps:
-
-* a **runtime** configuration currently active in memory,
-* a **permanent** configuration stored on disk.
-
-Typical workflow:
-
-1. add a runtime rule,
-2. verify connectivity,
-3. repeat the same change with `--permanent`,
-4. reload when needed.
-
-If you forget the permanent step, the rule can disappear after a reload or reboot.
 
 ### Rich rules
 
