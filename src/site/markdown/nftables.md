@@ -46,9 +46,10 @@ sudo nano  /etc/sysconfig/nftables.conf
 # Validate
 sudo nft -c -f /etc/sysconfig/nftables.conf
 sudo nft -c -f /etc/nftables/main.nft
+sudo nft -c -f /etc/nftables/smi.nft
 
 # Load config
-sudo nft -f /etc/nftables/main.nft
+sudo nft -f /etc/nftables/smi.nft
 
 sudo systemctl enable --now nftables
 sudo systemctl status nftables
@@ -86,6 +87,7 @@ sudo restorecon -v /etc/sysctl.d/90-hardening.conf
 
 ls -lZ \
     /etc/nftables/main.nft \
+    /etc/nftables/smi.nft \
     /etc/sysconfig/nftables.conf \
     /etc/modules-load.d/nf_conntrack.conf \
     /etc/sysctl.d/90-hardening.conf

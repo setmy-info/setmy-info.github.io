@@ -253,11 +253,22 @@ jenkins ALL=(ALL) NOPASSWD: /usr/bin/rpm, /usr/bin/dnf, /usr/bin/yum
 chmod u=rwx,g=rx,o=rx /var/log/nginx
 # r w x : 4 2 1
 chmod 755 /var/log/nginx
-```
 
-```shell
 # NIC devices and IPS
 ip -br addr
+
+# Create directory with mode, owner and group; missing parents are created.
+# Mode, owner and group are applied to the final directory only.
+install -d -m 0750 -o root -g nginx /var/opt/myapp/config/nginx/vhosts
+
+# Copy file and set mode, owner and group
+install -m 0640 -o root -g nginx myapp.conf /var/opt/myapp/config/nginx/vhosts/index.html
+
+# Create empty file with mode, owner and group
+install -m 0640 -o root -g nginx /dev/null /var/opt/myapp/config/nginx/vhosts/main.css
+
+# Recursively change ownership of directory and its contents
+chown -R root:nginx /var/www/myapp
 ```
 
 ## See also

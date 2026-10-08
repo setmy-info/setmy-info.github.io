@@ -33,7 +33,7 @@ sudo journalctl -u nginx -n 50 --no-pager
 ## 2.2. Reconfigure: only reload if configuration is valid
 sudo nginx -t && sudo systemctl reload nginx
 
-## 2.3. Firewall OPEN
+## 2.3. DEPRECATED: Firewall OPEN. We nftables
 sudo firewall-cmd --get-default-zone
 sudo firewall-cmd --state
 sudo firewall-cmd --list-services
