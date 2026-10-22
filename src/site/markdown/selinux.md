@@ -17,6 +17,8 @@
 ## Usage, tips and tricks
 
 ```shell
+sudo dnf install -y checkpolicy policycoreutils-devel
+
 # Ge longer overview
 sestatus
 # Get enforcing level

@@ -69,6 +69,8 @@ git config --get remote.origin.url
 # Make git fetch automatically prune deleted remote-tracking branches
 git config --global fetch.prune true
 
+git remote
+
 git remote -v
 
 git remote rename OLDNAME NEWNAME
@@ -93,6 +95,8 @@ git branch -D BRANCHNAME && git push origin --delete BRANCHNAME
 
 git fetch
 
+git fetch --all --prune
+
 # Sync with origin, remove also local branches, those are deleted from remote
 git fetch --prune
 
@@ -105,6 +109,10 @@ git push
 git push -f origin feature/FEATURE
 
 git push origin --all
+
+for remote in $(git remote); do
+    echo git push "$remote" --all
+done
 
 # Remove tracking for non existing remote branches.
 git remote prune origin

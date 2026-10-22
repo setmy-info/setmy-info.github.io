@@ -188,10 +188,26 @@ sudo dnf install package-name
 sudo dnf remove package-name
 sudo dnf update
 
+sudo dnf install -y dnf-automatic
+
 # Debian / Ubuntu
 sudo apt install package-name
 sudo apt remove package-name
 sudo apt update && sudo apt upgrade
+```
+
+```
+sudo dnf install dnf-automatic
+sudo nano /etc/dnf/automatic.conf
+    [commands]
+    upgrade_type = default
+    download_updates = yes
+    apply_updates = yes
+
+sudo systemctl enable --now dnf-automatic-install.timer
+systemctl list-timers 'dnf-*'
+systemctl status dnf-automatic-install.timer
+sudo grep -E '^\[|^upgrade_type|^download_updates|^apply_updates' /etc/dnf/automatic.conf
 ```
 
 ### Locale
@@ -269,6 +285,18 @@ install -m 0640 -o root -g nginx /dev/null /var/opt/myapp/config/nginx/vhosts/ma
 
 # Recursively change ownership of directory and its contents
 chown -R root:nginx /var/www/myapp
+
+# Processes with aprameters
+ps -C nginx,mosquitto -o pid,comm,%mem,rss
+
+nmcli device status
+nmcli connection show --active
+
+# 
+sudo systemctl restart systemd-resolved
+nmcli device show eno1 | grep DNS
+nmcli device show eno1 | grep -E 'IP4.DNS|IP6.DNS'
+
 ```
 
 ## See also

@@ -21,6 +21,11 @@ Historical reference — querying the now-closed LDAP service:
 
 ```shell
 ldapsearch -H ldaps://esteid.ldap.sk.ee/ -x -b "c=EE" "(serialNumber=PNOEE-38001085718)"
+LDAPTLS_REQCERT=allow ldapsearch -H ldaps://k3.ldap.sk.ee/ -x -b "" "(cn=SK ID Solutions AS)"
+LDAPTLS_REQCERT=allow ldapsearch -H ldaps://k3.ldap.sk.ee/ -x -b "" "(serialNumber=10747013)"
+openssl s_client -showcerts -connect esteid.ldap.sk.ee:636
+ldapsearch -H ldaps://esteid.ldap.sk.ee/ -x -b "c=EE" "(serialNumber=PNOEE-38510016016)"
+LDAPTLS_CACERT=ldapca.crt ldapsearch -H ldaps://esteid.ldap.sk.ee/ -x -b "c=EE" "(cn= JÕEORG,JAAK-KRISTJAN,38001085718)"
 ```
 
 ## See also
@@ -29,3 +34,4 @@ ldapsearch -H ldaps://esteid.ldap.sk.ee/ -x -b "c=EE" "(serialNumber=PNOEE-38001
 * [Closing LDAP — sk.ee LDAP catalogue closure announcement](https://www.id.ee/artikkel/ldap-sk-ee-andmekataloogi-sulgemine/)
 * [Estonian ID-card software internal URLs](https://www.id.ee/artikkel/loetelu-urlidest-kuhu-id-kaardi-baastarkvara-sisemiselt-poordub/)
 * [X-Road](https://x-road.global/)
+* [Knowledge Base](https://github.com/SK-EID/LDAP/wiki/Knowledge-Base)

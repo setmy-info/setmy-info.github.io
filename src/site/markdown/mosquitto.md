@@ -90,6 +90,19 @@ mosquitto_pub -d -V mqttv5 -h localhost -p 1883 -u "has" -P "xxx" -t "ee/test/do
 
 mosquitto_sub -d -V mqttv5 -h localhost -p 8883 --cafile /path/to/ca.crt --cert /path/to/client.crt --key /path/to/client.key --tls-version tlsv1.3 -t "ee/test/dok" -q 2 -i subscriber_id -c -v
 mosquitto_pub -d -V mqttv5 -h localhost -p 8883 --cafile /path/to/ca.crt --cert /path/to/client.crt --key /path/to/client.key --tls-version tlsv1.3 -t "ee/test/dok" -m "Critical QoS 2 message" -q 2
+
+mosquitto_sub -d -V mqttv5 -h mqtt.gintra -p 8883 -u "uuuuuuu" -P "xxxxx" \
+	--cafile /home/yyy/.pki/.dev-certs/ca/gintra.ca.fullchain.crt \
+	--cert /home/yyy/.pki/.dev-certs/mqtt-client.client.crt \
+	--key /home/yyy/.pki/.dev-certs/mqtt-client.client.priv.key \
+	-t "ee/test/dok" -q 2 -i subscriber_id -c -v
+
+mosquitto_pub -d -V mqttv5 -h mqtt.gintra -p 8883 -u "uuuuuuu" -P "xxxxxxx" \
+	--cafile /home/yyy/.pki/.dev-certs/ca/gintra.ca.fullchain.crt \
+	--cert /home/yyy/.pki/.dev-certs/mqtt-client.client.crt \
+	--key /home/yyy/.pki/.dev-certs/mqtt-client.client.priv.key \
+	-t "ee/test/dok" -m "Kriitiline QoS 2 sõnum VOL 1" -q 2
+
 # -u username -P password
 mosquitto_sub -h localhost -t test/topic
 mosquitto_sub -d -V mqttv5 -h localhost -t "test/probe" -u "dev" -P "PASSWORD1234" -q 2 -i subscriber_id -c -v

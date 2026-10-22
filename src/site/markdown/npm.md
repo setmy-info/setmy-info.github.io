@@ -73,40 +73,25 @@ When working with workspaces, you should generally run installation commands fro
 
 ```shell
 npm install
-```
 
-**Install an external dependency to a specific workspace:**
-
-```shell
+# Install an external dependency to a specific workspace
 npm install <package-name> -w <workspace-name>
-```
 
-**Install an internal module as a dependency to another workspace:**
-
-In a monorepo, `<package-name>` can also refer to another internal module (workspace) within the same repository. To
-link an internal module as a dependency:
-
-```shell
+#Install an internal module as a dependency to another workspace
 npm install <internal-package-name> -w <workspace-name>
-```
 
-npm will automatically create a symbolic link in `node_modules` of the target workspace pointing to the internal
-package.
-
-### Updating Dependencies
-
-**Check for outdated packages across all workspaces:**
-
-```shell
+npm outdated
 npm outdated -r
-```
 
-**Update packages:**
-
-```shell
 npm update -w <workspace-name>
 # Or
 npx npm-check-updates -u
+
+npx npm-check-updates --workspaces
+
+npx npm-check-updates --workspaces -u
+npm install
+
 ```
 
 ## Usage, Tips and Tricks

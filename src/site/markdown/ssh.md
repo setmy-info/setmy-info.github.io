@@ -168,4 +168,6 @@ sshd -T | grep permitemptypasswords
 sudo sshd -t
 sudo sshd -T | grep -E \
 '^(permitrootlogin|passwordauthentication|kbdinteractiveauthentication|pubkeyauthentication|permitemptypasswords|allowgroups|maxauthtries|x11forwarding|allowagentforwarding|allowtcpforwarding|clientaliveinterval|clientalivecountmax)'
+
+sudo systemctl reload sshd
 ```

@@ -59,8 +59,8 @@ Then generate **public key** from provate key:
 openssl rsa -in /usr/local/share/certs/CA.priv.key -pubout -out /usr/local/share/certs/CA.pub.key
 ```
 
-Creates **certificate request** (.csr) for CA to sign certificate
-(Fill questions: EE, Harjumaa, Tallinn, Private Company LLC, CA department, Peeter Meeter, peeter.meeter@trump.com,
+Creates **certificate request** (.csr) for CA to sign certificate (Fill questions: EE, Harjumaa, Tallinn, Private
+Company LLC, CA department, Peeter Meeter, peeter.meeter@trump.com,
 1234,
 Private Company LLC).
 
@@ -156,6 +156,40 @@ GINTRA_LOCATION=/some/dir
 sudo cp ${GINTRA_LOCATION}/organizations/ee/has/development/configuration/pki/ca/has.ee.gintra.crt /etc/pki/ca-trust/source/anchors/
 sudo update-ca-trust
 ```
+
+## CA, Intermediate CA, server/service cert and client cert - leaf certs, mTLS
+
+| Kind                      | Signed by           | Must carry                                             | Job                            |
+|---------------------------|---------------------|--------------------------------------------------------|--------------------------------|
+| CA, the root              | itself, self signed | `CA:TRUE`, `Certificate Sign`                          | the trust anchor, kept offline |
+| Intermediate CA           | the CA              | `CA:TRUE`, `Certificate Sign`                          | signs the leaves               |
+| server/service cert, leaf | the Intermediate CA | `CA:FALSE`, EKU `TLS Web Server Authentication`, a SAN | proves the name of the service |
+| client cert, leaf         | the Intermediate CA | `CA:FALSE`, EKU `TLS Web Client Authentication`        | proves who is calling          |
+
+### Which side holds what, and in what order inside the file
+
+|            | Server, the service                                        | Client, the caller                                         |
+|------------|------------------------------------------------------------|------------------------------------------------------------|
+| own chain  | `server.fullchain.crt`: #1 server leaf, #2 Intermediate CA | `client.fullchain.crt`: #1 client leaf, #2 Intermediate CA |
+| own key    | `private/server.priv.key`: the key alone                   | `private/client.priv.key`: the key alone                   |
+| trust file | `ca.chain.crt`: #1 Intermediate CA, #2 CA                  | `ca.chain.crt`: #1 Intermediate CA, #2 CA                  |
+
+* a fullchain is what the handshake sends, so the order is the chain: leaf first, then its issuer. Reversed,
+  nothing works;
+* the order inside the trust file does not matter, but both certificates have to be in it;
+* no private key in a `.crt`, no passphrase on a key a service starts with, and no root CA needed in a fullchain.
+
+```shell
+cat server.crt intermediate-ca.crt > server.fullchain.crt
+cat client.crt intermediate-ca.crt > client.fullchain.crt
+cat intermediate-ca.crt ca.crt     > ca.chain.crt
+
+openssl crl2pkcs7 -nocrl -certfile server.fullchain.crt | openssl pkcs7 -print_certs -noout
+```
+
+The last command prints the file in file order: the first `subject=` has to be the leaf, and the `issuer=` of
+each certificate the `subject=` of the one below it. `openssl x509` and `openssl verify` read only the first
+certificate of a file, so neither of them can tell you this.
 
 ## See also
 

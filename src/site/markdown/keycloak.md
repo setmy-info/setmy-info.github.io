@@ -134,11 +134,13 @@ smi-install-package keycloak
 /opt/keycloak/bin/kc.sh --version
 /opt/keycloak/bin/kc.sh --help
 
+useradd --system --home-dir /opt/keycloak --shell /sbin/nologin keycloak
+sudo chown root:root -R /opt/keycloak
 sudo mkdir -p /opt/keycloak/{data,log,tmp}
-sudo chown -R has:has /opt/keycloak/data
-sudo chown -R has:has /opt/keycloak/log
-sudo chown -R has:has /opt/keycloak/tmp
-sudo chown -R has:has /opt/keycloak/lib/quarkus
+sudo chown -R keycloak:keycloak /opt/keycloak/data
+sudo chown -R keycloak:keycloak /opt/keycloak/log
+sudo chown -R keycloak:keycloak /opt/keycloak/tmp
+#sudo chown -R keycloak:keycloak /opt/keycloak/lib/quarkus
 
 /opt/keycloak/bin/kc.sh start-dev --http-port=8180
 #kc.sh start --http-enabled=true --http-port=8180 --proxy-headers=xforwarded
