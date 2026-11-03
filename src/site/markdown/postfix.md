@@ -263,14 +263,15 @@ Typical `/etc/postfix/main.cf` entries:
     sudo postconf -e 'smtp_sasl_auth_enable = yes'
     sudo postconf -e 'smtp_sasl_security_options = noanonymous'
     sudo postconf -e 'smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd'
-    sudo postconf -e 'inet_interfaces = all'
+    sudo postconf -e 'inet_interfaces = localhost'
+    #sudo postconf -e 'inet_interfaces = all'
 
-    sudo postconf -e 'smtpd_tls_cert_file = /etc/pki/postfix/certs/smtp.intranet.fullchain.crt'
-    sudo postconf -e 'smtpd_tls_key_file = /etc/pki/postfix/private/smtp.intranet.key'
     sudo postconf -e 'smtpd_tls_security_level = may'
     # Forsing to use TLS
     sudo postconf -e 'smtpd_tls_security_level = encrypt'
     sudo postconf -e 'smtpd_tls_loglevel = 1'
+    sudo postconf -e 'smtpd_tls_cert_file = /etc/pki/postfix/certs/smtp.intranet.fullchain.crt'
+    sudo postconf -e 'smtpd_tls_key_file = /etc/pki/postfix/private/smtp.intranet.key'
     
     sudo nano /etc/postfix/sasl_passwd
         [mail.example.com]:465 user.name@example.com:PASSWORD

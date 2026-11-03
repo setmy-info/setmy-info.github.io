@@ -92,7 +92,7 @@ digraph PackagesDiagramm {
 digraph PackagesDiagramm {
     node [shape = folder];
 
-    application_tps [label = "Application", shape = component];
+    application [label = "Application", shape = component];
     spring_boot_starter_third_party [label = "spring-boot-starter-third-party (OK?)"; fontcolor = "red";];
     third_party_integration_package [label = "info.setmy.third.party.integration"];
     smi_application_models_package [label = "info.setmy.gateway.models"; color = "green"; fontcolor = "green";];
@@ -104,7 +104,7 @@ digraph PackagesDiagramm {
     third_party_acceptance_test_package [label = "info.setmy.third.party.acceptance-test"];
     spring_boot_libs [label = "spring-boot-*"];
 
-    application_tps -> spring_boot_starter_third_party;
+    application -> spring_boot_starter_third_party;
     spring_boot_starter_third_party -> third_party_integration_package;
     spring_boot_starter_third_party -> spring_boot_libs;
     third_party_integration_package -> third_party_package;
