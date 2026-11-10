@@ -91,19 +91,19 @@ directories as part of the normal filesystem:
 
 **1. Create the parent directories on the normal filesystem:**
 
-```bash
+```sh
 sudo mkdir -p /var/opt/setmy.info
 ```
 
 **2. Option A: Create a new pool with the desired mountpoint:**
 
-```bash
+```sh
 sudo zpool create -m /var/opt/setmy.info/gintra gintra /dev/sda /dev/sdb
 ```
 
 **3. Option B: Change the mountpoint of an existing pool (e.g., from `/tank` to `/var/opt/setmy.info/gintra`):**
 
-```bash
+```sh
 # Rename the pool if necessary (optional)
 # sudo zpool export tank
 # sudo zpool import tank gintra
@@ -114,7 +114,7 @@ sudo zfs set mountpoint=/var/opt/setmy.info/gintra gintra
 
 **4. Verification:**
 
-```bash
+```sh
 zfs list
 df -h
 ```
@@ -123,6 +123,18 @@ The output should show that `gintra` is mounted at `/var/opt/setmy.info/gintra`,
 part of the root (`/`) or other existing filesystem.
 
 ## Usage, tips and tricks
+
+```sh
+sudo zfs create gintra/organizations
+sudo zfs create gintra/organizations/ee
+sudo zfs create gintra/organizations/ee/has
+sudo chown has:has /var/opt/setmy.info/gintra/organizations/ee/has
+sudo chmod 0700 /var/opt/setmy.info/gintra/organizations/ee/has
+
+ls -ld /var/opt/setmy.info/gintra/organizations
+ls -ld /var/opt/setmy.info/gintra/organizations/ee
+ls -ld /var/opt/setmy.info/gintra/organizations/ee/has
+```
 
 ### Coding tips and tricks
 

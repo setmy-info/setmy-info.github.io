@@ -15,9 +15,9 @@ directories and when an extra ZFS sub-dataset is justified.
 
 ## 3. Decision
 
-Use ZFS pool `tank` mounted at `/mnt/gintra` with the dataset hierarchy `tank/organizations/<cc>/<org>` as the standard
-physical namespace for organization data. Treat `tank`, `tank/organizations`, and `tank/organizations/<cc>` as
-structural containers, and store actual organization data in the leaf dataset `tank/organizations/<cc>/<org>`, where
+Use ZFS pool `gintra` mounted at `/var/opt/setmy.info/gintra` with the dataset hierarchy `gintra/organizations/<cc>/<org>` as the standard
+physical namespace for organization data. Treat `gintra`, `gintra/organizations`, and `gintra/organizations/<cc>` as
+structural containers, and store actual organization data in the leaf dataset `gintra/organizations/<cc>/<org>`, where
 `<cc>` is the ISO 3166-1 alpha-2 country code and `<org>` is the organization short name.
 
 ## 4. Rationale (Justification):
@@ -32,8 +32,8 @@ sub-dataset.
 
 Within each organization dataset, use `development/` for long-lived configuration and `operations/` for runtime
 workloads such as `ai/`, `packages/`, and `workflows/`. New organizations should be provisioned as new leaf datasets
-under `tank/organizations/<cc>/<org>`, where `<cc>` is the country code and `<org>` is the organization short name,
-and documentation/scripts should continue to assume `/mnt/gintra/organizations/<cc>/<org>` as the physical path.
+under `gintra/organizations/<cc>/<org>`, where `<cc>` is the country code and `<org>` is the organization short name,
+and documentation/scripts should continue to assume `/var/opt/setmy.info/gintra/organizations/<cc>/<org>` as the physical path.
 Optional child datasets may be created only for explicit needs such as separate quotas or snapshot policies.
 
 ---

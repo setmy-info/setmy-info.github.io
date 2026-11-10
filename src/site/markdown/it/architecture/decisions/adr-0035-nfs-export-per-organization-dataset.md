@@ -15,7 +15,7 @@ paths rather than dataset identifiers.
 ## 3. Decision
 
 Export each organization using its real filesystem path `/mnt/gintra/organizations/<cc>/<org>` in `/etc/exports`. Do not
-export ZFS dataset names such as `tank/organizations/<cc>/<org>`, and do not create a separate NFS export for
+export ZFS dataset names such as `gintra/organizations/<cc>/<org>`, and do not create a separate NFS export for
 `operations/packages` because it is covered by the organization export.
 
 ## 4. Rationale (Justification):
