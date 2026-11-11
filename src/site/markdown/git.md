@@ -262,6 +262,9 @@ git diff --cached --submodule
 
 git mv ./submodules/OLD_SUBMODULE_NAME ./submodules/NEW_SUBMODULE_NAME
 
+git submodule deinit -f --all
+git submodule update --init --recursive --force
+
 ```
 
 Starting as server
